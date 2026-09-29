@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>0003 玩家地图 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 0003 课</span>
+    <span>·</span>
+    <span>P0 宏观语言 · M0.2</span>
+  </div>
+  <h1>玩家地图</h1>
+  <p class="deck">经济机器是赛道，开车的是六位玩家。这一课给每位玩家建一张「目标×约束」卡片——预判玩家下一步，靠读卡片，不靠猜性格。本课约 50–60 分钟（先猜 3 + 正文与图 25–32 + 训练场 12–15 + 动笔与小结 5）。前置要求：0001–0002（信用周期与三变量框架会反复用到）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：把每位玩家的行为写成「目标×约束→反应」的卡片，并开始用<strong>反应函数</strong>（reaction function）的眼光读央行。不算数：背机构名称与人名八卦；护栏：反应函数是直觉框架不是公式——央行不按泰勒规则机械行动，但「看目标猜动作」永远优于「看标题猜动作」。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>六部门资金流向图 <span class="t">≈8 min</span></li>
+    <li>六张玩家卡片：目标×约束×行为 <span class="t">≈12 min</span></li>
+    <li>反应函数雏形 <span class="t">≈7 min</span></li>
+    <li>一个事件，六本账 <span class="t">≈6 min</span></li>
+    <li>边界与反证 <span class="t">≈4 min</span></li>
+    <li>训练场 <span class="t">≈12–15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。这一课的先猜瞄准两个最常见的「人格化央行」误区：以为央行盯着股市，以为银行只是储户和借款人之间的搬运工。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：美联储决定是否加息时，最直接依据的是——",
+  "options": [
+    {"t": "股市涨得太多了，需要降温", "ok": false, "why": "最常见的散户视角误区。股市只是传导渠道之一，不是目标本身——03 节拆开双重使命。"},
+    {"t": "就业与物价数据相对目标的位置", "ok": true, "why": "方向正确。美联储的法定双重使命=充分就业+物价稳定，数据输入→政策输出，这就是反应函数的雏形。"},
+    {"t": "总统与国会的指示", "ok": false, "why": "美联储决策独立于行政分支（理论上且有制度设计保障）；政治压力存在，但不是「依据」。"},
+    {"t": "华尔街大行的集体建议", "ok": false, "why": "银行有游说渠道，但决定权在 FOMC 十二人委员会——看目标，不看游说。"}
+  ],
+  "revisit": "训练场第 2 题回到这题的变式——读完反应函数一节再试。"
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：商业银行发放一笔新贷款的前提是——",
+  "options": [
+    {"t": "先吸收到等额存款，才能放出去", "ok": false, "why": "直觉里银行=资金搬运工。现代银行的实际操作顺序是反的——贷款本身创造存款。"},
+    {"t": "贷款审批通过时，银行在借款人账户记入存款——贷款创造存款", "ok": true, "why": "对，这就是「贷款创造存款」（loan creates deposit）。约束不在存款数量，在资本、流动性监管与信贷需求——02 节的银行卡片展开。"},
+    {"t": "央行先印钞给银行，银行再转贷", "ok": false, "why": "把央行想成发钞机是另一个极端误区：央行供给的是准备金（银行间清算用），不是放贷资金本身。P2 细讲。"},
+    {"t": "银行把手头现金库随机分配给申请者", "ok": false, "why": "放贷是受监管、算资本的风险决策，不是随机分发。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>六部门资金流向图 <span class="time-chip">≈8 min</span></h2>
+<p class="lede">把 0001 的「交易循环」升级成一张地图：谁和谁之间有钱在流动、债权在建立。六个部门，十条主要流向——先整体看一遍形状，再逐条走。</p>
+
+<figure>
+<svg viewBox="0 0 720 440" role="img" aria-label="六部门资金流向示意图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs>
+<marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker>
+</defs>
+<!-- 政策部门=实心 -->
+<rect x="270" y="16" width="120" height="46" rx="8" fill="#1c1c1a"/>
+<text x="330" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">央行</text>
+<text x="330" y="52" text-anchor="middle" font-size="9" fill="#cfcfc9">central bank</text>
+<rect x="560" y="180" width="120" height="46" rx="8" fill="#1c1c1a"/>
+<text x="620" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">财政</text>
+<text x="620" y="216" text-anchor="middle" font-size="9" fill="#cfcfc9">fiscal / treasury</text>
+<!-- 私人部门=描边 -->
+<rect x="270" y="140" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="330" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">银行体系</text>
+<text x="330" y="176" text-anchor="middle" font-size="9" fill="#6e6c64">banks</text>
+<rect x="80" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="140" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">家户</text>
+<text x="140" y="356" text-anchor="middle" font-size="9" fill="#6e6c64">households</text>
+<rect x="330" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="390" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">企业</text>
+<text x="390" y="356" text-anchor="middle" font-size="9" fill="#6e6c64">firms</text>
+<rect x="560" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="620" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">海外</text>
+<text x="620" y="356" text-anchor="middle" font-size="9" fill="#6e6c64">overseas / ROW</text>
+<!-- 流向箭头 -->
+<line x1="330" y1="62" x2="330" y2="138" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="338" y="104" font-size="10" fill="#6e6c64">准备金 · 政策利率</text>
+<line x1="300" y1="186" x2="175" y2="318" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="228" y="248" text-anchor="end" font-size="10" fill="#6e6c64">信贷</text>
+<line x1="365" y1="186" x2="382" y2="318" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="390" y="254" font-size="10" fill="#6e6c64">信贷</text>
+<line x1="200" y1="330" x2="328" y2="330" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="264" y="322" text-anchor="middle" font-size="10" fill="#6e6c64">支出=收入</text>
+<line x1="328" y1="356" x2="200" y2="356" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="264" y="374" text-anchor="middle" font-size="10" fill="#6e6c64">工资·雇佣</text>
+<polyline points="450,335 560,222" fill="none" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="516" y="284" text-anchor="end" font-size="10" fill="#6e6c64">税收</text>
+<polyline points="560,255 155,255 140,318" fill="none" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="352" y="247" text-anchor="middle" font-size="10" fill="#6e6c64">支出 · 转移支付</text>
+<line x1="392" y1="152" x2="558" y2="192" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="466" y="160" font-size="10" fill="#6e6c64">持有国债</text>
+<line x1="450" y1="336" x2="558" y2="336" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="504" y="328" text-anchor="middle" font-size="10" fill="#6e6c64">出口</text>
+<line x1="558" y1="356" x2="450" y2="356" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
+<text x="504" y="374" text-anchor="middle" font-size="10" fill="#6e6c64">进口</text>
+<text x="52" y="428" font-size="10"5 fill="#6e6c64">实心=政策部门（央行/财政）· 描边=私人部门与外部部门</text>
+</svg>
+<figcaption><strong>六部门资金流向示意（教学示意图，非数据图）</strong>：箭头=资金或债权的建立方向。三条主线：①央行→银行（准备金与政策利率，P2 展开）；②银行→家户/企业（信贷，0002 的波动引擎本体）；③家户↔企业（支出=收入与工资，0001 的循环）。财政与家户/企业之间双向（税收流出、支出与转移支付回流），海外经进出口与企业相连，银行与海外都是国债的持有人（财政的融资端）。省略的流向（同业市场、资本市场、央行-财政直接往来）在 P2 补全。</figcaption>
+</figure>
+
+<div class="tip">读图练习：把 0002 的「信用收缩」放到图上走一遍——银行→家户/企业的两条信贷箭头同时变细，家户↔企业的支出工资循环随之减速。图上每一条箭头，都是前面两课某个概念的落点。</div>
+
+<h2><span class="no">02</span>六张玩家卡片：目标×约束×行为 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">预判行为的标准姿势：先问这个玩家<strong>想要什么</strong>（目标），再问<strong>什么绑住了它</strong>（约束），行为模式自然浮出。六张卡片一次建齐——之后整个课程遇到任何部门动作，都回这张表查。</p>
+<table>
+  <thead>
+    <tr><th>部门</th><th>目标</th><th>约束</th><th>典型行为模式</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>央行</strong></td><td>Fed：双重使命（dual mandate）=充分就业+物价稳定；中国央行：多目标（增长/物价/汇率/金融稳定）</td><td>不直接控制长端利率与信贷；政策利率有下限（0002 的 ZLB）；独立性受政治周期考验</td><td>数据相对目标的位置→调政策利率与资产负债表（反应函数，03 节）</td></tr>
+    <tr><td><strong>财政</strong></td><td>增长、就业、收入再分配；政治周期（选举年扩张倾向）</td><td>债务与利息负担（0002 图）；议会程序；融资依赖国债市场</td><td>衰退自动加码（失业保险等自动稳定器 automatic stabilizers）+危机时大规模相机抉择刺激</td></tr>
+    <tr><td><strong>银行体系</strong></td><td>利差收入、风险可控、满足监管</td><td>资本充足率、流动性监管；抵押品价值；信贷需求</td><td><strong>顺周期</strong>：繁荣期扩张放贷、衰退期集体收缩（金融加速器，financial accelerator）</td></tr>
+    <tr><td><strong>家户</strong></td><td>消费平滑、财富积累、就业安全</td><td>收入预期、资产负债表（房贷）、信用可得性</td><td>信心与房价驱动借贷消费；实际收入被通胀侵蚀时消费降级</td></tr>
+    <tr><td><strong>企业</strong></td><td>利润、市场份额、股东回报</td><td>融资成本、产能、需求与不确定性</td><td>信用宽松期资本开支+回购；不确定期囤现金砍投资</td></tr>
+    <tr><td><strong>海外</strong></td><td>贸易结算、储备资产安全；新兴经济体央行：汇率与资本流动稳定</td><td>美元周期（定价之锚）；本币贬值与外币债务（0002：外币债天花板低）</td><td>美元走强与美联储收紧→新兴市场资本外流、被迫加息自卫</td></tr>
+  </tbody>
+</table>
+
+<p>三张卡片值得多看两眼。<strong>银行体系</strong>是唯一「繁荣时制造繁荣、衰退时制造衰退」的部门——它的顺周期性就是 0002 信用自我强化的部门化身。<strong>海外部门</strong>的读法取决于你站的位置：对美国，海外=外需与美债买家；对新兴市场，海外=美元潮汐的水位（P2 专门展开）。<strong>财政与央行</strong>是仅有的两个「实心」政策部门——它们不追求利润，追求目标变量，这正是 03 节反应函数的前提。</p>
+
+<div class="note">「贷款创造存款」落到卡片语言：银行放贷的约束是资本与监管（卡片第二栏），不是「先有存款」。这半页是 P2 央行工具箱的钩子，现在只需记住：信贷的闸门在银行的风险决策与监管规则，不在储蓄池。</div>
+
+<h2><span class="no">03</span>反应函数雏形 <span class="time-chip">≈7 min</span></h2>
+<p class="lede">把「目标×约束→行为」压缩成一个可操作的概念：<strong>反应函数</strong>（reaction function）——把玩家的行动写成它观察到的状态变量的函数。读央行的正确姿势不是猜它「想什么」，而是问「它的目标变量现在在哪儿，按它的函数下一步是什么」。</p>
+<p>美联储的直觉版本：<strong>通胀高于目标↑ + 就业强于充分就业 → 收紧；通胀回落 + 就业走弱 → 放松</strong>。输入是数据（P1 数据流整章），输出是政策利率与资产负债表（P2 工具箱）。这个直觉版在学界有一个著名的形式化近亲——泰勒规则（Taylor rule，利率对通胀与产出缺口的线性响应），但真实 FOMC 从不机械照搬：他们看的数据更广、权重随环境变化、还受沟通与预期管理的约束。你现在要建立的只是「函数思维」，不是公式。</p>
+<p>中国央行的反应函数读起来更难：<strong>多目标</strong>（增长、物价、汇率稳定、金融防风险）意味着同一个数据组合可能对应不同动作——2015–16 汇率承压期，内部稳增长与外部稳汇率的目标一度拉扯政策选择（P5 案例课复盘）。多目标不等于没有函数，只是函数的自变量更多——这正是「读卡片」比「读标题」值钱的地方。</p>
+
+<div class="tip">从今天起，读任何央行新闻先填三个空：<strong>目标变量在哪（数据）？政策空间多大（利率离零多远、汇率的约束）？函数输出什么（加息/降息/QE/表态）？</strong>三个空填完，新闻的形容词就多余了。</div>
+
+<h2><span class="no">04</span>一个事件，六本账 <span class="time-chip">≈6 min</span></h2>
+<p class="lede">2022 年 6 月：美国 CPI 同比 9.1%（BLS，四十年最高），美联储随后连续四次加息 75 个基点（6/9/7/11 月，全年累计 425bp——0001 已引用）。同一个事件，六个部门各记一本账：</p>
+<table>
+  <thead>
+    <tr><th>部门</th><th>它看到什么</th><th>它的反应</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>央行</td><td>通胀远超 2% 目标，就业过热</td><td>反应函数输出最大力度：连续 75bp</td></tr>
+    <tr><td>财政</td><td>通胀侵蚀民生支持率</td><td>疫情转移支付已退坡，财政让位货币紧缩</td></tr>
+    <tr><td>银行</td><td>政策利率急升</td><td>放贷标准趋紧（顺周期启动）</td></tr>
+    <tr><td>家户</td><td>实际收入被通胀侵蚀</td><td>信心下滑，消费降级，储蓄防御</td></tr>
+    <tr><td>企业</td><td>融资成本跳升、需求前景转暗</td><td>下修资本开支，先砍招聘</td></tr>
+    <tr><td>海外</td><td>美元大幅走强</td><td>新兴市场资本外流，多国央行被迫跟加息自卫</td></tr>
+  </tbody>
+</table>
+<p>注意结构：<strong>央行是唯一的「第一行动者」，其余五家都在对央行的反应函数做反应</strong>——银行收紧、家户防御、企业收缩、海外承压，层层展开就是 0001 那条「加息怎么打到 BTC」的传导链。玩家地图让你看清：传导链不是抽象的「市场」，是六本账本同时翻页。</p>
+
+<h2><span class="no">05</span>边界与反证 <span class="time-chip">≈4 min</span></h2>
+<p><strong>反函数不是合同。</strong>反应函数会变：FOMC 主席换届、政策框架定期评审（如 2020 年平均通胀目标制引入、2025 年前后对其再评估的讨论）都会改变函数形状。用「函数思维」读央行，不等于假设函数永不变。</p>
+<p><strong>玩家会互相打架。</strong>财政与央行的目标可能同向（2008、2020 危机协同）也可能对冲（2023：美联储加息收紧，财政赤字仍在扩张——紧货币+宽财政的组合让金融条件没有表面看起来那么紧）。六张卡片要同时读，单一部门读数会骗人。</p>
+<p><strong>「部门」是简化。</strong>现实中企业部门里既有借钱的开发商也有囤现金的科技公司，家户里既有负债的购房者也有吃利息的储户——通胀与加息在同一部门内部制造赢家输家。P0 的六部门是第一近似，分辨率不够时（P4 跨资产）会升级拆分。</p>
+
+<div class="warn">诚实条款：本课的「目标×约束」卡片是静态快照，真实机构在压力下会突破常规（2020 年 3 月 Fed 直接买公司债=打破 2008 年的先例）。卡片的用途是<strong>降低你被新闻标题牵着走的概率</strong>，不是给你水晶球。</div>
+
+<h2><span class="no">06</span>训练场 <span class="time-chip">≈12–15 min</span></h2>
+<p class="lede">检索练习：先不看上文凭记忆作答。第 1 题是上一课微重现，第 2 题回收先猜，第 4 题看图。目标：<strong>明天回来再练还能对</strong>。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：刷到「某国政府债务危机」新闻，0002 教的三个定位问题不包括——",
+  "options": [
+    {"t": "谁的债务：政府、居民还是企业？", "ok": false, "why": "这是三问之一——不同部门债务的宏观含义完全不同。"},
+    {"t": "本币债还是外币债？", "ok": false, "why": "三问之一——货币结构决定天花板（0002 反证一：日本 240%+ vs 新兴市场 60%）。"},
+    {"t": "政策利率到零了吗？", "ok": false, "why": "三问之一——利率空间决定这是长期周期到头还是短期杂音。"},
+    {"t": "该国股市跌了多少？", "ok": true, "why": "正确答案（选「不包括」）。股市跌幅是结果不是定位输入——先定位结构，再看市场反应（P1 预期差视角）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题【先猜回归】：美联储的双重使命下，通胀显著超标且就业过热时，反应函数的输出最可能是——",
+  "options": [
+    {"t": "观望股市：若股市平稳则不行动", "ok": false, "why": "先猜 1 的误区人格化版：股市不是双重使命的自变量，只是传导渠道。"},
+    {"t": "收紧：上调政策利率（必要时配合缩表）", "ok": true, "why": "函数思维：通胀↑+就业过热→收紧。2022 年的四次 75bp 就是这个输出的极端档位。"},
+    {"t": "财政先减税对冲通胀", "ok": false, "why": "财政不是央行的工具——部门卡片要分清：减税是财政的输出，且方向上是刺激，不是抗通胀。"},
+    {"t": "直接给通胀设定行政限价", "ok": false, "why": "价格管制是财政/行政分支的工具（且历史上副作用大），不在央行工具箱里。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题：银行体系「顺周期」的含义是——",
+  "options": [
+    {"t": "经济好时少放贷、坏时多放贷，自动对冲周期", "ok": false, "why": "描述的是反周期——那是自动稳定器（财政的失业保险）的行为，不是银行的。"},
+    {"t": "繁荣时扩张放贷、衰退时集体收缩，放大而非熨平周期", "ok": true, "why": "金融加速器：抵押品涨跌反哺信贷松紧——0002「信用自我强化」的部门化身。"},
+    {"t": "银行利润与 GDP 同步波动，仅是相关", "ok": false, "why": "不只是利润相关：银行的放贷行为本身是周期的放大器，因果在行为里。"},
+    {"t": "银行按央行指示随周期调节放贷", "ok": false, "why": "顺周期是银行自身风险决策的结果（受监管约束），不是央行指令——危机时央行反而会要求多放贷。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题（看图）：回看 01 节资金流向图——「银行体系→企业」的信贷箭头明显变细时，最不可能的直接后果是——",
+  "options": [
+    {"t": "企业资本开支与招聘下修", "ok": false, "why": "可能且直接：融资端收紧→支出端收缩（02 节企业卡片行为模式）。"},
+    {"t": "家户↔企业的支出工资循环减速", "ok": false, "why": "可能且是第二轮传导：企业收缩→雇工与工资承压→家户支出减少（0001 循环逆转）。"},
+    {"t": "央行→银行的准备金箭头立即变细", "ok": false, "why": "方向说反了的关系是存在的：央行收紧（准备金与利率渠道）往往是信贷变细的原因——但注意因果方向，是央行→信贷，不是信贷→央行。"},
+    {"t": "企业持有国债规模立即上升", "ok": true, "why": "正确答案（选「最不可能」）。信贷收缩与增持国债无直接机制联系——企业缺现金时更可能减持金融资产而非增持。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：2023 年美国出现「美联储加息、财政仍在扩张」的组合，用本课框架读——",
+  "options": [
+    {"t": "说明反应函数理论失效，央行失控了", "ok": false, "why": "央行没失控——它管自己的函数；打架的是两个部门的目标与时机，恰是「卡片要同时读」的教材。"},
+    {"t": "两个政策部门目标/时机错位，紧货币与宽财政互相抵消部分效果，金融条件没有单一部门看起来的那么紧", "ok": true, "why": "05 节原例：紧货币+宽财政的组合——读任何单一部门都会错估整体松紧。"},
+    {"t": "财政扩张会自动迫使央行转为宽松", "ok": false, "why": "不存在这种自动机制——央行按自己的目标变量行动，2023 年它选择继续加息。"},
+    {"t": "这种组合历史上从未出现过", "ok": false, "why": "政策组合错位历史上多次出现（如 1980s 初期财政赤字与沃尔克紧缩并存）——不是新现象。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——明天回来重练还能全对才算真过；错 1–2 题——错题回对应节重读（第 1 题→0002 课 07 节习惯；第 2 题→本课 03 节；第 3 题→02 节银行卡片；第 4 题→01 节图+0001 循环；第 5 题→05 节），隔天再练；错 3 题以上——回 02 节六张卡片把「目标×约束」重抄一遍，只练「给部门、报目标约束」这一层。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题：用反应函数语言写三行——①美联储：目标变量是__，输入__，输出__；②中国央行多目标多在哪（至少列三个目标）；③一句话说明为什么「读卡片」优于「读标题」。",
+  "hint": "第 ③ 问是本课的灵魂题：答案是函数思维=用目标和约束推行动，标题给的是形容词不是自变量。写完对照，缺哪行回哪节。",
+  "a": "参考答案：①美联储：目标变量=充分就业与物价稳定（双重使命，通胀目标 2%）；输入=就业与通胀数据相对目标的位置（及更广的金融条件）；输出=政策利率区间与资产负债表操作。②中国央行多目标：经济增长、物价稳定、汇率（人民币）基本稳定、金融防风险（还有就业与结构目标，货币政策执行报告自述为准）——自变量更多，函数更难一眼读出。③读卡片优于读标题：标题给形容词与情绪（利好/恐慌），卡片给自变量（目标在哪、约束多紧）——函数思维把新闻变成输入，而不是把新闻变成情绪。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="time-chip">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>六张玩家卡片</strong>——部门×目标×约束×行为模式，任何部门动作先回表查</li>
+  <li><strong>反应函数思维</strong>——读央行=看目标变量的位置，不看人格与标题</li>
+  <li><strong>贷款创造存款</strong>——信贷闸门在银行风险决策与监管，不在储蓄池（P2 钩子）</li>
+  <li><strong>卡片要同时读</strong>——财政与央行可能对冲（2023），单部门读数会骗人</li>
+</ul>
+
+<div class="stop">M0.2 结业标准（显式）：不看卡片，列出六部门各自的目标与约束，并说出至少一条行为模式；能用「目标变量在哪→函数输出什么」读一条当期央行新闻。检测：本课训练场五题 ≥80%（错 0–1）且隔天重练仍达标。未过按判分指引回对应节补救后重测，不锁后续课。</div>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>阅读任务（必做）</strong>：美联储《<a href="https://www.federalreserve.gov/aboutthefed/pf.htm">The Federal Reserve System: Purposes &amp; Functions</a>》第 10 版（免费 PDF）中的「货币政策工具」（Monetary Policy Tools）一章——只读一章，验证你卡片上央行那行的约束栏写得对不对。</p>
+<p>（2）<strong>课后探索（可选）</strong>：打开人民银行官网最新一期《货币政策执行报告》，找到开篇的目标陈述段——把央行自己列出的目标清单抄下来，与你的六部门卡片对照：多了什么、少了什么。CORE 宏观卷 <a href="https://www.core-econ.org/the-economy/">U3（总需求）与 U10（政府）</a>是本课的教科书底座，供延伸。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：新闻里出现任何部门动作（加息、放贷、减税、资本外流），先默念一遍「它的目标×约束→它为什么这么做」，再读正文。一周后你会发现：宏观新闻的预测难度大幅下降——因为玩家只有六个。</p>
+<p><strong>下一课 0004《三大市场互锁》</strong>：六位玩家交易的场地——货币、债券、外汇三个市场如何互相定价。利率一动，三个市场同时翻页。</p>
+
+<div class="ask-agent">我是你的教练。哪个部门卡片想加行、某条当期央行新闻想一起用反应函数拆一遍——直接回来问我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="0002-credit-cycle-debt-ceiling.html">← 第 0002 课</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="../reference/0001-macro-dashboard.html">宏观仪表盘</a>
+    <span>下一课 0004 · 待建</span>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：CORE 宏观卷 U3（总需求与乘数：部门循环的模型化）与 U10（政府作为经济行为者：财政目标与约束），core-econ.org 免费在线；美联储《Purposes and Functions》第 10 版（央行目标与工具的官方一手表述）；六部门框架为达利欧模板（0001 主资源）的教学化扩展。</p>
+  <div class="citations"><strong>本课图示：</strong>六部门资金流向图=教学示意图（非数据图），流向为简化主干，省略同业/资本市场与央行-财政直接往来（P2 补全）。<strong>案例数据：</strong>2022-06 美国 CPI 同比 9.1%（BLS，历史值）；2022-03 至 2022-12 累计加息 425bp、其中 6/9/7/11 月四次各 75bp（FOMC 声明原件）；2023 紧货币+宽财政组合、2020-03 Fed 购买公司债（SMCCF 等危机工具）均为公开政策事实。<strong>方法论提示：</strong>「目标×约束→行为」是教学用直觉框架，非机构行为的实证模型；泰勒规则仅作反应函数的形式化近亲提及。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>
