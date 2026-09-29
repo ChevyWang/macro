@@ -17,7 +17,7 @@
     <span>P0 宏观语言 · M0.2</span>
   </div>
   <h1>玩家地图</h1>
-  <p class="deck">经济机器是赛道，开车的是六位玩家。这一课给每位玩家建一张「目标×约束」卡片——预判玩家下一步，靠读卡片，不靠猜性格。本课约 55–60 分钟（先猜 3 + 正文与图 37 + 训练场 12–15 + 动笔与小结 3–5）。前置要求：0001–0002（信用周期与三变量框架会反复用到）。</p>
+  <p class="deck">经济机器是赛道，开车的是六位玩家。这一课给每位玩家建一张「目标×约束」卡片——预判玩家下一步，靠读卡片，不靠猜性格。本课约 65–75 分钟（先猜 3 + 正文与图 45 + 训练场 12–15 + 动笔与小结 3–5）。前置要求：0001–0002（信用周期与三变量框架会反复用到）。</p>
 </header>
 
 <aside class="callout"><b>本次核心动作</b>：把每位玩家的行为写成「目标×约束→反应」的卡片，并开始用<strong>反应函数</strong>（reaction function）的眼光读央行。不算数：背机构名称与人名八卦；护栏：反应函数是直觉框架不是公式——央行不按泰勒规则机械行动，但「看目标猜动作」永远优于「看标题猜动作」。</aside>
@@ -69,63 +69,26 @@
 </preq-block>
 
 <h2><span class="no">01</span>六部门资金流向图 <span class="time-chip">≈8 min</span></h2>
-<p class="lede">把 0001 的「交易循环」升级成一张地图：谁和谁之间有钱在流动、债权在建立。六个部门，十条主要流向——先整体看一遍形状，再逐条走。</p>
+<p class="lede">把 0001 的「交易循环」升级成一张地图：六个部门、十条主要资金流向——先看形状，再逐条走。</p>
 
 <figure>
 <svg viewBox="0 0 720 440" role="img" aria-label="六部门资金流向示意图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
-<defs>
-<marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker>
-</defs>
-<!-- 政策部门=实心 -->
-<rect x="270" y="16" width="120" height="46" rx="8" fill="#1c1c1a"/>
-<text x="330" y="36" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">央行</text>
-<text x="330" y="52" text-anchor="middle" font-size="9" fill="#cfcfc9">central bank</text>
-<rect x="560" y="180" width="120" height="46" rx="8" fill="#1c1c1a"/>
-<text x="620" y="200" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">财政</text>
-<text x="620" y="216" text-anchor="middle" font-size="9" fill="#cfcfc9">fiscal / treasury</text>
-<!-- 私人部门=描边 -->
-<rect x="270" y="140" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
-<text x="330" y="160" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">银行体系</text>
-<text x="330" y="176" text-anchor="middle" font-size="9" fill="#6e6c64">banks</text>
-<rect x="80" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
-<text x="140" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">家户</text>
-<text x="140" y="356" text-anchor="middle" font-size="9" fill="#6e6c64">households</text>
-<rect x="330" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
-<text x="390" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">企业</text>
-<text x="390" y="356" text-anchor="middle" font-size="9" fill="#6e6c64">firms</text>
-<rect x="560" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
-<text x="620" y="340" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">海外</text>
-<text x="620" y="356" text-anchor="middle" font-size="9" fill="#6e6c64">overseas / ROW</text>
-<!-- 流向箭头 -->
-<line x1="330" y1="62" x2="330" y2="138" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="338" y="104" font-size="10" fill="#6e6c64">准备金 · 政策利率</text>
-<line x1="300" y1="186" x2="175" y2="318" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="250" y="230" text-anchor="end" font-size="10" fill="#6e6c64">信贷</text>
-<line x1="365" y1="186" x2="433" y2="316" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="442" y="252" font-size="10" fill="#6e6c64">信贷</text>
-<line x1="200" y1="330" x2="328" y2="330" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="264" y="322" text-anchor="middle" font-size="10" fill="#6e6c64">支出=收入</text>
-<line x1="328" y1="356" x2="200" y2="356" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="264" y="374" text-anchor="middle" font-size="10" fill="#6e6c64">工资·雇佣</text>
-<polyline points="450,335 560,222" fill="none" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="516" y="284" text-anchor="end" font-size="10" fill="#6e6c64">税收</text>
-<polyline points="585,226 585,264 155,264 140,316" fill="none" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="318" y="246" text-anchor="middle" font-size="10" fill="#6e6c64">支出 · 转移支付</text>
-<line x1="392" y1="152" x2="558" y2="192" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="466" y="160" font-size="10" fill="#6e6c64">持有国债</text>
-<line x1="450" y1="336" x2="558" y2="336" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="504" y="328" text-anchor="middle" font-size="10" fill="#6e6c64">出口</text>
-<line x1="558" y1="356" x2="450" y2="356" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/>
-<text x="504" y="374" text-anchor="middle" font-size="10" fill="#6e6c64">进口</text>
-<text x="52" y="428" font-size="10" fill="#6e6c64">实心=政策部门（央行/财政）· 描边=私人部门与外部部门</text>
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs><g class="da" style="animation-delay:0s"><rect x="270" y="16" width="120" height="46" rx="8" fill="#1c1c1a"/><text x="330" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">央行</text><text x="330" y="53" text-anchor="middle" font-size="9" fill="#cfcfc9">central bank</text></g><g class="da" style="animation-delay:0.12s"><rect x="560" y="180" width="120" height="46" rx="8" fill="#1c1c1a"/><text x="620" y="201" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">财政</text><text x="620" y="217" text-anchor="middle" font-size="9" fill="#cfcfc9">fiscal / treasury</text></g><g class="da" style="animation-delay:0.24s"><rect x="270" y="140" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="330" y="161" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">银行体系</text><text x="330" y="177" text-anchor="middle" font-size="9" fill="#6e6c64">banks</text></g><g class="da" style="animation-delay:0.36s"><rect x="80" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="140" y="341" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">家户</text><text x="140" y="357" text-anchor="middle" font-size="9" fill="#6e6c64">households</text></g><g class="da" style="animation-delay:0.48s"><rect x="330" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="390" y="341" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">企业</text><text x="390" y="357" text-anchor="middle" font-size="9" fill="#6e6c64">firms</text></g><g class="da" style="animation-delay:0.6s"><rect x="560" y="320" width="120" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="620" y="341" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">海外</text><text x="620" y="357" text-anchor="middle" font-size="9" fill="#6e6c64">overseas / ROW</text></g><line x1="330" y1="62" x2="330" y2="138" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:0.9s"/><text x="338" y="104"  font-size="10" fill="#6e6c64" class="da" style="animation-delay:0.9s">准备金 · 政策利率</text><line x1="392" y1="152" x2="558" y2="192" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.05s"/><text x="466" y="160"  font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.05s">持有国债</text><line x1="300" y1="182" x2="175" y2="318" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.25s"/><text x="250" y="230" text-anchor="end" font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.25s">信贷</text><line x1="365" y1="186" x2="433" y2="316" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.4s"/><text x="442" y="252"  font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.4s">信贷</text><line x1="200" y1="330" x2="328" y2="330" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.6s"/><text x="264" y="322" text-anchor="middle" font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.6s">支出=收入</text><line x1="328" y1="356" x2="200" y2="356" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.75s"/><text x="264" y="374" text-anchor="middle" font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.75s">工资·雇佣</text><polyline points="450,335 560,222" fill="none" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.9s"/><text x="516" y="284" text-anchor="end" font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.9s">税收</text><polyline points="585,226 585,264 155,264 140,316" fill="none" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:2.05s"/><text x="318" y="246" text-anchor="middle" font-size="10" fill="#6e6c64" class="da" style="animation-delay:2.05s">支出 · 转移支付</text><line x1="450" y1="336" x2="558" y2="336" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:2.25s"/><text x="504" y="328" text-anchor="middle" font-size="10" fill="#6e6c64" class="da" style="animation-delay:2.25s">出口</text><line x1="558" y1="356" x2="450" y2="356" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:2.35s"/><text x="504" y="374" text-anchor="middle" font-size="10" fill="#6e6c64" class="da" style="animation-delay:2.35s">进口</text><text x="52" y="428"  font-size="10" fill="#6e6c64">实心=政策部门（央行/财政）· 描边=私人部门与外部部门</text>
 </svg>
-<figcaption><strong>六部门资金流向示意（教学示意图，非数据图）</strong>：箭头=资金或债权的建立方向。三条主线：①央行→银行（准备金与政策利率，P2 展开）；②银行→家户/企业（信贷，0002 的波动引擎本体）；③家户↔企业（支出=收入与工资，0001 的循环）。财政与家户/企业之间双向（税收流出、支出与转移支付回流），海外经进出口与企业相连，银行与海外都是国债的持有人（财政的融资端）。省略的流向（同业市场、资本市场、央行-财政直接往来）在 P2 补全。</figcaption>
+<figcaption><strong>六部门资金流向示意（教学示意图，非数据图；元素按传导顺序点亮）</strong>：箭头=资金或债权的建立方向。三条主线：①央行→银行（准备金与政策利率，P2 展开）；②银行→家户/企业（信贷，0002 的波动引擎本体）；③家户↔企业（支出=收入与工资，0001 的循环）。财政与家户/企业之间双向（税收流出、支出与转移支付回流），海外经进出口与企业相连，银行与海外都是国债的持有人（财政的融资端）。省略的流向（同业市场、资本市场、央行-财政直接往来）在 P2 补全。</figcaption>
 </figure>
 
 <div class="tip">读图练习：把 0002 的「信用收缩」放到图上走一遍——银行→家户/企业的两条信贷箭头同时变细，家户↔企业的支出工资循环随之减速。图上每一条箭头，都是前面两课某个概念的落点。</div>
 
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="美国银行信贷同比增速 1974-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="241" x2="704" y2="241" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="244.5" text-anchor="end" font-size="10" fill="#6e6c64">−5%</text><line x1="52" y1="189.3" x2="704" y2="189.3" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="192.8" text-anchor="end" font-size="10" fill="#6e6c64">0%</text><line x1="52" y1="137.7" x2="704" y2="137.7" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="141.2" text-anchor="end" font-size="10" fill="#6e6c64">5%</text><line x1="52" y1="86" x2="704" y2="86" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="89.5" text-anchor="end" font-size="10" fill="#6e6c64">10%</text><line x1="52" y1="34.3" x2="704" y2="34.3" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="37.8" text-anchor="end" font-size="10" fill="#6e6c64">15%</text><line x1="64.3" y1="272" x2="64.3" y2="276" stroke="#6e6c64"/><text x="64.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">1975</text><line x1="188.1" y1="272" x2="188.1" y2="276" stroke="#6e6c64"/><text x="188.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">1985</text><line x1="311.8" y1="272" x2="311.8" y2="276" stroke="#6e6c64"/><text x="311.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">1995</text><line x1="435.5" y1="272" x2="435.5" y2="276" stroke="#6e6c64"/><text x="435.5" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2005</text><line x1="559.2" y1="272" x2="559.2" y2="276" stroke="#6e6c64"/><text x="559.2" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2015</text><line x1="682.9" y1="272" x2="682.9" y2="276" stroke="#6e6c64"/><text x="682.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2025</text><rect x="49.9" y="24" width="17.4" height="248" fill="rgba(28,28,26,.09)"/><rect x="126.2" y="24" width="7.2" height="248" fill="rgba(28,28,26,.09)"/><rect x="144.7" y="24" width="17.5" height="248" fill="rgba(28,28,26,.09)"/><rect x="256" y="24" width="9.2" height="248" fill="rgba(28,28,26,.09)"/><rect x="388" y="24" width="9.3" height="248" fill="rgba(28,28,26,.09)"/><rect x="471.5" y="24" width="19.5" height="248" fill="rgba(28,28,26,.09)"/><rect x="622.1" y="24" width="3" height="248" fill="rgba(28,28,26,.09)"/><polyline points="52,47.9 54.1,59.2 56.3,51.6 58.4,60.3 60.5,66.4 62.7,79.2 64.8,97.2 66.9,121.3 69.1,143.9 71.2,155.2 73.3,151.8 75.5,144.8 77.6,140.3 79.7,130.7 81.9,121.8 84,124.5 86.1,117.8 88.3,106.6 90.4,97.9 92.5,92 94.7,81.6 96.8,77 98.9,74.2 101.1,77.8 103.2,73.4 105.3,66.7 107.5,59.3 109.6,60 111.7,48.6 113.9,57.1 116,55.5 118.1,49.6 120.3,41.9 122.4,40.9 124.5,61.6 126.7,69.4 128.8,72.5 131,101.6 133.1,122.7 135.2,129.3 137.4,98.1 139.5,95.3 141.6,108 143.8,80.5 145.9,83.6 148,93.6 150.2,122.9 152.3,118.4 154.4,111.6 156.6,121 158.7,117.8 160.8,117.4 163,107.6 165.1,116.2 167.2,107.5 169.4,102.4 171.5,93.9 173.6,85.2 175.8,80.6 177.9,73.3 180,67.5 182.2,68.7 184.3,73.6 186.4,80.7 188.6,80.4 190.7,82.8 192.8,96.5 195,98.4 197.1,94.8 199.2,89.6 201.4,83.4 203.5,85.6 205.6,92.2 207.8,82.3 209.9,84 212,82 214.2,85.8 216.3,82.1 218.4,82.4 220.6,100.5 222.7,92 224.8,122.1 227,118.8 229.1,117.6 231.2,102.1 233.4,104.2 235.5,111.5 237.6,115.9 239.8,114.7 241.9,119.3 244,121.1 246.2,113.4 248.3,112.8 250.4,114.3 252.6,110.5 254.7,118.9 256.8,126.6 259,129.3 261.1,136 263.2,145.8 265.4,143.1 267.5,154 269.6,160 271.8,158.1 273.9,153.9 276.1,149.6 278.2,148.9 280.3,153.2 282.5,148.4 284.6,152.4 286.7,157.7 288.9,156.1 291,150.3 293.1,141.2 295.3,143.5 297.4,144.3 299.5,134.6 301.7,135 303.8,134.4 305.9,132.5 308.1,131.5 310.2,125.5 312.3,122.6 314.5,130.4 316.6,111.9 318.7,113.2 320.9,106.9 323,114.5 325.1,121 327.3,130.8 329.4,136.4 331.5,144.1 333.7,134.9 335.8,130.8 337.9,130.8 340.1,119.3 342.2,112 344.3,103.8 346.5,107.4 348.6,101.2 350.7,94.3 352.9,109.6 355,110.1 357.1,103.2 359.3,91 361.4,101.3 363.5,121.6 365.7,120.1 367.8,116.8 369.9,124.2 372.1,134.9 374.2,118.1 376.3,102.7 378.5,84.8 380.6,79.2 382.7,86 384.9,104.9 387,105.7 389.1,126.9 391.3,137.7 393.4,156.3 395.5,151.6 397.7,142.4 399.8,157.7 401.9,156.5 404.1,153.6 406.2,136.9 408.3,115.5 410.5,107.5 412.6,95.2 414.7,75.6 416.9,60.3 419,90.3 421.2,122.6 423.3,128.6 425.4,113.7 427.6,113.3 429.7,108.5 431.8,99.3 434,86.6 436.1,69.1 438.2,77 440.4,75 442.5,64.6 444.6,69 446.8,81 448.9,89.1 451,93.4 453.2,88.2 455.3,97.3 457.4,80.9 459.6,82.2 461.7,79.7 463.8,102.3 466,100.7 468.1,91.5 470.2,86.2 472.4,96.3 474.5,97.8 476.6,91.7 478.8,115 480.9,144.4 483,107 485.2,142.9 487.3,140.6 489.4,151 491.6,157.6 493.7,176.9 495.8,215.7 498,228.3 500.1,236.4 502.2,200.6 504.4,187.2 506.5,166.5 508.6,163.9 510.8,160.4 512.9,199.9 515,190.3 517.2,192.3 519.3,185.3 521.4,175.2 523.6,148 525.7,143.6 527.8,137.5 530,135.8 532.1,138.2 534.2,129 536.4,149.7 538.5,145.6 540.6,155 542.8,165.2 544.9,167.9 547,168.8 549.2,153.5 551.3,149.6 553.4,135.1 555.6,123.6 557.7,121 559.8,108.9 562,108.4 564.1,106.1 566.3,113.7 568.4,112.5 570.5,108.7 572.7,111.5 574.8,116.9 576.9,115.5 579.1,111.5 581.2,109.3 583.3,122.3 585.5,127.1 587.6,139.4 589.7,147.9 591.9,152.4 594,156.9 596.1,145.9 598.3,153.1 600.4,151.2 602.5,146.5 604.7,148.1 606.8,152.8 608.9,139.4 611.1,134.5 613.2,129.1 615.3,132.7 617.5,119.9 619.6,121.8 621.7,134.7 623.9,82.1 626,79 628.1,85.8 630.3,97.4 632.4,101.3 634.5,96.6 636.7,142.8 638.8,137.3 640.9,133.6 643.1,116 645.2,97.6 647.3,92.9 649.5,88.7 651.6,83.9 653.7,87.3 655.9,106.9 658,125.4 660.1,138.7 662.3,165.6 664.4,187.4 666.5,193.1 668.7,195.7 670.8,196.2 672.9,189.4 675.1,172.7 677.2,163.6 679.3,156.2 681.5,150.3 683.6,154.9 685.7,154.8 687.9,140.1 690,139.1 692.1,137.9 694.3,134.7 696.4,122.6 698.5,120.6 700.7,122.4 702.8,126 704,126.4" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="122.4" cy="40.9" r="3" fill="#1c1c1a"/><text x="114.4" y="30.9" text-anchor="end" font-size="10.5" fill="#1c1c1a">1979 通胀期峰值 14.4%</text><circle cx="495.1" cy="245.7" r="3" fill="#1c1c1a"/><text x="489.1" y="231.7" text-anchor="end" font-size="10.5" fill="#1c1c1a">2009-10 低点 −5.4%（银行集体收缩）</text><circle cx="627.2" cy="85.9" r="3" fill="#1c1c1a"/><text x="617.2" y="75.9" text-anchor="end" font-size="10.5" fill="#1c1c1a">2020-07 政策脉冲 +10.0%</text><circle cx="704" cy="126.4" r="3" fill="#1c1c1a"/><text x="696" y="110.4" text-anchor="end" font-size="10.5" fill="#1c1c1a">现在 6.1%</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">灰色竖带=NBER 认定的美国衰退区间</text>
+</svg>
+<figcaption><strong>美国商业银行信贷总量同比增速（周频，52 周滚动），1974-01 至 2026-09-16</strong>：<a href="https://fred.stlouisfed.org/series/TOTBKCR">FRED TOTBKCR</a>，同比由周度序列自行计算（52 周前比值）；灰色竖带=NBER 衰退区间。看点：银行部门卡片的「顺周期」不是比喻——衰退带里信贷增速每次跳水（2009-10 低点 −5.4%，银行集体收缩放贷）；2020-07 的 +10.0% 脉冲=疫情期政策性紧急贷款（PPP），不是银行自主行为；当前 6.1% 处于扩张区间。</figcaption>
+</figure>
+
 <h2><span class="no">02</span>六张玩家卡片：目标×约束×行为 <span class="time-chip">≈12 min</span></h2>
-<p class="lede">预判行为的标准姿势：先问这个玩家<strong>想要什么</strong>（目标），再问<strong>什么绑住了它</strong>（约束），行为模式自然浮出。六张卡片一次建齐——之后整个课程遇到任何部门动作，都回这张表查。</p>
+<p class="lede">预判行为的标准姿势：先问玩家<strong>想要什么</strong>（目标），再问<strong>什么绑住了它</strong>（约束），行为模式自然浮出。六张卡片一次建齐，之后全课程遇到部门动作都回这张表查。</p>
 <table>
   <thead>
     <tr><th>部门</th><th>目标</th><th>约束</th><th>典型行为模式</th></tr>
@@ -140,13 +103,34 @@
   </tbody>
 </table>
 
-<p>三张卡片值得多看两眼。<strong>银行体系</strong>是唯一「繁荣时制造繁荣、衰退时制造衰退」的部门——它的顺周期性就是 0002 信用自我强化的部门化身。<strong>海外部门</strong>的读法取决于你站的位置：对美国，海外=外需与美债买家；对新兴市场，海外=美元潮汐的水位（P2 专门展开）。<strong>财政与央行</strong>是仅有的两个「实心」政策部门——它们不追求利润，追求目标变量，这正是 03 节反应函数的前提。</p>
+<p>先补一行官方书源：美联储对自身使命的法定表述是国会授权的「<strong>最大限度就业、稳定物价与适度的长期利率</strong>」（dual mandate，双重使命，《The Fed Explained》第 3 章）——卡片上央行那行的目标栏，就是这句原文的教学化；其自述的常规工具=管理利率与证券买卖（同章）。</p>
+<p>三张卡片值得多看两眼。<strong>银行体系</strong>是唯一「繁荣时制造繁荣、衰退时制造衰退」的部门——它的顺周期性就是 0002 信用自我强化的部门化身（01 节下方信贷图即实证）。<strong>海外部门</strong>的读法取决于你站的位置：对美国，海外=外需与美债买家；对新兴市场，海外=美元潮汐的水位（P2 专门展开）。<strong>财政与央行</strong>是仅有的两个「实心」政策部门——它们不追求利润，追求目标变量，这正是 03 节反应函数的前提。</p>
 
-<div class="note">「贷款创造存款」落到卡片语言：银行放贷的约束是资本与监管（卡片第二栏），不是「先有存款」。这半页是 P2 央行工具箱的钩子，现在只需记住：信贷的闸门在银行的风险决策与监管规则，不在储蓄池。</div>
+<div class="note">「贷款创造存款」落到卡片语言：银行放贷的约束是资本与监管（卡片第二栏），不是「先有存款」。央行公开市场操作的书源表述（同章）：纽约联储交易台买入证券时「以记入准备金账户的方式支付」——<strong>买债→银行体系准备金增加</strong>，这就是 01 节图上「央行→银行」那条箭头的记账本质。信贷的闸门在银行的风险决策与监管规则，不在储蓄池。</div>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="美国个人储蓄率 2000-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="272" x2="704" y2="272" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="275.5" text-anchor="end" font-size="10" fill="#6e6c64">0%</text><line x1="52" y1="201.1" x2="704" y2="201.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="204.6" text-anchor="end" font-size="10" fill="#6e6c64">10%</text><line x1="52" y1="130.3" x2="704" y2="130.3" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="133.8" text-anchor="end" font-size="10" fill="#6e6c64">20%</text><line x1="52" y1="59.4" x2="704" y2="59.4" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="62.9" text-anchor="end" font-size="10" fill="#6e6c64">30%</text><line x1="52" y1="272" x2="52" y2="276" stroke="#6e6c64"/><text x="52" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2000</text><line x1="175.1" y1="272" x2="175.1" y2="276" stroke="#6e6c64"/><text x="175.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2005</text><line x1="298.1" y1="272" x2="298.1" y2="276" stroke="#6e6c64"/><text x="298.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2010</text><line x1="421.1" y1="272" x2="421.1" y2="276" stroke="#6e6c64"/><text x="421.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2015</text><line x1="544.1" y1="272" x2="544.1" y2="276" stroke="#6e6c64"/><text x="544.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="667.2" y1="272" x2="667.2" y2="276" stroke="#6e6c64"/><text x="667.2" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2025</text><polyline points="52,240.1 54.1,243.7 56,245.1 58.1,241.5 60.2,241.5 62.2,241.5 64.3,238.7 66.3,238 68.4,242.9 70.5,241.5 72.5,241.5 74.6,242.9 76.7,240.1 78.7,239.4 80.6,237.3 82.7,238 84.7,241.5 86.8,242.2 88.9,233.7 90.9,225.9 93,223.1 95,251.5 97.1,247.9 99.2,245.8 101.2,232.3 103.3,233.7 105.2,233 107.3,233.7 109.3,228.8 111.4,228.8 113.4,234.4 115.5,235.2 117.6,230.9 119.6,232.3 121.7,232.3 123.7,234.4 125.8,234.4 127.9,235.2 129.8,237.3 131.9,236.6 133.9,234.4 136,235.9 138,230.2 140.1,231.6 142.2,237.3 144.2,236.6 146.3,236.6 148.3,236.6 150.4,239.4 152.5,239.4 154.5,240.1 156.6,237.3 158.6,238 160.7,233.7 162.7,238.7 164.8,238.7 166.9,242.9 168.9,244.4 171,247.9 173,228.1 175.1,252.9 177.2,255.7 179.1,254.3 181.1,257.1 183.2,253.6 185.3,257.8 187.3,262.1 189.4,257.8 191.5,257.8 193.5,255.7 195.6,253.6 197.6,254.3 199.7,250.7 201.8,249.3 203.6,248.6 205.7,250 207.8,251.5 209.8,251.5 211.9,255.7 214,254.3 216,255 218.1,255 220.2,252.9 222.2,253.6 224.3,255 226.4,252.2 228.2,250.7 230.3,250.7 232.3,252.2 234.4,252.9 236.5,253.6 238.5,256.4 240.6,255.7 242.7,256.4 244.7,258.5 246.8,255 248.9,253.6 250.9,250.7 252.9,251.5 255,255 257,223.8 259.1,239.4 261.1,246.5 263.2,250 265.3,244.4 267.3,237.3 269.4,229.5 271.4,230.9 273.5,230.2 275.6,233.7 277.5,230.9 279.6,225.9 281.6,216.7 283.7,228.8 285.7,233.7 287.8,240.8 289.9,233 291.9,235.9 294,233 296,233.7 298.1,232.3 300.2,234.4 302.1,234.4 304.2,229.5 306.2,226.7 308.3,228.1 310.3,228.8 312.4,228.1 314.5,228.8 316.5,230.2 318.6,230.9 320.6,228.1 322.7,225.2 324.8,223.1 326.7,227.4 328.8,227.4 330.8,227.4 332.9,225.9 334.9,224.5 337,224.5 339.1,226.7 341.1,227.4 343.2,226.7 345.2,221 347.3,219.6 349.4,220.3 351.3,218.1 353.4,216 355.4,216 357.5,216 359.5,222.4 361.6,224.5 363.7,221 365.7,216.7 367.8,210.4 369.8,194.8 371.9,237.3 374,238.7 375.9,238 378,235.9 380,234.4 382.1,233.7 384.1,235.2 386.2,235.2 388.3,234.4 390.3,238.7 392.4,240.1 394.4,240.1 396.5,235.2 398.6,234.4 400.5,235.2 402.6,233.7 404.6,232.3 406.7,232.3 408.7,233 410.8,234.4 412.9,233 414.9,233.7 417,232.3 419,229.5 421.1,227.4 423.2,226.7 425.1,230.2 427.2,230.2 429.2,230.9 431.3,231.6 433.3,232.3 435.4,232.3 437.5,230.9 439.5,230.9 441.6,232.3 443.6,230.9 445.7,228.8 447.8,232.3 449.7,230.2 451.8,233 453.9,234.4 455.9,237.3 458,235.9 460.1,235.9 462.1,235.9 464.2,234.4 466.3,233.7 468.3,236.6 470.4,234.4 472.5,232.3 474.3,232.3 476.4,231.6 478.4,227.4 480.5,229.5 482.6,229.5 484.6,228.8 486.7,230.2 488.8,229.5 490.8,232.3 492.9,236.6 495,231.6 497,230.9 498.9,230.2 501,229.5 503,229.5 505.1,227.4 507.1,225.9 509.2,225.2 511.3,223.8 513.3,224.5 515.4,225.9 517.5,212.5 519.5,212.5 521.6,211.8 523.5,216 525.6,218.1 527.6,220.3 529.7,221.7 531.7,223.8 533.8,223.1 535.9,222.4 537.9,221.7 540,223.1 542,228.1 544.1,223.8 546.2,218.9 548.2,184.1 550.3,46.7 552.3,111.9 554.4,142.3 556.4,145.2 558.5,173.5 560.6,177.8 562.6,181.3 564.7,187 566.7,188.4 568.8,133.8 570.9,179.9 572.8,86.4 574.9,184.1 576.9,201.1 579,209.6 581,204.7 583.1,210.4 585.2,218.1 587.2,222.4 589.3,225.2 591.3,225.2 593.4,242.2 595.5,242.9 597.4,249.3 599.4,253.6 601.5,253.6 603.6,256.4 605.6,248.6 607.7,249.3 609.8,247.9 611.8,247.9 613.9,245.1 615.9,242.2 618,237.3 620.1,233 621.9,229.5 624,230.9 626.1,228.8 628.1,230.9 630.2,233 632.3,232.3 634.3,234.4 636.4,233.7 638.4,232.3 640.5,232.3 642.6,226.7 644.6,228.8 646.6,230.2 648.7,230.9 650.7,230.9 652.8,231.6 654.8,234.4 656.9,235.2 659,238 661,236.6 663.1,237.3 665.1,241.5 667.2,235.9 669.3,235.2 671.2,235.9 673.3,233 675.3,237.3 677.4,239.4 679.4,240.1 681.5,240.8 683.6,241.5 685.6,244.4 687.7,245.1 689.7,246.5 691.8,240.8 693.9,245.1 695.8,247.2 697.9,251.5 699.9,252.2 702,253.6 704,250.7" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="550.3" cy="46.7" r="3" fill="#1c1c1a"/><text x="540.3" y="36.7" text-anchor="end" font-size="10.5" fill="#1c1c1a">2020-04 峰值 31.8%（防御性储蓄）</text><circle cx="704" cy="250.7" r="3" fill="#1c1c1a"/><text x="682" y="224.7" text-anchor="end" font-size="10.5" fill="#1c1c1a">现在 3.0%</text>
+</svg>
+<figcaption><strong>美国个人储蓄率（月频，占可支配收入比例），2000-01 至 2026-07</strong>：<a href="https://fred.stlouisfed.org/series/PSAVERT">FRED PSAVERT</a>，最新 3.0%。看点：家户卡片「信心与资产负债表驱动行为」的实证——2020-04 疫情冲击下储蓄率脉冲至 31.8%（防御性储蓄+转移支付无法消费），随后一路回落；当前 3.0% 处于几十年低位区间——消费有韧性但「储蓄缓冲垫」很薄，这正是家户部门行为模式对宏观的含义。</figcaption>
+</figure>
 
 <h2><span class="no">03</span>反应函数雏形 <span class="time-chip">≈7 min</span></h2>
 <p class="lede">把「目标×约束→行为」压缩成一个可操作的概念：<strong>反应函数</strong>（reaction function）——把玩家的行动写成它观察到的状态变量的函数。读央行的正确姿势不是猜它「想什么」，而是问「它的目标变量现在在哪儿，按它的函数下一步是什么」。</p>
-<p>美联储的直觉版本：<strong>通胀高于目标↑ + 就业强于充分就业 → 收紧；通胀回落 + 就业走弱 → 放松</strong>。输入是数据（P1 数据流整章），输出是政策利率与资产负债表（P2 工具箱）。这个直觉版在学界有一个著名的形式化近亲——泰勒规则（Taylor rule，利率对通胀与产出缺口的线性响应），但真实 FOMC 从不机械照搬：他们看的数据更广、权重随环境变化、还受沟通与预期管理的约束。你现在要建立的只是「函数思维」，不是公式。</p>
+<p>美联储的直觉版本：<strong>通胀高于目标↑ + 就业强于充分就业 → 收紧；通胀回落 + 就业走弱 → 放松</strong>。输入是数据（P1 整章），输出是政策利率与资产负债表（P2 工具箱）。形式化近亲=泰勒规则（见下方例块），但真实 FOMC 从不机械照搬——数据更广、权重随环境变、还受预期管理约束。你要建立的是「函数思维」，不是公式。</p>
+<div class="example">
+<p class="ex-title">用泰勒规则当一次央行（数值演算，Mishkin 13e 第 17 章「货币政策的工具」节）</p>
+<p>教科书的反应函数形式化近亲——泰勒规则：目标利率 = 通胀率 + 2% 均衡实际利率 + ½·通胀缺口 + ½·产出缺口。代一组数：</p>
+<table>
+  <thead><tr><th>输入（当期读数）</th><th>代入</th></tr></thead>
+  <tbody>
+    <tr><td>通胀 4.0%（目标 2%）</td><td class="num">4.0 + 2.0 + ½×(4.0−2.0) = 7.0%</td></tr>
+    <tr><td>产出缺口 +1.0%</td><td class="num">+ ½×1.0 = 7.5%</td></tr>
+  </tbody>
+</table>
+<p>规则说 7.5%，而 2022–23 年实际政策利率峰值是 5.33%——<strong>规则是尺子，不是自动驾驶</strong>。Mishkin 同时强调泰勒原则（Taylor principle）：通胀每升 1 个百分点，名义利率须上调<strong>超过</strong> 1 个百分点，否则实际利率下降、政策反而在放松——1970 年代大通胀就是违反它的样本。读央行新闻时用这把尺子量一量「相对规则偏鹰还是偏鸽」，比读形容词有用得多。</p>
+</div>
+
 <p>中国央行的反应函数读起来更难：<strong>多目标</strong>（增长、物价、汇率稳定、金融防风险）意味着同一个数据组合可能对应不同动作——2015–16 汇率承压期，内部稳增长与外部稳汇率的目标一度拉扯政策选择（P5 案例课复盘）。多目标不等于没有函数，只是函数的自变量更多——这正是「读卡片」比「读标题」值钱的地方。</p>
 
 <div class="tip">从今天起，读任何央行新闻先填三个空：<strong>目标变量在哪（数据）？政策空间多大（利率离零多远、汇率的约束）？函数输出什么（加息/降息/QE/表态）？</strong>三个空填完，新闻的形容词就多余了。</div>
@@ -169,7 +153,19 @@
 <p>注意结构：<strong>央行是唯一的「第一行动者」，其余五家都在对央行的反应函数做反应</strong>——银行收紧、家户防御、企业收缩、海外承压，层层展开就是 0001 那条「加息怎么打到 BTC」的传导链。玩家地图让你看清：传导链不是抽象的「市场」，是六本账本同时翻页。</p>
 
 <h2><span class="no">05</span>边界与反证 <span class="time-chip">≈4 min</span></h2>
-<p><strong>反函数不是合同。</strong>反应函数会变：FOMC 主席换届、政策框架定期评审（如 2020 年平均通胀目标制引入、2025 年前后对其再评估的讨论）都会改变函数形状。用「函数思维」读央行，不等于假设函数永不变。</p>
+<p><strong>反应函数不是合同。</strong>函数会随主席换届与定期框架评审改变形状——时间线：</p>
+<table>
+  <thead>
+    <tr><th>时间</th><th>框架事件</th><th>反应函数的含义变化</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>2012</td><td>首次发布《长期目标与货币政策策略声明》</td><td>2% 通胀目标成文</td></tr>
+    <tr><td>2015–18</td><td>政策正常化周期</td><td>零下限时代的退出路径模板</td></tr>
+    <tr><td>2019–20</td><td>首次框架评审，引入平均通胀目标制（FAIT）</td><td>允许通胀「适度高于 2%」补欠账；就业按「缺口」而非「偏差」评估</td></tr>
+    <tr><td>2024–25</td><td>第二次框架评审，调整 2020 年表述</td><td>弱化平均通胀目标语言——高通胀十年的经验回写进函数</td></tr>
+  </tbody>
+</table>
+<p>用「函数思维」读央行，不等于假设函数永不变——评审年份就是函数的「版本号」。</p>
 <p><strong>玩家会互相打架。</strong>财政与央行的目标可能同向（2008、2020 危机协同）也可能对冲（2023：美联储加息收紧，财政赤字仍在扩张——紧货币+宽财政的组合让金融条件没有表面看起来那么紧）。六张卡片要同时读，单一部门读数会骗人。</p>
 <p><strong>「部门」是简化。</strong>现实中企业部门里既有借钱的开发商也有囤现金的科技公司，家户里既有负债的购房者也有吃利息的储户——通胀与加息在同一部门内部制造赢家输家。P0 的六部门是第一近似，分辨率不够时（P4 跨资产）会升级拆分。</p>
 
@@ -273,7 +269,7 @@
 <div class="stop">M0.2 结业标准（显式）：不看卡片，列出六部门各自的目标与约束，并说出至少一条行为模式；能用「目标变量在哪→函数输出什么」读一条当期央行新闻。检测：本课训练场五题 ≥80%（错 0–1）且隔天重练仍达标。未过按判分指引回对应节补救后重测，不锁后续课。</div>
 
 <p><strong>课外作业：</strong></p>
-<p>（1）<strong>阅读任务（必做）</strong>：美联储《<a href="https://www.federalreserve.gov/aboutthefed/pf.htm">The Federal Reserve System: Purposes &amp; Functions</a>》第 10 版（免费 PDF）中的「货币政策工具」（Monetary Policy Tools）一章——只读一章，验证你卡片上央行那行的约束栏写得对不对。</p>
+<p>（1）<strong>阅读任务（必做）</strong>：美联储《<a href="https://www.federalreserve.gov/aboutthefed/files/the-fed-explained.pdf">The Fed Explained</a>》（免费 PDF，Purposes and Functions 的现行继任文件）第 3 章「货币政策的实施」——只读一章，验证你卡片上央行那行的目标与约束栏写得对不对。</p>
 <p>（2）<strong>课后探索（可选）</strong>：打开人民银行官网最新一期《货币政策执行报告》，找到开篇的目标陈述段——把央行自己列出的目标清单抄下来，与你的六部门卡片对照：多了什么、少了什么。CORE 宏观卷 <a href="https://www.core-econ.org/the-economy/">U3（总需求）与 U10（政府）</a>是本课的教科书底座，供延伸。</p>
 <p>（3）<strong>日常习惯（永久生效）</strong>：新闻里出现任何部门动作（加息、放贷、减税、资本外流），先默念一遍「它的目标×约束→它为什么这么做」，再读正文。一周后你会发现：宏观新闻的预测难度大幅下降——因为玩家只有六个。</p>
 <p><strong>下一课 0004《三大市场互锁》</strong>：六位玩家交易的场地——货币、债券、外汇三个市场如何互相定价。利率一动，三个市场同时翻页。</p>
@@ -287,8 +283,8 @@
     <a href="../reference/0001-macro-dashboard.html">宏观仪表盘</a>
     <a href="0004-three-markets.html">下一课 0004 →</a>
   </div>
-  <p><strong>主资源（本课 grounded on）</strong>：CORE 宏观卷 U3（总需求与乘数：部门循环的模型化）与 U10（政府作为经济行为者：财政目标与约束），core-econ.org 免费在线；美联储《Purposes and Functions》第 10 版（央行目标与工具的官方一手表述）；六部门框架为达利欧模板（0001 主资源）的教学化扩展。</p>
-  <div class="citations"><strong>本课图示：</strong>六部门资金流向图=教学示意图（非数据图），流向为简化主干，省略同业/资本市场与央行-财政直接往来（P2 补全）。<strong>案例数据：</strong>2022-06 美国 CPI 同比 9.1%（BLS，历史值）；2022-03 至 2022-12 累计加息 425bp、其中 6/9/7/11 月四次各 75bp（FOMC 声明原件）；2023 紧货币+宽财政组合、2020-03 Fed 购买公司债（SMCCF 等危机工具）均为公开政策事实。<strong>方法论提示：</strong>「目标×约束→行为」是教学用直觉框架，非机构行为的实证模型；泰勒规则仅作反应函数的形式化近亲提及。</div>
+  <p><strong>主资源（本课 grounded on）</strong>：CORE 宏观卷 U3（总需求与乘数：部门循环的模型化）与 U10（政府作为经济行为者：财政目标与约束），core-econ.org 免费在线；美联储《The Fed Explained》（2024，Purposes and Functions 的现行继任文件）第 3 章（央行目标与工具的官方一手表述）；六部门框架为达利欧模板（0001 主资源）的教学化扩展。</p>
+  <div class="citations"><strong>书源登记（本课内化的书源材料）：</strong>①双重使命法定原文与常规工具自述——《The Fed Explained》第 3 章（02 节）；②公开市场操作「记入准备金账户」的记账链——同章（02 节注）；③泰勒规则公式与泰勒原则——Mishkin《货币金融学》13e 第 17 章（03 节例块；注：在政策工具章之后的「工具」节，非第 16 章）。书籍图表未复制；本课两图两表均自绘/自算。<strong>本课图示：</strong>六部门资金流向图=教学示意图（非数据图），流向为简化主干，省略同业/资本市场与央行-财政直接往来（P2 补全）。<strong>案例数据：</strong>2022-06 美国 CPI 同比 9.1%（BLS，历史值）；2022-03 至 2022-12 累计加息 425bp、其中 6/9/7/11 月四次各 75bp（FOMC 声明原件）；2023 紧货币+宽财政组合、2020-03 Fed 购买公司债（SMCCF 等危机工具）均为公开政策事实。<strong>方法论提示：</strong>「目标×约束→行为」是教学用直觉框架，非机构行为的实证模型；泰勒规则仅作反应函数的形式化近亲提及。</div>
 </footer>
 
 </div>

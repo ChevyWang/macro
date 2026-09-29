@@ -17,7 +17,7 @@
     <span>P0 宏观语言 · M0.1 结业</span>
   </div>
   <h1>信用周期与债务天花板</h1>
-  <p class="deck">上一课装好了经济机器的传动轴；这一课把镜头拉远——看这台机器几十年间如何一级一级垫高自己，以及垫到头的时候，历史给过哪几种下场。本课约 55–70 分钟（先猜与作业清算 8 + 正文与图 30–38 + 训练场 12–15 + 动笔与小结 5）。前置要求：第 0001 课 + 达利欧《经济机器是怎样运转的》视频作业（三个概念）——本课开场就要用。</p>
+  <p class="deck">上一课装好了经济机器的传动轴；这一课把镜头拉远——看这台机器几十年间如何一级一级垫高自己，以及垫到头的时候，历史给过哪几种下场。本课约 65–85 分钟（先猜与作业清算 8 + 正文与图、图组与模拟器 38–48 + 训练场 12–15 + 动笔与小结 5）。前置要求：第 0001 课 + 达利欧《经济机器是怎样运转的》视频作业（三个概念）——本课开场就要用。</p>
 </header>
 
 <aside class="callout"><b>本次核心动作</b>：给债务周期「定位」——短周期走到哪儿、长周期走到哪儿、如果到头会是哪种去杠杆。定位靠看图与问三个问题，不靠背年代背数字；本课不预测「何时崩盘」——债务图不产生择时信号，它评估的是韧性。宏观不负责 Entry 的护栏继续有效。</aside>
@@ -99,11 +99,24 @@
 </script>
 </quiz-block>
 
+<video-card>
+<script type="application/json">
+{
+  "title": "How the Economic Machine Works（经济机器是怎样运转的）",
+  "duration": "约 31 分钟",
+  "source": "Principles by Ray Dalio 官方频道（官方源）",
+  "youtube": "PHe0bXAIuk0",
+  "fallback": "https://www.economicprinciples.org/",
+  "search": "B站检索：达利欧 经济机器是怎样运转的 中字"
+}
+</script>
+</video-card>
+
 <p>概念三<strong>「推动生产率」</strong>不用选择题：它是 0001 燃料表里那行慢变量的正身。去杠杆的每一种结局里，最终把经济抬出泥潭的都是生产率——收入增长的本质来源；央行和财政只能争取时间、决定疼痛如何分配。视频 30 分钟讲的所有机制，都建立在「支出=他人收入」这一句 0001 的地基上——现在把地基垫高一层。</p>
 
 <h2><span class="no">02</span>短期债务周期：为什么一波比一波高 <span class="time-chip">≈8 min</span></h2>
 <p class="lede">回看 0001 的利率七十年图：利率被反复推高又压低，大约 5–8 年一轮，九次衰退带几乎都紧跟在利率顶点之后。这一节回答一个更细的问题：为什么每一轮周期结束，经济垫着比上一轮更厚的债务站起来？</p>
-<p>沿着传动轴走一遍。扩张期：降息→借贷便宜→信用扩张→支出与收入互相推高→资产价格上涨→抵押品更值钱→能借更多（<strong>信用自我强化</strong>，self-reinforcing）。过热期：通胀抬头，央行加息踩刹车。衰退期：借贷变贵、信用收缩、支出下滑——但注意一个不对称：<strong>衰退里被清掉的债务远少于直觉</strong>。降息止住衰退靠的是「让借新债变便宜」，不是「让旧债消失」；破产清算掉的只是边缘部分。于是复苏一到，扩张从<strong>比上一轮更高的债务底座</strong>上重新出发。</p>
+<p>沿传动轴走一遍。扩张期：降息→信用扩张→支出收入互相推高→资产涨价→抵押品更值钱→能借更多（<strong>信用自我强化</strong>，self-reinforcing）。过热：通胀抬头，央行加息。衰退：信用收缩、支出下滑——但注意不对称：<strong>衰退里被清掉的债务远少于直觉</strong>，降息止住衰退靠「借新债变便宜」而非「旧债消失」。于是复苏一到，扩张从<strong>比上一轮更高的债务底座</strong>重新出发。</p>
 
 <table>
   <thead>
@@ -119,6 +132,15 @@
 
 <div class="note">每一轮衰退只清掉债务的边角，每一轮扩张都从更高的底座起步——把几十个短期周期叠起来，就是长期债务周期。短期周期是央行在利率空间里来回踱步；长期周期是这间屋子本身在缓慢下沉。</div>
 
+<sim-block>
+<script type="application/json">
+{
+  "sim": "debt-cycle",
+  "q": "你当央行：拖动政策利率与信贷情绪，看信用→收入→债务底座怎么联动；勾上「央行自动反应」看短期周期怎么一轮轮滚出来、债务底座怎么垫高；最后把利率拖到 0、信贷情绪压到审慎——亲眼看一次「推绳子」。"
+}
+</script>
+</sim-block>
+
 <h2><span class="no">03</span>长期债务周期与债务天花板 <span class="time-chip">≈12 min</span></h2>
 <p class="lede">债务收入比长期抬升的数学很简单：只要债务增速持续快于收入增速，利息负担就指数式累积——总有一天，新增收入不够付新增利息。<strong>债务天花板（debt ceiling / debt limit 不是美国国会的那个法案，是达利欧意义上的极限点）</strong>指的就是这个位置：央行把利率降到零、经济仍无法靠新信用重启增长——推绳子（pushing on a string）。</p>
 <p>到头与否，看三个信号，不看任何固定数字：</p>
@@ -133,7 +155,14 @@
   </tbody>
 </table>
 
-<div class="stat">利息负担的量级感受：美国联邦利息支出占 GDP 已回到 3.2%（2025 财年，FRED 序列 FYOIGDA188S，总利息口径）——1990 年代初以来的高位；而联邦债务持有公众口径为 GDP 的 98.7%（2026 年一季度，下图序列最新值）。</div>
+<div class="stat">利息负担的量级感受：美国联邦利息支出占 GDP 已回到 3.2%（2025 财年，FRED 序列 FYOIGDA188S，总利息口径）——追平 1991 年的上一轮峰值；而联邦债务持有公众口径为 GDP 的 98.7%（2026 年一季度，下图序列最新值）。</div>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="美国联邦利息支出占GDP比例 1970-2025" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="272" x2="704" y2="272" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="275.5" text-anchor="end" font-size="10" fill="#6e6c64">0%</text><line x1="52" y1="210" x2="704" y2="210" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="213.5" text-anchor="end" font-size="10" fill="#6e6c64">1%</text><line x1="52" y1="148" x2="704" y2="148" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="151.5" text-anchor="end" font-size="10" fill="#6e6c64">2%</text><line x1="52" y1="86" x2="704" y2="86" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="89.5" text-anchor="end" font-size="10" fill="#6e6c64">3%</text><line x1="52" y1="24" x2="704" y2="24" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="27.5" text-anchor="end" font-size="10" fill="#6e6c64">4%</text><line x1="52" y1="272" x2="52" y2="276" stroke="#6e6c64"/><text x="52" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">1970</text><line x1="170.5" y1="272" x2="170.5" y2="276" stroke="#6e6c64"/><text x="170.5" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">1980</text><line x1="289.1" y1="272" x2="289.1" y2="276" stroke="#6e6c64"/><text x="289.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">1990</text><line x1="407.6" y1="272" x2="407.6" y2="276" stroke="#6e6c64"/><text x="407.6" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2000</text><line x1="526.2" y1="272" x2="526.2" y2="276" stroke="#6e6c64"/><text x="526.2" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2010</text><line x1="644.7" y1="272" x2="644.7" y2="276" stroke="#6e6c64"/><text x="644.7" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><rect x="97.4" y="24" width="16.7" height="248" fill="rgba(28,28,26,.09)"/><rect x="170.5" y="24" width="6.9" height="248" fill="rgba(28,28,26,.09)"/><rect x="188.3" y="24" width="16.8" height="248" fill="rgba(28,28,26,.09)"/><rect x="295" y="24" width="8.9" height="248" fill="rgba(28,28,26,.09)"/><rect x="421.4" y="24" width="8.9" height="248" fill="rgba(28,28,26,.09)"/><rect x="501.4" y="24" width="18.7" height="248" fill="rgba(28,28,26,.09)"/><rect x="645.7" y="24" width="2.9" height="248" fill="rgba(28,28,26,.09)"/><polyline points="52,188.9 63.8,193 75.7,197 87.6,196.5 99.4,185.9 111.3,186.5 123.1,183.5 135,183 146.8,178.5 158.7,171.4 170.5,158 182.4,139.1 194.3,114.3 206.1,118.8 217.9,101.4 229.8,87 241.7,87.9 253.5,95 265.4,92.3 277.2,86.3 289.1,80.3 300.9,76.2 312.8,82.4 324.7,92.4 336.5,99.3 348.4,83.6 360.2,86.9 372.1,95.6 383.9,107 395.8,124.1 407.6,137.2 419.5,151.2 431.3,175 443.2,189.2 455,190.7 466.9,184.5 478.8,170.3 490.6,170.4 502.5,165.9 514.3,192 526.2,191.2 538,180.6 549.9,187.9 561.7,190.9 573.6,191.4 585.4,196.4 597.3,192.9 609.2,189 621,174.5 632.9,164 644.7,171.8 656.6,179.9 668.4,158.8 680.3,125.3 692.1,85.8 704,76.5" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="300.9" cy="76.1" r="3" fill="#1c1c1a"/><text x="292.9" y="64.1" text-anchor="end" font-size="10.5" fill="#1c1c1a">1991 峰值 3.16%</text><circle cx="704" cy="76.7" r="3" fill="#1c1c1a"/><text x="696" y="60.7" text-anchor="end" font-size="10.5" fill="#1c1c1a">2025=3.15%（追平 1991）</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">灰色竖带=NBER 认定的美国衰退区间</text>
+</svg>
+<figcaption><strong>美国联邦利息支出占 GDP 比例（年度，财年，1970 至 2025）</strong>：<a href="https://fred.stlouisfed.org/series/FYOIGDA188S">FRED FYOIGDA188S</a>（总利息口径）；灰色竖带=NBER 衰退区间。看点：信号②「偿债负担吃掉支出」的实证——利息负担 1990 年代见顶（3.16%）后随利率长降与增长消化而回落，如今在债务/GDP 翻倍的底座上重新追平峰值（3.15%）：同样的利息负担，支撑它的债务存量翻了一倍。<strong>低利率时代掩盖了杠杆——利率正常化的过程，就是天花板压力测试的过程</strong>。</figcaption>
+</figure>
 
 <p>现在把镜头放到图上。这是本课唯一一张图，但值得看三遍：第一遍看形状（一级一级垫高的台阶），第二遍对照衰退带（每次危机=一次台阶跳升），第三遍做 worked example——给美国当下定位。</p>
 
@@ -149,7 +178,14 @@
 <div class="note">口径纪律（本课起每次读债务数字都带口径）：本图=持有公众口径（不含政府内部持有）；若用总联邦债务口径（<a href="https://fred.stlouisfed.org/series/GFDEGDQ188S">FRED GFDEGDQ188S</a>），2026-Q1 为 122.6%。差出 24 个百分点的不是误差，是口径。另外记住一个结构区别：美国债务几乎全为本币债；外币债占比高的新兴市场，天花板低得多——同一个百分比数字，含义完全不同（P3 案例课展开）。</div>
 
 <h2><span class="no">04</span>三种去杠杆 <span class="time-chip">≈8 min</span></h2>
-<p class="lede">长期周期到头，经济体必须在四种工具（紧缩支出、违约/重组、财富再分配、印钞）里做组合。达利欧把历史上的组合结果分成三种结局——先看对照表，再逐个走机制。</p>
+<p class="lede">长期周期到头，经济体必须在四种工具里做组合。《债务危机》模板章的原话（第 2 章）：四条路=紧缩支出、债务违约/重组、财富转移、印钞（购买资产或提供担保）——「有些是通胀性的，有些是通缩性的……创造漂亮去杠杆的关键在于取得正确的平衡」。组合的结果就是三种结局——先看路径图与对照表，再逐个走机制。</p>
+
+<figure>
+<svg viewBox="0 0 720 310" role="img" aria-label="三种去杠杆路径的债务/GDP 示意曲线" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<polyline points="60,258 150,252 230,240 300,216 345,150 380,88" fill="none" stroke="#6e6c64" stroke-width="1.2"/><polyline points="380,88 430,58 520,44 600,50 640,56" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><polyline points="380,88 440,124 510,170 590,205 640,222" fill="none" stroke="#1c1c1a" stroke-width="1.8" stroke-dasharray="6 4"/><polyline points="380,88 420,140 460,215 520,250 600,256 640,254" fill="none" stroke="#1c1c1a" stroke-width="1.8" stroke-dasharray="2 3"/><circle cx="380" cy="88" r="3.5" fill="#1c1c1a"/><text x="300" y="62" text-anchor="end" font-size="10.5" fill="#1c1c1a" font-weight="700">泡沫顶点（长期周期到头）</text><line x1="380" y1="88" x2="380" y2="282" stroke="#e4e2d9" stroke-width="1"/><text x="648" y="60" font-size="10" fill="#1c1c1a" font-weight="700">通缩型</text><text x="648" y="226" font-size="10" fill="#1c1c1a" font-weight="700">漂亮</text><text x="648" y="258" font-size="10" fill="#1c1c1a" font-weight="700">通胀型</text><line x1="52" y1="282" x2="700" y2="282" stroke="#6e6c64" stroke-width="1"/><text x="56" y="24" font-size="10.5" fill="#1c1c1a" font-weight="700">债务 / GDP（示意刻度）</text><text x="690" y="298" text-anchor="end" font-size="10" fill="#6e6c64">时间（年，示意）</text>
+</svg>
+<figcaption><strong>三种去杠杆路径：同一泡沫顶点之后的三条债务/GDP 曲线（教学示意图）</strong>：仿 Dalio《Big Debt Crises》模板章原型弧线（第 3 章）自绘重制。要点：①萧条段通缩型的比率<strong>不降反升</strong>——债务是名义数字、收入分母在塌陷（债务通缩）；②漂亮去杠杆的比率拐头下行靠的是名义收入增速反超，不是赖账；③通胀型名义稀释最快，代价记在汇率与物价上。图中线端短标签对应：实线=通缩型、长虚线=漂亮去杠杆、点线=通胀型。印钞介入的早晚，决定拐点先后（书第 3 章：美国 2008 vs 1930–33 的对照）。</figcaption>
+</figure>
 <table>
   <thead>
     <tr><th>结局</th><th>工具组合</th><th>机制链条</th><th>历史案例</th></tr>
@@ -161,13 +197,40 @@
   </tbody>
 </table>
 
-<p><strong>通缩型</strong>的凶险在「实际」二字：债务是名义数字，物价下跌时它的实际重量自动增加。美国 1929–33：名义 GDP 从约 1,040 亿美元缩到约 560 亿（−46%，BEA 口径），物价累计跌约四分之一——债务名义上没怎么少，实际负担却暴涨，违约潮反噬银行，失业率 1933 年约 25%。这正是先猜 1 的螺旋：人人还债=人人收入减少。</p>
-<p><strong>通胀型</strong>是另一个极端：印钞量远超信用收缩的缺口，货币信用先于债务问题而死。魏玛德国 1923 年 11 月，兑换率到了 4.2 万亿马克兑 1 美元——注意机制细节：恶性通胀消灭的确实是债务的实际重量，代价是货币体系与储蓄阶层一起被消灭。</p>
+<p><strong>通缩型</strong>的凶险在「实际」二字：债务是名义数字，物价下跌时实际重量自动增加。美国 1929–33：名义 GDP 约 1,040 亿→560 亿美元（−46%，BEA），物价累计跌约四分之一——债务名义没少多少、实际负担暴涨，违约潮反噬银行，1933 年失业率约 25%。这就是先猜 1 的螺旋。</p>
+<p><strong>通胀型</strong>是另一极端：印钞远超信用收缩的缺口，货币信用先于债务问题而死。魏玛德国 1923-11 兑换率 4.2 万亿马克兑 1 美元——机制细节：恶性通胀确实消灭债务的实际重量，代价是货币体系与储蓄阶层一起陪葬。</p>
+<div class="example">
+<p class="ex-title">漂亮去杠杆的算术（书源算例改编）</p>
+<p>《债务危机》第 3 章的原文条件是「<strong>收入增速必须快于债务增速</strong>」，并给了一组极简算例：</p>
+<table>
+  <thead><tr><th>年初</th><th>利率/增速</th><th>年末</th></tr></thead>
+  <tbody>
+    <tr><td>债务 100</td><td>× 名义利率 2%</td><td>102</td></tr>
+    <tr><td>收入 100</td><td>× 名义增速 1%</td><td>101</td></tr>
+  </tbody>
+</table>
+<p>收入 101 追债务 102——负担仍在变重。把增速提到 3%：收入 103 &gt; 债务 102，负担开始被稀释。所以漂亮去杠杆的刺激量必须同时做到两件事（原文）：①对冲信用市场的通缩性塌陷；②把<strong>名义增速推到名义利率之上</strong>。剂量不足=滑向通缩型，过量=滑向通胀型——「窄缝」的算术含义就是这两个不等式同时成立。</p>
+</div>
+
 <p><strong>漂亮去杠杆</strong>走在两者之间的窄缝里：印钞量刚好填上信用收缩的窟窿，让名义收入保持正增长；同时债务慢慢被增长稀释。美国 2008 后的十年接近这个形态——债务/GDP 在 2012 后稳定下来而非螺旋上升（回看图 ③ 段），也没有发生通胀失控。<strong>它依赖两个前提：央行有印钞的公信力（本币债），以及生产率底子还在。</strong>没有这两个前提的经济体，菜单上只剩两种丑结局——这就是 05 节要给的边界。</p>
 
 <h2><span class="no">05</span>边界与反证 <span class="time-chip">≈5 min</span></h2>
 <p class="lede">每个框架课都要过一遍冷水：这个模型什么时候失效、它的证据质量是什么等级。</p>
-<p><strong>证据等级</strong>：达利欧模型在本课程资源体系里的定位是「P0 直觉框架，非实证宏观模型」。75–100 年的长期债务周期，美国的完整样本只有一段——n=1 的规律不是规律，是叙事。<strong>「短期周期一波比一波高」有清楚的数据支撑（本课图），「长期周期 75–100 年」没有可检验的样本量。</strong>把它当透镜用，不要当倒计时用。</p>
+<p><strong>证据等级</strong>：达利欧模型在本课程资源体系里的定位是「P0 直觉框架，非实证宏观模型」。75–100 年的长期债务周期，美国的完整样本只有一段——n=1 的规律不是规律，是叙事；但书的模板部分统计了历史上 48 个债务危机案例（口径：实际 GDP 降幅超过 3% 的国家样本，第 2 章），下表是其中最有教学价值的规律（书内统计口径，非独立学术复核）：</p>
+<table>
+  <thead>
+    <tr><th>指标</th><th>通缩型（21 例）</th><th>通胀型案例</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>政策利率终点</td><td>平均降至 0%（零利率下限不是假设，是常态结局）</td><td>——</td></tr>
+    <tr><td>央行印钞规模</td><td>年均约 4% of GDP</td><td>更大且失控</td></tr>
+    <tr><td>股市跌幅</td><td>普遍超过 50%</td><td>（本币计）更深</td></tr>
+    <tr><td>失业率峰值</td><td>10%–15%</td><td>——</td></tr>
+    <tr><td>萧条持续</td><td>平均约 55 个月；复苏需 5–10 年（「失去的十年」）</td><td>——</td></tr>
+    <tr><td>泡沫期特征</td><td>债务/GDP 泡沫段陡升</td><td>125%→150%；外币债务约 45% of GDP；通胀峰值约 30%</td></tr>
+  </tbody>
+</table>
+<p>统计的用处是校准想象力（萧条=四年半、股市腰斩、利率到零），不是预测下一次的日期。<strong>把模型当透镜用，不要当倒计时用。</strong></p>
 <p><strong>反证一：债务/GDP 没有机械阈值。</strong>日本政府总债务超过 GDP 的 240%–250%（IMF 口径，2024 年前后），没有发生美国式危机——本币债、国内持有人、长期低利率；而新兴市场外币债到 60% 就可能出事。同一个数字，结构不同，天花板不同。任何「超过 X% 必崩」的规则都是伪精确。</p>
 <p><strong>反证二：两种对称的错误。</strong>「这次不一样」（认为可以无限加杠杆）与「永远到不了顶」（认为 98% 和 130% 没区别）错得一样多。历史给的是条件分布，不是确定性剧本。</p>
 
@@ -271,7 +334,7 @@
 <div class="stop">M0.1 结业标准（显式）：①90 秒用「交易-信用-收入」讲清为什么降息刺激经济（0001 动笔题+本课动笔题连起来）；②三概念问答——去杠杆的工具与结局、漂亮去杠杆的关键特征、生产率在其中的角色（本课 01/04 节）。检测：本课训练场五题 ≥80%（错 0–1）且隔天重练仍达标，M0.1 点亮；未过按训练场判分指引回对应节补救后重测，不锁后续课——0003 起随时可预览。</div>
 
 <p><strong>课外作业：</strong></p>
-<p>（1）<strong>阅读任务（必做）</strong>：达利欧免费研究 PDF《<a href="https://economicprinciples.org/downloads/ray_dalio__how_the_economic_machine_works__leveragings_and_deleveragings.pdf">How the Economic Machine Works: Leveragings and Deleveragings</a>》中的去杠杆案例对比部分（“An In-Depth Look at Deleveragings” 一章的案例表）——挑三个国家案例，用本课「三种结局」表格各写一行归类，验证你的判别器。</p>
+<p>（1）<strong>阅读任务（必做）</strong>：达利欧免费研究 PDF《<a href="https://archive.org/download/RayDalioHowTheEconomicMachineWorksLeveragingsAndDeleveragings/Ray%20Dalio%20-%20How%20the%20Economic%20Machine%20Works%20-%20Leveragings%20and%20Deleveragings.pdf">How the Economic Machine Works: Leveragings and Deleveragings</a>》（economicprinciples.org 原 slug 已改挂其他文档，此为 archive.org 镜像）中的去杠杆案例对比部分（“An In-Depth Look at Deleveragings” 一章的案例表）——挑三个国家案例，用本课「三种结局」表格各写一行归类，验证你的判别器。</p>
 <p>（2）<strong>课后探索（可选）</strong>：在 <a href="https://fred.stlouisfed.org/series/GFDEGDQ188S">FRED 序列 GFDEGDQ188S</a> 打开总口径联邦债务图，与本课图对比——多出的 24 个百分点是谁持有的（03 节口径注），练习「同一事物、两种口径」的读数纪律。</p>
 <p>（3）<strong>日常习惯（永久生效）</strong>：刷到任何「XX 国债务危机」新闻，先问三个定位问题再划走——<strong>谁的债务（政府/居民/企业）？本币还是外币？政策利率到零了吗？</strong>三个答案基本决定这是「长期周期到头」还是「短期周期杂音」。</p>
 <p><strong>下一课 0003《玩家地图》</strong>：从「机器」转到「开车的人」——央行、财政、银行、家户、企业、海外部门，六位玩家各自的目标、约束和反应模式。债务周期是赛道，玩家是赛车手。</p>
@@ -285,8 +348,8 @@
     <a href="../reference/0002-glossary.html">术语手册</a>
     <a href="0003-player-map.html">下一课 0003 →</a>
   </div>
-  <p><strong>主资源（本课 grounded on）</strong>：Ray Dalio《How the Economic Machine Works——Leveragings and Deleveragings》（<a href="https://economicprinciples.org/downloads/ray_dalio__how_the_economic_machine_works__leveragings_and_deleveragings.pdf">免费研究 PDF</a>，economicprinciples.org，去杠杆三分类的一手表述；定位：P0 直觉框架，非实证宏观模型）；CORE 宏观卷 U3（总需求与乘数：支出=收入循环的模型化表述）。</p>
-  <div class="citations"><strong>数据口径：</strong>本课债务图=联邦债务（持有公众口径）占 GDP 比重，季度，1970-Q1 至 2026-Q1（最新 98.7%），<a href="https://fred.stlouisfed.org/series/FYGFGDQ188S">FRED FYGFGDQ188S</a>；总口径对照 122.6%（<a href="https://fred.stlouisfed.org/series/GFDEGDQ188S">GFDEGDQ188S</a>，同期）；联邦利息支出/GDP 3.2%（2025 财年，<a href="https://fred.stlouisfed.org/series/FYOIGDA188S">FRED FYOIGDA188S</a>，总利息口径）；灰色衰退带=NBER 认定区间。<strong>案例数据：</strong>1946 年联邦债务峰值约 GDP 的 1.06–1.09 倍（OMB 历史表口径，图外史实）；1929–33 美国名义 GDP 约 1,040 亿→560 亿美元（BEA，−46%），CPI 累计跌约四分之一，1933 年失业率约 25%；魏玛德国 1923-11 兑换率约 4.2 万亿马克/美元；日本一般政府总债务/GDP 约 240%–250%（IMF 口径，2024 年前后，约数）。<strong>方法论提示：</strong>达利欧三分类源自其案例归纳（n 有限），作透镜不作定律。</div>
+  <p><strong>主资源（本课 grounded on）</strong>：Ray Dalio《How the Economic Machine Works——Leveragings and Deleveragings》（<a href="https://archive.org/download/RayDalioHowTheEconomicMachineWorksLeveragingsAndDeleveragings/Ray%20Dalio%20-%20How%20the%20Economic%20Machine%20Works%20-%20Leveragings%20and%20Deleveragings.pdf">免费研究 PDF</a>，economicprinciples.org，去杠杆三分类的一手表述；定位：P0 直觉框架，非实证宏观模型）；CORE 宏观卷 U3（总需求与乘数：支出=收入循环的模型化表述）。</p>
+  <div class="citations"><strong>书源登记（本课内化的书源材料）：</strong>①四工具与「正确平衡」原文、三种结局分类——Dalio《Big Debt Crises》（Principles Press 2018）模板章第 2 章（04 节）；②漂亮去杠杆条件与算例——同书第 3 章（04 节例块）；③48 案例统计规律——同书第 2–3、5 章（05 节统计表）；④三路径示意图=仿同书第 3 章原型弧线自绘重制；⑤两周期定义=leveragings 论文第 1 章（0001 课引用）。书籍图表未直接复制。<strong>数据口径：</strong>本课债务图=联邦债务（持有公众口径）占 GDP 比重，季度，1970-Q1 至 2026-Q1（最新 98.7%），<a href="https://fred.stlouisfed.org/series/FYGFGDQ188S">FRED FYGFGDQ188S</a>；总口径对照 122.6%（<a href="https://fred.stlouisfed.org/series/GFDEGDQ188S">GFDEGDQ188S</a>，同期）；联邦利息支出/GDP 3.2%（2025 财年，<a href="https://fred.stlouisfed.org/series/FYOIGDA188S">FRED FYOIGDA188S</a>，总利息口径）；灰色衰退带=NBER 认定区间。<strong>案例数据：</strong>1946 年联邦债务峰值约 GDP 的 1.06–1.09 倍（OMB 历史表口径，图外史实）；1929–33 美国名义 GDP 约 1,040 亿→560 亿美元（BEA，−46%），CPI 累计跌约四分之一，1933 年失业率约 25%；魏玛德国 1923-11 兑换率约 4.2 万亿马克/美元；日本一般政府总债务/GDP 约 240%–250%（IMF 口径，2024 年前后，约数）。<strong>方法论提示：</strong>达利欧三分类源自其案例归纳（n 有限），作透镜不作定律。</div>
 </footer>
 
 </div>

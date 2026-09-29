@@ -270,7 +270,94 @@ footer.course .nav a { max-width: 32%; }
 @media print {
   body { background: #fff; font-size: 11pt; }
   .page { max-width: none; padding: 0; }
-  quiz-block, chain-block, preq-block, recall-block, .ask-agent, .lesson-nav { border: 1px solid #999; page-break-inside: avoid; }
+  quiz-block, chain-block, preq-block, recall-block, video-card, sim-block, .ask-agent, .lesson-nav { border: 1px solid #999; page-break-inside: avoid; }
+  video-card .vc-play, sim-block .sim-controls, sim-block .sim-btns { display: none; }
   a { border-bottom: none; color: inherit; }
   a[href^="http"]::after { content: "（" attr(href) "）"; font-size: .75em; color: #555; }
+}
+
+/* —— 例块（2026-09-30 回炉裁定：kbar 左色条语言新设，墨色条+CSS counter 自动编号，不引入新颜色语义） —— */
+body { counter-reset: example; }
+.example {
+  border-left: 3px solid var(--ink);
+  background: #fff;
+  padding: .8rem 1.1rem;
+  margin: 1.4rem 0;
+  font-family: var(--sans);
+  font-size: .95rem;
+  line-height: 1.75;
+}
+.example::before {
+  counter-increment: example;
+  content: "例 " counter(example);
+  display: block;
+  font-size: .78rem;
+  letter-spacing: .2em;
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: .3rem;
+}
+.example .ex-title { font-weight: 700; margin-bottom: .2rem; }
+.example table { margin: .6rem 0; font-size: .88rem; }
+
+/* —— 视频卡（外部视频懒加载：点击才挂 iframe，卡面本身是打印友好的信息卡） —— */
+video-card {
+  display: block;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 1rem 1.2rem .9rem;
+  margin: 1.8rem 0;
+  font-family: var(--sans);
+  font-size: .95rem;
+}
+video-card .vc-head { display: flex; flex-wrap: wrap; gap: .4rem 1rem; align-items: baseline; }
+video-card .vc-title { font-weight: 700; font-size: 1.02rem; }
+video-card .vc-meta { color: var(--faint); font-size: .82rem; }
+video-card .vc-play {
+  margin-top: .7rem;
+  font-family: var(--sans); font-size: .95rem; font-weight: 600;
+  background: var(--ink); color: #fff; border: none; border-radius: 8px;
+  padding: .55rem 1.3rem; cursor: pointer;
+}
+video-card .vc-frame { margin-top: .8rem; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; background: #000; display: none; }
+video-card .vc-frame.show { display: block; }
+video-card iframe { width: 100%; height: 100%; border: 0; display: block; }
+video-card .vc-links { margin-top: .55rem; font-size: .84rem; color: var(--muted); line-height: 1.7; }
+
+/* —— 模拟器（kbar 训练器同构：JS 挂载、window.Macro 导出、可探针） —— */
+sim-block {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+  padding: 1.3rem 1.4rem 1.1rem;
+  margin: 1.8rem 0;
+  font-family: var(--sans);
+  font-size: .95rem;
+}
+sim-block .q { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.6; margin-bottom: .7rem; }
+sim-block .sim-controls { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; margin: .6rem 0; align-items: center; }
+sim-block .sim-controls label { font-size: .88rem; }
+sim-block .sim-controls input[type="range"] { width: 9rem; vertical-align: middle; }
+sim-block .sim-controls output { font-family: var(--mono); font-size: .85rem; }
+sim-block .sim-btns { display: flex; gap: .5rem; flex-wrap: wrap; margin: .7rem 0 .3rem; }
+sim-block .sim-btns button {
+  font: inherit; font-size: .92rem;
+  color: var(--ink); background: var(--paper);
+  border: 1.5px solid var(--line); border-radius: 999px;
+  padding: .35rem .95rem; cursor: pointer;
+}
+sim-block .sim-btns button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+sim-block .sim-read { font-size: .86rem; color: var(--muted); margin-top: .5rem; font-family: var(--mono); }
+sim-block .sim-verdict { margin-top: .7rem; padding: .75rem .95rem; border-radius: 8px; background: var(--note-bg); font-size: .9rem; line-height: 1.7; }
+sim-block svg text { font-family: var(--sans); }
+sim-block .sim-note { font-size: .8rem; color: var(--faint); margin-top: .6rem; }
+
+/* —— 机制图动效（元素带 .da 顺序点亮；尊重系统减动效设置） —— */
+@keyframes daIn { from { opacity: 0; } to { opacity: 1; } }
+svg .da { opacity: 0; animation: daIn .6s ease forwards; }
+@media (prefers-reduced-motion: reduce) {
+  svg .da { animation: none; opacity: 1; }
+  sim-block .sim-frame { transition: none; }
 }

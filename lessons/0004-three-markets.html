@@ -17,7 +17,7 @@
     <span>P0 宏观语言 · M0.3</span>
   </div>
   <h1>三大市场互锁</h1>
-  <p class="deck">六位玩家在三个场子里同时下注：货币市场（money market）定资金的即时价格，债券市场定整个未来的价格，外汇市场定货币之间的相对价格——而三个场子共用一本账。本课装上「三角检视」：利率一动，先问债、再问汇。本课约 60–65 分钟（先猜 3 + 正文与图 39 + 训练场 12–15 + 动笔与小结 3–5）。前置要求：0001–0003。</p>
+  <p class="deck">六位玩家在三个场子里同时下注：货币市场（money market）定资金的即时价格，债券市场定整个未来的价格，外汇市场定货币之间的相对价格——而三个场子共用一本账。本课装上「三角检视」：利率一动，先问债、再问汇。本课约 70–80 分钟（先猜 3 + 正文与图、图组与模拟器 47–50 + 训练场 12–15 + 动笔与小结 3–5）。前置要求：0001–0003。</p>
 </header>
 
 <aside class="callout"><b>本次核心动作</b>：对任何宏观事件，在三个市场（债/汇/货币）的图上找同一根日期线，读出「谁动了、动的是哪一部分」。不算数：背汇率点位；护栏：三角是压力传导的方向盘，不是机械齿轮——市场交易的是预期差，事件落地日「不涨反跌」是常态而非异常。</aside>
@@ -69,7 +69,7 @@
 </preq-block>
 
 <h2><span class="no">01</span>三个市场各是什么 <span class="time-chip">≈7 min</span></h2>
-<p class="lede">用交易者的眼睛给三个市场各画一张速写：谁在交易、交易什么、报价怎么看。</p>
+<p class="lede">用交易者的眼睛给三个市场各画一张速写：</p>
 <table>
   <thead>
     <tr><th>市场</th><th>交易什么</th><th>价格读数</th><th>为什么宏观交易者必须盯它</th></tr>
@@ -80,7 +80,14 @@
     <tr><td><strong>外汇市场</strong></td><td>货币之间的相对价格</td><td>美元指数、双边汇率</td><td>跨国资本流动的总开关；美元是几乎所有资产的计价与融资货币</td></tr>
   </tbody>
 </table>
-<p>两个入门操作反射：<strong>收益率与价格反向</strong>——收益率涨=债券跌，新闻里「美债大涨」通常指收益率下行，先在脑内换算再读第二句。<strong>曲线是形状不是点位</strong>——同样 4% 的 10 年期收益率，配合 3% 的 2 年期（陡峭）还是 4.5% 的 2 年期（倒挂），讲的是两个完全不同的宏观故事（倒挂的完整故事在 P3 衰退信号课）。</p>
+<p>两个入门操作反射：<strong>收益率与价格反向</strong>——收益率涨=债券跌，新闻里「美债大涨」通常指收益率下行，先在脑内换算再读第二句。<strong>曲线是形状不是点位</strong>——教科书把形状与预期的对应讲得最干净（Mishkin《货币金融学》13e 第 6 章）：</p>
+
+<figure>
+<svg viewBox="0 0 720 175" role="img" aria-label="收益率曲线四种典型形状示意" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="40" y1="130" x2="170" y2="130" stroke="#6e6c64" stroke-width="1"/><line x1="40" y1="40" x2="40" y2="130" stroke="#6e6c64" stroke-width="1"/><polyline points="46,112 85.3,88 124.7,64 164,60" fill="none" stroke="#1c1c1a" stroke-width="2"/><text x="105" y="146" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">(a) 陡峭上行</text><text x="105" y="162" text-anchor="middle" font-size="9.5" fill="#6e6c64">预期未来加息</text><line x1="210" y1="130" x2="340" y2="130" stroke="#6e6c64" stroke-width="1"/><line x1="210" y1="40" x2="210" y2="130" stroke="#6e6c64" stroke-width="1"/><polyline points="216,80 255.3,76 294.7,72 334,70" fill="none" stroke="#1c1c1a" stroke-width="2"/><text x="275" y="146" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">(b) 平缓上行</text><text x="275" y="162" text-anchor="middle" font-size="9.5" fill="#6e6c64">预期平稳</text><line x1="380" y1="130" x2="510" y2="130" stroke="#6e6c64" stroke-width="1"/><line x1="380" y1="40" x2="380" y2="130" stroke="#6e6c64" stroke-width="1"/><polyline points="386,72 425.3,72 464.7,72 504,72" fill="none" stroke="#1c1c1a" stroke-width="2"/><text x="445" y="146" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">(c) 水平</text><text x="445" y="162" text-anchor="middle" font-size="9.5" fill="#6e6c64">预期温和降息</text><line x1="550" y1="130" x2="680" y2="130" stroke="#6e6c64" stroke-width="1"/><line x1="550" y1="40" x2="550" y2="130" stroke="#6e6c64" stroke-width="1"/><polyline points="556,60 595.3,68 634.7,80 674,84" fill="none" stroke="#1c1c1a" stroke-width="2"/><text x="615" y="146" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">(d) 倒挂</text><text x="615" y="162" text-anchor="middle" font-size="9.5" fill="#6e6c64">预期大幅降息（衰退信号）</text><text x="40" y="18" font-size="10" fill="#1c1c1a" font-weight="700">收益率曲线的四种典型形状（纵轴=利率，横轴=期限 3M→30Y；示意）</text>
+</svg>
+<figcaption><strong>收益率曲线的四种典型形状（教学示意图）</strong>：仿 Mishkin《货币金融学》13e 第 6 章期限结构图自绘重制。读法出自预期理论（下述）：长端利率≈未来短端利率预期的平均（+期限溢价）——所以形状本身就是市场对政策路径的预测。倒挂=市场预期大幅降息=先嗅到衰退（Wang《Central Banking 101》第 5 章原话：市场「常在联储之前嗅出经济走弱」）；倒挂的完整故事在 P3 衰退信号课。</figcaption>
+</figure>
 
 <h2><span class="no">02</span>一图三市场 <span class="time-chip">≈10 min</span></h2>
 <p class="lede">下面这张三联图是本课唯一的一张图，也是你未来每周都会回访的仪表盘核心：同一个时间窗（2006 年至 2026-09-25），三个市场各一格，红色虚线穿过三格——那是同一天：2022-09-21，FOMC 连续第三次加息 75 个基点。</p>
@@ -95,13 +102,20 @@
 <div class="tip">读图三步（本课的核心动作，练熟它）：①先垂直扫——同一日期，三格各自什么方向；②再找共振日——红虚线那类事件日，三格是否同向；③最后拆结构——上格变动里，中格贡献多少、盈亏平衡（上−中）贡献多少。第三步是 P1「市场即预期」的入门手筋。</div>
 
 <h2><span class="no">03</span>利率-汇率-曲线三角 <span class="time-chip">≈8 min</span></h2>
-<p class="lede">三个市场两两相连，构成一个互相定价、互为约束的三角。每一角都是下一角的输入：</p>
+<p class="lede">三个市场两两相连，构成一个互相定价、互为约束的三角。管道层的点题句出自 Wang《Central Banking 101》第 5 章：「<strong>联储控制的是短期利率，长期利率很大程度上由市场力量决定</strong>」——三角就是这句话的全图：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="利率-汇率-曲线三角机制示意" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs><g class="da" style="animation-delay:0s"><rect x="285" y="16" width="150" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="360" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">债券市场</text><text x="360" y="53" text-anchor="middle" font-size="9" fill="#6e6c64">yield curve / 期限结构</text></g><g class="da" style="animation-delay:0.2s"><rect x="80" y="230" width="150" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="155" y="251" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">货币市场</text><text x="155" y="267" text-anchor="middle" font-size="9" fill="#6e6c64">policy rate / 资金价格</text></g><g class="da" style="animation-delay:0.4s"><rect x="490" y="230" width="150" height="46" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="565" y="251" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">外汇市场</text><text x="565" y="267" text-anchor="middle" font-size="9" fill="#6e6c64">FX / 相对价格</text></g><line x1="190" y1="228" x2="318" y2="68" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:0.7s"/><text x="118" y="152" text-anchor="start" font-size="10" fill="#6e6c64" class="da" style="animation-delay:0.7s">政策路径定进曲线</text><line x1="400" y1="62" x2="540" y2="226" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1s"/><text x="572" y="140" text-anchor="start" font-size="10" fill="#6e6c64" class="da" style="animation-delay:1s">利差驱动跨境资本流动</text><line x1="490" y1="253" x2="235" y2="253" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.3s"/><text x="362" y="244" text-anchor="middle" font-size="10" fill="#6e6c64" class="da" style="animation-delay:1.3s">汇率 → 进口通胀 → 央行反应函数（反馈角）</text><text x="360" y="150" text-anchor="middle" font-size="11" fill="#6e6c64" font-weight="700">互相定价 · 互为约束</text>
+</svg>
+<figcaption><strong>利率-汇率-曲线三角（教学示意图，箭头按传导顺序点亮）</strong>：货币市场定锚（政策利率）→ 债券市场把整条政策路径定进曲线 → 外汇市场按利差定价货币 → 汇率又通过进口通胀回到央行反应函数（0003）。没有单一「因」：每个市场既是输入又是输出。</figcaption>
+</figure>
 <ol>
   <li><strong>利率→汇率</strong>（利差角）：美元利率相对欧元日元上升→持有美元资产的收益优势扩大→资金换入美元→美元走强。这是套息交易（carry trade）的直觉版——完整机制与崩溃条件在 P4 汇率课。</li>
   <li><strong>汇率→通胀→利率</strong>（反馈角）：美元走强→进口商品变便宜→通胀压力下行→央行反应函数（0003）的输入变化→政策路径预期下移。汇率是通胀的进口阀门。</li>
-  <li><strong>曲线→利率与汇率</strong>（预期角）：债券市场把央行未来的整条路径定进曲线——曲线既然包含了「未来降息」，今天的利差优势可能是暂时的；外汇市场读曲线定价，而不是只看今天的政策利率。</li>
+  <li><strong>曲线→利率与汇率</strong>（预期角）：债券市场把央行未来的整条路径定进曲线——预期理论的原文（Mishkin 第 6 章）：「长期债券的利率等于人们预期在其存续期内出现的短期利率的平均值」（另加期限溢价）；Mishkin 并引证据称收益率曲线「是商业周期相当准确的预测器」——陡=政策宽松，平/倒挂=政策偏紧。曲线既然包含了「未来降息」，今天的利差优势可能是暂时的；外汇市场读曲线定价，而不是只看今天的政策利率（第 18 章：外汇需求由相对预期回报决定，本币利率上升→需求右移→本币升值）。</li>
 </ol>
-<p>三角的现实含义：<strong>没有任何一个市场是「因」，另两个是「果」</strong>。2022 年美元强，既是利差的结果，也是通胀故事的原因（压低进口通胀、改变 Fed 路径）。分析时给每个方向各写一行，比争「谁是主因」有用——这也是为什么宏观交易员的图表总是三张并排。</p>
+<p>三角的现实含义：<strong>没有哪个市场是纯「因」或纯「果」</strong>——2022 年的强美元既是利差的结果，也是通胀故事的原因。分析时给每个方向各写一行，比争「谁是主因」有用。</p>
 
 <h2><span class="no">04</span>worked example：2022 年 9 月 FOMC 三市场读数 <span class="time-chip">≈9 min</span></h2>
 <p class="lede">现在把三角通上电。背景：2022 年 8 月末，市场对 9 月 FOMC 的定价还在 50–75 个基点之间摇摆， Powell 在 8-26 杰克逊霍尔讲话里放鹰，9-21 FOMC 落地 75bp 且点阵图鹰于预期。六周窗口（8-31 → 10-14）三个市场的真实读数：</p>
@@ -116,7 +130,21 @@
     <tr><td>美元宽指数</td><td class="num">123.5</td><td class="num">128.4</td><td class="num"><span class="u">+4.0%</span></td><td class="num">128.3</td></tr>
   </tbody>
 </table>
-<p>逐行读：名义收益率六周上行 85bp（3.15→4.00），但拆开看——<strong>实际利率贡献了全部涨幅还多（+101bp），盈亏平衡通胀反而收窄 33bp</strong>。这不是「市场怕通胀」的抛售，是「市场定价美联储愿意把实际利率推到多高」的重定价。同期美元升至本轮峰值（128.45，9-26 创出），完全符合三角的利差角。而承受这份实际利率重定价的，是长久期资产——纳指三季度下跌 4%（2022-Q3），黄金同期阴跌（P4 课会把这条资产链完整接上）。</p>
+<div class="example">
+<p class="ex-title">久期的算术：+100bp 打在三类债券上（数值演算，Tuckman《Fixed Income Securities》4e 第 4 章「DV01、久期与凸性」）</p>
+<p>一阶近似公式：<strong>价格变化 ≈ −修正久期 × 利率变动</strong>（凸性项此处忽略）。代入指示性久期（美国国债，2024–25 收益率环境的典型值）：</p>
+<table>
+  <thead><tr><th>资产</th><th>修正久期（约）</th><th>利率 +100bp 的价格冲击</th></tr></thead>
+  <tbody>
+    <tr><td>2 年期国债</td><td class="num">1.9</td><td class="num">约 −1.9%</td></tr>
+    <tr><td>10 年期国债</td><td class="num">8.7</td><td class="num">约 −8.7%</td></tr>
+    <tr><td>30 年期国债</td><td class="num">19</td><td class="num">约 −19%</td></tr>
+  </tbody>
+</table>
+<p>这就是「长久期资产」四个字的全部含义：久期不是「持有期」，是<strong>对利率的敏感度</strong>。成长股与加密货币的现金流（或回报预期）集中在远端，相当于超长久期债券——2022 年它们领跌的算术根源就在这张表里（P4 跨资产课把这条链走完整）。</p>
+</div>
+
+<p>逐行读：名义收益率六周上行 85bp（3.15→4.00），但拆开看——<strong>实际利率贡献了全部涨幅还多（+101bp），盈亏平衡通胀反而收窄 33bp</strong>。这不是「市场怕通胀」的抛售，是「市场定价美联储愿意把实际利率推到多高」的重定价。同期美元升至本轮峰值（128.45，9-26），符合三角的利差角；承受重定价的是长久期资产——纳指 2022-Q3 跌约 4%，黄金同期阴跌（P4 接完整条资产链）。</p>
 
 <chain-block>
 <script type="application/json">
@@ -135,9 +163,28 @@
 </script>
 </chain-block>
 
+<sim-block>
+<script type="application/json">
+{
+  "sim": "three-market",
+  "q": "同一鹰派事件、三种定价情形——切换按钮，看三个市场怎么同步翻页，以及「意外=0」时会发生什么。"
+}
+</script>
+</sim-block>
+
 <h2><span class="no">05</span>边界与反证 <span class="time-chip">≈5 min</span></h2>
 <p><strong>三角不是齿轮组。</strong>最直接的反证就在红虚线事件之后：2023–2024 年的多次 FOMC 落地日，美元不涨反跌——因为「再加息」早已被定进价格，落地=不确定性消除=空头回补。「宣布加息→买美元」在预期已定价时是亏钱策略。三角给的是<strong>压力方向</strong>，不是逐日交易信号。</p>
-<p><strong>口径陷阱（本课图的下格）</strong>：图用联储宽口径贸易加权指数（DTWEXBGS，含中国等所有贸易伙伴），而新闻常说的 DXY 是窄口径（仅六大发达货币，欧元权重过半）。两者方向大体同、幅度与节奏会背离——比较读数前先对口径，这条纪律从 0002 课开始终身有效。</p>
+<p><strong>口径陷阱（本课图的下格）</strong>——两种「美元指数」不是同一个东西：</p>
+<table>
+  <thead>
+    <tr><th>指数</th><th>构成</th><th>特点</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>宽口径贸易加权（DTWEXBGS，本课图）</td><td>美国全部主要贸易伙伴，含人民币、墨西哥比索等</td><td>反映美国贸易条件的真实篮子；FRED 免费可得</td></tr>
+    <tr><td>ICE DXY（新闻常用）</td><td>仅六大发达货币，欧元权重过半</td><td>1973 年代的篮子，新兴市场汇率缺位——与宽口径方向大体同、幅度与节奏会背离</td></tr>
+  </tbody>
+</table>
+<p>比较读数前先对口径——这条纪律从 0002 课开始终身有效。</p>
 <p><strong>相关不等于因果。</strong>三格图同向共振的日子，不等于其中一格驱动了其余两格——共同原因（一次央行会议、一次地缘冲击）同时打到三格，才是常态。把三角当「假设生成器」：每个方向写一行，然后用数据证伪，而不是选一个顺眼的故事。</p>
 
 <div class="warn">诚实条款：三角框架描述的是主要压力方向，例外与钝化真实存在——2021 年实际利率为负的加息年（0001 警告过）里，长久期资产不跌反涨。框架的用法是「列出该检查的方向」，不是「保证结果的方向」。</div>
@@ -255,7 +302,7 @@
     <a href="0005-dashboard-routine.html">下一课 0005 →</a>
   </div>
   <p><strong>主资源（本课 grounded on）</strong>：Mishkin《货币金融学》（The Economics of Money, Banking and Financial Markets）利率行为/风险与期限结构/外汇市场章节（词典式调用）；CORE 宏观卷 U3（支出=收入循环中的利率角色）；三市场互锁的教学组织参考达利欧模板（0001 主资源）。</p>
-  <div class="citations"><strong>数据口径：</strong>本课三联图=日频，2006-01-02 至 2026-09-25：10Y 名义收益率（<a href="https://fred.stlouisfed.org/series/DGS10">FRED DGS10</a>，最新 5.17%）、10Y 实际收益率（<a href="https://fred.stlouisfed.org/series/DFII10">FRED DFII10</a>，最新 2.83%）、美元宽口径贸易加权指数（<a href="https://fred.stlouisfed.org/series/DTWEXBGS">FRED DTWEXBGS</a>，最新 120.33；2013-01=100 起点，非 ICE DXY 窄口径）。<strong>事件数据：</strong>2022-08-31/09-30/10-14 读数分别为名义 3.15/3.83/4.00%、实际 0.67/1.68/1.59%、宽美元 123.5/128.4/128.3；本轮宽美元峰值 128.45（2022-09-26）；2022-09-21 FOMC +75bp（FOMC 声明原件）；纳指 2022-Q3 约 −4%（价格回报，季度区间近似）；盈亏平衡=名义−实际由上述两序列相减计算。<strong>方法论提示：</strong>三角框架为教学用压力方向图，非逐日交易规则；「卖事实」案例为 2023–2024 年多次 FOMC 落地日的公开行情事实。</div>
+  <div class="citations"><strong>书源登记（本课内化的书源材料）：</strong>①曲线形状与预期理论、曲线预测力——Mishkin《货币金融学》13e 第 6 章（01/03 节，图仿第 6 章期限结构图自绘重制）；②外汇市场供需与相对预期回报——同书第 18 章（03 节）；③「联储控短端、长端由市场定」点题句与倒挂机制——Wang《Central Banking 101》第 5 章（01/03 节）；④久期一阶近似——Tuckman &amp; Serrat《Fixed Income Securities》4e 第 4 章（04 节例块）。书籍图表未复制。<strong>数据口径：</strong>本课三联图=日频，2006-01-02 至 2026-09-25：10Y 名义收益率（<a href="https://fred.stlouisfed.org/series/DGS10">FRED DGS10</a>，最新 5.17%）、10Y 实际收益率（<a href="https://fred.stlouisfed.org/series/DFII10">FRED DFII10</a>，最新 2.83%）、美元宽口径贸易加权指数（<a href="https://fred.stlouisfed.org/series/DTWEXBGS">FRED DTWEXBGS</a>，最新 120.33；2013-01=100 起点，非 ICE DXY 窄口径）。<strong>事件数据：</strong>2022-08-31/09-30/10-14 读数分别为名义 3.15/3.83/4.00%、实际 0.67/1.68/1.59%、宽美元 123.5/128.4/128.3；本轮宽美元峰值 128.45（2022-09-26）；2022-09-21 FOMC +75bp（FOMC 声明原件）；纳指 2022-Q3 约 −4%（价格回报，季度区间近似）；盈亏平衡=名义−实际由上述两序列相减计算。<strong>方法论提示：</strong>三角框架为教学用压力方向图，非逐日交易规则；「卖事实」案例为 2023–2024 年多次 FOMC 落地日的公开行情事实。</div>
 </footer>
 
 </div>
