@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1001 指标谱系与日历 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 1001 课</span>
+    <span>·</span>
+    <span>P1 数据流 · M1.1 a</span>
+  </div>
+  <h1>指标谱系与日历（美国）</h1>
+  <p class="deck">P0 装好了框架，P1 开始喂料。这一课给美国指标建一张「四族地图」，并装上数据交易者的两个生存本能：<strong>发布日历感</strong>（什么数据在哪天、市场多敏感）与<strong>修订意识</strong>（哪个数字发布即终值、哪个会改三个月）。本课约 65–75 分钟（先猜 3 + 正文与图组 40 + 训练场 15 + 动笔与小结 5）。前置要求：0001–0005（0005 的事件分层例行会直接衔接）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：对任何一个美国数据，30 秒内答出四问——<strong>哪一族？什么频率？会不会被修？市场多敏感？</strong>四问齐了，新闻标题里的惊叹号就失效了。不算数：背数据点位；护栏：数据是反应函数的输入，不是交易信号——公布值只有对齐「事前预期」才有含义（0005 军规）。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>四族指标地图（含谱系图） <span class="t">≈8 min</span></li>
+    <li>高频与低频：初请 vs 失业率（含一图） <span class="t">≈8 min</span></li>
+    <li>通胀双标尺：CPI vs 核心PCE（含一图） <span class="t">≈8 min</span></li>
+    <li>数据日历墙与敏感度分层（2026-10 实例） <span class="t">≈8 min</span></li>
+    <li>修订文化：first/second/third 与基准修订（含例块） <span class="t">≈9 min</span></li>
+    <li>训练场 <span class="t">≈15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准两个数据交易者最贵的直觉：把公布值当最终事实、把敏感度当数据本身的属性。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：本月公布的 CPI 同比 3.7%，三个月后它还是 3.7% 吗？",
+  "options": [
+    {"t": "会像 GDP 一样被反复修正，三个月后可能变成 4.0%", "ok": false, "why": "把 GDP 的修正文化套到所有数据上——CPI 是例外。05 节展开。"},
+    {"t": "CPI 指数发布即终值，同比数字不会回改（唯一年度季节因子重算会微调历史季调序列）", "ok": true, "why": "BLS 官方口径：CPI 指数『发布即终值』。但非农就业会被修两个月+年度基准——同一家机构、两种修订文化，05 节把这张地图补全。"},
+    {"t": "取决于市场反应，反应大就会被修正", "ok": false, "why": "统计修订走流程不走市场——数据机构不因行情改数（阴谋论刹车）。"},
+    {"t": "所有经济数据都会被修正，无一例外", "ok": false, "why": "覆盖过宽：初请几乎不修、ISM 不修、CPI 指数不修——修订性是逐指标查的，不是默认。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：哪类数据永远是市场波动之王？",
+  "options": [
+    {"t": "非农就业——数据之王，反应永远最大", "ok": false, "why": "「数据之王」是头衔不是定律：反应大小取决于它对政策预期的边际信息量。"},
+    {"t": "取决于市场当下最关心什么——高通胀期 CPI 是之王，增长担忧期就业反超", "ok": true, "why": "注意力是状态变量（FEDS 2025-022 的核心发现，P2 一手文件课展开）。2021–23 通胀期 CPI 敏感度碾压一切；平静期非农重回王座。"},
+    {"t": "GDP——它度量经济总量，最重要", "ok": false, "why": "对政策的边际信息量才是定价变量：GDP 低频（季）、滞后、三轮修正，月度数据才是波动燃料。"},
+    {"t": "消费者信心——它领先一切", "ok": false, "why": "信心是好的情绪温度计但噪音大、样本小——敏感度分层里它只是 ★ 级。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>四族指标地图 <span class="time-chip">≈8 min</span></h2>
+<p class="lede">美国宏观数据几十上百种，但仪表盘只认四族：<strong>就业、通胀、增长、信心</strong>。每族三个代表指标、各自标注领先/同步/滞后——这是你选指标的货架：</p>
+
+<figure>
+<svg viewBox="0 0 720 270" role="img" aria-label="美国指标四族谱系图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs><g class="da" style="animation-delay:0s"><rect x="300" y="10" width="130" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="365" y="29" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">美国指标地图</text><text x="365" y="45" text-anchor="middle" font-size="9" fill="#6e6c64">四族 × 领先/同步/滞后</text></g><g class="da" style="animation-delay:0.2s"><rect x="18" y="110" width="150" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="93" y="129" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">就业</text><text x="93" y="145" text-anchor="middle" font-size="9" fill="#6e6c64">labor</text></g><g class="da" style="animation-delay:0.35s"><rect x="192" y="110" width="150" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="267" y="129" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">通胀</text><text x="267" y="145" text-anchor="middle" font-size="9" fill="#6e6c64">inflation</text></g><g class="da" style="animation-delay:0.5s"><rect x="366" y="110" width="150" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="441" y="129" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">增长</text><text x="441" y="145" text-anchor="middle" font-size="9" fill="#6e6c64">growth</text></g><g class="da" style="animation-delay:0.65s"><rect x="540" y="110" width="150" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="615" y="129" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">信心</text><text x="615" y="145" text-anchor="middle" font-size="9" fill="#6e6c64">sentiment</text></g><line x1="335" y1="52" x2="93" y2="108" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:0.8s"/><line x1="352" y1="52" x2="267" y2="108" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:0.9s"/><line x1="388" y1="52" x2="441" y2="108" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1s"/><line x1="405" y1="52" x2="615" y2="108" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" class="da" style="animation-delay:1.1s"/><text x="93" y="176" text-anchor="middle" font-size="10" fill="#6e6c64">初请失业金 ｜领先｜周</text><text x="93" y="200" text-anchor="middle" font-size="10" fill="#6e6c64">非农+失业率 ｜同步｜月</text><text x="93" y="224" text-anchor="middle" font-size="10" fill="#6e6c64">时薪增速 ｜滞后｜月</text><text x="267" y="176" text-anchor="middle" font-size="10" fill="#6e6c64">CPI / PCE ｜滞后｜月</text><text x="267" y="200" text-anchor="middle" font-size="10" fill="#6e6c64">盈亏平衡通胀 ｜同步｜日</text><text x="267" y="224" text-anchor="middle" font-size="10" fill="#6e6c64">工资追踪器 ｜滞后｜月</text><text x="441" y="176" text-anchor="middle" font-size="10" fill="#6e6c64">ISM 新订单 ｜领先｜月</text><text x="441" y="200" text-anchor="middle" font-size="10" fill="#6e6c64">GDP+Nowcast ｜同步/滞后｜季</text><text x="441" y="224" text-anchor="middle" font-size="10" fill="#6e6c64">零售销售 ｜同步｜月</text><text x="615" y="176" text-anchor="middle" font-size="10" fill="#6e6c64">消费者信心 ｜领先｜月</text><text x="615" y="200" text-anchor="middle" font-size="10" fill="#6e6c64">NFIB 小企业 ｜领先｜月</text><text x="615" y="224" text-anchor="middle" font-size="10" fill="#6e6c64">金融条件 NFCI ｜同步｜周</text><text x="360" y="258" text-anchor="middle" font-size="10" fill="#6e6c64">领先=常用作拐点预警 ｜ 同步=确认当下状态 ｜ 滞后=趋势与目标验证</text>
+</svg>
+<figcaption><strong>美国指标谱系图（教学示意图，按族点亮）</strong>：四族 × 领先/同步/滞后 × 发布频率。<strong>领先指标</strong>（初请、ISM 新订单、信心调查）用于拐点预警；<strong>同步指标</strong>（非农、零售、市场定价类）确认当下状态；<strong>滞后指标</strong>（通胀、工资、GDP 终值）验证趋势——美联储看滞后的通胀定政策，市场看领先的拐点定价，两者天然打架，这正是行情的来源之一。</figcaption>
+</figure>
+
+<p>两行书源打底（CORE《宏观卷》免费在线）：失业的度量在 <strong>U1.3</strong>——国际劳工组织三条件（无工作、可工作、正在找工作），失业率=失业者÷劳动力，注意「退出劳动力」不计入失业率（灰心工人问题）；通胀的度量在 <strong>U4.2</strong>——CPI 的定义是「消费者为商品与服务实际支付的一般价格水平（含消费税）」，固定篮子带来<strong>替代偏误</strong>（价格涨了人们会换便宜的替代品，固定篮子高估生活成本）。这两个度量细节后面每课都在用。</p>
+
+<h2><span class="no">02</span>高频与低频：初请 vs 失业率 <span class="time-chip">≈8 min</span></h2>
+<p class="lede">同一族（就业）里挑一对最经典的高低频搭档：初次申请失业金（周频）与失业率（月频）。把两条线放同一扇窗里，「高频探头」四个字就不用解释了：</p>
+
+<figure>
+<svg viewBox="0 0 720 366" role="img" aria-label="初请失业金四周均值与失业率同窗 2019-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="121.1" x2="704" y2="121.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="124.6" text-anchor="end" font-size="10" fill="#6e6c64">200</text><line x1="52" y1="107.1" x2="704" y2="107.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="110.6" text-anchor="end" font-size="10" fill="#6e6c64">1000</text><line x1="52" y1="89.6" x2="704" y2="89.6" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="93.1" text-anchor="end" font-size="10" fill="#6e6c64">2000</text><line x1="52" y1="72.1" x2="704" y2="72.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="75.6" text-anchor="end" font-size="10" fill="#6e6c64">3000</text><line x1="52" y1="54.5" x2="704" y2="54.5" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="58" text-anchor="end" font-size="10" fill="#6e6c64">4000</text><line x1="52" y1="37" x2="704" y2="37" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="40.5" text-anchor="end" font-size="10" fill="#6e6c64">5000</text><rect x="145.6" y="30" width="20.5" height="92" fill="rgba(28,28,26,.09)"/><polyline points="52,120.8 55.2,120.7 58.5,120.7 61.7,120.7 64.9,120.7 68.1,120.8 71.4,120.8 74.6,120.9 77.8,121.1 81,121 84.3,120.8 87.5,120.8 90.7,120.7 94,120.7 97.2,120.7 100.4,120.9 103.6,121 106.9,121 110.1,120.9 113.3,120.9 116.6,121 119.8,120.9 123,120.9 126.2,120.8 129.5,120.7 132.7,120.6 135.9,120.5 139.1,120.6 142.4,120.8 145.6,120.9 148.8,121 152.1,120.9 155.3,120.6 158.5,83.7 161.7,37.6 165,42.9 168.2,68.6 171.4,84.2 174.7,92.6 177.9,97.7 181.1,99.2 184.3,99.6 187.6,102 190.8,106.6 194,109 197.2,109.3 200.5,109.7 203.7,110.3 206.9,110.6 210.2,111.1 213.4,111.3 216.6,110.9 219.8,110.1 223.1,110.3 226.3,110.1 229.5,110 232.8,110.5 236,111.4 239.2,112.4 242.4,112.9 245.7,113.7 248.9,114.3 252.1,115.2 255.3,116.2 258.6,116.9 261.8,117.2 265,117.7 268.3,118.2 271.5,118.1 274.7,118.1 277.9,118.3 281.2,118.5 284.4,118.4 287.6,118.7 290.9,119.5 294.1,119.9 297.3,120.3 300.5,120.7 303.8,120.8 307,120.7 310.2,120.5 313.4,120.4 316.7,120.6 319.9,120.8 323.1,120.8 326.4,120.9 329.6,120.9 332.8,120.9 336,120.9 339.3,120.9 342.5,120.9 345.7,121 349,120.9 352.2,120.9 355.4,120.8 358.6,120.7 361.9,120.8 365.1,121 368.3,121.2 371.5,121.1 374.8,121.1 378,121.1 381.2,121 384.5,120.9 387.7,120.9 390.9,121 394.1,121 397.4,121 400.6,121 403.8,120.9 407,120.8 410.3,120.6 413.5,120.7 416.7,120.8 420,120.8 423.2,120.7 426.4,120.5 429.6,120.3 432.9,120.3 436.1,120.5 439.3,120.6 442.6,120.4 445.8,120.3 449,120.6 452.2,120.8 455.5,120.9 458.7,120.9 461.9,120.9 465.1,120.8 468.4,120.8 471.6,120.9 474.8,121 478.1,121.1 481.3,120.9 484.5,120.8 487.7,120.9 491,120.9 494.2,120.9 497.4,120.8 500.7,120.9 503.9,120.9 507.1,120.8 510.3,120.8 513.6,120.6 516.8,120.5 520,120.5 523.2,120.5 526.5,120.5 529.7,120.6 532.9,120.6 536.2,120.7 539.4,120.6 542.6,120.5 545.8,120.7 549.1,120.8 552.3,120.8 555.5,120.7 558.8,120.7 562,120.9 565.2,120.9 568.4,120.8 571.7,120.7 574.9,120.6 578.1,120.7 581.3,120.7 584.6,120.8 587.8,120.7 591,120.6 594.3,120.5 597.5,120.4 600.7,120.4 603.9,120.6 607.2,120.7 610.4,120.7 613.6,120.6 616.9,120.4 620.1,120.5 623.3,120.6 626.5,120.6 629.8,120.7 633,120.7 636.2,120.8 639.4,120.7 642.7,120.8 645.9,121 649.1,121 652.4,120.8 655.6,120.8 658.8,120.9 662,120.9 665.3,121 668.5,120.9 671.7,121.1 675,121.1 678.2,120.9 681.4,120.7 684.6,120.7 687.9,120.9 691.1,121.1 694.3,121.1 697.5,121 700.8,121 704,121.1" fill="none" stroke="#1c1c1a" stroke-width="1.5"/><text x="54" y="25" font-size="10.5" font-weight="700" fill="#1c1c1a">初次申请失业金（4 周移动平均，千人，周频）</text><circle cx="163.4" cy="32" r="3" fill="#1c1c1a"/><text x="147.4" y="44" text-anchor="end" font-size="10.5" fill="#1c1c1a">2020-04 峰值 5,288k</text><circle cx="369.9" cy="121.2" r="3" fill="#1c1c1a"/><text x="359.9" y="107.2" text-anchor="end" font-size="10.5" fill="#1c1c1a">2022-10 低点 198k</text><circle cx="704" cy="121.1" r="3" fill="#1c1c1a"/><text x="694" y="107.1" text-anchor="end" font-size="10.5" fill="#1c1c1a">现在 202k</text><line x1="52" y1="224.9" x2="704" y2="224.9" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="228.4" text-anchor="end" font-size="10" fill="#6e6c64">4%</text><line x1="52" y1="196.6" x2="704" y2="196.6" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="200.1" text-anchor="end" font-size="10" fill="#6e6c64">8%</text><line x1="52" y1="168.3" x2="704" y2="168.3" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="171.8" text-anchor="end" font-size="10" fill="#6e6c64">12%</text><line x1="52" y1="140" x2="704" y2="140" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="143.5" text-anchor="end" font-size="10" fill="#6e6c64">16%</text><rect x="145.6" y="140" width="20.5" height="92" fill="rgba(28,28,26,.09)"/><polyline points="54.3,224.9 61.5,226.3 67.9,226.3 75.1,227 82,227.8 89.1,227.8 96,227 103.2,227.8 110.3,228.5 117.2,227.8 124.4,227.8 131.3,227.8 138.5,227.8 145.6,228.5 152.3,222.1 159.4,148.5 166.4,159.8 173.5,175.4 180.4,181 187.6,193.8 194.7,198 201.6,204.4 208.8,205.8 215.7,205.8 222.8,207.9 230,209.4 236.4,210.1 243.6,210.1 250.5,212.2 257.7,211.5 264.6,215 271.7,217.1 278.9,220 285.8,221.4 292.9,224.2 299.8,225.6 307,224.9 314.1,225.6 320.6,227 327.7,227 334.7,227.8 341.8,227.8 348.7,228.5 355.9,227.8 363,228.5 369.9,227.8 377.1,227.8 384,228.5 391.1,228.5 398.3,227.8 404.7,228.5 411.9,229.2 418.8,227.8 426,227.8 432.9,228.5 440,227 447.2,227 454.1,225.6 461.2,227 468.1,226.3 475.3,227 482.4,225.6 489.1,225.6 496.3,225.6 503.2,225.6 510.3,224.2 517.3,223.5 524.4,223.5 531.5,224.2 538.5,224.2 545.6,223.5 552.5,224.2 559.7,224.9 566.8,223.5 573.3,223.5 580.4,223.5 587.3,222.8 594.5,224.2 601.4,222.8 608.6,222.8 615.7,222.1 622.6,253.2 629.8,221.4 636.7,222.1 643.8,222.8 651,222.1 657.4,222.8 664.6,222.8 671.5,222.8 678.6,223.5 685.6,224.2 692.7,224.2" fill="none" stroke="#1c1c1a" stroke-width="1.5"/><text x="54" y="135" font-size="10.5" font-weight="700" fill="#1c1c1a">失业率（%，月频）</text><circle cx="159.4" cy="148.5" r="3" fill="#1c1c1a"/><text x="151.4" y="170.5" text-anchor="end" font-size="10.5" fill="#1c1c1a">2020-04 峰值 14.8%</text><circle cx="692.7" cy="224.2" r="3" fill="#1c1c1a"/><text x="682.7" y="210.2" text-anchor="end" font-size="10.5" fill="#1c1c1a">现在 4.1%</text><line x1="54.3" y1="232" x2="54.3" y2="236" stroke="#6e6c64"/><text x="54.3" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2019</text><line x1="138.5" y1="232" x2="138.5" y2="236" stroke="#6e6c64"/><text x="138.5" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="222.8" y1="232" x2="222.8" y2="236" stroke="#6e6c64"/><text x="222.8" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2021</text><line x1="307" y1="232" x2="307" y2="236" stroke="#6e6c64"/><text x="307" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2022</text><line x1="391.1" y1="232" x2="391.1" y2="236" stroke="#6e6c64"/><text x="391.1" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2023</text><line x1="475.3" y1="232" x2="475.3" y2="236" stroke="#6e6c64"/><text x="475.3" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2024</text><line x1="559.7" y1="232" x2="559.7" y2="236" stroke="#6e6c64"/><text x="559.7" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2025</text><line x1="643.8" y1="232" x2="643.8" y2="236" stroke="#6e6c64"/><text x="643.8" y="248" text-anchor="middle" font-size="10" fill="#6e6c64">2026</text><text x="52" y="14" font-size="10.5" fill="#6e6c64">灰色竖带=NBER 衰退区间</text>
+</svg>
+<figcaption><strong>就业高频与低频读数同窗，2018-12 至 2026-09-19</strong>：上格=初次申请失业金 4 周移动平均（周频，由 <a href="https://fred.stlouisfed.org/series/ICSA">FRED ICSA</a> 自行计算 4 周均值，当前 202k）；下格=失业率（月频，<a href="https://fred.stlouisfed.org/series/UNRATE">FRED UNRATE</a>，2026-08 为 4.1%）。看点：①2020-04 初请四周均值冲到 5,288k（约 529 万人/周）而失业率峰值 14.8%——高频探头量级领先一个数量级；②初请 2022-10 见低（198k）后缓慢爬升，失业率同期仍在 4% 附近——高频先动、低频确认；③两条线几乎不回改（初请几乎不修、失业率月度微修），是就业族里「拿来看拐点」的一对。</figcaption>
+</figure>
+
+<div class="tip">周层例行（0005）为什么把初请列为必看：它是全谱系里「频率×领先性×不修订」三项兼得的唯一就业指标——每周四 8:30 一个数，四周均线抹平单周噪声（单周受假日与季节扰动极大，永远看四周均值）。</div>
+
+<h2><span class="no">03</span>通胀双标尺：CPI vs 核心PCE <span class="time-chip">≈8 min</span></h2>
+<p class="lede">通胀族有两条尺子，媒体说 CPI、美联储看核心 PCE——差异不是无聊的口径，2021–22 年两条尺的劈叉是行情本身：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="CPI 同比与核心 PCE 同比 2019-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="272" x2="704" y2="272" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="275.5" text-anchor="end" font-size="10" fill="#6e6c64">0%</text><line x1="52" y1="222.4" x2="704" y2="222.4" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="225.9" text-anchor="end" font-size="10" fill="#6e6c64">2%</text><line x1="52" y1="172.8" x2="704" y2="172.8" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="176.3" text-anchor="end" font-size="10" fill="#6e6c64">4%</text><line x1="52" y1="123.2" x2="704" y2="123.2" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="126.7" text-anchor="end" font-size="10" fill="#6e6c64">6%</text><line x1="52" y1="73.6" x2="704" y2="73.6" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="77.1" text-anchor="end" font-size="10" fill="#6e6c64">8%</text><line x1="52" y1="24" x2="704" y2="24" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="27.5" text-anchor="end" font-size="10" fill="#6e6c64">10%</text><line x1="54.3" y1="272" x2="54.3" y2="276" stroke="#6e6c64"/><text x="54.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2019</text><line x1="138.5" y1="272" x2="138.5" y2="276" stroke="#6e6c64"/><text x="138.5" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="222.8" y1="272" x2="222.8" y2="276" stroke="#6e6c64"/><text x="222.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2021</text><line x1="307" y1="272" x2="307" y2="276" stroke="#6e6c64"/><text x="307" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2022</text><line x1="391.1" y1="272" x2="391.1" y2="276" stroke="#6e6c64"/><text x="391.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2023</text><line x1="475.3" y1="272" x2="475.3" y2="276" stroke="#6e6c64"/><text x="475.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2024</text><line x1="559.7" y1="272" x2="559.7" y2="276" stroke="#6e6c64"/><text x="559.7" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2025</text><line x1="643.8" y1="272" x2="643.8" y2="276" stroke="#6e6c64"/><text x="643.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2026</text><polyline points="54.3,235 61.5,234.3 67.9,225.4 75.1,222.4 82,227.4 89.1,230.6 96,226.6 103.2,228.8 110.3,230.3 117.2,229.1 124.4,220.2 131.3,214.5 138.5,207.5 145.6,214 152.3,235 159.4,264.3 166.4,267 173.5,254.1 180.4,247.2 187.6,240.3 194.7,237.5 201.6,241.5 208.8,242.7 215.7,239.3 222.8,238 230,230.6 236.4,205.8 243.6,169.6 250.5,150 257.7,140.6 264.6,141.8 271.7,144.3 278.9,139.3 285.8,117.2 292.9,100.9 299.8,94.2 307,84.5 314.1,75.1 320.6,59.5 327.7,67.9 334.7,60.2 341.8,49.3 348.7,62.2 355.9,68.1 363,68.9 369.9,79.6 377.1,95.4 384,113.3 391.1,115 398.3,124.2 404.7,150 411.9,149.2 418.8,169.6 426,195.9 432.9,190.4 440,179.7 447.2,180.5 454.1,191.4 461.2,194.4 468.1,189.7 475.3,195.4 482.4,193.6 489.1,185.4 496.3,188.7 503.2,191.6 510.3,198.3 517.3,199.1 524.4,207.3 531.5,211.7 538.5,208 545.6,204.5 552.5,200.8 559.7,197.8 566.8,202.6 573.3,213 580.4,214.2 587.3,213 594.5,205.5 601.4,204 608.6,199.1 615.7,197.1 629.8,197.8 636.7,197.6 643.8,201.8 651,206 657.4,189.7 664.6,174 671.5,166.1 678.6,179.5 685.6,184.2 692.7,180" fill="none" stroke="#d33a2c" stroke-width="1.8"/><polyline points="54.3,226.4 61.5,228.8 67.9,231.8 75.1,231.3 82,233.3 89.1,230.8 96,231.3 103.2,228.6 110.3,231.6 117.2,231.8 124.4,234.8 131.3,233.8 138.5,232.6 145.6,229.8 152.3,234.1 159.4,247.2 166.4,247.2 173.5,247.9 180.4,242 187.6,237.5 194.7,235.3 201.6,236.8 208.8,236 215.7,234.6 222.8,229.8 230,229.6 236.4,217.4 243.6,194.4 250.5,184.2 257.7,176.3 264.6,174.5 271.7,173.8 278.9,172.6 285.8,161.9 292.9,150.7 299.8,142.8 307,139.1 314.1,133.1 320.6,133.4 327.7,139.3 334.7,143.5 341.8,140.1 348.7,145.3 355.9,139.1 363,132.9 369.9,136.6 377.1,142.8 384,148.7 391.1,149.5 398.3,151.5 404.7,153.5 411.9,153.2 418.8,154.7 426,163.4 432.9,165.4 440,177 447.2,180.5 454.1,185.9 461.2,190.4 468.1,194.9 475.3,193.6 482.4,196.1 489.1,194.6 496.3,197.4 503.2,203.3 510.3,203.8 517.3,202.3 524.4,200.8 531.5,201.6 538.5,197.8 545.6,198.1 552.5,197.8 559.7,203.1 566.8,198.3 573.3,205.8 580.4,207.3 587.3,203.1 594.5,202.3 601.4,201.1 608.6,199.8 615.7,201.8 622.6,203.8 629.8,201.8 636.7,198.3 643.8,195.1 651,196.4 657.4,191.4 664.6,189.4 671.5,186.2 678.6,189.2 685.6,189.2" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="341.8" cy="49.3" r="3" fill="#d33a2c"/><text x="333.8" y="39.3" text-anchor="end" font-size="10.5" fill="#d33a2c">2022-06 峰值 8.98%</text><circle cx="692.7" cy="180" r="3" fill="#d33a2c"/><text x="662.7" y="154" text-anchor="end" font-size="10.5" fill="#d33a2c">现在 CPI 3.71%（2026-08）</text><circle cx="685.6" cy="189.2" r="3" fill="#1c1c1a"/><text x="679.6" y="233.2" text-anchor="end" font-size="10.5" fill="#1c1c1a">核心 PCE 3.34%</text><line x1="470" y1="38" x2="492" y2="38" stroke="#d33a2c" stroke-width="2"/><text x="497" y="41.5" font-size="10.5" fill="#1c1c1a">CPI 同比（总体）</text><line x1="470" y1="56" x2="492" y2="56" stroke="#1c1c1a" stroke-width="2"/><text x="497" y="59.5" font-size="10.5" fill="#1c1c1a">核心 PCE 同比（剔除食品能源）</text><text x="52" y="14" font-size="10.5" fill="#6e6c64">两条线为同比增速（现行 FRED 口径计算）</text>
+</svg>
+<figcaption><strong>通胀双标尺（同比，月频），2019-01 至 2026-08</strong>：红线=CPI 同比（<a href="https://fred.stlouisfed.org/series/CPIAUCSL">FRED CPIAUCSL</a>，2026-08 为 3.71%，2022-06 峰值 8.98% 均为现行口径计算值）；黑线=核心 PCE 同比（剔除食品与能源，<a href="https://fred.stlouisfed.org/series/PCEPILFE">FRED PCEPILFE</a>，2026-07 为 3.34%，2022-09 峰值 5.61%）。看点：①2021–22 红线远高于黑线——能源与食品冲击打总体、核心滞后跟上；②美联储官方标尺是核心 PCE（2% 目标），媒体标题是 CPI——读新闻时先换算尺子；③两尺当前均高于 2%，这是「通胀斗争未完」背景下的读数起点。</figcaption>
+</figure>
+
+<table>
+  <thead>
+    <tr><th>口径差异</th><th>CPI</th><th>PCE</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>篮子</td><td>固定篮子（消费者直接支付，含税）</td><td>链式（随消费结构变化），覆盖雇主代付的医疗等</td></tr>
+    <tr><td>权重</td><td>每两年大调</td><td>逐月链式更新</td></tr>
+    <tr><td>谁在用</td><td>媒体标题、社保调整、盈亏平衡的基准</td><td><strong>美联储官方通胀标尺</strong>（核心 PCE）</td></tr>
+    <tr><td>典型关系</td><td colspan="2">长期均值 PCE ≈ CPI − 0.3~0.5 个百分点（口径差，非谁对谁错）</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">04</span>数据日历墙与敏感度分层 <span class="time-chip">≈8 min</span></h2>
+<p class="lede">把发布日历挂在墙上（下表=2026 年 10 月实例，全部经官方排程核验），数据交易者的月份是从这些格子里流过去的：</p>
+
+<table>
+  <thead>
+    <tr><th>日期（2026-10）</th><th>事件</th><th>公布内容</th><th>层级（0005）</th><th>敏感度</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>10-02 周五 8:30</td><td><strong>就业形势报告（NFP）</strong></td><td>9 月非农+失业率+时薪</td><td>事件层·高</td><td>★★★（增长担忧期的王）</td></tr>
+    <tr><td>10-14 周三 8:30</td><td><strong>CPI</strong></td><td>9 月总体与核心 CPI</td><td>事件层·最高</td><td>★★★（通胀期的王）</td></tr>
+    <tr><td>10-27/28 周二/三</td><td><strong>FOMC 会议</strong></td><td>利率决议+记者会（10 月无 SEP：点阵图季是 3/6/9/12 月）</td><td>事件层·最高</td><td>★★★（政策一手源）</td></tr>
+    <tr><td>10-29 周四 8:30</td><td><strong>GDP 首估（advance）</strong></td><td>Q3 实际 GDP 年化环比首估</td><td>季层</td><td>★★</td></tr>
+    <tr><td>月末（惯例约 10-30）</td><td><strong>个人收支（PCE 物价）</strong></td><td>9 月 PCE/核心 PCE——联储标尺</td><td>事件层·高</td><td>★★★（以 BEA 排程为准）</td></tr>
+    <tr><td>每周四 8:30</td><td>初请失业金</td><td>周度高频探头</td><td>周层</td><td>★★</td></tr>
+    <tr><td>每周二/三 9:45–10:00</td><td>PMI 类（ISM/标普）</td><td>月初 ISM、月中标普 PMI</td><td>月层</td><td>★★（新订单领看）</td></tr>
+  </tbody>
+</table>
+
+<div class="note">敏感度分层的三问（比背星级更有用）：①这个数据改变<strong>政策预期</strong>吗（离联储目标越近越敏感）？②改变<strong>增长叙事</strong>吗？③发布时<strong>市场仓位</strong>挤在哪边？星级会随 regime 换王（先猜 2 的答案），三问是换王的机制。</div>
+
+<h2><span class="no">05</span>修订文化：first/second/third 与基准修订 <span class="time-chip">≈9 min</span></h2>
+<p class="lede">同一套美国统计体系里住着三种修订文化，不知道哪种文化管哪个数据，就会把「首估值」当「事实」：</p>
+<table>
+  <thead>
+    <tr><th>数据</th><th>修订规则（BLS/BEA 官方口径）</th><th>含义</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>CPI</td><td>指数「<strong>发布即终值</strong>」；唯随次年 1 月发布重算季节因子，可回改季调序列最多 5 年（非季调指数不动）</td><td>同比数字基本可信为终值</td></tr>
+    <tr><td>非农就业（CES）</td><td>首值后随样本到齐<strong>修正两个月</strong>；每年以 3 月为基准对齐失业保险总量做<strong>年度基准修订</strong>（覆盖前年 4 月起的 21 个月非季调数据，随次年 2 月发布）</td><td>单月首值噪声大，看三个月趋势</td></tr>
+    <tr><td>GDP（BEA）</td><td>每季三轮：<strong>advance</strong>（季末约 4 周）→<strong>second</strong>（约 8 周）→<strong>third</strong>（约 13 周）；另有年度更新（2026-09-30 刚发布过一次，国家/行业/地区同日）</td><td>首估只是第一稿，方向比水平可靠</td></tr>
+    <tr><td>初请 / ISM / 信心调查</td><td>基本不回改</td><td>拿来即用的高频读数</td></tr>
+  </tbody>
+</table>
+
+<div class="example">
+<p class="ex-title">基准修订的算术：81.8 万份「幽灵工作」（BLS 官方通知，2024-08 公布）</p>
+<p>2024 年 8 月，BLS 发布初步基准修订：把截至 2024 年 3 月的 12 个月非农就业总量<strong>下修 818,000</strong>（约 −0.5%）。做除法：</p>
+<table>
+  <thead><tr><th>换算</th><th>结果</th></tr></thead>
+  <tbody>
+    <tr><td>818,000 ÷ 12 个月</td><td class="num">每月约 68,000</td></tr>
+    <tr><td>对照当期月度首估均值</td><td class="num">约 +200,000/月</td></tr>
+    <tr><td>「强劲就业」的水分</td><td class="num">约三分之一是采样偏差</td></tr>
+  </tbody>
+</table>
+<p>这不是丑闻，是制度：CES 用企业样本调查估总量，每年必须用失业保险记录（覆盖几乎全部企业）校准一次。交易者的教训有两条——<strong>①月度非农首值要打折扣看（尤其趋势判断）；②年度基准修订月（8 月初步/2 月正式）是把就业叙事重新校准的节点</strong>，2024-08 那次直接改写了「就业超预期强劲」的市场叙事。</p>
+</div>
+
+<div class="warn">Point-in-Time 预告（1006 结业主课）：今天你回看 2023 年的「非农月月超预期」，与当时交易者实际看到的数字，差的就是这 81.8 万。用今天修订后的序列复盘当时的决策，是宏观版的「未来函数」——P1 结业时你会亲手用官方 vintage 数据库防这个坑。</div>
+
+<h2><span class="no">06</span>训练场 <span class="time-chip">≈15 min</span></h2>
+<p class="lede">检索练习：先不看上文凭记忆作答。第 1 题微重现上一课，第 3 题看图。目标：<strong>隔天回来再练还能对</strong>。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：CPI 公布日的标准动作（0005 事件层，2 分钟版）是——",
+  "options": [
+    {"t": "看公布值高低立刻判断利好利空", "ok": false, "why": "水平值不产生信息——军规：没有事前预期值的数据发布禁止解读。"},
+    {"t": "记「公布值 vs 事前预期值」两个数+意外方向一行", "ok": true, "why": "微重现·上一课（0005 if-then 卡事件层行）：你记录的这两个数，正是 P1 后半章「预期差」分析的原料。"},
+    {"t": "马上看分项找热点", "ok": false, "why": "分项分析属于月层复盘动作——事件日的 2 分钟只做意外方向，深读另约时间。"},
+    {"t": "等收盘后看财经媒体解读", "ok": false, "why": "把解读外包给标题=放弃训练。媒体也是「公布 vs 预期」框架，你自己记 30 秒就够了。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题：ISM 制造业 PMI 里的「新订单分项」，在谱系图里的正确位置是——",
+  "options": [
+    {"t": "增长族·同步——反映当前产出", "ok": false, "why": "同步的是产出/就业分项；新订单是订单，先于产出。"},
+    {"t": "增长族·领先——订单先于生产，新订单是拐点预警头号分项", "ok": true, "why": "四问定位法（01 节）+谱系图：增长族/月频/不回改/★★。新订单以及「新订单−库存」差值是 P0 仪表盘升级包（参考页 0001 §8）里的常驻领先组。"},
+    {"t": "信心族——它是企业调查", "ok": false, "why": "ISM 本质是企业调查，但市场按其内容（订单/产出/就业）归入增长族——分类看内容不看调查形式。"},
+    {"t": "通胀族——PMI 升=通胀升", "ok": false, "why": "PMI 与物价分项有相关，但主分项度量的对象是活动不是价格——归族看度量对象。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题（看图）：回看 02 节双面板图——2022-10 初请四周均值见低（198k）后缓慢回升，而失业率此后一年仍在 4% 下方徘徊。最贴切的机制解读是——",
+  "options": [
+    {"t": "初请数据算错了，失业率才是对的", "ok": false, "why": "两个数据都对——它们度量的是劳动市场的不同环节（申领保险的人数 vs 就业调查的失业率），频率与口径都不同。"},
+    {"t": "高频探头先动、低频确认滞后：解雇流上升（初请）先出现，但被招聘流对冲，失业率（净存量）迟迟不升", "ok": true, "why": "流量vs存量的机制：初请度量解雇流量（周），失业率度量净存量（月，受雇/离双方影响）。高频先报警、低频给确认——这正是把初请放进周层的原因。"},
+    {"t": "说明两者相关性为零，可以只看失业率", "ok": false, "why": "恰恰相反：延迟确认的稳定关系才是领先指标的价值——零相关的数据进不了仪表盘。"},
+    {"t": "初请回升是人口老龄化导致的永久趋势", "ok": false, "why": "老龄化是十年级慢变量，解释不了 2022-10 之后一两年的斜率变化——用慢变量解释快现象是常见错配。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题：你看到「9 月非农 +25 万，大超预期」，按本课修订文化，这个数字的性质是——",
+  "options": [
+    {"t": "终值事实，直接入档", "ok": false, "why": "它还会被修两次+明年的基准修订——首值只是第一稿。"},
+    {"t": "首估值：两个月内还会修正、明年 2 月基准修订正式定档，趋势判断要打折", "ok": true, "why": "05 节 CES 行的原文流程。2024-08 的 −81.8 万基准修订就是教训：三分之一的首估强劲是水分。"},
+    {"t": "如果超预期就不会被修正", "ok": false, "why": "修订方向与超不超预期无关，取决于样本到齐后的校准——统计流程不看行情。"},
+    {"t": "和市场预期一样就不用管", "ok": false, "why": "预期差为零只说明当天无意外，数据本身的修正流程照走——「没意外」和「不用追踪」是两回事。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：当前 CPI 同比 3.7%、核心 PCE 3.3%（均高于 2% 目标）。此时敏感度分层的「当期之王」最可能是——",
+  "options": [
+    {"t": "CPI——通胀仍高于目标，通胀意外直接改变降息路径定价", "ok": true, "why": "敏感度三问第①问：离政策目标越近越敏感。通胀高于目标期，CPI 意外→联储反应函数输入变化→利率路径重定价——2021–23 的实况，也是 03 节图里两尺仍高于 2% 的含义。"},
+    {"t": "消费者信心——情绪决定一切", "ok": false, "why": "信心是 ★ 级温度计：影响长期叙事，很少单日驱动利率路径。"},
+    {"t": "GDP advance——总量最重要", "ok": false, "why": "GDP 季频+三轮修正，对下次会议的边际信息量低于月度通胀——重要性≠敏感度。"},
+    {"t": "每周都一样，星级是固定的", "ok": false, "why": "先猜 2 的误区复刻：王座随 regime 换人，三问才是机制。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 6 题：2026-10-14（周三）晚上你的日程表上应该写什么？",
+  "options": [
+    {"t": "CPI 公布（9 月数据）——事件层动作：8:30 后记公布 vs 预期", "ok": true, "why": "日历墙实课应用：10-14 是 9 月 CPI 官方排程日（8:30 东部=北京 20:30）。注意时区与「数据月」滞后一个月的惯例。"},
+    {"t": "FOMC 决议日", "ok": false, "why": "10 月 FOMC 是 27–28 日；14 日是 CPI——日历感就是逐月把这些格子背进生物钟。"},
+    {"t": "非农公布日", "ok": false, "why": "10 月 NFP 是 10-02（周五，公布 9 月数据）——已过。"},
+    {"t": "普通交易日，无大事", "ok": false, "why": "把 CPI 日当普通日=事件层例行空转——这天是本月敏感度最高的格子之一。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（六题对照）：全对——隔天重练仍达标，M1.1 a 的课内证据到手；错 1–2 题——错题回对应节（第 1 题→0005 课 04 节；第 2 题→本课 01 节谱系图；第 3 题→02 节；第 4/5 题→05 节与 04 节星级三问；第 6 题→04 节日历墙），隔天再练；错 3 题以上——只练「四问定位法」这一主线：族/频率/修订性/敏感度，拿四个数据各走一遍。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题：为下周（用本课 2026-10 日历墙）写你自己的三行事件提醒——每行=日期+事件+你将记录的两个数（公布值与事前预期值各留空位）。另写一行：这周里哪个格子你必须雷打不动？为什么？",
+  "hint": "这就是 M0.4 事件层例行与 P1 数据流的第一次合体：日历→提醒→两列记录。预期值去哪找？参考页 0001 的共识来源（ Investing.com/ForexFactory 经济日历或 FedWatch 前的利率期货推算）。",
+  "a": "自查标准：①三行各含具体日期与事件（10 月当月：NFP 10-02 已过则写 CPI 10-14、FOMC 10-27/28、GDP 10-29、PCE 月末任选三）；②每行预留「公布值/预期值」两个空位——没留预期位=没带军规；③「雷打不动」行的理由应指向敏感度三问（如 10-14 CPI：通胀高于目标期=当期之王）；④写完后把这张表贴进你的观察日志，P1 结业课的决策日志直接从这三行长出来。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="time-chip">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>四族地图</strong>——就业/通胀/增长/信心 × 领先/同步/滞后，选指标先上货架</li>
+  <li><strong>四问定位法</strong>——哪一族/什么频率/会不会被修/市场多敏感</li>
+  <li><strong>修订文化三档</strong>——CPI 终值制 / 非农两月+年度基准 / GDP 三轮+年度，首值≠事实</li>
+  <li><strong>敏感度三问</strong>——改政策预期吗/改增长叙事吗/仓位挤哪边，王座随 regime 换人</li>
+</ul>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>阅读任务（必做）</strong>：BLS 手册 CPI 章（<a href="https://www.bls.gov/opub/hom/cpi/">bls.gov/opub/hom/cpi</a>，免费网页）——只读「数据来源与方法」两小节，验证本课修订表第一行；CORE《宏观卷》<a href="https://books.core-econ.org/the-economy/macroeconomics/">U4.2 通胀度量</a>一小节，把替代偏误读成自己的话。</p>
+<p>（2）<strong>课后探索（可选）</strong>：打开 <a href="https://fred.stlouisfed.org/">FRED</a> 任意序列页，点「Edit graph」把频率改成同比——亲手把一条指数变成你 03 节看到的那种同比线，下次读图就知道那条线怎么来的。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每月初花 3 分钟过一遍当月日历（BLS/Fed/BEA 官方排程页或免费经济日历），把 ★★★ 的格子设进日历提醒——事件层例行从「看到推送再反应」升级为「提前一周就位」。</p>
+<p><strong>下一课 1002《质变四值与拐点包》</strong>：同一个数字的读法升级——从「水平值」到 Level/Momentum/Acceleration/Percentile 四值判读，外加一整包专门抓拐点的领先指标。你刚建好的货架，马上换上透视镜。</p>
+
+<div class="ask-agent">我是你的教练。想让我陪你过一遍下月日历、某个指标的修订史想查、或你的三行事件提醒写完想对答案——直接回来问我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="0005-dashboard-routine.html">← 第 0005 课</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="../reference/0001-macro-dashboard.html">宏观仪表盘</a>
+    <span>下一课 1002 · 待建</span>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：BLS《Handbook of Methods》CPI/CES 章（修订规则官方一手表述）；BEA 发布排程与 GDP 估算说明；Fed 官方 FOMC 日历（2026）；CORE《宏观卷》U1.3（失业度量）与 U4.2（通胀度量），core-econ.org 免费在线——度量理论的书源底座。</p>
+  <div class="citations"><strong>书源登记（本课内化的书源材料）：</strong>①ILO 失业三条件与失业率定义——CORE《宏观卷》U1.3（01 节）；②CPI 定义（含消费税、消费者实付）与固定篮子替代偏误——同书 U4.2（01/03 节）；③CPI「发布即终值」与季节因子年度重算（可回改季调序列最多 5 年）——BLS Handbook CPI 章及季节调整页（05 节）；④CES 两月修正与年度基准修订（21 个月覆盖、次年 2 月发布）——BLS Handbook CES 章（05 节）；⑤−818,000 初步基准修订——BLS 官方通知（2024-08，截至 2024-03 的 12 个月）（例块）。<strong>数据口径：</strong>初请四周均值=<a href="https://fred.stlouisfed.org/series/ICSA">FRED ICSA</a> 自算（2018-12 至 2026-09-19，当前 202k）；失业率=<a href="https://fred.stlouisfed.org/series/UNRATE">UNRATE</a>（2026-08，4.1%）；CPI 同比=<a href="https://fred.stlouisfed.org/series/CPIAUCSL">CPIAUCSL</a> 现行口径自算（2026-08，3.71%；2022-06 峰 8.98%）；核心 PCE 同比=<a href="https://fred.stlouisfed.org/series/PCEPILFE">PCEPILFE</a> 自算（2026-07，3.34%；2022-09 峰 5.61%）。日历=Fed/BLS/BEA 官方排程（2026-10：NFP 10-02、CPI 10-14、FOMC 10-27/28、GDP advance 10-29；PCE 月末为惯例推算，以 BEA 排程为准）。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>
