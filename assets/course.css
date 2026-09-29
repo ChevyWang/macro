@@ -149,19 +149,21 @@ figure pre {
 figcaption { font-size: .85rem; color: var(--ink-soft); margin-top: .5rem; }
 figcaption ul { margin: .3rem 0 0; padding-left: 1.2rem; }
 
-/* —— 交互组件 —— */
-.quiz-block, .chain-block {
+/* —— 交互组件（标签选择器匹配 <quiz-block>/<chain-block>/<preq-block>/<recall-block> 自定义元素） —— */
+quiz-block, chain-block, preq-block, recall-block {
+  display: block;
   border: 1px solid var(--rule);
   border-radius: 6px;
   padding: 1.1rem 1.2rem;
   margin: 1.6rem 0;
   background: #fff;
 }
-.quiz-block .q, .chain-block .q {
+preq-block { border-style: dashed; background: var(--accent-soft); } /* 课前猜想：虚线框+浅蓝底，与课末白底实线自测区分 */
+quiz-block .q, chain-block .q, preq-block .q, recall-block .q {
   font-weight: 600;
   margin-bottom: .2rem;
 }
-.quiz-block .why-hint { font-size: .82rem; color: var(--ink-soft); margin-bottom: .7rem; }
+quiz-block .why-hint, preq-block .why-hint, recall-block .why-hint { font-size: .82rem; color: var(--ink-soft); margin-bottom: .7rem; }
 .opt {
   display: block;
   width: 100%;
@@ -207,13 +209,29 @@ figcaption ul { margin: .3rem 0 0; padding-left: 1.2rem; }
 .chain-step.picked::before { content: attr(data-pos) " "; font-family: var(--mono); color: var(--accent); font-weight: 700; }
 .chain-step.right { border-color: var(--down); background: var(--tip-bg); }
 .chain-step.misplaced { border-color: var(--up); background: var(--warn-bg); }
-.chain-check {
+.chain-check, .recall-check {
   font: inherit; font-size: .9rem;
   background: var(--accent); color: #fff; border: none;
   border-radius: 4px; padding: .45rem 1rem; cursor: pointer;
   margin-top: .3rem;
 }
-.chain-check:disabled { opacity: .5; cursor: default; }
+.chain-check:disabled, .recall-check:disabled { opacity: .5; cursor: default; }
+
+.recall-input {
+  width: 100%;
+  font: inherit;
+  font-size: .92rem;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  padding: .6rem .7rem;
+  margin: .6rem 0;
+  resize: vertical;
+  min-height: 6rem;
+}
+.recall-input:focus { outline: none; border-color: var(--accent); }
 
 /* —— 页脚导航 —— */
 .lesson-nav {
@@ -240,7 +258,7 @@ figcaption ul { margin: .3rem 0 0; padding-left: 1.2rem; }
 @media print {
   body { background: #fff; font-size: 11pt; }
   .page { max-width: none; padding: 0; }
-  .quiz-block, .chain-block, .ask-agent, .lesson-nav { border: 1px solid #999; page-break-inside: avoid; }
+  quiz-block, chain-block, preq-block, recall-block, .ask-agent, .lesson-nav { border: 1px solid #999; page-break-inside: avoid; }
   a { border-bottom: none; color: inherit; }
   a[href^="http"]::after { content: "（" attr(href) "）"; font-size: .75em; color: #555; }
 }

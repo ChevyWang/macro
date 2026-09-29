@@ -1,6 +1,7 @@
 /* macro 课程共享交互组件 · 唯一权威版
-   用法：在课页放 <quiz-block> 或 <chain-block>，内嵌
+   用法：在课页放 <quiz-block> / <chain-block> / <preq-block> / <recall-block>，内嵌
    <script type="application/json"> {"q":"…","why":"…","options":[{"t":"…","ok":true,"why":"…"}]} </script>
+   （recall-block 用 {"q":"…","a":"参考答案"}；preq-block 可加 "revisit":"课末回望提示"）
    组件自动渲染。导出到 window.Macro（kbar 铁律：新组件必须导出+可探针）。 */
 (function () {
   "use strict";
@@ -11,10 +12,16 @@
     try { return JSON.parse(s.textContent); } catch (e) { console.error("interact.js JSON 解析失败", e); return null; }
   }
 
-  function buildQuiz(el) {
-    var data = readData(el);
+  // 选择题共用渲染：quiz 与 prequestion（课前先猜）同一机制，仅提示语不同
+  function buildChoice(el, data, meta) {
     if (!data || !data.options) return;
     var frag = document.createDocumentFragment();
+    if (meta && meta.note) {
+      var m = document.createElement("div");
+      m.className = "quiz-meta";
+      m.textContent = meta.note;
+      frag.appendChild(m);
+    }
     var q = document.createElement("div");
     q.className = "q";
     q.textContent = data.q;
@@ -50,12 +57,59 @@
           fb.className = "feedback show bad";
         }
         fb.textContent = o.why || "";
+        if (meta && meta.after) fb.textContent += (fb.textContent ? " " : "") + meta.after;
       });
       o._btn = b;
       frag.appendChild(b);
     });
     frag.appendChild(fb);
     el.appendChild(frag);
+  }
+
+  function buildQuiz(el) {
+    buildChoice(el, readData(el));
+  }
+
+  function buildPreq(el) {
+    var d = readData(el);
+    if (!d) return;
+    buildChoice(el, d, {
+      note: "课前先猜 · 不计分 · 猜错有好处：错误猜测会加深随后对正确答案的编码",
+      after: d.revisit || "记住你的直觉，课末自测会回到它。"
+    });
+  }
+
+  function buildRecall(el) {
+    var data = readData(el);
+    if (!data || !data.a) return;
+    var q = document.createElement("div");
+    q.className = "q";
+    q.textContent = data.q;
+    el.appendChild(q);
+    if (data.hint) {
+      var h = document.createElement("div");
+      h.className = "why-hint";
+      h.textContent = data.hint;
+      el.appendChild(h);
+    }
+    var ta = document.createElement("textarea");
+    ta.className = "recall-input";
+    ta.rows = 5;
+    ta.placeholder = "先凭记忆写，写完再展开对照——写不出来也是一次有效检索。";
+    el.appendChild(ta);
+    var fb = document.createElement("div");
+    fb.className = "feedback";
+    var check = document.createElement("button");
+    check.type = "button";
+    check.className = "recall-check";
+    check.textContent = "展开参考答案";
+    check.addEventListener("click", function () {
+      fb.textContent = data.a;
+      fb.classList.add("show", "good");
+      check.disabled = true;
+    });
+    el.appendChild(check);
+    el.appendChild(fb);
   }
 
   function buildChain(el) {
@@ -126,9 +180,11 @@
   function init() {
     document.querySelectorAll("quiz-block").forEach(buildQuiz);
     document.querySelectorAll("chain-block").forEach(buildChain);
+    document.querySelectorAll("preq-block").forEach(buildPreq);
+    document.querySelectorAll("recall-block").forEach(buildRecall);
   }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init);
   else init();
 
-  window.Macro = { quiz: buildQuiz, chain: buildChain, init: init };
+  window.Macro = { quiz: buildQuiz, preq: buildPreq, recall: buildRecall, chain: buildChain, init: init };
 })();
