@@ -241,6 +241,31 @@ quiz-block .why-hint, preq-block .why-hint, recall-block .why-hint { font-size: 
   text-align: center;
 }
 
+/* —— 课节解剖组件（kbar 同构：核心动作框 / 本课地图 / 时间chip / 检核清单 / 页脚引文） —— */
+.callout { background: var(--note-bg); border-left: 3px solid var(--note); padding: .8rem 1rem; margin: 1.2rem 0 1.8rem; font-family: var(--sans); font-size: .95rem; line-height: 1.75; }
+.callout b { color: var(--ink); }
+.time-chip {
+  font-family: var(--sans); font-size: .7rem; color: var(--faint);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: .08rem .55rem; margin-left: .55em; white-space: nowrap; vertical-align: 2px;
+}
+.lesson-map {
+  border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1.2rem;
+  margin: 1.6rem 0; font-family: var(--sans); font-size: .9rem; background: #fff;
+}
+.lesson-map .lm-title { font-weight: 700; font-size: .82rem; color: var(--muted); letter-spacing: .1em; }
+.lesson-map ol { margin: .4rem 0 0 1.3rem; padding: 0; }
+.lesson-map li { margin: .18rem 0; }
+.lesson-map li .t { color: var(--faint); font-size: .8rem; margin-left: .4em; }
+.checklist { list-style: none; padding-left: 0; }
+.checklist li { padding-left: 1.7rem; position: relative; margin: .45rem 0; }
+.checklist li::before { content: "☐"; position: absolute; left: 0; top: -1px; color: var(--faint); font-size: 1.1rem; }
+footer.course { margin-top: 4rem; border-top: 2px solid var(--ink); padding-top: 1.2rem; font-size: .88rem; font-family: var(--sans); }
+footer.course .nav { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+footer.course .nav a { max-width: 32%; }
+.citations { color: var(--muted); font-size: .8rem; line-height: 1.7; }
+.citations b { color: var(--ink); }
+
 /* —— 打印 —— */
 @media print {
   body { background: #fff; font-size: 11pt; }
