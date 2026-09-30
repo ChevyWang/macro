@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1006 一页纸快照 + Point-in-Time · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 1006 课</span>
+    <span>·</span>
+    <span>P1 数据流 · M1.4 结业</span>
+    <span>·</span>
+    <span>P1 收官</span>
+  </div>
+  <h1>一页纸快照 + Point-in-Time</h1>
+  <p class="deck">P1 的收官把五课技能收拢成一件随身仪器：<strong>三句话快照</strong>（增长+通胀+政策+证据）与<strong>决策日志</strong>（3–5 个可证伪预测）。再加一道宏观版的「未来函数」禁令——Point-in-Time 纪律：复盘只能用决策当天可见的信息。本课约 75–95 分钟（先猜 3 + 正文与图组 45–55 + 训练场与三级练习 20 + 动笔与小结 5）。前置要求：1001–1005（训练场含 P1 全阶段回望）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：当场写出快照 #1（三句话版）并登记 3–5 个可证伪预测——从今天起到毕业，你的判断力成长全靠这两个文件的持续运转。不算数：快照写成小作文（三句话就是三句）；护栏：<strong>「记录必须在决策时点完成，否则被后见之明污染」</strong>——这条护栏就是本课的第二主角。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>三句话快照：格式与范例解剖（fading 第一级） <span class="t">≈10 min</span></li>
+    <li>Point-in-Time：修订文化与未来函数禁令（含一图一例） <span class="t">≈12 min</span></li>
+    <li>当期快照 #1：2026-09 的仪表盘（含一图） <span class="t">≈10 min</span></li>
+    <li>决策日志启动：预测行与错误归因 <span class="t">≈10 min</span></li>
+    <li>补全练习与独立写作（fading 二三级） <span class="t">≈10 min</span></li>
+    <li>训练场（P1 全阶段回望） <span class="t">≈15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">结业课的先猜瞄准两个「复盘陷阱」。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：复盘 2022 年 7 月「当时应不应该看空债市」，用今天的 FRED 数据（已含全部修订）跑回测。这个回测——",
+  "options": [
+    {"t": "完全成立，数据越新越准", "ok": false, "why": "数据越新≠当时越准——修订后的序列是当时不存在的信息。"},
+    {"t": "犯了 look-ahead bias（未来函数）：决策日之后才发生的修订被偷偷喂给了模型", "ok": true, "why": "宏观版的未来函数——02 节的图与例块会用 2008 年的真实修订量级告诉你这个偏差有多大。"},
+    {"t": "只要注明数据来源就没问题", "ok": false, "why": "注明来源≠注明 vintage——同一来源的不同时点版本，才是这里的全部差别。"},
+    {"t": "回测本来就允许用完整信息", "ok": false, "why": "恰恰相反：回测的价值在于模拟「当时能做什么」——喂入未来信息的回测是自欺。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：你的决策日志应该记录——",
+  "options": [
+    {"t": "每次交易的结果（盈亏）", "ok": false, "why": "那是交易记录。决策日志记录的是<strong>预测与理由</strong>——盈亏是其中一个验收维度，且是最容易被运气污染的那个。"},
+    {"t": "3–5 个可证伪预测：事件+概率区间+到期日，事后补结果与错误归因", "ok": true, "why": "制度设计（参考页 0006 的模板）：可证伪=有明确的「什么发生算我对/错」；概率区间=拒绝假精确；错误归因=区分「框架错」与「运气差」。04 节展开。"},
+    {"t": "每天的市场观点截图", "ok": false, "why": "存档≠记录——没有概率与到期日的观点无法验收，等于没记。"},
+    {"t": "别人的研报要点", "ok": false, "why": "那是剪报。日志记录你的判断，否则打分（P6）打的是别人。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>三句话快照：格式与范例解剖 <span class="time-chip">≈10 min</span></h2>
+<p class="lede">快照的格式铁律：<strong>三句话，一句增长、一句通胀、一句政策，每句末尾挂证据括号</strong>。先看一份完整范例（fading 第一级：带逐句批注的解剖）：</p>
+
+<div class="example">
+<p class="ex-title">快照范例解剖（以 2022 年 7 月为样本时点，fading 第一级）</p>
+<table>
+  <thead><tr><th>句</th><th>范例（当时可写出的版本）</th><th>逐句批注</th></tr></thead>
+  <tbody>
+    <tr><td>①增长</td><td>增长动能减速但仍为正——初请四周均值尚在 22 万下方、ISM 新订单 48 偏弱（2022-07 读数）</td><td>方向+一个领先+一个确认指标，各带读数；不下「衰退已开始」的结论（当时数据不支持）</td></tr>
+    <tr><td>②通胀</td><td>通胀见顶概率上升——CPI 同比 9.1% 为本轮峰值（首值即终值）、核心 3M 年化高位回落中（2022-06 数据）</td><td>用双尺（1002）；「见顶概率」而非「已见顶」——预测写成概率语言</td></tr>
+    <tr><td>③政策</td><td>政策将继续快速收紧——点阵图中值 3.4%、2s10s 已倒挂 −20bp，市场定价年末政策利率约 3.3%（2022-07-01）</td><td>「政策」句必须包含市场定价（P1 主线：预期差需要参照系）</td></tr>
+  </tbody>
+</table>
+<p>批注里的共性：<strong>每句=方向判断+两个带读数的证据+时点标注</strong>；证据覆盖领先与确认两类；全部使用当时可见的首值（下一节告诉你为什么这是生死攸关的）。</p>
+</div>
+
+<h2><span class="no">02</span>Point-in-Time：修订文化与未来函数禁令 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">1001 讲过修订三档（CPI 终值制/非农两月+基准/GDP 三轮+年度）。现在看修订的<strong>量级</strong>能大到什么程度——这是 Point-in-Time 纪律存在的理由：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="GDP 首估与现行值对照" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="70" y1="211.4" x2="680" y2="211.4" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="214.9" text-anchor="end" font-size="10" fill="#6e6c64">-8%</text><line x1="70" y1="173.2" x2="680" y2="173.2" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="176.7" text-anchor="end" font-size="10" fill="#6e6c64">-6%</text><line x1="70" y1="135" x2="680" y2="135" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="138.5" text-anchor="end" font-size="10" fill="#6e6c64">-4%</text><line x1="70" y1="96.8" x2="680" y2="96.8" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="100.3" text-anchor="end" font-size="10" fill="#6e6c64">-2%</text><line x1="70" y1="58.6" x2="680" y2="58.6" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="62.1" text-anchor="end" font-size="10" fill="#6e6c64">0%</text><rect x="130" y="58.6" width="56" height="5.7" fill="#6e6c64"/><rect x="186" y="58.6" width="56" height="40.1" fill="#1c1c1a"/><text x="158" y="78.4" text-anchor="middle" font-size="10.5" fill="#6e6c64" font-weight="700">-0.3%</text><text x="214" y="112.7" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">-2.1%</text><text x="158" y="266" text-anchor="middle" font-size="11" fill="#1c1c1a" font-weight="700">2008Q3</text><text x="158" y="282" text-anchor="middle" font-size="9.5" fill="#6e6c64">2008-10-30 发布</text><rect x="320" y="58.6" width="56" height="72.5" fill="#6e6c64"/><rect x="376" y="58.6" width="56" height="162.3" fill="#1c1c1a"/><text x="348" y="145.2" text-anchor="middle" font-size="10.5" fill="#6e6c64" font-weight="700">-3.8%</text><text x="404" y="234.9" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">-8.5%</text><text x="348" y="266" text-anchor="middle" font-size="11" fill="#1c1c1a" font-weight="700">2008Q4</text><text x="348" y="282" text-anchor="middle" font-size="9.5" fill="#6e6c64">2009-01-30 发布</text><rect x="510" y="58.6" width="56" height="26.7" fill="#6e6c64"/><rect x="566" y="58.6" width="56" height="19.1" fill="#1c1c1a"/><text x="538" y="99.4" text-anchor="middle" font-size="10.5" fill="#6e6c64" font-weight="700">-1.4%</text><text x="594" y="91.7" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">-1%</text><text x="538" y="266" text-anchor="middle" font-size="11" fill="#1c1c1a" font-weight="700">2022Q1</text><text x="538" y="282" text-anchor="middle" font-size="9.5" fill="#6e6c64">2022-04-28 发布</text><line x1="330" y1="52" x2="352" y2="52" stroke="#6e6c64" stroke-width="8"/><text x="357" y="55.5" font-size="10" fill="#1c1c1a">advance 首估</text><line x1="440" y1="52" x2="462" y2="52" stroke="#1c1c1a" stroke-width="8"/><text x="467" y="55.5" font-size="10" fill="#1c1c1a">现行值（历次修订后）</text><text x="70" y="16" font-size="10.5" fill="#6e6c64">实际 GDP 季度环比折年率：首估 vs 现行值（同季两读）</text>
+</svg>
+<figcaption><strong>实际 GDP 季度环比折年率：advance 首估（灰）vs 现行值（黑）</strong>：来源=<a href="https://www.bea.gov/news/2009/gross-domestic-product-fourth-quarter-2008-advance">BEA 官方发布</a>（advance 日期见表）与 <a href="https://fred.stlouisfed.org/series/A191RL1Q225SBEA">FRED A191RL1Q225SBEA</a>（现行值）。看点：<strong>2008Q4 首估 −3.8%，现行值 −8.5%——差 4.7 个百分点，是首估幅度的一倍多</strong>（BEA 官方 FAQ 专文解释该季修订为何巨大：缺失的进口/库存数据后到）。2008Q3 更极端：−0.3% 的首估让人觉得「温和放缓」，实际 −2.1%。<strong>用首估值决策、用现行值复盘，你会系统性地高估自己「当时本可以知道」的东西。</strong></figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 720 250" role="img" aria-label="Point-in-Time 时间轴示意" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="arr" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs><text x="40" y="20"  font-size="11" fill="#d33a2c" font-weight="700">决策时点</text><rect x="130" y="6" width="150" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="205" y="25" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">t 日：我必须决策</text><text x="310" y="31"  font-size="10" fill="#6e6c64">只能用 t 日实际可见的信息：</text><text x="310" y="49"  font-size="10" fill="#6e6c64">当时的首估值 · consensus · 曲线</text><line x1="285" y1="27" x2="306" y2="27" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/><text x="520" y="20"  font-size="11" fill="#6e6c64" font-weight="700">t+1 数据落地</text><rect x="510" y="36" width="170" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="595" y="55" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">新发布（首估值）</text><text x="520" y="110"  font-size="11" fill="#6e6c64" font-weight="700">t+2..t+N 修订到来</text><rect x="510" y="126" width="170" height="42" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="595" y="145" text-anchor="middle" font-size="14" font-weight="700" fill="#1c1c1a">二修/三修/基准修订</text><line x1="595" y1="78" x2="595" y2="124" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)"/><text x="60" y="126"  font-size="10" fill="#d33a2c">事后复盘若用「现行值」对照 t 日决策</text><text x="60" y="144"  font-size="10" fill="#d33a2c">= look-ahead bias（未来函数）：用了当时不可能知道的信息</text><line x1="508" y1="152" x2="340" y2="152" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="4 3"/><text x="40" y="220"  font-size="11" fill="#6e6c64" font-weight="700">Point-in-Time 纪律：复盘时回到 ALFRED/RTDSM，取「as-of 决策日」的 vintage</text>
+</svg>
+<figcaption><strong>决策时点与信息版本（教学示意图）</strong>：t 日决策只能用 t 日可见的 vintage；t+1 首估、t+2 起的修订都属于「未来」。复盘时用现行值对照 t 日决策=未来函数（look-ahead bias）——红色虚线画的就是这条被无数回测踩中的陷阱路径。</figcaption>
+</figure>
+
+<p><strong>概念清单</strong>（每个词对应一个坑，考试与实战通用）：<strong>vintage</strong>（数据的「版本」——同一指标在不同日期下载内容不同）；<strong>revision</strong>（修订：月度小修/季度三轮/年度基准）；<strong>publication lag</strong>（发布滞后：数据描述的是上个月/上季度）；<strong>first/second/third estimate</strong>（GDP 三轮）；<strong>base effect</strong>（基期效应：同比读数由 12 个月前的分母决定——2021 年的高通胀有相当部分是 2020 低基数）；<strong>look-ahead bias</strong>（未来函数：用决策后才存在的信息评估决策）。</p>
+
+<p><strong>实操工具</strong>（两个官方免费库，专治未来函数）：<a href="https://alfred.stlouisfed.org/">ALFRED</a>（圣路易斯联储 vintage 数据库——官方表述：检索「历史上任一具体日期当时可得的每个数据版本」，即按 as-of 日期取数）；<a href="https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/real-time-data-set-for-macroeconomists">费城联储 RTDSM</a>（宏观学家实时数据集——「由主要宏观变量的 vintage（快照）组成」，含 GDI，按季度整理，学术标准工具）。个人复盘的最低配置：ALFRED 上任一序列选「as-of」你决策那天的日期——一分钟即可核对当时的首估值。</p>
+
+<div class="example">
+<p class="ex-title">一次 60 秒的 Point-in-Time 自检（动手跟做）</p>
+<p>问：2022 年 6 月的 CPI 公布日，「通胀再创新高」这个判断当时可见的证据是什么？三步：</p>
+<table>
+  <thead><tr><th>步</th><th>操作</th><th>结果</th></tr></thead>
+  <tbody>
+    <tr><td>①</td><td>当时公布的 5 月 CPI 同比首值（2022-06-10 发布）</td><td class="num">8.6%</td></tr>
+    <tr><td>②</td><td>今天的 FRED 序列里同月读数</td><td class="num">≈8.6%（CPI 终值制——两者一致的典型）</td></tr>
+    <tr><td>③</td><td>换一个会修的指标对照：2022 年 6 月「就业强劲」依据的非农首值 vs 后来</td><td class="num">首值 +37.2 万 → 年度基准修订后当期趋势显著下修</td></tr>
+  </tbody>
+</table>
+<p>结论：CPI 类判断的 vintage 风险低（终值制），就业类判断的 vintage 风险高（两月+基准修订）——<strong>Point-in-Time 纪律的强度应该按指标的修订文化分级</strong>（1001 修订三档表的实战化）。</p>
+</div>
+
+<h2><span class="no">03</span>当期快照 #1：2026-09 的仪表盘 <span class="time-chip">≈10 min</span></h2>
+<p class="lede">现在轮到你写 2026 年 9 月的快照。课件给数据与问题，<strong>不给结论</strong>（你的产出就是结业工件）。先看仪表盘：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="2026-09 当期快照读数横条图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="150" y1="24" x2="150" y2="278" stroke="#e4e2d9" stroke-width="1"/><text x="150" y="292" text-anchor="middle" font-size="10" fill="#6e6c64">0%</text><line x1="300" y1="24" x2="300" y2="278" stroke="#e4e2d9" stroke-width="1"/><text x="300" y="292" text-anchor="middle" font-size="10" fill="#6e6c64">2%</text><line x1="450" y1="24" x2="450" y2="278" stroke="#e4e2d9" stroke-width="1"/><text x="450" y="292" text-anchor="middle" font-size="10" fill="#6e6c64">4%</text><line x1="600" y1="24" x2="600" y2="278" stroke="#e4e2d9" stroke-width="1"/><text x="600" y="292" text-anchor="middle" font-size="10" fill="#6e6c64">6%</text><line x1="300" y1="24" x2="300" y2="278" stroke="#d33a2c" stroke-width="1.2" stroke-dasharray="4 3"/><text x="300" y="18" text-anchor="middle" font-size="9.5" fill="#d33a2c">通胀目标 2%</text><text x="142" y="47" text-anchor="end" font-size="10.5" fill="#1c1c1a">CPI 同比</text><rect x="150" y="34" width="278.3" height="16" fill="#1c1c1a"/><text x="422.3" y="46" text-anchor="end" font-size="10" fill="#fff" font-weight="700">3.71%</text><text x="610" y="46" font-size="8.5" fill="#6e6c64">2026-08</text><text x="142" y="74" text-anchor="end" font-size="10.5" fill="#1c1c1a">核心 PCE 同比</text><rect x="150" y="61" width="250.5" height="16" fill="#1c1c1a"/><text x="394.5" y="73" text-anchor="end" font-size="10" fill="#fff" font-weight="700">3.34%</text><text x="610" y="73" font-size="8.5" fill="#6e6c64">2026-07</text><text x="142" y="101" text-anchor="end" font-size="10.5" fill="#1c1c1a">失业率</text><rect x="150" y="88" width="307.5" height="16" fill="#1c1c1a"/><text x="451.5" y="100" text-anchor="end" font-size="10" fill="#fff" font-weight="700">4.1%</text><text x="610" y="100" font-size="8.5" fill="#6e6c64">2026-08</text><text x="142" y="128" text-anchor="end" font-size="10.5" fill="#1c1c1a">10Y 名义</text><rect x="150" y="115" width="387.8" height="16" fill="#1c1c1a"/><text x="531.8" y="127" text-anchor="end" font-size="10" fill="#fff" font-weight="700">5.17%</text><text x="610" y="127" font-size="8.5" fill="#6e6c64">2026-09-25</text><text x="142" y="155" text-anchor="end" font-size="10.5" fill="#1c1c1a">10Y 实际</text><rect x="150" y="142" width="212.3" height="16" fill="#1c1c1a"/><text x="356.3" y="154" text-anchor="end" font-size="10" fill="#fff" font-weight="700">2.83%</text><text x="610" y="154" font-size="8.5" fill="#6e6c64">2026-09-25</text><text x="142" y="182" text-anchor="end" font-size="10.5" fill="#1c1c1a">盈亏平衡</text><rect x="150" y="169" width="176.3" height="16" fill="#1c1c1a"/><text x="320.3" y="181" text-anchor="end" font-size="10" fill="#fff" font-weight="700">2.35%</text><text x="610" y="181" font-size="8.5" fill="#6e6c64">2026-09-29</text><text x="142" y="209" text-anchor="end" font-size="10.5" fill="#1c1c1a">HY 利差</text><rect x="150" y="196" width="226.5" height="16" fill="#1c1c1a"/><text x="370.5" y="208" text-anchor="end" font-size="10" fill="#fff" font-weight="700">3.02%</text><text x="610" y="208" font-size="8.5" fill="#6e6c64">2026-09-28</text><text x="142" y="236" text-anchor="end" font-size="10.5" fill="#1c1c1a">2s10s 利差</text><rect x="150" y="223" width="27.8" height="16" fill="#1c1c1a"/><text x="183.8" y="235" font-size="10" fill="#1c1c1a" font-weight="700">0.37%</text><text x="610" y="235" font-size="8.5" fill="#6e6c64">2026-09-29</text><text x="142" y="263" text-anchor="end" font-size="10.5" fill="#1c1c1a">有效联邦基金利率</text><rect x="150" y="250" width="272.3" height="16" fill="#1c1c1a"/><text x="416.3" y="262" text-anchor="end" font-size="10" fill="#fff" font-weight="700">3.63%</text><text x="610" y="262" font-size="8.5" fill="#6e6c64">2026-08</text>
+</svg>
+<figcaption><strong>当期快照 #1 仪表盘（各读数截至日期见行尾）</strong>：CPI 同比 3.71%（2026-08，<a href="https://fred.stlouisfed.org/series/CPIAUCSL">CPIAUCSL</a> 自算）/ 核心 PCE 3.34%（2026-07，<a href="https://fred.stlouisfed.org/series/PCEPILFE">PCEPILFE</a> 自算）/ 失业率 4.1%（2026-08，<a href="https://fred.stlouisfed.org/series/UNRATE">UNRATE</a>）/ 有效联邦基金利率 3.63%（2026-08，<a href="https://fred.stlouisfed.org/series/FEDFUNDS">FEDFUNDS</a>）/ 10Y 名义 5.17%、实际 2.83%（2026-09-25，DGS10/DFII10）/ 盈亏平衡 2.35%（2026-09-29，T10YIE）/ HY 利差 3.02%（2026-09-28，BAMLH0A0HYM2）/ 2s10s +0.37%（T10Y2Y）。红色虚线=通胀 2% 目标。中国侧见 04 节。这些就是你快照的证据弹药库。</figcaption>
+</figure>
+
+<p><strong>你的任务（fading 第三级——独立写作）</strong>：按 01 节格式写三句话（增长/通胀/政策，各带证据与时点），外加第四行「中国」与第五行「风险提示」。写完前不要看下一节的半成品对照。</p>
+
+<h2><span class="no">04</span>决策日志启动：预测行与错误归因 <span class="time-chip">≈10 min</span></h2>
+<p class="lede">快照拍完存档，日志开始滚动。格式与规则全部在<a href="../reference/0006-decision-log.html">参考页 0006《决策日志与 Macro Decision Sheet》</a>（可打印），课内只讲三条制度：</p>
+<p>①<strong>预测行五要素</strong>：事件（可证伪表述）+ 概率区间（如 55–70%，拒绝点值）+ 到期日（可验收）+ 依据（一句证据）+ 事后补的「结果与错误归因」。②<strong>3–5 个起步</strong>：一两个增长类（如「未来三个月核心 CPI 3M 年化降至 2% 以下，概率 30–45%」）、一个政策类（如「10-28 FOMC 按兵不动，概率 60–75%」）、一个市场类（如「年底前 10Y 突破 5.5%，概率 20–35%」）——跨类别分散，避免全是同一叙事的变体。③<strong>错误归因分两栏</strong>：「框架错」（证据链本身错了）vs「运气差」（框架对、小概率分支发生）——P6 打 Brier 分时这两栏决定你学到什么。</p>
+
+<div class="note">与当期快照螺旋的合流（课程制度设计）：本课的快照 #1 会在 P2 结业课（2006）用「央行视角」重读、P3 用「周期视角」重读、P4 用「跨资产视角」重读——同一张快照四副透镜，毕业时你手里是一整年自己写的 regime 演变记录。每次重读补一节「当时怎么读 vs 现在怎么读」，那就是你的成长曲线。</div>
+
+<h2><span class="no">05</span>补全练习（fading 第二级） <span class="time-chip">≈10 min</span></h2>
+<p class="lede">独立写作前先做一道半成品补全——把下面这份残缺快照的空位填上（答案在训练场后）：增长句缺方向、通胀句缺证据、政策句缺市场定价：</p>
+<table>
+  <thead><tr><th>句</th><th>残缺快照（2026-09）</th><th>你补什么</th></tr></thead>
+  <tbody>
+    <tr><td>①增长</td><td>＿＿——初请四周均值 202.3k 历史低分位、但 2022-10 以来缓慢爬升，PMI 新订单 50.6 重回扩张（各读数截至 2026-08/09）</td><td>方向词（过热/稳健/放缓/收缩？）</td></tr>
+    <tr><td>②通胀</td><td>通胀高于目标但短期动能降温——＿＿（证据空缺）</td><td>证据括号（用仪表盘里的至少两个读数）</td></tr>
+    <tr><td>③政策</td><td>政策＿＿——有效利率 3.63%，点阵图与会议纪要待读（10-27/28 FOMC 前）</td><td>市场定价（曲线/FedWatch 告诉你什么）</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">06</span>训练场（P1 全阶段回望） <span class="time-chip">≈15 min</span></h2>
+<p class="lede">结业课训练场=P1 全阶段回望：第 1 题微重现上一课，第 2–4 题系统回望 1001–1003，第 5 题综合。隔天重练=结业检测。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：COT 净空 81 万手+利多债券数据落地——这个组合的机制读法（1005）是——",
+  "options": [
+    {"t": "空头被轧，放大式上涨风险", "ok": true, "why": "微重现·上一课：仓位=拥挤度——巨量净空遇上利多=轧空燃料，不是方向预测本身。"},
+    {"t": "持仓数据有三天时滞，无参考价值", "ok": false, "why": "时滞要求打折非丢弃——量级结构的生命周期长于三天。"},
+    {"t": "净空=市场看空债券，利多数据无效", "ok": false, "why": "仓位不锁定方向——恰是反向信息更危险的原因。"},
+    {"t": "应该看 FedWatch 而不是 COT", "ok": false, "why": "不同楼层：概率（价格）与拥挤度（仓位）回答不同问题，合读而非替代。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题【阶段回望·1001】：以下哪个判断对 vintage 风险最不敏感（可以放心用今天的序列复盘）？",
+  "options": [
+    {"t": "2022 年通胀路径（CPI 判断）", "ok": true, "why": "阶段回望（1001 修订三档）：CPI 终值制——首值≈现行值，vintage 风险最低（02 节例块的对照结论）。"},
+    {"t": "2022-23 就业强度（非农判断）", "ok": false, "why": "非农两月修正+年度基准（−81.8 万案例）——vintage 风险最高的一类。"},
+    {"t": "2008Q4 的衰退深度（GDP 判断）", "ok": false, "why": "本课图的主角：−3.8%→−8.5%，修订差一倍多。"},
+    {"t": "所有指标的 vintage 风险相同", "ok": false, "why": "修订文化分档（1001）——这是分级制度存在的意义。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题【阶段回望·1002】：写「快照通胀句」时 3M 年化与 12M 同比不一致（1.96% vs 2.76%），快照里应该——",
+  "options": [
+    {"t": "只写 12M（官方口径最权威）", "ok": false, "why": "丢掉了拐点信息——双尺分工是 1002 的核心技能。"},
+    {"t": "双尺并写+点明背离含义：短期动能已至目标下方、中枢仍高——「降温但未达标」", "ok": true, "why": "阶段回望（1002 双尺）：背离本身就是信息；快照的通胀句正需要这个分层表述（参考 01 节范例批注）。"},
+    {"t": "取平均写 2.4%", "ok": false, "why": "平均抹掉时滞结构——两个尺各答各的问题。"},
+    {"t": "写哪个都行，快照不较真", "ok": false, "why": "快照的价值全在证据的精确分层——「不较真」的快照没有复盘价值。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题【阶段回望·1003】：快照的「中国行」里引用 M1，正确的做法是——",
+  "options": [
+    {"t": "直接写最新 M1 同比，口径不重要", "ok": false, "why": "红线课的错法示范——M1 的口径断点必须处理。"},
+    {"t": "标注「新口径、2024-01 回溯起」，且不做跨断点的趋势表述", "ok": true, "why": "阶段回望（1003 红线）：口径标注+限定可比区间，快照的证据才经得起 P2–P4 的重读。"},
+    {"t": "用旧口径序列保持一致性", "ok": false, "why": "旧口径已停发——一致性换不来说明力。"},
+    {"t": "M1 不重要，删掉中国行", "ok": false, "why": "中美双体系是课程主轴之一——中国行是快照的固定成员。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题（补全练习答案自查）：05 节残缺快照三处空位，最贴的一组填法是——",
+  "options": [
+    {"t": "增长「过热」；通胀证据用「CPI 3.71%+初请 202k」；政策句补「点阵图 3.63%」", "ok": false, "why": "三处全错位：初请不是通胀证据；有效利率不是点阵图；「过热」与就业温和读数不符。"},
+    {"t": "增长「温和放缓但未失速」；通胀证据「CPI 3.71%/核心 PCE 3.34% 高于目标，3M 年化 1.96% 低于目标」；政策补「曲线 3M 4.24→30Y 5.49 全陡+隐含远期 5.10%：市场定价更高更久」", "ok": true, "why": "逐位核对：方向与初请/PMI 证据一致；双尺并写（1002）；政策句用市场定价收尾（本课格式）。你自己的措辞可以不同，结构对即合格。"},
+    {"t": "增长「衰退」；通胀证据「黄金涨」；政策「Fed 必降息」", "ok": false, "why": "无证据支撑的方向词+非快照指标+确定性预言——三连错。"},
+    {"t": "空位无法补，信息不足", "ok": false, "why": "03 节仪表盘给了全部所需读数——「信息不足」是没去盘里找。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——隔天重练仍达标，M1.1–M1.4 的课内证据齐了；错 1–2 题——错题回对应课（第 1 题→1005；第 2 题→1001+本课 02 节；第 3 题→1002；第 4 题→1003；第 5 题→本课 01/03/05 节），隔天再练；错 3 题以上——P1 回炉：按错题分布重读对应课的「小结带走清单」。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题（M1.4 结业工件）：写出你的快照 #1 完整版——五行：增长/通胀/政策/中国/风险提示，每行带证据读数与截至日期；另起一行登记你的第一条决策日志预测（事件+概率区间+到期日+依据一句）。写完连同 3–5 条预测一起存入观察日志。",
+  "hint": "格式样板=01 节范例+05 节补全答案；数据弹药=03 节仪表盘+1003 中国行。风险提示行想不出就写「若……则本快照的哪一句需要重写」——可证伪的自查比宏大的风险叙述值钱。",
+  "a": "自查标准：①五行各带至少两个证据读数+截至日期（中国行含口径标注）；②方向词与证据一致（读数温和就别写过热）；③政策句含市场定价（不是「我认为 Fed 会……」而是「市场定价 X、若我不同意则预测行写明」）；④预测行五要素齐（事件可证伪/区间/到期/依据/留空的结果栏）；⑤全部数字可溯源到本课仪表盘或前四课图注。达标即 M1.4 课内件完成——工件归档后 M1.4 点亮（标准见小结）。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="time-chip">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>三句话快照</strong>——增长/通胀/政策各一句+证据括号+时点；第四行中国、第五行风险</li>
+  <li><strong>Point-in-Time 纪律</strong>——复盘用 as-of 决策日的 vintage；风险按修订文化分级</li>
+  <li><strong>决策日志</strong>——3–5 个可证伪预测（概率区间+到期日），错误归因分「框架/运气」两栏</li>
+  <li><strong>ALFRED/RTDSM</strong>——官方 vintage 库，60 秒自检工具</li>
+</ul>
+
+<div class="stop">M1.4 结业标准（显式）：①给定一周真实数据写出三句话快照（格式见 01 节，证据带读数与截至日期）；②Point-in-Time 重建：给定历史某日（如 2022-06），只用当天可见信息（当时的首值/consensus/曲线）重建判断；③决策日志启动：≥3 条可证伪预测登记入册。工件=快照 #1 全五行+预测清单（存观察日志并交教练归档 private 侧）。检测：本课训练场五题 ≥80% 且隔天重练达标。</div>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（本周内）</strong>：把快照 #1 与 3–5 条预测按<a href="../reference/0006-decision-log.html">参考页 0006</a>的模板誊清归档——这是从今天到毕业持续运转的两份文件的第一版。</p>
+<p>（2）<strong>课后探索（可选）</strong>：在 <a href="https://alfred.stlouisfed.org/">ALFRED</a> 上任选一个序列（如 UNRATE），把 as-of 日期设为 2020-04-01 下载一次、再取当前版本——亲眼看看「同一序列的两个版本」差多少。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每月数据周（CPI 后）更新一次三句话快照，存同目录连续归档——P2 结业课起，每次当期快照都会用新的阶段透镜重读它们。</p>
+<p><strong>下一课 2001《美联储工具箱》</strong>：P2 央行与流动性开篇——政策利率、走廊、准备金体系、QE/QT 管道，以及读央行论文但别套模型的「学术地图」知识框。你的快照「政策句」将从直觉升级为管道级。</p>
+
+<div class="ask-agent">我是你的教练。快照写完发我批注、预测行想校对可证伪性、或想让我陪你做一次 ALFRED 的 vintage 自检——直接回来找我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="1005-positioning-probabilities.html">← 第 1005 课</a>
+    <a href="../reference/0006-decision-log.html">决策日志模板</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="../reference/0001-macro-dashboard.html">宏观仪表盘</a>
+    <span>下一课 2001 · 待建</span>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：ALFRED（圣路易斯联储 vintage 库）与费城联储 RTDSM 官方页（Point-in-Time 一手工具与表述）；BEA GDP 发布档案与修订 FAQ（2008Q4 案例一手源）；参考页 0006《决策日志与 Macro Decision Sheet》（配套模板）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①ALFRED「as-of 日期」官方表述——alfred.stlouisfed.org（02 节）；②RTDSM「vintage 快照」官方表述——费城联储（02 节）；③2008Q4 advance −3.8% 与修订 FAQ——BEA 官方发布与 FAQ（02 节图）；④现行 GDP 值——FRED A191RL1Q225SBEA。<strong>数据口径：</strong>vintage 图三组值=BEA advance 发布原件+FRED 现行序列（2008Q3：−0.3%→−2.1%；2008Q4：−3.8%→−8.5%；2022Q1：−1.4%→−1.0%）；快照仪表盘全部读数与截至日期见图注（CPIAUCSL/PCEPILFE/UNRATE/FEDFUNDS/DGS10/DFII10/T10YIE/BAMLH0A0HYM2/T10Y2Y，2026-07 至 2026-09-29 各源）；2022-07 范例快照中的读数（初请/ISM/点阵图/2s10s）为当时公开首值，仅作格式示范。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>
