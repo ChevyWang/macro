@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3005 regime 定位 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 3005 课</span>
+    <span>·</span>
+    <span>P3 周期 · M3.3</span>
+  </div>
+  <h1>regime 定位</h1>
+  <p class="deck">P3 的总装台：用<strong>四层框架</strong>（基本面 G/I/C × 金融条件 L × 政策脉冲 M/F/S × 市场转译 Expectation→Pricing→Positioning）给当前环境定位——输出是一张<strong>手工箭头版的 regime 判读卡</strong>（这是终点形态，课程不建 composite 计算）。三条纪律随卡配发：<strong>条件分布纪律（conditional distribution discipline，禁方向口诀）</strong>、breadth confirmation（方向要广度与跨资产确认）、好通胀/坏通胀之辨。本课约 60–80 分钟（先猜 3 + 正文与图组 35–45 + 训练场 12 + 动笔与小结 5）。前置要求：3001–3004 全部+1006。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：每月 30 分钟，产出一张 regime 判读卡——四层各一行、箭头+证据句，连续持有 12 个月你就拥有自己的一整年 regime 演变记录（3006 与毕业课的原料）。不算数：手算 composite 分数/把四象限当轮盘（「金发女郎=买股票」）；护栏：<strong>regime 是分类工具不是客观真理——报告分布（中位回报/胜率/样本量），禁止方向口诀</strong>。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>四象限地图与四层框架（含散点图+框架图） <span class="t">≈12 min</span></li>
+    <li>条件分布纪律：为什么口诀被禁（含自算两表） <span class="t">≈12 min</span></li>
+    <li>Breadth confirmation：转向的确认机制 <span class="t">≈8 min</span></li>
+    <li>好通胀与坏通胀 <span class="t">≈6 min</span></li>
+    <li>regime 判读卡与边界反证 <span class="t">≈6 min</span></li>
+    <li>训练场 <span class="t">≈12 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准最流行的一条口诀与一个分类幻觉。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：流传最广的 regime 口诀：「Growth↑ + Inflation↓ = 股票最好（金发女郎经济，买！）」。本课把它列为禁句的最主要理由是——",
+  "options": [
+    {"t": "口诀本身是错的，金发女郎象限股票其实最差", "ok": false, "why": "方向上它并非全错——AQR 的符号研究里增长上行确实利多股票、通胀上行利空股债。问题不在符号，在「符号≠回报分布」。"},
+    {"t": "方向口诀丢掉了条件分布的全部信息：同象限内回报的中位数、胜率、离散度、起始估值与样本量各不相同——口诀把一张分布表压缩成一个箭头，压缩掉的都是决策需要的东西", "ok": true, "why": "本课核心：02 节的自算表会当场演示——2016–2025 美股 12 个月远期回报按象限分，样本稍换口诀就翻面。禁口诀不是禁方向，是禁「无分布的方向」。"},
+    {"t": "因为 regime 无法定义，任何口诀都无意义", "ok": false, "why": "虚无了——regime 作为分类工具完全可用（散点图上点云清晰可分），被禁的是口诀的用法不是分类本身。"},
+    {"t": "口诀是机构用的，个人不配用", "ok": false, "why": "与身份无关——机构用无分布的口诀同样亏钱。纪律面前人人平等。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：「regime 是客观存在的经济状态，我们的任务是把它找出来。」这句话里最需要修正的假设是——",
+  "options": [
+    {"t": "regime 是央行决定的", "ok": false, "why": "央行影响 regime 但不独占定义权——增长/通胀状态有独立于政策的成分。"},
+    {"t": "「找出来」——regime 是框架对状态的划分（阈值、维度都是人选的），有用是因为好用，不是因为它客观存在；边界附近（通胀 2.4% vs 2.6%）换一个框架就换一个标签，而经济本身没变", "ok": false, "why": "方向对了一半——但只停在「分类主观」还不够；最需要修正的是随之而来的实操姿势：既然实时不可验、切换日事后才知道，判读输出就必须是概率+监控，不是「发现」。"},
+    {"t": "「找出来」这个词——regime 是概率性的临时标签：实时判读永远带不确定性（切换日事后才确认），所以判读卡输出的是「当前最可能的标签+证据+反例监控」，不是「发现」", "ok": true, "why": "正确的实操姿势：把 regime 当临时标签，证据句与反例监控比标签本身重要——05 节判读卡的格式就是按这个哲学设计的（边界带双标签+监控点）。"},
+    {"t": "regime 这个词本身就是营销话术", "ok": false, "why": "过贬了——状态依赖性（同样的利率变化在不同状态下市场反应不同）是实证事实，regime 语言只是它的名字。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>四象限地图与四层框架 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">教学起点是经典四象限：横轴增长（本课用工业产出同比作同步代理）、纵轴通胀（核心 CPI 同比）。先看 26 年的真实轨迹：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="美国四象限散点 2000-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="56" y1="249.2" x2="700" y2="249.2" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="252.7" text-anchor="end" font-size="10" fill="#6e6c64">1%</text><line x1="56" y1="211.7" x2="700" y2="211.7" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="215.2" text-anchor="end" font-size="10" fill="#6e6c64">2%</text><line x1="56" y1="192.9" x2="700" y2="192.9" stroke="#6e6c64" stroke-width="1.4"/><text x="50" y="196.4" text-anchor="end" font-size="10" fill="#6e6c64">2.5%</text><line x1="56" y1="174.2" x2="700" y2="174.2" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="177.7" text-anchor="end" font-size="10" fill="#6e6c64">3%</text><line x1="56" y1="136.6" x2="700" y2="136.6" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="140.1" text-anchor="end" font-size="10" fill="#6e6c64">4%</text><line x1="56" y1="99.1" x2="700" y2="99.1" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="102.6" text-anchor="end" font-size="10" fill="#6e6c64">5%</text><line x1="56" y1="61.5" x2="700" y2="61.5" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="65" text-anchor="end" font-size="10" fill="#6e6c64">6%</text><line x1="56" y1="24" x2="700" y2="24" stroke="#e4e2d9" stroke-width="1"/><text x="50" y="27.5" text-anchor="end" font-size="10" fill="#6e6c64">7%</text><line x1="73.9" y1="24" x2="73.9" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="73.9" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">-15%</text><line x1="163.3" y1="24" x2="163.3" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="163.3" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">-10%</text><line x1="252.8" y1="24" x2="252.8" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="252.8" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">-5%</text><line x1="342.2" y1="24" x2="342.2" y2="268" stroke="#6e6c64" stroke-width="1.4"/><text x="342.2" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">0</text><line x1="431.7" y1="24" x2="431.7" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="431.7" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">5%</text><line x1="521.1" y1="24" x2="521.1" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="521.1" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">10%</text><line x1="610.6" y1="24" x2="610.6" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="610.6" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">15%</text><line x1="700" y1="24" x2="700" y2="268" stroke="#e4e2d9" stroke-width="1"/><text x="700" y="284" text-anchor="middle" font-size="10" fill="#6e6c64">20%</text><text x="585" y="44" text-anchor="middle" font-size="11" fill="#b8b5aa" font-weight="700">G↑ I↑ 过热</text><text x="585" y="252" text-anchor="middle" font-size="11" fill="#b8b5aa" font-weight="700">G↑ I↓ 金发女郎</text><text x="130" y="44" text-anchor="middle" font-size="11" fill="#b8b5aa" font-weight="700">G↓ I↑ 滞胀</text><text x="130" y="252" text-anchor="middle" font-size="11" fill="#b8b5aa" font-weight="700">G↓ I↓ 收缩</text><circle cx="424.9" cy="207.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="419.4" cy="205.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="421.8" cy="194.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="428.6" cy="201.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="421.8" cy="197.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="424" cy="191.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="409.7" cy="193.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="397.2" cy="189.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="413.2" cy="191.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="383.6" cy="191.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="375.3" cy="187.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="355.5" cy="190.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="349.3" cy="190.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="332.1" cy="182.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="322.2" cy="188.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="305.4" cy="186.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="292.3" cy="191.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="282.4" cy="185.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="274.7" cy="185.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="277.4" cy="187.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="260.8" cy="187.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="262.8" cy="188.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="252" cy="184.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="256.8" cy="182.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="276.3" cy="188.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="287.8" cy="191.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="304" cy="195.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="318.9" cy="193.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="334.5" cy="191.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="358.7" cy="202" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="369.8" cy="204.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="369.8" cy="198.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="380.6" cy="202.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="381.8" cy="204.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="403.3" cy="210.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="393.7" cy="213" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="397.2" cy="213.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="399.1" cy="219.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="381.1" cy="221.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="361.3" cy="231.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="353.6" cy="229.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="341.2" cy="231.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="350.9" cy="229.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="349" cy="237.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="359.1" cy="239.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="365" cy="237.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="367" cy="245.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="377.7" cy="245.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="365" cy="243.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="373.8" cy="240" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="371.3" cy="228.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="389" cy="220.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="402.8" cy="222.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="386" cy="216.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="390.3" cy="220.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="395.5" cy="222.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="386" cy="213.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="399.4" cy="211.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="391.6" cy="203.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="405.7" cy="201.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="409.6" cy="201.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="411.8" cy="200.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="416.8" cy="198.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="413.9" cy="204.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="402.2" cy="204.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="425.1" cy="210.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="405.4" cy="208.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="410.2" cy="206.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="371.9" cy="214.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="378.4" cy="209" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="394.3" cy="207.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="389.2" cy="207.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="385.5" cy="207.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="373.1" cy="207.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="379.6" cy="208" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="381.3" cy="200.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="380.1" cy="195" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="377.6" cy="187.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="382.5" cy="185.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="384.6" cy="180.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="417.6" cy="176.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="393.2" cy="182.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="372" cy="188.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="381.1" cy="188.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="372" cy="187" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="388.4" cy="184.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="387.5" cy="192.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="394.2" cy="196.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="395.5" cy="201.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="390.8" cy="204.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="389.5" cy="205.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="385" cy="208.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="392.1" cy="207.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="389.1" cy="205.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="399.6" cy="199" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="381.6" cy="195.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="385.4" cy="193.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="361.2" cy="200.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="352.5" cy="197.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="328.9" cy="200.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="316.5" cy="199.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="311.4" cy="197" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="307.2" cy="194.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="276.3" cy="193" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="196.8" cy="195.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="217.8" cy="203.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="187.1" cy="211.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="140.5" cy="220.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="103" cy="224" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="99.6" cy="219.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="80" cy="219.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="77.2" cy="214.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="71" cy="217.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="68.8" cy="222.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="91.4" cy="229.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="133.1" cy="232.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="220.5" cy="231.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="208.5" cy="222.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="237.9" cy="222.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="293.9" cy="218.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="357.8" cy="230" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="375.7" cy="236.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="417.4" cy="243.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="439.3" cy="250.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="484.3" cy="251.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="495.2" cy="251.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="480.8" cy="250.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="466.9" cy="252.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="455.8" cy="256.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="445.3" cy="264.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="438.7" cy="261.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="449.5" cy="261.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="425.1" cy="249.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="410.7" cy="244.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="417.2" cy="241.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="404.9" cy="237.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="382.5" cy="232.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="384.6" cy="227.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="386.7" cy="221.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="392.3" cy="213" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="385.4" cy="212.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="403.3" cy="207.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="401.6" cy="206.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="393.4" cy="201.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="408.3" cy="201.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="421.6" cy="205.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="392.8" cy="202.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="412.1" cy="199.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="414.1" cy="202.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="408.6" cy="204.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="403.4" cy="207.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="383.1" cy="214.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="383.3" cy="211.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="377" cy="211.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="383.8" cy="213.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="378.5" cy="215.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="368.1" cy="215.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="370.8" cy="212.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="387.6" cy="215.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="372.9" cy="222.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="370.1" cy="225" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="373.8" cy="225.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="364.3" cy="223" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="382.6" cy="219.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="393.3" cy="221" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="385.5" cy="223.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="383" cy="221.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="382.4" cy="221.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="375.4" cy="226.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="380.7" cy="228.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="391" cy="225" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="394.3" cy="218.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="399.9" cy="213.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="402.4" cy="214.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="412.3" cy="217.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="398.1" cy="221.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="394.1" cy="221.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="395.7" cy="218.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="402.8" cy="221.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="398.9" cy="225.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="391" cy="225.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="365.6" cy="223.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="342.2" cy="221.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="330.7" cy="219.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="316.1" cy="221" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="304.5" cy="220.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="312" cy="217.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="312.1" cy="217.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="302.1" cy="215.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="293.5" cy="214.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="270.1" cy="211.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="261.8" cy="209" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="284.3" cy="206.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="286.4" cy="203.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="279.3" cy="206.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="294.7" cy="205.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="298.4" cy="202.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="312.2" cy="201.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="302.9" cy="205.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="303.5" cy="200.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="306.6" cy="201.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="315.4" cy="204" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="321" cy="206.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="341.9" cy="204.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="327.9" cy="202.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="330" cy="202.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="355" cy="210" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="367.2" cy="215.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="373.5" cy="221.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="368.7" cy="223" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="362.2" cy="223.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="357.5" cy="224.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="361.2" cy="226.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="383.2" cy="220.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="395.3" cy="221.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="386.4" cy="220.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="391.1" cy="215.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="403" cy="216.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="399.9" cy="207.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="401.4" cy="206" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="382.6" cy="201.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="393" cy="202.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="400.4" cy="201.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="420.1" cy="207.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="419.4" cy="204.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="394.7" cy="207" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="391.7" cy="203.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="388.6" cy="202.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="376.4" cy="205" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="362.1" cy="206.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="353.9" cy="209.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="323.9" cy="208.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="342" cy="212.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="329" cy="208.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="317.6" cy="205.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="318.3" cy="199.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="311.1" cy="199.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="298.2" cy="199" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="305.6" cy="198.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="301.1" cy="200.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="301.3" cy="201.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="316.8" cy="197.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="247.1" cy="208" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="32.4" cy="233.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="55.1" cy="241" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="152.9" cy="242.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="220.9" cy="228.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="225.7" cy="222.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="231.6" cy="222.2" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="259.5" cy="225.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="257" cy="224.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="283.5" cy="225.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="304.1" cy="235.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="240.6" cy="238.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="360.2" cy="224.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="638.3" cy="175" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="622.6" cy="144.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="502.5" cy="120.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="440.6" cy="128.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="418.4" cy="138.9" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="396.1" cy="136.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="406" cy="114.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="412" cy="100.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="382.4" cy="80.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="365.8" cy="59.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="439.4" cy="44.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="396.9" cy="43.4" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="394.5" cy="55.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="376.4" cy="60.6" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="364.1" cy="65.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="359.6" cy="65.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="361" cy="50.8" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="386.3" cy="38.1" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="361.3" cy="50.5" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="343.8" cy="62.7" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="327.9" cy="73.3" r="2.4" fill="rgba(28,28,26,.22)"/><circle cx="347.9" cy="78.8" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="339.3" cy="80.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="335.7" cy="77.8" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="338.9" cy="79.8" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="335.1" cy="86.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="326.3" cy="104.6" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="336.6" cy="110.3" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="337.7" cy="121.6" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="337.4" cy="131.8" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="328.4" cy="135.6" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="340.6" cy="135.9" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="357.2" cy="139.8" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="319.4" cy="141.9" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="335.9" cy="145.5" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="332.3" cy="143.5" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="324.4" cy="150.7" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="341.1" cy="159.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="356.1" cy="164.2" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="325.7" cy="165.5" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="335" cy="163.5" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="320.8" cy="163.6" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="324.4" cy="162.9" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="314.4" cy="163.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="337.3" cy="166.2" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="357.4" cy="163.5" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="356.7" cy="169" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="352.6" cy="181.3" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="358" cy="182.6" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="344" cy="182.9" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="352.6" cy="177.5" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="376.6" cy="172.1" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="363.5" cy="169.9" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="375.5" cy="173.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="373.6" cy="178.1" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="363" cy="180.2" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="359.6" cy="176.1" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="356.5" cy="184.1" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="354.5" cy="186.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="367.9" cy="174.6" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="371.9" cy="175.8" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="366.3" cy="181.4" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="362.4" cy="182.1" r="2.8" fill="rgba(28,28,26,.55)"/><circle cx="367.6" cy="183.1" r="2.8" fill="rgba(28,28,26,.55)"/><polyline points="329,208.9 317.6,205.5 318.3,199.6 311.1,199.3 298.2,199 305.6,198.4 301.1,200.8 301.3,201.1 316.8,197.9 247.1,208 32.4,233.1 55.1,241 152.9,242.3 220.9,228.2 225.7,222.1 231.6,222.2 259.5,225.4 257,224.1 283.5,225.8 304.1,235.1 240.6,238.7 360.2,224.9 638.3,175 622.6,144.6 502.5,120.1 440.6,128.7 418.4,138.9 396.1,136.5 406,114.5 412,100.1 382.4,80.7 365.8,59.5 439.4,44.5 396.9,43.4 394.5,55.6 376.4,60.6 364.1,65.1 359.6,65.3 361,50.8 386.3,38.1 361.3,50.5 343.8,62.7 327.9,73.3 347.9,78.8 339.3,80.4 335.7,77.8 338.9,79.8 335.1,86.4 326.3,104.6 336.6,110.3 337.7,121.6 337.4,131.8 328.4,135.6 340.6,135.9 357.2,139.8 319.4,141.9 335.9,145.5 332.3,143.5 324.4,150.7 341.1,159.4 356.1,164.2 325.7,165.5 335,163.5 320.8,163.6 324.4,162.9 314.4,163.4 337.3,166.2 357.4,163.5 356.7,169 352.6,181.3 358,182.6 344,182.9 352.6,177.5 376.6,172.1 363.5,169.9 375.5,173.4 373.6,178.1 363,180.2 359.6,176.1 356.5,184.1 354.5,186.4 367.9,174.6 371.9,175.8 366.3,181.4 362.4,182.1 367.6,183.1" fill="none" stroke="#d33a2c" stroke-width="1.6"/><circle cx="152.9" cy="242.3" r="4" fill="#d33a2c"/><text x="142.9" y="234.3" text-anchor="end" font-size="10.5" fill="#d33a2c" font-weight="700">2020-06</text><circle cx="638.3" cy="175" r="4" fill="#d33a2c"/><text x="646.3" y="169"  font-size="10.5" fill="#d33a2c" font-weight="700">2021-04</text><circle cx="364.1" cy="65.1" r="4" fill="#d33a2c"/><text x="374.1" y="69.1"  font-size="10.5" fill="#d33a2c" font-weight="700">2022-06</text><circle cx="326.3" cy="104.6" r="4" fill="#d33a2c"/><text x="334.3" y="114.6"  font-size="10.5" fill="#d33a2c" font-weight="700">2023-06</text><circle cx="367.6" cy="183.1" r="4" fill="#d33a2c"/><text x="377.6" y="197.1"  font-size="10.5" fill="#d33a2c" font-weight="700">现在</text><text x="56" y="14" font-size="10.5" fill="#6e6c64">横轴：工业产出同比（%）↑ 增长；纵轴：核心 CPI 同比（%）↑ 通胀</text><circle cx="400" cy="16" r="3" fill="rgba(28,28,26,.22)"/><text x="408" y="19.5" font-size="10.5" fill="#1c1c1a">2000–22（浅）</text><circle cx="500" cy="16" r="3" fill="rgba(28,28,26,.55)"/><text x="508" y="19.5" font-size="10.5" fill="#1c1c1a">2023–26（深）</text><circle cx="600" cy="16" r="4" fill="#d33a2c"/><text x="608" y="19.5" font-size="10.5" fill="#1c1c1a">2019-06 起路径</text>
+</svg>
+<figcaption><strong>美国经济状态散点：工业产出同比 × 核心 CPI 同比，2000-01 至 2026-08（月度，n=319）</strong>：来源=FRED <a href="https://fred.stlouisfed.org/series/INDPRO">INDPRO</a>+<a href="https://fred.stlouisfed.org/series/CPILFESL">CPILFESL</a>（施工自算）。浅灰=2000–2022，深墨=2023–2026，红线=2019-06 以来的路径。看点：①点云集中在「G↑I↓」——这是美国 25 年的默认状态（增长为正+通胀温和）；②红线画出一个完整的<strong>四象限环游</strong>：2020-06 深收缩 → 2021-04 过热 → 2022-06 滞胀 → 2023-06 收缩 → 当前（2026-08：+1.4%/+2.8%）<strong>回到金发女郎象限边缘</strong>（核心通胀 2.8% 仍在 2.5% 分界上方一点点——边界带，不是边界点）。<strong>口径注</strong>：ISM PMI 已因授权退出 FRED（3003 链接教训），故用工业产出作 G 维同步代理——象限划分不变，轴的口径课内固定即可。</figcaption>
+</figure>
+
+<p class="lede" style="margin-top:1.2em">四象限只是教学起点——完整定位用<strong>四层框架</strong>（P2 二轮审核定稿的结构）：</p>
+
+<figure>
+<svg viewBox="0 0 720 330" role="img" aria-label="四层框架图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="a5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs><text x="40" y="26" font-size="11.5" font-weight="700" fill="#1c1c1a">四层框架：世界什么状态 → 市场怎么重定价 → 我承担什么风险</text><rect x="40" y="46" width="180" height="64" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="130" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#1c1c1a">层一 基本面</text><text x="130" y="92" text-anchor="middle" font-size="9" fill="#6e6c64">G 增长 / I 通胀 / C 信用</text><rect x="40" y="136" width="180" height="64" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="130" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#1c1c1a">层二 金融条件</text><text x="130" y="182" text-anchor="middle" font-size="9" fill="#6e6c64">L 流动性（利率/美元/波动）</text><rect x="40" y="226" width="180" height="64" rx="8" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/><text x="130" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="#1c1c1a">层三 政策脉冲</text><text x="130" y="272" text-anchor="middle" font-size="9" fill="#6e6c64">M 货币 / F 财政 / S 供给</text><line x1="130" y1="110" x2="130" y2="134" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#a5)"/><line x1="130" y1="200" x2="130" y2="224" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#a5)"/><rect x="320" y="46" width="150" height="64" rx="8" fill="#fff" stroke="#d33a2c" stroke-width="2"/><text x="395" y="76" text-anchor="middle" font-size="12" font-weight="700" fill="#d33a2c">Expectation</text><text x="395" y="92" text-anchor="middle" font-size="9" fill="#6e6c64">市场预期是什么</text><rect x="320" y="136" width="150" height="64" rx="8" fill="#fff" stroke="#d33a2c" stroke-width="2"/><text x="395" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#d33a2c">Pricing</text><text x="395" y="182" text-anchor="middle" font-size="9" fill="#6e6c64">价格已计入多少</text><rect x="320" y="226" width="150" height="64" rx="8" fill="#fff" stroke="#d33a2c" stroke-width="2"/><text x="395" y="256" text-anchor="middle" font-size="12" font-weight="700" fill="#d33a2c">Positioning</text><text x="395" y="272" text-anchor="middle" font-size="9" fill="#6e6c64">仓位拥挤在哪</text><line x1="395" y1="110" x2="395" y2="134" stroke="#d33a2c" stroke-width="1.5" marker-end="url(#a5)"/><line x1="395" y1="200" x2="395" y2="224" stroke="#d33a2c" stroke-width="1.5" marker-end="url(#a5)"/><rect x="560" y="116" width="150" height="104" rx="8" fill="#1c1c1a" stroke="#1c1c1a" stroke-width="1.5"/><text x="635" y="166" text-anchor="middle" font-size="12" font-weight="700" fill="#fff">regime 判读卡</text><text x="635" y="182" text-anchor="middle" font-size="9" fill="#cfcfc9">箭头+证据句<br>（手工版=终点形态）</text><line x1="222" y1="78" x2="558" y2="140" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#a5)"/><line x1="222" y1="168" x2="558" y2="168" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#a5)"/><line x1="222" y1="258" x2="558" y2="196" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#a5)"/><line x1="472" y1="78" x2="558" y2="130" stroke="#d33a2c" stroke-width="1.2" marker-end="url(#a5)"/><text x="40" y="312" font-size="9.5" fill="#6e6c64">读数只写箭头+一句证据；条件分布（中位回报/胜率/离散度）查表，不背方向口诀</text>
+</svg>
+<figcaption><strong>四层框架：世界什么状态 → 市场怎么重定价 → 我承担什么风险</strong>（教学示意图）。层一基本面（G 增长/I 通胀/C 信用=3001–3002 的周期层）→ 层二金融条件（L=2003 课的传导与 NFCI）→ 层三政策脉冲（M/F/S=2001/2002/2007 课）→ 层四市场转译（Expectation→Pricing→Positioning=1004/1005 课——市场对前三层的定价）。<strong>读数顺序从层一到层四，归因顺序从层四往回</strong>（2006 课四因子归因的框架版）。</figcaption>
+</figure>
+
+<h2><span class="no">02</span>条件分布纪律：为什么口诀被禁 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">现在演示禁口诀的原因。两张<strong>施工自算、你可用同样免费数据复算</strong>的表：</p>
+
+<div class="example">
+<p class="ex-title">例 1：P(12 个月内进入衰退 | 曲线状态)——条件概率的正确形态</p>
+<table>
+  <thead><tr><th>条件（月度观测，1976-07–2025-08）</th><th class="num">n（月）</th><th class="num">P(12 个月内进入衰退)</th></tr></thead>
+  <tbody>
+    <tr><td>当月 10Y−2Y 月均 <strong>倒挂</strong></td><td class="num">99</td><td class="num">46%</td></tr>
+    <tr><td>当月 <strong>未倒挂</strong>（基准）</td><td class="num">491</td><td class="num">15%</td></tr>
+  </tbody>
+</table>
+<p>注意这是「月度观测」口径：倒挂月里每个月都有 46% 的概率「未来 12 个月内衰退开始」——不是「倒挂后衰退概率 46% 一次性」。同一种信号，口径不同数字完全不同。<strong>报条件概率必须报 n 与口径</strong>——这就是纪律的形状。</p>
+</div>
+
+<div class="example">
+<p class="ex-title">例 2：美股 12 个月远期回报按象限——口诀是怎么在样本里翻面的</p>
+<table>
+  <thead><tr><th>象限（G/I 阈值：IP 同比 0%/核心 CPI 2.5%）</th><th class="num">n（月）</th><th class="num">中位回报</th><th class="num">胜率</th><th class="num">最差</th><th class="num">最好</th></tr></thead>
+  <tbody>
+    <tr><td>G↑ I↑（过热）</td><td class="num">31</td><td class="num">+11.1%</td><td class="num">61%</td><td class="num">−19.4%</td><td class="num">+29.4%</td></tr>
+    <tr><td>G↑ I↓（金发女郎）</td><td class="num">26</td><td class="num">+9.6%</td><td class="num">88%</td><td class="num">−8.8%</td><td class="num">+28.9%</td></tr>
+    <tr><td>G↓ I↑（滞胀）</td><td class="num">22</td><td class="num">+20.6%</td><td class="num">100%</td><td class="num">+6.8%</td><td class="num">+36.0%</td></tr>
+    <tr><td>G↓ I↓（收缩）</td><td class="num">29</td><td class="num">+20.4%</td><td class="num">97%</td><td class="num">−1.1%</td><td class="num">+53.7%</td></tr>
+  </tbody>
+</table>
+<p>（2016-01–2025-08，标普 500 月末→12 个月远期，FRED SP500 自算。）<strong>看清楚了：滞胀象限中位回报最高、胜率 100%</strong>——如果只看这张表你会得出「增长差=买点」的<strong>反口诀</strong>。真相：这十年的 G↓ 月几乎全是 2018Q4/2020/2022 的深回调之后（一次长牛+三次 V 型），「G↓」标签实际标记的是「刚跌完」。<strong>同一象限，换一个十年，分布完全不同</strong>——这就是为什么必须报样本量与窗口，为什么任何「象限 X=资产 Y 涨」都必须带着它的分布与来历。</p>
+</div>
+
+<div class="tip"><b>学术锚的正确用法</b>：AQR 的 Brooks et al.《Economic Trend》（2023 白皮书/2024 SSRN）给出的是<strong>符号表</strong>——增长趋势↑利多股票利空债券、通胀趋势↑同时利空股债（1970–2022 全球多资产，策略化后夏普约 1.1）。它证明「宏观趋势里有信息」，<strong>它不给四象限的条件回报表</strong>（论文里没有那张表——谁给你一张「金发女郎=年化 X%」的表，先问样本与口径）。符号=方向先验；分布=决策依据；两者之间隔着本节全部内容。</div>
+
+<h2><span class="no">03</span>Breadth confirmation：转向的确认机制 <span class="time-chip">≈8 min</span></h2>
+<p class="lede">判读卡上每个箭头都要过<strong>四要素确认：方向 × 广度 × 持续性 × 跨资产</strong>（M1.3/M3.3 的 regime confidence 规则）：</p>
+<ul>
+  <li><strong>方向</strong>：读数自身在动（四值法：Momentum 转）。</li>
+  <li><strong>广度</strong>：不是一个指标在动——增长维要看就业+产出+调查（美国）或生产+利润+社融（中国，1003 三确认）；A 股宽度（上涨家数占比）是 P 维同款。</li>
+  <li><strong>持续性</strong>：一次数据≠转向（1001 修订文化：单月反转有一半活不过修订）——一般要求 2–3 个月确认。</li>
+  <li><strong>跨资产</strong>：宏观层说改善，市场层有没有人同意？信用（HYG/OAS）对增长改善最诚实、曲线对政策预期最诚实（1004）、铜与新兴汇率对全球需求最诚实（P4 展开）。<strong>G 维改善而信用不动=一半的改善</strong>。</li>
+</ul>
+<div class="note">历史锚：2023-12 软着陆叙事的确认链=通胀连降 6 个月（方向+持续性）+增长读数未崩（广度）+信用利差回落+股市宽度扩张（跨资产）——四要素齐了叙事才成立。反面例子：2021 年「通胀是暂时的」叙事在广度上就输了（核心/中位/截尾通胀全面升温）——单一叙事打不过全面读数。</div>
+
+<h2><span class="no">04</span>好通胀与坏通胀 <span class="time-chip">≈6 min</span></h2>
+<p class="lede">同为「通胀上行意外」，市场反应可以相反——区分标准是<strong>来源</strong>：</p>
+<table>
+  <thead><tr><th></th><th>好通胀（需求/增长驱动）</th><th>坏通胀（成本/供给推动）</th></tr></thead>
+  <tbody>
+  <tr><td>来源</td><td>需求过热：工资-消费良性循环</td><td>供给冲击：能源/供应链/汇率贬值</td></tr>
+  <tr><td>盈利端</td><td>营收跟上（量价齐升）</td><td>成本挤压利润率</td></tr>
+  <tr><td>政策端</td><td>央行可以慢慢紧</td><td>央行被迫在弱增长中紧缩（滞胀配方）</td></tr>
+  <tr><td>典型市场反应</td><td>股票可承受甚至上涨（2021 上半年的大部分时段）</td><td>股债双杀（2022、1970s）</td></tr>
+  </tbody>
+</table>
+<p>判别读数（个人免费版）：通胀意外时问三个问题——<strong>量在哪</strong>（需求分项还是供给分项在涨）、<strong>利润率</strong>（企业财报毛利率方向）、<strong>央行的措辞</strong>（把通胀当「过热」还是「外部冲击」处理）。加上 2006 课的 Kroner 教训：市场对同一通胀数字的反应还取决于<strong>注意力权重</strong>——2021 年市场学会忽视通胀用了半年，2022 年重新重视只用了两个月。</p>
+
+<h2><span class="no">05</span>regime 判读卡与边界反证 <span class="time-chip">≈6 min</span></h2>
+<table>
+  <thead><tr><th>层</th><th>读数</th><th>当前行（2026-09-30，fading 半成品）</th></tr></thead>
+  <tbody>
+    <tr><td>基本面 G</td><td>IP 同比/初请/ISM 新订单−库存</td><td>→ 温和扩张（IP +1.4%、初请 4wk 202.3k 同比 −14%、ISM 54.6）</td></tr>
+    <tr><td>基本面 I</td><td>核心 CPI/盈亏平衡</td><td>（你来填——核心 2.8%、总体 3.7%，好/坏通胀判别）</td></tr>
+    <tr><td>基本面 C</td><td>BIS 缺口+SLOOS</td><td>（你来填——3004 已给全部读数）</td></tr>
+    <tr><td>金融条件 L</td><td>实际利率/美元/NFCI</td><td>（你来填——DFII10 2.90% 的位置判断）</td></tr>
+    <tr><td>政策脉冲 M/F/S</td><td>利率方向/FIM/供给事件</td><td>（你来填——2026-09 加息 25bp 后的脉冲方向）</td></tr>
+    <tr><td>市场转译 P</td><td>E→P→P 三问</td><td>（你来填——市场 price 了什么、仓位在哪）</td></tr>
+  </tbody>
+</table>
+<ul>
+  <li><strong>边界反证 1（阈值敏感性）</strong>：核心 2.8% vs 2.5% 阈值——当前点在边界带上，不是边界点上。<strong>边界带内的正确输出是两个标签各配概率</strong>（「金发女郎 60%/过热 40%」），不是硬选边。</li>
+  <li><strong>边界反证 2（实时不可验）</strong>：regime 切换日永远是事后确认的（NBER 定衰退峰要等一年）——判读卡因此是<strong>月度重写的活页</strong>，不是一次成型的证书。</li>
+  <li><strong>边界反证 3（不手算 composite）</strong>：把六行读数加权合成一个分数的冲动每月都会有——抵抗它（2026 裁定：手工流程即终点形态）。合成的过程制造精确的幻觉，而权重本身没有稳定真值。</li>
+</ul>
+
+<h2><span class="no">06</span>训练场 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">五道题。第 1 题微重现上一课（3004），第 2–3 题是阶段内的判读练习。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：危机检查单里「价格层」与「数量层」分别指——",
+  "options": [
+    {"t": "CPI 与 PPI", "ok": false, "why": "那是通胀的两组分——与信用仪表无关。"},
+    {"t": "OAS（市场定价的利差，快变量）与 SLOOS（银行放贷标准，慢变量）——分读再合成，同向才升级结论", "ok": true, "why": "微重现·上一课：温度计与恒温器。判读卡的 C 维与 L 维行都从这个区分里取读数。"},
+    {"t": "股价与成交量", "ok": false, "why": "那是技术分析的价格量——SOURCE TYPE 层级不同。"},
+    {"t": "名义利率与实际利率", "ok": false, "why": "那是利率的两种口径——不是信用维度。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题：当前核心 CPI 2.8%（阈值 2.5% 上方 0.3pp）、总体 3.7%（能源推动为主）。判读卡 I 维行怎么写最合格？",
+  "options": [
+    {"t": "「I↑ 过热象限，做空长久期」", "ok": false, "why": "双重违规：边界带附近硬贴标签+把 regime 标签直接翻译成仓位指令。"},
+    {"t": "「I ↑ 边界带：核心 2.8%（总体 3.7% 由能源主导，判别待查：需求分项 vs 供给分项+利润率）——标签：过热倾向 60%/金发女郎 40%，监控：核心 3M 年化与需求分项」", "ok": true, "why": "边界带双标签+好/坏通胀判别动作+监控点——判读卡三要素齐。"},
+    {"t": "「通胀 2.8%，正常」", "ok": false, "why": "无方向无证据无边界意识——不及格行。"},
+    {"t": "「核心在 2.5% 上方，必衰退」", "ok": false, "why": "从通胀水平直跳衰退结论——没有这条传导链的读数支持（3003 四信号都没触发）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题（看图判机制）：01 节散点图上，2019-06 以来的红色路径完整穿越了四个象限。这个「环游」对判读卡设计的最大启示是——",
+  "options": [
+    {"t": "象限切换很快，判读卡每周更新", "ok": false, "why": "路径全程四年——状态切换是月-年级的慢过程。每周更新是频错层。"},
+    {"t": "经济会连续穿过多个象限——判读卡必须连续持有（月度序列），单点快照没有判断力；「下一个象限」不是从当前象限机械推出，而是由脉冲层（M/F/S）驱动", "ok": true, "why": "这就是「当期快照螺旋」的设计原因：一整年的判读卡序列才能看出趋势与切换，单月快照只是练习。"},
+    {"t": "象限顺序是固定的：收缩→复苏→过热→滞胀", "ok": false, "why": "机械轮盘论——真实路径可以跳格（2020-06 从收缩直接冲向过热）也可以停在原地。"},
+    {"t": "散点图证明象限理论无效", "ok": false, "why": "恰恰相反——点云的结构性（默认态+环游）正说明状态划分有用。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题：你看到「核心通胀连续三个月上行+股市创新高+信用利差走平」。按 breadth confirmation 四要素，缺口在哪？",
+  "options": [
+    {"t": "没缺口，三读数齐了", "ok": false, "why": "三个读数里有市场层（股价/利差），但广度上只有通胀一个宏观维在动——增长维的就业/产出/调查没出场。"},
+    {"t": "广度与跨资产确认不足：通胀是单一维度的方向信号，增长维读数缺席，且信用利差走平（跨资产不同意「过热」叙事）——先补增长广度再定标签", "ok": true, "why": "标准动作：四要素逐项过——方向✓（连续三个月）、持续性✓、广度✗（单维）、跨资产✗（信用不配合）。两个✗在手，标签不下。"},
+    {"t": "股市创新高就是最好的确认", "ok": false, "why": "P 维确认不能替代 G 维广度——市场价格可以领先也可以犯错，四要素是给「叙事」上保险的。"},
+    {"t": "利差走平说明通胀是假的", "ok": false, "why": "信用利差不衡量通胀真伪——它只对增长与违约风险定价（跨资产确认的对象要选对）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：把 AQR《Economic Trend》放进你的证据体系，正确的定位是——",
+  "options": [
+    {"t": "它的符号表=四象限的条件回报表，直接查数", "ok": false, "why": "论文里没有那张表（02 节核验过）——错误归属会把你引到编造的数字上。"},
+    {"t": "Research 层证据：证明宏观趋势含信息、给方向先验（增长↑利多股利空债；通胀↑利空股债）——但符号不是分布，决策表要自己用免费数据算并报 n/窗口", "ok": true, "why": "SOURCE TYPE 七类的实操：Research 给先验，Measurement+自算给分布，两者都标注层级。"},
+    {"t": "它是策略广告，忽略", "ok": false, "why": "50 多年样本、多市场的夏普证据有真实信息量——一刀切忽略同样违反证据分级。"},
+    {"t": "它证明了动量因子永远有效", "ok": false, "why": "超出论文管辖范围——它证明的是宏观趋势信息的可交易性，不是任何动量普遍有效。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——隔天重练仍达标，M3.3 课内证据到手；错 1–2 题——回对应节（第 1 题→3004 课 03 节；第 2 题→05 节+04 节；第 3 题→01 节；第 4 题→03 节；第 5 题→02 节 tip），隔天重练；错 ≥3 题——本课回炉：重画四层框架图，并把两张自算表的口径各写一遍。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题：完成你的第一张完整 regime 判读卡（05 节表的后五行全填）。要求：每行=箭头+读数+截至期；I 维行必须含好/坏通胀判别；P 维行必须写「市场已 price 什么+仓位可能在哪」两问；最后一行写你的两个候选标签及各自概率+监控点。",
+  "hint": "读数全部来自已建课：I 维用 1001/1004 源；C 维直接搬 3004 例 1；L 维用 2003 的 NFCI+实际利率；M 维用 2006 的 SEP 读法；P 维用 1004/1005。",
+  "a": "自查标准：①五行每行有数值+截至期（2026-09 或最近可得）；②好/坏通胀判别给出量在哪/利润率/央行措辞三问的初步回答；③P 维两问有具体答案（如「曲线 price 了 X 次降息」用 1004 读法）；④双标签+概率+监控点（如「金发女郎 60/过热 40，监控核心 3M 年化与能源分项」）。四点全到=第一张判读卡完成——从本月起每月重写一张，3006 结业时你就有序列了。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="time-chip">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>四层框架</strong>——G/I/C × L × M/F/S × E→P→P；读数顺序 1→4，归因顺序 4→1</li>
+  <li><strong>条件分布纪律</strong>——任何「象限→资产」结论必须带中位回报/胜率/离散度/样本量/窗口；禁方向口诀</li>
+  <li><strong>breadth confirmation 四要素</strong>——方向×广度×持续性×跨资产；两个✗不下标签</li>
+  <li><strong>好/坏通胀判别三问</strong>——量在哪/利润率/央行措辞</li>
+</ul>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（本课核心阅读）</strong>：AQR《Economic Trend》（Brooks et al.，2023 白皮书——官网免费 PDF）：只读 Exhibit 1（符号表）与结论节（约 8 页），带着「哪些是符号、哪些是分布」的问题读；The Macro Compass 之类 newsletter 的象限文章读一篇（<strong>作 Narrative 层对照样本</strong>——数一数它给了几次分布、几次口诀）。</p>
+<p>（2）<strong>课后探索（可选）</strong>：用 FRED 的 SP500+CPILFESL+INDPRO 复算一遍例 2 的表（换你自己的窗口，比如 2006–2015）——亲手看一次口诀翻面，比读十遍纪律管用。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每月末 30 分钟重写判读卡（存同一个月度文件，只增不改）；每季度把它与 3004 检查单、0001 仪表盘并读一次——三件套互检，这就是 M0.4 例行的完全体。</p>
+<p><strong>下一课 3006《完整周期复盘 2020–23》</strong>：P3 结业——把六段拐点逐段重走一遍（当时可知什么/实际发生什么/如果当时有决策单你会怎么写），并用当期快照 #3 把你这一年的仪器全部通电。</p>
+
+<div class="ask-agent">我是你的教练。第一张判读卡想让我逐行审、双标签的概率拿捏不准、或者想让我陪你复算一遍例 2 的表（换窗口看口诀怎么翻）——回来找我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="3004-crisis-checklist.html">← 第 3004 课</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="3006-full-cycle-review-2020-23.html">第 3006 课 →</a>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：Brooks, Feilbogen, Ooi &amp; Akant《Economic Trend》（AQR，2023 白皮书/SSRN 4710868）——符号表与「宏观趋势含信息」的 50 年证据；Kroner《How Markets Process Macro News》（FEDS 2025-022）——注意力非恒定（04 节）；FRED INDPRO/CPILFESL/SP500/T10Y2Y/USREC（条件分布全部施工自算可复算）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①AQR《Economic Trend》Exhibit 1 符号表（增长↑：股+债−；通胀↑：股−债−等）与复合策略证据（1970–2022 夏普约 1.1）——02 节 tip 的方向先验；②Kroner FEDS 2025-022——同一通胀数字反应随注意力变化（04 节央行措辞/市场反应段，2006 课已建、此处为 regime 侧引用）；③四层框架=课程 P2 二轮审核定稿结构（01 节框架图）。
+<strong>数据口径：</strong>散点图 n=319 月（2000-01–2026-08），INDPRO 同比×CPILFESL 同比，阈值 0%/2.5% 为课程固定口径；条件概率表：月度观测 1976-07–2025-08，n=99/491；象限回报表：标普 500 月末收盘 12 个月远期（2016-01–2025-08，n=108 月分四象限）——全部施工自算（FRED 免费序列），复算脚本随课程工具存档；当前读数：核心 CPI 2.76%/总体 3.71%（2026-08）、IP +1.4%（2026-08）、ISM 制造业 54.6（2026-08）、DFII10 2.90%（2026-09-28）。截至 2026-09-30 施工核验。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>
