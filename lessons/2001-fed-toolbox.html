@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2001 美联储工具箱 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 2001 课</span>
+    <span>·</span>
+    <span>P2 央行与流动性 · M2.1a</span>
+    <span>·</span>
+    <span>P2 开篇</span>
+  </div>
+  <h1>美联储工具箱</h1>
+  <p class="deck">P0 你学了「央行是经济机器的油门刹车」，P1 你学会了读数。本课打开机器盖：政策利率怎么通过<strong>走廊（corridor）</strong>与<strong>准备金体系</strong>传导、QE/QT 怎么改写央行资产负债表、以及一张「学术模型地图」让你知道央行论文该怎么读。本课约 75–95 分钟（先猜 3 + 正文与图组 45–55 + 训练场 15 + 动笔与小结 5）。前置要求：1006（P1 结业；本课起你的快照「政策句」开始有管道级依据）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：把「美联储加息/降息」从一句新闻升级为一张<strong>资产负债表+利率走廊</strong>的完整管道图——说得出每个工具动的是哪个科目、影响的是哪个利率。不算数：背工具名词表；护栏：<strong>「Fed 的每个工具都是一笔资产负债表操作」</strong>——记不住名字时，画表。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>从一张资产负债表开始（含机制图） <span class="t">≈10 min</span></li>
+    <li>政策利率与走廊：充足准备金框架（含机制图+当期读数图） <span class="t">≈12 min</span></li>
+    <li>QE 与 QT：资产负债表的扩与缩（含一图+数值例） <span class="t">≈12 min</span></li>
+    <li>学术模型地图：读论文但不套模型（知识框） <span class="t">≈6 min</span></li>
+    <li>三大央行对照框：Fed/ECB/BOJ <span class="t">≈4 min</span></li>
+    <li>边界与反证：工具箱的失效记录 <span class="t">≈5 min</span></li>
+    <li>训练场 <span class="t">≈15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准两个最常见的「央行直觉」。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：美联储「加息 25 个基点」的时候，它实际做的事是——",
+  "options": [
+    {"t": "命令商业银行把存贷款利率提高 0.25%", "ok": false, "why": "美国大部分利率是市场形成的，Fed 不直接命令——它动的是自己能控制的利率（准备金利息等），让市场利率跟着走。"},
+    {"t": "调高自己付给银行准备金的利率，配合缩量操作，把联邦基金利率拉进目标区间", "ok": true, "why": "现代 Fed 的做法：充足准备金框架下，IORB（准备金利息）是主锚，ON RRP 是地板的地板——03 节拆走廊。"},
+    {"t": "印更少的钱，货币供应量减少利率就上升", "ok": false, "why": "数量论直觉。QE 之后准备金极度充足，「钱的数量」不再直接钉住短期利率——这正是走廊体系存在的原因。"},
+    {"t": "提高贴现率，银行借款成本上升带动全市场", "ok": false, "why": "贴现窗是走廊上沿的备用阀，正常时期没人用它定价——它今天更像保险而非方向盘。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：美联储 QE 买进国债，卖出国债的投资者（一家非银机构）收到的「钱」是什么？",
+  "options": [
+    {"t": "现金——Fed 把纸币交给它", "ok": false, "why": "纸币只是Fed 负债里的小科目。QE 的支付走的是电子记账，且非银机构根本没有 Fed 账户。"},
+    {"t": "它自己银行账户里的存款增加了——同时它的开户银行在 Fed 的准备金增加", "ok": true, "why": "Wang 的管道原话：非银不能持有准备金，Fed 把准备金付给投资者的银行，银行再记入投资者存款——银行是中间人。04 节的数值例块就演这一笔。"},
+    {"t": "什么都没变，只是国债换了个持有人", "ok": false, "why": "持有人确实换了，但 Fed 是用「新造的准备金」支付的——系统整体的准备金与存款同步增加。"},
+    {"t": "银行券——Fed 发行等额票据融资", "ok": false, "why": "发行票据回收流动性倒是 Fed 用过的旧工具（2009 前后），与 QE 支付无关。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>从一张资产负债表开始 <span class="time-chip">≈10 min</span></h2>
+<p class="lede">美联储不是一个「想法」，而是一家银行——有资产、有负债、每笔政策操作都记在表上。<strong>工具箱=这张表的操作手册</strong>。先看表的骨架（机制图，科目为教学简化，现行读数在 02 节）：</p>
+
+<figure>
+<svg viewBox="0 0 720 340" role="img" aria-label="美联储资产负债表骨架示意" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="a1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs>
+<text x="60" y="28" font-size="13" font-weight="700" fill="#1c1c1a">资产（政策的「手」）</text>
+<text x="400" y="28" font-size="13" font-weight="700" fill="#1c1c1a">负债（政策的「锚」）</text>
+<rect x="50" y="40" width="270" height="230" rx="10" fill="#fcfcfb" stroke="#1c1c1a" stroke-width="1.5"/>
+<rect x="390" y="40" width="280" height="230" rx="10" fill="#fcfcfb" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="66" y="68" font-size="11" fill="#1c1c1a" font-weight="700">① 美国国债</text><text x="66" y="86" font-size="10" fill="#6e6c64">QE 累积持有；QT 时到期不续</text>
+<text x="66" y="116" font-size="11" fill="#1c1c1a" font-weight="700">② MBS（机构抵押债）</text><text x="66" y="134" font-size="10" fill="#6e6c64">QE3 起持有；缩表最慢的一块</text>
+<text x="66" y="164" font-size="11" fill="#1c1c1a" font-weight="700">③ 贷款与特殊工具</text><text x="66" y="182" font-size="10" fill="#6e6c64">贴现窗 / 回购操作 / 危机工具</text>
+<text x="66" y="212" font-size="11" fill="#1c1c1a" font-weight="700">④ 央行流动性互换</text><text x="66" y="230" font-size="10" fill="#6e6c64">借美元给外国央行（2005 课主角）</text>
+<text x="406" y="68" font-size="11" fill="#1c1c1a" font-weight="700">① 流通现金</text><text x="406" y="86" font-size="10" fill="#6e6c64">你钱包里的纸币=Fed 的负债</text>
+<text x="406" y="116" font-size="11" fill="#1c1c1a" font-weight="700">② 银行准备金（IORB 计息）</text><text x="406" y="134" font-size="10" fill="#6e6c64">走廊体系的地板——QE 造的就是它</text>
+<text x="406" y="164" font-size="11" fill="#1c1c1a" font-weight="700">③ ON RRP（隔夜逆回购）</text><text x="406" y="182" font-size="10" fill="#6e6c64">货币基金的地板——地板的地板</text>
+<text x="406" y="212" font-size="11" fill="#1c1c1a" font-weight="700">④ TGA（财政部一般账户）</text><text x="406" y="230" font-size="10" fill="#6e6c64">财政在 Fed 的活期户（2007 课主角）</text>
+<line x1="320" y1="250" x2="390" y2="250" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#a1)"/>
+<text x="355" y="242" text-anchor="middle" font-size="9.5" fill="#d33a2c" font-weight="700">任何资产操作</text>
+<text x="355" y="266" text-anchor="middle" font-size="9.5" fill="#d33a2c" font-weight="700">自动配平负债</text>
+<rect x="50" y="288" width="620" height="38" rx="8" fill="#f7f3e3"/>
+<text x="66" y="304" font-size="10.5" fill="#8a6d1f" font-weight="700">读表纪律（H.4.1，每周三快照，周四发布）</text>
+<text x="66" y="320" font-size="10" fill="#8a6d1f">Fed 的每个工具=表上的一笔：利率走廊动的是「负债端的利息参数」，QE/QT 动的是「资产端的结构」</text>
+</svg>
+<figcaption><strong>美联储资产负债表骨架（教学示意图，科目简化）</strong>：结构参照 Fed《The Fed Explained》（原 Purposes and Functions 第 10 版）货币政策章节与 Wang《Central Banking 101》ch2「The Money Creators」。要点：<strong>资产端是政策的手（买什么/借给谁），负债端是政策的锚（准备金/RRP/TGA/现金）</strong>——一张表读尽所有工具。周四的 <a href="https://www.federalreserve.gov/releases/h41/">H.4.1 发布页</a>就是这张表的官方周报（2005 课用它逐项解剖 2020-03 美元荒）。</figcaption>
+</figure>
+
+<p>这张表也是全阶段的「P2 通用语言」：2002 用它对照中国央行的表，2005 用它解剖美元荒，2007 用它看 TGA 与国债发行的联动。<strong>记住科目，不背结论</strong>——工具会变名字，科目几乎不变。</p>
+
+<h2><span class="no">02</span>政策利率与走廊：充足准备金框架 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">2008 年以前，Fed 用「稀缺准备金」操作：每天微调准备金供给，把联邦基金利率钉在目标上。QE 之后准备金变成天文数字，老办法失效——2019 年 1 月 FOMC 正式宣布转入<strong>充足准备金框架（ample-reserves regime）</strong>：不再管数量，改用<strong> administered rates（管理利率）</strong>直接锚定价格。走廊长这样（当期读数见图 2）：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="利率走廊机制示意" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="90" y1="250" x2="640" y2="250" stroke="#1c1c1a" stroke-width="1.5"/>
+<line x1="150" y1="60" x2="496" y2="60" stroke="#d33a2c" stroke-width="2.5"/>
+<text x="508" y="58" font-size="11" fill="#d33a2c" font-weight="700">贴现窗（一级信贷利率）</text>
+<text x="508" y="73" font-size="9.5" fill="#6e6c64">走廊上沿：银行从 Fed 借钱的成本</text>
+<line x1="150" y1="120" x2="496" y2="120" stroke="#1c1c1a" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="508" y="118" font-size="11" fill="#1c1c1a" font-weight="700">目标区间上沿</text>
+<line x1="150" y1="150" x2="496" y2="150" stroke="#1c1c1a" stroke-width="1.8" stroke-dasharray="6 4"/>
+<text x="508" y="154" font-size="11" fill="#1c1c1a" font-weight="700">目标区间下沿</text>
+<circle cx="375" cy="135" r="7" fill="#1c1c1a"/><text x="375" y="108" text-anchor="middle" font-size="11.5" fill="#1c1c1a" font-weight="700">EFFR（有效联邦基金利率）</text>
+<text x="375" y="163" text-anchor="middle" font-size="9.5" fill="#6e6c64">银行间隔夜无抵押拆借的成交量加权利率</text>
+<line x1="150" y1="210" x2="496" y2="210" stroke="#1a7f37" stroke-width="2.5"/>
+<text x="508" y="208" font-size="11" fill="#1a7f37" font-weight="700">IORB（准备金利息）</text>
+<text x="508" y="223" font-size="9.5" fill="#6e6c64">地板：银行的钱存 Fed 就有这个利息</text>
+<line x1="150" y1="235" x2="496" y2="235" stroke="#1a7f37" stroke-width="1.8" stroke-dasharray="3 3"/>
+<text x="508" y="247" font-size="11" fill="#1a7f37" font-weight="700">ON RRP 利率</text>
+<text x="508" y="263" font-size="9.5" fill="#6e6c64">地板的地板：货币基金可将现金存回 Fed</text>
+<text x="90" y="280" font-size="10.5" fill="#8a6d1f" font-weight="700">逻辑：没人会以低于 IORB 的利率拆出 → 利率有底；没人以高于贴现窗的利率借入 → 利率有顶</text>
+<text x="90" y="34" font-size="12" fill="#1c1c1a" font-weight="700">利率走廊（corridor）：用两个管理利率夹住一个市场利率</text>
+</svg>
+<figcaption><strong>利率走廊机制（教学示意图）</strong>：结构参照 Mishkin 13e ch16《Tools of Monetary Policy》与 Fed《The Fed Explained》货币政策章。要点：<strong>IORB 是主锚</strong>（银行「存 Fed 无风险」的利率决定了它们愿意接受的最低拆出利率）；<strong>ON RRP 兜底非银</strong>（货币基金没有准备金账户，但能把现金放进 Fed 的隔夜逆回购，所以短利率再烂也不会烂穿这条线）；<strong>贴现窗是天花板</strong>（再贵的市场融资也贵不过直接找 Fed 借）。2020-03 起法定准备金率降至 0（Reg D），数量工具彻底退役，价格工具全权接管。</figcaption>
+</figure>
+
+<p><strong>当期走廊读数</strong>（真实数据，截至见行尾——这张横条图就是本课的第二张真实数据图，也是你每月快照「政策句」的弹药）：</p>
+
+<figure>
+<svg viewBox="0 0 720 270" role="img" aria-label="当期利率走廊读数" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<rect x="332.5" y="24" width="162.5" height="226" fill="rgba(211,58,44,.08)"/><line x1="332.5" y1="24" x2="332.5" y2="250" stroke="#d33a2c" stroke-width="1" stroke-dasharray="4 3"/><line x1="495.0" y1="24" x2="495.0" y2="250" stroke="#d33a2c" stroke-width="1" stroke-dasharray="4 3"/><text x="332.5" y="14" text-anchor="end" font-size="9.5" fill="#d33a2c">区间下沿 3.75</text><text x="495.0" y="14" font-size="9.5" fill="#d33a2c">区间上沿 4.00</text><line x1="170.0" y1="250" x2="170.0" y2="256" stroke="#6e6c64"/><text x="170.0" y="269" text-anchor="middle" font-size="10" fill="#6e6c64">3.50%</text><line x1="332.5" y1="250" x2="332.5" y2="256" stroke="#6e6c64"/><text x="332.5" y="269" text-anchor="middle" font-size="10" fill="#6e6c64">3.75%</text><line x1="495.0" y1="250" x2="495.0" y2="256" stroke="#6e6c64"/><text x="495.0" y="269" text-anchor="middle" font-size="10" fill="#6e6c64">4.00%</text><line x1="657.5" y1="250" x2="657.5" y2="256" stroke="#6e6c64"/><text x="657.5" y="269" text-anchor="middle" font-size="10" fill="#6e6c64">4.25%</text><line x1="170" y1="48" x2="690" y2="48" stroke="#e4e2d9" stroke-width="1"/><text x="162" y="51.5" text-anchor="end" font-size="10.5" fill="#1c1c1a">贴现窗（一级信贷）</text><circle cx="495.0" cy="48" r="5.5" fill="#d33a2c"/><text x="505.0" y="51.5" font-size="10.5" fill="#d33a2c" font-weight="700">4.00</text><line x1="170" y1="88" x2="690" y2="88" stroke="#e4e2d9" stroke-width="1"/><text x="162" y="91.5" text-anchor="end" font-size="10.5" fill="#1c1c1a">SRF（常备回购）</text><circle cx="495.0" cy="88" r="5.5" fill="#d33a2c"/><text x="505.0" y="91.5" font-size="10.5" fill="#d33a2c" font-weight="700">4.00</text><line x1="170" y1="128" x2="690" y2="128" stroke="#e4e2d9" stroke-width="1"/><text x="162" y="131.5" text-anchor="end" font-size="10.5" fill="#1c1c1a">IORB（准备金利息）</text><circle cx="430.0" cy="128" r="5.5" fill="#1c1c1a"/><text x="440.0" y="131.5" font-size="10.5" fill="#1c1c1a" font-weight="700">3.90</text><line x1="170" y1="168" x2="690" y2="168" stroke="#e4e2d9" stroke-width="1"/><text x="162" y="171.5" text-anchor="end" font-size="10.5" fill="#1c1c1a">EFFR（有效联邦基金利率）</text><circle cx="417.0" cy="168" r="5.5" fill="#1a7f37"/><text x="427.0" y="171.5" font-size="10.5" fill="#1a7f37" font-weight="700">3.88</text><line x1="170" y1="208" x2="690" y2="208" stroke="#e4e2d9" stroke-width="1"/><text x="162" y="211.5" text-anchor="end" font-size="10.5" fill="#1c1c1a">ON RRP（隔夜逆回购）</text><circle cx="332.5" cy="208" r="5.5" fill="#1a7f37"/><text x="342.5" y="211.5" font-size="10.5" fill="#1a7f37" font-weight="700">3.75</text><text x="170" y="290" font-size="9.5" fill="#6e6c64">EFFR 3.88 落在区间内、略低于 IORB 3.90——准备金仍充裕时的典型位置；ON RRP 贴住区间下沿兜底</text>
+</svg>
+<figcaption><strong>当期利率走廊读数（%）</strong>：<strong>当期利率走廊读数（%，2026-09-17 起生效，9 月会议加息 25bp 后）</strong>：目标区间 3.75–4.00%（红带）；数据=<a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20260916a1.htm">Fed 9 月实施说明</a>与 <a href="https://www.federalreserve.gov/releases/h15/">H.15</a>（EFFR 为 2026-09 当周值）。看点：SRF 与贴现窗同在 4.00%（上沿双保险）；IORB 3.90% 是主锚；<strong>EFFR 3.88 落在区间内、贴着 IORB 之下</strong>——银行体系准备金仍充裕的读法（若 EFFR 持续逼近上沿则是趋紧警报）。</figcaption>
+</figure>
+
+<div class="example">
+<p class="ex-title">读数演练：从走廊读出「政策实际松紧」</p>
+<p>走廊不只是机制，它每月给你三个可证伪的读数：①EFFR 在区间内的<strong>位置</strong>（贴上沿=准备金边际趋紧，贴下沿=泛滥）；②EFFR−IORB 的<strong>利差</strong>（持续为负=银行体系准备金充裕，政府支持企业这类非银在低价拆出）；③ON RRP 用量（<a href="https://fred.stlouisfed.org/series/RRPONTSYD">FRED RRPONTSYD</a>）——2022-12 峰值约 2.4 万亿美元，<strong>2026-09 已缩到接近零</strong>（最新隔夜读数仅数十亿美元量级，2026-09-29 为 11B）。RRP 是「剩余流动性水池」：水池见底，通常意味着准备金从「泛滥」走向「刚好够用」——本轮 QT 正是在水池见底后（2025-12-01）落地的停止。</p>
+</div>
+
+<h2><span class="no">03</span>QE 与 QT：资产负债表的扩与缩 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">利率到零后油门踩到底怎么办？2008 年后 Fed 的答案：<strong>绕过短期利率，直接压长久期利率</strong>——大规模资产购买（QE）。看真实数据（本课一图）：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="美联储总资产 2007-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="272" x2="704" y2="272" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="275.5" text-anchor="end" font-size="10" fill="#6e6c64">0</text><line x1="52" y1="219.8" x2="704" y2="219.8" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="223.3" text-anchor="end" font-size="10" fill="#6e6c64">2</text><line x1="52" y1="167.6" x2="704" y2="167.6" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="171.1" text-anchor="end" font-size="10" fill="#6e6c64">4</text><line x1="52" y1="115.4" x2="704" y2="115.4" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="118.9" text-anchor="end" font-size="10" fill="#6e6c64">6</text><line x1="52" y1="63.2" x2="704" y2="63.2" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="66.7" text-anchor="end" font-size="10" fill="#6e6c64">8</text><line x1="52" y1="37.1" x2="704" y2="37.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="40.6" text-anchor="end" font-size="10" fill="#6e6c64">9</text><line x1="84.9" y1="272" x2="84.9" y2="276" stroke="#6e6c64"/><text x="84.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2008</text><line x1="217.4" y1="272" x2="217.4" y2="276" stroke="#6e6c64"/><text x="217.4" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2012</text><line x1="349.8" y1="272" x2="349.8" y2="276" stroke="#6e6c64"/><text x="349.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2016</text><line x1="481.7" y1="272" x2="481.7" y2="276" stroke="#6e6c64"/><text x="481.7" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="614" y1="272" x2="614" y2="276" stroke="#6e6c64"/><text x="614" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2024</text><rect x="82.1" y="24" width="49.6" height="248" fill="rgba(28,28,26,.09)"/><rect x="484.4" y="24" width="5.4" height="248" fill="rgba(28,28,26,.09)"/><polyline points="52,249.2 53.9,249.8 55.8,249.4 57.7,249.4 59.6,249.3 61.5,249.5 63.4,249.2 65.3,249.1 67.2,249.4 69.1,249.3 71,249.3 72.9,249.5 74.8,248.9 76.7,249.3 78.6,249 80.5,248.8 82.4,248.9 84.3,248.7 86.2,248.7 88.1,249.3 90,248.7 91.9,248.8 93.8,248.7 95.7,248.8 97.6,248.6 99.5,248.7 101.4,248.4 103.3,248.5 105.2,248.1 107.1,248.4 109,240.4 110.9,225.8 112.8,217.9 114.7,217 116.6,213.1 118.5,216.6 120.4,221.7 122.3,222 124.2,222.4 126.1,217.7 128,214.6 129.9,214.7 131.8,217.8 133.7,219.1 135.6,217.9 137.5,220.1 139.4,217.8 141.3,216.1 143.2,216.2 145.1,215.6 147,214.3 148.9,214.9 150.8,213.7 152.7,213.2 154.6,213.1 156.5,212.5 158.4,211.6 160.3,210.9 162.3,211.3 164.2,211.1 166.1,210.8 168,211.1 169.9,211.3 171.8,211.6 173.7,211.8 175.6,212 177.5,211.8 179.4,211.6 181.3,210.7 183.2,208.6 185.1,207.6 187,207.5 188.9,205.9 190.8,204.6 192.7,202.8 194.6,201.8 196.5,200 198.4,198.6 200.3,197.2 202.2,197.1 204.1,197 206,197.5 207.9,197.4 209.8,197.3 211.7,198.3 213.6,198.3 215.5,196.2 217.4,195.8 219.3,195.8 221.2,195.3 223.1,196.7 225,196.9 226.9,196.9 228.8,197.2 230.7,197.8 232.6,197.1 234.5,197.2 236.4,197.6 238.3,198.2 240.2,198.3 242.1,198.7 244,197.8 245.9,196.9 247.8,197.3 249.7,196.1 251.6,194.6 253.5,193.3 255.4,191.3 257.3,188.3 259.2,187.7 261.1,185.4 263,183.3 264.9,183 266.8,180.8 268.7,178.7 270.6,176.8 272.5,176.6 274.4,174.5 276.3,172.4 278.2,171.4 280.1,169.5 282,167.4 283.9,166.8 285.8,164.9 287.7,163.7 289.6,162.9 291.5,161.4 293.4,159.9 295.3,158.8 297.2,158.9 299.1,158 301,157.2 302.9,156.9 304.8,156.8 306.7,155.8 308.6,155.7 310.5,154.9 312.4,154.7 314.3,154.8 316.2,154.6 318.1,154.2 320,154.5 321.9,154.8 323.8,155 325.7,154.9 327.6,155.2 329.5,155.5 331.4,154.8 333.3,155 335.2,154.9 337.1,154.9 339,155.1 340.9,154.9 342.8,154.5 344.7,154.7 346.6,155.1 348.5,154.6 350.4,154.5 352.3,155 354.2,154.8 356.1,154.9 358,154.9 359.9,155.2 361.8,155.2 363.7,155.5 365.6,155.4 367.5,155 369.4,155.3 371.3,155.6 373.2,155.2 375.1,155.6 377,155.8 379,155.4 380.9,155.3 382.8,155.8 384.7,155.8 386.6,155.7 388.5,155.6 390.4,155.3 392.3,155.1 394.2,155.2 396.1,155.6 398,155.2 399.9,155.4 401.8,155.4 403.7,155.5 405.6,155.3 407.5,155.6 409.4,155.5 411.3,155.9 413.2,156.2 415.1,155.9 417,156.1 418.9,156.6 420.8,157.3 422.7,157.1 424.6,157.6 426.5,158.3 428.4,158.8 430.3,159.1 432.2,160 434.1,160.3 436,161.6 437.9,162.1 439.8,162.5 441.7,163 443.6,163.9 445.5,165 447.4,165.4 449.3,166.1 451.2,166.5 453.1,168.1 455,168.3 456.9,169.2 458.8,169.5 460.7,171.1 462.6,171.5 464.5,172.1 466.4,172.6 468.3,173.3 470.2,173.8 472.1,171.6 474,168.9 475.9,167.1 477.8,166.8 479.7,165.1 481.6,163 483.5,163.8 485.4,162.8 487.3,161.3 489.2,134.8 491.1,105.8 493,96.5 494.9,86.7 496.8,86.8 498.7,91.3 500.6,90.6 502.5,89 504.4,89 506.3,87.8 508.2,84.6 510.1,84.7 512,83.5 513.9,78.7 515.8,80.5 517.7,78.5 519.6,73.9 521.5,71.1 523.4,70.8 525.3,68.9 527.2,65.2 529.1,64.4 531,61.1 532.9,56.9 534.8,56.4 536.7,54 538.6,50.4 540.5,50.6 542.4,48.1 544.3,45.4 546.2,43.4 548.1,43.2 550,40.7 551.9,39.4 553.8,39.4 555.7,38.7 557.6,38.2 559.5,38.6 561.4,39.3 563.3,38.8 565.2,39.8 567.1,40.3 569,40.9 570.9,41.4 572.8,43.3 574.7,44.3 576.6,46.8 578.5,47.9 580.4,48.8 582.3,50.4 584.2,51.8 586.1,54.3 588,44 589.9,47.1 591.8,50 593.7,51.8 595.7,53 597.6,55.4 599.5,56.8 601.4,59.3 603.3,60.5 605.2,63.1 607.1,64.9 609,66.8 610.9,68.5 612.8,70.4 614.7,71.3 616.6,72.8 618.5,74.1 620.4,75.1 622.3,77.8 624.2,78.8 626.1,81.3 628,82.6 629.9,83.2 631.8,83.8 633.7,84.7 635.6,86.1 637.5,86.4 639.4,88 641.3,88.9 643.2,91.2 645.1,92 647,93.1 648.9,93.6 650.8,94.1 652.7,95.6 654.6,96.1 656.5,96.4 658.4,96.8 660.3,97.8 662.2,97.6 664.1,98.1 666,98.6 667.9,99.2 669.8,99.5 671.7,100 673.6,100 675.5,100.2 677.4,101.4 679.3,100.2 681.2,100.2 683.1,99.5 685,99.3 686.9,98.2 688.8,97.3 690.7,97.1 692.6,96.7 694.5,96.4 696.4,96.4 698.3,95.9 700.2,95.5 702.1,96.1 704,95.8" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="106.5" cy="248.2" r="3" fill="#1c1c1a"/><text x="160" y="260"  font-size="10.5" fill="#1c1c1a">危机前 0.9T</text><circle cx="316.2" cy="154.5" r="3" fill="#1c1c1a"/><text x="310" y="140"  font-size="10.5" fill="#1c1c1a">QE3 停止购债后平台 4.5T</text><circle cx="557" cy="37.8" r="3" fill="#1c1c1a"/><text x="548" y="32" text-anchor="end" font-size="10.5" fill="#1c1c1a">2022-04 峰值 9.0T</text><circle cx="704" cy="95.8" r="3" fill="#d33a2c"/><text x="698" y="115" text-anchor="end" font-size="10.5" fill="#d33a2c">QT 后 6.7T（2026-09-23）</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">美联储总资产（$T，周频）</text>
+</svg>
+<figcaption><strong>美联储总资产（万亿美元，周频），2007-01 至 2026-09-23</strong>：来源=<a href="https://fred.stlouisfed.org/series/WALCL">FRED WALCL</a>。看点：①2008 前 0.87T 的「小表」时代；②QE1（2008 危机）→QE2（2010）→QE3（2012-2014）三级台阶推到 4.5T；③2017-10 至 2019-08 第一轮 QT 缩回 3.76T（随后 2019-09 回购市场钱荒被迫重新扩表——05 节反证）；④2020-03 无限量 QE 直冲 2022-04 峰值 <strong>8.97T</strong>；⑤2022-06 起第二轮 QT（2024-06 减速、2025-04 再减速），<strong>2025-10 会议宣布 12-01 结束缩表</strong>——此后到期全部滚续，余额回稳并小幅回升至 2026-09-23 的 <strong>6.75T</strong>。一轮完整周期的扩与缩、以及「停止的时点由准备金而非日历决定」的现场证明，都在这张图里。</figcaption>
+</figure>
+
+<div class="example">
+<p class="ex-title">数值例：一笔 QE 购债在两张表上怎么记（仿 Wang ch2 流程）</p>
+<table>
+  <thead><tr><th>步骤</th><th>Fed 的表</th><th>非银卖家（经由其银行）的表</th></tr></thead>
+  <tbody>
+    <tr><td>①Fed 买入 $100 国债</td><td class="num">资产：国债 +100</td><td class="num">资产：国债 −100</td></tr>
+    <tr><td>②Fed 支付（电子记账）</td><td>负债：准备金 +100</td><td>—</td></tr>
+    <tr><td>③卖家的银行代收</td><td>—</td><td class="num">银行：在 Fed 准备金 +100<br>客户存款 +100</td></tr>
+  </tbody>
+</table>
+<p>三条推论直接可考：①<strong>非银不能持有准备金</strong>（没有 Fed 账户），所以银行永远在中间——系统存款同步增加；②准备金不是「印给人民的钱」，是银行体系相互结算的油；③QT 就是反向记账（到期不续，资产与准备金同减）——所以 QT 的终点永远由「准备金还剩多少」决定，而不是由日程表决定。</p>
+</div>
+
+<p><strong>QT 的管道</strong>：不是卖出，而是<strong>到期不再投资</strong>——国债与 MBS 到期后，财政部支付的本金流回 Fed，Fed 的资产与银行准备金同步注销。本轮 QT（2022-06 启动，初始上限国债 60B/MBS 35B 每月）在 2024-06（国债上限 25B）与 2025-04（降至 5B）两度减速，最终 <strong>2025-10-29 会议宣布于 2025-12-01 结束缩表</strong>——此后国债到期全部滚续，MBS 本金再投资于短期国库券。为什么停在那里？<strong>ON RRP 水池已从 2022-12 峰值约 2.4T 干涸到接近零，再缩就开始直接挤压银行的最低舒适准备金</strong>（2019-09 的教训，06 节）——又一次现场证明：QT 的终点由准备金决定，不由日历决定。</p>
+
+<h2><span class="no">04</span>学术模型地图：读论文但不套模型 <span class="time-chip">≈6 min</span></h2>
+<p class="lede">读央行论文（FEDS 系列、各联储 working papers）是你 P2 起的免费信息优势——但先拿到地图，知道每类模型是干什么的、边界在哪：</p>
+
+<table>
+  <thead>
+    <tr><th>模型家族</th><th>一句话功能</th><th>个人交易者的正确用法</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>DSGE（动态随机一般均衡）</strong></td><td>央行主力政策模型：家户/企业最优化+粘性价格，模拟政策传导</td><td>读它的<strong>情景与机制</strong>（如「政策利率对通胀的弹性」），不抄它的点值</td></tr>
+    <tr><td><strong>新凯恩斯（New Keynesian）框架</strong></td><td>DSGE 的理论内核：菲利普斯曲线+IS 曲线+泰勒规则三件套</td><td>理解 Fed 语言（产出缺口、r*、中性利率）的出处</td></tr>
+    <tr><td><strong>半结构化/经验模型</strong>（VAR、事件研究）</td><td>数据驱动：政策 surprise 对资产价格的回归</td><td>直接可用——Kroner FEDS 2025-022（2006 课主角）就是这一类</td></tr>
+    <tr><td><strong>业界 practitioner 框架</strong></td><td>资产负债表视角、流动性管道、仓位结构（Wang、Mehrling、Pozsar 一系）</td><td>本课程 P2 的主视角——个人可执行的「看什么数据」多来自这一系</td></tr>
+  </tbody>
+</table>
+
+<div class="note"><b>为什么读而不套</b>：Blanchard（前 IMF 首席经济学家）在《Do DSGE Models Have a Future?》（PIIE 政策简报 PB 16-11，2016-08）里的裁定值得背下来——DSGE 模型有严重缺陷但可改进，应「更少孤立（less insular）、更少帝国主义（less imperialistic）」，与其他类型的模型并存互补。翻译成交易者语言：<strong>央行论文给你的应该是机制与量级感，不是点位预测</strong>。模型假设（理性预期、代表性家户）在危机里系统性失效——而你的工作恰是交易危机。</div>
+
+<h2><span class="no">05</span>三大央行对照框：Fed / ECB / BOJ <span class="time-chip">≈4 min</span></h2>
+<p class="lede">你在一个美元主导的世界里交易，但三个央行用三套反应函数。同一份全球通胀冲击，三家走出三条政策路径——这张框是 4003（汇率课）的伏笔，也是你读全球宏观新闻的解码器：</p>
+<table>
+  <thead>
+    <tr><th>央行</th><th>法定目标</th><th>政策利率（当期）</th><th>反应函数要点</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>Fed</strong></td><td>双重使命：就业+物价</td><td class="num">3.75–4.00%</td><td>就业通胀双响应；点阵图披露路径；工具箱最全</td></tr>
+    <tr><td><strong>ECB</strong></td><td>单一目标：2% 通胀</td><td class="num">存款便利 2.50%</td><td>就业不入法定目标；三利率体系；2026-09 加息 25bp</td></tr>
+    <tr><td><strong>BOJ</strong></td><td>2% 物价+工资可持续</td><td class="num">约 1.25%</td><td>超宽松后小步退出（2025-12 起三连加）；YCC 已退</td></tr>
+  </tbody>
+</table>
+<div class="note">读数口径：Fed 目标区间 2026-09-17 起（9 月会议加息 25bp）；ECB 存款便利 2.50%（2026-09-16 起，三大利率 2.50/2.65/2.90%）；BOJ 无担保隔夜利率约 1.25%（2026-09-18 起，7-2 票；2025-12 约 0.75%→2026-06 约 1.00%→1.25% 三连加）。</div>
+
+<div class="tip">交易者的第一推论：<strong>三家目标函数不同 → 同一冲击下政策路径分化 → 利差与套息结构随之变化</strong>。ECB 只看通胀（就业是财政的事），Fed 看两个（可以因就业走弱在通胀未达标时降息——2024 年正是如此），BOJ 在通胀达标后仍以「可持续性」为由慢走。读三家声明时先想它们各自的损失函数，再读措辞变化（2006 课的方法用到三份声明上）。</div>
+<h2><span class="no">06</span>边界与反证：工具箱的失效记录 <span class="time-chip">≈5 min</span></h2>
+<p class="lede">「统计的冷水」宏观版：每个工具都有官方记录在案的失效案例——</p>
+<ul>
+  <li><strong>QE 抬金融资产 ≠ 抬实体经济</strong>：Wang ch2 的判词——QE 把国债换成存款与准备金，「似乎抬升了金融资产价格，但未必抬升经济活动」；三个央行（Fed/BOJ/ECB）十多年都没靠 QE 单独把通胀拉回目标。</li>
+  <li><strong>QE 有效但不够</strong>：Bernanke《21世纪货币政策》ch11 的总结——证据「确认 2008 年后非常规工具的有效性」，它们已成为工具箱的永久部分，<strong>但在严重衰退或中性利率很低时可能仍然不够</strong>。</li>
+  <li><strong>「充足准备金」会算错</strong>：2019-09 回购危机——Fed 判断准备金仍充足，实际已到银行舒适下限，SOFR 单日飙至 5.25%（<a href="https://fred.stlouisfed.org/series/SOFR">FRED SOFR</a>，2019-09-17），被迫重启购表。同年 3 月才刚宣布结束缩表——<strong>管道参数（准备金下限）不可直接观测，只能从市场反应倒推</strong>。</li>
+  <li><strong>零利率下限</strong>：0002 课的「推绳子」——利率到零后常规工具全部让位（这正是 QE/前瞻指引登场的原因，也是它们被反复检验的原因）。</li>
+</ul>
+
+<h2><span class="no">07</span>训练场 <span class="time-chip">≈15 min</span></h2>
+<p class="lede">五道题。第 1 题微重现上一课（1006），其余考本课管道。隔天重练条款：今天错 ≥2 题，明天重做全组。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：你在快照「政策句」里写「Fed 将于 10 月降息 25bp」。按 1006 的纪律，这句话缺什么？",
+  "options": [
+    {"t": "缺一个「为什么」的叙述段落", "ok": false, "why": "快照是三句话格式，不写段落——缺的不是叙述。"},
+    {"t": "缺概率区间与市场定价对照（FedWatch/曲线定价了什么、我判断什么）", "ok": true, "why": "微重现·上一课：快照政策句必须含市场定价——「市场定价 X，我判断 Y+概率区间」，否则没有预期差参照系，也无法日后验收。"},
+    {"t": "缺降息对股市影响的预测", "ok": false, "why": "那是 P4 的事——政策句先写政策本身与定价结构。"},
+    {"t": "什么都不缺，快照本来就是观点", "ok": false, "why": "没有概率区间的观点无法证伪——决策日志五要素第一个考的就是这个。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题：ON RRP 利率被称为「地板的地板」，因为它——",
+  "options": [
+    {"t": "是 Fed 给银行的准备金利息", "ok": false, "why": "那是 IORB。ON RRP 的对手方是非银（货币基金等）。"},
+    {"t": "让没有准备金账户的货币基金也能把钱无风险地存进 Fed，封住短利率的下界", "ok": true, "why": "IORB 只约束银行；货币基金没有 Fed 账户，若无 ON RRP，它们的抛售可以把货币市场利率砸穿 IORB——2014-2019 年（以及 2021-22 巨量 RRP 时期）这就是关键稳定器。"},
+    {"t": "是贴现窗的另一种叫法", "ok": false, "why": "贴现窗在走廊上沿，方向相反。"},
+    {"t": "只在危机时才启用", "ok": false, "why": "ON RRP 是常设工具（SRF 才是 2021 年新设的常设回购便利，注意别混）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题（看图判机制）：01 图 WALCL 显示 2019-08 缩到 3.76T 后，曲线突然转头向上。这个「意外扩表」最可能的机制是——",
+  "options": [
+    {"t": "新一轮 QE 刺激经济", "ok": false, "why": "时机不对——2019 年经济没有衰退，FOMC 也没宣布 QE。"},
+    {"t": "2019-09 回购钱荒后，Fed 恢复购表以补充准备金——买的是短期国库券，不是 QE", "ok": true, "why": "史实：2019-09 SOFR 飙至 5.25%，Fed 从 10 月起每月购入短债并重启回购操作「充足准备金管理」。资产负债表扩张≠QE——<strong>看科目（买短债补准备金 vs 买长债压期限溢价）才是管道级读法</strong>。"},
+    {"t": "美联储统计口径变更", "ok": false, "why": "WALCL 无此断点——回升在数据上是真实的操作量。"},
+    {"t": "财政部 TGA 注资", "ok": false, "why": "TGA 是负债端科目变动，不改变总资产趋势的机制解释。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题：按 Blanchard《Do DSGE Models Have a Future?》的裁定与 04 节地图，个人交易者读央行论文的正确姿势是——",
+  "options": [
+    {"t": "把 DSGE 的预测点位抄进决策日志", "ok": false, "why": "模型点值不是概率区间——直接抄等于放弃自己的校准责任。"},
+    {"t": "取它的机制与量级感（弹性/传导渠道/情景差异），点值与方向预测自己组装", "ok": true, "why": "Blanchard 裁定：政策讨论有用，但复杂摩擦拟合不可取。论文给你「如果 X，机制上 Y 的量级大约 Z」——这恰是决策日志「依据」栏需要的弹药。"},
+    {"t": "只读摘要里的基线预测", "ok": false, "why": "摘要基线是模型最弱的部分（点值），最强的部分（机制与敏感性）在正文。"},
+    {"t": "论文都是滞后的，不如看推特", "ok": false, "why": "FEDS/工作论文发布常领先市场消化——「免费信息优势」的出处正在这里。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：本轮 QT 最终停在 2025-12-01——决定这个时点的最终变量是？",
+  "options": [
+    {"t": "FOMC 预先公布的日历日期", "ok": false, "why": "日程只有节奏（caps），没有终点——2019 年就因此被打脸。"},
+    {"t": "准备金是否接近银行体系的最低舒适水平——只能用市场反应（货币市场利率、RRP 水池）倒推", "ok": true, "why": "管道级答案：准备金下限不可直接观测。ON RRP 池从 2.4T（2022-12）见底归零后，QT 于 2024-06、2025-04 两度减速并最终停在 2025-12-01——时点由水池与货币市场反应倒推，不由日历。这条已兑现的路径就是你未来跟踪任何央行缩表的模板。"},
+    {"t": "联邦债务/GDP 是否超过某个阈值", "ok": false, "why": "那是财政可持续性话题（2007 课），与 Fed 缩表的技术终点无关。"},
+    {"t": "通胀回到 2% 的那一刻", "ok": false, "why": "通胀达标决定利率政策；缩表终点是流动性管道问题——两件事不同步。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——隔天重练仍全对，M2.1a 的课内证据齐了；错 1–2 题——回对应节（第 1 题→1006 决策日志制度；第 2 题→02 节走廊；第 3 题→03 节图；第 4 题→04 节；第 5 题→02 节例块+03 节 QT 段），隔天重练；错 ≥3 题——本课回炉：从 01 节资产负债表重读。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题：不看正文，画出美联储资产负债表的骨架（资产端四类/负债端四类），并各写一句话说明「哪个工具动哪个科目」。再补一行：IORB、ON RRP、贴现窗在走廊里的位置与各自约束谁。写完对照 01/02 节图。",
+  "hint": "从「Fed 是一家银行」出发想科目；走廊想「谁的钱存在哪、无风险下限是多少」。",
+  "a": "自查标准：①资产端含国债/MBS/贷款与特殊工具/央行互换，负债端含现金/准备金/ON RRP/TGA；②工具→科目对应（走廊=负债端利息参数，QE/QT=资产端结构，互换=资产端对外）；③IORB 约束银行（主锚/地板），ON RRP 约束货币基金（地板的地板），贴现窗是上沿（保险阀）；④能说出「EFFR 贴上沿/贴下沿各意味着什么」。四点全到=管道级理解达成——下一课用同一张表对照中国央行。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">08</span>小结与课外作业 <span class="time-chip">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>资产负债表读法</strong>——Fed 的每个工具都是一笔表操作；H.4.1 每周四更新</li>
+  <li><strong>利率走廊</strong>——IORB 主锚地板、ON RRP 地板的地板、贴现窗上沿；EFFR 位置+RRP 池=松紧温度计</li>
+  <li><strong>QE/QT 管道</strong>——非经银行不可的准备金创造；QT 终点=准备金舒适下限（只能倒推）</li>
+  <li><strong>学术模型地图</strong>——读机制与量级感，不抄点值（Blanchard 2018 锚）</li>
+</ul>
+
+<div class="stop">M2.1 结业标准（与 2002 合并判定，显式）：①给一组当期利率读数（EFFR/IORB/ON RRP/贴现窗），说出各自在走廊中的角色与当前松紧含义；②对 QE/QT 各举一笔资产负债表记账（03 节例块格式）；③对照说清中美工具的一一对应（2002 课后）。检测：2001+2002 训练场合计 ≥80% 且隔天重练达标；工件=本课动笔题+2002 动笔题（存观察日志，M2.1 点亮归档）。</div>
+
+<div class="note"><b>Mehrling 并行长线课（P2 起挂出，选做，永不前置）</b>：哥伦比亚大学 Perry Mehrling《Economics of Money and Banking》（<a href="https://www.coursera.org/learn/money-banking">Coursera 免费旁听</a>，原版 22 讲结构、全课约 33h）是本阶段的并行材料——<strong>每周 2–3 小时、随进度听，不占任何单课预算，也绝不是任何课的前置</strong>。与 Wang《Central Banking 101》分工：Wang=可读底本（本课已用 ch2），Mehrling=体系课（money view：资产负债表视角的完整训练）。本课对应的并行讲次：<strong>第 1 讲「The Four Prices of Money」与第 2 讲「The Natural Hierarchy of Money」</strong>——它把你刚学的 Fed 资产负债表放进「货币层级」的一般框架。后续各课标注对应讲次（2004 第 8 讲、2005 第 21 讲为核心）。</div>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（本周内）</strong>：打开 <a href="https://www.federalreserve.gov/releases/h41/">H.4.1 最新一期</a>，找到「Table 1」总资产与三项负债大数（准备金、RRP、TGA），把三个数字抄进你的观察日志——下节课对照中国央行的表。</p>
+<p>（2）<strong>课后探索（可选）</strong>：在 FRED 上把 <a href="https://fred.stlouisfed.org/series/RRPONTSYD">RRPONTSYD</a> 与 <a href="https://fred.stlouisfed.org/series/WALCL">WALCL</a> 并排放两个窗口：RRP 池从 2.4T 干涸到零的过程，就是你亲眼看一次「准备金舒适度」的耗尽路径。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每次 FOMC 周把当期走廊读数（02 节横条图那组数）记一行进快照——从本课起你的「政策句」有了管道级参照系。</p>
+<p><strong>下一课 2002《中国央行工具箱》</strong>：同一张资产负债表搬到北京——7 天逆回购主锚、MLF、LPR、准备金、结构性工具，与美联储一一对照，参考页 0003《央行工具对照表》同步上线。</p>
+
+<div class="ask-agent">我是你的教练。想让我陪你读一期 H.4.1、把走廊读数记进你的快照、或者讨论某个工具的边界案例——直接回来找我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="1006-snapshot-point-in-time.html">← 第 1006 课</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="../reference/0001-macro-dashboard.html">宏观仪表盘</a>
+    <a href="2002-pboc-toolbox.html">第 2002 课 →</a>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：Fed《The Fed Explained》（原 Purposes and Functions 第 10 版）货币政策章节（官方一手框架）；Wang《Central Banking 101》ch2（货币创造者与 QE 管道）；Mishkin 13e ch16《Tools of Monetary Policy》（教科书框架）；FRED WALCL/SOFR/RRPONTSYD（真实数据）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①Wang ch2「The Money Creators」——非银不能持有准备金/QE 记账流程/Desk 运作/QE 抬资产不必然抬实体（01/03/05 节）；②Bernanke《21st Century Monetary Policy》ch11「The Fed's Post-2008 Toolkit」——QE 定义与「有效但可能不够」裁定（05 节）；③Mishkin 13e ch16 Tools of Monetary Policy——走廊与管理利率教科书框架（02 节）；④Blanchard《Do DSGE Models Have a Future?》——学术地图裁定（04 节）。<strong>数据口径：</strong>WALCL 周频（图 1，2026-09-23 当周 6.75T，峰值 2022-04-13 8.97T）；走廊当期读数见图 2 图注（各值截至日期行尾标注）；2019-09-17 SOFR 5.25%、RRP 峰值约 2.4T（2022-12）与 2026-09-29 隔夜用量 11B 均出自 FRED 对应序列。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>

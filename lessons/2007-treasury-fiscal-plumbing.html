@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2007 国债与财政管道 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 2007 课</span>
+    <span>·</span>
+    <span>P2 央行与流动性 · M2.5</span>
+    <span>·</span>
+    <span>P2 收官</span>
+  </div>
+  <h1>国债与财政管道</h1>
+  <p class="deck">P2 的最后一课把镜头从央行转向它的对手方：财政。链路是<strong>赤字→国债发行（QRA/期限结构）→交易商与回购→期限溢价</strong>——2023 年以来这条管道对长端利率的影响不小于货币政策本身。个人翻译版：<strong>季度读一次 QRA 与 FIM，bills 份额趋势一眼看</strong>；basis trade 与 dealer 容量是语境认知，不进你的仪表盘。本课约 70–90 分钟（先猜 3 + 正文与图组 40–50 + 训练场 15 + 动笔与小结 5）。前置要求：2001–2006（准备金体系是本课的物理基础）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：把「美债供给」从背景噪音升级为<strong>可季度跟踪的期限溢价变量</strong>——说得出财政部每季度发多少、发什么期限、钱从 TGA 怎么走，以及这套供给如何进入你的长端利率判断。不算数：跟踪每场拍卖的 tail；护栏：<strong>「个人盯 QRA 与 FIM 的季节奏，不盯拍卖的日节奏」</strong>——频错层是白费时间。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>财政端：赤字、财政脉冲与利息负担（含两图） <span class="t">≈12 min</span></li>
+    <li>Treasury 端：QRA、期限结构与 TGA（含当期 QRA 数字+机制图） <span class="t">≈12 min</span></li>
+    <li>市场端：dealer 容量、拍卖指标与 basis trade（语境层） <span class="t">≈8 min</span></li>
+    <li>个人翻译版：QRA 季读清单（含表） <span class="t">≈6 min</span></li>
+    <li>边界与反证 <span class="t">≈4 min</span></li>
+    <li>训练场 <span class="t">≈15 min</span></li>
+    <li>小结与课外作业（P2 收官） <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准两个「财政=背景板」直觉。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：2023 年以来，10 年期美债收益率的重大上行波段，经常发生在「通胀预期基本没动、降息预期甚至增强」的时期。最可能的驱动是——",
+  "options": [
+    {"t": "美联储在偷偷加息", "ok": false, "why": "政策利率路径没有上行——这恰恰是谜面：短端被钉住，长端在涨。"},
+    {"t": "期限溢价上行：国债供给放量（bills 之外的久期供给+QT 双重挤压）要求更高的持有补偿", "ok": true, "why": "本课主线：名义收益率=预期路径+期限溢价（1004 的拆解）。当预期路径不动而长端上行，涨的是溢价——溢价的供需端正是财政部发行节奏与 QT 的机械叠加（02/03 节）。"},
+    {"t": "外国央行在抛售美债", "ok": false, "why": "叙事流行但量级不匹配——外国官方持仓变化平滑，解释不了波段。"},
+    {"t": "技术性错误，长端必须跟随政策利率", "ok": false, "why": "长端=预期的平均+溢价——溢价项自由浮动正是机制的一部分。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：「美国联邦债务已突破 40 万亿美元」——对交易者，这个数字的正确用法是——",
+  "options": [
+    {"t": "灾难倒计时：马上做空美元和美股", "ok": false, "why": "末日时间表永远差一次「还远没到」——债务水平与危机时点之间没有可用的映射函数。"},
+    {"t": "语境认知+两个可跟踪的流量读数：利息负担（挤占支出的速度）与财政脉冲 FIM（当期拉动/拖累 GDP）", "ok": true, "why": "存量给语境，流量给信号——FIM −0.2pp 与利息支出占 GDP 3.2% 是能进决策日志的读数，「40T」本身不是。"},
+    {"t": "完全无用，宏观不该看财政", "ok": false, "why": "矫枉过正——财政是 2023 年以来长端利率的主驱动之一，不看等于丢掉一块拼图。"},
+    {"t": "只看债务/GDP 是否超 120%", "ok": false, "why": "阈值思维：120% 这个数本身没有魔力（日本 250%+ 也没爆）。看斜率与结构，不看阈值。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>财政端：赤字、财政脉冲与利息负担 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">三组数字构成财政端的全部日常（截至日期见括号，全部官方/免费源）：<strong>赤字</strong>（FY2025 终值 $1.78T，占 GDP 5.77%；FY2026 前 11 个月约 $2.0T，CBO 口径）、<strong>债务存量</strong>（2026-08-18 总额突破 $40T；债务/GDP 122.6%，2026Q1）、<strong>利息负担</strong>（FY2025 净利息约 $970B≈GDP 的 3.2%≈财政支出的 14%；2026Q2 季度年率已达 $1,247B）。两张真实数据图：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="联邦债务占 GDP 2000-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="248.4" x2="704" y2="248.4" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="251.9" text-anchor="end" font-size="10" fill="#6e6c64">40%</text><line x1="52" y1="201.1" x2="704" y2="201.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="204.6" text-anchor="end" font-size="10" fill="#6e6c64">60%</text><line x1="52" y1="153.9" x2="704" y2="153.9" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="157.4" text-anchor="end" font-size="10" fill="#6e6c64">80%</text><line x1="52" y1="106.7" x2="704" y2="106.7" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="110.2" text-anchor="end" font-size="10" fill="#6e6c64">100%</text><line x1="52" y1="59.4" x2="704" y2="59.4" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="62.9" text-anchor="end" font-size="10" fill="#6e6c64">120%</text><line x1="52" y1="272" x2="52" y2="276" stroke="#6e6c64"/><text x="52" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2000</text><line x1="152.3" y1="272" x2="152.3" y2="276" stroke="#6e6c64"/><text x="152.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2004</text><line x1="252.6" y1="272" x2="252.6" y2="276" stroke="#6e6c64"/><text x="252.6" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2008</text><line x1="352.9" y1="272" x2="352.9" y2="276" stroke="#6e6c64"/><text x="352.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2012</text><line x1="453.2" y1="272" x2="453.2" y2="276" stroke="#6e6c64"/><text x="453.2" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2016</text><line x1="553.5" y1="272" x2="553.5" y2="276" stroke="#6e6c64"/><text x="553.5" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="653.8" y1="272" x2="653.8" y2="276" stroke="#6e6c64"/><text x="653.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2024</text><rect x="250.5" y="24" width="37.6" height="248" fill="rgba(28,28,26,.09)"/><rect x="555.6" y="24" width="4.1" height="248" fill="rgba(28,28,26,.09)"/><polyline points="52,206.5 58.2,211.8 64.5,213 70.8,214.7 77.1,212.6 83.3,215.2 89.6,213.4 95.9,211.2 102.2,211.3 108.4,210 114.6,208.9 120.9,206.1 127.2,206.3 133.4,203.6 139.7,204.3 146,202.5 152.3,201.6 158.5,201 164.8,201.2 171.1,199.6 177.4,199 183.6,199.6 189.9,200.3 196.2,198 202.5,197.5 208.7,198.3 214.9,198 221.2,196.8 227.5,195.8 233.7,197.4 240,196.8 246.3,194.7 252.6,191.3 258.9,192 265.1,183.9 271.4,169.9 277.7,160.7 283.9,153.2 290.2,148.2 296.5,144.4 302.8,138.5 309,134.7 315.2,131.3 321.5,126.5 327.8,123.3 334,125.1 340.3,119.6 346.6,115.9 352.9,113.5 359.2,111.8 365.4,110.3 371.7,106.5 378,104.9 384.2,106.5 390.5,109.7 396.8,107.2 403.1,101.1 409.3,105.1 415.5,106.4 421.8,103.6 428.2,105.5 434.3,108.3 440.6,109.9 446.9,100.4 453.2,97.2 459.5,98.2 465.7,98.2 472,95.7 478.3,99.7 484.5,101.7 490.8,100 497.1,101.3 503.4,97.8 509.6,99.6 515.8,98.5 522.1,94.7 528.5,96.4 534.6,99.8 540.9,95.8 547.2,93 553.5,90.7 559.8,29.5 566,49.6 572.3,46.1 578.6,49.9 584.8,55.2 591.1,62.9 597.4,60.9 603.7,58.5 609.9,63.7 616.1,65.5 622.4,65.6 628.8,69.9 634.9,65.5 641.2,63.8 647.5,60.3 653.8,58.3 660.1,60.6 666.3,59 672.6,56 678.9,58.1 685.1,62.3 691.4,57 697.7,53.4 704,53.3" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="246.3" cy="194.8" r="3" fill="#1c1c1a"/><text x="130" y="228"  font-size="10.5" fill="#1c1c1a">危机前 63%（2007Q4）</text><circle cx="559.8" cy="29.4" r="3" fill="#1c1c1a"/><text x="540" y="20" text-anchor="end" font-size="10.5" fill="#1c1c1a">疫情峰 132.7%</text><circle cx="704" cy="53.3" r="3" fill="#d33a2c"/><text x="700" y="150" text-anchor="end" font-size="10.5" fill="#d33a2c">2026Q1：122.6%</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">联邦债务/GDP（%，季度）</text>
+</svg>
+<figcaption><strong>联邦债务/GDP（%，季度），2000 至 2026Q1</strong>：来源=<a href="https://fred.stlouisfed.org/series/GFDEGDQ188S">FRED GFDEGDQ188S</a>。看点：①GFC（2008-2010：63%→86%）与疫情（2020：107%→2021Q2 约 122%）两次跳升都是「危机财政」；②2021 后没有去杠杆——和平时期历史罕见的持续高位（2026Q1 为 122.6%）。存量是语境：它决定「下一次危机的财政空间」，不直接给你交易信号。</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="联邦利息支出 2000-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="272" x2="704" y2="272" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="275.5" text-anchor="end" font-size="10" fill="#6e6c64">0</text><line x1="52" y1="216.9" x2="704" y2="216.9" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="220.4" text-anchor="end" font-size="10" fill="#6e6c64">300</text><line x1="52" y1="161.8" x2="704" y2="161.8" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="165.3" text-anchor="end" font-size="10" fill="#6e6c64">600</text><line x1="52" y1="106.7" x2="704" y2="106.7" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="110.2" text-anchor="end" font-size="10" fill="#6e6c64">900</text><line x1="52" y1="51.6" x2="704" y2="51.6" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="55.1" text-anchor="end" font-size="10" fill="#6e6c64">1200</text><line x1="52" y1="272" x2="52" y2="276" stroke="#6e6c64"/><text x="52" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2000</text><line x1="151.4" y1="272" x2="151.4" y2="276" stroke="#6e6c64"/><text x="151.4" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2004</text><line x1="250.7" y1="272" x2="250.7" y2="276" stroke="#6e6c64"/><text x="250.7" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2008</text><line x1="350.1" y1="272" x2="350.1" y2="276" stroke="#6e6c64"/><text x="350.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2012</text><line x1="449.4" y1="272" x2="449.4" y2="276" stroke="#6e6c64"/><text x="449.4" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2016</text><line x1="548.8" y1="272" x2="548.8" y2="276" stroke="#6e6c64"/><text x="548.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="648.2" y1="272" x2="648.2" y2="276" stroke="#6e6c64"/><text x="648.2" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2024</text><rect x="248.6" y="24" width="37.3" height="248" fill="rgba(28,28,26,.09)"/><rect x="550.9" y="24" width="4.1" height="248" fill="rgba(28,28,26,.09)"/><polyline points="52,206.8 58.2,206.9 64.4,207.2 70.6,207.1 76.9,208.5 83,210.5 89.2,212 95.5,213.6 101.7,216 107.8,216.5 114,216.9 120.3,217.3 126.5,218.6 132.7,218.7 138.8,218.4 145.1,218 151.4,217.3 157.5,217 163.7,215.4 170,213.5 176.3,211.5 182.4,208.9 188.6,207.8 194.8,206.7 201.1,206.2 207.2,204.5 213.4,202.9 219.6,200.9 225.9,199.3 232,197.1 238.2,195.9 244.5,196 250.7,197.9 256.9,200.7 263.1,201.8 269.4,202.3 275.6,205.5 281.7,207.3 287.9,207.6 294.2,207 300.4,205.8 306.6,202.8 312.7,200.5 319,198.6 325.3,196.5 331.4,193.9 337.6,192.5 343.8,192.4 350.1,193.3 356.3,194 362.5,194.7 368.7,195.4 375,196.5 381.1,196.2 387.3,195.4 393.5,193.9 399.8,192.6 405.9,191.2 412.1,190.8 418.4,190.8 424.6,193.2 430.7,193.8 436.9,193.4 443.2,192.1 449.4,190 455.6,188.7 461.8,188 468.1,187.5 474.3,187.4 480.5,185.4 486.6,183.6 492.9,181.4 499.2,178.7 505.3,174.3 511.5,170.6 517.7,167.1 524,165.5 530.1,164.3 536.3,165.8 542.5,168.3 548.8,172 555,177.4 561.2,178.7 567.4,177.1 573.7,174 579.8,169 586,164 592.3,159.5 598.5,155 604.6,146.2 610.8,133.8 617.1,120.8 623.3,113.8 629.5,107.7 635.7,94.4 641.9,82.5 648.2,75.2 654.4,69.3 660.5,61.4 666.8,59.7 673.1,61.8 679.2,58.7 685.4,51.7 691.6,46.5 697.9,48.1 704,42.9" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="424.6" cy="191.2" r="3" fill="#1c1c1a"/><text x="300" y="230"  font-size="10.5" fill="#1c1c1a">低利率时代：年化利息 <450B</text><circle cx="704" cy="42.9" r="3" fill="#d33a2c"/><text x="480" y="130" text-anchor="start" font-size="10.5" fill="#d33a2c">2026Q2：1247B 年率</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">联邦政府利息支出（季度年率，$B）</text>
+</svg>
+<figcaption><strong>联邦政府利息支出（季度年率，$B），2000 至 2026Q2</strong>：来源=<a href="https://fred.stlouisfed.org/series/A091RC1Q027SBEA">FRED A091RC1Q027SBEA</a>（NIPA 口径）。看点：2015–2021 低利率时代年化利息压在 $450B 下方（尽管债务在涨）；2022 年起加息+存量滚动双重作用，利息曲线的斜率比债务曲线陡得多——2026Q2 年率 <strong>$1,247B</strong>，约为 2021 年低谷的 2.5 倍。<strong>利息负担是最快的「财政引力」读数：它每一美元都在与优先级项目抢预算</strong>。</figcaption>
+</figure>
+
+<div class="example">
+<p class="ex-title">赤字 ≠ 财政脉冲：两个流量，两种用途</p>
+<table>
+  <thead><tr><th>读数</th><th>是什么</th><th>当期值</th><th>进什么决策</th></tr></thead>
+  <tbody>
+    <tr><td>赤字（流量-年）</td><td>支出−收入的总账</td><td>FY2025：$1.78T（5.77% GDP）</td><td>供给端：决定国债发行量的源头（02 节）</td></tr>
+    <tr><td>FIM（财政脉冲）</td><td>财政对 GDP 增长的<strong>边际</strong>拉动（剔除趋势，Brookings Hutchins 季度模型）</td><td class="num">2026Q2：−0.2pp<br>（2027 转向更具限制性）</td><td>需求端：G 维（财政腿）的方向与力度读数</td></tr>
+  </tbody>
+</table>
+<p>关键区别：赤字可以巨大而 FIM 为零（持续的高水平支出不再「新增」拉动）；FIM 才是 P3 regime 定位里 G 维财政腿要的读数。个人免费源：<a href="https://www.brookings.edu/articles/hutchins-center-fiscal-impact-measure/">Brookings FIM 页</a>（季度更新，图表直接可读）。</p>
+</div>
+
+<h2><span class="no">02</span>Treasury 端：QRA、期限结构与 TGA <span class="time-chip">≈12 min</span></h2>
+<p class="lede">财政部是全世界最大的「久期做市商」：它每季度通过 <strong>QRA（Quarterly Refunding，季度再融资）</strong>决定发多少 bills、多少 coupons（中长期券）。管道全景（机制图）：</p>
+
+<figure>
+<svg viewBox="0 0 720 320" role="img" aria-label="财政-国债-市场管道" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="f1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs>
+<rect x="20" y="40" width="150" height="52" rx="10" fill="#1c1c1a"/>
+<text x="95" y="61" text-anchor="middle" font-size="12" fill="#fff" font-weight="700">赤字（$1.78T/年）</text>
+<text x="95" y="79" text-anchor="middle" font-size="9.5" fill="#fff">+到期滚续</text>
+<rect x="20" y="140" width="150" height="64" rx="10" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="95" y="163" text-anchor="middle" font-size="12" fill="#1c1c1a" font-weight="700">财政部 QRA</text>
+<text x="95" y="181" text-anchor="middle" font-size="9.5" fill="#6e6c64">季度决定期限结构</text>
+<text x="95" y="195" text-anchor="middle" font-size="9.5" fill="#6e6c64">bills vs coupons</text>
+<rect x="20" y="248" width="150" height="52" rx="10" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="95" y="269" text-anchor="middle" font-size="12" fill="#1c1c1a" font-weight="700">TGA（约 $977B）</text>
+<text x="95" y="287" text-anchor="middle" font-size="9.5" fill="#6e6c64">财政在 Fed 的活期户</text>
+<line x1="95" y1="92" x2="95" y2="138" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#f1)"/>
+<line x1="95" y1="204" x2="95" y2="246" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#f1)"/>
+<rect x="290" y="60" width="180" height="66" rx="10" fill="#f7f3e3"/>
+<text x="380" y="83" text-anchor="middle" font-size="11.5" fill="#8a6d1f" font-weight="700">拍卖 → 一级交易商</text>
+<text x="380" y="100" text-anchor="middle" font-size="9.5" fill="#8a6d1f">dealer 中标后库存+分销</text>
+<text x="380" y="115" text-anchor="middle" font-size="9.5" fill="#8a6d1f">（容量有限：03 节）</text>
+<rect x="290" y="180" width="180" height="66" rx="10" fill="#f7f3e3"/>
+<text x="380" y="203" text-anchor="middle" font-size="11.5" fill="#8a6d1f" font-weight="700">同时 Fed 在 QT</text>
+<text x="380" y="220" text-anchor="middle" font-size="9.5" fill="#8a6d1f">到期不再投资</text>
+<text x="380" y="235" text-anchor="middle" font-size="9.5" fill="#8a6d1f">=私人部门要多消化的量</text>
+<rect x="540" y="110" width="160" height="80" rx="10" fill="#fff" stroke="#d33a2c" stroke-width="2"/>
+<text x="620" y="138" text-anchor="middle" font-size="12.5" fill="#d33a2c" font-weight="700">期限溢价</text>
+<text x="620" y="158" text-anchor="middle" font-size="9.5" fill="#1c1c1a">供给（QRA+QT）压过来</text>
+<text x="620" y="174" text-anchor="middle" font-size="9.5" fill="#1c1c1a">持有久期要求补偿↑</text>
+<line x1="470" y1="93" x2="538" y2="130" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#f1)"/>
+<line x1="470" y1="213" x2="538" y2="170" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#f1)"/>
+<text x="330" y="34" font-size="11.5" fill="#1c1c1a" font-weight="700">财政管道：从赤字到你的长端收益率</text>
+<text x="20" y="316" font-size="9.5" fill="#6e6c64">读数来源：QRA=treasury.gov 季度再融资文件；TGA=FRED WTREGEN；QT=Fed H.4.1；期限溢价=NY Fed ACM（1004 课）</text>
+</svg>
+<figcaption><strong>财政-国债-市场管道（教学示意图）</strong>：结构参照 Treasury QRA 官方文件体系与 Tuckman &amp; Serrat 4e ch10《Repurchase Agreements and Financing》（dealer 融资层）。核心机制：<strong>财政部发新债（供给）+Fed 到期不续（QT，同样把券留给私人部门）→ 私人部门必须增持久期 → 报酬就是期限溢价</strong>。2023-08 的著名表态（债务上限解决后转向更多 bills）本质是财政部主动压缩久期供给给市场减负。</figcaption>
+</figure>
+
+<p><strong>当期 QRA 数字（2026-08-05，最新一期，全部一手）</strong>：</p>
+<table>
+  <thead>
+    <tr><th>项目</th><th>数字</th><th>读法</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>再融资总额</td><td>$125B（3y $58B / 10y $42B / 30y $25B）</td><td>再融资周（2/5/8/11 月）的久度供给主力</td></tr>
+    <tr><td>券种规模</td><td>全部维持不变（2y $69B / 5y $70B…）</td><td>「未来至少几个季度不变」=久期供给平稳=期限溢价的供给腿不点火</td></tr>
+    <tr><td>bills 份额</td><td>约 22.2%（2026-07-31）</td><td>高于 TBAC 建议的 15–20%——短期供给偏重，压低前端货币市场利率</td></tr>
+    <tr><td>回购计划</td><td>流动性支持回购上限 $38B + 现金管理 $25B</td><td>财政部买回旧券=支持流动性（2026-08 起长端单场上限已翻倍至 ≥$4B）</td></tr>
+    <tr><td>借款估计</td><td>Q3 $739B / Q4 $628B</td><td>下季供给的总盘子（11 月更新）</td></tr>
+    <tr><td>TGA 假设</td><td>9 月末 $950B / 10 月末约 $1.05T</td><td>TGA 重建=从银行准备金抽水（与 QT 同向！QRA 附录会写）</td></tr>
+  </tbody>
+</table>
+
+<div class="tip"><b>TGA 是被忽视的「影子 QT」</b>：财政部把 TGA 从 $50B 重建到 $950B 的过程中，钱从银行准备金搬进 TGA——对准备金的抽水效果与 Fed 缩表同向。2025-26 年「QT+TGA 重建」双管齐下正是准备金趋紧、SRF 使用上升的背景（IMF GFSR 2026-04 记录了这条链）。<strong>个人读法：QRA 附录的现金余额假设，一行字，但方向信息量堪比半个 QT 公告。</strong></div>
+
+<h2><span class="no">03</span>市场端：dealer 容量、拍卖指标与 basis trade（语境层） <span class="time-chip">≈8 min</span></h2>
+<p class="lede">券发出来谁来接？第一站是一级交易商（primary dealers），再分销给基金/外资/家户。这一层你只需要<strong>语境认知</strong>——知道它何时可能成为瓶颈，不进仪表盘：</p>
+<ul>
+  <li><strong>dealer 容量</strong>：dealer 资产负债表只是中介能力的不完美代理（FEDS Note 2024-10《Assessment of Dealer Capacity to Intermediate in Treasury and Agency MBS Markets》）。当供给放量而 dealer 库存膨胀，传导阻滞会以「拍卖弱+回购利率抬升」的形式露头——2019-09 与 2025 年的两次压力都是这个模式的变奏。</li>
+  <li><strong>拍卖指标</strong>：bid-to-cover（投标总额÷发行额，coupons 常态约 2.5x）与 tail（中标止损收益率与拍卖前 when-issued 收益率之差，正 tail=需求弱）。<strong>单场拍卖是噪音，连续同向的 tail 才是信号</strong>——个人季度读一次即可。</li>
+  <li><strong>basis trade（语境认知，量级认知不进仪表盘）</strong>：对冲基金「买现券+空国债期货」的基差交易——最新官方口径：FEDS Note（2026-06-22，Monin）估现金-期货 basis 约 <strong>$830B</strong>（2025-09，约为 2020 年初峰值的两倍）；IMF GFSR（2026-04）按更宽口径称已超 <strong>$1 万亿</strong>。它放大了「回购市场↔期货↔现券」的连锁脆弱性：追保冲击下这类仓位快速平仓会同时砸现券与回购——2020-03 与 2025-04 的动荡都有它的影子。<strong>你不需要跟踪它的仓位，只需要在回购利率异常波动的周知道这根引线在哪。</strong></li>
+</ul>
+
+<h2><span class="no">04</span>个人翻译版：QRA 季读清单 <span class="time-chip">≈6 min</span></h2>
+<p class="lede">季度 30 分钟（2/5/8/11 月首个完整周的周三发布，下一期 2026-11-04），按这张清单读（ticket 交付物，照抄可用）：</p>
+<table>
+  <thead>
+    <tr><th>#</th><th>读哪个数</th><th>去哪看</th><th>判断什么</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="num">1</td><td>再融资总额与券种规模变化</td><td><a href="https://home.treasury.gov/policy-issues/financing-the-government/quarterly-refunding/most-recent-quarterly-refunding-documents">QRA 声明</a>首两段</td><td>久期供给升/平/降——期限溢价的供给腿</td></tr>
+    <tr><td class="num">2</td><td>bills 份额与表态</td><td>QRA「bill issuance」段+MSPD 自算</td><td>前端供给压力（bills 挤压货币市场）</td></tr>
+    <tr><td class="num">3</td><td>借款估计（本季+下季）</td><td>同日发布的融资估计 press release</td><td>总供给盘子（与 FIM 同向核对）</td></tr>
+    <tr><td class="num">4</td><td>TGA 现金余额假设</td><td>QRA 表格附注</td><td>影子 QT：准备金抽水方向</td></tr>
+    <tr><td class="num">5</td><td>回购/买回计划</td><td>QRA 末段</td><td>财政部对流动性的主动支持力度</td></tr>
+    <tr><td class="num">6</td><td>FIM 最新读数</td><td><a href="https://www.brookings.edu/articles/hutchins-center-fiscal-impact-measure/">Brookings FIM</a></td><td>G 维财政腿方向（当前 −0.2pp：中性略拖累）</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">05</span>边界与反证 <span class="time-chip">≈4 min</span></h2>
+<ul>
+  <li><strong>FIM 是模型不是数据</strong>：Brookings 的趋势剔除方法有自由度，不同机构口径差异可达 0.5pp——用它读方向与变化，不读绝对值。</li>
+  <li><strong>供给决定溢价的说法有反例</strong>：2010–2019 供给同样巨大而期限溢价趋势性压缩（QE 对冲+全球储蓄流）——<strong>供给是溢价的一腿，不是全部</strong>；加息周期里它才占主导。</li>
+  <li><strong>「财政部会救市」不是免费的</strong>：2026-08 财政部把长端回购单场上限翻倍（$2B→≥$4B）被部分市场人士解读为「事实上的曲线控制」——它确实托了旧券流动性，但也把「财政工具货币化」的边界又推近了一步。<strong>工具每次超常规使用，都是在花未来的灵活性。</strong></li>
+  <li><strong>债务上限的僵局本身就是波动源</strong>：TGA 在「X-date」前的腾挪（发行受限→TGA 抽干→上限通过后回补发行）制造一两个季度的伪供给波动——读到异常的借款估计先查上限日历。</li>
+</ul>
+
+<h2><span class="no">06</span>训练场 <span class="time-chip">≈15 min</span></h2>
+<p class="lede">五道题。第 1 题微重现上一课（2006）。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：FOMC 声明与同日 QRA 都在下午发布，你的复盘纪律（2006）应该——",
+  "options": [
+    {"t": "只读 FOMC，QRA 是财政的事", "ok": false, "why": "FOMC 周常撞上再融资信息流——长端是两家合力定价的，丢一半信息等于误归因。"},
+    {"t": "分别提取增量信息（FOMC 动预期路径，QRA 动期限溢价），归因时明确这次动的是哪一项", "ok": true, "why": "微重现·上一课：surprise×归因框架的财政版——名义收益率=预期+溢价（1004），两家各管一项，混在一起就没法归因。"},
+    {"t": "两个都读，按发布先后算因果", "ok": false, "why": "时间顺序≠因果归属——归因靠结构（哪个变量在动），不靠钟表。"},
+    {"t": "等第二天看解读文章", "ok": false, "why": "二手解读的平均化恰好抹掉增量信息——2006 课的原则：原件优先。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题：赤字 $1.78T（5.77% GDP）而 FIM 读数约 −0.2pp。这个组合说明——",
+  "options": [
+    {"t": "数据矛盾，必有错", "ok": false, "why": "不矛盾——两把尺量的是不同东西（总账 vs 边际拉动）。"},
+    {"t": "财政总量巨大但边际上不再新增拉动（高支出已成为趋势基线）——赤字管供给，FIM 管需求腿", "ok": true, "why": "01 节例块的核心：持续的高支出不再产生增量刺激（FIM≈0），但它维持的发行量仍持续供给久度（赤字大）——一个管 G 维方向，一个管债券供给。"},
+    {"t": "FIM 模型坏了，以赤字为准", "ok": false, "why": "模型没有坏——「边际 vs 总量」的区分正是它存在的意义。"},
+    {"t": "说明要衰退了", "ok": false, "why": "单凭这两读数推不出衰退——那是 G/I/C 合读的 P3 结论。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题：QRA 附录写「10 月末 TGA 目标 $1.05T」（当前 $977B）。对流动性管道，这最接近于——",
+  "options": [
+    {"t": "向银行体系注入准备金", "ok": false, "why": "方向反了——TGA 回补是抽水。"},
+    {"t": "一轮小型 QT：税款与发债收入搬进 TGA，银行准备金同步减少", "ok": true, "why": "「影子 QT」：TGA 是 Fed 负债端科目，TGA↑=准备金↓（其他不变时）。02 节 tip 的直接应用——2025-26 的准备金趋紧正是 QT+TGA 重建双抽。"},
+    {"t": "对准备金无影响", "ok": false, "why": "Fed 负债端是恒等式：TGA 变动必然由准备金或 RRP 吸收。"},
+    {"t": "等于财政部在 QE", "ok": false, "why": "Q 不是 E——方向与量级都不对。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题（量级题）：关于 basis trade，按本课口径（FEDS Note $830B / GFSR >$1T，语境认知层），个人交易者的正确处理是——",
+  "options": [
+    {"t": "每周跟踪对冲基金持仓，加入仪表盘", "ok": false, "why": "频错层+源不可得（CFTC 不分此类别）——语境认知的定义就是「知道在哪但不进仪表盘」。"},
+    {"t": "记住量级与传导链（回购↔期货↔现券），在回购利率异常波动的周把它列为候选机制之一", "ok": true, "why": "正确用法：$830B–$1T 的杠杆仓位是一根已知引线——平时不看，火警响时第一个排查。"},
+    {"t": "basis trade 与个人交易者完全无关，删除", "ok": false, "why": "2020-03 式连锁平仓会打到你所有资产——无关的是「跟踪」，不是「机制」。"},
+    {"t": "用 Zacks 的持仓数据精确计量", "ok": false, "why": "该数据不存在于免费源——别为语境层发明假数据。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：你的决策日志要登记一条财政类预测。按本课纪律，最合格的事件写法是——",
+  "options": [
+    {"t": "「美国债务危机将爆发」", "ok": false, "why": "无日期无边界——永不可证伪（0006 五要素第一关）。"},
+    {"t": "「2026-11-04 QRA 维持券种规模不变，bills 份额表述不转向 coupons」，配概率区间", "ok": true, "why": "可证伪+有日期+可验收——事件级写法（不是叙事级）。QRA 类事件自带到期日，是决策日志最省力的入门预测类型。"},
+    {"t": "「FIM 将永远为负」", "ok": false, "why": "「永远」无法验收。"},
+    {"t": "「10 年期收益率将上涨」", "ok": false, "why": "没有归因结构（预期还是溢价？）、没有阈值与日期——不合格。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——隔天重练仍达标，M2.5 课内证据齐了；错 1–2 题——回对应节（第 1 题→2006 归因节；第 2 题→01 节例块；第 3 题→02 节 tip；第 4 题→03 节；第 5 题→04 节+0006），隔天重练；错 ≥3 题——本课回炉：重画财政管道图。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题（P2 收官件之一）：画出财政管道图（赤字→QRA→dealer/TGA→期限溢价），并把你刚学的 2026-08 QRA 六个数字各就各位填进图里。最后写一句进快照的「财政行」：FIM 方向+利息负担趋势+bills 份额（箭头+证据句格式）。",
+  "hint": "管道图的骨架在 02 节；「财政行」格式对照 1006 快照第④行中国行的写法。",
+  "a": "自查标准：①管道四层齐（赤字/QRA/dealer 与 TGA/期限溢价）且 QT 的叠加位置正确；②六个 QRA 数字各就各位（125B/不变/22.2%/38+25B/739B·628B/950B→1.05T）；③「财政行」=箭头+证据+截至日期（如「G 腿→ 中性略拖累（FIM −0.2pp，2026Q2）；供给端→ 前端偏重（bills 22.2% &gt;15–20% 上限，2026-07-31）」）；④能说出这条管道如何改变你对长端利率的归因。四点全到=M2.5 课内件完成。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业（P2 收官） <span class="time-chip">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>三个流量读数</strong>——赤字（供给源头）/FIM（需求腿）/利息负担（财政引力）</li>
+  <li><strong>QRA 季读清单</strong>——六个数字、每季 30 分钟（2/5/8/11 月首周周三）</li>
+  <li><strong>TGA=影子 QT</strong>——负债端恒等式：TGA 重建与缩表同向抽准备金</li>
+  <li><strong>语境层的纪律</strong>——dealer 容量/basis trade：知道在哪，不进仪表盘</li>
+</ul>
+
+<div class="stop">M2.5 结业标准（显式）：①解释链路：赤字→发行→dealer→期限溢价，并说出 QT 与 TGA 如何叠加进供给；②用最新 QRA 的六个数字各写一句判断；③把「财政行」（FIM+利息负担+bills 份额）并进你的月度快照。检测：本课训练场 ≥80% 且隔天重练达标；工件=动笔题管道图+快照财政行。<strong>P2 全阶段收官</strong>：2001–2007 七课的训练场合计 ≥80%（M2.1–M2.5 五里程碑）+结业工件（2006 反应树+当期快照 #2+本课管道图）齐备并归档，P2 点亮，进入 P3 周期。</div>
+
+<div class="note"><b>Mehrling 并行长线课（选做，永不前置）</b>：本课对应的并行讲次是 <strong>第 10 讲「Dealers and Liquid Security Markets」与第 7 讲「Repos, Postponing Settlement」</strong>——dealer 中介与回购市场正是财政管道的市场端物理层；Tuckman 4e ch10（回购）是同主题的教科书侧写。P2 的并行进度到这里约覆盖了 money view 的前半张地图；P3 继续按 2–3h/周节奏即可。</div>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（本季内）</strong>：等 2026-11-04 的下一期 QRA 发布（融资估计 11-02），按 04 节清单完整读一遍，把六个新数字写进观察日志并与 2026-08 版对比——这是你的第一次「季度财政例行」。</p>
+<p>（2）<strong>课后探索（可选）</strong>：打开 <a href="https://home.treasury.gov/policy-issues/financing-the-government/quarterly-refunding/most-recent-quarterly-refunding-documents">QRA 文档页</a>，找到 TBAC 分钟读一次「Treasury Market Operations」——看专业机构怎么写「市场运转观察」，你的季读清单就是从这里裁剪的。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每季初把「财政行」并入快照（FIM 方向+利息负担+bills 份额）；债务上限成为新闻时，先查 X-date 对 TGA 的扰动路径再谈影响。</p>
+<p><strong>P2 阶段完成</strong>——你的工具箱现在覆盖：央行两张资产负债表（Fed+PBoC）、五渠道传导、离岸美元与美元荒、一手文件解读、财政管道。<strong>下一课 3001《周期动物园：库存与资本开支》</strong>：P3 周期开篇——基钦与朱格拉两层周期叠加，以及康波的诚实条款裁定。</p>
+
+<div class="ask-agent">我是你的教练。第一次 QRA 季读想让我陪读、管道图哪里卡住、或者想把 P2 七课的结业工件交给我审——直接回来找我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="2006-reading-primary-documents.html">← 第 2006 课</a>
+    <a href="../reference/0003-central-bank-tools.html">央行工具对照表</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <span>下一课 3001 · 待建</span>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：Treasury QRA/TBAC 官方文件（一手源，季度）；Brookings Hutchins FIM（财政脉冲免费源）；Tuckman &amp; Serrat 4e ch10《Repurchase Agreements and Financing》（回购与融资层）；FRED GFDEGDQ188S/A091RC1Q027SBEA/WTREGEN（真实数据）；IMF GFSR 2026-04 与 FEDS Notes（dealer 容量与 basis trade 语境层）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①Tuckman &amp; Serrat 4e ch10——回购交易结构与 dealer 融资机制（02 节管道图市场端）；②Wang《Central Banking 101》ch2——TGA 作为 Fed 负债端科目与财政-Fed 联动（2001 课已建，本课引用其表结构）。<strong>数据口径：</strong>债务/GDP=GFDEGDQ188S（2026Q1 122.59%）；利息支出=A091RC1Q027SBEA（2026Q2 季度年率 $1,247B；FY2025 净利息约 $970B≈3.2% GDP）；TGA=WTREGEN（周平均 $977B，截至 2026-09-23）；QRA 六数字=2026-08-5 季度再融资声明（sb0590）与融资估计（sb0584）；FIM=Brookings Hutchins（2026Q2 −0.2pp，页面更新 2026-08-26）；bills 份额≈22.2%（2026-07-31，路透析出 MSPD）；basis trade=FEDS Note 2026-06-22（$830B，2025-09）与 IMF GFSR 2026-04（&gt;$1T 宽口径）。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>

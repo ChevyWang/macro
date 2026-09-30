@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2002 中国央行工具箱 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 2002 课</span>
+    <span>·</span>
+    <span>P2 央行与流动性 · M2.1b</span>
+  </div>
+  <h1>中国央行工具箱</h1>
+  <p class="deck">把 2001 的资产负债表搬到北京：人民银行的工具箱长什么样、哪根是主锚、改革走到哪一步。三个关键事实：<strong>7 天逆回购利率已成为主要政策利率</strong>（2024 年框架改革后其他工具「淡化政策利率色彩」）；<strong>LPR 是传导的中间站</strong>（贷款端定价基准）；<strong>工具箱仍在演进中</strong>（买断式逆回购、国债买卖、隔夜逆回购都是 2024 年以来的新成员）。配套参考页 <a href="../reference/0003-central-bank-tools.html">0003《央行工具对照表》</a>同步上线。本课约 75–95 分钟（先猜 3 + 正文与图组 45–55 + 训练场 15 + 动笔与小结 5）。前置要求：2001（资产负债表与走廊是通用语言）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：建立<strong>中美工具的一一对照表</strong>——Fed 的每个工具在 PBoC 体系里找对应物（或确认没有对应物）；说得出中国「主锚切换」改革（MLF→7 天 OMO）改的是什么。不算数：背工具名词清单；护栏：<strong>「对照的目的不是评判优劣，是让你读两边的政策信号时用同一张地图」</strong>。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>主锚：7 天逆回购利率（含一图） <span class="t">≈12 min</span></li>
+    <li>走廊与传导：从 OMO 到 LPR（含机制图） <span class="t">≈12 min</span></li>
+    <li>数量与结构：准备金、MLF、结构性工具与新管道（含当期读数表） <span class="t">≈12 min</span></li>
+    <li>对照表：与美联储一一对应（含表） <span class="t">≈8 min</span></li>
+    <li>边界与反证 <span class="t">≈4 min</span></li>
+    <li>训练场 <span class="t">≈15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准两个「拿美国框架硬套中国」的直觉。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：中国的「加息」最准确的读法是——",
+  "options": [
+    {"t": "上调存贷款基准利率", "ok": false, "why": "基准利率时代已翻页——存贷款基准利率已让位于 LPR，它不再是政策操作的起点。"},
+    {"t": "上调 7 天期逆回购操作利率——这是现行框架的政策利率主锚", "ok": true, "why": "2024-06 潘功胜陆家嘴讲话定调：「7 天期逆回购操作利率已基本承担了这个功能…其他期限货币政策工具的利率可淡化政策利率的色彩」。02 节用真实历史图展开。"},
+    {"t": "上调 MLF 利率", "ok": false, "why": "MLF 的政策利率色彩恰恰是 2024-07 起被官方淡化的对象——2025-03 起改为多重价位中标，不再公布统一利率。"},
+    {"t": "上调 LPR", "ok": false, "why": "LPR 是报价行报出来的贷款端定价基准（传导的中间站），不是央行直接定的政策利率。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：中国的利率走廊（上沿/下沿）是——",
+  "options": [
+    {"t": "和 Fed 一样：IORB 下沿、贴现窗上沿", "ok": false, "why": "中国版的结构同名不同物：中国的超额准备金利率 0.35% 是下沿，SLF（常备借贷便利）是上沿——对应物换了一轮。"},
+    {"t": "上沿=SLF 隔夜利率（2.25%），下沿=超额存款准备金利率（0.35%）——宽度约 190bp，且正在收窄改革中", "ok": true, "why": "现行结构（2025-05 起 SLF 各期限降 10bp 后：隔夜 2.25%/7 天 2.40%）。对照 Fed 的走廊（IORB 3.90/贴现窗 4.00 对目标区间 3.75–4.00）——中国的走廊更宽、且中间加了「临时正/逆回购」一层更窄的辅助围栏（03 节）。"},
+    {"t": "没有走廊，利率完全管制", "ok": false, "why": "利率市场化已基本完成存款与贷款两端的放开——走廊真实存在，且是本课主角。"},
+    {"t": "以 LPR 为上下沿", "ok": false, "why": "LPR 在贷款端不在货币市场——层次错了。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>主锚：7 天逆回购利率 <span class="t">≈12 min</span></h2>
+<p class="lede">历史脉络一句话：1998 年取消信贷规模直接控制、恢复公开市场操作，中国从直接调控转向间接调控（盛松成《中央银行与货币供给》的叙事线）；2016 年 2 月起 7 天逆回购<strong>每日操作常态化</strong>；2024 年成为官方确认的主锚（公开市场操作（open market operations，OMO）的 7 天期限品种）。看真实历史（本课一图）：</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="中国 7 天逆回购利率 2016-2026" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="272.0" x2="704" y2="272.0" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="275.5" text-anchor="end" font-size="10" fill="#6e6c64">1.0%</text><line x1="52" y1="203.1" x2="704" y2="203.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="206.6" text-anchor="end" font-size="10" fill="#6e6c64">1.5%</text><line x1="52" y1="134.2" x2="704" y2="134.2" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="137.7" text-anchor="end" font-size="10" fill="#6e6c64">2.0%</text><line x1="52" y1="65.3" x2="704" y2="65.3" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="68.8" text-anchor="end" font-size="10" fill="#6e6c64">2.5%</text><line x1="52.0" y1="272" x2="52.0" y2="276" stroke="#6e6c64"/><text x="52.0" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2016</text><line x1="170.6" y1="272" x2="170.6" y2="276" stroke="#6e6c64"/><text x="170.6" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2018</text><line x1="289.1" y1="272" x2="289.1" y2="276" stroke="#6e6c64"/><text x="289.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2020</text><line x1="407.8" y1="272" x2="407.8" y2="276" stroke="#6e6c64"/><text x="407.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2022</text><line x1="526.3" y1="272" x2="526.3" y2="276" stroke="#6e6c64"/><text x="526.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2024</text><line x1="644.9" y1="272" x2="644.9" y2="276" stroke="#6e6c64"/><text x="644.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2026</text><polyline points="59.8,99.8 116.8,99.8 116.8,86.0 123.4,86.0 123.4,72.2 167.7,72.2 167.7,65.3 183.6,65.3 183.6,58.4 282.0,58.4 282.0,65.3 294.5,65.3 294.5,79.1 303.6,79.1 303.6,106.7 410.4,106.7 410.4,120.4 444.5,120.4 444.5,134.2 493.5,134.2 493.5,148.0 503.7,148.0 503.7,161.8 559.2,161.8 559.2,175.6 570.1,175.6 570.1,203.1 606.3,203.1 606.3,216.9 689.1,216.9" fill="none" stroke="#1c1c1a" stroke-width="2"/><circle cx="606.2892705999502" cy="216.8888888888889" r="3.5" fill="#d33a2c"/><circle cx="183.6335573811302" cy="58.44444444444446" r="3" fill="#1c1c1a"/><text x="175.6335573811302" y="48.44444444444446" text-anchor="end" font-size="10.5" fill="#1c1c1a" font-weight="700">2018-03 加息周期顶 2.55%</text><text x="570.0941000746826" y="227.11111111111111" font-size="10.5" fill="#1c1c1a" font-weight="700">2024-09 一揽子宽松至 1.50%</text><text x="612.2892705999502" y="242.8888888888889" font-size="10.5" fill="#d33a2c" font-weight="700">2025-05 起现行 1.40%</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">中国 7 天期逆回购操作利率（政策利率主锚，%），2016-02 至 2026-09</text><text x="110" y="122" font-size="9.5" fill="#6e6c64">2016-02 常态化起点 2.25%</text>
+</svg>
+<figcaption><strong>中国 7 天期逆回购操作利率（政策利率主锚），2016-02 至 2026-09</strong>：来源=人民银行公开市场操作公告（历次调整经人民网/财新/证券时报等权威渠道核验，2026-09-30 施工日复核；当前 1.40% 为 2026-09 最近操作确认值）。看点：①2017–2018 的<strong>加息周期</strong>（2.25%→2.55%，随金融去杠杆与美联储周期）；②2019-11 四年来首次降息开启漫长宽松；③2020 疫情两连降；④2022–2023 六次各 10bp 的小步宽松；⑤<strong>2024-09-27 一揽子政策 -20bp 至 1.50%</strong>、2025-05-08 至 <strong>1.40%（现行）</strong>——2026 年内未再调整。<strong>一条阶梯读完中国整个利率周期：步子小、方向持久、从不含糊。</strong></figcaption>
+</figure>
+
+<div class="note"><b>2024 框架改革的三块拼图（官方文件链）</b>：①<b>主锚确认</b>——2024-06-19 潘功胜陆家嘴讲话：「未来可考虑明确以某个短期操作利率为主要政策利率，目前看，7 天期逆回购操作利率已基本承担了这个功能」；②<b>招标方式</b>——2024-07-22 起 7 天逆回购改为<strong>固定利率、数量招标</strong>（央行直接标价，量随行就市），同日 MLF 降为次要安排；③<b>MLF 淡出</b>——2025-03-24 起 MLF 改为「固定数量、利率招标、多重价位中标」，<strong>不再公布统一利率</strong>（最后一次公布值 2.00%）。读法：中国版「从数量型到价格型」改革的临门一脚。</div>
+
+<h2><span class="no">02</span>走廊与传导：从 OMO 到 LPR <span class="t">≈12 min</span></h2>
+<p class="lede">中国版走廊+Fed 对照（机制图）：</p>
+
+<figure>
+<svg viewBox="0 0 720 330" role="img" aria-label="中国利率走廊与传导" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="p1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs>
+<text x="24" y="26" font-size="12" fill="#1c1c1a" font-weight="700">走廊（左）与传导（右）</text>
+<line x1="40" y1="250" x2="330" y2="250" stroke="#1c1c1a" stroke-width="1.5"/>
+<line x1="70" y1="70" x2="300" y2="70" stroke="#d33a2c" stroke-width="2.5"/>
+<text x="46" y="60" font-size="10.5" fill="#d33a2c" font-weight="700">SLF 隔夜 2.25%（走廊上沿）</text>
+<text x="46" y="84" font-size="9.5" fill="#6e6c64">银行缺钱可找央行借（对应 Fed 贴现窗）</text>
+<rect x="70" y="140" width="230" height="40" fill="rgba(211,58,44,.08)"/>
+<text x="46" y="132" font-size="10.5" fill="#1c1c1a" font-weight="700">临时隔夜正/逆回购围栏（2024-07 新设）</text>
+<text x="46" y="166" font-size="9.5" fill="#6e6c64">7 天 OMO −20bp / +50bp：更窄的第一道围栏</text>
+<circle cx="185" cy="190" r="7" fill="#1c1c1a"/><text x="196" y="186" font-size="10.5" fill="#1c1c1a" font-weight="700">DR007 围绕 1.40% 波动</text>
+<text x="196" y="202" font-size="9.5" fill="#6e6c64">银行间质押式回购利率（市场读数）</text>
+<line x1="70" y1="230" x2="300" y2="230" stroke="#1a7f37" stroke-width="2.5"/>
+<text x="46" y="224" font-size="10.5" fill="#1a7f37" font-weight="700">超额存款准备金利率 0.35%（下沿）</text>
+<line x1="360" y1="140" x2="410" y2="140" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#p1)"/>
+<rect x="414" y="52" width="284" height="66" rx="10" fill="#1c1c1a"/>
+<text x="556" y="76" text-anchor="middle" font-size="11.5" fill="#fff" font-weight="700">7 天 OMO 利率 1.40%（主锚）</text>
+<text x="556" y="96" text-anchor="middle" font-size="9.5" fill="#fff">2024-07 起固定利率、数量招标</text>
+<rect x="414" y="152" width="284" height="60" rx="10" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="556" y="176" text-anchor="middle" font-size="11.5" fill="#1c1c1a" font-weight="700">LPR：1 年期 3.0% / 5 年期以上 3.5%</text>
+<text x="556" y="196" text-anchor="middle" font-size="9.5" fill="#6e6c64">每月 20 日 20 家报价行=OMO 加点（2024-07 起挂钩）</text>
+<rect x="414" y="244" width="284" height="60" rx="10" fill="#f7f3e3"/>
+<text x="556" y="268" text-anchor="middle" font-size="11.5" fill="#8a6d1f" font-weight="700">贷款利率 / 按揭利率 / 企业融资</text>
+<text x="556" y="288" text-anchor="middle" font-size="9.5" fill="#8a6d1f">实体经济的资金价格（终点站）</text>
+<line x1="556" y1="118" x2="556" y2="150" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#p1)"/>
+<line x1="556" y1="212" x2="556" y2="242" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#p1)"/>
+<text x="24" y="316" font-size="9.5" fill="#6e6c64">读数截至 2026-09：SLF 2025-05-08 起；LPR 2026-09-20 报价（连续 16 个月不变）；临时围栏 2024-07-22 设立</text>
+</svg>
+<figcaption><strong>中国利率走廊与「OMO→LPR→贷款」传导（教学示意图，当期读数）</strong>：结构参照央行货政报告与 2024-06 陆家嘴讲话框架。<strong>与 Fed 对照读</strong>：Fed 用 IORB（付息地板）锚定、走廊极窄；中国走廊宽（SLF−超储利率约 190bp）但 2024-07 加了「临时正/逆回购」窄围栏（7 天 OMO −20bp/+50bp），并在 2026 年继续收窄工程（货政报告 2026Q2：短端调控目标逐步转向 DR001、逐步增加隔夜逆回购操作频率——框架仍在施工中）。</figcaption>
+</figure>
+
+<div class="example">
+<p class="ex-title">读数演练：一次降息的完整传导（以 2025-05-08 为例）</p>
+<table>
+  <thead><tr><th>日</th><th>操作</th><th>读数变化</th></tr></thead>
+  <tbody>
+    <tr><td>2025-05-08</td><td>7 天逆回购利率 1.50%→<strong>1.40%</strong>（-10bp）；SLF 各期限同步 -10bp</td><td class="num">主锚下移</td></tr>
+    <tr><td>2025-05-15</td><td>降准 0.5pp（加权平均约 6.6%→6.2%）</td><td class="num">数量端同步宽松</td></tr>
+    <tr><td>2025-05-20</td><td>LPR：1 年 3.10%→3.0%、5 年以上 3.60%→3.5%</td><td>传导落地（滞后约 12 天）</td></tr>
+  </tbody>
+</table>
+<p>三个可考点：①<strong>顺序</strong>：主锚→（可选数量工具）→LPR→存量按揭重定价（次年或重定价日）——每一步都有日期，全部公开；②<strong>LPR 的滞后</strong>是制度性的（每月 20 日报价），不是传导失灵；③<strong>5 年期 LPR 是地产链的总闸</strong>（按揭定价基准），它 2025-05 之后的连续 16 个月不动本身就是「地产政策静默期」的读数。</p>
+</div>
+
+<h2><span class="no">03</span>数量与结构：准备金、MLF、结构性工具与新管道 <span class="t">≈12 min</span></h2>
+<p class="lede">价格工具之外，中国工具箱的另一半是「数量+结构」。当期读数总表（截至 2026-09-30，官方口径经权威渠道核验）：</p>
+<table>
+  <thead>
+    <tr><th>工具</th><th>当期读数</th><th>角色</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>存款准备金率</td><td>加权平均约 6.2%（大行约 7.5%/中型约 5.5%/小型 5%；2025-05-15 降后 2026 年内未动）</td><td>数量端总闸：一次降准=永续释放流动性</td></tr>
+    <tr><td>MLF（中期借贷便利）</td><td>不再公布统一利率（2025-03 起多重价位中标）；2026-09-24 操作 8000 亿 1 年期加量续作</td><td>中期流动性投放；政策利率色彩已淡出</td></tr>
+    <tr><td>买断式逆回购</td><td>2024-10 启用；2026-09-07 操作 5000 亿 3 个月期</td><td>中期流动性新管道（2025 年净投放 3.8 万亿）</td></tr>
+    <tr><td>国债买卖</td><td>2024-08 启动→2025-01 暂停（债市供不应求）→2025-11 恢复，2026 常态化</td><td>既是流动性工具也是收益率管理（课内语境）</td></tr>
+    <tr><td>隔夜逆回购</td><td>2026-09-23 公告：9-28 起每日上限 1 万亿</td><td>最新成员——配合短端锚转向 DR001</td></tr>
+    <tr><td>结构性工具（一族）</td><td>PSL 1.5%（2026-09 新降至）／支农支小再贷款 0.95–1.25%／科技创新再贷款额度 1.4 万亿／民营企业再贷款（2026-01 新设，1 万亿额度）等</td><td>定向滴灌：指定领域低价资金（「五篇大文章」）</td></tr>
+    <tr><td>资本市场工具</td><td>SFISF 互换便利+股票回购增持再贷款合并额度 8000 亿</td><td>2024-10 新设：股市流动性的非常规后门（语境认知）</td></tr>
+  </tbody>
+</table>
+
+<div class="tip"><b>个人读法（可执行三问全过）</b>：①每月 20 日 LPR 报价——一眼读方向（3 分钟）；②每季度末降准与否——一次公告定数量端方向（10 分钟）；③央行货政报告（季度，官网免费 PDF）专栏读两个：工具改革类+信贷结构类（20 分钟）。<strong>不需要跟踪 MLF 逐次操作量——它已从「政策信号」降级为「技术操作」。</strong></div>
+
+<h2><span class="no">04</span>对照表：与美联储一一对应 <span class="t">≈8 min</span></h2>
+<p class="lede">主对照表进参考页 0003（永久版），课内放精华版+「无对应物」的三处关键差异：</p>
+<figure>
+<svg viewBox="0 0 720 340" role="img" aria-label="中美利率走廊参数对照" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="100" y1="250.0" x2="690" y2="250.0" stroke="#e4e2d9" stroke-width="1"/><text x="94" y="253.5" text-anchor="end" font-size="10" fill="#6e6c64">0%</text><line x1="100" y1="202.2" x2="690" y2="202.2" stroke="#e4e2d9" stroke-width="1"/><text x="94" y="205.7" text-anchor="end" font-size="10" fill="#6e6c64">1%</text><line x1="100" y1="154.3" x2="690" y2="154.3" stroke="#e4e2d9" stroke-width="1"/><text x="94" y="157.8" text-anchor="end" font-size="10" fill="#6e6c64">2%</text><line x1="100" y1="106.5" x2="690" y2="106.5" stroke="#e4e2d9" stroke-width="1"/><text x="94" y="110.0" text-anchor="end" font-size="10" fill="#6e6c64">3%</text><line x1="100" y1="58.7" x2="690" y2="58.7" stroke="#e4e2d9" stroke-width="1"/><text x="94" y="62.2" text-anchor="end" font-size="10" fill="#6e6c64">4%</text><rect x="117.8" y="64.7" width="52" height="185.3" fill="#1c1c1a"/><text x="143.8" y="58.7" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">3.875</text><rect x="177.8" y="183.0" width="52" height="67.0" fill="#d33a2c"/><text x="203.8" y="177.0" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">1.4</text><text x="173.8" y="266" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">目标区间中值</text><text x="173.8" y="280" text-anchor="middle" font-size="8.5" fill="#6e6c64">Fed 区间中点 / OMO</text><rect x="265.2" y="63.5" width="52" height="186.5" fill="#1c1c1a"/><text x="291.2" y="57.5" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">3.9</text><rect x="325.2" y="233.3" width="52" height="16.7" fill="#d33a2c"/><text x="351.2" y="227.3" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">0.35</text><text x="321.2" y="266" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">地板</text><text x="321.2" y="280" text-anchor="middle" font-size="8.5" fill="#6e6c64">IORB / 超储利率</text><rect x="412.8" y="58.7" width="52" height="191.3" fill="#1c1c1a"/><text x="438.8" y="52.7" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">4.0</text><rect x="472.8" y="142.4" width="52" height="107.6" fill="#d33a2c"/><text x="498.8" y="136.4" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">2.25</text><text x="468.8" y="266" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">天花板</text><text x="468.8" y="280" text-anchor="middle" font-size="8.5" fill="#6e6c64">贴现窗 / SLF 隔夜</text><rect x="560.2" y="238.0" width="52" height="12.0" fill="#1c1c1a"/><text x="586.2" y="232.0" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">0.25</text><rect x="620.2" y="159.1" width="52" height="90.9" fill="#d33a2c"/><text x="646.2" y="153.1" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">1.9</text><text x="616.2" y="266" text-anchor="middle" font-size="10" fill="#1c1c1a" font-weight="700">走廊宽度</text><text x="616.2" y="280" text-anchor="middle" font-size="8.5" fill="#6e6c64">区间 25bp / SLF−超储 190bp</text><line x1="100" y1="250" x2="690" y2="250" stroke="#1c1c1a" stroke-width="1.5"/><line x1="130" y1="14" x2="152" y2="14" stroke="#1c1c1a" stroke-width="8"/><text x="157" y="17.5" font-size="10" fill="#1c1c1a">Fed（2026-09-17 起）</text><line x1="330" y1="14" x2="352" y2="14" stroke="#d33a2c" stroke-width="8"/><text x="357" y="17.5" font-size="10" fill="#1c1c1a">PBoC（7 天 OMO 1.40% 体系）</text><text x="100" y="312" font-size="9.5" fill="#6e6c64">走廊宽度对比：Fed 目标区间 25bp vs PBoC SLF−超储利率 190bp——中国的走廊更宽，2024-07 起以临时围栏收窄</text><text x="100" y="327" font-size="9.5" fill="#6e6c64">注：地板机制不同（IORB=付息地板；中国超储利率为利率下限）——机制详见 2001/2002 课</text>
+</svg>
+<figcaption><strong>中美利率走廊参数对照（%，当期真实读数）</strong>：Fed 侧=2026-09-17 起实施的走廊（目标区间中值 3.875%、IORB 3.90%、贴现窗 4.00%）；PBoC 侧=7 天 OMO 1.40% 体系（超储利率 0.35%、SLF 隔夜 2.25%）。看点：<strong>Fed 的「走廊」收成 25bp 的窄区间（管理利率直接夹住市场利率），中国的走廊宽 190bp（靠 SLF 兜上沿+超储利率兜下沿）</strong>——宽度差异正是 2024-07 临时围栏与 2026 年收窄工程要解决的问题。同一张图把两课的主参数钉在一起。</figcaption>
+</figure>
+
+
+<table>
+  <thead>
+    <tr><th>职能</th><th>Fed（2026-09）</th><th>PBoC（2026-09）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>政策利率主锚</td><td>目标区间 3.75–4.00%</td><td>7 天逆回购 1.40%（固定利率数量招标）</td></tr>
+    <tr><td>市场读数</td><td>EFFR 3.88%</td><td>DR007（围绕 1.40% 波动；调控目标逐步转向 DR001）</td></tr>
+    <tr><td>地板</td><td>IORB 3.90%+ON RRP 3.75%</td><td>超额准备金利率 0.35%</td></tr>
+    <tr><td>天花板</td><td>贴现窗 4.00%+SRF 4.00%</td><td>SLF 隔夜 2.25%（+临时围栏 +50bp/-20bp）</td></tr>
+    <tr><td>中期工具</td><td>—（QE 后资产负债表直接操作）</td><td>MLF（已去政策化）/买断式逆回购</td></tr>
+    <tr><td>贷款端传导</td><td>市场利率直接定价（无官方贷款基准）</td><td>LPR（1 年 3.0%/5 年以上 3.5%，报价制）</td></tr>
+    <tr><td>数量端</td><td>准备金率 0（2020-03 起）；QT 已结束</td><td>存准率 6.2%（仍在频繁使用）+降准</td></tr>
+    <tr><td>结构性/定向</td><td>无（工具均总量型）</td><td>再贷款一族（科技创新 1.4 万亿等）</td></tr>
+  </tbody>
+</table>
+
+<div class="note"><b>三处「无对应物」（读两边新闻的解码器）</b>：①<b>LPR 无美国对应</b>——美国贷款利率市场直定，中国经官方组织的报价行中介；所以「中国降息」的传导确定性更高但更慢。②<b>结构性工具无美国对应</b>——Fed 法无定向信贷授权（13(3) 须紧急状态），PBoC 的再贷款族是常设定向管道；读到「科技创新再贷款扩容」应识别为「定向宽松」，与总闸无关。③<b>存准率角色反转</b>——美国 2020 年直接归零弃用，中国仍是最有力的单次宽松工具（一次降准释放约 1 万亿量级永续资金）。差异都刻在制度里，不在官员风格里。</div>
+
+<h2><span class="no">05</span>边界与反证 <span class="t">≈4 min</span></h2>
+<ul>
+  <li><strong>「主锚」是新事物</strong>：2024-06 才官方确认——用它回看 2020 年前的「政策利率」争论时要小心<strong>口径的时代差</strong>（当年 MLF 被普遍视为主锚）。读旧研报先看日期。</li>
+  <li><strong>框架仍在施工</strong>：2026Q2 货政报告提出短端目标转向 DR001、增加隔夜逆回购频率——<strong>走廊设计与锚的读数都可能在你的学习期内再变</strong>。课程教的是「怎么读制度变化」，不是背当前参数。</li>
+  <li><strong>传导钝化的反例</strong>：2022–2023 六次降息而信贷与地产反应迟缓——价格工具到位≠传导到位（宽货币≠宽信用，0002/1003 的信用周期语言）。工具箱的输出端在银行的风险偏好，那不在央行表内。</li>
+  <li><strong>汇率约束是隐藏的一环</strong>：中美利差（当前 1.40% vs 3.75–4.00%，倒挂约 240bp）约束 OMO 下调空间——人民币汇率是政策函数里不写在法律里的第四个目标（4003 课展开）。</li>
+</ul>
+
+<h2><span class="no">06</span>训练场 <span class="t">≈15 min</span></h2>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：2026-09-17 起 Fed 目标区间 3.75–4.00%、IORB 3.90%。同一周 PBoC 的对应读法是——",
+  "options": [
+    {"t": "中国也跟着加息，全球同步", "ok": false, "why": "两套反应函数、两个周期——2024-09 美国开始降息时中国在一揽子宽松，方向早已分化。"},
+    {"t": "主锚 7 天逆回购 1.40% 未动；DR007 围绕它波动——用「锚±偏离」读松紧，与读 EFFR 在 Fed 区间内位置同构", "ok": true, "why": "微重现·上一课：2001 的「EFFR 位置」读法平移到中国=「DR007 相对 1.40% 的偏离与方向」。同一张地图，两种货币。"},
+    {"t": "中国看 LPR 就够，OMO 是技术细节", "ok": false, "why": "LPR 每月才报一次且滞后——高频松紧必须看 OMO/DR007。"},
+    {"t": "中国没有政策利率", "ok": false, "why": "2024 改革后主锚明确——这个印象来自旧时代。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题：2025-03 起 MLF「不再公布统一利率」。这个变化的正确解读是——",
+  "options": [
+    {"t": "MLF 被废除了", "ok": false, "why": "操作还在（2026-09 还有 8000 亿加量续作）——淡化的是它的「政策利率」角色，不是工具本身。"},
+    {"t": "政策利率体系收敛到 7 天 OMO 单一主锚；MLF 降级为中期流动性投放的技术安排", "ok": true, "why": "官方链条：陆家嘴讲话（淡化其他工具利率色彩）→固定利率数量招标（2024-07）→多重价位中标（2025-03）。对照 Fed 历史：这也是全球央行的通例——主锚只有一个。"},
+    {"t": "央行要隐藏利率信息", "ok": false, "why": "中标信息公开在招标公告——「无统一利率」是招标机制，不是保密。"},
+    {"t": "说明 MLF 无关紧要，删除跟踪", "ok": false, "why": "它的「量」（加量/缩量续作）仍是中期流动性的读数——降级≠无信息。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题（看图判机制）：01 图显示 2017–2018 中国在加息（2.25%→2.55%）而 2019-11 起转入漫长降息。结合 2001 课三大央行框，这更像——",
+  "options": [
+    {"t": "完全跟随美联储的机械镜像", "ok": false, "why": "2019-11 美国还在按兵不动，中国已先降——镜像论在第一次分歧处就破产。"},
+    {"t": "自有周期为主（金融去杠杆→贸易摩擦→疫情→内需不足），美联储周期是约束项之一（利差/汇率）", "ok": true, "why": "读图要点：步子小、方向持久——每一步都对着国内约束（去杠杆、地产、内需）。利差约束（05 节第四条）决定它降得慢、降得浅（1.40% vs 美国 3.75–4.00%）。"},
+    {"t": "随机行走，无框架可读", "ok": false, "why": "「小步持久」本身就是框架签名——随机行走不长这样。"},
+    {"t": "主要跟着 CPI 走", "ok": false, "why": "中国 CPI 波动（猪周期）与政策利率路径的相关性弱——增长与信用才是主变量。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题：读到新闻「央行创设民营企业再贷款，额度 1 万亿元」。按本课工具箱分类，这是——",
+  "options": [
+    {"t": "总量宽松，等同于降息", "ok": false, "why": "定向工具≠总量工具——它改变的是特定领域的信贷供给，不动总闸（7 天 OMO 未动）。"},
+    {"t": "结构性/定向工具：指定领域（民营）的低价资金管道，信号是「定向宽信用」而非「总量宽松」", "ok": true, "why": "对照表第三处差异的现场应用：结构性工具族（再贷款一族）是 PBoC 独有的定向管道。正确的交易读法：利好指向行业的融资环境，而非利率中枢。"},
+    {"t": "QE 的一种", "ok": false, "why": "QE=央行直接购买资产改资产负债表结构；再贷款=对银行的有息定向贷款——机制不同，退出方式也不同。"},
+    {"t": "汇率工具", "ok": false, "why": "与汇率无直接机制链——分类错误。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：你的快照「中国政策行」怎么写才合格（对照 1006 制度）？",
+  "options": [
+    {"t": "「央行维持宽松」", "ok": false, "why": "无读数无日期不可证伪——1006 快照格式的第一关都过不了。"},
+    {"t": "「7 天 OMO 1.40%（2026 年内未动）；LPR 连续 16 个月不变（2026-09 报价 3.0%/3.5%）；年内无降准（截至 2026-09-30）——政策静默期，数量端靠买断式逆回购/MLF 维持」", "ok": true, "why": "读数+日期+机制注全齐：政策静默期本身就是方向判断（「没有增量宽松」是可证伪的判断——若 10 月降准，这句要重写）。"},
+    {"t": "「中国即将降息降准」", "ok": false, "why": "无概率区间的预测——放决策日志可以，放快照不行。"},
+    {"t": "「M2 增长 8%」", "ok": false, "why": "那是信用读数（1003），不是政策行——层次错位。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——隔天重练仍达标，M2.1b 课内证据齐了；错 1–2 题——回对应节（第 1 题→2001+本课 02 节；第 2 题→01 节改革块；第 3 题→01 节图+2001 三央行框；第 4 题→04 节；第 5 题→02 节例块+1006），隔天重练；错 ≥3 题——本课回炉：重画走廊+传导图。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题（M2.1b 结业件）：不看正文，写出中美工具对照表的八行（主锚/市场读数/地板/天花板/中期工具/贷款端/数量端/结构性），并单独写三处「无对应物」及其含义。最后回答：如果明天 7 天 OMO 降 10bp，接下来两个有确定日期的读数是什么？",
+  "hint": "对照表骨架在 04 节；「确定日期」想 LPR 的报价日制度。",
+  "a": "自查标准：①八行对应齐且当期读数正确（区间 3.75–4.00/1.40%；EFFR/DR007；IORB+ON RRP/超储 0.35%；贴现窗+SRF/SLF 2.25%+临时围栏；—/MLF+买断式；市场直定/LPR；0+QT 结束/6.2%+降准；无/再贷款族）；②三处差异（LPR、结构性工具、存准率角色）+各自解读；③降 10bp 后：约 12 天内的 LPR 报价日（每月 20 日）跟随与否+当日 DR007 重定位——两个有日期的验收点。全到=M2.1b 课内件完成，与 2001 合并点亮 M2.1。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="t">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>主锚=7 天逆回购利率</strong>（2024 框架改革；MLF 已去政策化）</li>
+  <li><strong>走廊+LPR 传导链</strong>——SLF 上沿/超储利率下沿/临时围栏；OMO→LPR→贷款</li>
+  <li><strong>数量与结构半边箱</strong>——降准/买断式逆回购/国债买卖/再贷款族</li>
+  <li><strong>对照表与三处无对应物</strong>——永久版在参考页 0003</li>
+</ul>
+
+<div class="stop">M2.1 结业标准（与 2001 合并判定，显式）：①给一组当期利率读数（EFFR/IORB/ON RRP/贴现窗），说出各自在走廊中的角色与当前松紧含义（2001）；②对 QE/QT 各举一笔资产负债表记账（2001）；③对照说清中美工具的一一对应+三处无对应物（本课）。检测：2001+2002 训练场合计 ≥80% 且隔天重练达标；工件=两课动笔题（存观察日志，M2.1 点亮归档）。</div>
+
+<div class="note"><b>Mehrling 并行长线课（选做，永不前置）</b>：本课对应的并行讲次是 <strong>第 3 讲「Money and the State: Domestic」</strong>——央行与国家的关系、货币主权的制度层；对照着读你会发现「中美工具差异」的深层是一行写在制度里的东西（谁授权、对谁负责）。中国体系的主源仍是中文材料（盛松成/货政报告），Mehrling 提供的是一般框架。每周 2–3 小时节奏不变。</div>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（本周内）</strong>：打开<a href="../reference/0003-central-bank-tools.html">参考页 0003《央行工具对照表》</a>通读一遍，把「免费源在哪看」列里你自己最不熟的两个源点开收藏——下个 FOMC/LPR 日用。</p>
+<p>（2）<strong>课后探索（可选）</strong>：读央行《2026 年第二季度货币政策执行报告》的专栏二「完善贷款定价基准相关机制」（官网免费 PDF）——你刚学的 LPR 制度正在讨论中的下一步就在那里。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每月 20 日 LPR 报价日扫一眼（3 分钟）+每季度末盯降准公告——中国政策行的例行更新就这两个动作。</p>
+<p><strong>下一课 2003《传导与时滞》</strong>：工具动了之后发生什么——五渠道传导链、「长期且可变」的时滞、以及用 NFCI 检验政策松紧的个人免费版。</p>
+
+<div class="ask-agent">我是你的教练。对照表哪行对不上、想让我陪你读一期货政报告专栏、或者你在中国政策行写了判断想校对——直接回来找我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="2001-fed-toolbox.html">← 第 2001 课</a>
+    <a href="../reference/0003-central-bank-tools.html">央行工具对照表</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="2003-transmission-lags.html">第 2003 课 →</a>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：人民银行公开市场操作公告与《货币政策执行报告》（官方一手）；潘功胜 2024-06-19 陆家嘴论坛讲话（框架改革定调原文）；盛松成《中央银行与货币供给》2e ch9（公开市场操作的中国叙事）；参考页 0003（对照表永久版）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①盛松成《中央银行与货币供给》2e——1998 取消信贷规模直接控制/恢复公开市场操作、直接调控转间接调控的历史线；政策利率「二元」特征（当代框架的背景）（01 节）；②潘功胜陆家嘴讲话（2024-06-19）——「7 天逆回购已基本承担主要政策利率功能」原文（01 节）；③央行《2026Q2 货政报告》——专栏「完善贷款定价基准相关机制」、DR001 转向与隔夜逆回购（02 节图注、05 节）。<strong>数据口径：</strong>7 天 OMO 全部调整点（图 1，2016-02-18 的 2.25% 至 2025-05-08 的 1.40%，逐点经人民网/财新/证券时报等权威渠道核验，2026-09-30）；LPR 3.0%/3.5%（2026-09-20 报价，连续 16 个月不变）；SLF 2.25/2.40%（2025-05-08 起）；超储利率 0.35%；存准率约 6.2%（2025-05-15 后，2026 年内未动）；MLF 无统一利率（2025-03 起）；买断式逆回购 2024-10 启用；国债买卖 2025-01 暂停→2025-11 恢复；隔夜逆回购 2026-09-23 公告；结构性工具（PSL 1.5%/科技创新 1.4 万亿/民营企业再贷款 1 万亿/SFISF 合并 8000 亿）。Fed 对照读数=2026-09-17 起（2001 课同源）。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>

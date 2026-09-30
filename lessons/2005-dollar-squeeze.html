@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2005 美元荒机制 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 2005 课</span>
+    <span>·</span>
+    <span>P2 央行与流动性 · M2.3b</span>
+  </div>
+  <h1>美元荒机制</h1>
+  <p class="deck">2004 课的离岸体系着了火是什么样？本课解剖两次<strong>美元荒（dollar squeeze）</strong>：2008 与 2020——同一机制的两场燃烧，以及 Fed 的终极工具：央行互换线（swap lines）与 FIMA。配套纪律：<strong>H.4.1 分项逐项读</strong>（不读总数读结构）与一条红线——<strong>禁止「净流动性公式」迷信</strong>。本课约 75–95 分钟（先猜 3 + 正文与图组 45–55 + 训练场 15 + 动笔与小结 5）。前置要求：2001–2004（资产负债表+走廊+离岸结构是本课的地基）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：掌握「美元荒的完整拼图」——汇率急升+基差走阔+离岸利率飙升三件套同时发生，与 Fed 互换线投放的对应关系；并能用 H.4.1 的分项把「Fed 在救谁、救了多少」逐项读出来。不算数：背危机时间线；护栏：<strong>「美元荒不等于美元多或少——是美元在体系中的位置突然错了」</strong>。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>美元荒的机制：一场离岸银行挤兑（含机制图） <span class="t">≈12 min</span></li>
+    <li>worked example：2020-03 三周 H.4.1 逐项读（含一图） <span class="t">≈14 min</span></li>
+    <li>2008 vs 2020：同一机制的两场燃烧（含一图） <span class="t">≈10 min</span></li>
+    <li>红线：净流动性公式迷信 <span class="t">≈5 min</span></li>
+    <li>个人分诊台与边界 <span class="t">≈4 min</span></li>
+    <li>训练场 <span class="t">≈15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈3 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准两个「流动性=水位」直觉。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：2020-03 美元荒三周内，Fed 的资产从 $4.3T 冲到 $5.8T（+35%）。与此同时全世界的美元「总量」——",
+  "options": [
+    {"t": "暴增 35%，所以问题解决了", "ok": false, "why": "量确实在增，但「美元荒」的痛点不是总量而是位置——离岸机构手里没有，存款在别处。Fed 扩表 1.5T 与危机缓解之间隔着「钱到没到该在的表上」。"},
+    {"t": "总量增加与位置修复是两回事：扩表若没有直达离岸机构（经由互换线给外国央行转手），离岸美元荒不会自动缓解", "ok": true, "why": "这就是互换线是本课主角的原因：它是 Fed 把美元送到「够不到自己工具」的机构手里的唯一常规管道。03 节的数据会精确展示这两条腿。"},
+    {"t": "总量不变，只是会计腾挪", "ok": false, "why": "准备金与存款是真实创造的（2001 课记账）——量变是真的，但量的位置才是重点。"},
+    {"t": "美元总量由财政部决定", "ok": false, "why": "财政部发债不直接造美元——货币创造的主管道在央行与银行体系（0003 课）。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：「准备金 + 逆回购 − TGA = 净流动性，所以净流动性升=利多资产」——这个流行公式的最大问题是——",
+  "options": [
+    {"t": "算术错了", "ok": false, "why": "作为恒等式分解它没错——错在因果层，不在算术层。"},
+    {"t": "把资产负债表恒等式当成了因果定价模型：同样的「净流动性」数值可以对应完全不同的市场结构与利率位置，且它与资产价格的关系不稳定", "ok": true, "why": "本课红线：恒等式≠因果。05 节给两个反例（2020 与 2025 各一次「净流动性」叙事被打脸）。"},
+    {"t": "TGA 不是 Fed 的负债", "ok": false, "why": "TGA 是 Fed 负债端科目（2001 课表）——这半句没错。"},
+    {"t": "公式里的数据拿不到", "ok": false, "why": "H.4.1 每周公布，全免费——数据可得性恰恰是这公式流行的原因。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>美元荒的机制：一场离岸银行挤兑 <span class="t">≈12 min</span></h2>
+<p class="lede">把 2004 课的「双层金字塔」点燃：恐慌中机构客户同时不滚续离岸银行的 CD 与 FX 掉期（Wang ch4：机构资金无保险上限、第一时间走），于是<strong>全世界同时卖资产抢美元清偿</strong>。美元荒的完整拼图=三件套同时发生：</p>
+
+<figure>
+<svg viewBox="0 0 720 320" role="img" aria-label="美元荒机制图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="d1" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs>
+<text x="24" y="28" font-size="12.5" fill="#1c1c1a" font-weight="700">美元荒：一场离岸银行挤兑（时间轴从左到右）</text>
+<rect x="24" y="48" width="160" height="64" rx="10" fill="#1c1c1a"/>
+<text x="104" y="72" text-anchor="middle" font-size="11" fill="#fff" font-weight="700">冲击落地</text>
+<text x="104" y="90" text-anchor="middle" font-size="9.5" fill="#fff">亏损/追保/风险预算崩塌</text>
+<rect x="24" y="148" width="160" height="64" rx="10" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="104" y="172" text-anchor="middle" font-size="11" fill="#1c1c1a" font-weight="700">机构不滚续融资</text>
+<text x="104" y="190" text-anchor="middle" font-size="9.5" fill="#6e6c64">CD / FX 掉期同时断供</text>
+<rect x="24" y="248" width="160" height="56" rx="10" fill="#fff" stroke="#1c1c1a" stroke-width="1.5"/>
+<text x="104" y="270" text-anchor="middle" font-size="11" fill="#1c1c1a" font-weight="700">抛资产抢美元</text>
+<text x="104" y="288" text-anchor="middle" font-size="9.5" fill="#6e6c64">连国债都卖（最好的抵押品）</text>
+<line x1="104" y1="112" x2="104" y2="146" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#d1)"/>
+<line x1="104" y1="212" x2="104" y2="246" stroke="#1c1c1a" stroke-width="1.5" marker-end="url(#d1)"/>
+<rect x="260" y="48" width="200" height="256" rx="10" fill="#fbeeec" stroke="#d33a2c" stroke-width="1.5"/>
+<text x="360" y="74" text-anchor="middle" font-size="11.5" fill="#d33a2c" font-weight="700">三件套（同步发生）</text>
+<text x="276" y="104" font-size="10.5" fill="#1c1c1a">① 美元汇率急升</text>
+<text x="276" y="122" font-size="9.5" fill="#6e6c64">2008：+21%（广义指数4个月）</text>
+<text x="276" y="138" font-size="9.5" fill="#6e6c64">2020：+9%（7 周）</text>
+<text x="276" y="168" font-size="10.5" fill="#1c1c1a">② 掉期基差走阔</text>
+<text x="276" y="186" font-size="9.5" fill="#6e6c64">离岸合成美元成本飙升</text>
+<text x="276" y="202" font-size="9.5" fill="#6e6c64">（阅读层信号，2004 课）</text>
+<text x="276" y="232" font-size="10.5" fill="#1c1c1a">③ 离岸美元利率飙升</text>
+<text x="276" y="250" font-size="9.5" fill="#6e6c64">2008：LIBOR-OIS 峰值约 4%</text>
+<text x="276" y="266" font-size="9.5" fill="#6e6c64">（Wang ch8）；2020：同构尖峰</text>
+<line x1="184" y1="150" x2="258" y2="150" stroke="#d33a2c" stroke-width="1.5" marker-end="url(#d1)"/>
+<rect x="510" y="48" width="186" height="120" rx="10" fill="#fff" stroke="#1a7f37" stroke-width="1.8"/>
+<text x="603" y="74" text-anchor="middle" font-size="11.5" fill="#1a7f37" font-weight="700">Fed 互换线（外汇互换）</text>
+<text x="522" y="96" font-size="9.5" fill="#1c1c1a">Fed→外国央行→其辖内银行</text>
+<text x="522" y="112" font-size="9.5" fill="#1c1c1a">2008 峰值 $583B</text>
+<text x="522" y="128" font-size="9.5" fill="#1c1c1a">2020 峰值 $449B</text>
+<text x="522" y="146" font-size="9.5" fill="#6e6c64">Wang：Fed 由此成为全球</text>
+<text x="522" y="160" font-size="9.5" fill="#6e6c64">美元体系的最后贷款人</text>
+<rect x="510" y="200" width="186" height="104" rx="10" fill="#fff" stroke="#1a7f37" stroke-width="1.8"/>
+<text x="603" y="226" text-anchor="middle" font-size="11.5" fill="#1a7f37" font-weight="700">其他弹药</text>
+<text x="522" y="248" font-size="9.5" fill="#1c1c1a">回购操作（借给交易商）</text>
+<text x="522" y="264" font-size="9.5" fill="#1c1c1a">FIMA（借给外国央行，2020-03 新设）</text>
+<text x="522" y="280" font-size="9.5" fill="#1c1c1a">13(3) 危机工具族</text>
+<text x="522" y="296" font-size="9.5" fill="#6e6c64">「设施存在本身就能灭火」</text>
+<line x1="460" y1="108" x2="508" y2="108" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#d1)"/>
+<line x1="460" y1="252" x2="508" y2="252" stroke="#1a7f37" stroke-width="1.5" marker-end="url(#d1)"/>
+</svg>
+<figcaption><strong>美元荒机制与 Fed 的灭火管道（教学示意图）</strong>：结构参照 Wang ch4/ch8 与纽约联储 Liberty Street Economics《The Global Dash for Cash in March 2020》。要点：<strong>挤兑发生在 Fed 看不见的那一层</strong>（离岸），所以灭火工具必须「越级输送」——互换线让 Fed 通过外国央行把美元送到够不到贴现窗的机构手里；FIMA（2020-03-31 设立）服务持有美债但没有互换线的央行。Wang ch8 的判词：互换线「本质上让 Fed 成为全球美元体系的 backers——在岸与离岸都是」。</figcaption>
+</figure>
+
+<h2><span class="no">02</span>worked example：2020-03 三周 H.4.1 逐项读 <span class="t">≈14 min</span></h2>
+<p class="lede">纪律：不读总数，读分项——<strong>总数告诉你 Fed 在变大，分项告诉你 Fed 在救谁</strong>。三周（周三快照，H.4.1 周四发布）：</p>
+
+<figure>
+<svg viewBox="0 0 720 310" role="img" aria-label="2020-03 H.4.1 回购与互换" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="70" y1="252.0" x2="690" y2="252.0" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="255.5" text-anchor="end" font-size="10" fill="#6e6c64">0B</text><line x1="70" y1="205.3" x2="690" y2="205.3" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="208.8" text-anchor="end" font-size="10" fill="#6e6c64">100B</text><line x1="70" y1="158.7" x2="690" y2="158.7" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="162.2" text-anchor="end" font-size="10" fill="#6e6c64">200B</text><line x1="70" y1="112.0" x2="690" y2="112.0" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="115.5" text-anchor="end" font-size="10" fill="#6e6c64">300B</text><line x1="70" y1="65.3" x2="690" y2="65.3" stroke="#e4e2d9" stroke-width="1"/><text x="64" y="68.8" text-anchor="end" font-size="10" fill="#6e6c64">400B</text><rect x="97.5" y="138.9" width="46" height="113.1" fill="#6e6c64"/><text x="120.5" y="132.9" text-anchor="middle" font-size="10" fill="#6e6c64" font-weight="700">242</text><rect x="151.5" y="252.0" width="46" height="1" fill="#d33a2c"/><text x="174.5" y="246.0" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">0</text><text x="147.5" y="268" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">2020-03-11</text><rect x="252.5" y="45.8" width="46" height="206.2" fill="#6e6c64"/><text x="275.5" y="39.8" text-anchor="middle" font-size="10" fill="#6e6c64" font-weight="700">442</text><rect x="306.5" y="252.0" width="46" height="1" fill="#d33a2c"/><text x="329.5" y="246.0" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">0</text><text x="302.5" y="268" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">2020-03-18</text><rect x="407.5" y="87.5" width="46" height="164.5" fill="#6e6c64"/><text x="430.5" y="81.5" text-anchor="middle" font-size="10" fill="#6e6c64" font-weight="700">352</text><rect x="461.5" y="155.8" width="46" height="96.2" fill="#d33a2c"/><text x="484.5" y="149.8" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">206</text><text x="457.5" y="268" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">2020-03-25</text><rect x="562.5" y="129.2" width="46" height="122.8" fill="#6e6c64"/><text x="585.5" y="123.2" text-anchor="middle" font-size="10" fill="#6e6c64" font-weight="700">263</text><rect x="616.5" y="89.4" width="46" height="162.6" fill="#d33a2c"/><text x="639.5" y="83.4" text-anchor="middle" font-size="10" fill="#d33a2c" font-weight="700">348</text><text x="612.5" y="268" text-anchor="middle" font-size="10.5" fill="#1c1c1a" font-weight="700">2020-04-01</text><line x1="70" y1="252" x2="690" y2="252" stroke="#1c1c1a" stroke-width="1.5"/><line x1="110" y1="14" x2="132" y2="14" stroke="#6e6c64" stroke-width="8"/><text x="137" y="17.5" font-size="10" fill="#1c1c1a">回购操作（Fed 借给一级交易商）</text><line x1="380" y1="14" x2="402" y2="14" stroke="#d33a2c" stroke-width="8"/><text x="407" y="17.5" font-size="10" fill="#1c1c1a">央行流动性互换（Fed 借给外国央行）</text><text x="690" y="278" text-anchor="end" font-size="10" fill="#d33a2c" font-weight="700">互换峰值 2020-05-27 当周：449B（再九周后）</text><text x="70" y="294" font-size="10" fill="#6e6c64">周三快照值，$B；来源：H.4.1 各期（20200319/0326/0402 发布）</text>
+</svg>
+<figcaption><strong>2020-03 美元荒三周：H.4.1 分项（周三快照，$B）</strong>：来源=各期 <a href="https://www.federalreserve.gov/releases/h41/">H.4.1 发布</a>（2020-03-19/03-26/04-02 期）。看点（逐项读法）：①<strong>回购（灰）先动</strong>——03-18 当周冲上 $441.9B：一级交易商拿国债找 Fed 换现金，在岸管道先开；②<strong>互换（红）后动但更持久</strong>——$0.06B→$206B→$348.5B，九周后见顶 <strong>$448.9B</strong>（2020-05-27 当周）：离岸的火更大、灭得更慢；③回购用量的<strong>回落</strong>（03-25 起）不是危机缓解，而是被互换线与后续工具分流——分项之间的替代关系本身就是信息。同期背景：Fed 持债三周 +$817.8B、总资产 $4.31T→$5.81T。</figcaption>
+</figure>
+
+<div class="example">
+<p class="ex-title">逐项读的完整清单（照抄可用的一次「美元荒周检」）</p>
+<table>
+  <thead><tr><th>H.4.1 行项</th><th>2020-03 三周读数</th><th>它告诉你什么</th></tr></thead>
+  <tbody>
+    <tr><td>央行流动性互换</td><td>0.06 → 206 → 348.5（$B）</td><td>离岸火势与 Fed 的越级输送量</td></tr>
+    <tr><td>回购协议</td><td>242 → 442 → 352 → 263（03-11→04-01 四周，$B）</td><td>在岸交易商的抵押品换现金需求</td></tr>
+    <tr><td>持有国债（TREAST）</td><td>三周 +817.8（$B）</td><td>无限量 QE 启动的购买量</td></tr>
+    <tr><td>总资产</td><td class="num">4,312 → 5,812（$B）</td><td>背景板：所有工具的合计</td></tr>
+    <tr><td>FIMA 回购</td><td>0（2020-03-31 才设立）</td><td>新工具的「存在效应」——当年用量极小（峰值约 $1.4B）但设立本身稳预期</td></tr>
+    <tr><td>贴现窗/13(3) 工具族</td><td class="num">用量有限</td><td>Wang ch8 的「设施存在效应」：知道的背书存在，恐慌就退潮</td></tr>
+  </tbody>
+</table>
+<p>读法总结：<strong>2020 的救援顺序=回购（在岸快速止血）→互换（离岸主战场）→购债（压长期利率）</strong>。三张分项表拼出的叙事，比任何「Fed 大放水」的标题都准确。</p>
+</div>
+
+<h2><span class="no">03</span>2008 vs 2020：同一机制的两场燃烧 <span class="t">≈10 min</span></h2>
+<p class="lede">把两次美元荒并排放（真实数据对照表+汇率图）：同构与差异各三处——</p>
+<table>
+  <thead>
+    <tr><th>维度</th><th>2008-09（雷曼季）</th><th>2020-03（疫情季）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>触发</td><td>内生：次贷损失→交易对手互不信任</td><td>外生：疫情+通缩冲击→全员同时去杠杆</td></tr>
+    <tr><td>美元指数（广义）</td><td>4 个月 +21%（85.9→103.6）</td><td>7 周 +9%（115.9→126.1）</td></tr>
+    <tr><td>互换峰值</td><td>$583B（2008-12-17 当周）</td><td>$449B（2020-05-27 当周）</td></tr>
+    <tr><td>离岸利率签名</td><td>LIBOR-OIS 约 4%（历史极值）</td><td>尖峰更深但更短（政策反应更快）</td></tr>
+    <tr><td>NFCI（国内条件）</td><td>+3.08（2008-11 极值）</td><td>+0.31（2020-04 峰值）</td></tr>
+    <tr><td>Fed 反应速度</td><td>数月演进（TAF 先行，互换逐步扩容）</td><td>一周内无限量承诺+互换扩容（学到的教训）</td></tr>
+  </tbody>
+</table>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="广义美元指数 2006-2021" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="226.9" x2="704" y2="226.9" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="230.4" text-anchor="end" font-size="10" fill="#6e6c64">90</text><line x1="52" y1="181.8" x2="704" y2="181.8" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="185.3" text-anchor="end" font-size="10" fill="#6e6c64">100</text><line x1="52" y1="136.7" x2="704" y2="136.7" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="140.2" text-anchor="end" font-size="10" fill="#6e6c64">110</text><line x1="52" y1="91.6" x2="704" y2="91.6" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="95.1" text-anchor="end" font-size="10" fill="#6e6c64">120</text><line x1="52" y1="46.5" x2="704" y2="46.5" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="50" text-anchor="end" font-size="10" fill="#6e6c64">130</text><line x1="51.9" y1="272" x2="51.9" y2="276" stroke="#6e6c64"/><text x="51.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2007</text><line x1="118.1" y1="272" x2="118.1" y2="276" stroke="#6e6c64"/><text x="118.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2009</text><line x1="184.3" y1="272" x2="184.3" y2="276" stroke="#6e6c64"/><text x="184.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2011</text><line x1="250.3" y1="272" x2="250.3" y2="276" stroke="#6e6c64"/><text x="250.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2013</text><line x1="316.3" y1="272" x2="316.3" y2="276" stroke="#6e6c64"/><text x="316.3" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2015</text><line x1="382.6" y1="272" x2="382.6" y2="276" stroke="#6e6c64"/><text x="382.6" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2017</text><line x1="448.5" y1="272" x2="448.5" y2="276" stroke="#6e6c64"/><text x="448.5" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2019</text><line x1="514.7" y1="272" x2="514.7" y2="276" stroke="#6e6c64"/><text x="514.7" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">2021</text><rect x="82" y="24" width="49.6" height="248" fill="rgba(28,28,26,.09)"/><rect x="484.3" y="24" width="5.4" height="248" fill="rgba(28,28,26,.09)"/><polyline points="52,194.8 54,191.6 56,194.6 58.2,194 60.1,198.2 62.1,205 64.1,205.1 66.1,205.4 68.3,210.5 70.3,215.6 72.3,206.6 74.3,211.4 76.3,222.6 78.4,223.9 80.4,231 82.4,227.5 84.4,228.3 86.4,227.4 88.6,230.4 90.5,239.1 92.5,242.5 94.5,244.5 96.5,239.3 98.7,242.1 100.7,240.6 102.7,245.3 104.7,236.5 106.7,226.7 108.8,226.4 110.8,198.7 112.8,190.4 114.8,176.2 116.8,190.3 119.1,180.2 121.2,173.9 123.5,154.7 125.5,177.5 127.5,181.6 129.5,190.3 131.7,205.9 133.7,198.8 135.8,201.6 138,206.1 140,203.4 142,211.3 144.3,220.4 146.3,219.4 148.5,220.7 150.8,213 153.2,213.8 155.8,209 157.8,215.9 159.8,214.6 161.8,214.1 163.9,197 166,201.8 168.1,205.8 170.3,214.3 172.3,206.9 174.3,213.8 176.3,226.4 178.6,228.3 180.8,218.7 182.9,219.5 185.1,227.4 187.4,229.8 189.5,232.6 191.4,235.7 193.4,240.4 195.6,241.2 197.7,242.3 199.7,238.4 201.9,240.6 203.9,238.7 205.9,241.5 208,219.3 210.3,224.2 212.3,223.8 214.6,221.9 216.7,214.1 219,222.5 221,226 223.1,225.7 225.1,224.8 227.3,222 229.3,215.5 231.4,209.9 233.3,213.8 235.6,207.7 237.6,214.8 239.7,220.8 241.9,223.7 243.9,221.8 246.4,219.9 248.5,223.4 250.8,222.1 252.9,223.3 255.2,217 257.2,216 259.2,219.3 261.2,220.1 263.5,210.7 265.5,215.7 267.6,208.9 269.7,211.1 271.7,207.1 273.8,216.1 275.8,214 278.1,212.4 280.2,210.5 282.5,210.3 284.7,206.2 286.9,206 289.5,207.1 291.5,206.6 293.5,208.1 295.7,211.1 297.8,209 299.8,212 302,209.6 304,206.9 306.1,200.2 308.1,190.9 310.4,194.4 312.4,185.2 314.7,174.3 317,167.7 319.2,161 321.4,156.6 323.7,152.8 325.6,149.4 327.6,158.4 329.9,149.2 331.9,154.9 334,145 336,139.3 338.1,134.2 340.2,129.4 342.3,141.3 344.5,128.1 346.6,129.3 348.9,123 351.1,109.7 353.6,119.2 355.6,128.9 357.8,134.9 359.8,137.9 361.8,130 363.8,131.8 366.1,125.8 368.1,122.2 370.1,135.3 372.3,127 374.3,124.7 376.4,117.8 378.7,103 380.8,106.4 383.1,98.8 385.3,110.1 387.5,111.1 389.5,115 391.5,114.6 393.5,114.6 395.5,121 397.8,122 399.9,129.8 401.8,135.5 404,140.4 406.1,143.8 408.2,135.5 410.4,129 412.5,134.6 414.5,131.8 417,145.5 418.9,144.6 421.3,145.3 423.4,148.1 425.6,141.5 427.5,131.2 429.6,127.4 431.6,122 433.9,122.3 435.9,113.5 438,116.1 440.1,119.5 442.2,112.5 444.3,110 446.6,108.7 449,116.2 451.2,120.7 453.5,118.4 455.5,118 457.5,115.8 459.5,113 461.8,108.2 463.7,110.6 465.8,115.2 468,107 470,101.8 472.1,104.8 474.1,106 476.3,109.2 478.5,104.6 480.7,110.5 482.9,113.9 485.2,108.1 487.3,106.1 489.3,80.8 491.4,77.6 493.4,77.8 495.5,94.8 497.5,89.2 499.8,98.8 501.7,104 503.7,109.4 506,102.4 508.1,114.6 510.2,117.6 512.5,127.6 515,132.4 517.1,127.9 519.4,128.2 521.4,122.5 523.4,122.8 525.4,127.3 527.5,132.6 529.6,131.7 531.7,123.9 533.9,124.7 535.9,120.1 537.9,121.8 539.9,116 542.2,117.4 544.4,107.4 546.5,109.6 548.7,117.9 551,114.1 553.1,110.7 555,109.9 557,106.5 559.2,89.4 561.3,97.5 563.4,89.4 565.6,80.4 567.6,88.2 569.6,71.8 571.9,53.5 574,53.8 576,70.4 578.3,78 580.4,84.2 582.7,95.7 584.7,89.6 586.8,86 589,94.7 591,93.4 593,93.4 595,94.2 597.4,94.6 599.4,101.1 601.4,89.7 603.6,85.8 605.6,75.4 607.7,75.3 610,90.6 612.1,93.6 614.4,93.1 616.5,90.1 618.8,86.9 620.7,87.4 622.7,84.5 624.7,80.6 626.7,84.3 629,73.7 631.2,80.6 633.3,75.5 635.3,83.2 637.4,85.7 639.4,78.2 641.7,71.1 643.8,62 646,54.2 648.2,49.1 650.4,52.7 652.5,62.3 654.5,62.9 656.5,78.2 658.7,75.9 660.7,86.9 662.8,93.2 665.1,93.1 667.1,91.1 669.2,91.1 671.3,91.1 673.4,87.6 675.5,87.3 677.8,88.6 679.9,93.4 682.2,103.1 684.3,99.6 686.3,89.1 688.4,89.7 690.4,97.2 692.4,95.4 694.5,93.9 696.9,86.5 698.8,93.1 700.8,100.4 703.1,96.7 704,90.1" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="114.3" cy="165.5" r="3" fill="#1c1c1a"/><text x="230" y="50" text-anchor="start" font-size="10.5" fill="#1c1c1a">2008-11：103.6（4 个月 +21%）</text><circle cx="488.9" cy="64" r="3" fill="#d33a2c"/><text x="440" y="52" text-anchor="start" font-size="10.5" fill="#d33a2c">2020-03：126.1（7 周 +9%）</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">广义美元指数（DTWEXBGS，日频）</text>
+</svg>
+<figcaption><strong>广义美元指数（DTWEXBGS，日频），2007-01 至 2021-12</strong>：来源=<a href="https://fred.stlouisfed.org/series/DTWEXBGS">FRED DTWEXBGS</a>。看点：两次美元荒的汇率签名同向不同幅——2008-07-15（85.9）至 2008-11-21（103.6）<strong>+21%</strong>；2020-02-04（115.9）至 2020-03-23（126.1）<strong>+9%</strong>（雷曼日 9/15 至 11 月峰值约 +13%）。<strong>「危机=美元涨」不是风格是机制</strong>：全球美元负债端的清偿需求铸成买压。</figcaption>
+</figure>
+
+<p><strong>学到的三条（进你的 regime 分诊台）</strong>：①美元荒的<strong>速度</strong>由杠杆的普遍度决定（2020 的风险平价与套息仓位三周内齐平）；②<strong>政策反应函数是学习曲线</strong>——2020 的一周反应正是 2008 的教训制度化；③<strong>美元指数的危机脉冲是系统性的</strong>——任何「危机中分散到非美资产」的配置假设都要先过美元荒这一关（P4 跨资产课会再遇到它）。</p>
+
+<h2><span class="no">04</span>红线：净流动性公式迷信 <span class="t">≈5 min</span></h2>
+<p class="lede">流行的「净流动性（net liquidity）= 准备金 + ON RRP − TGA」叙事承诺：这个数上升→利多风险资产。它错在哪：</p>
+<div class="stop">红线（三条，逐条可考）：①<b>恒等式≠因果</b>：等式右侧的每一项都由不同主体因不同目的驱动（Fed 缩表/财政部发债/货币基金配置），把三项代数和当单一「流动性供给」变量，是把资产负债表恒等式误当定价模型；②<b>同值不同境</b>：2022 与 2024 都出现过净流动性数值相近而资产表现相反的月份；2025-12 QT 结束后该公式更是失去方向（准备金趋稳，公式却仍在「预测」）；③<b>不可证伪的滑动定义</b>：叙事失败时支持者会把 TGA 或 RRP 的符号「调整」一遍再战。<strong>纪律：H.4.1 分项逐项读（02 节），拒绝加总成单一数。</strong>个人执行版：你跟踪的是「准备金水平×货币市场利率位置」（2001 课走廊读数），不是任何净值。</div>
+
+<h2><span class="no">05</span>个人分诊台与边界 <span class="t">≈4 min</span></h2>
+<ul>
+  <li><strong>恐慌日的分诊顺序</strong>（2004 课图的实战版）：美元指数方向→SOFR/国库券分离性质（恐慌端 or 供给端）→H.4.1 分项最新周报。三步之内判断「这是美元荒吗、在岸还是离岸为主」。</li>
+  <li><strong>危机指标的时效性</strong>：LIBOR 已退役（2023-06 停发），它的继任读数是 SOFR 体系+基差（商业终端）——读旧论文注意基准利率的时代层。</li>
+  <li><strong>「互换线是政治局」</strong>：谁有常设线（欧日加英瑞）、谁要临时批（2013 后韩国巴西等九家）本身就是地缘信息——美元体系的层级在危机中最清晰。</li>
+  <li><strong>边界</strong>：个人交易者不交易互换线与 FIMA——你获得的是<strong>危机识别速度</strong>（美元荒的第一周比「流动性叙事」早数周知道发生了什么），这已是足够的优势。</li>
+</ul>
+
+<h2><span class="no">06</span>训练场 <span class="t">≈15 min</span></h2>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：2020-03 互换线用量激增的同时掉期基差大幅走阔。这两个读数的关系是——",
+  "options": [
+    {"t": "矛盾：互换线提供美元后基差应立即归零", "ok": false, "why": "输送有管道与时滞，且需求端同时还在爆发——基差见顶滞后互换线启动数周（03 节对照表）。"},
+    {"t": "一致：基差走阔=美元离岸影子价格飙升（美元荒的信号），互换线是 Fed 对这个信号的越级回应——信号与政策在赛跑", "ok": true, "why": "微重现·上一课：2004 的阅读层信号在本课获得其政策对应物。基差是市场的报警器，互换线是消防栓——同一场火的两侧。"},
+    {"t": "基差与互换线无关", "ok": false, "why": "互换线投放直接改变离岸美元供给——它恰是基差最直接的政策变量。"},
+    {"t": "互换线推高了基差", "ok": false, "why": "因果方向反了——投放缓解稀缺，压低基差（滞后于需求爆发）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题（看图判机制）：02 图中回购用量 03-18 见顶回落（442→352→263），互换持续攀升。最合理的机制读法是——",
+  "options": [
+    {"t": "危机结束了，Fed 在撤退", "ok": false, "why": "总资产同期货膨胀 1.5T——是分项替代，不是撤退。"},
+    {"t": "在岸交易商的现金需求先被回购满足，而离岸的火（互换对应）烧得更久更大——分项的时间结构与主战场转移", "ok": true, "why": "逐项读法的核心收获：回购=在岸快速止血，互换=离岸主战场。分项间的替代与接力，就是危机叙事本身。"},
+    {"t": "回购工具坏了", "ok": false, "why": "用量回落是需求被满足/分流的信号，不是故障。"},
+    {"t": "外国央行在抛售美债", "ok": false, "why": "与图示分项无对应——拿叙事硬套数据。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题：FIMA 回购 2020 年设立后用量极小（峰值约 $1.4B）。这个「没人用」的正确解读是——",
+  "options": [
+    {"t": "工具失败，应关闭", "ok": false, "why": "Wang ch8 的「设施存在效应」：背书的存在本身降低尾部风险预期——没人用恰是它起作用的方式之一。"},
+    {"t": "作为保险的存在效应：知道央行动用了危机工具箱，恐慌定价就退潮——用量小≠没作用", "ok": true, "why": "2020-07-02 快照同款结构：$75B 回购+$66.7B PPPLF 用量有限，但市场功能已恢复。读危机工具的产出要看「火灭了没」，不是「水用了多少」。"},
+    {"t": "说明外国央行不需要美元", "ok": false, "why": "互换线 $449B 的用量直接反驳。"},
+    {"t": "FIMA 是给个人的工具", "ok": false, "why": "对手方是外国央行（持美债）——与个人无关，但它的存在稳定你持仓的底层市场。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题：朋友给你一张图：「净流动性=准备金+RRP−TGA，2024 年 X 月下降，所以股市必跌」。你的分诊（按本课红线）是——",
+  "options": [
+    {"t": "图很专业，照做", "ok": false, "why": "专业的外观≠因果的成立——恒等式加总不是定价模型（红线第一条）。"},
+    {"t": "拆项：下降来自哪一项（TGA 重建？RRP 释放？）？各项的市场含义不同；再对照当月市场实际表现是否支持——大概率是同值不同境", "ok": true, "why": "红线操作版：分项替代加总。2024 年实例：TGA 重建压「净流动性」而 RRP 同步释放对冲，货币市场毫无压力——公式喊狼来了，分项显示没有狼。"},
+    {"t": "把公式倒过来用", "ok": false, "why": "同样错误的结构，只换方向。"},
+    {"t": "问他要 Bloomberg 终端", "ok": false, "why": "该公式数据免费（H.4.1）——问题从来不在数据在逻辑。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题：2026 年某周出现「美元两日急涨+SOFR 明显高于国库券利率+新兴市场货币普跌」。你的分诊台输出是——",
+  "options": [
+    {"t": "供给端事件，看财政部拍卖日历", "ok": false, "why": "供给端分离=券利率高于 SOFR（2004 课），此处方向相反——恐慌端签名。"},
+    {"t": "恐慌端美元荒签名：立即查 H.4.1 分项（互换/回购是否异动）确认火场位置，并核查「危机=美元涨」的组合是否延续", "ok": true, "why": "三步分诊（美元方向→分离性质→H.4.1 分项）的实战顺序。2026 年的背景差异（QT 已结束、准备金充裕）不改变分诊结构——这正是把 2008/2020 模板写成「分诊台」而非「时间线」的原因。"},
+    {"t": "一切正常，美元涨是随机的", "ok": false, "why": "三件同发不是随机——机制识别的起点。"},
+    {"t": "做空美元抄底", "ok": false, "why": "课程不荐仓位——且美元荒初期的买压常比直觉持久（2008 长达四个月）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——隔天重练仍达标，M2.3b 课内证据齐了；错 1–2 题——回对应节（第 1 题→2004 03 节+本课 01 节；第 2 题→02 节；第 3 题→02 节例块；第 4 题→04 节红线；第 5 题→05 节），隔天重练；错 ≥3 题——本课回炉：重画美元荒机制图。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题（M2.3 结业件之一）：不看正文，写出美元荒「三件套」与 Fed 灭火管道的三层（在岸/离岸/预期），各配 2008 与 2020 的一个真实数字。再写一段 60 字以内的「净流动性公式」反驳（给一个从没上过本课的人看）。",
+  "hint": "三件套想「汇率/基差/离岸利率」；数字从 02/03 节取；反驳想「同值不同境」。",
+  "a": "自查标准：①三件套齐（美元急升/基差走阔/离岸利率飙升）+2008 与 2020 各一数字（如 +21% vs +9%；互换 $583B vs $449B；LIBOR-OIS 约 4% vs NFCI +0.31）；②灭火三层（回购=在岸/互换+FIMA=离级输送/13(3) 族+无限量承诺=预期背书）；③反驳含「恒等式≠因果」与「同值不同境」两要素且无术语堆砌；④能说出分诊台三步顺序。四点全到=M2.3b 课内件完成，与 2004 合并点亮 M2.3。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="t">≈3 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>美元荒三件套</strong>——汇率急升+基差走阔+离岸利率飙升（同步发生才成立）</li>
+  <li><strong>H.4.1 分项纪律</strong>——总数告诉你变大，分项告诉你救谁</li>
+  <li><strong>互换线机制</strong>——Fed 越级输送美元的唯一常规管道；2008/2020 峰值各 $583B/$449B</li>
+  <li><strong>净流动性红线</strong>——分项读，不加总；恒等式不是定价模型</li>
+</ul>
+
+<div class="stop">M2.3 结业标准（与 2004 合并判定）：①解释离岸美元体系的规模、双层结构与脆弱性来源（2004）；②用两句话讲清 FX 掉期合成美元借款与 basis 的含义（2004）；③对比 1997/2008/2020 三场美元荒的主体与救助链差异；④默写美元荒三件套+H.4.1 分项的 2020-03 读数（本课）。检测：2004+2005 训练场合计 ≥80% 且隔天重练达标；工件=两课动笔题。</div>
+
+<div class="note"><b>Mehrling 并行长线课（选做，永不前置）</b>：本课对应的<strong>并行必做讲次=第 21 讲「Shadow Banking, Central Banking, and Global Finance」</strong>（票面标注的影子银行讲次即此）——它把本课的离岸挤兑放进「影子银行 vs 中央银行」的一般框架；第 12 讲「Lender/Dealer of Last Resort」是互换线机制的微观版。Pozsar 等《Shadow Banking》（NY Fed SR458）是这两个讲次的高级配套（免费 PDF，已在课程资源库）。</div>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（本周内）</strong>：打开 <a href="https://www.federalreserve.gov/releases/h41/">最新一期 H.4.1</a>，找到互换（Major central bank liquidity swaps）与回购（Repurchase agreements）两行，记下当前读数——危机时你不需要现学这张表。</p>
+<p>（2）<strong>课后探索（可选）</strong>：读纽约联储 Liberty Street Economics《The Global Dash for Cash in March 2020》（免费博客）——本课 03 节的三条「学到的」在那里有完整的数据论证。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：任何「美元急涨+新兴市场货币普跌」的交易日，执行 05 节分诊三步并记一行结论进观察日志——日积月累你会拥有自己的美元荒案例库。</p>
+<p><strong>下一课 2006《解读一手文件》</strong>：P2 结业课——FOMC 声明+点阵图+记者会的增量提取、SEP 的扇形分布、公布前条件反应树，以及当期快照 #2。</p>
+
+<div class="ask-agent">我是你的教练。H.4.1 哪一行找不到、想用最新一期做一次「美元荒周检」演练、或者你写了分诊结论想对答案——直接回来找我，这是课程的一部分，不是打扰。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="2004-offshore-dollar-basis.html">← 第 2004 课</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <a href="../reference/0001-macro-dashboard.html">宏观仪表盘</a>
+    <a href="2006-reading-primary-documents.html">第 2006 课 →</a>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：Fed H.4.1 各期发布（一手数据）；Wang《Central Banking 101》ch8「Crisis Monetary Policy」（危机工具与设施存在效应）；纽约联储 Liberty Street Economics《The Global Dash for Cash in March 2020》；FRED SWPT/TREAST/DTWEXBGS/SOFR（真实数据）；Pozsar 等《Shadow Banking》（SR458，高级配套）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①Wang ch8——影子银行挤兑叙事、互换线「全球美元体系最后贷款人」判词、LIBOR-OIS 约 4%、2020-07-02 快照（设施存在效应）（01/02 节）；②Mehrling 第 21/12 讲（并行标注，Coursera 结构核验 2026-09-30）；③Liberty Street Economics《The Global Dash for Cash in March 2020》——2020 三周的跨市场叙事（03 节）。<strong>数据口径：</strong>H.4.1 周三快照（图 1：互换 0.06→206.1→348.5B，回购 242.4→441.9→352.4→263.1B，各期 2020-03-19/26 与 04-02 发布；互换峰值 448.9B=2020-05-27 当周）；持债三周 +817.8B（FRED TREAST）；总资产 4,311.9→5,811.6B；2008 互换峰值 583.1B（2008-12-17 当周）、TAF 峰值 493.1B（2009-03-11 当周）均 FRED SWPT/H.4.1；美元指数口径=DTWEXBGS（2008：85.9→103.6，+21%；2020：115.9→126.1，+9%）；FIMA 2020-03-31 设立、峰值用量约 $1.4B。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>
