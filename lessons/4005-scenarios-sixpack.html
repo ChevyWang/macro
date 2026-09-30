@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>4005 情景与六件套 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">第 4005 课</span>
+    <span>·</span>
+    <span>P4 跨资产传导 · M4.4 a</span>
+  </div>
+  <h1>情景与六件套</h1>
+  <p class="deck">P4 进入收口：把 4001–4004 装上的利率、汇率、商品读数，组装成<strong>可下注、可证伪、可复盘</strong>的情景框架。核心交付物是<strong>六件套（Scenario→What is priced→Catalyst→Payoff→Risk→Invalidation）</strong>与<strong>情景三件套硬化（概率区间+触发器+该情景动作）</strong>。三道主菜：①「经济预测 vs 交易观点」之分——市场已定价的才是你的对手；②EV（期望值）仓位数学——宏观输出概率×赔率，直接接你在 kbar 装好的仓位引擎（不重教 Kelly）；③fading 练习——解剖一份完整六件套范例，再补全一份被淡出的半成品。本课约 90–110 分钟（先猜 3 + 六节 65–80 + 训练场 15 + 小结 5）。前置要求：4001–4004 全部（输入行都在手上）。</p>
+</header>
+
+<aside class="callout"><b>本次核心动作</b>：把「观点」改写成「六件套」——<strong>每一格都在逼你回答一个交易问题：世界是什么样（Scenario）、价格已装了什么（Priced）、什么事件让它兑现（Catalyst）、兑现了赚多少（Payoff）、哪里会出错（Risk）、错了怎么知道（Invalidation）</strong>。不算数：只写故事不写概率区间的情景（那是小说）；护栏：<strong>概率用区间不用假精确点值；没有触发器与失效条款的情景不可复盘</strong>。</aside>
+
+<div class="lesson-map">
+  <div class="lm-title">本课地图</div>
+  <ol>
+    <li>开课先猜 <span class="t">≈3 min</span></li>
+    <li>六件套：结构与为什么是六件（含结构图） <span class="t">≈12 min</span></li>
+    <li>What is priced：两张事件图的预期差课（含两图） <span class="t">≈15 min</span></li>
+    <li>情景三件套硬化：概率区间+触发器+动作 <span class="t">≈15 min</span></li>
+    <li>EV 仓位数学：接 kbar 引擎（含数值例） <span class="t">≈18 min</span></li>
+    <li>统计的冷水：情景分析的三个常见误用 <span class="t">≈10 min</span></li>
+    <li>训练场（微重现 4004） <span class="t">≈15 min</span></li>
+    <li>小结与课外作业 <span class="t">≈5 min</span></li>
+  </ol>
+</div>
+
+<h2>开课先猜</h2>
+<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准「预测准=赚钱」与「情景=故事」两个直觉。</p>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 1：「我预测的准确率有七成，坚持照做组合就应该赚钱。」按期望值（EV）语言，这句话——",
+  "options": [
+    {"t": "正确，七成胜率很高了", "ok": false, "why": "胜率没有期望值信息：七成赚 1%、三成亏 10% 的策略，七成胜率照样稳定亏钱（EV=0.7×1−0.3×10=−2.3%）。Mauboussin《Probabilities and Payoffs》的整篇主题就是这句直觉的错误。"},
+    {"t": "不成立——EV=Σ(概率×损益)，胜率只是其中一个变量：赢时赚多少、输时亏多少至少同等重要；正 EV 的判断可以多数时候输钱，负 EV 的判断可以经常赢钱——所以决策质量要用 EV 与过程评价，不用单次结果评价", "ok": true, "why": "05 节给你完整的 EV 数学+Marks 的罐子赌例——这一题是全课的地基。"},
+    {"t": "只要加了止损就赚钱", "ok": false, "why": "止损改变的是损益分布的左尾（赔率项），不自动把负 EV 变正——分布改好了 EV 才可能转正，顺序不能反。"},
+    {"t": "宏观预测不可能七成准，所以问题不存在", "ok": false, "why": "恰好相反——正因宏观胜率有天花板（诚实条款），EV 框架才更要紧：你在低胜率世界里活下来靠的是赔率管理，不是幻想高胜率。"}
+  ]
+}
+</script>
+</preq-block>
+
+<preq-block>
+<script type="application/json">
+{
+  "q": "先猜 2：「情景分析就是把未来写三个故事：乐观、中性、悲观。」按本课的硬化标准，这个版本缺了——",
+  "options": [
+    {"t": "没缺，三个故事就是情景分析", "ok": false, "why": "三个故事没有概率区间就没有权重、没有触发器就无法跟踪、没有动作就不产生仓位变化——它们是叙事练习，不是决策工具。"},
+    {"t": "缺三件：每个情景的概率区间（50–60% 这种，不是点值）、触发器/signposts（哪些可观察读数告诉你哪个情景正在成真）、该情景下的动作（哪个清单行、哪个表达工具）——三件齐了情景才从小说变成仪器", "ok": true, "why": "04 节整节硬化这三件。卖方展望的 base/bull/bear 三情景惯例是行业外壳，本课装的是它的可执行内核。"},
+    {"t": "缺置信度标注", "ok": false, "why": "概率区间本身就是置信度的表达——又标概率又标置信度是重复计量，真正的缺口在触发器与动作。"},
+    {"t": "缺时间表", "ok": false, "why": "时间表是可选项不是必需件（很多宏观情景给「未来 6–12 个月」即可）；缺触发器才是致命的——没有它你永远不知道该在哪个早晨切换情景。"}
+  ]
+}
+</script>
+</preq-block>
+
+<h2><span class="no">01</span>六件套：结构与为什么是六件 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">六件套是课程的原创组装（业界情景工作流的个人交易者压缩版），每一格对应一个独立的失败模式——缺哪格，就在哪格死：</p>
+
+<figure>
+<svg viewBox="0 0 720 330" role="img" aria-label="六件套结构图" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<defs><marker id="ar5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#1c1c1a"/></marker></defs>
+<text x="40" y="26" font-size="11.5" font-weight="700" fill="#1c1c1a">六件套：每一格堵一种死法</text>
+<rect x="40" y="44" width="196" height="58" rx="6" fill="#fff" stroke="#1c1c1a" stroke-width="1.4"/>
+<text x="52" y="64" font-size="11" font-weight="700" fill="#1c1c1a">① Scenario 情景</text>
+<text x="52" y="80" font-size="9.5" fill="#6e6c64">世界接下来是什么状态</text>
+<text x="52" y="93" font-size="9.5" fill="#d33a2c">缺它→没有观点只有赌单</text>
+<rect x="262" y="44" width="196" height="58" rx="6" fill="#fff" stroke="#1c1c1a" stroke-width="1.4"/>
+<text x="274" y="64" font-size="11" font-weight="700" fill="#1c1c1a">② What is priced 已定价</text>
+<text x="274" y="80" font-size="9.5" fill="#6e6c64">价格里已装了什么预期</text>
+<text x="274" y="93" font-size="9.5" fill="#d33a2c">缺它→对了也不赚钱</text>
+<rect x="484" y="44" width="196" height="58" rx="6" fill="#fff" stroke="#1c1c1a" stroke-width="1.4"/>
+<text x="496" y="64" font-size="11" font-weight="700" fill="#1c1c1a">③ Catalyst 催化剂</text>
+<text x="496" y="80" font-size="9.5" fill="#6e6c64">什么事件/读数让它兑现</text>
+<text x="496" y="93" font-size="9.5" fill="#d33a2c">缺它→永远「早晚会涨」</text>
+<rect x="40" y="140" width="196" height="58" rx="6" fill="#fff" stroke="#1c1c1a" stroke-width="1.4"/>
+<text x="52" y="160" font-size="11" font-weight="700" fill="#1c1c1a">④ Payoff 兑现损益</text>
+<text x="52" y="176" font-size="9.5" fill="#6e6c64">该情景下表达工具的损益</text>
+<text x="52" y="189" font-size="9.5" fill="#d33a2c">缺它→赔率进不了 EV</text>
+<rect x="262" y="140" width="196" height="58" rx="6" fill="#fff" stroke="#1c1c1a" stroke-width="1.4"/>
+<text x="274" y="160" font-size="11" font-weight="700" fill="#1c1c1a">⑤ Risk 反向风险</text>
+<text x="274" y="176" font-size="9.5" fill="#6e6c64">这个判断最大的对家论点</text>
+<text x="274" y="189" font-size="9.5" fill="#d33a2c">缺它→赢了归因错误</text>
+<rect x="484" y="140" width="196" height="58" rx="6" fill="#fff" stroke="#1c1c1a" stroke-width="1.4"/>
+<text x="496" y="160" font-size="11" font-weight="700" fill="#1c1c1a">⑥ Invalidation 失效</text>
+<text x="496" y="176" font-size="9.5" fill="#6e6c64">什么读数出现=我错了</text>
+<text x="496" y="189" font-size="9.5" fill="#d33a2c">缺它→错了不知道下车</text>
+<line x1="236" y1="73" x2="258" y2="73" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#ar5)"/>
+<line x1="458" y1="73" x2="480" y2="73" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#ar5)"/>
+<path d="M 582,102 L 582,112 L 138,112 L 138,134" fill="none" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#ar5)"/>
+<line x1="236" y1="169" x2="258" y2="169" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#ar5)"/>
+<line x1="458" y1="169" x2="480" y2="169" stroke="#1c1c1a" stroke-width="1.2" marker-end="url(#ar5)"/>
+<text x="360" y="126" font-size="9" fill="#6e6c64">肘形回行线：③ 判断链收尾 → ④ 交易链开笔</text>
+<text x="40" y="232" font-size="10" fill="#1c1c1a">② 是全课的枢纽：情景分析的对象不是「未来」而是「未来与已定价预期之间的差」——1004/0004 的预期差主线在这里工具化</text>
+<text x="40" y="252" font-size="10" fill="#1c1c1a">⑥ 是存活关键：它把「我错了」从情绪事件变成读数事件（4006 的 premortem 节会把它制度化）</text>
+<text x="40" y="310" font-size="9.5" fill="#6e6c64">模板可打印版在参考页 0005《情景-资产矩阵卡》（随 4006 上线）</text>
+</svg>
+<figcaption><strong>六件套结构图（教学示意图，自绘）</strong>——六格的顺序就是填写的顺序。红字=缺该格的死法：这六种死法覆盖了宏观交易者的大部分常见亏损归因（决策日志 M6.3 打分时按格归因）。</figcaption>
+</figure>
+
+<h2><span class="no">02</span>What is priced：两张事件图的预期差课 <span class="time-chip">≈15 min</span></h2>
+<p class="lede">六件套的第二格是新手最容易空转的一格。两张真实事件图教同一课：<strong>价格对「事实」不反应，价格对「事实与已定价预期的差」反应</strong>。</p>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="2022-06 CPI 冲击日标普" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="233.8" x2="704" y2="233.8" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="237.3" text-anchor="end" font-size="10" fill="#6e6c64">3700</text><line x1="52" y1="157.5" x2="704" y2="157.5" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="161" text-anchor="end" font-size="10" fill="#6e6c64">3900</text><line x1="52" y1="81.2" x2="704" y2="81.2" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="84.7" text-anchor="end" font-size="10" fill="#6e6c64">4100</text><line x1="52" y1="4.9" x2="704" y2="4.9" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="8.4" text-anchor="end" font-size="10" fill="#6e6c64">4300</text><line x1="99.7" y1="272" x2="99.7" y2="276" stroke="#6e6c64"/><text x="99.7" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">05-23</text><line x1="226.9" y1="272" x2="226.9" y2="276" stroke="#6e6c64"/><text x="226.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">05-31</text><line x1="354.1" y1="272" x2="354.1" y2="276" stroke="#6e6c64"/><text x="354.1" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">06-08</text><line x1="481.4" y1="272" x2="481.4" y2="276" stroke="#6e6c64"/><text x="481.4" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">06-16</text><line x1="608.6" y1="272" x2="608.6" y2="276" stroke="#6e6c64"/><text x="608.6" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">06-24</text><line x1="704" y1="272" x2="704" y2="276" stroke="#6e6c64"/><text x="704" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">06-30</text><polyline points="52,157 99.7,129.4 115.6,141.7 131.5,127.5 147.4,97.3 163.3,59 226.9,69 242.8,80.8 258.7,51.9 274.6,78 322.3,73.1 338.2,58.1 354.1,75.2 370,112.6 386,157.2 433.7,214.9 449.6,220.3 465.5,199.5 481.4,246.5 497.3,243.4 560.9,209.1 576.8,211 592.7,197.3 608.6,153.1 656.3,157.5 672.2,187.5 688.1,188.5 704,201.3" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="386" cy="157.2" r="3" fill="#1c1c1a"/><text x="388" y="147.2"  font-size="10.5" fill="#1c1c1a">06-10 CPI 8.6% 超预期：−2.9%</text><circle cx="433.7" cy="214.9" r="3" fill="#1c1c1a"/><text x="423.7" y="216.9" text-anchor="end" font-size="10.5" fill="#1c1c1a">周一跟随 −3.9%</text><circle cx="704" cy="201.3" r="3" fill="#1c1c1a"/><text x="694" y="215.3" text-anchor="end" font-size="10.5" fill="#1c1c1a">6 月收官 3785</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">标普 500（日收盘）2022-05-20→06-30：一个「共识错了」的标准样本；来源 FRED SP500</text>
+</svg>
+<figcaption><strong>2022-06-10：共识错了的标准样本（标普 500，日收盘）</strong>：来源=FRED <a href="https://fred.stlouisfed.org/series/SP500">SP500</a>，施工自算。5 月 CPI 8.6% 公布——市场共识是「见顶回落、5 月同比应降」，读数不降反创本轮新高：<strong>预期差=读数−共识≈+0.4pp</strong>，当日标普 −2.9%，周一再 −3.9%。<strong>注意这课的教学点不是「CPI 高=跌」</strong>——2021 年 CPI 一路超预期时市场多次收涨（当时共识也没那么低）：<strong>跌幅的原料是差，不是水平</strong>。</figcaption>
+</figure>
+
+<figure>
+<svg viewBox="0 0 720 300" role="img" aria-label="2023-12 FOMC 日 2Y" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;background:#fff">
+<line x1="52" y1="244.4" x2="704" y2="244.4" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="247.9" text-anchor="end" font-size="10" fill="#6e6c64">4.3%</text><line x1="52" y1="189.3" x2="704" y2="189.3" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="192.8" text-anchor="end" font-size="10" fill="#6e6c64">4.5%</text><line x1="52" y1="134.2" x2="704" y2="134.2" stroke="#9a978e" stroke-width="1.4"/><text x="46" y="137.7" text-anchor="end" font-size="10" fill="#6e6c64">4.7%</text><line x1="52" y1="79.1" x2="704" y2="79.1" stroke="#e4e2d9" stroke-width="1"/><text x="46" y="82.6" text-anchor="end" font-size="10" fill="#6e6c64">4.9%</text><line x1="52" y1="272" x2="52" y2="276" stroke="#6e6c64"/><text x="52" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">11-15</text><line x1="229.8" y1="272" x2="229.8" y2="276" stroke="#6e6c64"/><text x="229.8" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">11-27</text><line x1="378" y1="272" x2="378" y2="276" stroke="#6e6c64"/><text x="378" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">12-07</text><line x1="466.9" y1="272" x2="466.9" y2="276" stroke="#6e6c64"/><text x="466.9" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">12-13</text><line x1="585.5" y1="272" x2="585.5" y2="276" stroke="#6e6c64"/><text x="585.5" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">12-21</text><line x1="704" y1="272" x2="704" y2="276" stroke="#6e6c64"/><text x="704" y="288" text-anchor="middle" font-size="10" fill="#6e6c64">12-29</text><polyline points="52,79.1 66.8,98.4 81.6,84.6 126.1,81.9 140.9,90.1 155.7,81.9 185.4,73.6 229.8,95.6 244.6,126 259.5,150.8 274.3,126 289.1,172.8 333.5,150.8 348.4,170 363.2,161.8 378,167.3 392.8,131.5 437.3,131.5 452.1,126 466.9,200.4 481.7,225.2 496.5,205.9 541,208.6 555.8,214.1 570.6,233.4 585.5,236.2 600.3,241.7 659.5,255.5 674.4,272 689.2,255.5 704,263.7" fill="none" stroke="#1c1c1a" stroke-width="1.8"/><circle cx="466.9" cy="200.4" r="3" fill="#1c1c1a"/><text x="456.9" y="188.4" text-anchor="end" font-size="10.5" fill="#1c1c1a">12-13 FOMC 日：4.73→4.46</text><circle cx="466.9" cy="200.4" r="3" fill="#1c1c1a"/><text x="456.9" y="202.4" text-anchor="end" font-size="10.5" fill="#1c1c1a">（−27bp，2008 以来最大单日）</text><text x="52" y="16" font-size="10.5" fill="#6e6c64">美债 2 年期收益率（日频）2023-11-15→12-29：点阵转向的市场投影；来源 FRED DGS2</text>
+</svg>
+<figcaption><strong>2023-12-13：点阵转向的市场投影（美债 2Y，日频）</strong>：来源=FRED <a href="https://fred.stlouisfed.org/series/DGS2">DGS2</a>，施工自算。FOMC 日 2Y 收盘 4.73→4.46（<strong>−27bp，2008 年以来最大单日</strong>，承 3006 核验）——点阵 2024 年底中值 4.6%（隐含三次降息）比市场已定价的更鸽。<strong>预期差=点阵−已定价≈−1 次降息</strong>，一日重定价完成。两图连读：前一张是「共识高估了自己」（差为正），后一张是「共识低估了央行转鸽」（差为负）——<strong>What is priced 这格的存在，就是逼你在下注前先写「市场现在的账本」</strong>。</figcaption>
+</figure>
+
+<div class="example">
+<p class="ex-title">「经济预测 vs 交易观点」：一格之差，生死之别</p>
+<p><strong>经济预测</strong>：「我认为 Fed 年内再加息一次后停止（概率 60%）」——这是对世界的判断，可以完全正确。<strong>交易观点</strong>：「市场已定价年内再加息约 72%（第三方 FedWatch 追踪，2026-09-27 口径）+2027 年不动；我认为 2027 会再紧——若对，曲线远端与成长股定价有修正空间」——这是对「我的判断 vs 市场账本」的差的判断。<strong>只有后者可交易</strong>。你的经济预测可以七成准而组合亏损——只要每次赢的时候市场早已定价更满（差=0）；也可以五成准而赚钱——每次赢在市场还没看到的地方（差最大）。<strong>把六件套第二格留白的单子，本质上是把「赚钱」寄希望于运气而不是预期差</strong>。</p>
+</div>
+
+<h2><span class="no">03</span>情景三件套硬化：概率区间+触发器+动作 <span class="time-chip">≈15 min</span></h2>
+<p class="lede">三件套给情景装上仪表与扳机。来历与做法：</p>
+<ul>
+  <li><strong>概率区间（不用点值）</strong>：「55%」是假精确——你根本区分不出 55 与 60 的差别（校准研究：人脑的概率分辨率远低于此）。写「50–60%」。区间的另一个用途：<strong>区间端点直接当 EV 敏感性分析的两个输入</strong>（05 节）。</li>
+  <li><strong>触发器（signposts/路标）</strong>：每个情景配 2–3 个<strong>可观察、免费、有发布日程</strong>的读数，告诉你哪个情景正在成真。传统出处：Shell 情景学派 Pierre Wack 区分「既定要素（predetermined elements）与关键不确定性」，其后的 Schwartz/GBN 一脉把「signposts」标准化为情景工作的固定动作（Wack 1985 HBR 两篇为原典）。个人版纪律：触发器必须是 3005 判读卡与仪表盘里已有的读数（如「盈亏平衡 10Y 破 2.6%」），<strong>新增监控项要过可执行三问</strong>。</li>
+  <li><strong>该情景动作</strong>：情景成真时你执行什么——从 4004 的通胀/通缩清单与参考页 0005 矩阵卡里取行。注意动作≠仓位指令：它写「清单行+表达工具+方向」，<strong>仓位大小走 EV 流程（05 节），Entry 与执行走你的 kbar 系统（铁律：宏观不负责 Entry）</strong>。</li>
+</ul>
+<table>
+  <thead><tr><th>三件套</th><th>合格标准</th><th>不合格样本</th></tr></thead>
+  <tbody>
+    <tr><td>概率区间</td><td>区间（50–60%）；端点供 EV 敏感性</td><td>「65%」点值（假精确）</td></tr>
+    <tr><td>触发器</td><td>免费源+发布日程+数字阈值</td><td>「若市场情绪转弱」（不可观察）</td></tr>
+    <tr><td>该情景动作</td><td>清单行+表达工具+方向（映射卡取行）</td><td>「逢低加仓」（无工具无边界）</td></tr>
+  </tbody>
+</table>
+<p>行业外壳对照：卖方年度展望的 base/bull/bear 三情景是这套东西的机构形态（EPS/PE 目标+概率权重）——读卖方报告时用三件套反查：<strong>它给了概率吗？给了触发器吗？动作与你有关吗？</strong>三问下来大部分报告只剩叙事价值（SOURCE TYPE 分级复习：hypothesis generator）。</p>
+
+<h2><span class="no">04</span>EV 仓位数学：接 kbar 引擎 <span class="time-chip">≈18 min</span></h2>
+<p class="lede">期望值（Expected Value，EV）=Σ（各情景概率×该情景下表达工具的损益）。Marks 的罐子赌例是最好的入门：「罐里 100 球，70 黑 30 白，对手给平赔率——每 $10 押黑，期望每 10 局赚 $40」（Marks《Mastering the Market Cycle》ch1）。优势=你知道概率（70/30）而对手给的赔率按 50/50 定——<strong>概率×赔率的错配就是全部优势来源</strong>。</p>
+
+<div class="example">
+<p class="ex-title">worked example：2026-09 当期的三情景 EV 表（示意参数，方法可复用）</p>
+<p>情景设定（霍尔木兹线，概率区间取中值）：①<strong>僵持延续</strong>（50–60%，取 55%）：油价 85–100 震荡、Fed 年内再加一次、通胀缓降；②<strong>重开</strong>（20–30%，取 25%）：油价回 65–75、加息预期消退、风险资产普涨；③<strong>升级</strong>（15–25%，取 20%）：油价 130+、盈亏平衡补涨、政策被迫更紧、股债双杀。设表达工具=组合中的「能源+短久期」倾斜仓，三情景损益（示意，用你自己的工具重算）：僵持 +5%、重开 −8%、升级 +25%。<strong>EV=0.55×5+0.25×(−8)+0.20×25=+5.75%</strong>。区间敏感性：用概率端点重算（僵持 50%/重开 25%/升级 25%）→ EV=0.50×5+0.25×(−8)+0.25×25=+6.75%；另一端（僵持 60%/重开 30%/升级 10%）→ EV=+3.1%。<strong>EV 区间 +3.1%～+6.75% 全为正 → 这个倾斜仓在概率假设的合理摆动下都成立</strong>；若某个端点翻负，那个端点对应的风险就是 ⑤Risk 栏的内容。最后一步（不重教）：把 EV 区间与你的止损结构交给 kbar 的仓位引擎——赔率=损益比已经算出，宏观课到此交棒。</p>
+</div>
+
+<p>两个纪律：①<strong>EV 为正≠一定赚</strong>——它是分布的中心，不是结果的保证（Mauboussin：正 EV 的决策可以多数时候输钱；评价决策用 EV 与过程，评价自己用决策日志——这是 M6.3 打分课的伏笔）；②<strong>概率主观没关系，但要可复盘</strong>——写下的概率区间在决策日志里留底，到期对答案（Brier 分），校准误差大就修概率生成器（过度自信/过度悲观都是可修的）。</p>
+
+<h2><span class="no">05</span>统计的冷水：情景分析的三个常见误用 <span class="time-chip">≈10 min</span></h2>
+<p class="lede">方法越好用，滥用越隐蔽。三个最常见的误用（每个都在训练场有一题）：</p>
+<ul>
+  <li><strong>情景当预测卖</strong>：把「基准情景 55%」讲成「我认为会这样」——55% 意味着 45% 的世界里你不算对。<strong>情景分析的产出是「三套准备」不是「一个预言」</strong>（4006 第一节整节讲这个：情景≠预测）。</li>
+  <li><strong>概率假精确</strong>：「明年衰退概率 37%」——没人有这个分辨率。写区间，用端点做敏感性。假精确的概率还有一个隐藏危害：它假装客观，实为主观估计穿了白大褂。</li>
+  <li><strong>触发器不可观察</strong>：「若市场情绪转弱则切换情景」——什么是情绪转弱？谁在几点发布？<strong>不可观察的触发器=没有触发器</strong>（它把情景切换的决定权交给了你事后的自我叙事）。验收标准：触发器必须有发布源、有日程、有数字。</li>
+</ul>
+
+<h2><span class="no">06</span>训练场（微重现 4004） <span class="time-chip">≈15 min</span></h2>
+<p class="lede">五道题：第 1 题微重现上一课（4004），第 2–5 题本课内容。</p>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 1 题【微重现·上一课】：4004 给 2026 年的油行情定了「S 维地缘主驱动+增长未断」的双标签。把它写进六件套第②格（What is priced）时，最应该写的是——",
+  "options": [
+    {"t": "油价会涨到 120", "ok": false, "why": "这是预测不是定价——第②格写的是「价格已装了什么」，不是「我认为价格会去哪」。"},
+    {"t": "市场已定价：年内再加息约 72%（FedWatch 口径）+盈亏平衡只 2.35（年内仅 +10bp）——即市场把战争油冲击定价成「央行压得住、通胀不脱锚」；你的判断若不同（如升级情景下盈亏平衡必须补涨），差就在这", "ok": true, "why": "微重现·上一课+本课枢纽格：4004 的「央行信誉改写教科书」观察翻译成第②格语言=「通胀预期不脱锚」已是已定价内容，你的可交易空间只在「它会不会脱锚」的差上。"},
+    {"t": "战争很危险", "ok": false, "why": "定性感叹不是账本——第②格的验收标准是能被「差」检验的具体读数（利率路径定价、盈亏平衡水平）。"},
+    {"t": "OPEC+ 在增产", "ok": false, "why": "这是第①格（情景内容）或触发器候选，不是第②格（市场已定价什么）。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 2 题：2022-06-10 标普 −2.9%、2021 年 CPI 多次超预期时市场却常收涨。两组事实合起来证明的是——",
+  "options": [
+    {"t": "2022 年市场变聪明了", "ok": false, "why": "叙事化解释——变化的不是聪明程度，是共识与读数之间的差。"},
+    {"t": "价格反应的原料是「读数−共识」的差而非读数水平：2021 共识本来就低（暂时性叙事下市场预期宽松延续），超预期不构成大跌；2022-06 共识是「见顶回落」，读数创高构成大差——第②格若不写清当时共识的位置，单看 CPI 水平永远解释不了哪天大跌", "ok": true, "why": "02 节第一张图的教学点。判分点：差 vs 水平+共识位置的决定性。"},
+    {"t": "CPI 数据不可信", "ok": false, "why": "数据质量与本课无关——两组事实里 CPI 口径一致，变量是市场预期不是数据。"},
+    {"t": "股市与 CPI 无关", "ok": false, "why": "从单日相关跳到结构无关——2022-06-10 恰恰证明了关系存在，只是经由预期差传导。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 3 题：以下哪个触发器是合格的（三件套标准）？",
+  "options": [
+    {"t": "「若市场情绪转弱」", "ok": false, "why": "不可观察——谁发布？几点？什么数字？情绪类触发器把切换权交给事后叙事（05 节第三个误用）。"},
+    {"t": "「盈亏平衡 10Y（T10YIE，FRED 日更）收盘破 2.60% 连续三日——升级情景的定价模式切换信号」", "ok": true, "why": "三要素齐：免费源+发布日程+数字阈值。且它监控的正是第②格里「已定价不脱锚」的那一项——触发器必须从已定价内容里长出来。"},
+    {"t": "「若美联储犯错」", "ok": false, "why": "不可观察+不可证伪——「犯错」的判定权在你手里，等于没有触发器。"},
+    {"t": "「若油价再涨 20 美元」", "ok": false, "why": "方向对（有数字）但缺发布源与频率的显式约定，且没说「涨到之后切换到哪个情景的哪个动作」——半成品触发器。相比之下 B 选项格式完整。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 4 题：EV 表算出 +3.1%～+6.75% 区间全正。正确的下一步是——",
+  "options": [
+    {"t": "满仓上，EV 为正必赚", "ok": false, "why": "EV 是分布中心不是保证——升级情景 −8% 那条腿还在（若你选的是能源倾斜仓则升级+25%——但任何工具都有亏损腿）。仓位大小与「必赚」无关。"},
+    {"t": "把 EV 区间+损益结构交给 kbar 仓位引擎定大小（赔率已算出），同时把 ⑤Risk 写上「重开情景 −8% 是最大回撤腿」、⑥Invalidation 写「海峡重开官宣+油价跌破 75」——然后照常执行与记录", "ok": true, "why": "全链路动作：EV→仓位（交棒）→风险登记→失效条款→决策日志留底。宏观的终点是「可复盘的输入」，不是「仓位指令」。"},
+    {"t": "EV 太低，加杠杆到 20%", "ok": false, "why": "杠杆改变的是损益分布的尺度（EV 与回撤同乘），不改变优势本身——且仓位上限是风险预算层的事，不是 EV 层的事。"},
+    {"t": "等概率更确定再算一次", "ok": false, "why": "概率的主观性不因等待消失——区间+敏感性就是对付主观性的工具，等待只是把决策拖延包装成严谨。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<quiz-block>
+<script type="application/json">
+{
+  "q": "第 5 题（误用判别题）：某研报写着「基准情景（概率 65%）：经济软着陆，标普年底 8000」。按本课标准，这句的问题数是——",
+  "options": [
+    {"t": "0 个，很规范", "ok": false, "why": "数一数：概率假精确（65% 点值）+情景当预测卖（标普 8000 的点值目标）+无触发器+无已定价对照——四个问题至少中了三个。"},
+    {"t": "至少三个：概率假精确（65% 点值，应写区间）；情景当预测卖（点值目标 8000 等于把 65% 讲成确定性）；缺已定价对照（8000 与现价 7671 隐含 +4.3%——这算的是总回报还是预期差？市场已定价多少没写）", "ok": true, "why": "05 节三个误用一次中仨。读卖方报告的解毒剂=三件套反查（03 节末）。"},
+    {"t": "一个问题：不该给指数目标", "ok": false, "why": "给目标本身不是问题（Payoff 格就需要损益估计）——问题在没写概率区间、没写已定价内容、没写触发器。"},
+    {"t": "无法判断，要看报告全文", "ok": false, "why": "就这句话本身已可判——三个误用都写在这一句里，不需要上下文。"}
+  ]
+}
+</script>
+</quiz-block>
+
+<div class="note">训练场判分（五题对照）：全对——M4.4 a 课内证据到手，隔天重练仍达标进入 4006（P4 结业）；错 1 题——回对应节（第 1 题→4004 课 03 节+本课 02 节；第 2 题→02 节；第 3 题→03 节；第 4 题→04 节；第 5 题→05 节）隔天重练；错 ≥2 题——本课回炉：把 04 节 worked example 用自己的工具与概率重算一遍，三个数字（EV 上下界+最大回撤腿）写进决策日志。</div>
+
+<recall-block>
+<script type="application/json">
+{
+  "q": "动笔题【fading·补全半成品】：下面是一份六件套，其中⑥Invalidation 栏被淡出。你的任务：①补全⑥栏（至少两条，每条=读数+阈值+发布源）；②检查其余五格各找一处可以更硬的地方（概率改区间/触发器加数字/Payoff 拆腿）；③用你修正后的概率算一次 EV 区间。半成品：【①情景】霍尔木兹僵持延续至年末（概率 55%）；【②已定价】年内再加息约 72%、盈亏平衡 2.35；【③催化剂】10-27/28 或 12-08/09 FOMC 的一次加息落地+海峡月度航运数据；【④Payoff】能源倾斜仓 +5%（示意）；【⑤Risk】升级情景下政策两难导致股债双杀殃及组合其他腿；【⑥Invalidation】＿＿＿。",
+  "hint": "⑥栏从②格里长：已定价的内容里哪一项被证伪，说明「僵持延续」的账本错了？参考触发器格式：读数（源/频率）+阈值+含义。",
+  "a": "自查标准：⑥至少两条且全部可观察（如「T10YIE 收盘破 2.60% 连续三日=市场开始定价通胀脱锚，僵持账本失效」「WTI 跌破 75 且海峡重开官宣=主驱动消失」）；②至少指出概率点值改区间与盈亏平衡缺状态（如「已定价」应写成「重开概率隐含多少」）；③EV 区间两端都算出且符号一致或解释分歧。三步齐=fading 完成（M4.4 a 工件）——4006 将在它上面加「情景→仓位映射」的最后一层。"
+}
+</script>
+</recall-block>
+
+<h2><span class="no">07</span>小结与课外作业 <span class="time-chip">≈5 min</span></h2>
+
+<p><strong>本课带走四样东西：</strong></p>
+<ul class="checklist">
+  <li><strong>六件套</strong>——Scenario/Priced/Catalyst/Payoff/Risk/Invalidation，六格六种死法的补丁</li>
+  <li><strong>预期差交易观</strong>——经济预测 vs 交易观点一格之别；价格反应的原料是差不是水平（两张事件图为证）</li>
+  <li><strong>三件套硬化</strong>——概率区间（不假精确）+可观察触发器（signposts 传统）+条件动作（清单行不是仓位指令）</li>
+  <li><strong>EV 仓位数学</strong>——Σ(概率×损益)+区间敏感性；交棒 kbar 引擎；正 EV≠必赚，决策日志留底</li>
+</ul>
+
+<p><strong>课外作业：</strong></p>
+<p>（1）<strong>必做（下节课前）</strong>：完成 fading 补全题——4006 会把你的答案当直接输入。</p>
+<p>（2）<strong>课后探索（可选）</strong>：找一份最近的大行年度展望，用 03 节末的「三问反查」读一遍——数一数它中几个误用。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：决策日志新增行从今天起用六件套格式写（参考页 0006 模板升级位）——M6.3 打分时你会感谢现在的自己。</p>
+<p><strong>下一课 4006《情景→仓位映射》</strong>：P4 结业课——跨资产映射表覆盖四层状态维、「情景≠预测」30 分钟节（Shell 传统）、premortem 标准作业，以及当期快照 #4。</p>
+
+<div class="ask-agent">我是你的教练。fading 题交我批——⑥栏的「可观察性」是唯一判分红线（写「市场情绪」的一律打回）；如果你想让 EV 表更贴近你的真实持仓，把工具与止损结构带来，我们重算一遍损益腿——那是这课最值得的一对一时间。</div>
+
+<footer class="course">
+  <div class="nav">
+    <a href="4004-commodities-inflation-chain.html">← 第 4004 课</a>
+    <a href="../reference/0002-glossary.html">术语手册</a>
+    <span>下一课 4006 · 待建</span>
+  </div>
+  <p><strong>主资源（本课 grounded on）</strong>：FRED SP500/DGS2（两张事件图施工自算）；Mauboussin &amp; Callahan《Probabilities and Payoffs》（Credit Suisse Global Financial Strategies 2013，现由 Morgan Stanley 托管）+Mauboussin《The Success Equation》（2012，决策×结果四象限）；Marks《Mastering the Market Cycle》ch1（罐子赌例与「周期位置改变赔率」）；Wack（1985）HBR 两篇（情景传统原典）；CME FedWatch 间接读数（第三方追踪口径）。</p>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①Mauboussin《Probabilities and Payoffs》（2013）——EV=Σ(概率×损益)、以 EV 而非胜率/最可能结果评价决策；②Mauboussin《The Success Equation》ch 后记——好决策×坏结果=坏运气（决策与结果分离的四个象限，05 节与 M6.3 打分课的公理）；③Marks ch1——罐子赌例（70/30 平赔率每 10 局期望 $40）、「odds change as our position in the cycles changes」（04 节开场）；④Wack "Scenarios: Uncharted Waters Ahead"+"Scenarios: Shooting the Rapids"（HBR 1985 9–10/11–12 月号）——既定要素与关键不确定性的区分；signposts 术语在 Schwartz《The Art of the Long View》（1991）/GBN 一脉定型（03 节出处注）。
+<strong>数据口径：</strong>2022-06-10 标普 −2.91%（4017.82→3900.86，FRED 日收盘施工自算）；06-13 −3.88%；2023-12-13 DGS2 4.73→4.46（−27bp，2008 年以来最大单日，承 3006 核验）；「5 月 CPI 8.6% 共识为见顶回落」=当时公开共识记录（施工核验档案）；FedWatch 间接读数=第三方追踪（GrowBeanSprout，2026-09-27：年内再加息概率 ≈72.3%，官方工具 JS 渲染不可静态引用，课堂使用标注「需现场查 CME FedWatch」）；FOMC 2026 年内剩余会议=10-27/28、12-08/09（Fed 官方日历）。worked example 的情景概率（55/25/20）与损益（+5/−8/+25%）为教学示意参数——方法可复用，数字以你自己的判读卡与工具重算为准。</div>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>

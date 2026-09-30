@@ -14,7 +14,7 @@
     <span class="chip">宏观训练营</span>
     <span class="num">参考页 0002</span>
     <span>·</span>
-    <span>v1.5 收录 0001–3006</span>
+    <span>v1.6 收录 0001–4006</span>
     <span>·</span>
     <span>滚动增补</span>
   </div>
@@ -301,7 +301,92 @@
   </tbody>
 </table>
 
-<div class="note">滚动制说明：下一批并入=波次 5（P4 跨资产术语）。发现课内术语在本页缺失，回来告诉教练，随波次补录。</div>
+<h2><span class="no">§32</span>第 4001 课 · 贴现率与久期</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>DV01</td><td>dollar value of an &#39;01</td><td>利率动 1bp 债券价格动多少美元——组合层直接相加，机构对冲用（Tuckman 4e ch4）</td><td><a href="../lessons/4001-discount-rate-duration.html">4001</a></td></tr>
+    <tr><td>凸性</td><td>convexity</td><td>价格-利率曲线的二阶弯曲：正凸性永远站在持有人一边（涨多跌少），大幅变动时久期线性近似失效</td><td><a href="../lessons/4001-discount-rate-duration.html">4001</a></td></tr>
+    <tr><td>久期换算器</td><td>duration translator</td><td>ΔP/P≈−D·Δy 的日常用法：每读到一个利率变动先乘久期再谈影响——bp 的「汇率」</td><td><a href="../lessons/4001-discount-rate-duration.html">4001</a></td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§33</span>第 4002 课 · 实际利率与风险资产</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>价格三因子原理</td><td>price = forecast + risk premium + technicals</td><td>任何价差/收益率拆成：预期项（可证伪）+风险补偿（持有风险的报酬）+技术因素（暂时扭曲）</td><td><a href="../lessons/4002-real-rates-risk-assets.html">4002</a></td></tr>
+    <tr><td>机会成本渠道</td><td>opportunity cost channel</td><td>实际利率对零现金流资产（金/BTC）的主传导：实际利率越高，持有不生息资产的代价越大</td><td><a href="../lessons/4002-real-rates-risk-assets.html">4002</a></td></tr>
+    <tr><td>边际买家结构</td><td>marginal buyer structure</td><td>相关性背后的「谁在定价」——买家结构漂移（如央行购金）会让历史相关性失效</td><td><a href="../lessons/4002-real-rates-risk-assets.html">4002</a></td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§34</span>第 4003 课 · 汇率与利差</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>购买力平价</td><td>purchasing power parity（PPP）</td><td>长期锚：物价差=汇率差——短期不成立（非贸易品/异质/壁垒三因），只做粗定位不做时间表</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>利率平价</td><td>interest rate parity（IRP）</td><td>抛补版近乎铁律：利差=远期升贴水（套利维护）；无抛补版（UIP）实证长期失效=carry 收益来源</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>UIP 之谜</td><td>forward premium puzzle</td><td>高息货币平均不贬反升（Fama 1984）——carry 收益=对崩塌尾部的保险费，不是免费午餐</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>三元悖论</td><td>impossible trinity</td><td>固定汇率+资本自由流动+独立货币政策三者取二——香港选前二（HIBOR 跟随美联储）</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>融资货币</td><td>funding currency</td><td>carry 盘借入的低息货币（日元=套息本位）——它急升=全球套息盘强制平仓日</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>联系汇率制</td><td>linked exchange rate system</td><td>港币 7.75–7.85 兑换保证带盯美元——带内位置本身是资金流方向标</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>结售汇数据</td><td>FX settlement data</td><td>SAFE 月度银行代客结售汇差额——人民币「实需盘」的免费官方读数器（语境认知层）</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§35</span>第 4004 课 · 商品与通胀链</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>GSCPI</td><td>Global Supply Chain Pressure Index</td><td>NY Fed 月度供给压力指数（27 变量 PCA 合成，标准差计）——S 维的读数器，峰 4.43σ（2021-12）</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
+    <tr><td>S 维供给冲击</td><td>supply-side shock</td><td>供给收缩驱动的商品上行（战争/制裁/断供）——资产答案与需求拉动型相反（滞胀形态）</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
+    <tr><td>角色卡</td><td>commodity role card</td><td>油（需求+供给双面）/铜（制造业同步器）/金（实际利率对冲）的解读框架——先归因再谈资产</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
+    <tr><td>通胀/通缩交易清单</td><td>inflation vs deflation playbook</td><td>按主导维（I/S vs 需求失速）启用的表达工具族——每行带失效条件，条件化的清单不是菜单</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§36</span>第 4005 课 · 情景与六件套</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>六件套</td><td>six-pack</td><td>Scenario→What is priced→Catalyst→Payoff→Risk→Invalidation——每格堵一种死法的情景格式</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>已定价</td><td>what is priced</td><td>价格里已装的市场预期——可交易的是「你的判断与它的差」，不是判断本身</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>催化剂</td><td>catalyst</td><td>让预期差兑现的事件/读数——必须有日程，「早晚会涨」不算催化剂</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>失效条款</td><td>invalidation</td><td>「什么读数出现=我错了」的事前约定——把认错从情绪事件变成读数事件</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>情景三件套</td><td>scenario triad</td><td>概率区间（禁点值）+可观察触发器+该情景动作——情景从小说变仪器的三件硬化</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>触发器 / 路标</td><td>trigger / signposts</td><td>每个情景配 2–3 个可观察读数（免费源+日程+阈值）——Shell 传统直系后代</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>期望值</td><td>expected value（EV）</td><td>Σ(各情景概率×损益)——决策质量用 EV 与过程评价，不用胜率或单次结果（Mauboussin）</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>经济预测 vs 交易观点</td><td>forecast vs trade view</td><td>前者是「世界会怎样」，后者是「我的判断 vs 市场账本的差」——只有后者可交易</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§37</span>第 4006 课 · 情景→仓位映射</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>事前验尸</td><td>premortem</td><td>假设「已经失败」回写死因再翻译成读数条款——群体思维与乐观偏误的解药（Klein 2007；Kahneman &amp; Klein 2009）</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
+    <tr><td>情景≠预测</td><td>scenarios are not forecasts</td><td>预测要「对」，情景要「有用」——有用=能改变你今天的仓位结构（Wack 的 re-perceiving 本意）</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
+    <tr><td>七维映射表</td><td>seven-dimension asset map</td><td>G/I/S/C/L/M/P 七状态维×资产受益/受损的查表器——各行带失效条件，打架时裁决权在情景</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
+    <tr><td>漏斗四步</td><td>the funnel</td><td>判读→情景→EV→仓位——正向决策每步衰减一种噪声，反向复盘每层归因一种错误</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
+    <tr><td>三情景同源化</td><td>scenario monoculture</td><td>三个情景只差一个参数（同参数三档）——不是三个未来，是一个未来的三种涂装</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
+  </tbody>
+</table>
+
+<div class="note">滚动制说明：下一批并入=波次 6（P5 案例与机构术语）。发现课内术语在本页缺失，回来告诉教练，随波次补录。</div>
+
 
 <div class="ask-agent">哪个定义看不懂、或你发现同一术语在课里有第二种用法——回来问我，术语漂移是课程要修的 bug。</div>
 
