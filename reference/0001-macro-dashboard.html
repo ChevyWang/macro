@@ -53,31 +53,31 @@
 <h2><span class="no">§2</span>美国核心指标</h2>
 <table>
   <thead>
-    <tr><th>指标</th><th>频率</th><th>性质</th><th>免费出处</th><th>为什么重要</th><th>若失效（备选）</th></tr>
+    <tr><th>指标</th><th>频率 · 性质</th><th>免费出处</th><th>为什么重要</th><th>若失效（备选）</th></tr>
   </thead>
   <tbody>
-    <tr><td>初次申请失业金</td><td>每周四</td><td>领先</td><td><a href="https://fred.stlouisfed.org/series/ICSA">FRED: ICSA</a></td><td>频率最高的实时劳动市场读数，衰退预警系统的高频探头</td><td>DOL 新闻稿（dol.gov，原发布口径）</td></tr>
-    <tr><td>非农就业报告</td><td>每月首个周五</td><td>同步（滞后修订大）</td><td><a href="https://www.bls.gov/ces/">BLS</a></td><td>每月波动之王；失业率与工资增速同场发布，增长与通胀一次看全</td><td>FRED: PAYEMS/UNRATE（同源序列）</td></tr>
-    <tr><td>CPI / 核心 PCE</td><td>每月</td><td>滞后（通胀本身滞后于需求）</td><td><a href="https://fred.stlouisfed.org/series/CPIAUCSL">FRED: CPI</a> / <a href="https://fred.stlouisfed.org/series/PCEPILFE">PCEPILFE</a></td><td>美联储双目标之一；核心 PCE 是联储官方通胀标尺</td><td>BLS CPI 新闻稿 / BEA 个人收支新闻稿（原发布口径）</td></tr>
-    <tr><td>ISM 制造业 PMI</td><td>每月首个工作日</td><td>领先</td><td><a href="https://www.ismworld.org/">ISM 官网</a></td><td>新订单分项是经典领先指标；荣枯线 50 是全球最著名的整数</td><td>S&amp;P Global 美国 PMI（同题异源，早几日发布）</td></tr>
-    <tr><td>ISM 服务业 PMI</td><td>每月第三个工作日</td><td>领先</td><td><a href="https://www.ismworld.org/">ISM 官网</a></td><td>服务业占美国经济约八成——制造业 PMI 之外的另一半景气读数；商业活动与新订单分项优先读，与制造业版分读再合成（口径相近但问卷不同，别裸比水平值）</td><td>S&amp;P Global 美国服务业 PMI（同题异源，早几日发布）</td></tr>
-    <tr><td>Sahm 衰退指标</td><td>随失业率</td><td>同步确认</td><td><a href="https://fred.stlouisfed.org/series/SAHMREALTIME">FRED: SAHMREALTIME</a></td><td>三个月均值较前低点上行 0.5 个百分点=衰退历史上均已确认；实时序列防修订作弊。样本外更新：2024-07 实时序列已触发（0.53）而衰退未至——读作分布的尾巴，不作择时（<a href="../lessons/3003-recession-signals.html">3003 课</a>）</td><td>FRED: SAHM（非实时版，口径自标）</td></tr>
-    <tr><td>FOMC 利率决议+SEP 点阵图</td><td>每年 8 次（SEP 季度）</td><td>政策一手源</td><td><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Fed 官网</a></td><td>声明、纪要、点阵图、记者会四件套是政策预期差的全部原料</td><td>纽约联储会议材料页 / 记者会实录（同官方）</td></tr>
+    <tr><td>初次申请失业金</td><td>每周四 · 领先</td><td><a href="https://fred.stlouisfed.org/series/ICSA">FRED: ICSA</a></td><td>频率最高的实时劳动市场读数，衰退预警系统的高频探头</td><td>DOL 新闻稿（dol.gov，原发布口径）</td></tr>
+    <tr><td>非农就业报告</td><td>每月首个周五 · 同步（滞后修订大）</td><td><a href="https://www.bls.gov/ces/">BLS</a></td><td>每月波动之王；失业率与工资增速同场发布，增长与通胀一次看全</td><td>FRED: PAYEMS/UNRATE（同源序列）</td></tr>
+    <tr><td>CPI / 核心 PCE</td><td>每月 · 滞后（通胀本身滞后于需求）</td><td><a href="https://fred.stlouisfed.org/series/CPIAUCSL">FRED: CPI</a> / <a href="https://fred.stlouisfed.org/series/PCEPILFE">PCEPILFE</a></td><td>美联储双目标之一；核心 PCE 是联储官方通胀标尺</td><td>BLS CPI 新闻稿 / BEA 个人收支新闻稿（原发布口径）</td></tr>
+    <tr><td>ISM 制造业 PMI</td><td>每月首个工作日 · 领先</td><td><a href="https://www.ismworld.org/">ISM 官网</a></td><td>新订单分项是经典领先指标；荣枯线 50 是全球最著名的整数</td><td>S&amp;P Global 美国 PMI（同题异源，早几日发布）</td></tr>
+    <tr><td>ISM 服务业 PMI</td><td>每月第三个工作日 · 领先</td><td><a href="https://www.ismworld.org/">ISM 官网</a></td><td>服务业占美国经济约八成——制造业 PMI 之外的另一半景气读数；商业活动与新订单分项优先读，与制造业版分读再合成（口径相近但问卷不同，别裸比水平值）</td><td>S&amp;P Global 美国服务业 PMI（同题异源，早几日发布）</td></tr>
+    <tr><td>Sahm 衰退指标</td><td>随失业率 · 同步确认</td><td><a href="https://fred.stlouisfed.org/series/SAHMREALTIME">FRED: SAHMREALTIME</a></td><td>三个月均值较前低点上行 0.5 个百分点=衰退历史上均已确认；实时序列防修订作弊。样本外更新：2024-07 实时序列已触发（0.53）而衰退未至——读作分布的尾巴，不作择时（<a href="../lessons/3003-recession-signals.html">3003 课</a>）</td><td>FRED: SAHM（非实时版，口径自标）</td></tr>
+    <tr><td>FOMC 利率决议+SEP 点阵图</td><td>每年 8 次（SEP 季度） · 政策一手源</td><td><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Fed 官网</a></td><td>声明、纪要、点阵图、记者会四件套是政策预期差的全部原料</td><td>纽约联储会议材料页 / 记者会实录（同官方）</td></tr>
   </tbody>
 </table>
 
 <h2><span class="no">§3</span>中国核心指标</h2>
 <table>
   <thead>
-    <tr><th>指标</th><th>频率</th><th>性质</th><th>免费出处</th><th>为什么重要</th><th>若失效（备选）</th></tr>
+    <tr><th>指标</th><th>频率 · 性质</th><th>免费出处</th><th>为什么重要</th><th>若失效（备选）</th></tr>
   </thead>
   <tbody>
-    <tr><td>社融存量同比 / 新增社融</td><td>每月 10–15 日</td><td>领先（信用脉冲）</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>中国版「信用周期总闸门」，A股与商品的最强宏观领先变量之一</td><td>中国货币网（央行数据镜像/转载）</td></tr>
-    <tr><td>M1 同比</td><td>每月</td><td>领先</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>企业活期存款，资金活化程度；<strong>口径断点</strong>：2024-12-02 公告修订、自 2025 年 1 月数据起纳入个人活期存款与支付机构备付金（央行已回溯可比序列），新旧序列严禁裸拼</td><td>同上（断点纪律见 <a href="../lessons/1003-china-data-system.html">1003 课</a>）</td></tr>
-    <tr><td>官方制造业 PMI</td><td>每月末</td><td>领先</td><td><a href="https://www.stats.gov.cn/">国家统计局</a></td><td>环比性质，季节调整争议大——看方向与连续性，别抠小数点</td><td>财新制造业 PMI（同题异源，月初发布）</td></tr>
-    <tr><td>CPI / PPI</td><td>每月 9 日左右</td><td>滞后</td><td><a href="https://www.stats.gov.cn/">国家统计局</a></td><td>PPI 对工业企业利润与周期股是核心映射</td><td>统计局新闻稿 PDF（发布页直挂，不受网页改版影响）</td></tr>
-    <tr><td>7 天逆回购利率 / LPR</td><td>OMO 不定期；LPR 每月 20 日</td><td>政策</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>当前中国政策利率主锚（7 天 OMO）与贷款定价基准（LPR）</td><td>中国货币网（LPR 官方报价方，20 日 09:15）</td></tr>
-    <tr><td>《货币政策执行报告》</td><td>季度</td><td>政策一手源</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>每季一篇专栏是中文宏观圈的必读原文，措辞变化就是信号</td><td>央行调查统计司数据页 / 权威媒体全文转载</td></tr>
+    <tr><td>社融存量同比 / 新增社融</td><td>每月 10–15 日 · 领先（信用脉冲）</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>中国版「信用周期总闸门」，A 股与商品的最强宏观领先变量之一</td><td>中国货币网（央行数据镜像/转载）</td></tr>
+    <tr><td>M1 同比</td><td>每月 · 领先</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>企业活期存款，资金活化程度；<strong>口径断点</strong>：2024-12-02 公告修订、自 2025 年 1 月数据起纳入个人活期存款与支付机构备付金（央行已回溯可比序列），新旧序列严禁裸拼</td><td>同上（断点纪律见 <a href="../lessons/1003-china-data-system.html">1003 课</a>）</td></tr>
+    <tr><td>官方制造业 PMI</td><td>每月末 · 领先</td><td><a href="https://www.stats.gov.cn/">国家统计局</a></td><td>环比性质，季节调整争议大——看方向与连续性，别抠小数点</td><td>财新制造业 PMI（同题异源，月初发布）</td></tr>
+    <tr><td>CPI / PPI</td><td>每月 9 日左右 · 滞后</td><td><a href="https://www.stats.gov.cn/">国家统计局</a></td><td>PPI 对工业企业利润与周期股是核心映射</td><td>统计局新闻稿 PDF（发布页直挂，不受网页改版影响）</td></tr>
+    <tr><td>7 天逆回购利率 / LPR</td><td>OMO 不定期；LPR 每月 20 日 · 政策</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>当前中国政策利率主锚（7 天 OMO）与贷款定价基准（LPR）</td><td>中国货币网（LPR 官方报价方，20 日 09:15）</td></tr>
+    <tr><td>《货币政策执行报告》</td><td>季度 · 政策一手源</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>每季一篇专栏是中文宏观圈的必读原文，措辞变化就是信号</td><td>央行调查统计司数据页 / 权威媒体全文转载</td></tr>
   </tbody>
 </table>
 
@@ -156,7 +156,7 @@
     <tr><td>通胀</td><td>核心 CPI/PCE 3 个月年化、Dallas Fed Trimmed Mean PCE、Cleveland Fed Median CPI、Atlanta Fed 工资追踪器、盈亏平衡通胀、通胀互换</td><td>广度确认（Breadth）：headline 降但 trimmed/工资/远期盈亏平衡升=只是表象；分项看商品/住房/核心服务</td></tr>
     <tr><td>信用</td><td>HY/IG OAS、CDX、SLOOS（贷款标准与贷款需求分开读）、违约率</td><td>机构最重视、散户最容易漏的一维</td></tr>
     <tr><td>流动性</td><td>H.4.1 分项（准备金/TGA/RRP）、SOFR、NFCI 综合读数</td><td>理解管道，不迷信「Fed 表-TGA-RRP=流动性」的万能公式</td></tr>
-    <tr><td>仓位/定价（P 维，P1 引入）</td><td>CME FedWatch 概率变化、COT 持仓（percentile/z-score/4 周变化/拥挤度）</td><td>FedWatch 看的是 90%→65%→35% 的重定价过程；COT 注意周二持仓周五发布的时滞与换月处理</td></tr>
+    <tr><td>仓位/定价（P 维）</td><td>CME FedWatch 概率变化、COT 持仓（percentile/z-score/4 周变化/拥挤度）</td><td>FedWatch 看的是 90%→65%→35% 的重定价过程；COT 注意周二持仓周五发布的时滞与换月处理（本维 P1 起引入）</td></tr>
   </tbody>
 </table>
 
@@ -177,14 +177,14 @@
 <p><strong>进阶版（机构形态，仅作认知）</strong>：下表带 composite 读数与广度百分比的形态，是机构做法——个人手算容易变成伪精确，看懂机构在做什么即可，不启用：</p>
 <table>
   <thead>
-    <tr><th>维度</th><th>读数</th><th>1M Δ</th><th>3M Δ</th><th>广度</th><th>状态</th></tr>
+    <tr><th>维度</th><th>读数</th><th>Δ 1M / 3M</th><th>广度</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>Growth</td><td class="num">+0.4</td><td>↑</td><td>↑</td><td class="num">67%</td><td>加速</td></tr>
-    <tr><td>Inflation</td><td class="num">+0.8</td><td>↓</td><td>→</td><td class="num">42%</td><td>降温</td></tr>
-    <tr><td>Liquidity</td><td class="num">+0.3</td><td>↑</td><td>↑</td><td class="num">65%</td><td>转松</td></tr>
-    <tr><td>Credit</td><td class="num">+0.7</td><td>→</td><td>↑</td><td class="num">72%</td><td>健康</td></tr>
-    <tr><td>Risk</td><td class="num">+1.1</td><td>↑</td><td>↑</td><td class="num">80%</td><td>Risk-on</td></tr>
+    <tr><td>Growth</td><td class="num">+0.4</td><td>↑ / ↑</td><td class="num">67%</td><td>加速</td></tr>
+    <tr><td>Inflation</td><td class="num">+0.8</td><td>↓ / →</td><td class="num">42%</td><td>降温</td></tr>
+    <tr><td>Liquidity</td><td class="num">+0.3</td><td>↑ / ↑</td><td class="num">65%</td><td>转松</td></tr>
+    <tr><td>Credit</td><td class="num">+0.7</td><td>→ / ↑</td><td class="num">72%</td><td>健康</td></tr>
+    <tr><td>Risk</td><td class="num">+1.1</td><td>↑ / ↑</td><td class="num">80%</td><td>Risk-on</td></tr>
   </tbody>
 </table>
 <p>两版的状态结论都 = 方向 × 广度 × 持续性 × 跨资产确认，输出「Growth↑ / Inflation↓ / Liquidity↑ / Credit 健康」这样的描述，而不是「复苏中期」这样的单标签。表内数字为格式示例，非真实读数。</p>
@@ -201,9 +201,9 @@
     <tr><td>CDX 信用违约互换</td><td>不跟。用 HYG/JNK ETF 价格位置（200 日线上下）做信用利差代理</td><td>每周一次</td><td>任意行情软件</td></tr>
     <tr><td>HY/IG OAS 利差</td><td>FRED 折线看方向即可（BAMLH0A0HYM2），不建利差模型</td><td>每周一次</td><td>FRED</td></tr>
     <tr><td>SLOOS 银行调查</td><td>季度读报告里「净收紧比例」那一句，记箭头</td><td>每季一次</td><td>Fed 官网 PDF</td></tr>
-    <tr><td>Trimmed Mean PCE / Median CPI</td><td>看官方月度数字与近三月方向</td><td>每月一次</td><td>Dallas Fed / Cleveland Fed 图表页</td></tr>
+    <tr><td>Trimmed Mean PCE<br>/ Median CPI</td><td>看官方月度数字与近三月方向</td><td>每月一次</td><td>Dallas Fed / Cleveland Fed 图表页</td></tr>
     <tr><td>Atlanta 工资追踪器</td><td>看月度数字与 stayer/switcher 拆分方向</td><td>每月一次</td><td>Atlanta Fed 图表页</td></tr>
-    <tr><td>COT 持仓 percentile/z-score</td><td>不手算。用 CFTC 官网或免费 COT 可视化站看「是否数年极端」，配合价格背离</td><td>每周五收盘后</td><td>CFTC 官网 + 免费可视化站</td></tr>
+    <tr><td>COT 持仓<br>percentile/z-score</td><td>不手算。用 CFTC 官网或免费 COT 可视化站看「是否数年极端」，配合价格背离</td><td>每周五收盘后</td><td>CFTC 官网 + 免费可视化站</td></tr>
     <tr><td>GDPNow</td><td>只看相邻两次修正的方向序列（上修/下修动能），不追单点数值</td><td>发布日扫一眼</td><td>Atlanta Fed 官网</td></tr>
     <tr><td>JPM Guide to the Markets</td><td>每季下载 PDF，对照自己 regime 表逐图打勾</td><td>每季一次</td><td>JPM AM 官网免费 PDF</td></tr>
   </tbody>
@@ -212,7 +212,7 @@
 <div class="stop">可执行性门禁：任何指标进入你的仪表盘前先过三问——① 免费源个人拿得到吗？② 每周总时间预算（30–60 分钟）装得下吗？③ 它的输出会直接改变你的仓位/风控/标的吗？三问过两问才收，只过一问的只作语境认知。仪表盘总量 ≤40 个变量，但个人交易者的甜点区在 20–30 个。</div>
 
 <h3>盘前五分钟清单</h3>
-<p>US 2Y、US 10Y、实际利率、DXY、日元、港汇、黄金、油、铜、CNH、中国 10Y、ES、NQ、HSI、VIX、信用利差——P0 精简版=前 6 读数（US 2Y、US 10Y、实际利率、DXY、日元、港汇）即可运转，其余随课程进度逐个点亮——然后四问：什么变了？为什么变？哪个 regime 因子在驱动？市场确认了吗？不是每天重新研究世界经济。P4 起追加两行：<strong>BTC</strong>（日度，4007 课三 regime 判读）与<strong>等权指数 RSP</strong>（与加权对照——33.9% 集中度时代「加权指数涨≠市场涨」，两条线都要看）；<strong>稳定币总市值</strong>周更一次即可（DefiLlama，离岸美元潮汐行）。</p>
+<p>US 2Y、US 10Y、实际利率、DXY、日元、港汇、黄金、油、铜、CNH、中国 10Y、ES、NQ、HSI、VIX、信用利差——P0 精简版=前 6 读数（US 2Y、US 10Y、实际利率、DXY、日元、港汇）即可运转，其余随课程进度逐个点亮——然后四问：什么变了？为什么变？哪个 regime 因子在驱动？市场确认了吗？不是每天重新研究世界经济。P4 起追加两行：<strong>BTC</strong>（日度，4007 课三 regime 判读）与等权指数 RSP（与加权对照——33.9% 集中度时代「加权指数涨≠市场涨」，两条线都要看）；稳定币总市值周更一次即可（DefiLlama，离岸美元潮汐行）。</p>
 
 <div class="stop">分工铁律：月/周——宏观 regime 定风险偏好；周/日——行业与相对强弱定标的；日/1H——价格行为定入场。「CPI 降了→今天买半导体」不是宏观交易，是把宏观当信号发生器——本课程不教这个。</div>
 

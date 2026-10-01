@@ -38,7 +38,7 @@
 </div>
 
 <h2>开课先猜</h2>
-<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准最流行的一条口诀与一个分类幻觉。</p>
+<p class="lede">两道题凭直觉选，不计分。瞄准最流行的一条口诀与一个分类幻觉。</p>
 
 <preq-block>
 <script type="application/json">
@@ -88,32 +88,44 @@
 <div class="note"><b>中国镜像</b>：判读卡的中国版——框架不变、轴与读数换：G 维=工业增加值同比+官方 PMI（三确认=生产+利润+社融，1003）；I 维=核心 CPI（中国低通胀语境，别套美国的 2.5% 阈值）；C 维的双读现成——<strong>BIS 中国缺口 −5.1pp（2026Q1，自 2021Q4 谷 −14.7 回升）给位置、社融存量同比 7.2%（2026-08，自 9.0 回落）给方向</strong>：一行判读「中：C 修复期但动能 ↓」。免费源：BIS/人民银行/统计局。中美的 regime 经常不同步——这正是 WP864「国别金融周期可以长期独立演化」的日常形态（3002 04 节），判读卡两国各写各的，别用一张卡套两国。</div>
 
 <h2><span class="no">02</span>条件分布纪律：为什么口诀被禁 <span class="time-chip">≈13 min</span></h2>
-<p class="lede">现在演示禁口诀的原因。两张<strong>施工自算、你可用同样免费数据复算</strong>的表：</p>
+<p class="lede">现在演示禁口诀的原因。两张<em>施工自算、你可用同样免费数据复算</em>的表：</p>
 
 <div class="example">
 <p class="ex-title">例 1：P(12 个月内进入衰退 | 曲线状态)——条件概率的正确形态</p>
 <table>
-  <thead><tr><th>条件（月度观测，1976-07–2025-08）</th><th class="num">n（月）</th><th class="num">P(12 个月内进入衰退)</th></tr></thead>
+  <thead><tr><th>条件</th><th class="num">n（月）</th><th class="num">P(12 个月内进入衰退)</th></tr></thead>
   <tbody>
     <tr><td>当月 10Y−2Y 月均 <strong>倒挂</strong></td><td class="num">99</td><td class="num">39%</td></tr>
     <tr><td>当月 <strong>未倒挂</strong>（基准）</td><td class="num">491</td><td class="num">7%</td></tr>
   </tbody>
 </table>
-<p>注意这是「月度观测」口径：倒挂月里每个月都有 39% 的概率「未来 12 个月内衰退开始」（事件=NBER 衰退起点落入未来 12 个月，不含当月）——不是「倒挂后衰退概率 39% 一次性」。同一种信号，口径不同数字完全不同：把事件放宽为「未来 12 个月内处于衰退中任一月份」，同一数据得 51% vs 15%。<strong>报条件概率必须报 n 与事件口径</strong>——这就是纪律的形状。再把误差棒加上：<strong>39%（n=99）的二项 95% 置信区间约 ±10pp</strong>——29% 到 49% 都是它的身位，个位数精度是频率表给不了的。</p>
+<p>注意这是「月度观测」口径（观测窗 1976-07–2025-08）：倒挂月里每个月都有 39% 的概率「未来 12 个月内衰退开始」（事件=NBER 衰退起点落入未来 12 个月，不含当月）——不是「倒挂后衰退概率 39% 一次性」。同一种信号，口径不同数字完全不同：把事件放宽为「未来 12 个月内处于衰退中任一月份」，同一数据得 51% vs 15%。<strong>报条件概率必须报 n 与事件口径</strong>——这就是纪律的形状。再把误差棒加上：<strong>39%（n=99）的二项 95% 置信区间约 ±10pp</strong>——29% 到 49% 都是它的身位，个位数精度是频率表给不了的。</p>
 </div>
 
 <div class="example">
 <p class="ex-title">例 2：美股 12 个月远期回报按象限——口诀是怎么在样本里翻面的</p>
 <table>
-  <thead><tr><th>象限（G/I 阈值：IP 同比 0%/核心 CPI 2.5%）</th><th class="num">n（月）</th><th class="num">中位回报</th><th class="num">胜率</th><th class="num">最差</th><th class="num">最好</th><th class="num">起点估值*</th><th class="num">回撤中位*</th></tr></thead>
+  <thead><tr><th>象限（含 n）</th><th class="num">中位回报</th><th class="num">胜率</th><th class="num">最差</th><th class="num">最好</th></tr></thead>
   <tbody>
-    <tr><td>G↑ I↑（过热）</td><td class="num">31</td><td class="num">+11.1%</td><td class="num">61%</td><td class="num">−19.4%</td><td class="num">+29.4%</td><td class="num">−2.1%</td><td class="num">−13.2%</td></tr>
-    <tr><td>G↑ I↓（金发女郎）</td><td class="num">26</td><td class="num">+9.6%</td><td class="num">88%</td><td class="num">−8.8%</td><td class="num">+28.9%</td><td class="num">−2.7%</td><td class="num">−14.0%</td></tr>
-    <tr><td>G↓ I↑（滞胀）</td><td class="num">22</td><td class="num">+20.6%</td><td class="num">100%</td><td class="num">+6.8%</td><td class="num">+36.0%</td><td class="num">0.0%</td><td class="num">−7.8%</td></tr>
-    <tr><td>G↓ I↓（收缩）</td><td class="num">29</td><td class="num">+20.4%</td><td class="num">97%</td><td class="num">−1.1%</td><td class="num">+53.7%</td><td class="num">−0.1%</td><td class="num">−8.2%</td></tr>
+    <tr><td>G↑ I↑（过热，n=31）</td><td class="num">+11.1%</td><td class="num">61%</td><td class="num">−19.4%</td><td class="num">+29.4%</td></tr>
+    <tr><td>G↑ I↓（金发女郎，n=26）</td><td class="num">+9.6%</td><td class="num">88%</td><td class="num">−8.8%</td><td class="num">+28.9%</td></tr>
+    <tr><td>G↓ I↑（滞胀，n=22）</td><td class="num">+20.6%</td><td class="num">100%</td><td class="num">+6.8%</td><td class="num">+36.0%</td></tr>
+    <tr><td>G↓ I↓（收缩，n=29）</td><td class="num">+20.4%</td><td class="num">97%</td><td class="num">−1.1%</td><td class="num">+53.7%</td></tr>
   </tbody>
 </table>
-<p>（2016-01–2025-08，标普 500 月末→12 个月远期，FRED SP500 自算。<strong>口径注</strong>：窗口共 116 个起始月，其中 2016-01–2016-08 共 8 个月因 FRED SP500 只有十年滚动窗、无价数据而排除——该 8 个月恰全为收缩象限，故四象限合计 n=108、收缩象限 29 而非 37。<strong>*两列协变量的口径</strong>：起点估值=起点月末收盘相对此前 12 个月月末高点（「距前 52 周高点%」，0%=正在高点）；回撤中位=自起点月起 12 个月窗口内、相对窗口内运行前高的最大跌幅中位；两列子样本自 2017-08 起（52 周回看需价格史，n=97：31/21/22/23）。）<strong>看清楚了：滞胀象限中位回报最高、胜率 100%</strong>——如果只看这张表你会得出「增长差=买点」的<strong>反口诀</strong>。真相：这十年的 G↓ 月几乎全是 2018Q4/2020/2022 的深回调之后（一次长牛+三次 V 型），「G↓」标签实际标记的是「刚跌完」。<strong>两颗新增的协变量列把这句话变成可见数字</strong>：G↓ 两象限的后 12 个月回撤中位只有 −7.8%/−8.2%，而 G↑ 两象限是 −13.2%/−14.0%——「滞胀 100% 胜率」的可见协变量不是「起点便宜」（中位起点距 52 周高点≈0，反弹已过半场——想读「坑底低估值买点」假设的人，中位证据不支持，2022-12 那样的坑底起点是少数），而是<strong>「跌已在标签亮起前发生」</strong>：IP 同比是滞后标签，等它转负，V 型的左半场已经走完。<strong>同一象限，换一个十年，分布完全不同</strong>——这就是为什么必须报样本量与窗口，为什么任何「象限 X=资产 Y 涨」都必须带着它的分布与来历。</p>
+<p>象限阈值：IP 同比 0%／核心 CPI 2.5%（同键两张表——上表报回报分布，下表报两列协变量*，象限同序对照读）。</p>
+<table>
+  <thead><tr><th>象限</th><th class="num">起点估值*</th><th class="num">回撤中位*</th></tr></thead>
+  <tbody>
+    <tr><td>G↑ I↑（过热）</td><td class="num">−2.1%</td><td class="num">−13.2%</td></tr>
+    <tr><td>G↑ I↓（金发女郎）</td><td class="num">−2.7%</td><td class="num">−14.0%</td></tr>
+    <tr><td>G↓ I↑（滞胀）</td><td class="num">0.0%</td><td class="num">−7.8%</td></tr>
+    <tr><td>G↓ I↓（收缩）</td><td class="num">−0.1%</td><td class="num">−8.2%</td></tr>
+  </tbody>
+</table>
+<p>（2016-01–2025-08，标普 500 月末→12 个月远期，FRED SP500 自算。<strong>口径注</strong>：窗口共 116 个起始月，其中 2016-01–2016-08 共 8 个月因 FRED SP500 只有十年滚动窗、无价数据而排除——该 8 个月恰全为收缩象限，故四象限合计 n=108、收缩象限 29 而非 37。<strong>*两列协变量的口径</strong>：起点估值=起点月末收盘相对此前 12 个月月末高点（「距前 52 周高点%」，0%=正在高点）；回撤中位=自起点月起 12 个月窗口内、相对窗口内运行前高的最大跌幅中位；两列子样本自 2017-08 起（52 周回看需价格史，n=97：31/21/22/23）。）<strong>看清楚了：滞胀象限中位回报最高、胜率 100%</strong>——如果只看这张表你会得出「增长差=买点」的<strong>反口诀</strong>。真相：这十年的 G↓ 月几乎全是 2018Q4/2020/2022 的深回调之后（一次长牛+三次 V 型），「G↓」标签实际标记的是「刚跌完」。</p>
+<p><strong>两颗新增的协变量列把这句话变成可见数字</strong>：G↓ 两象限的后 12 个月回撤中位只有 −7.8%/−8.2%，而 G↑ 两象限是 −13.2%/−14.0%——「滞胀 100% 胜率」的可见协变量不是「起点便宜」（中位起点距 52 周高点≈0，反弹已过半场——想读「坑底低估值买点」假设的人，中位证据不支持，2022-12 那样的坑底起点是少数），而是<strong>「跌已在标签亮起前发生」</strong>：IP 同比是滞后标签，等它转负，V 型的左半场已经走完。</p>
+<p><strong>同一象限，换一个十年，分布完全不同</strong>——这就是为什么必须报样本量与窗口，为什么任何「象限 X=资产 Y 涨」都必须带着它的分布与来历。</p>
 
 <recalc-block>
 <script type="application/json">
@@ -173,7 +185,7 @@
 <div class="note">历史锚：2023-12 软着陆叙事的确认链=通胀连降 6 个月（方向+持续性）+增长读数未崩（广度）+信用利差回落+股市宽度扩张（跨资产）——四要素齐了叙事才成立。反面例子：2021 年「通胀是暂时的」叙事在广度上就输了（核心/中位/截尾通胀全面升温）——单一叙事打不过全面读数。</div>
 
 <h2><span class="no">04</span>好通胀与坏通胀 <span class="time-chip">≈6 min</span></h2>
-<p class="lede">同为「通胀上行意外」，市场反应可以相反——区分标准是<strong>来源</strong>：</p>
+<p class="lede">同为「通胀上行意外」，市场反应可以相反——区分标准是来源：</p>
 <table>
   <thead><tr><th></th><th>好通胀（需求/增长驱动）</th><th>坏通胀（成本/供给推动）</th></tr></thead>
   <tbody>
@@ -183,7 +195,7 @@
   <tr><td>典型市场反应</td><td>股票可承受甚至上涨（2021 上半年的大部分时段）</td><td>股债双杀（2022、1970s）</td></tr>
   </tbody>
 </table>
-<p>判别读数（个人免费版）：通胀意外时问三个问题——<strong>量在哪</strong>（需求分项还是供给分项在涨）、<strong>利润率</strong>（企业财报毛利率方向）、<strong>央行的措辞</strong>（把通胀当「过热」还是「外部冲击」处理）。加上 2008 课的 Kroner 教训：市场对同一通胀数字的反应还取决于<strong>注意力权重</strong>——2021 年市场学会忽视通胀用了半年，2022 年重新重视只用了两个月。</p>
+<p>判别读数（个人免费版）：通胀意外时问三个问题——量在哪（需求分项还是供给分项在涨）、利润率（企业财报毛利率方向）、央行的措辞（把通胀当「过热」还是「外部冲击」处理）。加上 2008 课的 Kroner 教训：市场对同一通胀数字的反应还取决于<strong>注意力权重</strong>——2021 年市场学会忽视通胀用了半年，2022 年重新重视只用了两个月。</p>
 
 <h2><span class="no">05</span>regime 判读卡与边界反证 <span class="time-chip">≈6 min</span></h2>
 <table>
@@ -313,7 +325,7 @@
 </ul>
 
 <p><strong>课外作业：</strong></p>
-<p>（1）<strong>必做（本课核心阅读）</strong>：AQR《Economic Trend》（Brooks et al.，2023 白皮书——官网免费 PDF）：只读 Exhibit 1（符号表）与结论节（约 8 页），带着「哪些是符号、哪些是分布」的问题读；The Macro Compass 之类 newsletter 的象限文章读一篇（<strong>作 Narrative 层对照样本</strong>——数一数它给了几次分布、几次口诀）。</p>
+<p>（1）<strong>必做（本课核心阅读）</strong>：AQR《Economic Trend》（Brooks et al.，2023 白皮书——官网免费 PDF）：只读 Exhibit 1（符号表）与结论节（约 8 页），带着「哪些是符号、哪些是分布」的问题读；The Macro Compass 之类 newsletter 的象限文章读一篇（<em>作 Narrative 层对照样本</em>——数一数它给了几次分布、几次口诀）。</p>
 <p>（2）<strong>课后探索（可选）</strong>：用 FRED 的 SP500+CPILFESL+INDPRO 复算一遍例 2 的表（换你自己的窗口，比如 2006–2015）——亲手看一次口诀翻面，比读十遍纪律管用。</p>
 <p>（3）<strong>日常习惯（永久生效）</strong>：每月末 30 分钟重写判读卡（存同一个月度文件，只增不改）；每季度把它与 3004 检查单、0001 仪表盘并读一次——三件套互检，这就是 M0.4 例行的完全体。</p>
 <p><strong>下一课 3006《完整周期复盘 2020–23》</strong>：P3 结业——把六段拐点逐段重走一遍（当时可知什么/实际发生什么/如果当时有决策单你会怎么写），并用当期快照 #3 把你这一年的仪器全部通电。</p>

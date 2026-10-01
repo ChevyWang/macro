@@ -38,7 +38,7 @@
 </div>
 
 <h2>开课先猜</h2>
-<p class="lede">两道题凭直觉选，<strong>不计分</strong>。瞄准「把衍生品概率当真相、把仓位当预测」两个直觉。</p>
+<p class="lede">两道题凭直觉选，不计分。瞄准「把衍生品概率当真相、把仓位当预测」两个直觉。</p>
 
 <preq-block>
 <script type="application/json">
@@ -80,7 +80,7 @@
 
 <h2><span class="no">02</span>FedWatch：隐含概率、期望 bp 与三个坑 <span class="time-chip">≈12 min</span></h2>
 <p class="lede"><a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME FedWatch</a> 是 P0 以来我们反复引用的工具——现在拆开它。原理：联邦基金期货的价格锁定市场对未来会议后平均政策利率的定价；FedWatch 把价格换算成「各加息/降息幅度的概率分布」。</p>
-<p><strong>正确用法</strong>：①它是你「预期差」计算的参照系——公布值/事件落地后与事前概率对照（0005 事件层军规的量化版）；②看<strong>概率的移动</strong>而非水平（90%→65%→35% 的重定价过程是行情本身，参考页 0001 §8）；③跨会议连读，拼出整条政策路径预期（与 1004 的曲线互为印证——曲线是连续版，FedWatch 是离散事件版）。</p>
+<p><strong>正确用法</strong>：①它是你「预期差」计算的参照系——公布值/事件落地后与事前概率对照（0005 事件层军规的量化版）；②看概率的移动而非水平（90%→65%→35% 的重定价过程是行情本身，参考页 0001 §8）；③跨会议连读，拼出整条政策路径预期（与 1004 的曲线互为印证——曲线是连续版，FedWatch 是离散事件版）。</p>
 <p><strong>三个坑</strong>：①概率由价格反推，价格里含期限溢价与技术因素（交割月流动性、仓位挤压）——「95% 的概率」可能有一部分是溢价不是信念；②分布按目标区间中值离散化，25bp 一档的格子会平滑掉真实的尾部；③它是快照——事件日前的最后概率不等于「市场曾经想过什么」，重定价路径（周线级的概率摆动）才是完整故事。</p>
 
 <div class="example">
@@ -119,11 +119,11 @@
 <figcaption><strong>美国 10 年期国债期货非商业（投机）净持仓，2024-09 至 2026-09-22（周频，千份合约）</strong>：CFTC 官方 Socrata 数据（市场名「UST 10Y NOTE」）自行计算（非商业多单−空单）。看点：两年全程净空，最深 2024-10 的 −114.4 万手，2026-03 收窄到 −53.5 万手，当前 −81.2 万手——<strong>投机资金系统性押注/对冲长端利率上行（或做空债券）</strong>，且空仓再度加码。读法（先猜 2）：这不是「利率必然上行」的信号，是「若利多债券的数据落地，轧空燃料充足」的拥挤度读数——与 1004 的曲线状态（熊陡后）拼在一起，仓位结构是波动率的前置条件。</figcaption>
 </chart-block>
 
-<p><strong>读 COT 的三道处理工序</strong>（不处理就用的原始数字没有意义）：①<strong>时滞</strong>——周二采集、周五 15:30 ET 发布（官方原文），你的读数永远滞后市场三天，周内行情已经把变化计价；②<strong>换月</strong>——期货到期移仓时，仓位在合约间腾挪，单合约读数会假跳变，用<strong>全合约汇总口径</strong>（如本图 all contracts）；③<strong>季节性</strong>——部分品种持仓有固定季节模式（农产品最重），跨年比较先做季节调整。三道工序之后，「percentile/z-score」才有意义（1002 分位纪律的 COT 版：报分位必报窗口与处理方式）。</p>
+<p><strong>读 COT 的三道处理工序</strong>（不处理就用的原始数字没有意义）：①时滞——周二采集、周五 15:30 ET 发布（官方原文），你的读数永远滞后市场三天，周内行情已经把变化计价；②换月——期货到期移仓时，仓位在合约间腾挪，单合约读数会假跳变，用全合约汇总口径（如本图 all contracts）；③季节性——部分品种持仓有固定季节模式（农产品最重），跨年比较先做季节调整。三道工序之后，「percentile/z-score」才有意义（1002 分位纪律的 COT 版：报分位必报窗口与处理方式）。</p>
 
 <h2><span class="no">05</span>SME 与 SOURCE TYPE 总复习 <span class="time-chip">≈7 min</span></h2>
 <p class="lede">第三类证据是「问出来的共识」。纽约联储 <a href="https://www.newyorkfed.org/markets/market-intelligence/survey-of-market-expectations">Survey of Market Expectations（SME）</a>——官方页原文：「Starting in 2025, the two surveys were merged into the Survey of Market Expectations」（前身为 2002–2024 的 Survey of Primary Dealers 与 2014–2024 的 Survey of Market Participants）。它向一级交易商与买方机构问卷（FOMC 会前约两周发卷、纪要发布约三周后公布），产出专业者对政策路径与关键变量的中值与分布。</p>
-<p>用法定位：SME=「离联储最近的专业人群」的预期——2024-09 案例里「分析师共识 25bp」的那一层的机构版。它比 FedWatch 慢一个月，但给出<strong>分布与理由</strong>（价格给不出理由）。共识的正确用途不是预测（共识的预测准确率平庸是常态），而是：<strong>市场意外的度量衡</strong>——没有共识值，你就无法定义「超预期」。</p>
+<p>用法定位：SME=「离联储最近的专业人群」的预期——2024-09 案例里「分析师共识 25bp」的那一层的机构版。它比 FedWatch 慢一个月，但给出分布与理由（价格给不出理由）。共识的正确用途不是预测（共识的预测准确率平庸是常态），而是：<strong>市场意外的度量衡</strong>——没有共识值，你就无法定义「超预期」。</p>
 
 <table>
   <thead>
@@ -138,7 +138,7 @@
 <div class="note">铁句复习（参考页 0001 军规的同源版）：<strong>数字 ≠ 数据 ≠ 模型 ≠ 市场预期 ≠ 事实</strong>。本课三类证据分别站在「预期」「主体」「仓位」三个楼层——把三层读数混在一句「市场认为」里，是研报最常见的 sloppy 写法。</div>
 
 <h2><span class="no">06</span>训练场 <span class="time-chip">≈17 min</span></h2>
-<p class="lede">检索练习：先不看上文凭记忆作答。第 1 题微重现上一课（1005），第 4 题看图。目标：<strong>隔天回来再练还能对</strong>。</p>
+<p class="lede">检索练习：先不看上文凭记忆作答。第 1 题微重现上一课（1005），第 4 题看图。目标：隔天回来再练还能对。</p>
 
 <quiz-block>
 <script type="application/json">
@@ -250,7 +250,7 @@
 <p>（1）<strong>阅读任务（必做）</strong>：CFTC <a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm">COT 报告说明页</a>（时滞与分类官方表述）；NY Fed <a href="https://www.newyorkfed.org/markets/market-intelligence/survey-of-market-expectations">SME 页面</a>（合并沿革与问卷流程）。</p>
 <p>（2）<strong>课后探索（可选）</strong>：在 CFTC <a href="https://publicreporting.cftc.gov/resource/6dca-aqww.json?$limit=5&$order=report_date_as_yyyy_mm_dd%20DESC&$select=contract_market_name,report_date_as_yyyy_mm_dd,noncomm_positions_long_all,noncomm_positions_short_all&$where=contract_market_name=%27UST%2010Y%20NOTE%27">公开 API</a> 里亲手拉一次最新 10Y 持仓（浏览器直接打开就是 JSON）——复算本课的净持仓数字。</p>
 <p>（3）<strong>日常习惯（永久生效）</strong>：每月 FOMC 前一周把「三合一套问卡」写进观察日志（今天动笔题的格式）——它是决策日志的第二类条目（第一类是 1007 的三句话快照）。</p>
-<p><strong>下一课 1007《一页纸快照+Point-in-Time》</strong>：P1 结业课——把 P1 全部读数技能收拢成一张三句话快照，加上宏观版的「未来函数」禁令（vintage/Point-in-Time），并正式启动你的<strong>决策日志</strong>（伴随到毕业的仪器）。</p>
+<p><strong>下一课 1007《一页纸快照+Point-in-Time》</strong>：P1 结业课——把 P1 全部读数技能收拢成一张三句话快照，加上宏观版的「未来函数」禁令（vintage/Point-in-Time），并正式启动你的决策日志（伴随到毕业的仪器）。</p>
 
 <div class="ask-agent">我是你的教练。三合一套问卡写完想让我批一张、COT 某个品种的读数想讨论、或想把 2024-09 案例再走一遍变式——直接回来问我，这是课程的一部分，不是打扰。</div>
 

@@ -87,7 +87,7 @@
 </div>
 
 <h2><span class="no">02</span>Point-in-Time：修订文化与未来函数禁令 <span class="time-chip">≈14 min</span></h2>
-<p class="lede">1001 讲过修订三档（CPI 终值制/非农两月+基准/GDP 三轮+年度）。现在看修订的<strong>量级</strong>能大到什么程度——这是 Point-in-Time 纪律存在的理由：</p>
+<p class="lede">1001 讲过修订三档（CPI 终值制/非农两月+基准/GDP 三轮+年度）。现在看修订的量级能大到什么程度——这是 Point-in-Time 纪律存在的理由：</p>
 
 <chart-block>
 <script type="application/json">{"type":"bar","width":720,"note":"实际 GDP 季度环比折年率：首估 vs 现行值（同季两读）","bar":{"orient":"v","yDomain":[-9,1.5],"ticks":[-8,-6,-4,-2,0],"fmt":"pct","legend":[["advance 首估","#6e6c64"],["现行值（历次修订后）","#1c1c1a"]],"groups":[{"label":"2008Q3","sub":"2008-10-30 发布","bars":[{"value":-0.3,"color":"#6e6c64"},{"value":-2.1}]},{"label":"2008Q4","sub":"2009-01-30 发布","bars":[{"value":-3.8,"color":"#6e6c64"},{"value":-8.5}]},{"label":"2022Q1","sub":"2022-04-28 发布","bars":[{"value":-1.4,"color":"#6e6c64"},{"value":-1}]}]},"asOf":"现行值 FRED A191RL1Q225SBEA","source":"BEA 官方发布（advance 日期见表）","aria":"GDP 首估与现行值对照","series":[]}</script>
@@ -101,7 +101,7 @@
 <figcaption><strong>决策时点与信息版本（教学示意图）</strong>：t 日决策只能用 t 日可见的 vintage；t+1 首估、t+2 起的修订都属于「未来」。复盘时用现行值对照 t 日决策=未来函数（look-ahead bias）——红色虚线画的就是这条被无数回测踩中的陷阱路径。</figcaption>
 </figure>
 
-<p><strong>概念清单</strong>（每个词对应一个坑，考试与实战通用）：<strong>vintage</strong>（数据的「版本」——同一指标在不同日期下载内容不同）；<strong>revision</strong>（修订：月度小修/季度三轮/年度基准）；<strong>publication lag</strong>（发布滞后：数据描述的是上个月/上季度）；<strong>first/second/third estimate</strong>（GDP 三轮）；<strong>base effect</strong>（基期效应：同比读数由 12 个月前的分母决定——2021 年的高通胀有相当部分是 2020 低基数）；<strong>look-ahead bias</strong>（未来函数：用决策后才存在的信息评估决策）。</p>
+<p><strong>概念清单</strong>（每个词对应一个坑，考试与实战通用）：<strong>vintage</strong>（数据的「版本」——同一指标在不同日期下载内容不同）；revision（修订：月度小修/季度三轮/年度基准）；publication lag（发布滞后：数据描述的是上个月/上季度）；first/second/third estimate（GDP 三轮）；base effect（基期效应：同比读数由 12 个月前的分母决定——2021 年的高通胀有相当部分是 2020 低基数）；<strong>look-ahead bias</strong>（未来函数：用决策后才存在的信息评估决策）。</p>
 
 <p><strong>实操工具</strong>（两个官方免费库，专治未来函数）：<a href="https://alfred.stlouisfed.org/">ALFRED</a>（圣路易斯联储 vintage 数据库——官方表述：检索「历史上任一具体日期当时可得的每个数据版本」，即按 as-of 日期取数）；<a href="https://www.philadelphiafed.org/surveys-and-data/real-time-data-research/real-time-data-set-for-macroeconomists">费城联储 RTDSM</a>（宏观学家实时数据集——「由主要宏观变量的 vintage（快照）组成」，含 GDI，按季度整理，学术标准工具）。个人复盘的最低配置：ALFRED 上任一序列选「as-of」你决策那天的日期——一分钟即可核对当时的首估值。</p>
 
@@ -112,11 +112,11 @@
   <thead><tr><th>步</th><th>操作</th><th>结果</th></tr></thead>
   <tbody>
     <tr><td>①</td><td>当时公布的 5 月 CPI 同比首值（2022-06-10 发布）</td><td class="num">8.6%</td></tr>
-    <tr><td>②</td><td>今天的 FRED 序列里同月读数</td><td class="num">≈8.6%（CPI 终值制——两者一致的典型）</td></tr>
-    <tr><td>③</td><td>换一个会修的指标对照：6-10 决策日「就业强劲」依据的是 5 月非农（6-03 公布）；+37.2 万是 6 月值（7-08 公布），在 6-10 决策日不可见</td><td class="num">5 月非农首值 +39 万 → 年度基准修订后当期趋势显著下修（现行 PAYEMS 口径该月约 +30 万（当时首值 +39 万，基准修订已下修约四分之一））</td></tr>
+    <tr><td>②</td><td>今天的 FRED 序列里同月读数</td><td class="num">≈8.6%</td></tr>
+    <tr><td>③</td><td>换一个会修的指标对照：6-10 决策日「就业强劲」依据的是 5 月非农（6-03 公布）；+37.2 万是 6 月值（7-08 公布），在 6-10 决策日不可见</td><td>5 月非农首值 +39 万 → 年度基准修订后当期趋势显著下修（现行 PAYEMS 口径该月约 +30 万（当时首值 +39 万，基准修订已下修约四分之一））</td></tr>
   </tbody>
 </table>
-<p>结论：CPI 类判断的 vintage 风险低（终值制），就业类判断的 vintage 风险高（两月+基准修订）——<strong>Point-in-Time 纪律的强度应该按指标的修订文化分级</strong>（1001 修订三档表的实战化）。</p>
+<p>表注：②步括注 = CPI 终值制——两者一致的典型。结论：CPI 类判断的 vintage 风险低（终值制），就业类判断的 vintage 风险高（两月+基准修订）——<strong>Point-in-Time 纪律的强度应该按指标的修订文化分级</strong>（1001 修订三档表的实战化）。</p>
 </div>
 
 <h3>consensus 的免费路径（快照证据的取数）</h3>
@@ -138,7 +138,7 @@
 <h2><span class="no">03</span>当期快照 #1：2026-09 的仪表盘 <span class="time-chip">≈10 min</span></h2>
 <div class="note">快照间隔条款：快照 #1–#5 可按课序连拍（随五门结业课推进）；毕业校准层要求 <strong>#1 与 #5 之间跨 ≥1 个结算周期（季度）</strong>——四副透镜要读到不同时间的市场，首尾挤在同一周只是同一副眼镜。</div>
 <p class="rubric-link">工件自评：写完对照 <a href="../reference/0006-decision-log.html#rubric">参考页 0006 §5 八工件自评量规</a>（合格/优秀/不合格三档判例）。</p>
-<p class="lede">现在轮到你写 2026 年 9 月的快照。课件给数据与问题，<strong>不给结论</strong>（你的产出就是结业工件）。先看仪表盘：</p>
+<p class="lede">现在轮到你写 2026 年 9 月的快照。课件给数据与问题，不给结论（你的产出就是结业工件）。先看仪表盘：</p>
 
 <chart-block>
 <script type="application/json">{"type":"bar","width":720,"bar":{"orient":"h","x0":150,"xDomain":[0,6],"fmt":"pct","ref":{"v":2,"label":"通胀目标 2%"},"bars":[{"label":"CPI 同比","value":3.35,"display":"3.35%","date":"2026-08"},{"label":"核心 PCE 同比","value":2.98,"display":"约3.0%","date":"2026-07"},{"label":"失业率","value":4.1,"display":"4.1%","date":"2026-08"},{"label":"10Y 名义","value":5.17,"display":"5.17%","date":"2026-09-25"},{"label":"10Y 实际","value":2.83,"display":"2.83%","date":"2026-09-25"},{"label":"盈亏平衡","value":2.35,"display":"2.35%","date":"2026-09-29"},{"label":"HY 利差","value":3.02,"display":"3.02%","date":"2026-09-28"},{"label":"2s10s 利差","value":0.37,"display":"0.37%","date":"2026-09-29"},{"label":"有效联邦基金利率","value":3.63,"display":"3.63%","date":"2026-08"}]},"asOf":"2026-09","source":"FRED 各序列当期读数（日期见行尾）","aria":"2026-09 当期快照读数横条图","series":[]}</script>
@@ -149,7 +149,7 @@
 
 <h2><span class="no">04</span>决策日志启动：预测行与错误归因 <span class="time-chip">≈10 min</span></h2>
 <p class="lede">快照拍完存档，日志开始滚动。格式与规则全部在<a href="../reference/0006-decision-log.html">参考页 0006《决策日志与 Macro Decision Sheet》</a>（可打印），课内只讲三条制度：</p>
-<p>①<strong>预测行五要素</strong>：事件（可证伪表述）+ 概率区间（如 55–70%，拒绝点值）+ 到期日（可验收）+ 依据（一句证据）+ 事后补的「结果与错误归因」。②<strong>3–5 个起步</strong>：一两个增长类（如「未来三个月核心 CPI 3M 年化降至 2% 以下，概率 30–45%」）、一个政策类（如「10-28 FOMC 按兵不动，概率 60–75%」）、一个市场类（如「年底前 10Y 突破 5.5%，概率 20–35%」）——跨类别分散，避免全是同一叙事的变体。③<strong>错误归因按三层定位</strong>：读数层（看错数据）/机制层（传导链错）/校准层（概率给错）——6003 课的统一口径，P6 打 Brier 分时这三层决定你学到什么。</p>
+<p>①<strong>预测行五要素</strong>：事件（可证伪表述）+ 概率区间（如 55–70%，拒绝点值）+ 到期日（可验收）+ 依据（一句证据）+ 事后补的「结果与错误归因」。②3–5 个起步：一两个增长类（如「未来三个月核心 CPI 3M 年化降至 2% 以下，概率 30–45%」）、一个政策类（如「10-28 FOMC 按兵不动，概率 60–75%」）、一个市场类（如「年底前 10Y 突破 5.5%，概率 20–35%」）——跨类别分散，避免全是同一叙事的变体。③错误归因按三层定位：读数层（看错数据）/机制层（传导链错）/校准层（概率给错）——6003 课的统一口径，P6 打 Brier 分时这三层决定你学到什么。</p>
 
 <div class="note">与当期快照螺旋的合流（课程制度设计）：本课的快照 #1 会在 P2 结业课（2008）用「央行视角」重读、P3 用「周期视角」重读、P4 用「跨资产视角」重读——同一张快照四副透镜，毕业时你手里是一整年自己写的 regime 演变记录。每次重读补一节「当时怎么读 vs 现在怎么读」，那就是你的成长曲线。</div>
 
