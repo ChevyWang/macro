@@ -233,8 +233,8 @@
       "type": "text_count",
       "file": "reference/0008-as-of-memo.html",
       "pattern": "✓ 已补",
-      "expect": 3,
-      "note": "四盲区自检表：三行全打钩；Mag7 行如实标注（参考层已补、课程层待补）"
+      "expect": 4,
+      "note": "四盲区自检表：四行全打钩（Mag7 行 2026-10-01 回调——课程层已由 4007 覆盖）"
     }
   ]
 }

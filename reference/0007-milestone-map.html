@@ -13,16 +13,16 @@
   .ms-lit { color: var(--down); font-weight: 700; margin-left: .4em; white-space: nowrap; }
   .ms-lit::before { content: "●"; font-size: .8em; margin-right: .25em; }
   .ms-mark { font-family: var(--sans); font-size: .7rem; border: 1px solid var(--line); border-radius: 6px;
-    background: #fff; color: var(--muted); padding: .1rem .45rem; margin-left: .5em; cursor: pointer; white-space: nowrap; }
+    background: var(--card); color: var(--muted); padding: .1rem .45rem; margin-left: .5em; cursor: pointer; white-space: nowrap; }
   .ms-mark:hover { border-color: var(--down); color: var(--down); }
   tr.is-lit td { background: rgba(48,138,66,.06); }
-  .hub { border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: .7rem 1rem; margin: 1.2rem 0 0;
+  .hub { border: 1px solid var(--line); border-radius: 10px; background: var(--card); padding: .7rem 1rem; margin: 1.2rem 0 0;
     font-family: var(--sans); font-size: .85rem; }
   .hub-row { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; align-items: center; }
   .hub-stat b { font-variant-numeric: tabular-nums; color: var(--down); }
   .hub-actions { margin-left: auto; display: flex; gap: .45rem; flex-wrap: wrap; }
   .hub button { font-family: var(--sans); font-size: .75rem; border: 1px solid var(--line); border-radius: 6px;
-    background: #fff; color: var(--ink); padding: .25rem .6rem; cursor: pointer; }
+    background: var(--card); color: var(--ink); padding: .25rem .6rem; cursor: pointer; }
   .hub button:hover { border-color: var(--down); color: var(--down); }
   .hub button.danger { color: #a33; }
   .hub-snap { margin-top: .5rem; font-size: .76rem; color: var(--muted); }
@@ -50,7 +50,7 @@
 
 <div class="hub" id="ms-hub">
   <div class="hub-row">
-    <span class="hub-stat">今日待练 <b id="hub-due">—</b> 题（全站到期错题）</span>
+    <span class="hub-stat">今日待练 <b id="hub-due">—</b> 题（全站到期错题）<button type="button" class="hub-due-toggle" id="hub-due-toggle" hidden>展开清单</button></span>
     <span class="hub-stat">已完成课数 <b id="hub-courses">—</b> / 42（隔天重练点亮）</span>
     <span class="hub-actions">
       <button type="button" id="hub-export-json">导出 JSON</button>
@@ -58,6 +58,7 @@
       <button type="button" id="hub-clear" class="danger">清空护照</button>
     </span>
   </div>
+  <div class="hub-due-list" id="hub-due-list" hidden></div>
   <div class="hub-snap" id="hub-snap">本地护照读取中…（无数据时所有里程碑显示「可检测·未点亮」）</div>
 </div>
 
@@ -159,7 +160,7 @@
     <tr><td>M6.1 宏观周报写作</td><td>一篇可公开发布的周度宏观复盘</td><td>6001</td><td class="num">6–12h</td><td class="ms-status live" data-ms="M6.1">可检测</td></tr>
     <tr><td>M6.2 深度专题研究</td><td>3000–5000 字专题（大纲预审制，引用规范全链）</td><td>6002</td><td class="num">12–24h</td><td class="ms-status live" data-ms="M6.2">可检测</td></tr>
     <tr><td>M6.3 预测记分卡</td><td>对决策日志打 Brier 分+错误归因复盘；完成校准训练</td><td>6003</td><td class="num">4–8h</td><td class="ms-status live" data-ms="M6.3">可检测</td></tr>
-    <tr><td>M6.4 费曼教学+毕业考（毕业）</td><td>外行能懂的宏观科普+一次社区检验；毕业考双卷制：诊断卷→错题复述→验证卷，<strong>验证卷 ≥7/12+复述门槛</strong>（2026-10-01 C5 起，原 ≥4/12 单卷制废止）</td><td>6004</td><td class="num">6–12h</td><td class="ms-status live" data-ms="M6.4">可检测</td></tr>
+    <tr><td>M6.4 费曼教学+毕业考（毕业）</td><td>外行能懂的宏观科普+一次社区检验；毕业考双卷制：诊断卷→错题复述→验证卷，<strong>验证卷 ≥7/13+复述门槛</strong>（13 考点=12 原建+M4.5；2026-10-01 C5 起，原 ≥4/12 单卷制废止；C8 扩 13 题）</td><td>6004</td><td class="num">6–12h</td><td class="ms-status live" data-ms="M6.4">可检测</td></tr>
   </tbody>
 </table>
 
@@ -216,14 +217,29 @@
         td.appendChild(b);
       }
     });
-    var due = P.dueReview().length, done = courseCount();
+    var dueList = P.dueReview(), due = dueList.length, done = courseCount();
     document.getElementById("hub-due").textContent = String(due);
+    // C8-FE：今日待练可展开清单——课号+题干截断+跳回原题（页内锚由 interact.js init 末端滚动处理）
+    var dlist = document.getElementById("hub-due-list"), dtog = document.getElementById("hub-due-toggle");
+    if (dlist && dtog) {
+      dtog.hidden = !due;
+      dlist.innerHTML = dueList.slice(0, 30).map(function (it) {
+        var stem = (it.stem || it.qid || "").slice(0, 34);
+        var href = (window.Macro && Macro.courseHref ? Macro.courseHref(it.course) : null) || ("#" + it.qid);
+        return "<a href=\"" + href + "#" + it.qid + "\"><b>" + it.course + "</b> " + stem + "…</a>";
+      }).join("") + (due > 30 ? "<div style=\"color:var(--faint);font-size:.76rem;padding:.25rem 0\">…另有 " + (due - 30) + " 题（跨课聚合重练面列入维护清单）</div>" : "");
+    }
     document.getElementById("hub-courses").textContent = String(done);
     document.getElementById("hub-snap").textContent =
       "点亮快照（生成于 " + dstr(Date.now()) + "，打印即留档）：" + litList.length + "/30 已点亮" +
       (litList.length ? "：" + litList.join("、") : "（尚未点亮任何一个）") +
       " · 已完成课数 " + done + "/42 · 今日待练 " + due + " 题。数据全存本机（macro-passport-v1）。";
   }
+  document.getElementById("hub-due-toggle").addEventListener("click", function () {
+    var l = document.getElementById("hub-due-list");
+    l.hidden = !l.hidden;
+    this.textContent = l.hidden ? "展开清单" : "收起清单";
+  });
   document.getElementById("hub-export-json").addEventListener("click", function () { P.export("json"); });
   document.getElementById("hub-export-html").addEventListener("click", function () { P.export("html"); });
   document.getElementById("hub-clear").addEventListener("click", function () {

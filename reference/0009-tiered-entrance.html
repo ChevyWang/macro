@@ -11,7 +11,7 @@
   .diag-meta b { color: var(--muted); }
   .diag-actions { margin: 1.2rem 0; }
   .diag-actions button { font-family: var(--sans); font-size: .9rem; border: 1px solid var(--line); border-radius: 8px;
-    background: #fff; color: var(--ink); padding: .5rem 1.1rem; cursor: pointer; }
+    background: var(--card); color: var(--ink); padding: .5rem 1.1rem; cursor: pointer; }
   .diag-actions button:hover:not(:disabled) { border-color: var(--down); color: var(--down); }
   .diag-actions button:disabled { opacity: .45; cursor: not-allowed; }
   .diag-count { font-family: var(--sans); font-size: .8rem; color: var(--muted); margin-left: .8rem; }
@@ -251,7 +251,7 @@
 <div class="diag-q" data-ms="M6.4" data-phase="P6">
 <div class="diag-meta">M6.4 费曼教学＋毕业考（毕业） · <b>6004</b></div>
 <quiz-block>
-<script type="application/json">{ "q": "「训练毕业」与「校准毕业」两级分立（6004 课 05 节），校准毕业的判据是——", "options": [ { "t": "点满 30 个里程碑即校准毕业", "ok": false, "why": "那是训练毕业——框架与仪器交付完成；校准需要真实时间。" }, { "t": "决策日志 ≥20 条到期预测完成 Brier 结算与错误归因，且校准曲线跨 ≥1 个完整季度结算周期——只能在课程后的真实时间里达成", "ok": true, "why": "两级毕业制（6004 课 05 节）：机构以 3–7 年完整周期评估管理人，个人同一标尺。" }, { "t": "毕业考验证卷 ≥7/12", "ok": false, "why": "那是训练毕业的最后一道门（双卷制通过线）——考知识不考校准。" }, { "t": "发布过一篇阅读量过千的科普", "ok": false, "why": "社区检验是费曼教学的组成，与预测校准是两件事。" } ] }</script>
+<script type="application/json">{ "q": "「训练毕业」与「校准毕业」两级分立（6004 课 05 节），校准毕业的判据是——", "options": [ { "t": "点满 30 个里程碑即校准毕业", "ok": false, "why": "那是训练毕业——框架与仪器交付完成；校准需要真实时间。" }, { "t": "决策日志 ≥20 条到期预测完成 Brier 结算与错误归因，且校准曲线跨 ≥1 个完整季度结算周期——只能在课程后的真实时间里达成", "ok": true, "why": "两级毕业制（6004 课 05 节）：机构以 3–7 年完整周期评估管理人，个人同一标尺。" }, { "t": "毕业考验证卷 ≥7/13", "ok": false, "why": "那是训练毕业的最后一道门（双卷制通过线，13 考点 ≥7/13）——考知识不考校准。" }, { "t": "发布过一篇阅读量过千的科普", "ok": false, "why": "社区检验是费曼教学的组成，与预测校准是两件事。" } ] }</script>
 </quiz-block>
 </div>
 
@@ -287,7 +287,7 @@
       <td class="p">C 资深查漏</td>
       <td>已有一套自己的流程，只想查漏与对表</td>
       <td>①诊断卷成绩单当漏洞地图（本页 §2）；②<a href="0002-glossary.html">0002 术语手册</a>＋<a href="0004-crisis-checklist.html">0004 危机检查单</a>＋<a href="0005-scenario-asset-matrix.html">0005 情景-资产矩阵卡</a>当参考手册常备；③错哪补哪，不重修区段</td>
-      <td><strong>6004 毕业考可当诊断考（双职）</strong>：12 考点跨阶段判定、三变体轮换的题库，入学时当诊断卷画漏洞地图，毕业时当终考——同一份仪器两种用法；30/90 天延迟再测条款见 0007 页头</td>
+      <td><strong>6004 毕业考可当诊断考（双职）</strong>：13 考点跨阶段判定、三变体轮换的题库（含 M4.5 加密宏观），入学时当诊断卷画漏洞地图，毕业时当终考——同一份仪器两种用法；30/90 天延迟再测条款见 0007 页头</td>
     </tr>
   </tbody>
 </table>
@@ -362,8 +362,8 @@
 </nav>
 
 <footer class="course">
-  <p><strong>主资源（本页 grounded on）</strong>：诊断题源＝42 课训练场精选与 6004 课毕业考题库（12 考点 ×3 变体，2026-10-01 C5 版）——其中 12 题与毕业考诊断卷同源（考点同、题面同源）；里程碑结构与判定标准＝<a href="0007-milestone-map.html">参考页 0007</a>；课内估时＝各课页头「本课约 X–Y 分钟」[类比]；工件小时＝各结业课工件要求汇总估算 [类比/猜测]；三路径与 90h 条款据课程成功标准与两级毕业制（6004 课 05 节）整理。</p>
-  <p>建页 2026-10-01（C7 波次）· 判分逻辑静态可测（.scratch/c7/test-diag.js 烟测）· 作答记录仅存本机（macro-passport-v1）</p>
+  <p><strong>主资源（本页 grounded on）</strong>：诊断题源＝42 课训练场精选与 6004 课毕业考题库（13 考点 ×3 变体，2026-10-01 C8 版）——题型与判分口径与毕业考诊断卷同源（考点同、题面同源）；里程碑结构与判定标准＝<a href="0007-milestone-map.html">参考页 0007</a>；课内估时＝各课页头「本课约 X–Y 分钟」[类比]；工件小时＝各结业课工件要求汇总估算 [类比/猜测]；三路径与 90h 条款据课程成功标准与两级毕业制（6004 课 05 节）整理。</p>
+  <p>建页 2026-10-01（C7 波次）· 判分逻辑静态可测（纯函数判分核，配套自动烟测）· 作答记录仅存本机（macro-passport-v1）</p>
 </footer>
 
 </div>
@@ -417,7 +417,7 @@
 <script>
 /* 0009 诊断卷判分（C7，2026-10-01）：quiz-block 静态卷由 interact.js 渲染作答（dataset.answered/ok），
    本段汇总为区段成绩＋建议起点＋必修清单。判分核 window.MacroDiag.grade(rows) 为纯函数
-   （rows=[{ms,answered,ok}]），供 .scratch/c7/test-diag.js 静态烟测直接调用。
+   （rows=[{ms,answered,ok}]），判分核可脱离 DOM 静态调用，供自动烟测直接测试。
    规则：全对区段免修；基础段（P0 四题＋M1.1/M1.2 共 6 题）≥80% 走快速道等效条款；错题进必修清单。 */
 (function () {
   "use strict";

@@ -7,7 +7,8 @@
    —— Learner OS 底座（2026-10 票 13：无云端/无服务器/无账号，纯本地 localStorage）——
    · Macro.passport  学习护照：作答记录/里程碑与课级点亮/快照/主题，键名 macro-passport-v1
    · Macro.srs       简化间隔复习：错题入池，间隔 [1,3,7,14] 天，答对升档答错归 1，四连对毕业
-   · 判分卡          训练场尾自动挂 div.judge-card（本次 X/Y、昨日错题、今日待练、隔天重练门、重做本场）
+   · 判分卡          训练场尾自动挂 div.judge-card（本次 X/Y、昨日错题、今日待练可展开跳题、隔天重练门、重做本场）
+                      隔天全对 → lightCourse+lightMilestone（meta milestone）同步点亮（C8-FE）；诊断卷页不挂兜底卡
    · 顶栏            每个引入本文件的页面自动注入 div.topbar（上一课/课名/下一课/里程碑灯/搜索/主题）
    · <blindtest-block> 盲测标点组件；<recalc-block> 窗口复算组件（数据由后续接线任务喂数）
    · Macro.hover     术语悬停（词典 assets/terms.js 由 tools/build-terms.py 生成，精确匹配，每页每词首次）
@@ -55,6 +56,45 @@
     var m = file.match(/(\d{4})/);
     if (!m) return file || "site";
     return (location.pathname.indexOf("/reference/") >= 0 ? "ref" : "") + m[1];
+  }
+
+  /* 42 课现役文件名（课号→文件；与 publish.sh 门禁5序列表同源，插课/拆分时两处同步）。
+     供 SRS「今日待练」跨课跳转链接使用。 */
+  var COURSE_FILES = {
+    "0001": "0001-economic-machine.html", "0002": "0002-credit-cycle-debt-ceiling.html", "0003": "0003-player-map.html",
+    "0004": "0004-three-markets.html", "0005": "0005-dashboard-routine.html",
+    "1001": "1001-indicator-map-calendar.html", "1002": "1002-four-values-turning-points.html", "1003": "1003-china-data-system.html",
+    "1004": "1004-expectations-compensation.html", "1005": "1005-curve-shapes-spreads.html", "1006": "1006-positioning-probabilities.html",
+    "1007": "1007-snapshot-point-in-time.html",
+    "2001": "2001-fed-toolbox.html", "2002": "2002-pboc-toolbox.html", "2003": "2003-transmission-lags.html",
+    "2004": "2004-treasury-fiscal-plumbing.html", "2005": "2005-offshore-dollar-basis.html", "2006": "2006-dollar-squeeze.html",
+    "2007": "2007-case-2008.html", "2008": "2008-reading-primary-documents.html",
+    "3001": "3001-cycle-zoo-inventory-capex.html", "3002": "3002-cycle-zoo-real-estate-financial.html", "3003": "3003-recession-signals.html",
+    "3004": "3004-crisis-checklist.html", "3005": "3005-regime-location.html", "3006": "3006-full-cycle-review-2020-23.html",
+    "4001": "4001-discount-rate-duration.html", "4002": "4002-real-rates-risk-assets.html", "4003": "4003-parity-carry.html",
+    "4004": "4004-rmb-hkd.html", "4005": "4005-commodities-inflation-chain.html", "4006": "4006-scenarios-sixpack.html",
+    "4007": "4007-crypto-macro.html", "4008": "4008-scenario-position-mapping.html",
+    "5001": "5001-case-methodology.html", "5002": "5002-institution-landscape.html", "5003": "5003-macro-trader-workflow.html",
+    "5004": "5004-full-decision-drill.html",
+    "6001": "6001-weekly-report-writing.html", "6002": "6002-deep-dive-research.html", "6003": "6003-forecast-scorecard.html",
+    "6004": "6004-feynman-graduation.html"
+  };
+  function courseHref(num) {
+    var f = COURSE_FILES[num];
+    if (!f) return null;
+    var p = location.pathname;
+    if (p.indexOf("/reference/") >= 0) return "../lessons/" + f;
+    if (p.indexOf("/lessons/") < 0) return "lessons/" + f; // index 等根目录页
+    return f; // 课页同目录
+  }
+
+  /* 本课 meta 里程碑（课头 <meta name="milestone" content="M?.?">）；非课程页/未声明返回 "" */
+  function milestoneOf() {
+    if (!HAS_DOM) return "";
+    var m = document.querySelector('meta[name="milestone"]');
+    if (!m) return "";
+    var mv = /^M\d+\.\d+$/.exec((m.getAttribute("content") || "").trim());
+    return mv ? mv[0] : "";
   }
 
   /* ================================================================ 真乱序（P0 修复）
@@ -165,9 +205,11 @@
       _storage: store,
       _create: createPassport,
 
-      record: function (course, qid, ok) {
+      record: function (course, qid, ok, stem) {
         var d = load();
-        d.answers.push({ course: String(course), qid: String(qid), ok: !!ok, ts: now() });
+        var a = { course: String(course), qid: String(qid), ok: !!ok, ts: now() };
+        if (stem !== undefined && stem !== null && String(stem)) a.stem = String(stem).slice(0, 60); // 题干截断（SRS 清单显示；旧记录无此字段，向后兼容）
+        d.answers.push(a);
         save(d);
         emit("record", { course: course, qid: qid, ok: !!ok });
         return d.answers.length;
@@ -299,7 +341,9 @@
           else dueTs = a.ts + SRS_INTERVALS[stage] * DAY;
         }
       });
-      if (inPool) pool.push({ course: list[0].course, qid: list[0].qid, stage: stage, dueTs: dueTs, dueDate: dayStr(dueTs) });
+      var stem = "";
+      list.forEach(function (a) { if (a.stem) stem = a.stem; }); // 取最新一次带题干的记录
+      if (inPool) pool.push({ course: list[0].course, qid: list[0].qid, stage: stage, dueTs: dueTs, dueDate: dayStr(dueTs), stem: stem });
     });
     return pool;
   }
@@ -352,6 +396,7 @@
     var frag = document.createDocumentFragment();
     var qid = "q-" + hashStr(String(data.q || ""));
     el.dataset.qid = qid;
+    if (!el.id) el.id = qid; // SRS「今日待练」跳题锚点（跨页链接 #q-… 由 init 末端滚动处理）
     delete el.dataset.answered; delete el.dataset.ok;
 
     if (meta && meta.note) {
@@ -411,7 +456,7 @@
           fb.classList.add("show");
         }
         if (!(meta && meta.noScore)) {
-          try { Passport.record(courseOf(), qid, !!o.ok); } catch (e) {} // 错题自动入池（SRS）；preq 先猜不入账
+          try { Passport.record(courseOf(), qid, !!o.ok, String(data.q || "")); } catch (e) {} // 错题自动入池（SRS，带题干截断）；preq 先猜不入账
         }
         emitSession();
       });
@@ -584,8 +629,33 @@
      组件克隆页面上该 SVG 进块内（答案坐标=原图 viewBox 坐标，标记不污染原图）。
      点击图面落标记（可撤销/清空），「揭晓」显示预埋答案点并按 ±40（viewBox 单位）判中；
      无 SVG 或无 answers 数据时空态容错（不判分）。分数进判分卡。 */
+  /* C8-FE：克隆图剥离答案注记——答案圆点（坐标 ±8 内的 circle）与其标签 text（锚点 |dx|≤40/|dy|≤48 内）删除，
+     轴刻度/标题不受影响；原图永不改动。「揭晓」时答案点由 overlay 重画，判分不变。返回剥离元素数。 */
+  function stripAnswerMarks(svg, answers) {
+    var pts = (answers || []).map(function (a) { return { x: parseFloat(a.x), y: parseFloat(a.y) }; })
+      .filter(function (p) { return isFinite(p.x) && isFinite(p.y); });
+    if (!pts.length) return 0;
+    var removed = 0;
+    svg.querySelectorAll("circle").forEach(function (c) {
+      var cx = parseFloat(c.getAttribute("cx")), cy = parseFloat(c.getAttribute("cy"));
+      if (!isFinite(cx) || !isFinite(cy)) return;
+      for (var i = 0; i < pts.length; i++) {
+        if (Math.abs(cx - pts[i].x) <= 8 && Math.abs(cy - pts[i].y) <= 8) { c.remove(); removed++; return; }
+      }
+    });
+    svg.querySelectorAll("text").forEach(function (t) {
+      var x = parseFloat(t.getAttribute("x")), y = parseFloat(t.getAttribute("y"));
+      if (!isFinite(x) || !isFinite(y)) return;
+      for (var i = 0; i < pts.length; i++) {
+        if (Math.abs(x - pts[i].x) <= 40 && Math.abs(y - pts[i].y) <= 48) { t.remove(); removed++; return; }
+      }
+    });
+    return removed;
+  }
+
   function buildBlindtest(el) {
     var d = readData(el) || {};
+    var answers = Array.isArray(d.answers) ? d.answers : null;
     var svg = el.querySelector("svg");
     if (!svg && d.imgSelector) { // 引用式：克隆课内已有事件图（只加 id 属性，不动原图形）
       try {
@@ -594,6 +664,7 @@
           svg = src.cloneNode(true);
           svg.removeAttribute("id");
           svg.querySelectorAll("[id]").forEach(function (n) { n.setAttribute("id", n.getAttribute("id") + "-bt"); }); // 防重复 id
+          stripAnswerMarks(svg, answers); // 克隆图不自带答案：盲测是盲测（页内原图保留注记）
         }
       } catch (e) { /* 非法选择器等 */ }
     }
@@ -606,11 +677,12 @@
       el.appendChild(empty);
       return;
     }
-    var answers = Array.isArray(d.answers) ? d.answers : null;
     var q = document.createElement("div");
     q.className = "q";
     q.textContent = d.q || "盲测：先标点，再揭晓";
     el.appendChild(q);
+    el.dataset.qid = "bt-" + hashStr(String(d.q || ""));
+    if (!el.id) el.id = el.dataset.qid; // SRS 跳题锚点
     var instr = document.createElement("div");
     instr.className = "bt-instr";
     instr.textContent = d.instruction || "先在图上点击标出你认为的信号点，再点「揭晓」对照答案——±40 坐标内算中。";
@@ -709,7 +781,7 @@
       out.innerHTML = "<div class=\"bt-score\">盲测 " + hits + " / " + answers.length + "</div>" + rows.join("");
       el.dataset.btHit = hits;
       el.dataset.btTotal = answers.length;
-      try { Passport.record(courseOf(), "bt-" + hashStr(String(d.q || q.textContent)), hits === answers.length); } catch (e) {}
+      try { Passport.record(courseOf(), "bt-" + hashStr(String(d.q || q.textContent)), hits === answers.length, String(d.q || q.textContent)); } catch (e) {}
       emitSession();
     });
     var note = document.createElement("div");
@@ -862,17 +934,28 @@
     var yWrongs = Passport.data().answers.filter(function (a) {
       return a.course === course && !a.ok && dayStr(a.ts) === yest;
     }).length;
-    var due = Passport.dueReview(today).length;
+    var dueList = Passport.dueReview(today);
+    var due = dueList.length;
 
     var badge = "";
     if (total && answered === total && ok === total) {
       if (priorPerfectDay(course, today, total)) {
         if (!Passport.lit(null, course)) Passport.lightCourse(course);
-        badge = "<div class=\"jc-badge lit\">隔天通过——本课已点亮（课级点亮，与里程碑点亮并存）</div>";
+        var msid = milestoneOf(); // C8-FE：课级点亮同步点亮本课 meta 声明的里程碑——0007 地图与 index 影子年度随之自填
+        if (msid && !Passport.lit(msid, null)) Passport.lightMilestone(msid);
+        badge = "<div class=\"jc-badge lit\">隔天通过——本课已点亮" + (msid ? "（课级 + 里程碑 " + msid + "）" : "（课级）") + "</div>";
       } else {
         badge = "<div class=\"jc-badge\">隔天徽章：明天回来重练本场仍全对才算过——明天见</div>";
       }
     }
+
+    // SRS 今日待练清单（C8-FE：题干截断+课号+跳原题锚链接；本课题走页内锚，他课走课文件#锚）
+    var dueRows = dueList.slice(0, 20).map(function (it) {
+      var stem = (it.stem || it.qid || "").slice(0, 34);
+      var href = (it.course === course) ? ("#" + it.qid) : ((courseHref(it.course) || "#") + "#" + it.qid);
+      return "<a class=\"jc-due-item\" href=\"" + esc(href) + "\"><b>" + esc(it.course) + "</b> " + esc(stem) + "…</a>";
+    }).join("");
+    if (dueList.length > 20) dueRows += "<div class=\"jc-due-more\">…另有 " + (dueList.length - 20) + " 题（跨课聚合重练面列入维护清单）</div>";
 
     card.innerHTML =
       "<div class=\"jc-title\">训练场判分卡</div>" +
@@ -880,11 +963,19 @@
       "<div class=\"jc-col\"><div class=\"jc-big\">" + ok + " <span class=\"jc-sep\">/</span> " + total + "<span class=\"jc-pct" + (total && pct >= 80 ? " pass" : "") + "\">（" + pct + "%）</span></div>" +
       "<div class=\"jc-row\">" + statusLine + "</div>" + btLine + "</div>" +
       "<div class=\"jc-col\"><div class=\"jc-row\">昨日错题：<b>" + yWrongs + "</b> 题（本课）</div>" +
-      "<div class=\"jc-row\">今日待练：<b>" + due + "</b> 题（全站到期）</div>" +
+      "<div class=\"jc-row\">今日待练：<b>" + due + "</b> 题（全站到期）" + (due ? " <button type=\"button\" class=\"jc-due-toggle\">展开清单</button>" : "") + "</div>" +
       "<div class=\"jc-row jc-hint\">错题已入本地复习池（间隔 1/3/7/14 天）</div></div>" +
       "</div>" + badge +
-      "<div class=\"jc-bar\"><button type=\"button\" class=\"jc-redo\">重做本场</button></div>";
+      "<div class=\"jc-due-list\">" + dueRows + "</div>" +
+      "<div class=\"jc-bar\"><button type=\"button\" class=\"jc-redo\">重做本场</button>" +
+      "<span class=\"jc-bar-hint\">「重做本场」=整场重建；错题优先=按「今日待练」清单跳回原课重练到期题</span></div>";
     card.querySelector(".jc-redo").addEventListener("click", resetPage);
+    var dueToggle = card.querySelector(".jc-due-toggle");
+    if (dueToggle) dueToggle.addEventListener("click", function () {
+      var list = card.querySelector(".jc-due-list");
+      var open = list.classList.toggle("open");
+      dueToggle.textContent = open ? "收起清单" : "展开清单";
+    });
   }
 
   function mountJudgeCards() {
@@ -908,6 +999,8 @@
       cards.push(card);
     });
     if (!cards.length) {
+      // 诊断卷页（如参考 0009）自带判分规则（基础段 ≥80% 等效条款），不挂通用「训练场判分卡」兜底
+      if (heads.some(function (h) { return /诊断卷|诊断/.test(h.textContent || ""); })) return;
       var all = document.querySelectorAll("quiz-block");
       if (all.length) {
         var card = document.createElement("div");
@@ -958,12 +1051,7 @@
     });
 
     // 里程碑灯来源优先级：<meta name="milestone" content="M?.?">（课头显式声明）→ kicker 文本兜底
-    var mid = null;
-    var metaMs = document.querySelector('meta[name="milestone"]');
-    if (metaMs) {
-      var mv = /^M\d+\.\d+$/.exec((metaMs.getAttribute("content") || "").trim());
-      if (mv) mid = mv;
-    }
+    var mid = milestoneOf() || null;
     if (!mid) mid = (kicker.textContent || "").match(/M\d+\.\d+/);
 
     var bar = document.createElement("div");
@@ -2050,6 +2138,15 @@
     mountAsofChip();
     mountJudgeCards();
     Hover.load();
+    // SRS 跨课跳题：#q-…/#bt-… 锚在组件构建后才存在，手动滚到位
+    var h = location.hash || "";
+    if (/^#(q-|bt-)/.test(h)) {
+      var tgt = document.getElementById(h.slice(1));
+      if (tgt && tgt.scrollIntoView) {
+        try { tgt.scrollIntoView({ behavior: "smooth", block: "center" }); } catch (e) { tgt.scrollIntoView(); }
+        if (tgt.classList) { tgt.classList.add("flash-target"); setTimeout(function () { tgt.classList.remove("flash-target"); }, 2400); }
+      }
+    }
   }
 
   var api = {
@@ -2073,6 +2170,9 @@
     judge: { mount: mountJudgeCards, reset: resetPage },
     topbar: { mount: mountTopbar },
     blindtest: buildBlindtest,
+    _stripAnswerMarks: stripAnswerMarks, // 测试钩子：C8-FE 盲测克隆图答案剥离
+    _renderJudge: renderJudge, // 测试钩子：C8-FE 课级点亮→里程碑同步点亮
+    courseHref: courseHref, milestoneOf: milestoneOf,
     recalc: buildRecalc,
     asofChip: mountAsofChip,
     chart: { scan: scanCharts, build: buildChart, core: ChartCore }

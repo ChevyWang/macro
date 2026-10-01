@@ -470,14 +470,46 @@ svg .da { opacity: 0; animation: daIn .6s ease forwards; }
   font-size: .85rem;
 }
 .judge-card .jc-badge.lit { background: var(--good-bg); color: var(--down); font-weight: 600; }
-.judge-card .jc-bar { margin-top: .6rem; }
+.judge-card .jc-bar { margin-top: .6rem; display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
 .judge-card .jc-redo {
   font-family: var(--sans); font-size: .85rem; font-weight: 600;
   background: var(--ink); color: var(--paper); border: none; border-radius: 8px;
   padding: .4rem 1rem; cursor: pointer;
 }
 .judge-card .jc-redo:hover { opacity: .85; }
+.judge-card .jc-bar-hint { color: var(--faint); font-size: .76rem; }
+.judge-card .jc-due-toggle {
+  font-family: var(--sans); font-size: .76rem; font-weight: 600;
+  background: none; color: var(--ink); border: 1px solid var(--line); border-radius: 6px;
+  padding: .05rem .5rem; cursor: pointer; margin-left: .3rem;
+}
+.judge-card .jc-due-toggle:hover { background: var(--note-bg); }
+.judge-card .jc-due-list { display: none; margin-top: .5rem; }
+.judge-card .jc-due-list.open { display: block; }
+.judge-card .jc-due-item {
+  display: block; font-size: .8rem; line-height: 1.6; color: var(--ink);
+  padding: .15rem 0; border-bottom: 1px dashed var(--line); text-decoration: none;
+}
+.judge-card .jc-due-item b { font-variant-numeric: tabular-nums; margin-right: .3rem; }
+.judge-card .jc-due-item:hover { background: var(--note-bg); }
+.judge-card .jc-due-more { color: var(--faint); font-size: .76rem; padding: .25rem 0; }
 @media (max-width: 520px) { .judge-card .jc-cols { grid-template-columns: 1fr; } }
+/* SRS 跳题落点高亮（init 末端滚动到位后闪两秒） */
+.flash-target { outline: 3px solid var(--down); outline-offset: 4px; border-radius: 6px; }
+/* 0007 hub 今日待练展开清单（与判分卡同语言） */
+.hub-due-list { margin: .4rem 0 .2rem; }
+.hub-due-list a {
+  display: block; font-size: .8rem; line-height: 1.6; color: var(--ink);
+  padding: .15rem 0; border-bottom: 1px dashed var(--line); text-decoration: none;
+}
+.hub-due-list a b { font-variant-numeric: tabular-nums; margin-right: .3rem; }
+.hub-due-list a:hover { background: var(--note-bg); }
+.hub-due-toggle {
+  font-family: var(--sans); font-size: .78rem; font-weight: 600;
+  background: none; color: var(--ink); border: 1px solid var(--line); border-radius: 6px;
+  padding: .1rem .6rem; cursor: pointer; margin-left: .4rem;
+}
+.hub-due-toggle:hover { background: var(--note-bg); }
 
 /* sticky 顶栏（interact.js 自动注入 body 首；打印隐藏） */
 .topbar {
