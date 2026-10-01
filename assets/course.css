@@ -171,6 +171,10 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .u { color: var(--up); }
 .d { color: var(--down); }
 
+/* 行内序号列表（①②③/（1） 分行用：正文零改动，只给行距） */
+ul.enum { list-style: none; padding-left: .2rem; margin: .6rem 0; }
+ul.enum li { margin: .5rem 0; }
+
 /* —— 图（kbar：居中图 + 左对齐图注） —— */
 figure { margin: 2rem 0; text-align: center; }
 figure svg { max-width: 100%; height: auto; }
