@@ -9,6 +9,25 @@
   .ms-status { white-space: nowrap; font-weight: 600; }
   .ms-status.live { color: var(--down); }
   .ms-status.wait { color: var(--faint); font-weight: 400; }
+  /* —— 进度中枢层（读写本地护照 macro-passport-v1；判定标准等静态信息不动，只加状态层）—— */
+  .ms-lit { color: var(--down); font-weight: 700; margin-left: .4em; white-space: nowrap; }
+  .ms-lit::before { content: "●"; font-size: .8em; margin-right: .25em; }
+  .ms-mark { font-family: var(--sans); font-size: .7rem; border: 1px solid var(--line); border-radius: 6px;
+    background: #fff; color: var(--muted); padding: .1rem .45rem; margin-left: .5em; cursor: pointer; white-space: nowrap; }
+  .ms-mark:hover { border-color: var(--down); color: var(--down); }
+  tr.is-lit td { background: rgba(48,138,66,.06); }
+  .hub { border: 1px solid var(--line); border-radius: 10px; background: #fff; padding: .7rem 1rem; margin: 1.2rem 0 0;
+    font-family: var(--sans); font-size: .85rem; }
+  .hub-row { display: flex; flex-wrap: wrap; gap: .5rem 1.4rem; align-items: center; }
+  .hub-stat b { font-variant-numeric: tabular-nums; color: var(--down); }
+  .hub-actions { margin-left: auto; display: flex; gap: .45rem; flex-wrap: wrap; }
+  .hub button { font-family: var(--sans); font-size: .75rem; border: 1px solid var(--line); border-radius: 6px;
+    background: #fff; color: var(--ink); padding: .25rem .6rem; cursor: pointer; }
+  .hub button:hover { border-color: var(--down); color: var(--down); }
+  .hub button.danger { color: #a33; }
+  .hub-snap { margin-top: .5rem; font-size: .76rem; color: var(--muted); }
+  @media print { .hub-actions, .ms-mark { display: none !important; } .hub { border-color: #999; } }
+  @media (max-width: 560px) { .hub-actions { margin-left: 0; } .ms-status { white-space: normal; } }
 </style>
 </head>
 <body>
@@ -19,13 +38,28 @@
     <span class="chip">宏观训练营</span>
     <span class="num">参考页 0007</span>
     <span>·</span>
-    <span>29 里程碑 · 7 阶段</span>
+    <span>30 里程碑 · 7 阶段</span>
     <span>·</span>
     <span>随波次更新</span>
   </div>
   <h1>里程碑地图</h1>
-  <p class="deck">这门课的进度单位不是「看了几课」，是「点亮了几个能力」。29 个里程碑=29 个可当场演示的能力；课只是训练材料。本页是全部里程碑的判定标准总表——想确认自己到哪了，来这里。</p>
+  <p class="deck">这门课的进度单位不是「看了几课」，是「点亮了几个能力」。30 个里程碑=30 个可当场演示的能力；课只是训练材料。本页是全部里程碑的判定标准总表——想确认自己到哪了，来这里。</p>
+  <div class="note">毕业分两级（6004 课 05 节口径）：<strong>训练毕业</strong>=点满 30 个里程碑+八件套等结业工件交齐；<strong>校准毕业</strong>=决策日志 ≥20 条到期预测完成 Brier 结算与归因+校准曲线跨 ≥1 个完整季度结算周期。另：毕业 +30 天重考 6004 诊断卷、+90 天重做 3005 判读卡——日历提醒自设，课程不追踪（静态课不装推送）。</div>
+  <div class="note"><strong>中级/资深者：先看<a href="0009-tiered-entrance.html">参考页 0009 分级入口</a>——诊断卷 30 题定起点</strong>（每里程碑 1 题：全对区段免修、基础段 ≥80% 免修 M0.1–M1.2、错题区段列必修清单；6004 毕业考可当诊断考双职使用）。</div>
 </header>
+
+<div class="hub" id="ms-hub">
+  <div class="hub-row">
+    <span class="hub-stat">今日待练 <b id="hub-due">—</b> 题（全站到期错题）</span>
+    <span class="hub-stat">已完成课数 <b id="hub-courses">—</b> / 42（隔天重练点亮）</span>
+    <span class="hub-actions">
+      <button type="button" id="hub-export-json">导出 JSON</button>
+      <button type="button" id="hub-export-html">导出可打印 HTML</button>
+      <button type="button" id="hub-clear" class="danger">清空护照</button>
+    </span>
+  </div>
+  <div class="hub-snap" id="hub-snap">本地护照读取中…（无数据时所有里程碑显示「可检测·未点亮」）</div>
+</div>
 
 <h2><span class="no">§1</span>怎么点亮一个里程碑</h2>
 <p class="lede">三条规则，全部围绕一个原则：<strong>能力=能演示，不是看过</strong>。</p>
@@ -34,7 +68,7 @@
   <li><strong>诊断式补救，不锁死</strong>：未过=按训练场判分指引回对应课节重读后重测；后续课随时可预览——顺序是坡道不是牢门。</li>
   <li><strong>结业工件</strong>：六个阶段结业里程碑（M0.4/M1.4/M2.4/M3.4/M4.4/M5.4）额外要求完整工件过门（例行记录/当期快照/反应树/复盘笔记/三情景六件套/决策单），交教练归档存证。</li>
 </ol>
-<div class="note">表中「估时」是同类课程的类比预算（3–5h≈一节有难度的专业课），只作参考不设卡控——快慢由你，点亮由检测。每格「状态」随施工波次更新：绿=课程已上线、可检测；灰=课程待建。<strong>2026-09-30（波次 7）：40 课全部上线，29 个里程碑全部「可检测」——课程施工完结，剩下的点亮全部由你的检测与工件完成。</strong></div>
+<div class="note">表中「估时」是同类课程的类比预算（3–5h≈一节有难度的专业课），只作参考不设卡控——快慢由你，点亮由检测。每格「状态」：绿=课程已上线、可检测（现役 42 课全部上线、30 个里程碑全部可检测）。<strong>2026-09-30（波次 7）：40 课全部上线；2026-10-01 结构重排（C1）：P1/P4 各拆分一课、2008 案例并入 P2、案例课合并——现役 41 课；2026-10-01（C6）4007《加密宏观一体化》上线（P4 增至 8 课、全站 42 课），新增 M4.5 加密宏观一体化，30 个里程碑全部「可检测」，剩下的点亮全部由你的检测与工件完成。</strong></div>
 
 <h2><span class="no">§2</span>P0 宏观语言（辨认）</h2>
 <table>
@@ -42,10 +76,10 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M0.1 经济机器模型</td><td>用「交易-信用-收入」循环 90 秒讲清为什么降息能刺激经济；去杠杆三概念问答过关</td><td><a href="../lessons/0001-economic-machine.html">0001</a> · <a href="../lessons/0002-credit-cycle-debt-ceiling.html">0002</a></td><td class="num">3–5h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M0.2 玩家地图</td><td>列出六部门各自的目标、约束与行为模式；用反应函数读一条央行新闻</td><td><a href="../lessons/0003-player-map.html">0003</a></td><td class="num">3–5h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M0.3 三大市场价格互锁</td><td>说出货币、债券、外汇市场如何互相定价（利率-汇率-曲线三角）；对一次真实利率变动拆分实际/盈亏平衡贡献</td><td><a href="../lessons/0004-three-markets.html">0004</a></td><td class="num">3–5h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M0.4 仪表盘运转（结业）</td><td>仪表盘按事件分层建立并连续四周运转（日/事件、周、月、季各司其职）；if-then 执行卡完成</td><td><a href="../lessons/0005-dashboard-routine.html">0005</a> + <a href="0001-macro-dashboard.html">参考页 0001</a></td><td class="num">2–4h＋首周日课</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M0.1 经济机器模型</td><td>用「交易-信用-收入」循环 90 秒讲清为什么降息能刺激经济；去杠杆三概念问答过关</td><td><a href="../lessons/0001-economic-machine.html">0001</a> · <a href="../lessons/0002-credit-cycle-debt-ceiling.html">0002</a></td><td class="num">3–5h</td><td class="ms-status live" data-ms="M0.1">可检测</td></tr>
+    <tr><td>M0.2 玩家地图</td><td>列出六部门各自的目标、约束与行为模式；用反应函数读一条央行新闻</td><td><a href="../lessons/0003-player-map.html">0003</a></td><td class="num">3–5h</td><td class="ms-status live" data-ms="M0.2">可检测</td></tr>
+    <tr><td>M0.3 三大市场价格互锁</td><td>说出货币、债券、外汇市场如何互相定价（利率-汇率-曲线三角）；对一次真实利率变动拆分实际/盈亏平衡贡献</td><td><a href="../lessons/0004-three-markets.html">0004</a></td><td class="num">3–5h</td><td class="ms-status live" data-ms="M0.3">可检测</td></tr>
+    <tr><td>M0.4 仪表盘运转（结业）</td><td>仪表盘按事件分层建立并连续四周运转（日/事件、周、月、季各司其职）；if-then 执行卡完成</td><td><a href="../lessons/0005-dashboard-routine.html">0005</a> + <a href="0001-macro-dashboard.html">参考页 0001</a></td><td class="num">2–4h＋首周日课</td><td class="ms-status live" data-ms="M0.4">可检测</td></tr>
   </tbody>
 </table>
 
@@ -55,10 +89,10 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M1.1 指标领先滞后判读</td><td>对任一指标说出：领先/同步/滞后、修订幅度、公布频率、市场敏感度；掌握质变四值读法</td><td>1001–1002</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M1.2 中国数据体系</td><td>判读社融/M1/M2/PMI 出口，避开口径陷阱（基期、可比性、挤水分、M1 口径断点）</td><td>1003</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M1.3 市场即预期读数</td><td>用曲线/利差/持仓/隐含概率读出市场定价的宏观预期</td><td>1004–1005</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M1.4 一页纸快照（结业）</td><td>给定一周真实数据写出三句话快照；Point-in-Time 重建历史某日判断；启动决策日志（3–5 个可证伪预测+概率区间）</td><td>1006 + 参考页 0006</td><td class="num">4–8h</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M1.1 指标领先滞后判读</td><td>对任一指标说出：领先/同步/滞后、修订幅度、公布频率、市场敏感度；掌握质变四值读法</td><td>1001–1002</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M1.1">可检测</td></tr>
+    <tr><td>M1.2 中国数据体系</td><td>判读社融/M1/M2/PMI 出口，避开口径陷阱（基期、可比性、挤水分、M1 口径断点）</td><td>1003</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M1.2">可检测</td></tr>
+    <tr><td>M1.3 市场即预期读数</td><td>用曲线/利差/持仓/隐含概率读出市场定价的宏观预期</td><td>1004–1006</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M1.3">可检测</td></tr>
+    <tr><td>M1.4 一页纸快照（结业）</td><td>给定一周真实数据写出三句话快照；Point-in-Time 重建历史某日判断；启动决策日志（3–5 个可证伪预测+概率区间）</td><td>1007 + 参考页 0006</td><td class="num">4–8h</td><td class="ms-status live" data-ms="M1.4">可检测</td></tr>
   </tbody>
 </table>
 
@@ -68,11 +102,11 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M2.1 央行工具箱</td><td>对照说清美联储与中国央行的工具对应（政策利率/走廊/QE↔MLF/逆回购/LPR）；知道学术模型地图（为何读论文不套模型）</td><td>2001–2002</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M2.2 传导与时滞</td><td>画出五渠道传导链；时滞表述「长期且可变」；用金融条件指数检验松紧</td><td>2003</td><td class="num">4–6h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M2.3 美元流动性体系</td>解释美元潮汐：离岸美元、掉期基差、美元荒机制（2008/2020 两案例解剖；含 1997–98 亚洲+LTCM 阅读型节段）<td>2004–2005</td><td class="num">5–8h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M2.4 解读一手文件（结业）</td><td>从 FOMC 声明+点阵图+记者会提取增量信息；公布前写条件反应树、公布后做 surprise×仓位归因</td><td>2006</td><td class="num">6–10h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M2.5 国债与财政管道</td><td>讲清 财政赤字→国债发行（QRA/期限结构）→回购→期限溢价 链路；季度读一次 QRA 与财政脉冲</td><td>2007</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M2.1 央行工具箱</td><td>对照说清美联储与中国央行的工具对应（政策利率/走廊/QE↔MLF/逆回购/LPR）；知道学术模型地图（为何读论文不套模型）</td><td>2001–2002</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M2.1">可检测</td></tr>
+    <tr><td>M2.2 传导与时滞</td><td>画出五渠道传导链；时滞表述「长期且可变」；用金融条件指数检验松紧</td><td>2003</td><td class="num">4–6h</td><td class="ms-status live" data-ms="M2.2">可检测</td></tr>
+    <tr><td>M2.3 美元流动性体系</td><td>解释美元潮汐：离岸美元、掉期基差、美元荒机制（2008/2020 两案例解剖；含 1997–98 亚洲+LTCM 阅读型节段）</td><td>2005–2007（2007=2008 案例闭环）</td><td class="num">5–8h</td><td class="ms-status live" data-ms="M2.3">可检测</td></tr>
+    <tr><td>M2.4 解读一手文件（结业）</td><td>从 FOMC 声明+点阵图+记者会提取增量信息；公布前写条件反应树、公布后做 surprise×仓位归因</td><td>2008</td><td class="num">6–10h</td><td class="ms-status live" data-ms="M2.4">可检测</td></tr>
+    <tr><td>M2.5 国债与财政管道</td><td>讲清 财政赤字→国债发行（QRA/期限结构）→回购→期限溢价 链路；季度读一次 QRA 与财政脉冲</td><td>2004</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M2.5">可检测</td></tr>
   </tbody>
 </table>
 
@@ -82,10 +116,10 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M3.1 周期动物园分类</td><td>库存/资本开支/地产信用周期分层叠加；对康波类叙事给出裁定（诚实条款）</td><td>3001–3002</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M3.2 衰退与危机解剖</td><td>用曲线倒挂、Sahm 规则、信用脉冲、债务模板组装危机检查单</td><td>3003–3004</td><td class="num">5–8h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M3.3 regime 定位</td><td>用四层框架定位当前 regime；历史资产表现只报条件分布（中位/胜率/离散/回撤/估值/样本量），禁方向口诀</td><td>3005</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M3.4 完整周期复盘（结业）</td><td>复盘 2020–2023：写出各阶段拐点信号与跨资产实际表现对照</td><td>3006</td><td class="num">8–14h</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M3.1 周期动物园分类</td><td>库存/资本开支/地产信用周期分层叠加；对康波类叙事给出裁定（诚实条款）</td><td>3001–3002</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M3.1">可检测</td></tr>
+    <tr><td>M3.2 衰退与危机解剖</td><td>用曲线倒挂、Sahm 规则、信用脉冲、债务模板组装危机检查单</td><td>3003–3004</td><td class="num">5–8h</td><td class="ms-status live" data-ms="M3.2">可检测</td></tr>
+    <tr><td>M3.3 regime 定位</td><td>用四层框架定位当前 regime；历史资产表现只报条件分布（中位/胜率/离散/回撤/估值/样本量），禁方向口诀</td><td>3005</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M3.3">可检测</td></tr>
+    <tr><td>M3.4 完整周期复盘（结业）</td><td>复盘 2020–2023：写出各阶段拐点信号与跨资产实际表现对照</td><td>3006</td><td class="num">8–14h</td><td class="ms-status live" data-ms="M3.4">可检测</td></tr>
   </tbody>
 </table>
 
@@ -95,10 +129,11 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M4.1 利率→估值传导</td><td>讲清贴现率/久期/实际利率对成长股/黄金/BTC 的传导，及失效条件</td><td>4001–4002</td><td class="num">5–8h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M4.2 汇率与利差</td><td>解释 carry trade 与人民币汇率对 A股/港股的传导路径；懂平价条件（PPP/IRP/Mundell–Fleming）的机制与局限</td><td>4003</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M4.3 商品与通胀链</td><td>油/铜/金三种宏观角色；组装通胀交易 vs 通缩交易清单；地缘供给冲击的市场通道</td><td>4004</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M4.4 情景→仓位映射（结业）</td><td>三情景各自输出六件套（Scenario→Priced→Catalyst→Payoff→Risk→Invalidation，概率用区间）；区分经济预测与交易观点；EV 仓位数学接仓位系统</td><td>4005–4006 + 参考页 0005</td><td class="num">8–14h</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M4.1 利率→估值传导</td><td>讲清贴现率/久期/实际利率对成长股/黄金/BTC 的传导，及失效条件</td><td>4001–4002</td><td class="num">5–8h</td><td class="ms-status live" data-ms="M4.1">可检测</td></tr>
+    <tr><td>M4.2 汇率与利差</td><td>解释 carry trade 与人民币汇率对 A股/港股的传导路径；懂平价条件（PPP/IRP/Mundell–Fleming）的机制与局限</td><td>4003–4004</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M4.2">可检测</td></tr>
+    <tr><td>M4.3 商品与通胀链</td><td>油/铜/金三种宏观角色；组装通胀交易 vs 通缩交易清单；地缘供给冲击的市场通道</td><td>4005</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M4.3">可检测</td></tr>
+    <tr><td>M4.4 情景→仓位映射（结业）</td><td>三情景各自输出六件套（Scenario→Priced→Catalyst→Payoff→Risk→Invalidation，概率用区间）；区分经济预测与交易观点；EV 仓位数学接仓位系统</td><td>4006+4008 + 参考页 0005</td><td class="num">8–14h</td><td class="ms-status live" data-ms="M4.4">可检测</td></tr>
+    <tr><td>M4.5 加密宏观一体化</td><td>用三 regime 框架（流动性代理/独立资产/避险叙事）+条件分布（中位/胜率/最差/样本量）说出 BTC 当前象限归属与证据链，并给出失效哨兵读数（与纳指滚动 90 日相关，连续两季定叙事权重）</td><td>4007</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M4.5">可检测</td></tr>
   </tbody>
 </table>
 
@@ -108,10 +143,10 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M5.1 案例解剖学</td><td>六案例（2008/2013/2015–16 中国/2020/2022/2024 日本）按「事前信号→传导→结果→教训」解剖</td><td>5001–5003</td><td class="num">8–14h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M5.2 机构实践图谱</td><td>说清桥水/宏观对冲基金/险资养老金的宏观做法与约束差异</td><td>5004</td><td class="num">4–7h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M5.3 宏观交易员工作流</td><td>假设→证伪点→表达工具→风险预算四步完整走一遍</td><td>5005</td><td class="num">6–10h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M5.4 完整决策演练（结业）</td><td>当前真实环境写出宏观假设+表达+仓位+证伪点（Macro Decision Sheet 八件套）</td><td>5006 + 参考页 0006</td><td class="num">8–15h</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M5.1 案例解剖学</td><td>六案例（2008/2013/2015–16 中国/2020/2022/2024 日本）按「事前信号→传导→结果→教训」解剖</td><td>2007 · 4003 · 4004 · 5001</td><td class="num">8–14h</td><td class="ms-status live" data-ms="M5.1">可检测</td></tr>
+    <tr><td>M5.2 机构实践图谱</td><td>说清桥水/宏观对冲基金/险资养老金的宏观做法与约束差异</td><td>5002</td><td class="num">4–7h</td><td class="ms-status live" data-ms="M5.2">可检测</td></tr>
+    <tr><td>M5.3 宏观交易员工作流</td><td>假设→证伪点→表达工具→风险预算四步完整走一遍</td><td>5003</td><td class="num">6–10h</td><td class="ms-status live" data-ms="M5.3">可检测</td></tr>
+    <tr><td>M5.4 完整决策演练（结业）</td><td>当前真实环境写出宏观假设+表达+仓位+证伪点（Macro Decision Sheet 八件套）</td><td>5004 + 参考页 0006</td><td class="num">8–15h</td><td class="ms-status live" data-ms="M5.4">可检测</td></tr>
   </tbody>
 </table>
 
@@ -121,15 +156,15 @@
     <tr><th>里程碑</th><th>结业标准（能否做X）</th><th>对应课</th><th>估时</th><th>状态</th></tr>
   </thead>
   <tbody>
-    <tr><td>M6.1 宏观周报写作</td><td>一篇可公开发布的周度宏观复盘</td><td>6001</td><td class="num">6–12h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M6.2 深度专题研究</td><td>3000–5000 字专题（大纲预审制，引用规范全链）</td><td>6002</td><td class="num">12–24h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M6.3 预测记分卡</td><td>对决策日志打 Brier 分+错误归因复盘；完成校准训练</td><td>6003</td><td class="num">4–8h</td><td class="ms-status live">可检测</td></tr>
-    <tr><td>M6.4 费曼教学+毕业考（毕业）</td><td>外行能懂的宏观科普+一次社区检验；跨阶段毕业考 ≥4/12</td><td>6004</td><td class="num">6–12h</td><td class="ms-status live">可检测</td></tr>
+    <tr><td>M6.1 宏观周报写作</td><td>一篇可公开发布的周度宏观复盘</td><td>6001</td><td class="num">6–12h</td><td class="ms-status live" data-ms="M6.1">可检测</td></tr>
+    <tr><td>M6.2 深度专题研究</td><td>3000–5000 字专题（大纲预审制，引用规范全链）</td><td>6002</td><td class="num">12–24h</td><td class="ms-status live" data-ms="M6.2">可检测</td></tr>
+    <tr><td>M6.3 预测记分卡</td><td>对决策日志打 Brier 分+错误归因复盘；完成校准训练</td><td>6003</td><td class="num">4–8h</td><td class="ms-status live" data-ms="M6.3">可检测</td></tr>
+    <tr><td>M6.4 费曼教学+毕业考（毕业）</td><td>外行能懂的宏观科普+一次社区检验；毕业考双卷制：诊断卷→错题复述→验证卷，<strong>验证卷 ≥7/12+复述门槛</strong>（2026-10-01 C5 起，原 ≥4/12 单卷制废止）</td><td>6004</td><td class="num">6–12h</td><td class="ms-status live" data-ms="M6.4">可检测</td></tr>
   </tbody>
 </table>
 
 <h2><span class="no">§9</span>毕业预期（诚实条款）</h2>
-<div class="stop">40 课交付的是框架与仪器，不是「预测更准」的保证。判断力的校准需要后续 1–2 个真实周期——机构以 3–7 年完整周期评估管理人，个人以同一标尺要求自己。点满 29 个里程碑是「训练毕业」，不是「功成身退」。</div>
+<div class="stop">42 课交付的是框架与仪器，不是「预测更准」的保证。判断力的校准需要后续 1–2 个真实周期——机构以 3–7 年完整周期评估管理人，个人以同一标尺要求自己。点满 30 个里程碑是「训练毕业」，不是「功成身退」。</div>
 
 <div class="ask-agent">哪个里程碑的判定标准想当场试一试、或你想挑战某个「可检测」里程碑的检测题——回来找我，现场出题。</div>
 
@@ -140,5 +175,65 @@
 </nav>
 
 </div>
+<script src="../assets/interact.js"></script>
+<script>
+/* 0007 进度中枢层：读本地护照（macro-passport-v1）渲染 30 行点亮状态 + 手动点亮入口 + 页头三件。
+   静态判定标准/对应课链接不动；打印输出点亮快照。无护照数据=空态（全部「可检测·未点亮」）。 */
+(function () {
+  "use strict";
+  var P = window.Macro && window.Macro.passport;
+  if (!P) return; // 底座未载入：状态列保持静态「可检测」
+  function dstr(ts) { try { return window.Macro.dayStr(ts); } catch (e) { return ""; } }
+  function courseCount() {
+    var c = P.data().courses, n = 0;
+    Object.keys(c).forEach(function (k) { if (/^\d{4}$/.test(k) && c[k] && c[k].lit) n++; });
+    return n;
+  }
+  function render() {
+    var cells = document.querySelectorAll("[data-ms]");
+    var litList = [];
+    cells.forEach(function (td) {
+      var ms = td.getAttribute("data-ms");
+      var rec = P.data().milestones[ms];
+      td.textContent = "可检测";
+      if (rec && rec.lit) {
+        var s = document.createElement("span");
+        s.className = "ms-lit";
+        s.textContent = "点亮于 " + dstr(rec.ts);
+        td.appendChild(s);
+        if (td.parentElement) td.parentElement.classList.add("is-lit");
+        litList.push(ms);
+      } else {
+        var b = document.createElement("button");
+        b.type = "button";
+        b.className = "ms-mark";
+        b.textContent = "标记点亮";
+        b.addEventListener("click", function () {
+          if (window.confirm("手动点亮 " + ms + "？\n正式点亮走对应课训练场（≥80% 且隔天重练）；此入口供不想做全题者自评补记，只写本地护照。")) {
+            P.lightMilestone(ms);
+          }
+        });
+        td.appendChild(b);
+      }
+    });
+    var due = P.dueReview().length, done = courseCount();
+    document.getElementById("hub-due").textContent = String(due);
+    document.getElementById("hub-courses").textContent = String(done);
+    document.getElementById("hub-snap").textContent =
+      "点亮快照（生成于 " + dstr(Date.now()) + "，打印即留档）：" + litList.length + "/30 已点亮" +
+      (litList.length ? "：" + litList.join("、") : "（尚未点亮任何一个）") +
+      " · 已完成课数 " + done + "/42 · 今日待练 " + due + " 题。数据全存本机（macro-passport-v1）。";
+  }
+  document.getElementById("hub-export-json").addEventListener("click", function () { P.export("json"); });
+  document.getElementById("hub-export-html").addEventListener("click", function () { P.export("html"); });
+  document.getElementById("hub-clear").addEventListener("click", function () {
+    if (!window.confirm("确定清空本地学习护照？全部作答记录、点亮与快照将删除。")) return;
+    if (!window.confirm("二次确认：此操作不可恢复（建议先导出 JSON 备份）。真的清空？")) return;
+    P.clear();
+  });
+  render();
+  document.addEventListener("macro:passport", render);
+})();
+</script>
 </body>
 </html>

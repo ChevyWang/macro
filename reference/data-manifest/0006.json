@@ -1,0 +1,11 @@
+{
+  "lesson": "0006-decision-log",
+  "asserts": [
+    {"id": "0006-v05-cpi-yoy", "series": "CPIAUCSL", "freq": "m", "as_of": "2022-06", "op": "yoy", "expect": 8.98, "tol": 0.05, "note": "v0.5 模板 State I 维：CPI 同比 8.98%（现行口径月均换算，首估 9.1%）", "file": "reference/0006-decision-log.html", "must_contain": ["8.98%"]},
+    {"id": "0006-v05-core-yoy", "series": "CPILFESL", "freq": "m", "as_of": "2022-06", "op": "yoy", "expect": 5.91, "tol": 0.05, "note": "v0.5 模板 State I 维：核心 CPI 同比 5.91%", "file": "reference/0006-decision-log.html", "must_contain": ["5.91%"]},
+    {"id": "0006-v05-dgs10", "series": "DGS10", "freq": "d", "as_of": "2022-06", "op": "level", "expect": 3.14, "tol": 0.01, "note": "v0.5 模板 State/⑤ L：10Y 月均 3.14%", "file": "reference/0006-decision-log.html", "must_contain": ["3.14%"]},
+    {"id": "0006-v05-dfii10", "series": "DFII10", "freq": "d", "as_of": "2022-06", "op": "level", "expect": 0.53, "tol": 0.01, "note": "v0.5 模板 State/⑤ L：10Y 实际利率月均 0.53%（月末 0.65）", "file": "reference/0006-decision-log.html", "must_contain": ["0.53%"]},
+    {"id": "0006-v05-t10yie", "series": "T10YIE", "freq": "d", "as_of": "2022-06", "op": "level", "expect": 2.62, "tol": 0.01, "note": "v0.5 模板 ⑤ 通胀：盈亏平衡月均 2.62%", "file": "reference/0006-decision-log.html", "must_contain": ["2.62%"]},
+    {"id": "0006-v05-t10y2y", "series": "T10Y2Y", "freq": "d", "as_of": "2022-06", "op": "level", "expect": 0.15, "tol": 0.01, "note": "v0.5 模板 State/⑤ 形状：2s10s 月均 +0.15pp（7 月起倒挂=3003 课已核）", "file": "reference/0006-decision-log.html", "must_contain": ["+0.15pp"]}
+  ]
+}

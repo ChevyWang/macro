@@ -7,10 +7,23 @@
 <link rel="stylesheet" href="assets/course.css">
 <style>
   .phases { list-style: none; padding: 0; margin: 1.6rem 0; font-family: var(--sans); }
-  .phases li { border: 1px solid var(--line); border-radius: 10px; padding: .8rem 1rem; margin: .6rem 0; background: #fff; }
+  .phases li { border: 1px solid var(--line); border-radius: 10px; padding: .8rem 1rem; margin: .6rem 0; background: var(--card); }
   .phases .tag { font-family: var(--mono); font-size: .78rem; color: var(--faint); margin-right: .6rem; }
   .phases .cnt { float: right; font-size: .8rem; color: var(--muted); }
   .phases .done { border-left: 4px solid var(--down); }
+  /* 影子年度面板（读本地护照 macro-passport-v1 的结业里程碑时间戳；打印隐藏） */
+  .shadow-year { border: 1px dashed var(--line); border-radius: 10px; padding: .9rem 1.1rem; margin: 1.6rem 0 0;
+    font-family: var(--sans); font-size: .86rem; background: var(--card); }
+  .shadow-year .sy-title { font-weight: 700; letter-spacing: .02em; }
+  .shadow-year .sy-sub { color: var(--muted); font-size: .78rem; margin: .2rem 0 .6rem; }
+  .shadow-year ol { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; gap: .35rem .6rem; }
+  .shadow-year li { border: 1px solid var(--line); border-radius: 8px; padding: .35rem .6rem; }
+  .shadow-year .sy-slot { font-family: var(--mono); font-size: .74rem; color: var(--faint); margin-right: .45rem; }
+  .shadow-year .sy-done { color: var(--down); font-weight: 600; }
+  .shadow-year .sy-todo { color: var(--faint); }
+  .shadow-year .sy-tail { margin-top: .6rem; font-size: .78rem; color: var(--muted); }
+  @media print { .shadow-year { display: none !important; } }
+  @media (max-width: 560px) { .shadow-year ol { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -26,14 +39,22 @@
   <p class="deck">kbar 教你读盘，这门课教你判断季节——同一个训练营的第二门课。可交易宏观：基本面 × 金融条件 × 政策脉冲 × 市场定价，真实数据与业界案例，从 K 线交易者的需求出发，从浅入深到机构实践。</p>
 </header>
 
-<h2><span class="no">§</span>课程路线（六阶段二十九里程碑）</h2>
+<h2><span class="no">§</span>课程路线（六阶段三十里程碑）</h2>
+<div class="shadow-year" id="shadow-year">
+  <div class="sy-title">你的影子年度——五个快照槽位</div>
+  <div class="sy-sub">五个阶段结业课（1007/2008/3006/4008/5004）各留一格：结业点亮那天，这里记下日期。读自本机护照，换浏览器不跟随。</div>
+  <ol id="sy-slots">
+    <li><span class="sy-slot">#1</span>1007 一页纸快照 <span class="sy-todo">读取中…</span></li>
+  </ol>
+  <div class="sy-tail">毕业时这五行就是你自己写的 regime 演变年谱。</div>
+</div>
 <ul class="phases">
   <li class="done"><span class="tag">P0</span>宏观语言——经济机器、玩家地图、市场互锁、仪表盘<span class="cnt">5 课 · 全部上线</span></li>
-  <li class="done"><span class="tag">P1</span>数据流——中美指标体系、预期差、市场即预期<span class="cnt">6 课 · 全部上线</span></li>
-  <li class="done"><span class="tag">P2</span>央行与流动性——工具箱、传导时滞、美元潮汐、一手文件解读、国债财政管道<span class="cnt">7 课 · 全部上线</span></li>
+  <li class="done"><span class="tag">P1</span>数据流——中美指标体系、预期差、市场即预期<span class="cnt">7 课 · 全部上线</span></li>
+  <li class="done"><span class="tag">P2</span>央行与流动性——工具箱、传导时滞、美元潮汐、2008 案例、一手文件、财政管道<span class="cnt">8 课 · 全部上线</span></li>
   <li class="done"><span class="tag">P3</span>周期——周期动物园、衰退信号、危机检查单、regime 定位<span class="cnt">6 课 · 全部上线</span></li>
-  <li class="done"><span class="tag">P4</span>跨资产传导——利率→估值、汇率利差、商品通胀链、情景→仓位<span class="cnt">6 课 · 全部上线</span></li>
-  <li class="done"><span class="tag">P5</span>案例与机构——六大案例解剖、机构图谱、宏观交易员工作流<span class="cnt">6 课 · 全部上线</span></li>
+  <li class="done"><span class="tag">P4</span>跨资产传导——利率→估值、汇率利差、商品通胀链、加密宏观、情景→仓位<span class="cnt">8 课 · 全部上线</span></li>
+  <li class="done"><span class="tag">P5</span>案例与机构——案例解剖法、机构图谱、工作流、决策演练<span class="cnt">4 课 · 全部上线</span></li>
   <li class="done"><span class="tag">P6</span>输出者——周报、专题、预测记分卡、费曼教学<span class="cnt">4 课 · 全部上线</span></li>
 </ul>
 
@@ -44,52 +65,90 @@
   <li><a href="lessons/0003-player-map.html">第 0003 课 · 玩家地图</a>——六部门目标×约束×行为，反应函数雏形</li>
   <li><a href="lessons/0004-three-markets.html">第 0004 课 · 三大市场互锁</a>——货币/债券/外汇互相定价，FRED 三联图</li>
   <li><a href="lessons/0005-dashboard-routine.html">第 0005 课 · 仪表盘运转</a>——P0 结业课：四层例行+if-then 行为科学包</li>
-  <li><a href="reference/0001-macro-dashboard.html">参考页 0001 · 宏观仪表盘</a>——业界每周真正看的数据地图（免费源全收录）</li>
-  <li><a href="reference/0002-glossary.html">参考页 0002 · 术语手册</a>——全课术语中英对照+一句话定义（滚动增补）</li>
-  <li><a href="reference/0007-milestone-map.html">参考页 0007 · 里程碑地图</a>——29 里程碑×结业标准×点亮条件总表</li>
   <li><a href="lessons/1001-indicator-map-calendar.html">第 1001 课 · 指标谱系与日历（美国）</a>——四族地图、日历墙与修订文化，P1 开篇</li>
   <li><a href="lessons/1002-four-values-turning-points.html">第 1002 课 · 质变四值与拐点包</a>——Level/Momentum/Acceleration/Percentile 四值读法</li>
   <li><a href="lessons/1003-china-data-system.html">第 1003 课 · 中国数据体系</a>——社融/M1/PMI 判读与口径红线</li>
-  <li><a href="lessons/1004-curves-spreads-expectations.html">第 1004 课 · 曲线与利差读预期</a>——ACM 拆解与「价格=预测+补偿」</li>
-  <li><a href="lessons/1005-positioning-probabilities.html">第 1005 课 · 持仓与隐含概率</a>——FedWatch/COT/SME 三类证据</li>
-  <li><a href="lessons/1006-snapshot-point-in-time.html">第 1006 课 · 一页纸快照+Point-in-Time</a>——P1 结业：快照与决策日志启动</li>
-  <li><a href="reference/0006-decision-log.html">参考页 0006 · 决策日志与 Decision Sheet</a>——可打印模板（M1.4 起）</li>
+  <li><a href="lessons/1004-expectations-compensation.html">第 1004 课 · 曲线与利差读预期 I：恒等式与补偿</a>——价格=预测+补偿：预期理论、ACM 拆解与远期</li>
+  <li><a href="lessons/1005-curve-shapes-spreads.html">第 1005 课 · 曲线与利差读预期 II：形态与利差族</a>——四词形态学、2s10s/3m10y 利差族与判读</li>
+  <li><a href="lessons/1006-positioning-probabilities.html">第 1006 课 · 持仓与隐含概率</a>——FedWatch/COT/SME 三类证据</li>
+  <li><a href="lessons/1007-snapshot-point-in-time.html">第 1007 课 · 一页纸快照+Point-in-Time</a>——P1 结业：快照与决策日志启动</li>
   <li><a href="lessons/2001-fed-toolbox.html">第 2001 课 · 美联储工具箱</a>——资产负债表+利率走廊+QE/QT 管道，P2 开篇</li>
   <li><a href="lessons/2002-pboc-toolbox.html">第 2002 课 · 中国央行工具箱</a>——7 天 OMO 主锚/LPR/结构性工具，中美对照</li>
   <li><a href="lessons/2003-transmission-lags.html">第 2003 课 · 传导与时滞</a>——五渠道传导链+「长期且可变」+NFCI 检验</li>
-  <li><a href="lessons/2004-offshore-dollar-basis.html">第 2004 课 · 离岸美元与掉期基差</a>——$13 万亿离岸体系+1997–98 案例</li>
-  <li><a href="lessons/2005-dollar-squeeze.html">第 2005 课 · 美元荒机制</a>——2008/2020 解剖+H.4.1 分项纪律</li>
-  <li><a href="lessons/2006-reading-primary-documents.html">第 2006 课 · 解读一手文件</a>——P2 结业：反应树+四因子归因+快照 #2</li>
-  <li><a href="lessons/2007-treasury-fiscal-plumbing.html">第 2007 课 · 国债与财政管道</a>——QRA/FIM/TGA，P2 收官</li>
-  <li><a href="reference/0003-central-bank-tools.html">参考页 0003 · 央行工具对照表</a>——中美工具一一对照+免费读数源（每季自查）</li>
+  <li><a href="lessons/2004-treasury-fiscal-plumbing.html">第 2004 课 · 国债与财政管道</a>——QRA/FIM/TGA，财政管道</li>
+  <li><a href="lessons/2005-offshore-dollar-basis.html">第 2005 课 · 离岸美元与掉期基差</a>——$13 万亿离岸体系+1997–98 案例</li>
+  <li><a href="lessons/2006-dollar-squeeze.html">第 2006 课 · 美元荒机制</a>——2008/2020 解剖+H.4.1 分项纪律</li>
+  <li><a href="lessons/2007-case-2008.html">第 2007 课 · 案例解剖：2008</a>——美元荒机制的完整案例闭环：2008 四段解剖</li>
+  <li><a href="lessons/2008-reading-primary-documents.html">第 2008 课 · 解读一手文件</a>——P2 结业：反应树+四因子归因+快照 #2</li>
   <li><a href="lessons/3001-cycle-zoo-inventory-capex.html">第 3001 课 · 周期动物园：库存与资本开支</a>——基钦/朱格拉分层+康波裁定，P3 开篇</li>
   <li><a href="lessons/3002-cycle-zoo-real-estate-financial.html">第 3002 课 · 周期动物园：地产与金融周期</a>——BIS 信用缺口+库兹涅茨+GFCy 诚实条款</li>
   <li><a href="lessons/3003-recession-signals.html">第 3003 课 · 衰退信号</a>——倒挂/Sahm/初请·ISM/信用脉冲，条件分布纪律</li>
   <li><a href="lessons/3004-crisis-checklist.html">第 3004 课 · 危机检查单</a>——七阶段模板+OAS/SLOOS 分读+六行检查单</li>
   <li><a href="lessons/3005-regime-location.html">第 3005 课 · regime 定位</a>——四层框架+判读卡（手工箭头版）</li>
   <li><a href="lessons/3006-full-cycle-review-2020-23.html">第 3006 课 · 完整周期复盘 2020–23</a>——P3 结业：六段复盘+当期快照 #3</li>
-  <li><a href="reference/0004-crisis-checklist.html">参考页 0004 · 危机检查单</a>——七阶段+泡沫七征+六行填写模板（季度例行）</li>
   <li><a href="lessons/4001-discount-rate-duration.html">第 4001 课 · 贴现率与久期</a>——bp×久期换算器+凸性+成长股=长久期，P4 开篇</li>
   <li><a href="lessons/4002-real-rates-risk-assets.html">第 4002 课 · 实际利率与风险资产</a>——红绿拆解+价格三因子一图流+金价两次失效</li>
-  <li><a href="lessons/4003-fx-carry.html">第 4003 课 · 汇率与利差</a>——carry 机制与 2024-08 崩盘+平价条件+人民币/港币传导</li>
-  <li><a href="lessons/4004-commodities-inflation-chain.html">第 4004 课 · 商品与通胀链</a>——油铜金角色卡+GSCPI+S 维地缘冲击</li>
-  <li><a href="lessons/4005-scenarios-sixpack.html">第 4005 课 · 情景与六件套</a>——情景三件套硬化+EV 仓位数学接 kbar</li>
-  <li><a href="lessons/4006-scenario-position-mapping.html">第 4006 课 · 情景→仓位映射</a>——P4 结业：七维映射表+premortem+当期快照 #4</li>
-  <li><a href="reference/0005-scenario-asset-matrix.html">参考页 0005 · 情景-资产矩阵卡</a>——七维×资产映射+六件套/EV 填写模板（可打印）</li>
-  <li><a href="lessons/5001-case-2008.html">第 5001 课 · 案例 I：2008</a>——四段解剖+当时定价 vs 事后叙事，P5 开篇</li>
-  <li><a href="lessons/5002-case-2013-china.html">第 5002 课 · 案例 II：2013 与 2015–16 中国</a>——taper 预期差+第五读数+point-in-time 考题</li>
-  <li><a href="lessons/5003-case-2020-2022-japan.html">第 5003 课 · 案例 III：2020、2022 与 2024 日本</a>——政策闪电战+当时可知纪律+carry 崩溃，M5.1 收官</li>
-  <li><a href="lessons/5004-institution-landscape.html">第 5004 课 · 机构实践图谱</a>——三类机构主表+全天候=意外暴露思维+个人翻译版</li>
-  <li><a href="lessons/5005-macro-trader-workflow.html">第 5005 课 · 宏观交易员工作流</a>——四步循环+IA 三件套+假设完整生命周期</li>
-  <li><a href="lessons/5006-full-decision-drill.html">第 5006 课 · 完整决策演练</a>——P5 结业：Macro Decision Sheet 八件套+当期快照 #5</li>
+  <li><a href="lessons/4003-parity-carry.html">第 4003 课 · 汇率与利差 I：平价与 carry</a>——carry 机制与 2024-08 崩盘+平价条件</li>
+  <li><a href="lessons/4004-rmb-hkd.html">第 4004 课 · 汇率与利差 II：人民币与港币</a>——人民币/港币传导+CNH 与联系汇率</li>
+  <li><a href="lessons/4005-commodities-inflation-chain.html">第 4005 课 · 商品与通胀链</a>——油铜金角色卡+GSCPI+S 维地缘冲击</li>
+  <li><a href="lessons/4006-scenarios-sixpack.html">第 4006 课 · 情景与六件套</a>——情景三件套硬化+EV 仓位数学接 kbar</li>
+  <li><a href="lessons/4007-crypto-macro.html">第 4007 课 · 加密宏观一体化</a>——BTC 三 regime+四象限条件分布+稳定币潮汐+失效哨兵</li>
+  <li><a href="lessons/4008-scenario-position-mapping.html">第 4008 课 · 情景→仓位映射</a>——P4 结业：八维映射表（含加密挂载行）+premortem+当期快照 #4</li>
+  <li><a href="lessons/5001-case-methodology.html">第 5001 课 · 案例解剖法：taper 与通胀冲击</a>——案例解剖法总纲：2013 taper+2020/2022 实弹</li>
+  <li><a href="lessons/5002-institution-landscape.html">第 5002 课 · 机构实践图谱</a>——三类机构主表+全天候=意外暴露思维+个人翻译版</li>
+  <li><a href="lessons/5003-macro-trader-workflow.html">第 5003 课 · 宏观交易员工作流</a>——四步循环+IA 三件套+假设完整生命周期</li>
+  <li><a href="lessons/5004-full-decision-drill.html">第 5004 课 · 完整决策演练</a>——P5 结业：Macro Decision Sheet 八件套+当期快照 #5</li>
   <li><a href="lessons/6001-weekly-report-writing.html">第 6001 课 · 宏观周报写作</a>——四段结构+诚实条款写作版，P6 开篇</li>
   <li><a href="lessons/6002-deep-dive-research.html">第 6002 课 · 深度专题研究</a>——大纲预审制+SOURCE TYPE 全链</li>
   <li><a href="lessons/6003-forecast-scorecard.html">第 6003 课 · 预测记分卡</a>——Brier 结算+三层归因+CHAMP 校准</li>
-  <li><a href="lessons/6004-feynman-graduation.html">第 6004 课 · 费曼教学+毕业考</a>——毕业：12 题跨阶段毕业考+毕业声明</li>
+  <li><a href="lessons/6004-feynman-graduation.html">第 6004 课 · 费曼教学+毕业考</a>——毕业：双卷制毕业考（诊断→回炉复述→验证，≥7/12）+两级毕业声明</li>
+  <li><a href="reference/0001-macro-dashboard.html">参考页 0001 · 宏观仪表盘</a></li>
+  <li><a href="reference/0002-glossary.html">参考页 0002 · 术语手册</a></li>
+  <li><a href="reference/0003-central-bank-tools.html">参考页 0003 · 央行工具对照表</a></li>
+  <li><a href="reference/0004-crisis-checklist.html">参考页 0004 · 危机检查单</a></li>
+  <li><a href="reference/0005-scenario-asset-matrix.html">参考页 0005 · 情景-资产矩阵卡</a></li>
+  <li><a href="reference/0006-decision-log.html">参考页 0006 · 决策日志与 Decision Sheet</a></li>
+  <li><a href="reference/0007-milestone-map.html">参考页 0007 · 里程碑地图</a></li>
+  <li><a href="reference/0008-as-of-memo.html">参考页 0008 · 当下 regime 备忘（As-of 活页）</a>——全站当期读数总表（四层框架分组）+季度换血+年度时代年检七项+四盲区自检</li>
+  <li><a href="reference/0010-reaction-calendar.html">参考页 0010 · 发布日历与反应树</a>——例行发布墙（规律性窗口+当月核实链接）与空反应树可打印模板</li>
+  <li><a href="reference/0009-tiered-entrance.html">参考页 0009 · 分级入口与诊断</a>——30 题诊断卷定起点＋三路径卡（零基础/快速道/资深查漏）＋90h 最小合格路径＋隐形工作量预算表＋按问题查场景索引</li>
 </ul>
 
 <div class="note">诚实条款：宏观预测正确率有天花板，本课程教的是框架、证伪与校准，不是「预测更准」。课内数据只用历史稳定事实或标注截至日期，不追行情、不荐仓位。</div>
 
 </div>
+<script src="assets/interact.js"></script>
+<script>
+/* 影子年度面板：读本地护照（macro-passport-v1）结业里程碑 M1.4/M2.4/M3.4/M4.4/M5.4 时间戳。
+   无数据=优雅空态（五格全部「未完成」）；打印隐藏（见上方 @media print）。 */
+(function () {
+  "use strict";
+  var host = document.getElementById("sy-slots");
+  if (!host) return;
+  var slots = [
+    { n: 1, c: "1007", ms: "M1.4", t: "一页纸快照+Point-in-Time" },
+    { n: 2, c: "2008", ms: "M2.4", t: "解读一手文件" },
+    { n: 3, c: "3006", ms: "M3.4", t: "完整周期复盘 2020–23" },
+    { n: 4, c: "4008", ms: "M4.4", t: "情景→仓位映射" },
+    { n: 5, c: "5004", ms: "M5.4", t: "完整决策演练" }
+  ];
+  function render() {
+    var P = window.Macro && window.Macro.passport;
+    if (!P) { host.innerHTML = "<li><span class='sy-todo'>本地护照组件未载入（JS 受限），快照槽位不可用。</span></li>"; return; }
+    var ms = P.data().milestones, any = false;
+    host.innerHTML = slots.map(function (s) {
+      var rec = ms[s.ms], done = rec && rec.lit;
+      if (done) any = true;
+      var state = done
+        ? "<span class='sy-done'>✓ 完成于 " + window.Macro.dayStr(rec.ts) + "</span>"
+        : "<span class='sy-todo'>未完成</span>";
+      return "<li><span class='sy-slot'>#" + s.n + "</span>" + s.c + " " + s.t + " " + state + "</li>";
+    }).join("") +
+      (any ? "" : "<li style='border:none;padding-left:0'><span class='sy-todo'>尚无点亮记录——第一格在第 <b>1007</b> 课等你（结业检测+隔天重练后自动点亮）。</span></li>");
+  }
+  render();
+  document.addEventListener("macro:passport", render);
+})();
+</script>
 </body>
 </html>

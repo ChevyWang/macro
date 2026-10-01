@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参考 0010 发布日历与反应树 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  .cal-tbl td, .cal-tbl th { font-size: .86rem; }
+  .cal-tbl .w { white-space: nowrap; }
+  .tree-tbl td, .tree-tbl th { font-size: .84rem; }
+  .tree-tbl .blank { min-width: 5.2rem; }
+  .ex-row td { background: var(--card); }
+  @media print { .no-print { display: none !important; } .tree-tbl { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">参考页 0010</span>
+    <span>·</span>
+    <span>例行发布墙 · 反应树模板</span>
+    <span>·</span>
+    <span>规律性窗口（不写死日期）· 可打印</span>
+  </div>
+  <h1>发布日历与反应树</h1>
+  <p class="deck">数据发布是宏观交易的心跳。本页两件东西：①<strong>例行发布墙</strong>——美国与中国的月度例行数据「惯例节奏」静态表（写<strong>规律性窗口</strong>不写具体日期——静态页写死日期=过期即谎言，每月的具体日期用行尾核实链接当场确认）；②<strong>空反应树</strong>——发布前填的条件分支预案模板（2008 课结业工件的随手版）。配合 0005 仪表盘的「事件层」与 1001 课的日历感使用。</p>
+</header>
+
+<h2><span class="no">§1</span>本月+下月例行发布墙（规律性窗口）</h2>
+<p class="lede">用法：排每周例程时查这张墙——「下周有什么例行发布、在哪个窗口」；<strong>写进反应树前必须点核实链接确认当月具体日期与时间</strong>（会议日程、夏令时、节假日顺延都会移动窗口）。美东时间=ET；北京时间=ET+12（夏令时）/13（冬令时）。</p>
+
+<h3>美国（对全球资产第一反应最大的一组）</h3>
+<table class="cal-tbl">
+  <thead>
+    <tr><th>事件</th><th>频率与惯例窗口</th><th class="w">发布方</th><th class="w">当月核实</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>FOMC 利率决议+记者会</td><td>每年 8 次例行会议（惯例分布在 1/3/5/6/7/9/11/12 月附近，具体年历逐年公布）；会期两日，决议次日 14:00 ET、半小时后记者会</td><td>Federal Reserve</td><td><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Fed FOMC 日历</a></td></tr>
+    <tr><td>CPI（消费者物价）</td><td>每月一次，惯例月中旬（约 10–15 日）08:30 ET；能源分项常使总体波动，核心更稳</td><td>BLS</td><td><a href="https://www.bls.gov/schedule/news_release/cpi.htm">BLS CPI 排期</a></td></tr>
+    <tr><td>非农就业（NFP）+失业率</td><td>每月一次，惯例当月第一个周五 08:30 ET；首值会修订两个月+年度基准修订（1001 课修订文化）</td><td>BLS</td><td><a href="https://www.bls.gov/schedule/news_release/empsit.htm">BLS 就业报告排期</a></td></tr>
+    <tr><td>PCE 物价（联储通胀标尺）</td><td>每月一次，惯例月底（个人收支报告内，约 25 日–月末）08:30 ET；核心 PCE 是 2% 目标的官方口径</td><td>BEA</td><td><a href="https://www.bea.gov/news/schedule">BEA 发布排期</a></td></tr>
+    <tr><td>ISM 制造业 PMI</td><td>每月一次，惯例当月第一个工作日 10:00 ET；新订单−库存差是 3003 课的领先读法</td><td>ISM</td><td><a href="https://www.ismworld.org/supply-management-news-and-reports/reports/ism-report-on-business/">ISM 报告页</a></td></tr>
+    <tr><td>初请失业金</td><td>每周四 08:30 ET；几乎不修订，永远看 4 周均线（1001 课「频率×领先×不修」三兼得）</td><td>DOL</td><td><a href="https://fred.stlouisfed.org/calendar">FRED 经济日历</a></td></tr>
+    <tr><td>（统一核实口）全部序列发布时刻</td><td>发布前 24 小时把本周的数据时刻表过一遍——免费聚合口，配 0005 课周层例行</td><td>FRED</td><td><a href="https://fred.stlouisfed.org/calendar">FRED ECON calendar</a></td></tr>
+  </tbody>
+</table>
+
+<h3>中国</h3>
+<table class="cal-tbl">
+  <thead>
+    <tr><th>事件</th><th>频率与惯例窗口</th><th class="w">发布方</th><th class="w">当月核实</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>社融/M1/M2（金融数据）</td><td>每月一次，惯例次月中旬（约 9–15 日，遇春节顺延）——「N 月上中旬」表述</td><td>中国人民银行</td><td><a href="http://www.pbc.gov.cn/">人民银行官网</a></td></tr>
+    <tr><td>官方制造业/非制造业 PMI</td><td>每月一次，惯例月末发布当月值（月末最后一日前后）09:30；新订单分项优先读（1003/1004 课）</td><td>国家统计局</td><td><a href="https://www.stats.gov.cn/">统计局日历</a></td></tr>
+    <tr><td>贸易收支（出口）</td><td>每月一次，惯例上旬（约 7 日前后）发布上月值</td><td>海关总署</td><td><a href="http://www.customs.gov.cn/">海关总署</a></td></tr>
+    <tr><td>LPR 报价</td><td>每月一次，固定 20 日 09:15（遇节假日顺延）——全年少数几个「写死日期也安全」的发布</td><td>全国银行间同业拆借中心</td><td><a href="https://www.chinamoney.com.cn/">中国货币网</a></td></tr>
+    <tr><td>CPI/PPI</td><td>每月一次，惯例上旬（约 9–10 日）发布上月值</td><td>国家统计局</td><td><a href="https://www.stats.gov.cn/">统计局日历</a></td></tr>
+    <tr><td>货币政策执行报告</td><td>季度，惯例 2/5/8/11 月发布上季报告——「下一阶段政策思路」逐期 diff 是 2008 课的方法</td><td>中国人民银行</td><td><a href="http://www.pbc.gov.cn/">人民银行官网</a></td></tr>
+  </tbody>
+</table>
+<div class="note">诚实条款：本墙写的是「惯例 N 月 X 旬」级的规律性窗口——它来自各发布机构的常年节奏，但<strong>任何一个月都可能提前、推迟或因节假日移动</strong>；把具体日期写进反应树之前，先点行尾核实链接对表。窗口写错不是小事：2008 课的四因子归因从「对表」开始。</div>
+
+<h2><span class="no">§2</span>空反应树（可打印模板）</h2>
+<p class="lede">反应树=发布<strong>前</strong>写下的条件分支预案：不预测结果，预测「每种结果下市场大概怎么反应、我怎么办」。一张树只写一个事件；三情景×五栏，发布前填「我的概率」，发布后补「实际与归因」。打印本页或在决策日志里誊抄表格均可。</p>
+<p><strong>事件：＿＿＿＿＿＿＿＿　发布时刻：＿＿＿＿（已核实链接日期：＿＿）　consensus/市场定价：＿＿＿＿＿＿</strong></p>
+<table class="tree-tbl">
+  <thead>
+    <tr><th>情景</th><th>意外方向（读数−预期）</th><th>典型第一反应（机制链一句）</th><th>我的概率（区间）</th><th>应对（仓位/证伪）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>A 符合预期</td><td class="blank">　</td><td class="blank">　</td><td class="blank">　</td><td class="blank">　</td></tr>
+    <tr><td>B 意外偏鹰/偏强</td><td class="blank">　</td><td class="blank">　</td><td class="blank">　</td><td class="blank">　</td></tr>
+    <tr><td>C 意外偏鸽/偏弱</td><td class="blank">　</td><td class="blank">　</td><td class="blank">　</td><td class="blank">　</td></tr>
+    <tr class="ex-row"><td>示例行（已解历史事件，格式参考）</td><td>2024-09-18 FOMC：市场定价降 50bp 概率约 63%（1006 课案例）——情景 B=只降 25bp，意外偏鹰</td><td>短端利率↑、美元↑、对利率敏感资产承压（利好前置兑现，前瞻被压）</td><td>30–40%</td><td>若持美债多单减半；次日记者会措辞转鸽则回补（证伪点写读数不写感觉）</td></tr>
+  </tbody>
+</table>
+<div class="note">填法三条：①「典型第一反应」用机制链写一句（哪个市场的哪个价先动、为什么）——写不出的情景说明你还没懂传导，回炉对应课；②「我的概率」用区间（4006 课硬格式），三情景加总应约 100%；③「应对」两栏都要有动作词（加/减/不动+证伪读数）——「观望」不算应对，算没填。</div>
+
+<h2><span class="no">§3</span>每月实弹（使用说明）</h2>
+<p class="lede">反应树不是表格作业，是每月的实弹循环——三步：</p>
+<ol>
+  <li><strong>发布前（≥24 小时）填树</strong>：从 §1 发布墙挑本月最重要的一两个事件（FOMC/CPI/非农/社融轮着来），填满三情景+概率区间。概率格就是决策日志的预测行——写进日志，到期可结算（0006 课五要素）。</li>
+  <li><strong>发布后 30 分钟内做归因</strong>：读数相对共识落在哪个情景（1002 课四值：Level/Momentum/Acceleration/Percentile 给读数定位）；市场第一反应与「典型反应」栏对照，动的是预期还是溢价、是哪个渠道（2008 课四因子归因）。对得上的格子打勾，对不上的写一句为什么——那句为什么就是你下个月要回炉的课。</li>
+  <li><strong>季度末并表结算</strong>：把本季每张树的「我的概率」行并入 6003 课记分卡，Brier 结算+归因——反应树的命中率就是校准训练的实弹成绩（纯猜 25% 的底、报 60% 的事就该发生六成）。</li>
+</ol>
+<div class="note">诚实条款：本页不含当期读数、不写未核实的具体日期、不做任何预测——反应树教的是<strong>条件化</strong>（每种结果怎么办），不是猜结果。示例行用的是 1006 课已解的历史案例，不是行情提示。</div>
+
+<div class="ask-agent">哪次发布的反应树想拿来对表、或者你想让我陪你给下周的 FOMC/CPI 填第一张树——回来找我，现场填一张比读十遍说明有用。</div>
+
+<nav class="lesson-nav">
+  <a href="../lessons/2008-reading-primary-documents.html">← 第 2008 课（反应树的方法源头）</a>
+  <a href="../index.html">课程首页</a>
+  <a href="0006-decision-log.html">决策日志与八件套 →</a>
+</nav>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>

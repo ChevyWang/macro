@@ -4,6 +4,7 @@
    macro 专属组件（interact.js 挂载，标签选择器匹配 <quiz-block> 等自定义元素——勿改回类选择器）。 */
 
 :root {
+  color-scheme: light;
   --paper: #fcfcfb;
   --ink: #1c1c1a;
   --muted: #6e6c64;
@@ -15,9 +16,50 @@
   --note-bg: #f7f3e3;
   --good-bg: #eaf4ec;
   --bad-bg: #fbeeec;
+  --card: #fff;             /* 组件面（暗色映射为深色卡面） */
+  --shadow: rgba(28,28,26,.08);
   --serif: "Songti SC", "STSong", "Noto Serif CJK SC", "Noto Serif SC", Georgia, serif;
   --sans: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
   --mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+/* —— 深色模式（2026-10 Learner OS）：手动 [data-theme=dark] 与系统 prefers auto 双入口；
+     顶栏主题钮循环 auto→light→dark（存 localStorage 学习护照 theme 字段）。
+     注：模拟器 SVG 已改用 CSS 变量色（C8）；课内静态 SVG/数据图多为固定浅底（打印/浅色态为准读），
+     暗色下以浅色卡面呈现——@media print 统一重置回浅色变量（见打印段）。 —— */
+[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #1b1b18;
+  --ink: #e9e6da;
+  --muted: #a8a496;
+  --faint: #8f8b7d;
+  --line: #3c3a31;
+  --up: #e5584a;
+  --down: #46a868;
+  --note: #d0aa4e;
+  --note-bg: #282215;
+  --good-bg: #1e2f24;
+  --bad-bg: #3a211d;
+  --card: #232220;
+  --shadow: rgba(0,0,0,.45);
+}
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: dark;
+    --paper: #1b1b18;
+    --ink: #e9e6da;
+    --muted: #a8a496;
+    --faint: #8f8b7d;
+    --line: #3c3a31;
+    --up: #e5584a;
+    --down: #46a868;
+    --note: #d0aa4e;
+    --note-bg: #282215;
+    --good-bg: #1e2f24;
+    --bad-bg: #3a211d;
+    --card: #232220;
+    --shadow: rgba(0,0,0,.45);
+  }
 }
 
 * { box-sizing: border-box; }
@@ -50,8 +92,13 @@ header {
   display: flex; flex-wrap: wrap; gap: .5rem; align-items: center;
   font-family: var(--sans); font-size: .78rem; letter-spacing: .14em; color: var(--muted);
 }
-.kicker .chip { background: var(--ink); color: #fff; border-radius: 2px; padding: .12rem .55rem; }
+.kicker .chip { background: var(--ink); color: var(--paper); border-radius: 2px; padding: .12rem .55rem; }
 .kicker .num { font-family: var(--mono); }
+.kicker .asof-chip {
+  font-family: var(--sans); font-size: .68rem; color: var(--note);
+  border: 1px solid var(--line); border-radius: 99px;
+  padding: .1rem .55rem; white-space: nowrap;
+}
 
 h1 { font-size: 1.9rem; line-height: 1.35; margin: .35rem 0 .3rem; font-weight: 700; }
 .deck { color: var(--muted); font-family: var(--sans); font-size: .95rem; line-height: 1.7; margin: 0; }
@@ -92,11 +139,11 @@ em { font-style: normal; color: var(--muted); } /* 括注与元说明用 em */
 .tip::before  { content: "提示"; }
 .warn::before { content: "警告"; }
 .stop::before { content: "红线"; }
-.tip  { background: #fff; border-left-color: var(--down); }
+.tip  { background: var(--card); border-left-color: var(--down); }
 .tip::before  { color: var(--down); }
-.warn { background: #fff; border-left-color: var(--up); }
+.warn { background: var(--card); border-left-color: var(--up); }
 .warn::before { color: var(--up); }
-.stop { background: #fff; border-left: 4px solid var(--up); padding-left: 1rem; }
+.stop { background: var(--card); border-left: 4px solid var(--up); padding-left: 1rem; }
 .stop::before { color: var(--up); }
 
 /* —— 表格（kbar：底边线 + 小字表头） —— */
@@ -127,7 +174,7 @@ quiz-block, chain-block, preq-block, recall-block {
   margin: 1.8rem 0;
   font-family: var(--sans);
   font-size: .98rem;
-  background: #fff;
+  background: var(--card);
 }
 preq-block { border: 1.5px dashed var(--faint); background: var(--note-bg); } /* 课前猜想：kbar ask-teacher 的虚线语言 + 金底 */
 quiz-block .q, chain-block .q, preq-block .q, recall-block .q {
@@ -183,7 +230,7 @@ quiz-block .why-hint, preq-block .why-hint, recall-block .why-hint { font-size: 
   transition: border-color .12s;
 }
 .chain-step:hover:not(:disabled) { border-color: var(--ink); }
-.chain-step.picked { background: #fff; border-color: var(--ink); }
+.chain-step.picked { background: var(--card); border-color: var(--ink); }
 .chain-step.picked::before { content: attr(data-pos) " "; font-family: var(--mono); color: var(--up); font-weight: 700; }
 .chain-step.right { border-color: var(--down); background: var(--good-bg); }
 .chain-step.misplaced { border-color: var(--up); background: var(--bad-bg); }
@@ -192,7 +239,7 @@ quiz-block .why-hint, preq-block .why-hint, recall-block .why-hint { font-size: 
   font-size: .95rem;
   font-weight: 600;
   background: var(--ink);
-  color: #fff;
+  color: var(--paper);
   border: none;
   border-radius: 8px;
   padding: .55rem 1.3rem;
@@ -251,7 +298,7 @@ quiz-block .why-hint, preq-block .why-hint, recall-block .why-hint { font-size: 
 }
 .lesson-map {
   border: 1px solid var(--line); border-radius: 10px; padding: .9rem 1.2rem;
-  margin: 1.6rem 0; font-family: var(--sans); font-size: .9rem; background: #fff;
+  margin: 1.6rem 0; font-family: var(--sans); font-size: .9rem; background: var(--card);
 }
 .lesson-map .lm-title { font-weight: 700; font-size: .82rem; color: var(--muted); letter-spacing: .1em; }
 .lesson-map ol { margin: .4rem 0 0 1.3rem; padding: 0; }
@@ -268,10 +315,22 @@ footer.course .nav a { max-width: 32%; }
 
 /* —— 打印 —— */
 @media print {
+  /* 深色打印重置（C8）：无论手动 [data-theme=dark] 还是系统 prefers 深色，打印一律输出浅底浅色——
+     纸不发光，深色底既费墨又压打印可读性。变量重声明置于样式表末段，同特异性下胜出。 */
+  :root, html, [data-theme="dark"], html:not([data-theme="light"]):not([data-theme="dark"]) {
+    color-scheme: light;
+    --paper: #fcfcfb; --ink: #1c1c1a; --muted: #6e6c64; --faint: #767468;
+    --line: #e4e2d9; --up: #d33a2c; --down: #1a7f37; --note: #8a6d1f;
+    --note-bg: #f7f3e3; --good-bg: #eaf4ec; --bad-bg: #fbeeec;
+    --card: #fff; --shadow: rgba(28,28,26,.08);
+  }
   body { background: #fff; font-size: 11pt; }
   .page { max-width: none; padding: 0; }
-  quiz-block, chain-block, preq-block, recall-block, video-card, sim-block, .ask-agent, .lesson-nav { border: 1px solid #999; page-break-inside: avoid; }
-  video-card .vc-play, sim-block .sim-controls, sim-block .sim-btns { display: none; }
+  quiz-block, chain-block, preq-block, recall-block, video-card, sim-block, blindtest-block, recalc-block, .judge-card, .ask-agent, .lesson-nav { border: 1px solid #999; page-break-inside: avoid; }
+  video-card .vc-play, sim-block .sim-controls, sim-block .sim-btns, .topbar, .bt-bar, .jc-bar { display: none !important; }
+  .why { display: block !important; }   /* 打印降级：选项解析常驻（屏幕态未作答 display:none） */
+  dfn.term::after { display: none !important; } /* 悬浮卡不进打印，词下划线保留 */
+  chart-block figure { page-break-inside: avoid; } /* 图表整图打印，矢量原样 */
   a { border-bottom: none; color: inherit; }
   a[href^="http"]::after { content: "（" attr(href) "）"; font-size: .75em; color: #555; }
 }
@@ -280,7 +339,7 @@ footer.course .nav a { max-width: 32%; }
 body { counter-reset: example; }
 .example {
   border-left: 3px solid var(--ink);
-  background: #fff;
+  background: var(--card);
   padding: .8rem 1.1rem;
   margin: 1.4rem 0;
   font-family: var(--sans);
@@ -305,7 +364,7 @@ video-card {
   display: block;
   border: 1.5px solid var(--line);
   border-radius: 10px;
-  background: #fff;
+  background: var(--card);
   padding: 1rem 1.2rem .9rem;
   margin: 1.8rem 0;
   font-family: var(--sans);
@@ -317,7 +376,7 @@ video-card .vc-meta { color: var(--faint); font-size: .82rem; }
 video-card .vc-play {
   margin-top: .7rem;
   font-family: var(--sans); font-size: .95rem; font-weight: 600;
-  background: var(--ink); color: #fff; border: none; border-radius: 8px;
+  background: var(--ink); color: var(--paper); border: none; border-radius: 8px;
   padding: .55rem 1.3rem; cursor: pointer;
 }
 video-card .vc-frame { margin-top: .8rem; aspect-ratio: 16/9; border-radius: 8px; overflow: hidden; background: #000; display: none; }
@@ -330,7 +389,7 @@ sim-block {
   display: block;
   border: 1px solid var(--line);
   border-radius: 10px;
-  background: #fff;
+  background: var(--card);
   padding: 1.3rem 1.4rem 1.1rem;
   margin: 1.8rem 0;
   font-family: var(--sans);
@@ -348,7 +407,7 @@ sim-block .sim-btns button {
   border: 1.5px solid var(--line); border-radius: 999px;
   padding: .35rem .95rem; cursor: pointer;
 }
-sim-block .sim-btns button.active { background: var(--ink); color: #fff; border-color: var(--ink); }
+sim-block .sim-btns button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 sim-block .sim-read { font-size: .86rem; color: var(--muted); margin-top: .5rem; font-family: var(--mono); }
 sim-block .sim-verdict { margin-top: .7rem; padding: .75rem .95rem; border-radius: 8px; background: var(--note-bg); font-size: .9rem; line-height: 1.7; }
 sim-block svg text { font-family: var(--sans); }
@@ -361,3 +420,189 @@ svg .da { opacity: 0; animation: daIn .6s ease forwards; }
   svg .da { animation: none; opacity: 1; }
   sim-block .sim-frame { transition: none; }
 }
+
+/* ================================================================
+   Learner OS 底座（2026-10 票 13：纯本地 localStorage，无云端/无服务器/无账号）
+   —— 组件：选项解析 .why / 判分卡 .judge-card / 顶栏 .topbar / 数据截至 chip
+      / 术语悬停 dfn.term / 盲测 blindtest-block / 窗口复算 recalc-block。
+   —— 交互由 assets/interact.js 挂载（标签选择器匹配自定义元素，勿改回类选择器）。 —— */
+
+/* 选项解析（常驻 DOM：屏幕态未作答隐藏，作答后随对错展开；@media print 强制显示） */
+.why {
+  display: none;
+  margin: .3rem 0 .6rem;
+  padding: .55rem .85rem;
+  border-left: 3px solid var(--line);
+  border-radius: 0 8px 8px 0;
+  font-size: .88rem;
+  line-height: 1.7;
+}
+.why.show { display: block; }
+.why.good { background: var(--good-bg); border-left-color: var(--down); }
+.why.bad { background: var(--bad-bg); border-left-color: var(--up); }
+
+/* 训练场判分卡（双栏：左=本次成绩与结业线，右=复习池） */
+.judge-card {
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--ink);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 1rem 1.2rem .8rem;
+  margin: 1.6rem 0;
+  font-family: var(--sans);
+  font-size: .9rem;
+  line-height: 1.7;
+}
+.judge-card .jc-title { font-size: .78rem; letter-spacing: .18em; color: var(--muted); margin-bottom: .4rem; }
+.judge-card .jc-cols { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.4rem; align-items: start; }
+.judge-card .jc-big { font-size: 1.5rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.judge-card .jc-sep { color: var(--faint); font-weight: 400; margin: 0 .1em; }
+.judge-card .jc-pct { font-size: .95rem; color: var(--muted); font-weight: 400; }
+.judge-card .jc-pct.pass { color: var(--down); font-weight: 700; }
+.judge-card .jc-row b { font-variant-numeric: tabular-nums; }
+.judge-card .jc-hint { color: var(--faint); font-size: .78rem; }
+.judge-card .jc-badge {
+  margin-top: .6rem;
+  padding: .5rem .8rem;
+  border-radius: 8px;
+  background: var(--note-bg);
+  color: var(--note);
+  font-size: .85rem;
+}
+.judge-card .jc-badge.lit { background: var(--good-bg); color: var(--down); font-weight: 600; }
+.judge-card .jc-bar { margin-top: .6rem; }
+.judge-card .jc-redo {
+  font-family: var(--sans); font-size: .85rem; font-weight: 600;
+  background: var(--ink); color: var(--paper); border: none; border-radius: 8px;
+  padding: .4rem 1rem; cursor: pointer;
+}
+.judge-card .jc-redo:hover { opacity: .85; }
+@media (max-width: 520px) { .judge-card .jc-cols { grid-template-columns: 1fr; } }
+
+/* sticky 顶栏（interact.js 自动注入 body 首；打印隐藏） */
+.topbar {
+  position: sticky; top: 0; z-index: 60;
+  display: flex; align-items: center; gap: .5rem;
+  padding: .45rem .9rem;
+  font-family: var(--sans); font-size: .8rem; line-height: 1.4;
+  background: var(--paper);
+  background: color-mix(in srgb, var(--paper) 90%, transparent);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+.topbar .tb-nav { color: var(--ink); border-bottom: none; white-space: nowrap; text-decoration: none; }
+.topbar .tb-nav:hover { color: var(--up); }
+.topbar .tb-blank { visibility: hidden; min-width: 0; }
+.topbar .tb-main {
+  flex: 1; min-width: 0; display: flex; align-items: baseline; gap: .5rem;
+  justify-content: center; overflow: hidden; white-space: nowrap;
+}
+.topbar .tb-num { font-family: var(--mono); color: var(--muted); flex: none; }
+.topbar .tb-title { overflow: hidden; text-overflow: ellipsis; color: var(--ink); font-weight: 600; }
+.topbar .tb-dot {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--line); border: 1px solid var(--muted);
+  display: inline-block; flex: none; cursor: help;
+}
+.topbar .tb-dot.lit { background: var(--down); border-color: var(--down); }
+.topbar .tb-icon {
+  font-family: var(--sans); font-size: .78rem; flex: none;
+  color: var(--muted); border-bottom: none; cursor: pointer;
+  background: none; border-top: none; border-left: none; border-right: none;
+  padding: .15rem .3rem; white-space: nowrap;
+}
+.topbar .tb-icon:hover { color: var(--up); }
+.topbar a.tb-icon { text-decoration: none; }
+.topbar .tb-search { font-size: 1rem; line-height: 1; }
+@media (max-width: 560px) {
+  .topbar { flex-wrap: nowrap; gap: .35rem; padding: .4rem .55rem; font-size: .74rem; }
+  .topbar .tb-title { font-size: .74rem; }
+  .topbar .tb-theme { display: none; } /* 移动端从系统设置切色；桌面用主题钮 */
+  .topbar .tb-blank, .topbar .tb-blank + .tb-main { justify-content: flex-start; }
+}
+
+/* 术语悬停（dfn.term：精确匹配词典主词，每页每词首次；悬浮卡走 attr()，无 JS 依赖） */
+dfn.term {
+  font-style: normal;
+  border-bottom: 1px dashed var(--up);
+  cursor: help;
+  position: relative;
+  outline: none;
+}
+dfn.term:focus { border-bottom-style: solid; }
+dfn.term::after {
+  content: attr(data-tip);
+  display: none;
+  position: absolute; left: 0; top: 1.5em; z-index: 70;
+  width: max-content; max-width: min(320px, 78vw);
+  background: var(--card); color: var(--ink);
+  border: 1px solid var(--line); border-radius: 8px;
+  box-shadow: 0 4px 14px var(--shadow);
+  padding: .5rem .7rem;
+  font-family: var(--sans); font-size: .8rem; font-weight: 400;
+  line-height: 1.6; text-align: left; white-space: normal;
+}
+dfn.term:hover::after, dfn.term:focus::after { display: block; }
+
+/* 盲测组件（blindtest-block：课内 SVG + 点击标点 + 揭晓判分） */
+blindtest-block {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 1.3rem 1.4rem 1.1rem;
+  margin: 1.8rem 0;
+  font-family: var(--sans);
+  font-size: .95rem;
+}
+blindtest-block .q { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.6; margin-bottom: .5rem; }
+blindtest-block .bt-instr { font-size: .82rem; color: var(--faint); margin-bottom: .6rem; }
+blindtest-block .bt-stage { position: relative; cursor: crosshair; border: 1px dashed var(--line); border-radius: 8px; overflow: hidden; }
+blindtest-block .bt-stage svg { display: block; max-width: 100%; height: auto; }
+
+/* —— Macro.chart 数据图表组件（C4-2a）：渐进增强容器；打印矢量原样（见 @media print 无隐藏项）—— */
+chart-block { display: block; }
+chart-block figure { margin: 2rem 0; text-align: center; }
+chart-block svg { max-width: 100%; height: auto; }
+blindtest-block .bt-mark { fill: var(--up); stroke: var(--card); stroke-width: 1.5; }
+blindtest-block .bt-ans { fill: none; stroke: var(--down); stroke-width: 2; }
+blindtest-block .bt-ans-label { fill: var(--down); font-family: var(--sans); }
+blindtest-block .bt-bar { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .6rem; }
+blindtest-block .bt-btn {
+  font: inherit; font-size: .88rem; font-weight: 600;
+  color: var(--ink); background: var(--paper);
+  border: 1.5px solid var(--line); border-radius: 999px;
+  padding: .35rem 1rem; cursor: pointer;
+}
+blindtest-block .bt-btn:disabled { opacity: .4; cursor: default; }
+blindtest-block .bt-score { font-weight: 700; font-size: 1rem; margin-bottom: .3rem; }
+blindtest-block .bt-row { font-size: .86rem; margin: .15rem 0; }
+blindtest-block .bt-row.hit { color: var(--down); }
+blindtest-block .bt-row.miss { color: var(--up); }
+blindtest-block .bt-empty, recalc-block .bt-empty {
+  padding: .5rem .2rem; color: var(--faint); font-size: .86rem;
+  border: 1px dashed var(--line); border-radius: 8px; margin: .4rem 0;
+}
+
+/* 窗口复算组件（recalc-block：窗口按钮组 + 表格重绘，数据后续接线） */
+recalc-block {
+  display: block;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  padding: 1.3rem 1.4rem 1.1rem;
+  margin: 1.8rem 0;
+  font-family: var(--sans);
+  font-size: .95rem;
+}
+recalc-block .q { font-family: var(--serif); font-size: 1.05rem; font-weight: 700; line-height: 1.6; margin-bottom: .5rem; }
+recalc-block .sim-btns { display: flex; gap: .5rem; flex-wrap: wrap; margin: .6rem 0 .3rem; }
+recalc-block .sim-btns button {
+  font: inherit; font-size: .9rem;
+  color: var(--ink); background: var(--paper);
+  border: 1.5px solid var(--line); border-radius: 999px;
+  padding: .35rem .95rem; cursor: pointer;
+}
+recalc-block .sim-btns button.active { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+recalc-block .sim-note { font-size: .8rem; color: var(--faint); margin-top: .5rem; }

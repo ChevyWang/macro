@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参考 0009 分级入口与诊断 · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  .diag-q { margin: 1.1rem 0; }
+  .diag-meta { font-family: var(--sans); font-size: .76rem; color: var(--faint); margin-bottom: .25rem; }
+  .diag-meta b { color: var(--muted); }
+  .diag-actions { margin: 1.2rem 0; }
+  .diag-actions button { font-family: var(--sans); font-size: .9rem; border: 1px solid var(--line); border-radius: 8px;
+    background: #fff; color: var(--ink); padding: .5rem 1.1rem; cursor: pointer; }
+  .diag-actions button:hover:not(:disabled) { border-color: var(--down); color: var(--down); }
+  .diag-actions button:disabled { opacity: .45; cursor: not-allowed; }
+  .diag-count { font-family: var(--sans); font-size: .8rem; color: var(--muted); margin-left: .8rem; }
+  .diag-verdict { font-family: var(--sans); font-size: 1.02rem; margin: .9rem 0 .3rem; }
+  .diag-verdict b { color: var(--down); }
+  .diag-reason { font-size: .9rem; color: var(--muted); margin: .2rem 0 .8rem; }
+  .diag-tbl td, .diag-tbl th { font-size: .84rem; }
+  .path-tbl td, .path-tbl th { font-size: .85rem; }
+  .path-tbl .p { white-space: nowrap; font-weight: 700; }
+  .hub-tbl td, .hub-tbl th { font-size: .84rem; }
+  .scene-tbl td, .scene-tbl th { font-size: .85rem; }
+  @media print { .diag-actions { display: none !important; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">参考页 0009</span>
+    <span>·</span>
+    <span>分级入口 · 诊断卷 30 题</span>
+    <span>·</span>
+    <span>随波次更新</span>
+  </div>
+  <h1>分级入口与诊断</h1>
+  <p class="deck">这门课不假设你从零开始。本页五件东西：①<strong>30 题诊断卷</strong>（每个里程碑 1 题，判分后给「建议起点」）；②<strong>三路径卡</strong>（零基础全程/有基础快速道/资深查漏）；③<strong>90 小时最小合格路径</strong>（明示取舍）；④<strong>隐形工作量预算表</strong>（课内小时与工件小时双轨如实列出）；⑤<strong>按问题查场景索引</strong>（带着问题来，直接跳到课）。中级/资深者从这里进；零基础者从 <a href="../lessons/0001-economic-machine.html">0001 课</a>进，本页留着当路标。</p>
+</header>
+
+<h2><span class="no">§1</span>三分钟定位：你该走哪条路</h2>
+<p class="lede">先做 §2 诊断卷（约 15–20 分钟，闭卷），再对号入座：</p>
+<table class="path-tbl">
+  <thead>
+    <tr><th>如果你的情况是……</th><th>走这条路</th><th>入口</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>知道 GDP、加息降息这些词，但不成体系；没系统读过 FOMC 声明</td><td class="p">A 零基础全程</td><td><a href="../lessons/0001-economic-machine.html">0001 课</a>起，42 课顺序走</td></tr>
+    <tr><td>有交易经验、读过研报，宏观看得懂一半、说不成链</td><td class="p">B 有基础快速道</td><td>诊断基础段 ≥80% → 从第一个错题区段进入（本页 §2 判分给出）</td></tr>
+    <tr><td>已有一套自己的流程，只想查漏与对表</td><td class="p">C 资深查漏</td><td>诊断卷成绩单+本站参考页当手册（§3 卡 C）</td></tr>
+    <tr><td>还不确定</td><td>先做卷子</td><td>§2 —— 卷子本身会告诉你</td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§2</span>诊断卷：30 题（每里程碑 1 题）</h2>
+<p class="lede">从各课训练场与毕业考题库选最具判别力的一题组成的静态卷：30 个里程碑各 1 题、无重复；12 题与 6004 毕业考题库同源（考点与题面同源）、18 题改编自对应课训练场。<strong>闭卷作答</strong>——查课内答案做出的诊断只骗得了自己。全部作答后交卷，下方给出建议起点与必修补课清单；作答自动记入本地护照（错题进复习池，隔天可练）。</p>
+
+<div id="diag-paper">
+
+<h3>P0 宏观语言（M0.1–M0.4）</h3>
+<div class="diag-q" data-ms="M0.1" data-phase="P0">
+<div class="diag-meta">M0.1 经济机器模型 · <b>0001–0002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2008 年危机后的美国去杠杆路径，最接近达利欧分类里的哪一种？", "options": [ { "t": "通缩型萧条——只靠违约出清，央行袖手旁观", "ok": false, "why": "美联储 2008–2015 连续 QE，不是袖手旁观——通缩型是 1929–33 的原型。" }, { "t": "漂亮去杠杆——印钞与债务货币化抵消通缩压力，名义收入增长快于债务增长（2009–2015 美国是教科书样本）", "ok": true, "why": "通缩型开局+政策及时转向后的组合（0002 课三分类）。" }, { "t": "通胀型萧条——本币债务崩塌货币化，恶性通胀收场", "ok": false, "why": "那是外币债务新兴市场的路径（魏玛 1923 原型）。" }, { "t": "没有去杠杆——美国债务一直涨", "ok": false, "why": "债务/GDP 的比值维度上美国确实完成了去杠杆——「涨」的是绝对量。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M0.2" data-phase="P0">
+<div class="diag-meta">M0.2 玩家地图 · <b>0003</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "美联储双重使命下，通胀显著超标且就业过热时，反应函数的输出最可能是——", "options": [ { "t": "观望股市：若股市平稳则不行动", "ok": false, "why": "反应函数读目标与约束，不读资产价格的脸色——行情不是法定目标。" }, { "t": "收紧：上调政策利率（必要时配合缩表）", "ok": true, "why": "双目标同向报警，输出方向确定——读央行先读它的目标函数，不猜人格（0003 课）。" }, { "t": "财政先减税对冲通胀", "ok": false, "why": "央行没有财政工具——玩家地图第一课：谁有什么工具、对谁负责。" }, { "t": "直接给通胀设定行政限价", "ok": false, "why": "价格管制是行政部门的工具；央行的手是利率与资产负债表。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M0.3" data-phase="P0">
+<div class="diag-meta">M0.3 三大市场互锁 · <b>0004/1004/4002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "某年内 10Y 上行 106bp，其中实际利率 +97bp、盈亏平衡仅 +10bp。按「价格＝预测＋风险补偿＋技术因素」，这组读数说明——", "options": [ { "t": "市场在交易通胀失控", "ok": false, "why": "盈亏平衡只动 10bp——通胀预期腿几乎没动。" }, { "t": "上行几乎全部来自实际利率：市场要求的真实回报补偿在抬升——同样的上行，「实际驱动」对成长股与黄金的压力比「通胀预期驱动」更直接", "ok": true, "why": "名义拆实际与盈亏平衡是三大市场互锁的第一刀（0004/4002 课价格三因子）。" }, { "t": "技术因素占主导，宏观无信息", "ok": false, "why": "实际利率 +97bp 是有宏观内容的定价，不是噪音。" }, { "t": "盈亏平衡失灵了，该改看 CPI", "ok": false, "why": "读数没失灵——它告诉你的是「这次不是通胀交易」。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M0.4" data-phase="P0">
+<div class="diag-meta">M0.4 仪表盘运转 · <b>0005+参考 0001</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "下列读数按「事件分层」属于周层例行的是——", "options": [ { "t": "今天 8:30 公布的 CPI 与预期的差值", "ok": false, "why": "事件层——单次发布的预期差，当天处理完。" }, { "t": "HY 利差与上周比的方向、初请四周均值的连续方向", "ok": true, "why": "周层看方向与连续性：利差周变化+初请 4 周均线正是 0005 课周例行的固定动作。" }, { "t": "SLOOS 净收紧比例与财政脉冲的季度全审", "ok": false, "why": "季层——SLOOS 与 FIM 都是季度频率。" }, { "t": "当下这笔交易的止损位", "ok": false, "why": "交易层——分工铁律：宏观定风险偏好，价格行为定入场。" } ] }</script>
+</quiz-block>
+</div>
+
+<h3>P1 数据流（M1.1–M1.4）</h3>
+<div class="diag-q" data-ms="M1.1" data-phase="P1">
+<div class="diag-meta">M1.1 指标领先滞后判读 · <b>1001–1002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2022Q2 美国 GDP 初值 −0.9%（连续第二季收缩），现行值 +0.6%。「技术性衰退」叙事当时炒得很热，point-in-time 的教训是——", "options": [ { "t": "当时的人看错了数据", "ok": false, "why": "当时的人读的是当时的初值——错在把会动的地板当成了地基。" }, { "t": "初值是会修订的：判决性结论留给终值，或用少修订序列交叉验证（判断挂在初值上＝挂在会动的地板上）", "ok": true, "why": "就业与 GDP 的修订文化不同（1001 课）；vintage 纪律是快照与复盘的地基（1007 课）。" }, { "t": "GDP 数据不可信，永远别用", "ok": false, "why": "从「会修订」推不出「不可用」——按修订文化分级使用即可。" }, { "t": "衰退定义就是连续两季负增长，所以当时判断没错", "ok": false, "why": "那是「技术性衰退」的媒体口径；美国官方认定走 NBER（0002 课），且初值本身后来被修订为正。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M1.2" data-phase="P1">
+<div class="diag-meta">M1.2 中国数据体系 · <b>1003</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "把 M1 新旧口径直接连成一条线画图，2025 年 1 月会读出什么？", "options": [ { "t": "真实的货币扩张加速", "ok": false, "why": "新口径统计范围更宽——台阶是量出来的，不是经济产出来的。" }, { "t": "一个假跳升：新口径约 +2.6pp 的台阶是口径断点不是经济事实——2024-12 公告、2025-01 起改口径，裸拼等于把换过尺子的两次测量画成连续序列", "ok": true, "why": "口径断点纪律：新旧序列严禁裸拼（1003 课，官方已回溯可比序列）。" }, { "t": "央行注水的证据", "ok": false, "why": "是统计定义变更（纳入个人活期与备付金），与放水无关。" }, { "t": "看不出任何异常，序列平滑", "ok": false, "why": "裸拼恰恰「看起来平滑」——平滑正是它有毒的原因。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M1.3" data-phase="P1">
+<div class="diag-meta">M1.3 市场即预期读数 · <b>1004–1006</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "10Y 名义 5.17%，ACM 期限溢价 0.79，则模型隐含的预期短端路径均值约为——", "options": [ { "t": "5.17%（名义即预期）", "ok": false, "why": "名义里含着补偿——不拆就把风险溢价误读成加息预期。" }, { "t": "约 4.38%（名义减期限溢价）", "ok": true, "why": "价格＝预期＋补偿：5.17−0.79≈4.38（1004 课恒等式与 ACM 拆解）。" }, { "t": "约 5.96%（两者相加）", "ok": false, "why": "拆解是减法：补偿是从名义里剥离的部分。" }, { "t": "无法从这两个数得到任何推断", "ok": false, "why": "两个数恰好够做一阶拆解——这正是 ACM 发布的用途。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M1.4" data-phase="P1">
+<div class="diag-meta">M1.4 一页纸快照（结业） · <b>1007+参考 0006</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "写快照通胀句时 3M 年化与 12M 同比不一致（如 1.96% 对 2.45%），应该——", "options": [ { "t": "只写 12M（官方口径最权威）", "ok": false, "why": "12M 看中枢、3M 看拐点——单尺会漏掉「动能已变、中枢未动」这个最常用的判断位。" }, { "t": "双尺并写＋点明背离含义：短期动能已至目标下方、中枢仍高——「降温但未达标」", "ok": true, "why": "快照通胀行的固定写法（1007 课三句话快照模板）。" }, { "t": "取平均写 2.4%", "ok": false, "why": "平均数抹掉背离——两个尺回答两个问题，不能合并。" }, { "t": "写哪个都行，快照不较真", "ok": false, "why": "快照是决策日志的证据底座，口径含糊会污染后续结算。" } ] }</script>
+</quiz-block>
+</div>
+
+<h3>P2 央行与流动性（M2.1–M2.5）</h3>
+<div class="diag-q" data-ms="M2.1" data-phase="P2">
+<div class="diag-meta">M2.1 央行工具箱 · <b>2001–2002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "本轮 QT 在 2025 年 12 月结束，而终点附近的标志性读数是 ON RRP 从 2.4 万亿干涸至近零。QT 何时停，由什么决定？", "options": [ { "t": "由预先公布的日历决定", "ok": false, "why": "Fed 从不预先承诺缩表终点日——公布的是减速规则。" }, { "t": "由准备金充足性决定：货币市场利率对准备金供给的敏感度上升（SOFR 相对 IORB 利差走阔、ON RRP 干涸）＝接近 ample 下限——QT 的终点是读出来的，不是宣布出来的", "ok": true, "why": "充足准备金框架的操作逻辑（2001 课）：数量框架看利率信号。" }, { "t": "由 CPI 回到 2% 决定", "ok": false, "why": "QT 是流动性管理操作，不是利率工具——与通胀目标不直接挂钩。" }, { "t": "由财政发债规模决定", "ok": false, "why": "发债影响准备金分布，但缩表终点的判定权在货币市场信号。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M2.2" data-phase="P2">
+<div class="diag-meta">M2.2 传导与时滞 · <b>2003</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "NFCI 读数 −0.56（净宽松），而政策利率仍处限制性区间。最合理的机制读法是——", "options": [ { "t": "NFCI 数据出错，政策紧则条件必然紧", "ok": false, "why": "金融条件是五渠道合力，政策利率只是其中一条腿。" }, { "t": "风险偏好、资产价格与信用利差等渠道的合力抵消了高利率的收紧效果——条件净值为宽松，登记为预期差素材", "ok": true, "why": "「政策利率与金融条件可以背离，背离即信息」（2003 课）。" }, { "t": "说明应该马上加息", "ok": false, "why": "读数给的是条件状态，不是政策建议——条件宽松本身可能正是政策限制性不足的读数，先登记再判。" }, { "t": "NFCI 只反映股市", "ok": false, "why": "NFCI 是 105 个指标的合成（2003 课），不是股指代理。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M2.3" data-phase="P2">
+<div class="diag-meta">M2.3 美元流动性体系 · <b>2005–2007</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2020-03 美元荒期间，美联储互换线用量激增的同时掉期基差大幅走阔。机制是——", "options": [ { "t": "美联储在互换线上撒钱导致美元过剩", "ok": false, "why": "互换线是给外国央行的美元水龙头——它是救火的水，不是过剩的因。" }, { "t": "全球负债端是美元：危机时刻所有人都只要美元——离岸机构为滚美元负债而抢美元，CIP 偏离（基差）是抢兑的价格读数，互换线是给外国央行的输送管道（2008 与 2020 同机制）", "ok": true, "why": "离岸美元体系与美元荒机制（2005/2006 课）的标准读法。" }, { "t": "外资在抛售美国国债", "ok": false, "why": "抛售美债与抢美元可以并存，但基差走阔的直接机制在离岸负债端。" }, { "t": "基差走阔说明套利机器运转良好", "ok": false, "why": "恰好相反——基差走阔＝CIP 偏离＝套利约束绑定，管道失效的价格信号。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M2.4" data-phase="P2">
+<div class="diag-meta">M2.4 解读一手文件（结业） · <b>2008</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "两份完全相同的 CPI 意外，一次市场大涨一次没反应。四因子归因里决定差异的是——", "options": [ { "t": "只有 surprise 因子（数字差多少）", "ok": false, "why": "surprise 相同正是本题的前提——差异必然来自其余因子。" }, { "t": "注意力＋仓位拥挤度＋传导链清晰度——意外相同时，其余三项决定放大系数", "ok": true, "why": "Kroner 四因子（surprise×reaction×attention×positioning，2008 课）：注意力是核心。" }, { "t": "数据发布渠道不同", "ok": false, "why": "渠道不改变内容的定价含义。" }, { "t": "无法解释，市场是随机的", "ok": false, "why": "「随机」是不可证伪的逃逸句——归因框架正是给这种时刻用的。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M2.5" data-phase="P2">
+<div class="diag-meta">M2.5 国债与财政管道 · <b>2004</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "QRA 附录写「10 月末 TGA 目标上调约 800 亿美元」。对流动性管道，这最接近——", "options": [ { "t": "向银行体系注入准备金", "ok": false, "why": "方向反了——钱是从准备金池搬进财政部账户。" }, { "t": "一轮小型 QT：税款与发债收入搬进 TGA，银行准备金同步减少（「影子 QT」）", "ok": true, "why": "Fed 表−TGA−准备金的管道恒等式（2004 课）。" }, { "t": "对准备金无影响", "ok": false, "why": "TGA 与准备金在负债端此消彼长。" }, { "t": "等于财政部在 QE", "ok": false, "why": "QE 是扩表注入；TGA 回补是抽水——方向相反。" } ] }</script>
+</quiz-block>
+</div>
+
+<h3>P3 周期（M3.1–M3.4）</h3>
+<div class="diag-q" data-ms="M3.1" data-phase="P3">
+<div class="diag-meta">M3.1 周期动物园分类 · <b>3001–3002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "朋友说「康波显示明年是长波衰退期，必须清仓」。你的课程化回答是——", "options": [ { "t": "对，康波大师预测很准", "ok": false, "why": "50–60 年长波样本 n≈2.5、波峰认定事后任意——「准」无从检验。" }, { "t": "康波是语境认知不作决策依据：样本 n≈2.5、无可操作读数；长波判断用可测替代（债务/GDP、信用缺口）＋自己的证伪清单", "ok": true, "why": "课程对超长周期叙事的正式裁定（3001 课，同 kbar 对波浪的裁定）。" }, { "t": "康波完全错误的伪科学，提都不该提", "ok": false, "why": "裁定是「语境认知」不是「禁言」——中文圈语境里知道这个词，但不作信号。" }, { "t": "应该用康波定仓位、用 K 线定入场", "ok": false, "why": "把不可检验的叙事放进仓位决策，正是课程反对的信号发生器用法。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M3.2" data-phase="P3">
+<div class="diag-meta">M3.2 衰退与危机解剖 · <b>3003–3004</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "曲线倒挂后衰退「迟早会来」和 Sahm 规则「触发即衰退」两种读法，课程给的纪律是——", "options": [ { "t": "倒挂是预测器，Sahm 是确认器——各自有分布：倒挂领先 10–19 个月为主但 2022 轮等了 26 个月未至；Sahm 2024-07 首次实时触发后衰退未至——两个分布都有尾巴，用中位领先期当定时炸弹是误用", "ok": true, "why": "报分布不报点值（3003 课条件分布纪律）。" }, { "t": "倒挂从来不准，可以忽略", "ok": false, "why": "倒挂仍是史上最可靠的领先信号之一——「会失手」不等于「无信息」。" }, { "t": "Sahm 触发说明衰退已在进行中，必然加深", "ok": false, "why": "Sahm 是确认型不是深化承诺——2024-07 样本外触发即反例。" }, { "t": "两个信号叠加时可以满仓做空", "ok": false, "why": "信号给概率不给仓位——仓位要过 4006 的 EV 与风险预算。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M3.3" data-phase="P3">
+<div class="diag-meta">M3.3 regime 定位 · <b>3005</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "为什么课程明令禁止「增长↓通胀↑＝股票必跌」这类方向口诀？", "options": [ { "t": "因为股市无法预测", "ok": false, "why": "虚无主义——课程教的是怎么给条件分布，不是放弃判断。" }, { "t": "因为条件分布的形状才是内容：样本里该象限的远期中位与胜率必须连同样本量一起报——禁口诀不是禁判断，是强迫报分布与样本量，让「这次为什么可能不同」有落脚点", "ok": true, "why": "条件分布纪律（3005 课）：中位/胜率/离散/样本量缺一不可。" }, { "t": "因为宏观与股票无关", "ok": false, "why": "有关——但关系是分布不是口诀。" }, { "t": "因为四象限框架本身错了", "ok": false, "why": "禁的是框架的滥用方式，不是框架。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M3.4" data-phase="P3">
+<div class="diag-meta">M3.4 完整周期复盘（结业） · <b>3006</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "用七阶段模板复盘，2021 年末的美国最接近哪个位置？主要证据是——", "options": [ { "t": "①早期——低利率", "ok": false, "why": "低利率不等于早期——要看信贷产出与缺口位置。" }, { "t": "接近③顶部（政策收紧启动）：taper 落地＋「暂时性」弃用＋曲线趋平——但注意私人部门信用缺口远低于警戒带：这轮是「资产通胀＋政策周期」，不是经典债务泡沫", "ok": true, "why": "复盘要区分「资产价格周期」与「债务周期」两个维度（3006 课六段复盘）。" }, { "t": "②泡沫段——股市估值高", "ok": false, "why": "估值高只是七征之一；缺口与信贷行为证据不支持泡沫段判定。" }, { "t": "④萧条段——疫情", "ok": false, "why": "2020 疫情段早已被政策闪电战终结，2021 末是收紧启动段。" } ] }</script>
+</quiz-block>
+</div>
+
+<h3>P4 跨资产传导（M4.1–M4.5）</h3>
+<div class="diag-q" data-ms="M4.1" data-phase="P4">
+<div class="diag-meta">M4.1 利率→估值传导 · <b>4001–4002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "10Y 收益率从 4.24% 升到 4.74%，久期 7.7 的债券价格近似变动——", "options": [ { "t": "−7.7%", "ok": false, "why": "忘了 Δy 是 0.5 个百分点不是 1——bp 的「汇率」换算错一位。" }, { "t": "−3.85%（−7.7 × 0.5%），凸性会让实际跌幅略小于此", "ok": true, "why": "ΔP/P≈−D×Δy 换算器（4001 课）；正凸性两个方向都站在持有人一边。" }, { "t": "+3.85%，因为票息", "ok": false, "why": "票息是持有收益不是价格方向——久期效应方向为负。" }, { "t": "算不出来，必须知道凸性", "ok": false, "why": "一阶近似够用，凸性只是修正项。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M4.2" data-phase="P4">
+<div class="diag-meta">M4.2 汇率与利差 · <b>4003–4004</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2024-08-05 日经 −12.4% 的直接机制是——", "options": [ { "t": "日本经济崩溃", "ok": false, "why": "单日跌幅与基本面变化速度不匹配——这是仓位结构事件。" }, { "t": "日元 carry 去杠杆螺旋：BOJ 加息＋美日利差收窄预期→日元急升→高杠杆套息仓被强平→卖资产还款→价格跌→保证金追缴→再卖——自我强化回路", "ok": true, "why": "燃料＋火星＋弹簧三要素齐了才有清算日（4003 课 carry 三要素）。" }, { "t": "美国衰退数据引发的全球抛售", "ok": false, "why": "数据走弱是火星之一，但跌幅量级来自杠杆与拥挤度这两层放大器。" }, { "t": "BOJ 直接入市砸盘", "ok": false, "why": "BOJ 在加息不是砸盘——卖压来自私人部门的强制平仓。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M4.3" data-phase="P4">
+<div class="diag-meta">M4.3 商品与通胀链 · <b>4005</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2020-04-20 WTI 收 −36.98 美元。价格三因子框架给出的正确归因是——", "options": [ { "t": "预测项：市场预期油价将长期为负", "ok": false, "why": "负价只活了几个小时（近月合约）——不是长期预期的读数。" }, { "t": "技术因素项：期货到期日＋库欣库容极限＋多头被迫平仓的制度性挤压——与「油价预期」无关的交割层技术事故", "ok": true, "why": "价格＝预测＋补偿＋技术：技术因素项的经典案例（4002/4005 课）。" }, { "t": "风险补偿项为负", "ok": false, "why": "补偿为负是理论异常，负价用交割机制解释更省力。" }, { "t": "数据错误", "ok": false, "why": "结算价是真实的——「看不懂」不等于「错数据」。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M4.4" data-phase="P4">
+<div class="diag-meta">M4.4 情景→仓位映射（结业） · <b>4006+4008</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "「市场已定价 100bp 降息，我认为只有 75bp」——这句话是经济预测还是交易观点？预期差怎么用？", "options": [ { "t": "是经济预测，预期差没有用处", "ok": false, "why": "预期差恰是唯一可交易的部分。" }, { "t": "两者都有：『我认为 75bp』是对世界的判断（经济预测），『市场定价 100bp 而我不同』是对市场账本的偏离判断（交易观点）——预期差决定情景概率分配与表达方向，并把「市场对了、我错了」写成证伪条款", "ok": true, "why": "经济预测 vs 交易观点的分界（4006 课）；预期差是仓位的第一候选（4008 课）。" }, { "t": "只要我的预测更准就能赚钱", "ok": false, "why": "预测准＋定价已满＝没钱赚——可交易的是差不是对。" }, { "t": "这是口舌之争，实操中无所谓", "ok": false, "why": "两种判断的验收方式完全不同：一个对世界结账，一个对市场结账。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M4.5" data-phase="P4">
+<div class="diag-meta">M4.5 加密宏观一体化 · <b>4007</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "BTC 与纳指滚动 90 日相关（月均）已连续 12 个月为正。按失效哨兵规则，正确判读是——", "options": [ { "t": "纳指涨而 BTC 跌，相关应该是负的，数据有错", "ok": false, "why": "相关看日收益的共同方向，不看 YTD 幅度——幅度劈叉与相关为正完全兼容。" }, { "t": "流动性代理叙事主导、独立资产降权；幅度账（YTD 劈叉）另行陈述——行为读数与幅度读数合在一起才是完整判读", "ok": true, "why": "哨兵规则＝滚动 90 日相关月均连续两季定叙事权重（4007 课三 regime）。" }, { "t": "应该改为连续一季就切换，更快更灵敏", "ok": false, "why": "换叙事权重的频率是设计参数——一季切换在历史上会被 2019–2025 的噪声反复打脸。" }, { "t": "哨兵没用，因为上次切换也没赚到钱", "ok": false, "why": "哨兵是判别器不是印钞机——它的产出是叙事权重，不是收益承诺。" } ] }</script>
+</quiz-block>
+</div>
+
+<h3>P5 案例与机构（M5.1–M5.4）</h3>
+<div class="diag-q" data-ms="M5.1" data-phase="P5">
+<div class="diag-meta">M5.1 案例解剖学 · <b>5001（含 2007 案例）</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2013 年「说缩减≠加息」这句话的正确理解是——", "options": [ { "t": "字面义：缩减不等于加息，所以市场不该有反应", "ok": false, "why": "+138bp 的实际利率重定价就是反应——市场对流量预期结算存量价格。" }, { "t": "对政策文本是真的（联邦基金利率确实又维持了两年），对市场定价几乎是假的（实际利率 +142bp 约等于一次完整紧缩）——流量预期的变化足以重定价存量利率", "ok": true, "why": "预期差机制（5001 课 taper 案例）：P 维比 M 维先动。" }, { "t": "伯南克嘴瓢引发的乌龙", "ok": false, "why": "下跌持续全年而非乌龙一日——定价机制在变，不是口误。" }, { "t": "只影响债市，不影响其他资产", "ok": false, "why": "实际利率 +142bp 同年把黄金打出 −28%——传导是跨资产的。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M5.2" data-phase="P5">
+<div class="diag-meta">M5.2 机构实践图谱 · <b>5002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "2022 年「全天候类组合也亏了」。这不构成对四象限框架的证伪，因为——", "options": [ { "t": "亏得不太多，无所谓", "ok": false, "why": "量级不改变机制——问题在承诺的理解，不在亏损大小。" }, { "t": "等风险≠不亏：2022 年增长↓与通胀↑两个象限同时受创，等风险的组合等于有两个象限在亏——框架承诺的从来不是「每年不亏」，是「任何单一意外都不会一次性打死组合」", "ok": true, "why": "意外暴露思维的本体（5002 课）：对四类意外配等量风险，承认无知的制度化。" }, { "t": "桥水的模型错了应该弃用", "ok": false, "why": "一次双象限同时受创是框架预期内的坏年份，不是模型破产。" }, { "t": "只要加杠杆就能修复", "ok": false, "why": "杠杆放大的是同一结构的波动，不改变象限敞口。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M5.3" data-phase="P5">
+<div class="diag-meta">M5.3 宏观交易员工作流 · <b>5003</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "以下哪个证伪条款是合格写法？", "options": [ { "t": "「如果市场情绪转差就退出」", "ok": false, "why": "「情绪」不可观察——触发时你永远可以争论情绪有没有转差。" }, { "t": "「核心 CPI 3M 年化连续两个月收于 2.5% 下方→处决；盈亏平衡连续 8 周收于 2.6% 下方→降级」——读数、阈值、期限、处置四要素齐", "ok": true, "why": "可观察读数＋期限＋处置，且阈值相对入场时的判断设定（5003 课四要素与锚定纪律）。" }, { "t": "「如果证明我错了就退出」", "ok": false, "why": "循环定义——证伪条款的用途正是预先写明什么算错。" }, { "t": "「跌 10% 就止损」", "ok": false, "why": "价格线是风控线不是观点处决线——宏观假设的证伪要看读数，10% 回撤可能恰好发生在 thesis 仍然成立时。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M5.4" data-phase="P5">
+<div class="diag-meta">M5.4 完整决策演练（结业） · <b>5004+参考 0006</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "Macro Decision Sheet 八件套中，唯一「从市场层回写数据层」的箭头是哪一栏？", "options": [ { "t": "⑤Pricing 定价", "ok": false, "why": "⑤是读市场账本——箭头方向是数据层→市场层。" }, { "t": "⑧Invalidation 证伪：读数条款触发→回①重写状态——这条回路是 Sheet 成为「活文件」的全部原因（季度更新＋随时触发的双时钟）", "ok": true, "why": "证伪回路（5004 课）：⑧ 触发回 ①，活文件的唯一证据。" }, { "t": "①State 状态", "ok": false, "why": "①是起点不是回路——它被⑧重写。" }, { "t": "⑦Expression 表达", "ok": false, "why": "⑦是输出端，不回写状态。" } ] }</script>
+</quiz-block>
+</div>
+
+<h3>P6 输出者（M6.1–M6.4）</h3>
+<div class="diag-q" data-ms="M6.1" data-phase="P6">
+<div class="diag-meta">M6.1 宏观周报写作 · <b>6001</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "上期周报写「12 月再加息概率我给 40–55%」，本期内 12 月会议如期加息。立场更新段的合格写法是——", "options": [ { "t": "低调处理：这周不提，读者自然会忘", "ok": false, "why": "公开结算是周报的信用来源——沉默即橱窗效应。" }, { "t": "公开结算：「上期 40–55% 兑现（中值 47.5%）；同期市场定价维持 72%——方向对、概率低于市场，偏鸽的预期差判断暂记一笔，下期更正栏跟踪」", "ok": true, "why": "立场更新＝对照上期结算旧账＋登记新账（6001 课）：周报是八件套的公开变更日志。" }, { "t": "把预测改写成「我认为会加息」，宣布自己对了", "ok": false, "why": "改写历史记录＝自我污染校准样本。" }, { "t": "重点转向庆祝：连续第三次预测正确", "ok": false, "why": "resulting——单次对错不评价决策质量，看概率与样本（6003 课）。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M6.2" data-phase="P6">
+<div class="diag-meta">M6.2 深度专题研究 · <b>6002</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "可答性三问（免费数据可得？单一问题？判定性证据？）下，能过三问的选题是——", "options": [ { "t": "「论中美经济关系的过去与未来」", "ok": false, "why": "既不单一也无可判定终点——作文题不是研究题。" }, { "t": "「美联储下一步会加息还是降息？」", "ok": false, "why": "单一但没有判定性证据（内部决策不可观测）——投机题。" }, { "t": "「M1 新旧口径断点差（约 2.6pp）多大程度由个人活期纳入贡献、信号价值是否被高估？」——免费源＝央行公告与两套官方序列，反证＝分项贡献数据", "ok": true, "why": "三问全过：数据免费可得、问题单一、存在能推翻答案的证据（6002 课选题卡）。" }, { "t": "「康波周期现在处于哪个阶段？」", "ok": false, "why": "无可操作读数也无反证路径——被 3001 课裁定为不作决策依据的叙事。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M6.3" data-phase="P6">
+<div class="diag-meta">M6.3 预测记分卡 · <b>6003+参考 0006</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "你 6 月记录「9 月 FOMC 再加息，概率 40–55%」，区间取中值 47.5%。9-16 会议加息 25bp。这条的 Brier 分是——", "options": [ { "t": "(1−0.475)²≈0.28——发生的事件按 (1−p)² 结算；0.28 属于「方向对但置信不足」的典型分数", "ok": true, "why": "Brier 结算规则（6003 课）：事件发生 (1−p)²、不发生 p²，区间先取中值。" }, { "t": "0，因为方向对了", "ok": false, "why": "Brier 打的是概率与现实的距离，不是对错——「对了就零分」是对评分函数的误解。" }, { "t": "0.475", "ok": false, "why": "把概率当分数——Brier 是平方惩罚不是线性。" }, { "t": "无法计算，因为是区间", "ok": false, "why": "区间先取中值再结算——这是日志模板的固定规则（参考 0006）。" } ] }</script>
+</quiz-block>
+</div>
+<div class="diag-q" data-ms="M6.4" data-phase="P6">
+<div class="diag-meta">M6.4 费曼教学＋毕业考（毕业） · <b>6004</b></div>
+<quiz-block>
+<script type="application/json">{ "q": "「训练毕业」与「校准毕业」两级分立（6004 课 05 节），校准毕业的判据是——", "options": [ { "t": "点满 30 个里程碑即校准毕业", "ok": false, "why": "那是训练毕业——框架与仪器交付完成；校准需要真实时间。" }, { "t": "决策日志 ≥20 条到期预测完成 Brier 结算与错误归因，且校准曲线跨 ≥1 个完整季度结算周期——只能在课程后的真实时间里达成", "ok": true, "why": "两级毕业制（6004 课 05 节）：机构以 3–7 年完整周期评估管理人，个人同一标尺。" }, { "t": "毕业考验证卷 ≥7/12", "ok": false, "why": "那是训练毕业的最后一道门（双卷制通过线）——考知识不考校准。" }, { "t": "发布过一篇阅读量过千的科普", "ok": false, "why": "社区检验是费曼教学的组成，与预测校准是两件事。" } ] }</script>
+</quiz-block>
+</div>
+
+</div><!-- /diag-paper -->
+
+<div class="diag-actions">
+  <button type="button" id="diag-submit" disabled>交卷 → 生成建议起点与必修清单</button>
+  <span class="diag-count">已答 <b id="diag-count">0</b>/30</span>
+</div>
+<div id="diag-result"></div>
+
+<div class="note">判读规则（三条，交卷前先立规矩）：①<strong>全对的区段免修</strong>；②<strong>基础段（P0 四题＋M1.1/M1.2 两题，共 6 题）≥80%（≥5/6）按「有基础快速道」等效条款免修 M0.1–M1.2 的课与检测</strong>——六个结业工件一件不免；③有错题的区段进必修清单（错哪补哪，清单交卷后给出）。诚实条款：每里程碑仅 1 题，本卷是起点筛查不是能力认定；免修区段也建议翻一眼对应参考页（0001 仪表盘/0002 术语手册）对表。</div>
+
+<h2><span class="no">§3</span>三路径卡</h2>
+<table class="path-tbl">
+  <thead>
+    <tr><th>路径</th><th>适合谁</th><th>怎么走</th><th>预算与条款</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="p">A 零基础全程</td>
+      <td>宏观零基础（知道 GDP、加息降息这些词，不成体系）</td>
+      <td><a href="../lessons/0001-economic-machine.html">0001 课</a>起，42 课顺序走：P0 语言→P1 数据流→P2 央行→P3 周期→P4 跨资产→P5 案例机构→P6 输出者；30 里程碑逐个点亮，六个结业工件按阶段交</td>
+      <td>全程预算见 §5（约 110–140 小时，区间见预算表）；顺序是坡道不是牢门——后续课随时可预览</td>
+    </tr>
+    <tr>
+      <td class="p">B 有基础快速道</td>
+      <td>有交易经验、读研报、宏观看得懂一半但说不成链（诊断基础段 ≥80%）</td>
+      <td>免修 M0.1–M1.2（P0 全部＋1001–1003 三课），从第一个错题区段进入（典型：1004 起或 2001 起）；错题里程碑按 §2 清单补课</td>
+      <td><strong>等效认定条款（明示）</strong>：免修的是「课与检测」，凭诊断卷证明能力已备；<strong>六个结业工件一件不免</strong>——M0.4 的四周例行记录与 if-then 卡虽在免修区段内，仍需照做（工件是毕业证据链，不是课程作业）</td>
+    </tr>
+    <tr>
+      <td class="p">C 资深查漏</td>
+      <td>已有一套自己的流程，只想查漏与对表</td>
+      <td>①诊断卷成绩单当漏洞地图（本页 §2）；②<a href="0002-glossary.html">0002 术语手册</a>＋<a href="0004-crisis-checklist.html">0004 危机检查单</a>＋<a href="0005-scenario-asset-matrix.html">0005 情景-资产矩阵卡</a>当参考手册常备；③错哪补哪，不重修区段</td>
+      <td><strong>6004 毕业考可当诊断考（双职）</strong>：12 考点跨阶段判定、三变体轮换的题库，入学时当诊断卷画漏洞地图，毕业时当终考——同一份仪器两种用法；30/90 天延迟再测条款见 0007 页头</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§4</span>90 小时最小合格路径（取舍明示）</h2>
+<p class="lede">全程预算约 110–140 小时（§5）。压到 <strong>90 小时</strong>的最小合格路径＝保五条结业工件链（M1.4–M5.4 五件大工件与五个结业里程碑全保留），牺牲三项深度。砍什么、留什么、代价是什么，逐项列明：</p>
+<table class="hub-tbl">
+  <thead>
+    <tr><th>取舍项</th><th>全程版</th><th>90h 版</th><th>省时（估）</th><th>代价（明示）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Mehrling 并行长线课</td><td>选做（P2 起挂出，约 33h，永不前置）</td><td><strong>明确不做</strong></td><td class="num">33h（若本打算做）</td><td>money view 体系课（资产负债表视角的完整训练）缺席——P2 各课标注的并行讲次全部跳过；工具层「看什么数据」不受影响</td></tr>
+    <tr><td>6002 深度专题</td><td>3000–5000 字（大纲预审制全流程）</td><td><strong>降 1500 字</strong>；可答性三问与大纲预审制不减</td><td class="num">约 6–8h</td><td>深度专题完整性牺牲：证据链规模与数据底稿深度减半——「写过一篇完整的」与「写过一篇短的」不是同一种毕业</td></tr>
+    <tr><td>五个快照槽位</td><td>快照 #1–#5 五份独立成稿（1007/2008/3006/4008/5004）</td><td><strong>#2 并入 #3、#4 并入 #5</strong>——实际成稿 3 份（#1/#3/#5），五课快照题合并作答，五个结业里程碑判定全保留</td><td class="num">约 3–4h</td><td>regime 演变年谱的采样密度降为 3 点——两个被并入的时点少了独立的「当时可知」存档</td></tr>
+    <tr><td>隔天重练（SRS）</td><td>错题全部隔天重练（间隔 1/3/7/14 天）</td><td>只重练错题＋当课首题（同既有隔天条款的最小执行）</td><td class="num">约 3–5h</td><td>检索强度下降——长期记忆留存率让位给进度</td></tr>
+    <tr><td>42 课课内时间</td><td>按各课估时区间自由</td><td>取估时下限节奏（58–72h 不减课）</td><td class="num">约 8–12h</td><td>读得快≠读得薄：案例课（2007/5001）的二次阅读跳过</td></tr>
+  </tbody>
+</table>
+<div class="note">90h 版的算术：课内下限约 58h＋工件约 24–30h（合并快照与专题减半后）＋重练约 5–8h ≈ 87–96h，名义 90h 取中值。<strong>压不掉的部分</strong>：校准毕业无论如何需要一个真实季度结算周期（6003 课分桶规约）——那是时间不是工作量，90 小时买不来。90h 达到的是「训练毕业」的下限，不是同等深度。</div>
+
+<h2><span class="no">§5</span>隐形工作量预算表（课内＋工件双轨）</h2>
+<p class="lede">课程的隐形工作量在工件与例行上——这里如实拆开：<strong>课内小时</strong>＝各课「本课约 X–Y 分钟」估时合计（取区间，[类比] 档：同类课程类比预算）；<strong>工件小时</strong>＝各结业里程碑工件与例行的制作时间（[类比/猜测] 档：按已交工件经验类比、无样本处为猜测）。全部为不含 Mehrling 选做长线的数字。</p>
+<table class="hub-tbl">
+  <thead>
+    <tr><th>阶段</th><th>课内小时 [类比]</th><th>工件小时 [类比/猜测]</th><th>小计</th><th>工件内容（对应里程碑）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>P0 宏观语言（5 课）</td><td class="num">5.5–6.5</td><td class="num">2.5–3.5</td><td class="num">8–10</td><td>M0.4：仪表盘连续四周运转记录（4 周×30–60 分钟）＋if-then 执行卡</td></tr>
+    <tr><td>P1 数据流（7 课）</td><td class="num">7.5–9</td><td class="num">3–4</td><td class="num">10.5–13</td><td>M1.4：三句话快照首版＋Point-in-Time 重建＋决策日志启动（3–5 条预测行）</td></tr>
+    <tr><td>P2 央行与流动性（8 课）</td><td class="num">12–14</td><td class="num">3.5–4.5</td><td class="num">15.5–18.5</td><td>M2.4：反应树（首张＋每月 0.5h×3）＋快照 #2＋季度检查单首次执行</td></tr>
+    <tr><td>P3 周期（6 课）</td><td class="num">7–8.5</td><td class="num">4–6</td><td class="num">11–14.5</td><td>M3.4：2020–23 六段复盘笔记（各段拐点信号×跨资产对照）＋快照 #3</td></tr>
+    <tr><td>P4 跨资产（8 课）</td><td class="num">12–14</td><td class="num">4–6</td><td class="num">16–20</td><td>M4.4：三情景六件套＋七维映射表＋快照 #4</td></tr>
+    <tr><td>P5 案例与机构（4 课）</td><td class="num">7.5–9</td><td class="num">4–6</td><td class="num">11.5–15</td><td>M5.4：Macro Decision Sheet 八件套（v0.5 梯级起步，5004 课全版）＋快照 #5</td></tr>
+    <tr><td>P6 输出者（4 课）</td><td class="num">6–7</td><td class="num">20–32</td><td class="num">26–39</td><td>M6.1 周报首篇（3–5h）＋M6.2 专题 3000–5000 字（12–24h）＋M6.3 记分卡首版（2–3h）＋M6.4 毕业科普与社区检验（3–5h）——P6 是工件占比最高的阶段</td></tr>
+    <tr><td>全程隔天重练（SRS）</td><td class="num">—</td><td class="num">8–12 [猜测]</td><td class="num">8–12</td><td>错题重练＋隔天重练条款（点亮里程碑的必要条件）</td></tr>
+    <tr><td><strong>合计</strong></td><td class="num"><strong>58–72</strong></td><td class="num"><strong>50–75</strong></td><td class="num"><strong>约 110–140</strong></td><td>Mehrling 选做长线（约 33h）另计、永不前置</td></tr>
+  </tbody>
+</table>
+<div class="note">诚实条款：两张「估」的置信档不同——课内小时是各课页头的既有类比预算求和[类比]；工件小时在无已交样本处为[猜测]，区间即不确定度的如实呈现。周/月例行（仪表盘每周 30–60 分钟）按「四周运转」计入 P0，之后的长期例行是校准毕业的原料、不再计入课程预算。快照与工件的 90h 折扣版见 §4。</div>
+
+<h2><span class="no">§6</span>按问题查场景索引</h2>
+<p class="lede">带着问题来的人不用从头读——常见使用场景到直达课/参考页的映射（15 行，按使用频率粗排）：</p>
+<table class="scene-tbl">
+  <thead>
+    <tr><th>你的问题/场景</th><th>直达</th><th>一句话说明</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>FOMC 前夜怎么办</td><td><a href="../lessons/2008-reading-primary-documents.html">2008 课</a>＋<a href="0010-reaction-calendar.html">参考 0010</a></td><td>发布墙核实日期→填三情景反应树→概率格封存</td></tr>
+    <tr><td>数据公布后怎么归因</td><td><a href="../lessons/1002-four-values-turning-points.html">1002 课</a>＋<a href="../lessons/2008-reading-primary-documents.html">2008 课</a></td><td>四值给读数定位，四因子归因市场反应</td></tr>
+    <tr><td>怀疑危机模式要来了</td><td><a href="../lessons/3004-crisis-checklist.html">3004 课</a>＋<a href="0004-crisis-checklist.html">参考 0004</a></td><td>六行检查单季度扫描：测脆弱性积累，不测崩塌日期</td></tr>
+    <tr><td>要写周报</td><td><a href="../lessons/6001-weekly-report-writing.html">6001 课</a>＋<a href="0006-decision-log.html">参考 0006</a></td><td>四段结构＋立场结算旧账；日志模板直接誊抄</td></tr>
+    <tr><td>查术语（中或英）</td><td><a href="0002-glossary.html">参考 0002</a></td><td>正向按课号＋页尾英→中索引双向可查</td></tr>
+    <tr><td>BTC 现在什么季节</td><td><a href="../lessons/4007-crypto-macro.html">4007 课</a>＋<a href="0008-as-of-memo.html">参考 0008</a></td><td>三 regime＋失效哨兵判身份，0008 P 维当期读数对表</td></tr>
+    <tr><td>中国数据公布了怎么读</td><td><a href="../lessons/1003-china-data-system.html">1003 课</a>＋<a href="0001-macro-dashboard.html">参考 0001 中国表</a></td><td>口径红线先行（断点/基期/挤水分），再谈判断</td></tr>
+    <tr><td>央行决议声明/点阵怎么读</td><td><a href="../lessons/2008-reading-primary-documents.html">2008 课</a>＋<a href="0003-central-bank-tools.html">参考 0003</a></td><td>增量=新东西−已定价：三处 diff 法＋工具对照表</td></tr>
+    <tr><td>观点怎么配仓位</td><td><a href="../lessons/4008-scenario-position-mapping.html">4008 课</a>＋<a href="0005-scenario-asset-matrix.html">参考 0005</a></td><td>判读→情景→EV→仓位漏斗＋七维映射查表</td></tr>
+    <tr><td>预测到期了怎么打分</td><td><a href="../lessons/6003-forecast-scorecard.html">6003 课</a>＋<a href="0006-decision-log.html">参考 0006</a></td><td>Brier 结算＋读数/机制/校准三层归因（日志表头已带列）</td></tr>
+    <tr><td>长端利率为什么在动</td><td><a href="../lessons/1004-expectations-compensation.html">1004 课</a>＋<a href="../lessons/2004-treasury-fiscal-plumbing.html">2004 课</a></td><td>名义拆实际/盈亏平衡（ACM）＋QRA 供给腿</td></tr>
+    <tr><td>这季度该做什么例行</td><td><a href="../lessons/0005-dashboard-routine.html">0005 课</a>＋<a href="0008-as-of-memo.html">参考 0008</a></td><td>事件分层例行＋0008 季度换血清单</td></tr>
+    <tr><td>复盘一个历史事件</td><td><a href="../lessons/3006-full-cycle-review-2020-23.html">3006 课</a>＋<a href="../lessons/5001-case-methodology.html">5001 课</a></td><td>当时可知清单＋vintage 纪律，防后见之明</td></tr>
+    <tr><td>美元/汇率压力大不大</td><td><a href="../lessons/2005-offshore-dollar-basis.html">2005</a>/<a href="../lessons/2006-dollar-squeeze.html">2006 课</a>＋<a href="../lessons/4003-parity-carry.html">4003 课</a></td><td>离岸美元三件套（汇率/基差/互换线）＋carry 脆弱性</td></tr>
+    <tr><td>不确定自己该从哪学起</td><td>本页 §2 诊断卷</td><td>30 题定起点：全对区段免修，错题区段进必修清单</td></tr>
+  </tbody>
+</table>
+
+<div class="ask-agent">诊断卷交卷后拿不准建议起点怎么用、或者你的成绩单想让教练陪你过一遍——回来找我，判分卡只给方向，路怎么走三分钟就能聊清。</div>
+
+<nav class="lesson-nav">
+  <a href="0008-as-of-memo.html">← 参考页 0008 当下 regime 备忘</a>
+  <a href="../index.html">课程首页</a>
+  <a href="0007-milestone-map.html">里程碑地图 →</a>
+</nav>
+
+<footer class="course">
+  <p><strong>主资源（本页 grounded on）</strong>：诊断题源＝42 课训练场精选与 6004 课毕业考题库（12 考点 ×3 变体，2026-10-01 C5 版）——其中 12 题与毕业考诊断卷同源（考点同、题面同源）；里程碑结构与判定标准＝<a href="0007-milestone-map.html">参考页 0007</a>；课内估时＝各课页头「本课约 X–Y 分钟」[类比]；工件小时＝各结业课工件要求汇总估算 [类比/猜测]；三路径与 90h 条款据课程成功标准与两级毕业制（6004 课 05 节）整理。</p>
+  <p>建页 2026-10-01（C7 波次）· 判分逻辑静态可测（.scratch/c7/test-diag.js 烟测）· 作答记录仅存本机（macro-passport-v1）</p>
+</footer>
+
+</div>
+<script type="application/json" id="diag-cfg">
+{
+  "baseMs": ["M0.1", "M0.2", "M0.3", "M0.4", "M1.1", "M1.2"],
+  "phases": [
+    { "id": "P0", "name": "宏观语言", "ms": ["M0.1", "M0.2", "M0.3", "M0.4"] },
+    { "id": "P1", "name": "数据流", "ms": ["M1.1", "M1.2", "M1.3", "M1.4"] },
+    { "id": "P2", "name": "央行与流动性", "ms": ["M2.1", "M2.2", "M2.3", "M2.4", "M2.5"] },
+    { "id": "P3", "name": "周期", "ms": ["M3.1", "M3.2", "M3.3", "M3.4"] },
+    { "id": "P4", "name": "跨资产传导", "ms": ["M4.1", "M4.2", "M4.3", "M4.4", "M4.5"] },
+    { "id": "P5", "name": "案例与机构", "ms": ["M5.1", "M5.2", "M5.3", "M5.4"] },
+    { "id": "P6", "name": "输出者", "ms": ["M6.1", "M6.2", "M6.3", "M6.4"] }
+  ],
+  "msMeta": {
+    "M0.1": { "name": "经济机器模型", "courses": "0001–0002" },
+    "M0.2": { "name": "玩家地图", "courses": "0003" },
+    "M0.3": { "name": "三大市场互锁", "courses": "0004" },
+    "M0.4": { "name": "仪表盘运转", "courses": "0005＋参考0001" },
+    "M1.1": { "name": "指标领先滞后判读", "courses": "1001–1002" },
+    "M1.2": { "name": "中国数据体系", "courses": "1003" },
+    "M1.3": { "name": "市场即预期读数", "courses": "1004–1006" },
+    "M1.4": { "name": "一页纸快照", "courses": "1007" },
+    "M2.1": { "name": "央行工具箱", "courses": "2001–2002" },
+    "M2.2": { "name": "传导与时滞", "courses": "2003" },
+    "M2.3": { "name": "美元流动性体系", "courses": "2005–2007" },
+    "M2.4": { "name": "解读一手文件", "courses": "2008" },
+    "M2.5": { "name": "国债与财政管道", "courses": "2004" },
+    "M3.1": { "name": "周期动物园分类", "courses": "3001–3002" },
+    "M3.2": { "name": "衰退与危机解剖", "courses": "3003–3004" },
+    "M3.3": { "name": "regime 定位", "courses": "3005" },
+    "M3.4": { "name": "完整周期复盘", "courses": "3006" },
+    "M4.1": { "name": "利率→估值传导", "courses": "4001–4002" },
+    "M4.2": { "name": "汇率与利差", "courses": "4003–4004" },
+    "M4.3": { "name": "商品与通胀链", "courses": "4005" },
+    "M4.4": { "name": "情景→仓位映射", "courses": "4006＋4008" },
+    "M4.5": { "name": "加密宏观一体化", "courses": "4007" },
+    "M5.1": { "name": "案例解剖学", "courses": "5001（＋2007）" },
+    "M5.2": { "name": "机构实践图谱", "courses": "5002" },
+    "M5.3": { "name": "宏观交易员工作流", "courses": "5003" },
+    "M5.4": { "name": "完整决策演练", "courses": "5004" },
+    "M6.1": { "name": "宏观周报写作", "courses": "6001" },
+    "M6.2": { "name": "深度专题研究", "courses": "6002" },
+    "M6.3": { "name": "预测记分卡", "courses": "6003" },
+    "M6.4": { "name": "费曼教学＋毕业考", "courses": "6004" }
+  }
+}
+</script>
+<script src="../assets/interact.js"></script>
+<script>
+/* 0009 诊断卷判分（C7，2026-10-01）：quiz-block 静态卷由 interact.js 渲染作答（dataset.answered/ok），
+   本段汇总为区段成绩＋建议起点＋必修清单。判分核 window.MacroDiag.grade(rows) 为纯函数
+   （rows=[{ms,answered,ok}]），供 .scratch/c7/test-diag.js 静态烟测直接调用。
+   规则：全对区段免修；基础段（P0 四题＋M1.1/M1.2 共 6 题）≥80% 走快速道等效条款；错题进必修清单。 */
+(function () {
+  "use strict";
+  var cfgEl = document.getElementById("diag-cfg"), out = document.getElementById("diag-result");
+  if (!cfgEl || !out) return;
+  var cfg;
+  try { cfg = JSON.parse(cfgEl.textContent); }
+  catch (e) { out.textContent = "诊断配置解析失败：" + e.message; return; }
+
+  function grade(rows) {
+    var byMs = {};
+    rows.forEach(function (r) { byMs[r.ms] = r; });
+    var meta = cfg.msMeta || {};
+    var phases = (cfg.phases || []).map(function (p) {
+      var ok = 0, answered = 0, wrong = [];
+      p.ms.forEach(function (m) {
+        var r = byMs[m];
+        if (!r) return;
+        if (r.answered) answered++;
+        if (r.ok && r.answered) ok++; else wrong.push(m); // 未答按必修计
+      });
+      var total = p.ms.length;
+      return { id: p.id, name: p.name, total: total, answered: answered, ok: ok,
+        pct: total ? Math.round(ok / total * 100) : 0,
+        full: total > 0 && ok === total && answered === total, wrong: wrong };
+    });
+    var baseMs = cfg.baseMs || [], bOk = 0;
+    baseMs.forEach(function (m) { var r = byMs[m]; if (r && r.ok) bOk++; });
+    var base = { total: baseMs.length, ok: bOk,
+      pct: baseMs.length ? Math.round(bOk / baseMs.length * 100) : 0,
+      pass: baseMs.length ? bOk / baseMs.length >= 0.8 : false };
+    var allOk = rows.length > 0 && rows.every(function (r) { return r.answered && r.ok; });
+    var wrongAll = [];
+    phases.forEach(function (p) { wrongAll = wrongAll.concat(p.wrong); });
+    var firstWrong = wrongAll[0];
+    var path, entry, reason;
+    if (allOk) {
+      path = "C 资深查漏";
+      entry = "6004 毕业考（双卷制，直接当诊断考用）";
+      reason = "30 题全对：全部区段免修。课程对你更多是参考手册——按 §3 卡 C 用成绩单查漏，6004 双卷制可双职（入学诊断/毕业终考）。";
+    } else if (base.pass) {
+      path = "B 有基础快速道";
+      entry = firstWrong ? (meta[firstWrong] ? meta[firstWrong].courses : "第一个错题区段") : "2001";
+      reason = "基础段（M0.1–M1.2）" + base.ok + "/" + base.total + " ≥80%：按等效认定免修基础课与检测（六个结业工件不免）。第一个补课点已在建议起点给出，其余错题见下表。";
+    } else {
+      path = "A 零基础全程";
+      entry = "0001";
+      reason = "基础段 " + base.ok + "/" + base.total + " 未达 80%：按全程路径从 0001 走，错题课照下表先行补。";
+    }
+    return { phases: phases, base: base, allOk: allOk, wrongAll: wrongAll, path: path, entry: entry, reason: reason };
+  }
+  window.MacroDiag = { grade: grade };
+
+  var wrap = document.getElementById("diag-paper");
+  var boxes = wrap ? Array.prototype.slice.call(wrap.querySelectorAll(".diag-q")) : [];
+  var btn = document.getElementById("diag-submit"), cnt = document.getElementById("diag-count");
+
+  function collect() {
+    return boxes.map(function (b) {
+      var q = b.querySelector("quiz-block");
+      return { ms: b.getAttribute("data-ms"), answered: !!(q && q.dataset.answered), ok: q && q.dataset.ok === "1" };
+    });
+  }
+  function refresh() {
+    var n = collect().filter(function (r) { return r.answered; }).length;
+    if (cnt) cnt.textContent = String(n);
+    if (btn) btn.disabled = n < boxes.length;
+  }
+  if (wrap) wrap.addEventListener("click", function () { window.setTimeout(refresh, 0); });
+  if (btn) btn.addEventListener("click", function () {
+    var res = grade(collect());
+    var meta = cfg.msMeta || {};
+    function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+    var rowsHtml = res.phases.map(function (p) {
+      var verdict = p.full
+        ? "<td>免修</td><td>—</td>"
+        : "<td><strong>必修</strong></td><td>" + p.wrong.map(function (m) {
+            return esc(m + " " + (meta[m] ? meta[m].name : "") + " → " + (meta[m] ? meta[m].courses : "?"));
+          }).join("；") + "</td>";
+      return "<tr><td>" + esc(p.id + " " + p.name) + "</td><td class=\"num\">" + p.ok + "/" + p.total + "（" + p.pct + "%）</td>" + verdict + "</tr>";
+    }).join("");
+    out.innerHTML =
+      '<div class="diag-verdict">建议路径：<b>' + esc(res.path) + "</b> ｜ 建议起点：<b>" + esc(res.entry) + "</b></div>" +
+      '<p class="diag-reason">' + esc(res.reason) + "</p>" +
+      '<table class="diag-tbl"><thead><tr><th>区段</th><th>答对</th><th>判定</th><th>必修补课清单（错题里程碑 → 课）</th></tr></thead><tbody>' + rowsHtml + "</tbody></table>" +
+      '<div class="note">诚实条款：每里程碑仅 1 题——本卷是筛查不是认定。免修＝建议免课与免检测，<strong>六个结业工件一件不免</strong>（M0.4 例行记录/M1.4 快照/M2.4 反应树/M3.4 复盘/M4.4 六件套/M5.4 决策单）；正式点亮仍以各课训练场 ≥80%＋隔天重练为准。作答已自动记入本地护照（错题进复习池，隔天可练）。</div>';
+    if (out.scrollIntoView) out.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+  refresh();
+})();
+</script>
+</body>
+</html>

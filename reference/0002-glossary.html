@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>参考 0002 术语手册 · 宏观训练营</title>
 <link rel="stylesheet" href="../assets/course.css">
+<style>
+  .revidx-tbl td, .revidx-tbl th { font-size: .84rem; }
+  .revidx-tbl .w { white-space: nowrap; }
+</style>
 </head>
 <body>
 <div class="page">
@@ -14,7 +18,7 @@
     <span class="chip">宏观训练营</span>
     <span class="num">参考页 0002</span>
     <span>·</span>
-    <span>v1.8 收录 0001–6004</span>
+    <span>v2.0 收录 0001–6004 · 含英→中索引</span>
     <span>·</span>
     <span>滚动增补</span>
   </div>
@@ -69,6 +73,7 @@
     <tr><td>抵押品</td><td>collateral</td><td>借贷的资产锚：涨价反哺信用扩张、跌价反噬——金融加速器的通道</td><td><a href="../lessons/0002-credit-cycle-debt-ceiling.html">0002</a></td></tr>
     <tr><td>NBER 衰退区间</td><td>NBER recession dating</td><td>美国衰退的官方认定（峰谷时点），课内图上的灰色竖带</td><td><a href="../lessons/0002-credit-cycle-debt-ceiling.html">0002</a></td></tr>
     <tr><td>口径</td><td>data definition</td><td>数据的定义、范围与统计方法；读任何数字前先对口径，不同口径的差不是误差</td><td><a href="../lessons/0002-credit-cycle-debt-ceiling.html">0002</a></td></tr>
+    <tr><td>宏观杠杆率（NIFD 口径）</td><td>macro leverage ratio (NIFD)</td><td>实体经济部门债务/GDP，社科院 NIFD 季报免费</td><td><a href="../lessons/0002-credit-cycle-debt-ceiling.html">0002</a></td></tr>
   </tbody>
 </table>
 
@@ -83,6 +88,8 @@
     <tr><td>实际利率</td><td>real interest rate</td><td>名义利率减通胀预期（市场口径=TIPS 收益率）；黄金与高估值资产最敏感的单一变量</td><td><a href="0001-macro-dashboard.html">参考 0001</a></td></tr>
     <tr><td>信用利差</td><td>credit spread / OAS</td><td>企业债相对国债的收益率加价；走阔=信用市场先于股票嗅到麻烦</td><td><a href="0001-macro-dashboard.html">参考 0001</a></td></tr>
     <tr><td>Sahm 规则</td><td>Sahm rule</td><td>失业率三月均值较前低点上行 0.5 个百分点=衰退确认（确认型，非择时型）</td><td><a href="0001-macro-dashboard.html">参考 0001</a></td></tr>
+    <tr><td>恐慌指数（VIX）</td><td>VIX / CBOE Volatility Index</td><td>标普 500 期权隐含的 30 天波动率指数——「恐慌读数」：雷曼前夕仅 25.7、三个月后 80.9，低读数≠无风险，是风险未被定价（2007 课）；FRED VIXCLS 日更免费</td><td><a href="0001-macro-dashboard.html">参考 0001</a></td></tr>
+    <tr><td>美债波动率指数（MOVE）</td><td>MOVE Index</td><td>美债期权隐含波动率指数——「债市版 VIX」：利率波动被定价的读数（高 MOVE=久期资产与负 carry 策略承压）；课内未单独展开，与 4003 课「carry=卖波动率收保费」语境同源（语境词·补录）</td><td>（补录·语境词）</td></tr>
   </tbody>
 </table>
 
@@ -101,6 +108,8 @@
     <tr><td>自动稳定器</td><td>automatic stabilizers</td><td>无需新立法、随周期自动逆向调节的财政项（失业保险等）——与相机抉择刺激相对</td><td><a href="../lessons/0003-player-map.html">0003</a></td></tr>
     <tr><td>泰勒规则</td><td>Taylor rule</td><td>利率对通胀与产出缺口线性响应的经典规则——反应函数的形式化近亲，教学用，非 Fed 实操</td><td><a href="../lessons/0003-player-map.html">0003</a></td></tr>
     <tr><td>泰勒原则</td><td>Taylor principle</td><td>通胀每升 1 个百分点，名义利率须上调超过 1 个百分点——否则实际利率在降、政策实质是放松（1970 年代大通胀的教训）</td><td><a href="../lessons/0003-player-map.html">0003</a></td></tr>
+    <tr><td>非银金融</td><td>nonbank financial intermediaries</td><td>第七玩家：交易商/货基/影子银行的合称，住在每条资金管道的中转层</td><td><a href="../lessons/0003-player-map.html">0003</a></td></tr>
+    <tr><td>保证金追缴</td><td>margin call</td><td>抵押品跌价后被要求追加保证金——杠杆被动去杠杆的触发器</td><td><a href="../lessons/0003-player-map.html">0003</a></td></tr>
   </tbody>
 </table>
 
@@ -119,6 +128,8 @@
     <tr><td>预期理论</td><td>expectations theory</td><td>长端利率≈未来短端利率预期的平均（另加期限溢价）——曲线形状即市场对政策路径的预测</td><td><a href="../lessons/0004-three-markets.html">0004</a></td></tr>
     <tr><td>套息交易</td><td>carry trade</td><td>借低息货币买高息资产赚利差的策略——平静期稳定盈利、危机期集中崩溃（P4 展开）</td><td><a href="../lessons/0004-three-markets.html">0004</a></td></tr>
     <tr><td>卖事实</td><td>sell the fact</td><td>事件如预期落地、无意外时，前期押注回补导致反向行情——预期差框架的日常体现</td><td><a href="../lessons/0004-three-markets.html">0004</a></td></tr>
+    <tr><td>鹰派</td><td>hawks</td><td>倾向收紧政策（防通胀优先）的立场标签——读「措辞的鹰鸽移动」不读人格：向鹰移动=反应函数的增量信息（2008 课 diff 法的日常对象）</td><td><a href="../lessons/0004-three-markets.html">0004</a></td></tr>
+    <tr><td>鸽派</td><td>doves</td><td>倾向宽松政策（保就业/增长优先）的立场标签——与鹰派同为「立场坐标系」，意外方向常写作「偏鹰/偏鸽」</td><td><a href="../lessons/0004-three-markets.html">0004</a></td></tr>
   </tbody>
 </table>
 
@@ -152,19 +163,25 @@
     <tr><td>3 个月年化</td><td>3-month annualized rate</td><td>最近三个月环比折年——抓拐点快但噪声大，与 12 个月同比分工使用</td><td><a href="../lessons/1002-four-values-turning-points.html">1002</a></td></tr>
     <tr><td>分位数（窗口纪律）</td><td>percentile</td><td>当前值在样本窗口内的排名百分位；报分位必先报窗口与断点——否则同一个数有无数个分位</td><td><a href="../lessons/1002-four-values-turning-points.html">1002</a></td></tr>
     <tr><td>广度确认</td><td>breadth confirmation</td><td>多把尺（或多市场）同向才确认信号——单尺异动先按噪音处理</td><td><a href="../lessons/1002-four-values-turning-points.html">1002</a></td></tr>
+    <tr><td>贝弗里奇曲线</td><td>Beveridge curve</td><td>职位空缺率与失业率的反向关系曲线，曲线位移判别劳动市场匹配效率</td><td><a href="../lessons/1002-four-values-turning-points.html">1002</a></td></tr>
+    <tr><td>职位空缺与劳动力流动调查</td><td>JOLTS（Job Openings and Labor Turnover Survey）</td><td>BLS 月度调查，给出空缺/雇佣/离职的流量读数</td><td><a href="../lessons/1002-four-values-turning-points.html">1002</a></td></tr>
+    <tr><td>离职率</td><td>quits rate</td><td>主动辞职占就业的比例——「敢不敢辞」的信心温度计</td><td><a href="../lessons/1002-four-values-turning-points.html">1002</a></td></tr>
 
     <tr><td>社融</td><td>aggregate financing (TSF)</td><td>社会融资规模——实体经济从整个金融体系获得的融资总量增速，中国信用周期总闸门</td><td><a href="../lessons/1003-china-data-system.html">1003</a></td></tr>
     <tr><td>口径断点</td><td>series break</td><td>统计定义变更造成的序列不可比处（如 M1 新口径 2025-01 起）——新旧序列严禁裸拼</td><td><a href="../lessons/1003-china-data-system.html">1003</a></td></tr>
     <tr><td>基期轮换</td><td>base period rotation</td><td>中国 CPI 每五年换基（2026-01 起 2025=100 基期）——轻量断点，官方测算影响约 0.06pp</td><td><a href="../lessons/1003-china-data-system.html">1003</a></td></tr>
-    <tr><td>期限溢价</td><td>term premium</td><td>持有长债要求的额外补偿（超出预期路径部分）——ACM 模型估当前 10Y 约 0.8pp</td><td><a href="../lessons/1004-curves-spreads-expectations.html">1004</a></td></tr>
-    <tr><td>曲线倒挂</td><td>yield curve inversion</td><td>短端收益率高于长端（如 2s10s&lt;0）——史上最可靠的衰退领先信号之一，领先 6–24 个月的分布</td><td><a href="../lessons/1004-curves-spreads-expectations.html">1004</a></td></tr>
-    <tr><td>熊陡/牛陡等</td><td>bear/bull steepener 等</td><td>曲线形态四词：方向（牛熊=利率下上）×形状（陡平=利差阔窄），先方向后形状</td><td><a href="../lessons/1004-curves-spreads-expectations.html">1004</a></td></tr>
-    <tr><td>隐含概率</td><td>implied probability</td><td>由衍生品价格反推的概率分布（如 FedWatch）——价格的算术换算，含溢价与技术因素，非真实概率</td><td><a href="../lessons/1005-positioning-probabilities.html">1005</a></td></tr>
-    <tr><td>非商业持仓</td><td>non-commercial (COT)</td><td>COT 中的投机类持仓——净持仓读拥挤度不读方向；周二采集周五发布有三日时滞</td><td><a href="../lessons/1005-positioning-probabilities.html">1005</a></td></tr>
-    <tr><td>轧空</td><td>short squeeze</td><td>空头被迫买回平仓放大上涨——极端净空持仓遇上利多时的经典机制（拥挤度是波动燃料）</td><td><a href="../lessons/1005-positioning-probabilities.html">1005</a></td></tr>
-    <tr><td>vintage</td><td>data vintage</td><td>数据的版本——同一指标在不同日期的内容不同；Point-in-Time 复盘取「as-of 决策日」的版本</td><td><a href="../lessons/1006-snapshot-point-in-time.html">1006</a></td></tr>
-    <tr><td>未来函数</td><td>look-ahead bias</td><td>用决策后才存在的信息评估决策（如用现行值复盘首估时代的判断）——宏观回测的头号陷阱</td><td><a href="../lessons/1006-snapshot-point-in-time.html">1006</a></td></tr>
-    <tr><td>基期效应</td><td>base effect</td><td>同比读数由 12 个月前的分母决定——高基数压低、低基数抬高读数，与当下动能无关</td><td><a href="../lessons/1006-snapshot-point-in-time.html">1006</a></td></tr>
+    <tr><td>期限溢价</td><td>term premium</td><td>持有长债要求的额外补偿（超出预期路径部分）——ACM 模型估当前 10Y 约 0.8pp</td><td><a href="../lessons/1004-expectations-compensation.html">1004</a></td></tr>
+    <tr><td>通胀互换</td><td>inflation swap</td><td>双方互换「固定通胀补偿 ↔ 事后实际通胀」的衍生品合约，与盈亏平衡并列为市场通胀定价口径</td><td><a href="../lessons/1004-expectations-compensation.html">1004</a></td></tr>
+    <tr><td>曲线倒挂</td><td>yield curve inversion</td><td>短端收益率高于长端（如 2s10s&lt;0）——史上最可靠的衰退领先信号之一，领先 6–24 个月的分布</td><td><a href="../lessons/1005-curve-shapes-spreads.html">1005</a></td></tr>
+    <tr><td>熊陡/牛陡等</td><td>bear/bull steepener 等</td><td>曲线形态四词：方向（牛熊=利率下上）×形状（陡平=利差阔窄），先方向后形状</td><td><a href="../lessons/1005-curve-shapes-spreads.html">1005</a></td></tr>
+    <tr><td>隐含概率</td><td>implied probability</td><td>由衍生品价格反推的概率分布（如 FedWatch）——价格的算术换算，含溢价与技术因素，非真实概率</td><td><a href="../lessons/1006-positioning-probabilities.html">1006</a></td></tr>
+    <tr><td>非商业持仓</td><td>non-commercial (COT)</td><td>COT 中的投机类持仓——净持仓读拥挤度不读方向；周二采集周五发布有三日时滞</td><td><a href="../lessons/1006-positioning-probabilities.html">1006</a></td></tr>
+    <tr><td>轧空</td><td>short squeeze</td><td>空头被迫买回平仓放大上涨——极端净空持仓遇上利多时的经典机制（拥挤度是波动燃料）</td><td><a href="../lessons/1006-positioning-probabilities.html">1006</a></td></tr>
+    <tr><td>市场预期调查</td><td>SME（Survey of Market Expectations）</td><td>纽约联储对一级交易商与买方机构的问卷（2025 年起两调查合并，前身 SPD/SMP）——「问出来的共识」，与市场价、持仓并列的第三类证据：主体预期，非交易承诺</td><td><a href="../lessons/1005-curve-shapes-spreads.html">1005</a></td></tr>
+    <tr><td>预期共识</td><td>consensus</td><td>市场或专业者对即将公布数据/政策的平均预期——预期差的参照系；免费路径=经济日历「预期」列/调查中值（1007 课），6003 课另立对照行单独打分</td><td><a href="../lessons/1007-snapshot-point-in-time.html">1007</a></td></tr>
+    <tr><td>vintage</td><td>data vintage</td><td>数据的版本——同一指标在不同日期的内容不同；Point-in-Time 复盘取「as-of 决策日」的版本</td><td><a href="../lessons/1007-snapshot-point-in-time.html">1007</a></td></tr>
+    <tr><td>未来函数</td><td>look-ahead bias</td><td>用决策后才存在的信息评估决策（如用现行值复盘首估时代的判断）——宏观回测的头号陷阱</td><td><a href="../lessons/1007-snapshot-point-in-time.html">1007</a></td></tr>
+    <tr><td>基期效应</td><td>base effect</td><td>同比读数由 12 个月前的分母决定——高基数压低、低基数抬高读数，与当下动能无关</td><td><a href="../lessons/1007-snapshot-point-in-time.html">1007</a></td></tr>
     <tr><td>Brier 分</td><td>Brier score</td><td>概率预测的评分（越低越好）——P6 决策日志打分用的标准尺</td><td><a href="../reference/0006-decision-log.html">参考 0006</a></td></tr>
   </tbody>
 </table>
@@ -193,25 +210,25 @@
     <tr><td>传导渠道</td><td>transmission channels</td><td>政策到支出的五条链：利率/信贷/资产价格/汇率/预期——快腿给交易（③⑤），慢腿给趋势（①②）</td><td><a href="../lessons/2003-transmission-lags.html">2003</a></td></tr>
     <tr><td>长期且可变的时滞</td><td>long and variable lags</td><td>弗里德曼术语：政策峰值影响常见约 1–2 年且分布宽——用时滞安排观察窗口，不掐表</td><td><a href="../lessons/2003-transmission-lags.html">2003</a></td></tr>
     <tr><td>NFCI</td><td>National Financial Conditions Index</td><td>芝加哥联储金融条件指数（105 指标，周频）——0=1971 年以来均值，正值=紧；L 维总量读数，与 C 维不重复计数</td><td><a href="../lessons/2003-transmission-lags.html">2003</a></td></tr>
-    <tr><td>欧洲美元</td><td>Eurodollar</td><td>存于美国境外的美元——离岸体系约 $13 万亿非银美元借款，靠 CD 与 FX 掉期融资，天然易挤兑</td><td><a href="../lessons/2004-offshore-dollar-basis.html">2004</a></td></tr>
-    <tr><td>FX 掉期</td><td>FX swap</td><td>即期换入+远期换回的货币互换——离岸机构「合成」美元借款的主力管道</td><td><a href="../lessons/2004-offshore-dollar-basis.html">2004</a></td></tr>
-    <tr><td>跨货币基差</td><td>cross-currency basis</td><td>合成美元借款比直接借贵出的部分=离岸美元影子价格（阅读层：无免费序列，不进仪表盘）</td><td><a href="../lessons/2004-offshore-dollar-basis.html">2004</a></td></tr>
-    <tr><td>抛补利率平价</td><td>covered interest parity (CIP)</td><td>掉期对冲后两种货币借款成本应相等的理论——偏离=basis，是价格信号不是免费套利</td><td><a href="../lessons/2004-offshore-dollar-basis.html">2004</a></td></tr>
-    <tr><td>美元荒</td><td>dollar squeeze / dash for cash</td><td>全球同时抢美元清偿的三件套：美元急升+基差走阔+离岸利率飙升——离岸银行挤兑的宏观像</td><td><a href="../lessons/2005-dollar-squeeze.html">2005</a></td></tr>
-    <tr><td>央行流动性互换</td><td>central bank liquidity swaps</td><td>Fed 借美元给外国央行、再由其转借辖内银行的越级输送管道——Fed 成为全球美元体系最后贷款人的工具（2008 峰 $583B/2020 峰 $449B）</td><td><a href="../lessons/2005-dollar-squeeze.html">2005</a></td></tr>
-    <tr><td>FIMA</td><td>FIMA repo facility</td><td>外国央行以持有美债向 Fed 质押换美元的常设管道（2020-03 设）——用量小但「存在即灭火」</td><td><a href="../lessons/2005-dollar-squeeze.html">2005</a></td></tr>
-    <tr><td>设施存在效应</td><td>facility existence effect</td><td>危机工具即使用量很小，其存在本身降低尾部风险定价——读危机工具看「火灭了没」不看「水用了多少」</td><td><a href="../lessons/2005-dollar-squeeze.html">2005</a></td></tr>
-    <tr><td>净流动性公式</td><td>net liquidity</td><td>「准备金+RRP−TGA」的流行叙事——红线：资产负债表恒等式不是定价模型，分项读、不加总</td><td><a href="../lessons/2005-dollar-squeeze.html">2005</a></td></tr>
-    <tr><td>SEP</td><td>Summary of Economic Projections</td><td>FOMC 季度经济预测摘要（GDP/失业/通胀+点阵图）——三读：中值方向/区间宽窄/风险偏斜</td><td><a href="../lessons/2006-reading-primary-documents.html">2006</a></td></tr>
-    <tr><td>点阵图</td><td>dot plot</td><td>19 名参与者各自的政策利率路径预测——中值是位置，点的聚散是共识度</td><td><a href="../lessons/2006-reading-primary-documents.html">2006</a></td></tr>
-    <tr><td>增量信息</td><td>incremental information</td><td>新公布内容−已定价内容——读声明的 diff 三处法（新增/删除/改词）</td><td><a href="../lessons/2006-reading-primary-documents.html">2006</a></td></tr>
-    <tr><td>条件反应树</td><td>conditional reaction tree</td><td>公布前写好的分支矩阵：每分支=典型反应+我的概率+应对——概率格必须在公布前封存</td><td><a href="../lessons/2006-reading-primary-documents.html">2006</a></td></tr>
-    <tr><td>四因子归因</td><td>surprise×reaction×attention×positioning</td><td>公布后市场反应的分解：意外×传导链清晰度×注意力×仓位拥挤度（Kroner FEDS 2025-022 锚）</td><td><a href="../lessons/2006-reading-primary-documents.html">2006</a></td></tr>
-    <tr><td>QRA</td><td>quarterly refunding</td><td>财政部季度再融资声明（2/5/8/11 月首周）——发多少/什么期限/回购计划，期限溢价的供给腿</td><td><a href="../lessons/2007-treasury-fiscal-plumbing.html">2007</a></td></tr>
-    <tr><td>FIM</td><td>fiscal impact measure</td><td>Brookings 财政脉冲——财政对 GDP 增长的边际拉动（G 维财政腿读数，区别于赤字总量）</td><td><a href="../lessons/2007-treasury-fiscal-plumbing.html">2007</a></td></tr>
-    <tr><td>TGA</td><td>Treasury General Account</td><td>财政部在 Fed 的活期户——回补 TGA=从准备金抽水（「影子 QT」）</td><td><a href="../lessons/2007-treasury-fiscal-plumbing.html">2007</a></td></tr>
-    <tr><td>bills 份额</td><td>bills share</td><td>短期国库券占可流通国债比例（TBAC 建议 15–20%；2026-07 约 22%）——前端供给压力读数</td><td><a href="../lessons/2007-treasury-fiscal-plumbing.html">2007</a></td></tr>
-    <tr><td>基差交易</td><td> Treasury basis trade</td><td>对冲基金「买现券+空期货」的利差交易（约 $0.8–1 万亿量级）——语境认知：知道引线在哪，不进仪表盘</td><td><a href="../lessons/2007-treasury-fiscal-plumbing.html">2007</a></td></tr>
+    <tr><td>欧洲美元</td><td>Eurodollar</td><td>存于美国境外的美元——离岸体系约 $13 万亿非银美元借款，靠 CD 与 FX 掉期融资，天然易挤兑</td><td><a href="../lessons/2005-offshore-dollar-basis.html">2005</a></td></tr>
+    <tr><td>FX 掉期</td><td>FX swap</td><td>即期换入+远期换回的货币互换——离岸机构「合成」美元借款的主力管道</td><td><a href="../lessons/2005-offshore-dollar-basis.html">2005</a></td></tr>
+    <tr><td>跨货币基差</td><td>cross-currency basis</td><td>合成美元借款比直接借贵出的部分=离岸美元影子价格（阅读层：无免费序列，不进仪表盘）</td><td><a href="../lessons/2005-offshore-dollar-basis.html">2005</a></td></tr>
+    <tr><td>抛补利率平价</td><td>covered interest parity (CIP)</td><td>掉期对冲后两种货币借款成本应相等的理论——偏离=basis，是价格信号不是免费套利</td><td><a href="../lessons/2005-offshore-dollar-basis.html">2005</a></td></tr>
+    <tr><td>美元荒</td><td>dollar squeeze / dash for cash</td><td>全球同时抢美元清偿的三件套：美元急升+基差走阔+离岸利率飙升——离岸银行挤兑的宏观像</td><td><a href="../lessons/2006-dollar-squeeze.html">2006</a></td></tr>
+    <tr><td>央行流动性互换</td><td>central bank liquidity swaps</td><td>Fed 借美元给外国央行、再由其转借辖内银行的越级输送管道——Fed 成为全球美元体系最后贷款人的工具（2008 峰 $583B/2020 峰 $449B）</td><td><a href="../lessons/2006-dollar-squeeze.html">2006</a></td></tr>
+    <tr><td>FIMA</td><td>FIMA repo facility</td><td>外国央行以持有美债向 Fed 质押换美元的常设管道（2020-03 设）——用量小但「存在即灭火」</td><td><a href="../lessons/2006-dollar-squeeze.html">2006</a></td></tr>
+    <tr><td>设施存在效应</td><td>facility existence effect</td><td>危机工具即使用量很小，其存在本身降低尾部风险定价——读危机工具看「火灭了没」不看「水用了多少」</td><td><a href="../lessons/2006-dollar-squeeze.html">2006</a></td></tr>
+    <tr><td>净流动性公式</td><td>net liquidity</td><td>「准备金+RRP−TGA」的流行叙事——红线：资产负债表恒等式不是定价模型，分项读、不加总</td><td><a href="../lessons/2006-dollar-squeeze.html">2006</a></td></tr>
+    <tr><td>SEP</td><td>Summary of Economic Projections</td><td>FOMC 季度经济预测摘要（GDP/失业/通胀+点阵图）——三读：中值方向/区间宽窄/风险偏斜</td><td><a href="../lessons/2008-reading-primary-documents.html">2008</a></td></tr>
+    <tr><td>点阵图</td><td>dot plot</td><td>19 名参与者各自的政策利率路径预测——中值是位置，点的聚散是共识度</td><td><a href="../lessons/2008-reading-primary-documents.html">2008</a></td></tr>
+    <tr><td>增量信息</td><td>incremental information</td><td>新公布内容−已定价内容——读声明的 diff 三处法（新增/删除/改词）</td><td><a href="../lessons/2008-reading-primary-documents.html">2008</a></td></tr>
+    <tr><td>条件反应树</td><td>conditional reaction tree</td><td>公布前写好的分支矩阵：每分支=典型反应+我的概率+应对——概率格必须在公布前封存</td><td><a href="../lessons/2008-reading-primary-documents.html">2008</a></td></tr>
+    <tr><td>四因子归因</td><td>surprise×reaction×attention×positioning</td><td>公布后市场反应的分解：意外×传导链清晰度×注意力×仓位拥挤度（Kroner FEDS 2025-022 锚）</td><td><a href="../lessons/2008-reading-primary-documents.html">2008</a></td></tr>
+    <tr><td>QRA</td><td>quarterly refunding</td><td>财政部季度再融资声明（2/5/8/11 月首周）——发多少/什么期限/回购计划，期限溢价的供给腿</td><td><a href="../lessons/2004-treasury-fiscal-plumbing.html">2004</a></td></tr>
+    <tr><td>FIM</td><td>fiscal impact measure</td><td>Brookings 财政脉冲——财政对 GDP 增长的边际拉动（G 维财政腿读数，区别于赤字总量）</td><td><a href="../lessons/2004-treasury-fiscal-plumbing.html">2004</a></td></tr>
+    <tr><td>TGA</td><td>Treasury General Account</td><td>财政部在 Fed 的活期户——回补 TGA=从准备金抽水（「影子 QT」）</td><td><a href="../lessons/2004-treasury-fiscal-plumbing.html">2004</a></td></tr>
+    <tr><td>bills 份额</td><td>bills share</td><td>短期国库券占可流通国债比例（TBAC 建议 15–20%；2026-07 约 22%）——前端供给压力读数</td><td><a href="../lessons/2004-treasury-fiscal-plumbing.html">2004</a></td></tr>
+    <tr><td>基差交易</td><td> Treasury basis trade</td><td>对冲基金「买现券+空期货」的利差交易（约 $0.8–1 万亿量级）——语境认知：知道引线在哪，不进仪表盘</td><td><a href="../lessons/2004-treasury-fiscal-plumbing.html">2004</a></td></tr>
   </tbody>
 </table>
 
@@ -239,7 +256,7 @@
     <tr><td>金融周期</td><td>financial cycle</td><td>信用×地产互相强化的低频大波（7 国均值约 16 年）——峰值≈金融危机（BIS WP395）</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
     <tr><td>信用/GDP 缺口</td><td>credit-to-GDP gap</td><td>私人非金融信用相对自身趋势的超速程度（BIS 官方免费序列）——C 维核心读数</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
     <tr><td>库兹涅茨周期</td><td>Kuznets (building) cycle</td><td>15–25 年的建筑长波——供给无弹性+开发时滞，更像一次很长的摆动</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
-    <tr><td>警戒带</td><td>early-warning band</td><td>BIS 预警读数的黄灯区（信用缺口 2–6pp、房价缺口 15–25% 起）——阈值=误报与漏报的权衡</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
+    <tr><td>警戒带</td><td>early-warning band</td><td>BIS 预警读数的黄灯区（信用缺口 &gt;2pp 提示、≥10pp 顶格 CCyB 2.5%，房价缺口 15–25% 起）——阈值=误报与漏报的权衡</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
     <tr><td>GFCy</td><td>global financial cycle</td><td>全球金融周期叙事——共同因子真实但解释力约两三成（WP864），国内读数优先、美元项叠加</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
     <tr><td>抵押品-信贷正反馈</td><td>collateral-credit loop</td><td>房价↑→抵押品↑→信贷松→购买力↑→房价↑的自我强化环——收缩方向转得更快</td><td><a href="../lessons/3002-cycle-zoo-real-estate-financial.html">3002</a></td></tr>
   </tbody>
@@ -284,7 +301,7 @@
     <tr><td>regime 判读卡</td><td>regime scorecard</td><td>四层各一行、箭头+证据句的月度活页——手工版即终点形态（不算 composite）</td><td><a href="../lessons/3005-regime-location.html">3005</a></td></tr>
     <tr><td>条件分布纪律</td><td>conditional distribution discipline</td><td>任何「象限→资产」结论必须带中位回报/胜率/离散度/样本量/窗口——禁方向口诀</td><td><a href="../lessons/3005-regime-location.html">3005</a></td></tr>
     <tr><td>好通胀 / 坏通胀</td><td>good vs bad inflation</td><td>需求驱动的通胀意外（盈利跟上）vs 成本推动（挤压利润+逼央行）——股债反应相反</td><td><a href="../lessons/3005-regime-location.html">3005</a></td></tr>
-    <tr><td>边界带</td><td>boundary band</td><td>判读阈值附近的区域（如核心 2.8% vs 阈值 2.5%）——输出双标签+概率，不硬选边</td><td><a href="../lessons/3005-regime-location.html">3005</a></td></tr>
+    <tr><td>边界带</td><td>boundary band</td><td>判读阈值附近的区域（如核心 2.45% vs 阈值 2.5%）——输出双标签+概率，不硬选边</td><td><a href="../lessons/3005-regime-location.html">3005</a></td></tr>
     <tr><td>E→P→P</td><td>Expectation→Pricing→Positioning</td><td>市场转译三层：预期是什么/价格已计入多少/仓位拥挤在哪——第四层的三个问题</td><td><a href="../lessons/3005-regime-location.html">3005</a></td></tr>
   </tbody>
 </table>
@@ -325,156 +342,175 @@
   </tbody>
 </table>
 
-<h2><span class="no">§34</span>第 4003 课 · 汇率与利差</h2>
+<h2><span class="no">§34</span>第 4003–4004 课 · 汇率与利差 I/II（平价与 carry / 人民币与港币）</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>购买力平价</td><td>purchasing power parity（PPP）</td><td>长期锚：物价差=汇率差——短期不成立（非贸易品/异质/壁垒三因），只做粗定位不做时间表</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
-    <tr><td>利率平价</td><td>interest rate parity（IRP）</td><td>抛补版近乎铁律：利差=远期升贴水（套利维护）；无抛补版（UIP）实证长期失效=carry 收益来源</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
-    <tr><td>UIP 之谜</td><td>forward premium puzzle</td><td>高息货币平均不贬反升（Fama 1984）——carry 收益=对崩塌尾部的保险费，不是免费午餐</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
-    <tr><td>三元悖论</td><td>impossible trinity</td><td>固定汇率+资本自由流动+独立货币政策三者取二——香港选前二（HIBOR 跟随美联储）</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
-    <tr><td>融资货币</td><td>funding currency</td><td>carry 盘借入的低息货币（日元=套息本位）——它急升=全球套息盘强制平仓日</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
-    <tr><td>联系汇率制</td><td>linked exchange rate system</td><td>港币 7.75–7.85 兑换保证带盯美元——带内位置本身是资金流方向标</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
-    <tr><td>结售汇数据</td><td>FX settlement data</td><td>SAFE 月度银行代客结售汇差额——人民币「实需盘」的免费官方读数器（语境认知层）</td><td><a href="../lessons/4003-fx-carry.html">4003</a></td></tr>
+    <tr><td>购买力平价</td><td>purchasing power parity（PPP）</td><td>长期锚：物价差=汇率差——短期不成立（非贸易品/异质/壁垒三因），只做粗定位不做时间表</td><td><a href="../lessons/4003-parity-carry.html">4003</a></td></tr>
+    <tr><td>利率平价</td><td>interest rate parity（IRP）</td><td>抛补版近乎铁律：利差=远期升贴水（套利维护）；无抛补版（UIP）实证长期失效=carry 收益来源</td><td><a href="../lessons/4003-parity-carry.html">4003</a></td></tr>
+    <tr><td>UIP 之谜</td><td>forward premium puzzle</td><td>高息货币平均不贬反升（Fama 1984）——carry 收益=对崩塌尾部的保险费，不是免费午餐</td><td><a href="../lessons/4003-parity-carry.html">4003</a></td></tr>
+    <tr><td>三元悖论</td><td>impossible trinity</td><td>固定汇率+资本自由流动+独立货币政策三者取二——香港选前二（HIBOR 跟随美联储）</td><td><a href="../lessons/4003-parity-carry.html">4003</a></td></tr>
+    <tr><td>融资货币</td><td>funding currency</td><td>carry 盘借入的低息货币（日元=套息本位）——它急升=全球套息盘强制平仓日</td><td><a href="../lessons/4003-parity-carry.html">4003</a></td></tr>
+    <tr><td>联系汇率制</td><td>linked exchange rate system</td><td>港币 7.75–7.85 兑换保证带盯美元——带内位置本身是资金流方向标</td><td><a href="../lessons/4004-rmb-hkd.html">4004</a></td></tr>
+    <tr><td>结售汇数据</td><td>FX settlement data</td><td>SAFE 月度银行代客结售汇差额——人民币「实需盘」的免费官方读数器（语境认知层）</td><td><a href="../lessons/4004-rmb-hkd.html">4004</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§35</span>第 4004 课 · 商品与通胀链</h2>
+<h2><span class="no">§35</span>第 4005 课 · 商品与通胀链</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>GSCPI</td><td>Global Supply Chain Pressure Index</td><td>NY Fed 月度供给压力指数（27 变量 PCA 合成，标准差计）——S 维的读数器，峰 4.43σ（2021-12）</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
-    <tr><td>S 维供给冲击</td><td>supply-side shock</td><td>供给收缩驱动的商品上行（战争/制裁/断供）——资产答案与需求拉动型相反（滞胀形态）</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
-    <tr><td>角色卡</td><td>commodity role card</td><td>油（需求+供给双面）/铜（制造业同步器）/金（实际利率对冲）的解读框架——先归因再谈资产</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
-    <tr><td>通胀/通缩交易清单</td><td>inflation vs deflation playbook</td><td>按主导维（I/S vs 需求失速）启用的表达工具族——每行带失效条件，条件化的清单不是菜单</td><td><a href="../lessons/4004-commodities-inflation-chain.html">4004</a></td></tr>
+    <tr><td>GSCPI</td><td>Global Supply Chain Pressure Index</td><td>NY Fed 月度供给压力指数（27 变量 PCA 合成，标准差计）——S 维的读数器，峰 4.43σ（2021-12）</td><td><a href="../lessons/4005-commodities-inflation-chain.html">4005</a></td></tr>
+    <tr><td>S 维供给冲击</td><td>supply-side shock</td><td>供给收缩驱动的商品上行（战争/制裁/断供）——资产答案与需求拉动型相反（滞胀形态）</td><td><a href="../lessons/4005-commodities-inflation-chain.html">4005</a></td></tr>
+    <tr><td>角色卡</td><td>commodity role card</td><td>油（需求+供给双面）/铜（制造业同步器）/金（实际利率对冲）的解读框架——先归因再谈资产</td><td><a href="../lessons/4005-commodities-inflation-chain.html">4005</a></td></tr>
+    <tr><td>通胀/通缩交易清单</td><td>inflation vs deflation playbook</td><td>按主导维（I/S vs 需求失速）启用的表达工具族——每行带失效条件，条件化的清单不是菜单</td><td><a href="../lessons/4005-commodities-inflation-chain.html">4005</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§36</span>第 4005 课 · 情景与六件套</h2>
+<h2><span class="no">§36</span>第 4006 课 · 情景与六件套</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>六件套</td><td>six-pack</td><td>Scenario→What is priced→Catalyst→Payoff→Risk→Invalidation——每格堵一种死法的情景格式</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>已定价</td><td>what is priced</td><td>价格里已装的市场预期——可交易的是「你的判断与它的差」，不是判断本身</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>催化剂</td><td>catalyst</td><td>让预期差兑现的事件/读数——必须有日程，「早晚会涨」不算催化剂</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>失效条款</td><td>invalidation</td><td>「什么读数出现=我错了」的事前约定——把认错从情绪事件变成读数事件</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>情景三件套</td><td>scenario triad</td><td>概率区间（禁点值）+可观察触发器+该情景动作——情景从小说变仪器的三件硬化</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>触发器 / 路标</td><td>trigger / signposts</td><td>每个情景配 2–3 个可观察读数（免费源+日程+阈值）——Shell 传统直系后代</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>期望值</td><td>expected value（EV）</td><td>Σ(各情景概率×损益)——决策质量用 EV 与过程评价，不用胜率或单次结果（Mauboussin）</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
-    <tr><td>经济预测 vs 交易观点</td><td>forecast vs trade view</td><td>前者是「世界会怎样」，后者是「我的判断 vs 市场账本的差」——只有后者可交易</td><td><a href="../lessons/4005-scenarios-sixpack.html">4005</a></td></tr>
+    <tr><td>六件套</td><td>six-pack</td><td>Scenario→What is priced→Catalyst→Payoff→Risk→Invalidation——每格堵一种死法的情景格式</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>已定价</td><td>what is priced</td><td>价格里已装的市场预期——可交易的是「你的判断与它的差」，不是判断本身</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>催化剂</td><td>catalyst</td><td>让预期差兑现的事件/读数——必须有日程，「早晚会涨」不算催化剂</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>失效条款</td><td>invalidation</td><td>「什么读数出现=我错了」的事前约定——把认错从情绪事件变成读数事件</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>情景三件套</td><td>scenario triad</td><td>概率区间（禁点值）+可观察触发器+该情景动作——情景从小说变仪器的三件硬化</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>触发器 / 路标</td><td>trigger / signposts</td><td>每个情景配 2–3 个可观察读数（免费源+日程+阈值）——Shell 传统直系后代</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>期望值</td><td>expected value（EV）</td><td>Σ(各情景概率×损益)——决策质量用 EV 与过程评价，不用胜率或单次结果（Mauboussin）</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
+    <tr><td>经济预测 vs 交易观点</td><td>forecast vs trade view</td><td>前者是「世界会怎样」，后者是「我的判断 vs 市场账本的差」——只有后者可交易</td><td><a href="../lessons/4006-scenarios-sixpack.html">4006</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§37</span>第 4006 课 · 情景→仓位映射</h2>
+<h2><span class="no">§37</span>第 4007 课 · 加密宏观一体化</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>事前验尸</td><td>premortem</td><td>假设「已经失败」回写死因再翻译成读数条款——群体思维与乐观偏误的解药（Klein 2007；Kahneman &amp; Klein 2009）</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
-    <tr><td>情景≠预测</td><td>scenarios are not forecasts</td><td>预测要「对」，情景要「有用」——有用=能改变你今天的仓位结构（Wack 的 re-perceiving 本意）</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
-    <tr><td>七维映射表</td><td>seven-dimension asset map</td><td>G/I/S/C/L/M/P 七状态维×资产受益/受损的查表器——各行带失效条件，打架时裁决权在情景</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
-    <tr><td>漏斗四步</td><td>the funnel</td><td>判读→情景→EV→仓位——正向决策每步衰减一种噪声，反向复盘每层归因一种错误</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
-    <tr><td>三情景同源化</td><td>scenario monoculture</td><td>三个情景只差一个参数（同参数三档）——不是三个未来，是一个未来的三种涂装</td><td><a href="../lessons/4006-scenario-position-mapping.html">4006</a></td></tr>
+    <tr><td>稳定币</td><td>stablecoin</td><td>锚定法币（多为美元）的链上负债——离岸美元家族的加密分支；GENIUS 后美国支付稳定币须 100% 高质量流动资产储备</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>GENIUS Act</td><td>GENIUS Act（2025）</td><td>美国首个联邦支付稳定币框架：持照发行+100% T-bill 级储备+禁止付息；生效=2027-01-18 或最终规则后 120 天孰早</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>三 regime 框架</td><td>three-regime framework</td><td>BTC 的三个候选身份——流动性代理/独立资产/避险叙事，各带支持期与证伪期，用条件分布与哨兵切权重</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>减半周期</td><td>halving cycle</td><td>BTC 每四年区块奖励减半的内置供给周期（2020-05/2024-04……）——「独立资产」叙事的供给轴</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>资金费率</td><td>funding rate</td><td>永续合约多空互付的利率——显著为正且未平仓量同创新高=多头拥挤的免费日更读数</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>未平仓量</td><td>open interest（OI）</td><td>未平仓合约总量——交易所自报、无审计、口径不一，SOURCE TYPE 默认多打一个问号</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>滚动相关哨兵</td><td>rolling-correlation sentinel</td><td>BTC 与纳指日收益滚动 90 日相关（月均）：连续两季为正→流动性代理叙事加权，连续两季为负→独立资产加权</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
+    <tr><td>新美元潮汐</td><td>the new dollar tide</td><td>稳定币总量增减=离岸加密美元的潮汐——同步偏滞后的需求温度计（币价领先增发，增发不领先币价）</td><td><a href="../lessons/4007-crypto-macro.html">4007</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§38</span>第 5001 课 · 案例 I：2008</h2>
+<h2><span class="no">§38</span>第 4008 课 · 情景→仓位映射</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>四段解剖法</td><td>four-part case anatomy</td><td>事前信号→传导→结果→教训的案例解剖框架——每段各问各的问题，配三条纪律（point-in-time/当时定价/机制优先）</td><td><a href="../lessons/5001-case-2008.html">5001</a></td></tr>
-    <tr><td>当时定价 vs 事后叙事</td><td>priced-then vs narrated-after</td><td>每个事件先问「事发前一天价格在哪」——事后叙事总把「知道」与「定价」混为一谈</td><td><a href="../lessons/5001-case-2008.html">5001</a></td></tr>
-    <tr><td>回购折扣率螺旋</td><td>repo haircut spiral</td><td>haircut 跳升→补保证金→抛售→价格跌→haircut 再跳的自反环——2008 的结构放大器</td><td><a href="../lessons/5001-case-2008.html">5001</a></td></tr>
-    <tr><td>漂亮去杠杆</td><td>beautiful deleveraging</td><td>印钞与财政转移的量恰好对冲信贷收缩——债务/收入比降、增长与通胀可接受（Dalio 模板）</td><td><a href="../lessons/5001-case-2008.html">5001</a></td></tr>
-    <tr><td>结构性放空尾部</td><td>tail risk as structure</td><td>尾部规模=融资结构的函数：杠杆+短期融资把 X 的基本面事件放大成 10X 的价格事件</td><td><a href="../lessons/5001-case-2008.html">5001</a></td></tr>
+    <tr><td>事前验尸</td><td>premortem</td><td>假设「已经失败」回写死因再翻译成读数条款——群体思维与乐观偏误的解药（Klein 2007；Kahneman &amp; Klein 2009）</td><td><a href="../lessons/4008-scenario-position-mapping.html">4008</a></td></tr>
+    <tr><td>情景≠预测</td><td>scenarios are not forecasts</td><td>预测要「对」，情景要「有用」——有用=能改变你今天的仓位结构（Wack 的 re-perceiving 本意）</td><td><a href="../lessons/4008-scenario-position-mapping.html">4008</a></td></tr>
+    <tr><td>七维映射表</td><td>seven-dimension asset map</td><td>G/I/S/C/L/M/P 七状态维×资产受益/受损的查表器——各行带失效条件，打架时裁决权在情景</td><td><a href="../lessons/4008-scenario-position-mapping.html">4008</a></td></tr>
+    <tr><td>漏斗四步</td><td>the funnel</td><td>判读→情景→EV→仓位——正向决策每步衰减一种噪声，反向复盘每层归因一种错误</td><td><a href="../lessons/4008-scenario-position-mapping.html">4008</a></td></tr>
+    <tr><td>三情景同源化</td><td>scenario monoculture</td><td>三个情景只差一个参数（同参数三档）——不是三个未来，是一个未来的三种涂装</td><td><a href="../lessons/4008-scenario-position-mapping.html">4008</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§39</span>第 5002 课 · 案例 II：2013 与 2015–16 中国</h2>
+<h2><span class="no">§39</span>第 2007 课 · 案例 I：2008</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>缩减恐慌</td><td>taper tantrum</td><td>2013 年 Fed「放慢购债」的一句话引发 +138bp 重定价——流量预期足以重定价存量利率，全年加息为零</td><td><a href="../lessons/5002-case-2013-china.html">5002</a></td></tr>
-    <tr><td>预期差机制</td><td>expectation-gap mechanism</td><td>市场重定价的不是政策动作而是「相对已定价预期的方向变化」——P 维永远比 M 维先动</td><td><a href="../lessons/5002-case-2013-china.html">5002</a></td></tr>
-    <tr><td>脆弱五国</td><td>Fragile Five</td><td>经常账户赤字+依赖外资的五个 EM（巴西/印度/印尼/土耳其/南非，Morgan Stanley 2013 命名）——外部融资需求是冲击的分层器</td><td><a href="../lessons/5002-case-2013-china.html">5002</a></td></tr>
-    <tr><td>第五读数</td><td>the fifth reading</td><td>中国模型的四条腿（内需/信用/财政/地产）之外的外部资金腿——外储/价差/离岸利率/管制新闻四个免费仪表</td><td><a href="../lessons/5002-case-2013-china.html">5002</a></td></tr>
-    <tr><td>表态-读数裂缝</td><td>statement-price gap</td><td>官方「一次性/到位论」与离岸价差、外储流量给出的定价之间的裂缝——表态是意图，读数才是事实</td><td><a href="../lessons/5002-case-2013-china.html">5002</a></td></tr>
-    <tr><td>磁吸效应</td><td>magnet effect</td><td>越接近熔断/强平线，抢先卖出动力越强，于是更快触线——为防流动性枯竭设计的工具制造枯竭</td><td><a href="../lessons/5002-case-2013-china.html">5002</a></td></tr>
+    <tr><td>四段解剖法</td><td>four-part case anatomy</td><td>事前信号→传导→结果→教训的案例解剖框架——每段各问各的问题，配三条纪律（point-in-time/当时定价/机制优先）</td><td><a href="../lessons/2007-case-2008.html">2007</a></td></tr>
+    <tr><td>当时定价 vs 事后叙事</td><td>priced-then vs narrated-after</td><td>每个事件先问「事发前一天价格在哪」——事后叙事总把「知道」与「定价」混为一谈</td><td><a href="../lessons/2007-case-2008.html">2007</a></td></tr>
+    <tr><td>回购折扣率螺旋</td><td>repo haircut spiral</td><td>haircut 跳升→补保证金→抛售→价格跌→haircut 再跳的自反环——2008 的结构放大器</td><td><a href="../lessons/2007-case-2008.html">2007</a></td></tr>
+    <tr><td>漂亮去杠杆</td><td>beautiful deleveraging</td><td>印钞与财政转移的量恰好对冲信贷收缩——债务/收入比降、增长与通胀可接受（Dalio 模板）</td><td><a href="../lessons/2007-case-2008.html">2007</a></td></tr>
+    <tr><td>结构性放空尾部</td><td>tail risk as structure</td><td>尾部规模=融资结构的函数：杠杆+短期融资把 X 的基本面事件放大成 10X 的价格事件</td><td><a href="../lessons/2007-case-2008.html">2007</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§40</span>第 5003 课 · 案例 III：2020、2022 与 2024 日本</h2>
+<h2><span class="no">§40</span>第 5001 课 · 案例 II：2013 与 2015–16 中国</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>政策闪电战</td><td>policy blitz</td><td>2020-03 三周打完全部工具箱（对照 2008 的 15 个月）——反应函数提速约 20 倍，账单后置于 2022</td><td><a href="../lessons/5003-case-2020-2022-japan.html">5003</a></td></tr>
-    <tr><td>vintage 纪律</td><td>vintage discipline</td><td>决策与复盘只用当时公布的初值，修订值留给学术——同一初请周有 664.8/686.7/594.6 万三个版本</td><td><a href="../lessons/5003-case-2020-2022-japan.html">5003</a></td></tr>
-    <tr><td>carry 三要素</td><td>fuel-spark-spring</td><td>燃料（利差）+火星（方向翻转的意外）+弹簧（拥挤仓位）——三重叠加才有 8·05 式清算，缺一不可</td><td><a href="../lessons/5003-case-2020-2022-japan.html">5003</a></td></tr>
-    <tr><td>时序纪律</td><td>timestamp discipline</td><td>给行情找消息面解释前先对表——8·06 +10.2% 反弹发生在 8·07 央行安抚之前，消息不能解释前一天的价格</td><td><a href="../lessons/5003-case-2020-2022-japan.html">5003</a></td></tr>
-    <tr><td>规模双口径</td><td>dual sizing conventions</td><td>BIS 非银空头 ≈¥40 万亿（下限）vs 日本 IIP ≈$3.7 万亿（潜在弹药）——两个数回答不同问题，永不同用</td><td><a href="../lessons/5003-case-2020-2022-japan.html">5003</a></td></tr>
+    <tr><td>缩减恐慌</td><td>taper tantrum</td><td>2013 年 Fed「放慢购债」的一句话引发 +138bp 重定价——流量预期足以重定价存量利率，全年加息为零</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>预期差机制</td><td>expectation-gap mechanism</td><td>市场重定价的不是政策动作而是「相对已定价预期的方向变化」——P 维永远比 M 维先动</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>脆弱五国</td><td>Fragile Five</td><td>经常账户赤字+依赖外资的五个 EM（巴西/印度/印尼/土耳其/南非，Morgan Stanley 2013 命名）——外部融资需求是冲击的分层器</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>第五读数</td><td>the fifth reading</td><td>中国模型的四条腿（内需/信用/财政/地产）之外的外部资金腿——外储/价差/离岸利率/管制新闻四个免费仪表</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>表态-读数裂缝</td><td>statement-price gap</td><td>官方「一次性/到位论」与离岸价差、外储流量给出的定价之间的裂缝——表态是意图，读数才是事实</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>磁吸效应</td><td>magnet effect</td><td>越接近熔断/强平线，抢先卖出动力越强，于是更快触线——为防流动性枯竭设计的工具制造枯竭</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§41</span>第 5004 课 · 机构实践图谱</h2>
+<h2><span class="no">§41</span>第 5001 课 · 案例 III：2020、2022 与 2024 日本</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>意外暴露思维</td><td>surprise-exposure mindset</td><td>全天候的本体：对增长×通胀的四类「相对预期的意外」配等量风险——承认无知的制度化，非静态配置答案</td><td><a href="../lessons/5004-institution-landscape.html">5004</a></td></tr>
-    <tr><td>风险平价原型</td><td>risk parity prototype</td><td>$10 股+$10 债风险仍被股主导，改配等风险（股波动数倍于债）——Bridgewater 1996 全天候的工程内核</td><td><a href="../lessons/5004-institution-landscape.html">5004</a></td></tr>
-    <tr><td>机构反应函数</td><td>institutional reaction function</td><td>每类机构的目标×约束决定它对同一事件的行为——看行情先问「这是谁的钱、他被强迫做什么」</td><td><a href="../lessons/5004-institution-landscape.html">5004</a></td></tr>
-    <tr><td>风险棱镜</td><td>risk prism</td><td>《Invisible Hands》：无论估值多吸引，组合构建第一问永远是「任何时候最多亏多少」</td><td><a href="../lessons/5004-institution-landscape.html">5004</a></td></tr>
-    <tr><td>回撤非对称数学</td><td>drawdown asymmetry</td><td>−50% 需 +100% 回本——额度制度存在的算术基础</td><td><a href="../lessons/5004-institution-landscape.html">5004</a></td></tr>
-    <tr><td>四象限体检</td><td>four-quadrant checkup</td><td>全天候的个人翻译版：用矩阵卡对组合问四个「如果这个世界来了我亏多少」——季度例行</td><td><a href="../lessons/5004-institution-landscape.html">5004</a></td></tr>
+    <tr><td>政策闪电战</td><td>policy blitz</td><td>2020-03 三周打完全部工具箱（对照 2008 的 15 个月）——反应函数提速约 20 倍，账单后置于 2022</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>vintage 纪律</td><td>vintage discipline</td><td>决策与复盘只用当时公布的初值，修订值留给学术——同一初请周有 664.8/686.7/594.6 万三个版本</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>carry 三要素</td><td>fuel-spark-spring</td><td>燃料（利差）+火星（方向翻转的意外）+弹簧（拥挤仓位）——三重叠加才有 8·05 式清算，缺一不可</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>时序纪律</td><td>timestamp discipline</td><td>给行情找消息面解释前先对表——8·06 +10.2% 反弹发生在 8·07 央行安抚之前，消息不能解释前一天的价格</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
+    <tr><td>规模双口径</td><td>dual sizing conventions</td><td>BIS 非银空头 ≈¥40 万亿（下限）vs 日本 IIP ≈$3.7 万亿（潜在弹药）——两个数回答不同问题，永不同用</td><td><a href="../lessons/5001-case-methodology.html">5001</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§42</span>第 5005 课 · 宏观交易员工作流</h2>
+<h2><span class="no">§42</span>第 5002 课 · 机构实践图谱</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>四步循环</td><td>the workflow loop</td><td>假设→证伪点→表达工具→风险预算，每轮以错误日志收尾——单笔假设的加工线</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
-    <tr><td>IA 三件套</td><td>IA trio</td><td>驱动研究/系统化指标/组合监督——Bridgewater 投资助理训练骨架的个人版（命题库/判读卡/周五对照）</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
-    <tr><td>可处决命题</td><td>actionable proposition</td><td>观点的三格改造：机制句+条件期限+证伪条款——没有这三格的「感觉」不进入循环</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
-    <tr><td>反面证据义务</td><td>disconfirming evidence</td><td>写假设时强制答「为什么它可能不成立」——问「为什么它会跌」而非「为什么它会涨」（Leitner）</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
-    <tr><td>表达四因子</td><td>expression four-factor test</td><td>敏感度×凸性×carry×流动性——同一命题下工具间的好坏差距常大于命题本身的对错</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
-    <tr><td>风险预算算式</td><td>risk budgeting formula</td><td>仓位上限=观点额度÷止损距离；先过 EV 关再进额度关</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
-    <tr><td>三层归因</td><td>three-layer attribution</td><td>每笔了结的假设强制一行：判读层/概率层/执行层——错误分布告诉你明年修哪层</td><td><a href="../lessons/5005-macro-trader-workflow.html">5005</a></td></tr>
+    <tr><td>意外暴露思维</td><td>surprise-exposure mindset</td><td>全天候的本体：对增长×通胀的四类「相对预期的意外」配等量风险——承认无知的制度化，非静态配置答案</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
+    <tr><td>风险平价原型</td><td>risk parity prototype</td><td>$10 股+$10 债风险仍被股主导，改配等风险（股波动数倍于债）——Bridgewater 1996 全天候的工程内核</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
+    <tr><td>机构反应函数</td><td>institutional reaction function</td><td>每类机构的目标×约束决定它对同一事件的行为——看行情先问「这是谁的钱、他被强迫做什么」</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
+    <tr><td>风险棱镜</td><td>risk prism</td><td>《Invisible Hands》：无论估值多吸引，组合构建第一问永远是「任何时候最多亏多少」</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
+    <tr><td>回撤非对称数学</td><td>drawdown asymmetry</td><td>−50% 需 +100% 回本——额度制度存在的算术基础</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
+    <tr><td>四象限体检</td><td>four-quadrant checkup</td><td>全天候的个人翻译版：用矩阵卡对组合问四个「如果这个世界来了我亏多少」——季度例行</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
+    <tr><td>负债驱动投资</td><td>LDI（liability-driven investment）</td><td>险资为对冲负债利率敏感度而持有长久期敞口（多用利率互换）的策略；杠杆+盯市追缴使其在利率急升时成为强制卖方（2022-09 英债案例）</td><td><a href="../lessons/5002-institution-landscape.html">5002</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§43</span>第 5006 课 · 完整决策演练</h2>
+<h2><span class="no">§43</span>第 5003 课 · 宏观交易员工作流</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
-    <tr><td>八件套</td><td>Macro Decision Sheet</td><td>State/Impulse/Expectations/Change/Pricing/Scenario/Expression/Invalidation——四层框架的一页纸毕业终端</td><td><a href="../lessons/5006-full-decision-drill.html">5006</a></td></tr>
-    <tr><td>证伪回路</td><td>invalidation loop</td><td>⑧的读数条款触发→回①重写状态——八件套是活文件的唯一证据</td><td><a href="../lessons/5006-full-decision-drill.html">5006</a></td></tr>
-    <tr><td>预期-定价差</td><td>expectation-pricing gap</td><td>⑤栏相对③栏的最大差值处=市场最可能重定价的势能位——⑦表达方向的第一候选</td><td><a href="../lessons/5006-full-decision-drill.html">5006</a></td></tr>
-    <tr><td>三透镜快照</td><td>three-lens snapshot</td><td>同一日数据的三副眼镜：#3 周期/#4 跨资产/#5 决策——分歧处=你的差异化判断</td><td><a href="../lessons/5006-full-decision-drill.html">5006</a></td></tr>
-    <tr><td>诚实空白</td><td>honest blank</td><td>不知道的栏标「不知道+补读数日期」——伪装栏是污染源，空白栏是可修复的</td><td><a href="../lessons/5006-full-decision-drill.html">5006</a></td></tr>
-    <tr><td>退回重写机制</td><td>the resubmission loop</td><td>五条工艺红线+48 小时修订复交——退回不是惩罚，是六个案例共同的教学遗产</td><td><a href="../lessons/5006-full-decision-drill.html">5006</a></td></tr>
+    <tr><td>四步循环</td><td>the workflow loop</td><td>假设→证伪点→表达工具→风险预算，每轮以错误日志收尾——单笔假设的加工线</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>IA 三件套</td><td>IA trio</td><td>驱动研究/系统化指标/组合监督——Bridgewater 投资助理训练骨架的个人版（命题库/判读卡/周五对照）</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>可处决命题</td><td>actionable proposition</td><td>观点的三格改造：机制句+条件期限+证伪条款——没有这三格的「感觉」不进入循环</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>反面证据义务</td><td>disconfirming evidence</td><td>写假设时强制答「为什么它可能不成立」——问「为什么它会跌」而非「为什么它会涨」（Leitner）</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>表达四因子</td><td>expression four-factor test</td><td>敏感度×凸性×carry×流动性——同一命题下工具间的好坏差距常大于命题本身的对错</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>风险预算算式</td><td>risk budgeting formula</td><td>仓位上限=观点额度÷止损距离；先过 EV 关再进额度关</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>三层归因</td><td>three-layer attribution</td><td>每笔了结的假设强制一行：判读层/概率层/执行层——错误分布告诉你明年修哪层</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
+    <tr><td>阈值锚定</td><td>entry-anchored</td><td>证伪条款的阈值须相对入场读数设定（入场值±机制量级），高于入场价的处决线等于自动引爆</td><td><a href="../lessons/5003-macro-trader-workflow.html">5003</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§44</span>第 6001 课 · 宏观周报写作</h2>
+<h2><span class="no">§44</span>第 5004 课 · 完整决策演练</h2>
+<table>
+  <thead>
+    <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>八件套</td><td>Macro Decision Sheet</td><td>State/Impulse/Expectations/Change/Pricing/Scenario/Expression/Invalidation——四层框架的一页纸毕业终端</td><td><a href="../lessons/5004-full-decision-drill.html">5004</a></td></tr>
+    <tr><td>证伪回路</td><td>invalidation loop</td><td>⑧的读数条款触发→回①重写状态——八件套是活文件的唯一证据</td><td><a href="../lessons/5004-full-decision-drill.html">5004</a></td></tr>
+    <tr><td>预期-定价差</td><td>expectation-pricing gap</td><td>⑤栏相对③栏的最大差值处=市场最可能重定价的势能位——⑦表达方向的第一候选</td><td><a href="../lessons/5004-full-decision-drill.html">5004</a></td></tr>
+    <tr><td>三透镜快照</td><td>three-lens snapshot</td><td>同一日数据的三副眼镜：#3 周期/#4 跨资产/#5 决策——分歧处=你的差异化判断</td><td><a href="../lessons/5004-full-decision-drill.html">5004</a></td></tr>
+    <tr><td>诚实空白</td><td>honest blank</td><td>不知道的栏标「不知道+补读数日期」——伪装栏是污染源，空白栏是可修复的</td><td><a href="../lessons/5004-full-decision-drill.html">5004</a></td></tr>
+    <tr><td>退回重写机制</td><td>the resubmission loop</td><td>五条工艺红线+48 小时修订复交——退回不是惩罚，是六个案例共同的教学遗产</td><td><a href="../lessons/5004-full-decision-drill.html">5004</a></td></tr>
+  </tbody>
+</table>
+
+<h2><span class="no">§45</span>第 6001 课 · 宏观周报写作</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
@@ -489,7 +525,7 @@
   </tbody>
 </table>
 
-<h2><span class="no">§45</span>第 6002 课 · 深度专题研究</h2>
+<h2><span class="no">§46</span>第 6002 课 · 深度专题研究</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
@@ -504,22 +540,23 @@
   </tbody>
 </table>
 
-<h2><span class="no">§46</span>第 6003 课 · 预测记分卡</h2>
+<h2><span class="no">§47</span>第 6003 课 · 预测记分卡</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
   </thead>
   <tbody>
     <tr><td>Brier 结算</td><td>Brier scoring</td><td>事件发生 (1−p)²、不发生 p²，区间取中值——越自信、错越贵（平方级）</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
-    <tr><td>三层定位</td><td>three-layer error locating</td><td>错误在 读数/机制/校准 哪一层——分数是体温计，定位是诊断书（假设生命周期版的姊妹表，见 §42 三层归因）</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
+    <tr><td>三层定位</td><td>three-layer error locating</td><td>错误在 读数/机制/校准 哪一层——分数是体温计，定位是诊断书（假设生命周期版的姊妹表，见 §43 三层归因）</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
     <tr><td>CHAMP 口诀</td><td>CHAMP</td><td>Comparisons/Historical trends/Averaging/Mathematical models/Predictable biases——GJP 校准训练五件套（Chang et al. 2016）</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
     <tr><td>校准曲线</td><td>calibration curve</td><td>「我说 X% 的那些事实际发生了多少」的曲线——对角线=完美校准</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
     <tr><td>resulting</td><td>resulting</td><td>以单次结果反推决策质量（Duke 2018）——对账要用样本与概率，不用单次输赢</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
     <tr><td>小幅更新留痕</td><td>incremental updating, logged</td><td>预测行可改但每次留（旧值→新值+触发理由）——频繁小幅更新者更准（Atanasov et al. 2020）</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
+    <tr><td>对照组预测行</td><td>consensus 对照行</td><td>把 consensus 的预测折算成概率行单独立账打分，用于量预期差；不计入个人记分卡分数</td><td><a href="../lessons/6003-forecast-scorecard.html">6003</a></td></tr>
   </tbody>
 </table>
 
-<h2><span class="no">§47</span>第 6004 课 · 费曼教学+毕业考</h2>
+<h2><span class="no">§48</span>第 6004 课 · 费曼教学+毕业考</h2>
 <table>
   <thead>
     <tr><th>术语</th><th>英文</th><th>一句话定义</th><th>首现</th></tr>
@@ -529,12 +566,474 @@
     <tr><td>弟子效应</td><td>protégé effect</td><td>为教而学比为自己学投入更高（Chase et al. 2009）——教学是学习的高效形态不是学成后的输出</td><td><a href="../lessons/6004-feynman-graduation.html">6004</a></td></tr>
     <tr><td>社区检验</td><td>community test</td><td>科普发布后收集至少三个真实提问——答不上的就是知识洞，回炉修订再发</td><td><a href="../lessons/6004-feynman-graduation.html">6004</a></td></tr>
     <tr><td>科普五规格</td><td>popular-writing rules</td><td>零术语门槛/一个主题/机制优先/诚实条款/600–1000 字</td><td><a href="../lessons/6004-feynman-graduation.html">6004</a></td></tr>
-    <tr><td>毕业考</td><td>graduation exam</td><td>12 题跨阶段判定（闭卷），通过线 ≥4/12，每题带补救指向——三层螺旋的第三层</td><td><a href="../lessons/6004-feynman-graduation.html">6004</a></td></tr>
+    <tr><td>毕业考</td><td>graduation exam</td><td>12 题跨阶段判定（闭卷，双卷制：诊断卷→错题回炉复述→验证卷，变体轮换），通过线=验证卷 ≥7/12+复述完成（2026-10-01 起，原 ≥4/12 单卷制废止），每题带补救指向——三层螺旋的第三层</td><td><a href="../lessons/6004-feynman-graduation.html">6004</a></td></tr>
     <tr><td>毕业声明</td><td>graduation statement</td><td>框架与仪器已交付；校准需要 3–7 年第一个完整周期；训练毕业≠功成身退</td><td><a href="../lessons/6004-feynman-graduation.html">6004</a></td></tr>
   </tbody>
 </table>
 
-<div class="note">滚动制说明：v1.8 收录全部 40 课（波次 7 收官，课程施工完结）。发现课内术语在本页缺失，回来告诉教练，随修订波次补录。</div>
+<!-- REVIDX-START -->
+<h2 id="en-index"><span class="no">§49</span>English → 中文 索引</h2>
+<p class="lede">按英文字母序反查：知道英文术语、想找中文译名与首现课——数据由本页正向表格程序化生成（<code>tools/build-terms.py</code> 同源解析），随正向表滚动更新。跳段：<a href="#idx-0">0–9</a> · <a href="#idx-a">A</a> · <a href="#idx-b">B</a> · <a href="#idx-c">C</a> · <a href="#idx-d">D</a> · <a href="#idx-e">E</a> · <a href="#idx-f">F</a> · <a href="#idx-g">G</a> · <a href="#idx-h">H</a> · <a href="#idx-i">I</a> · <a href="#idx-j">J</a> · <a href="#idx-k">K</a> · <a href="#idx-l">L</a> · <a href="#idx-m">M</a> · <a href="#idx-n">N</a> · <a href="#idx-o">O</a> · <a href="#idx-p">P</a> · <a href="#idx-q">Q</a> · <a href="#idx-r">R</a> · <a href="#idx-s">S</a> · <a href="#idx-t">T</a> · <a href="#idx-v">V</a> · <a href="#idx-w">W</a> · <a href="#idx-y">Y</a> · <a href="#idx-z">Z</a></p>
+<h3 id="idx-0">0–9</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">3-month annualized rate</td><td>3 个月年化</td><td>1002</td></tr>
+    <tr><td class="w">7-day reverse repo rate (PBoC OMO)</td><td>7 天逆回购利率</td><td>2002</td></tr>
+    <tr><td class="w">7-day/overnight repo (interbank)</td><td>DR007 / DR001</td><td>2002</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-a">A</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">actionable proposition</td><td>可处决命题</td><td>5003</td></tr>
+    <tr><td class="w">aggregate financing (TSF)</td><td>社融</td><td>1003</td></tr>
+    <tr><td class="w">ample-reserves regime</td><td>充足准备金框架</td><td>2001</td></tr>
+    <tr><td class="w">answerability test</td><td>可答性三问</td><td>6002</td></tr>
+    <tr><td class="w">automatic stabilizers</td><td>自动稳定器</td><td>0003</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-b">B</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">base effect</td><td>基期效应</td><td>1007</td></tr>
+    <tr><td class="w">base period rotation</td><td>基期轮换</td><td>1003</td></tr>
+    <tr><td class="w">bear/bull steepener 等</td><td>熊陡/牛陡等</td><td>1005</td></tr>
+    <tr><td class="w">beautiful deleveraging</td><td>漂亮去杠杆</td><td>0002</td></tr>
+    <tr><td class="w">benchmark revision</td><td>基准修订</td><td>1001</td></tr>
+    <tr><td class="w">Beveridge curve</td><td>贝弗里奇曲线</td><td>1002</td></tr>
+    <tr><td class="w">bills share</td><td>bills 份额</td><td>2004</td></tr>
+    <tr><td class="w">boundary band</td><td>边界带</td><td>3005</td></tr>
+    <tr><td class="w">breadth / cross-asset confirmation</td><td>跨资产确认</td><td>0005</td></tr>
+    <tr><td class="w">breadth confirmation</td><td>广度确认</td><td>1002</td></tr>
+    <tr><td class="w">breakeven inflation</td><td>盈亏平衡通胀</td><td>0004</td></tr>
+    <tr><td class="w">Brier score</td><td>Brier 分</td><td>参考 0006</td></tr>
+    <tr><td class="w">Brier scoring</td><td>Brier 结算</td><td>6003</td></tr>
+    <tr><td class="w">bullwhip effect</td><td>牛鞭效应</td><td>3001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-c">C</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">calibration curve</td><td>校准曲线</td><td>6003</td></tr>
+    <tr><td class="w">capex share (PNFI/GDP)</td><td>资本开支份额</td><td>3001</td></tr>
+    <tr><td class="w">carry trade</td><td>套息交易</td><td>0004</td></tr>
+    <tr><td class="w">catalyst</td><td>催化剂</td><td>4006</td></tr>
+    <tr><td class="w">central bank liquidity swaps</td><td>央行流动性互换</td><td>2006</td></tr>
+    <tr><td class="w">CHAMP</td><td>CHAMP 口诀</td><td>6003</td></tr>
+    <tr><td class="w">collateral</td><td>抵押品</td><td>0002</td></tr>
+    <tr><td class="w">collateral-credit loop</td><td>抵押品-信贷正反馈</td><td>3002</td></tr>
+    <tr><td class="w">commodity role card</td><td>角色卡</td><td>4005</td></tr>
+    <tr><td class="w">community test</td><td>社区检验</td><td>6004</td></tr>
+    <tr><td class="w">conditional distribution discipline</td><td>条件分布纪律</td><td>3005</td></tr>
+    <tr><td class="w">conditional reaction tree</td><td>条件反应树</td><td>2008</td></tr>
+    <tr><td class="w">consensus</td><td>预期共识</td><td>1007</td></tr>
+    <tr><td class="w">consensus 对照行</td><td>对照组预测行</td><td>6003</td></tr>
+    <tr><td class="w">convexity</td><td>凸性</td><td>4001</td></tr>
+    <tr><td class="w">core PCE</td><td>核心 PCE</td><td>1001</td></tr>
+    <tr><td class="w">corrections box</td><td>更正栏</td><td>6001</td></tr>
+    <tr><td class="w">covered interest parity (CIP)</td><td>抛补利率平价</td><td>2005</td></tr>
+    <tr><td class="w">credit</td><td>信用</td><td>0001</td></tr>
+    <tr><td class="w">credit impulse</td><td>信用脉冲</td><td>3003</td></tr>
+    <tr><td class="w">credit spread / OAS</td><td>信用利差</td><td>参考 0001</td></tr>
+    <tr><td class="w">credit-to-GDP gap</td><td>信用/GDP 缺口</td><td>3002</td></tr>
+    <tr><td class="w">cross-currency basis</td><td>跨货币基差</td><td>2005</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-d">D</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">data definition</td><td>口径</td><td>0002</td></tr>
+    <tr><td class="w">data vintage</td><td>vintage</td><td>1007</td></tr>
+    <tr><td class="w">data workbook</td><td>数据底稿</td><td>6002</td></tr>
+    <tr><td class="w">debt ceiling / limit</td><td>债务天花板</td><td>0002</td></tr>
+    <tr><td class="w">debt deflation</td><td>债务通缩</td><td>0002</td></tr>
+    <tr><td class="w">deflationary deleveraging</td><td>通缩型去杠杆</td><td>0002</td></tr>
+    <tr><td class="w">deleveraging</td><td>去杠杆</td><td>0001</td></tr>
+    <tr><td class="w">disconfirming evidence</td><td>反面证据义务</td><td>5003</td></tr>
+    <tr><td class="w">discount rate</td><td>贴现率</td><td>0001</td></tr>
+    <tr><td class="w">dollar squeeze / dash for cash</td><td>美元荒</td><td>2006</td></tr>
+    <tr><td class="w">dollar value of an &#39;01</td><td>DV01</td><td>4001</td></tr>
+    <tr><td class="w">domestic vs foreign-currency debt</td><td>本币债 vs 外币债</td><td>0002</td></tr>
+    <tr><td class="w">dot plot</td><td>点阵图</td><td>2008</td></tr>
+    <tr><td class="w">doves</td><td>鸽派</td><td>0004</td></tr>
+    <tr><td class="w">drawdown asymmetry</td><td>回撤非对称数学</td><td>5002</td></tr>
+    <tr><td class="w">dual mandate</td><td>双重使命</td><td>0003</td></tr>
+    <tr><td class="w">dual sizing conventions</td><td>规模双口径</td><td>5001</td></tr>
+    <tr><td class="w">duration translator</td><td>久期换算器</td><td>4001</td></tr>
+    <tr><td class="w">dynamic stochastic general equilibrium</td><td>DSGE</td><td>2001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-e">E</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">early-warning band</td><td>警戒带</td><td>3002</td></tr>
+    <tr><td class="w">entry-anchored</td><td>阈值锚定</td><td>5003</td></tr>
+    <tr><td class="w">Eurodollar</td><td>欧洲美元</td><td>2005</td></tr>
+    <tr><td class="w">expectation error</td><td>预期差</td><td>参考 0001</td></tr>
+    <tr><td class="w">expectation-gap mechanism</td><td>预期差机制</td><td>5001</td></tr>
+    <tr><td class="w">expectation-pricing gap</td><td>预期-定价差</td><td>5004</td></tr>
+    <tr><td class="w">expectations theory</td><td>预期理论</td><td>0004</td></tr>
+    <tr><td class="w">Expectation→Pricing→Positioning</td><td>E→P→P</td><td>3005</td></tr>
+    <tr><td class="w">expected value（EV）</td><td>期望值</td><td>4006</td></tr>
+    <tr><td class="w">expression four-factor test</td><td>表达四因子</td><td>5003</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-f">F</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">facility existence effect</td><td>设施存在效应</td><td>2006</td></tr>
+    <tr><td class="w">fallacy of composition</td><td>合成谬误</td><td>0002</td></tr>
+    <tr><td class="w">Feynman test</td><td>费曼检验</td><td>6004</td></tr>
+    <tr><td class="w">FIMA repo facility</td><td>FIMA</td><td>2006</td></tr>
+    <tr><td class="w">financial accelerator</td><td>金融加速器</td><td>0003</td></tr>
+    <tr><td class="w">financial cycle</td><td>金融周期</td><td>3002</td></tr>
+    <tr><td class="w">fiscal impact measure</td><td>FIM</td><td>2004</td></tr>
+    <tr><td class="w">forecast vs trade view</td><td>经济预测 vs 交易观点</td><td>4006</td></tr>
+    <tr><td class="w">forward premium puzzle</td><td>UIP 之谜</td><td>4003</td></tr>
+    <tr><td class="w">four-layer framework</td><td>四层框架</td><td>3005</td></tr>
+    <tr><td class="w">four-part case anatomy</td><td>四段解剖法</td><td>2007</td></tr>
+    <tr><td class="w">four-part weekly</td><td>周报四段结构</td><td>6001</td></tr>
+    <tr><td class="w">four-quadrant checkup</td><td>四象限体检</td><td>5002</td></tr>
+    <tr><td class="w">Fragile Five</td><td>脆弱五国</td><td>5001</td></tr>
+    <tr><td class="w">fresh start effect</td><td>新起点效应</td><td>0005</td></tr>
+    <tr><td class="w">fuel-spark-spring</td><td>carry 三要素</td><td>5001</td></tr>
+    <tr><td class="w">funding currency</td><td>融资货币</td><td>4003</td></tr>
+    <tr><td class="w">funding rate</td><td>资金费率</td><td>4007</td></tr>
+    <tr><td class="w">FX settlement data</td><td>结售汇数据</td><td>4004</td></tr>
+    <tr><td class="w">FX swap</td><td>FX 掉期</td><td>2005</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-g">G</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">GENIUS Act（2025）</td><td>GENIUS Act</td><td>4007</td></tr>
+    <tr><td class="w">global financial cycle</td><td>GFCy</td><td>3002</td></tr>
+    <tr><td class="w">Global Supply Chain Pressure Index</td><td>GSCPI</td><td>4005</td></tr>
+    <tr><td class="w">good vs bad inflation</td><td>好通胀 / 坏通胀</td><td>3005</td></tr>
+    <tr><td class="w">graduation exam</td><td>毕业考</td><td>6004</td></tr>
+    <tr><td class="w">graduation statement</td><td>毕业声明</td><td>6004</td></tr>
+    <tr><td class="w">Growth / Inflation / Policy</td><td>三变量框架</td><td>0001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-h">H</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">H.4.1 release</td><td>H.4.1</td><td>2001</td></tr>
+    <tr><td class="w">halving cycle</td><td>减半周期</td><td>4007</td></tr>
+    <tr><td class="w">hawks</td><td>鹰派</td><td>0004</td></tr>
+    <tr><td class="w">high yield (HY)</td><td>高收益债（垃圾债）</td><td>0005</td></tr>
+    <tr><td class="w">honest blank</td><td>诚实空白</td><td>5004</td></tr>
+    <tr><td class="w">honesty clause, written</td><td>诚实条款写作版</td><td>6001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-i">I</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">IA trio</td><td>IA 三件套</td><td>5003</td></tr>
+    <tr><td class="w">implementation intention (if-then)</td><td>执行意图</td><td>0005</td></tr>
+    <tr><td class="w">implied probability</td><td>隐含概率</td><td>1006</td></tr>
+    <tr><td class="w">impossible trinity</td><td>三元悖论</td><td>4003</td></tr>
+    <tr><td class="w">incremental information</td><td>增量信息</td><td>2008</td></tr>
+    <tr><td class="w">incremental updating, logged</td><td>小幅更新留痕</td><td>6003</td></tr>
+    <tr><td class="w">inflation swap</td><td>通胀互换</td><td>1004</td></tr>
+    <tr><td class="w">inflation vs deflation playbook</td><td>通胀/通缩交易清单</td><td>4005</td></tr>
+    <tr><td class="w">inflationary deleveraging</td><td>通胀型去杠杆</td><td>0002</td></tr>
+    <tr><td class="w">initial claims, 4-week average</td><td>初请 4 周均线</td><td>3003</td></tr>
+    <tr><td class="w">initial jobless claims</td><td>初次申请失业金</td><td>1001</td></tr>
+    <tr><td class="w">institutional reaction function</td><td>机构反应函数</td><td>5002</td></tr>
+    <tr><td class="w">interest on reserve balances</td><td>IORB</td><td>2001</td></tr>
+    <tr><td class="w">interest rate</td><td>利率</td><td>0001</td></tr>
+    <tr><td class="w">interest rate corridor</td><td>利率走廊</td><td>2001</td></tr>
+    <tr><td class="w">interest rate parity（IRP）</td><td>利率平价</td><td>4003</td></tr>
+    <tr><td class="w">invalidation</td><td>失效条款</td><td>4006</td></tr>
+    <tr><td class="w">invalidation loop</td><td>证伪回路</td><td>5004</td></tr>
+    <tr><td class="w">inventory-to-sales ratio</td><td>库存/销售比</td><td>3001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-j">J</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">JOLTS（Job Openings and Labor Turnover Survey）</td><td>职位空缺与劳动力流动调查</td><td>1002</td></tr>
+    <tr><td class="w">Juglar cycle</td><td>朱格拉周期</td><td>3001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-k">K</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">Kindleberger anatomy</td><td>金德尔伯格五段</td><td>3004</td></tr>
+    <tr><td class="w">Kitchin cycle</td><td>基钦周期</td><td>3001</td></tr>
+    <tr><td class="w">known-then list</td><td>当时可知清单</td><td>3006</td></tr>
+    <tr><td class="w">Kondratieff wave</td><td>康波</td><td>3001</td></tr>
+    <tr><td class="w">Kuznets (building) cycle</td><td>库兹涅茨周期</td><td>3002</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-l">L</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">LDI（liability-driven investment）</td><td>负债驱动投资</td><td>5002</td></tr>
+    <tr><td class="w">lead-time distribution</td><td>领先分布</td><td>3003</td></tr>
+    <tr><td class="w">leading / coincident / lagging indicators</td><td>领先/同步/滞后指标</td><td>1001</td></tr>
+    <tr><td class="w">Level / Momentum / Acceleration / Percentile</td><td>四值读法</td><td>1002</td></tr>
+    <tr><td class="w">linked exchange rate system</td><td>联系汇率制</td><td>4004</td></tr>
+    <tr><td class="w">loan creates deposit</td><td>贷款创造存款</td><td>0003</td></tr>
+    <tr><td class="w">loan prime rate</td><td>LPR</td><td>2002</td></tr>
+    <tr><td class="w">long and variable lags</td><td>长期且可变的时滞</td><td>2003</td></tr>
+    <tr><td class="w">long-duration assets</td><td>长久期资产</td><td>0001</td></tr>
+    <tr><td class="w">long-term debt cycle</td><td>长期债务周期</td><td>0001</td></tr>
+    <tr><td class="w">look-ahead bias</td><td>未来函数</td><td>1007</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-m">M</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">macro</td><td>宏观（分析）</td><td>0001</td></tr>
+    <tr><td class="w">Macro Decision Sheet</td><td>八件套</td><td>5004</td></tr>
+    <tr><td class="w">macro leverage ratio (NIFD)</td><td>宏观杠杆率（NIFD 口径）</td><td>0002</td></tr>
+    <tr><td class="w">magnet effect</td><td>磁吸效应</td><td>5001</td></tr>
+    <tr><td class="w">margin call</td><td>保证金追缴</td><td>0003</td></tr>
+    <tr><td class="w">marginal buyer structure</td><td>边际买家结构</td><td>4002</td></tr>
+    <tr><td class="w">medium-term lending facility</td><td>MLF</td><td>2002</td></tr>
+    <tr><td class="w">Minsky taxonomy</td><td>明斯基三分类</td><td>3004</td></tr>
+    <tr><td class="w">modified duration</td><td>修正久期</td><td>0004</td></tr>
+    <tr><td class="w">money</td><td>货币</td><td>0001</td></tr>
+    <tr><td class="w">money market</td><td>货币市场</td><td>0004</td></tr>
+    <tr><td class="w">MOVE Index</td><td>美债波动率指数（MOVE）</td><td>（补录·语境词）</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-n">N</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">National Financial Conditions Index</td><td>NFCI</td><td>2003</td></tr>
+    <tr><td class="w">NBER recession dating</td><td>NBER 衰退区间</td><td>0002</td></tr>
+    <tr><td class="w">net liquidity</td><td>净流动性公式</td><td>2006</td></tr>
+    <tr><td class="w">new orders minus inventories</td><td>新订单−库存差</td><td>3003</td></tr>
+    <tr><td class="w">nominal vs real</td><td>名义 vs 实际</td><td>0002</td></tr>
+    <tr><td class="w">non-commercial (COT)</td><td>非商业持仓</td><td>1006</td></tr>
+    <tr><td class="w">nonbank financial intermediaries</td><td>非银金融</td><td>0003</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-o">O</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">open interest（OI）</td><td>未平仓量</td><td>4007</td></tr>
+    <tr><td class="w">opportunity cost channel</td><td>机会成本渠道</td><td>4002</td></tr>
+    <tr><td class="w">outline pre-review</td><td>大纲预审制</td><td>6002</td></tr>
+    <tr><td class="w">overnight reverse repo</td><td>ON RRP</td><td>2001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-p">P</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">percentile</td><td>分位数（窗口纪律）</td><td>1002</td></tr>
+    <tr><td class="w">policy blitz</td><td>政策闪电战</td><td>5001</td></tr>
+    <tr><td class="w">Ponzi finance</td><td>庞氏融资</td><td>3004</td></tr>
+    <tr><td class="w">popular-writing rules</td><td>科普五规格</td><td>6004</td></tr>
+    <tr><td class="w">position update</td><td>立场更新</td><td>6001</td></tr>
+    <tr><td class="w">premortem</td><td>事前验尸</td><td>4008</td></tr>
+    <tr><td class="w">price = forecast + risk premium + technicals</td><td>价格三因子原理</td><td>4002</td></tr>
+    <tr><td class="w">priced-then vs narrated-after</td><td>当时定价 vs 事后叙事</td><td>2007</td></tr>
+    <tr><td class="w">procyclicality</td><td>顺周期性</td><td>0003</td></tr>
+    <tr><td class="w">productivity</td><td>生产率</td><td>0001</td></tr>
+    <tr><td class="w">protégé effect</td><td>弟子效应</td><td>6004</td></tr>
+    <tr><td class="w">provisional answer</td><td>临时答案</td><td>6002</td></tr>
+    <tr><td class="w">purchasing power parity（PPP）</td><td>购买力平价</td><td>4003</td></tr>
+    <tr><td class="w">pushing on a string</td><td>推绳子</td><td>0002</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-q">Q</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">quantitative easing / tightening</td><td>QE / QT</td><td>2001</td></tr>
+    <tr><td class="w">quarterly refunding</td><td>QRA</td><td>2004</td></tr>
+    <tr><td class="w">question log</td><td>问题清单</td><td>6002</td></tr>
+    <tr><td class="w">quits rate</td><td>离职率</td><td>1002</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-r">R</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">reaction function</td><td>反应函数</td><td>0003</td></tr>
+    <tr><td class="w">reader contract</td><td>读者契约三问</td><td>6001</td></tr>
+    <tr><td class="w">real interest rate</td><td>实际利率</td><td>参考 0001</td></tr>
+    <tr><td class="w">regime scorecard</td><td>regime 判读卡</td><td>3005</td></tr>
+    <tr><td class="w">repo haircut spiral</td><td>回购折扣率螺旋</td><td>2007</td></tr>
+    <tr><td class="w">resulting</td><td>resulting</td><td>6003</td></tr>
+    <tr><td class="w">retrospective decision sheet</td><td>决策单反写</td><td>3006</td></tr>
+    <tr><td class="w">risk budgeting formula</td><td>风险预算算式</td><td>5003</td></tr>
+    <tr><td class="w">risk parity prototype</td><td>风险平价原型</td><td>5002</td></tr>
+    <tr><td class="w">risk prism</td><td>风险棱镜</td><td>5002</td></tr>
+    <tr><td class="w">risk-free rate</td><td>无风险利率</td><td>0001</td></tr>
+    <tr><td class="w">rolling-correlation sentinel</td><td>滚动相关哨兵</td><td>4007</td></tr>
+    <tr><td class="w">RRR cut</td><td>降准</td><td>2002</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-s">S</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">Sahm rule</td><td>Sahm 规则</td><td>参考 0001</td></tr>
+    <tr><td class="w">scenario monoculture</td><td>三情景同源化</td><td>4008</td></tr>
+    <tr><td class="w">scenario triad</td><td>情景三件套</td><td>4006</td></tr>
+    <tr><td class="w">scenarios are not forecasts</td><td>情景≠预测</td><td>4008</td></tr>
+    <tr><td class="w">seasonal adjustment</td><td>季节调整</td><td>1001</td></tr>
+    <tr><td class="w">self-reinforcing credit</td><td>信用自我强化</td><td>0002</td></tr>
+    <tr><td class="w">sell the fact</td><td>卖事实</td><td>0004</td></tr>
+    <tr><td class="w">Senior Loan Officer Opinion Survey</td><td>SLOOS</td><td>3004</td></tr>
+    <tr><td class="w">series break</td><td>口径断点</td><td>1003</td></tr>
+    <tr><td class="w">seven hallmarks of a bubble</td><td>泡沫七征</td><td>3004</td></tr>
+    <tr><td class="w">seven stages of the big debt cycle</td><td>大债务周期七阶段</td><td>3004</td></tr>
+    <tr><td class="w">seven-dimension asset map</td><td>七维映射表</td><td>4008</td></tr>
+    <tr><td class="w">short squeeze</td><td>轧空</td><td>1006</td></tr>
+    <tr><td class="w">short-term debt cycle</td><td>短期债务周期</td><td>0001</td></tr>
+    <tr><td class="w">six-pack</td><td>六件套</td><td>4006</td></tr>
+    <tr><td class="w">six-segment review</td><td>六段复盘法</td><td>3006</td></tr>
+    <tr><td class="w">SME（Survey of Market Expectations）</td><td>市场预期调查</td><td>1005</td></tr>
+    <tr><td class="w">spending = income</td><td>支出=他人收入</td><td>0001</td></tr>
+    <tr><td class="w">stablecoin</td><td>稳定币</td><td>4007</td></tr>
+    <tr><td class="w">standing lending facility</td><td>SLF</td><td>2002</td></tr>
+    <tr><td class="w">standing repo facility</td><td>SRF</td><td>2001</td></tr>
+    <tr><td class="w">statement-price gap</td><td>表态-读数裂缝</td><td>5001</td></tr>
+    <tr><td class="w">substitution bias</td><td>替代偏误</td><td>1001</td></tr>
+    <tr><td class="w">Summary of Economic Projections</td><td>SEP</td><td>2008</td></tr>
+    <tr><td class="w">supply-side shock</td><td>S 维供给冲击</td><td>4005</td></tr>
+    <tr><td class="w">surprise-exposure mindset</td><td>意外暴露思维</td><td>5002</td></tr>
+    <tr><td class="w">surprise×reaction×attention×positioning</td><td>四因子归因</td><td>2008</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-t">T</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">tail risk as structure</td><td>结构性放空尾部</td><td>2007</td></tr>
+    <tr><td class="w">taper tantrum</td><td>缩减恐慌</td><td>5001</td></tr>
+    <tr><td class="w">Taylor principle</td><td>泰勒原则</td><td>0003</td></tr>
+    <tr><td class="w">Taylor rule</td><td>泰勒规则</td><td>0003</td></tr>
+    <tr><td class="w">term premium</td><td>期限溢价</td><td>0004</td></tr>
+    <tr><td class="w">term spread / 2s10s</td><td>期限利差 / 2s10s</td><td>参考 0001</td></tr>
+    <tr><td class="w">the fifth reading</td><td>第五读数</td><td>5001</td></tr>
+    <tr><td class="w">the funnel</td><td>漏斗四步</td><td>4008</td></tr>
+    <tr><td class="w">the lead</td><td>当周主线</td><td>6001</td></tr>
+    <tr><td class="w">the new dollar tide</td><td>新美元潮汐</td><td>4007</td></tr>
+    <tr><td class="w">the resubmission loop</td><td>退回重写机制</td><td>5004</td></tr>
+    <tr><td class="w">the workflow loop</td><td>四步循环</td><td>5003</td></tr>
+    <tr><td class="w">three-layer attribution</td><td>三层归因</td><td>5003</td></tr>
+    <tr><td class="w">three-layer error locating</td><td>三层定位</td><td>6003</td></tr>
+    <tr><td class="w">three-lens snapshot</td><td>三透镜快照</td><td>5004</td></tr>
+    <tr><td class="w">three-regime framework</td><td>三 regime 框架</td><td>4007</td></tr>
+    <tr><td class="w">timestamp discipline</td><td>时序纪律</td><td>5001</td></tr>
+    <tr><td class="w">top-down / bottom-up</td><td>自上而下 / 自下而上</td><td>0001</td></tr>
+    <tr><td class="w">topic card</td><td>选题卡</td><td>6002</td></tr>
+    <tr><td class="w">trade-weighted dollar index</td><td>贸易加权美元指数</td><td>0004</td></tr>
+    <tr><td class="w">traffic-light output</td><td>检查单三档</td><td>3004</td></tr>
+    <tr><td class="w">transaction</td><td>交易</td><td>0001</td></tr>
+    <tr><td class="w">transmission channels</td><td>传导渠道</td><td>2003</td></tr>
+    <tr><td class="w">Treasury basis trade</td><td>基差交易</td><td>2004</td></tr>
+    <tr><td class="w">Treasury General Account</td><td>TGA</td><td>2004</td></tr>
+    <tr><td class="w">trigger / signposts</td><td>触发器 / 路标</td><td>4006</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-v">V</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">vintage discipline</td><td>vintage 纪律</td><td>5001</td></tr>
+    <tr><td class="w">VIX / CBOE Volatility Index</td><td>恐慌指数（VIX）</td><td>参考 0001</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-w">W</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">what is priced</td><td>已定价</td><td>4006</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-y">Y</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">yield curve</td><td>收益率曲线</td><td>0004</td></tr>
+    <tr><td class="w">yield curve inversion</td><td>曲线倒挂</td><td>1005</td></tr>
+  </tbody>
+</table>
+<h3 id="idx-z">Z</h3>
+<table class="revidx-tbl">
+  <thead>
+    <tr><th>English</th><th>中文</th><th>首现课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="w">zero lower bound (ZLB)</td><td>零利率下限</td><td>0002</td></tr>
+  </tbody>
+</table>
+<!-- REVIDX-END -->
+
+<div class="note">滚动制说明：v2.0 收录全部 42 课（2026-10-01 增补 4007 加密宏观一体化；同日 v2.0 波次补录鹰派/鸽派、consensus、SME、VIX、MOVE 六词条并新增 §49 英→中反向索引——由本页正向表格程序化生成，重跑 tools/ 侧生成脚本即随正向表更新）。发现课内术语在本页缺失，回来告诉教练，随修订波次补录。</div>
 
 
 <div class="ask-agent">哪个定义看不懂、或你发现同一术语在课里有第二种用法——回来问我，术语漂移是课程要修的 bug。</div>

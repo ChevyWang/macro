@@ -1,0 +1,240 @@
+{
+  "lesson": "0008-as-of-memo",
+  "asserts": [
+    {
+      "id": "0008-dgs10",
+      "series": "DGS10",
+      "freq": "d",
+      "as_of": "2026-09-28",
+      "op": "level",
+      "expect": 5.24,
+      "tol": 0.005,
+      "note": "10Y 名义收益率 2026-09-28 收盘（L 层首行）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "5.24%"
+      ]
+    },
+    {
+      "id": "0008-dfii10",
+      "series": "DFII10",
+      "freq": "d",
+      "as_of": "2026-09-28",
+      "op": "level",
+      "expect": 2.9,
+      "tol": 0.005,
+      "note": "10Y 实际利率 2026-09-28（年内实际利率主导）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "2.90%"
+      ]
+    },
+    {
+      "id": "0008-t10y2y",
+      "series": "T10Y2Y",
+      "freq": "d",
+      "as_of": "2026-09-28",
+      "op": "level",
+      "expect": 0.32,
+      "tol": 0.01,
+      "note": "2s10s 利差 2026-09-28（倒挂解除两年）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "+0.32pp"
+      ]
+    },
+    {
+      "id": "0008-cpi-yoy",
+      "series": "CPIAUCSL",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "yoy",
+      "expect": 3.35,
+      "tol": 0.06,
+      "note": "CPI 同比 2026-08（课内展示 3.4%）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "3.4%"
+      ]
+    },
+    {
+      "id": "0008-corecpi-yoy",
+      "series": "CPILFESL",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "yoy",
+      "expect": 2.45,
+      "tol": 0.06,
+      "note": "核心 CPI 同比 2026-08",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "2.45%"
+      ]
+    },
+    {
+      "id": "0008-indpro-yoy",
+      "series": "INDPRO",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "yoy",
+      "expect": 1.42,
+      "tol": 0.15,
+      "note": "工业产出同比 2026-08（G 层，课内展示 +1.4%）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "+1.4%"
+      ]
+    },
+    {
+      "id": "0008-icsa-week",
+      "series": "ICSA",
+      "freq": "w",
+      "as_of": "2026-09-19",
+      "op": "level",
+      "expect": 197000,
+      "tol": 10,
+      "note": "初请当周 197k（4 周均值 202.3k 的末周）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "202.3k"
+      ]
+    },
+    {
+      "id": "0008-walcl",
+      "series": "WALCL",
+      "freq": "w",
+      "as_of": "2026-09-23",
+      "op": "level",
+      "expect": 6747704,
+      "tol": 500,
+      "note": "Fed 资产负债表 2026-09-23 当周（百万美元，课内展示 6.75T）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "6.75T"
+      ]
+    },
+    {
+      "id": "0008-jgb10",
+      "series": "IRLTLT01JPM156N",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "level",
+      "expect": 2.94,
+      "tol": 0.005,
+      "note": "JGB 10Y 月均 2026-08（3% 关口读数）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "2.94%"
+      ]
+    },
+    {
+      "id": "0008-usjp-spread",
+      "series": "DGS10",
+      "series2": "IRLTLT01JPM156N",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "diff",
+      "expect": 1.74,
+      "tol": 0.02,
+      "note": "美日 10Y 利差 2026-08 月均（carry 燃料，USDJPY 行）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "1.74pp"
+      ]
+    },
+    {
+      "id": "0008-spx",
+      "series": "SP500",
+      "freq": "d",
+      "as_of": "2026-09-29",
+      "op": "level",
+      "expect": 7670.84,
+      "tol": 1,
+      "note": "标普 500 收盘 2026-09-29（课内展示 7671）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "7671"
+      ]
+    },
+    {
+      "id": "0008-btc",
+      "series": "CBBTCUSD",
+      "freq": "d",
+      "as_of": "2026-09-29",
+      "op": "level",
+      "expect": 83636.7,
+      "tol": 1,
+      "note": "BTC 收盘 2026-09-29（课内展示 83,637）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "83,637"
+      ]
+    },
+    {
+      "id": "0008-fedfunds",
+      "series": "FEDFUNDS",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "level",
+      "expect": 3.63,
+      "tol": 0.005,
+      "note": "有效联邦基金利率月均 2026-08（EFFR 行）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "3.63%"
+      ]
+    },
+    {
+      "id": "0008-neworder-yoy",
+      "series": "NEWORDER",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "yoy",
+      "expect": 14.09,
+      "tol": 0.15,
+      "note": "核心资本品订单同比 2026-08（年检第 6 项，课内展示 +14.1%）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "+14.1%"
+      ]
+    },
+    {
+      "id": "0008-utilities-yoy",
+      "series": "IPG2211S",
+      "freq": "m",
+      "as_of": "2026-08",
+      "op": "yoy",
+      "expect": 7.0,
+      "tol": 0.15,
+      "note": "公用事业产出（电力需求代理）同比 2026-08（年检第 6 项）",
+      "file": "reference/0008-as-of-memo.html",
+      "must_contain": [
+        "+7.0%"
+      ]
+    },
+    {
+      "id": "0008-annualcheck-section",
+      "type": "text_count",
+      "file": "reference/0008-as-of-memo.html",
+      "pattern": "年度时代年检",
+      "expect": 2,
+      "note": "年检小节标题+导语两处"
+    },
+    {
+      "id": "0008-reblood-section",
+      "type": "text_count",
+      "file": "reference/0008-as-of-memo.html",
+      "pattern": "季度换血",
+      "expect": 8,
+      "note": "季度换血规则密度（deck/§2/页脚等）"
+    },
+    {
+      "id": "0008-blindspot-table",
+      "type": "text_count",
+      "file": "reference/0008-as-of-memo.html",
+      "pattern": "✓ 已补",
+      "expect": 3,
+      "note": "四盲区自检表：三行全打钩；Mag7 行如实标注（参考层已补、课程层待补）"
+    }
+  ]
+}

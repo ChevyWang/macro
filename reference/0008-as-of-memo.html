@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>参考 0008 当下 regime 备忘（As-of 活页） · 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  .asof-tbl td, .asof-tbl th { font-size: .84rem; }
+  .asof-tbl .dim { white-space: nowrap; font-weight: 700; }
+  @media print { .asof-tbl { page-break-inside: auto; } .asof-tbl tr { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">
+    <span class="chip">宏观训练营</span>
+    <span class="num">参考页 0008</span>
+    <span>·</span>
+    <span>As-of 活页 · 季度换血</span>
+    <span>·</span>
+    <span>读数截至 2026-09-30</span>
+  </div>
+  <h1>当下 regime 备忘（As-of 活页）</h1>
+  <p class="deck">全站唯一的「当期读数集中地」，四件东西：①<strong>全站当期读数总表</strong>——把 42 课里所有「截至」读数按四层框架（层一基本面 G/I/C × 层二金融条件 L × 层三政策脉冲 M/F/S × 层四市场转译 P）收进一表，每行带口径、截至、源、出处课号；②<strong>季度换血</strong>——本页每季度整体重写，机制课不动；③<strong>年度时代年检</strong>——每年 9 月七项外部核查；④<strong>四盲区自检</strong>。机制在课里，读数在这页：课程教的是「怎么读」，本页放的是「现在读到多少」。</p>
+</header>
+
+<h2><span class="no">§1</span>全站当期读数总表</h2>
+<p class="lede">读法三条：①按层读——层一到层四是「世界什么状态→市场怎么重定价」（3005 课四层框架）；②每行的「截至」与「口径」和数值同等重要，引用必须连截至一起抄；③出处课号=该读数的核验与判读课，拿不准怎么读就回那课。全部读数截至 2026-09-30 施工核验（FRED 断言+课内已核值，机器可验）。</p>
+
+<h3>层一 基本面：G 增长 / I 通胀 / C 信用</h3>
+<table class="asof-tbl">
+  <thead>
+    <tr><th>维</th><th>读数</th><th>值</th><th>口径</th><th>截至</th><th>源</th><th>出处课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="dim">G</td><td>ISM 制造业 PMI</td><td class="num">54.6</td><td>季调扩散指数（八连扩）</td><td>2026-08</td><td>ISM 官网</td><td>5004/3005</td></tr>
+    <tr><td class="dim">G</td><td>工业产出同比</td><td class="num">+1.4%</td><td>FRED INDPRO 同比</td><td>2026-08</td><td><a href="https://fred.stlouisfed.org/series/INDPRO">FRED</a></td><td>4007/3005</td></tr>
+    <tr><td class="dim">G</td><td>初请失业金 4 周均值</td><td class="num">202.3k</td><td>ICSA 四周均（当周 197k，同比 −14%）</td><td>2026-09-19 当周</td><td><a href="https://fred.stlouisfed.org/series/ICSA">FRED</a></td><td>3003</td></tr>
+    <tr><td class="dim">G</td><td>Sahm 规则读数</td><td class="num">−0.07</td><td>SAHMREALTIME（未触发）</td><td>2026-08</td><td><a href="https://fred.stlouisfed.org/series/SAHMREALTIME">FRED</a></td><td>3003</td></tr>
+    <tr><td class="dim">G</td><td>实际 GDP 同比</td><td class="num">+1.5%</td><td>BEA 季度</td><td>2026Q2</td><td>BEA/FRED</td><td>5004</td></tr>
+    <tr><td class="dim">G</td><td>失业率 U3</td><td class="num">4.1%</td><td>住户调查</td><td>2026-08</td><td>BLS</td><td>5004</td></tr>
+    <tr><td class="dim">G（中）</td><td>官方制造业 PMI</td><td class="num">50.1</td><td>环比扩散（新订单 50.6）</td><td>2026-09</td><td><a href="https://www.stats.gov.cn/">国家统计局</a></td><td>1003/3001</td></tr>
+    <tr><td class="dim">I</td><td>CPI 同比</td><td class="num">3.4%</td><td>CPIAUCSL（NSA，实测 3.35）</td><td>2026-08</td><td><a href="https://fred.stlouisfed.org/series/CPIAUCSL">FRED</a></td><td>3005/5004</td></tr>
+    <tr><td class="dim">I</td><td>核心 CPI 同比</td><td class="num">2.45%</td><td>CPILFESL</td><td>2026-08</td><td><a href="https://fred.stlouisfed.org/series/CPILFESL">FRED</a></td><td>3005</td></tr>
+    <tr><td class="dim">I</td><td>核心 CPI 3M 年化</td><td class="num">1.96%</td><td>三月年化</td><td>2026-08</td><td>FRED 自算</td><td>5004</td></tr>
+    <tr><td class="dim">C</td><td>高收益利差 HY OAS</td><td class="num">3.02%</td><td>BAMLH0A0HYM2（年内 2.83→3.46→3.02）</td><td>2026-09-28</td><td><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2">FRED</a></td><td>5004</td></tr>
+    <tr><td class="dim">C</td><td>美国信用缺口</td><td class="num">−11.3pp</td><td>BIS 口径</td><td>2026（5004 面板）</td><td>BIS</td><td>5004</td></tr>
+    <tr><td class="dim">C</td><td>SLOOS 净收紧比例</td><td class="num">0</td><td>银行贷款调查净差额</td><td>2026 最新季</td><td>Fed</td><td>5004</td></tr>
+    <tr><td class="dim">C（中）</td><td>BIS 中国信用缺口</td><td class="num">−5.1pp</td><td>BIS credit gap（自 2021Q4 谷 −14.7 回升第四年）</td><td>2026Q1</td><td>BIS</td><td>3002/3005</td></tr>
+    <tr><td class="dim">C（中）</td><td>社融存量同比</td><td class="num">7.2%</td><td>官方原发布口径（自 9.0 回落）</td><td>2026-08</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>1003/3003</td></tr>
+  </tbody>
+</table>
+
+<h3>层二 金融条件：L 流动性</h3>
+<table class="asof-tbl">
+  <thead>
+    <tr><th>维</th><th>读数</th><th>值</th><th>口径</th><th>截至</th><th>源</th><th>出处课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="dim">L</td><td>10Y 名义收益率</td><td class="num">5.24%</td><td>DGS10 收盘（年内 +106bp）</td><td>2026-09-28</td><td><a href="https://fred.stlouisfed.org/series/DGS10">FRED</a></td><td>5004/4008</td></tr>
+    <tr><td class="dim">L</td><td>10Y 实际利率（TIPS）</td><td class="num">2.90%</td><td>DFII10（年内上行以实际为主 +97bp）</td><td>2026-09-28</td><td><a href="https://fred.stlouisfed.org/series/DFII10">FRED</a></td><td>5004/4002</td></tr>
+    <tr><td class="dim">L</td><td>盈亏平衡通胀</td><td class="num">2.35%</td><td>T10YIE（年内仅 +10bp）</td><td>2026-09-29</td><td><a href="https://fred.stlouisfed.org/series/T10YIE">FRED</a></td><td>5003</td></tr>
+    <tr><td class="dim">L</td><td>2s10s 利差</td><td class="num">+0.32pp</td><td>T10Y2Y（倒挂已解除两年）</td><td>2026-09-28</td><td><a href="https://fred.stlouisfed.org/series/T10Y2Y">FRED</a></td><td>5004/3003</td></tr>
+    <tr><td class="dim">L</td><td>ACM 期限溢价</td><td class="num">0.79%</td><td>NY Fed ACM 10Y（加息后一周 0.58→0.79）</td><td>2026-09 下旬</td><td>NY Fed</td><td>4008/1004</td></tr>
+    <tr><td class="dim">L</td><td>Fed 资产负债表</td><td class="num">6.75T</td><td>WALCL（QT 后回稳）</td><td>2026-09-23 当周</td><td><a href="https://fred.stlouisfed.org/series/WALCL">FRED</a></td><td>2001</td></tr>
+    <tr><td class="dim">L</td><td>有效联邦基金利率</td><td class="num">3.88%</td><td>EFFR 当周；月均 3.63%（FEDFUNDS 2026-08）</td><td>2026-09 当周</td><td><a href="https://fred.stlouisfed.org/series/FEDFUNDS">FRED</a>/NY Fed</td><td>2001/0001</td></tr>
+    <tr><td class="dim">L（中）</td><td>DR007</td><td class="num">中枢&lt;1.40%</td><td>银行间 7 天质押回购（利差转负=流动性充裕）</td><td>2026-04 起</td><td><a href="https://www.chinamoney.com.cn/">中国货币网</a></td><td>2002</td></tr>
+    <tr><td class="dim">L</td><td>USDJPY</td><td class="num">157.2</td><td>日频 noon 口径；美日 10Y 利差 1.74pp（08 月均）</td><td>2026-09-25</td><td><a href="https://fred.stlouisfed.org/series/DEXJPUS">FRED</a></td><td>4003/5004</td></tr>
+    <tr><td class="dim">L（中）</td><td>USDCNY</td><td class="num">6.71</td><td>年内升值 4.0%（9-21 最强 6.6947）</td><td>2026-09</td><td><a href="https://fred.stlouisfed.org/series/DEXCHUS">FRED</a>/4004</td><td>4004/5004</td></tr>
+    <tr><td class="dim">L</td><td>港汇 USDHKD</td><td class="num">7.8439</td><td>贴弱方</td><td>2026-09</td><td>5004 面板</td><td>5004</td></tr>
+  </tbody>
+</table>
+
+<h3>层三 政策脉冲：M 货币 / F 财政 / S 供给</h3>
+<table class="asof-tbl">
+  <thead>
+    <tr><th>维</th><th>读数</th><th>值</th><th>口径</th><th>截至</th><th>源</th><th>出处课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="dim">M</td><td>Fed 目标区间</td><td class="num">3.75–4.00%</td><td>2026-09-16 加息 25bp（12–0）后</td><td>2026-09-17 起</td><td><a href="https://www.federalreserve.gov/monetarypolicy/fomccalendars.htm">Fed</a></td><td>2001/2008</td></tr>
+    <tr><td class="dim">M</td><td>Fed QT 状态</td><td class="num">已结束</td><td>2025-12-01 起到期全部滚续</td><td>2025-12 起</td><td>Fed H.4.1</td><td>2001</td></tr>
+    <tr><td class="dim">M（中）</td><td>7 天 OMO 利率</td><td class="num">1.40%</td><td>年内未动（政策静默期）</td><td>2026-09</td><td><a href="http://www.pbc.gov.cn/">人民银行</a></td><td>2002</td></tr>
+    <tr><td class="dim">M（中）</td><td>LPR</td><td class="num">3.0%/3.5%</td><td>连续 16 个月不变</td><td>2026-09-20 报价</td><td><a href="https://www.chinamoney.com.cn/">中国货币网</a></td><td>2002</td></tr>
+    <tr><td class="dim">M（日）</td><td>BOJ 政策利率</td><td class="num">1.25%</td><td>2026-09-18 加至（31 年最高）</td><td>2026-09-18</td><td>BOJ</td><td>4003</td></tr>
+    <tr><td class="dim">M（日）</td><td>JGB 10Y</td><td class="num">≥3.0%（日频）</td><td>已破 3%（2026-09 上旬，1996 年来首次；月均 2.94%=2026-08）——日频读数=财务省/BOJ 曲线</td><td>2026-09 上旬</td><td><a href="https://fred.stlouisfed.org/series/IRLTLT01JPM156N">FRED 月频</a>+日本财务省日频</td><td>5003 日债盒</td></tr>
+    <tr><td class="dim">F</td><td>联邦赤字</td><td class="num">$1.78T（5.77% GDP）</td><td>FY2025 终值；FY2026 前 11 个月约 $2.0T</td><td>FY2025</td><td>Treasury/CBO</td><td>2004</td></tr>
+    <tr><td class="dim">F</td><td>FIM 财政脉冲</td><td class="num">−0.2pp</td><td>Brookings 趋势剔除</td><td>2026Q2</td><td><a href="https://www.brookings.edu/articles/hutchins-center-fiscal-impact-measure/">Brookings</a></td><td>2004</td></tr>
+    <tr><td class="dim">F</td><td>净利息支出（季率）</td><td class="num">$1,280B</td><td>A091RC1Q027SBEA 季度年率（≈GDP 3.9%；FY2025 净利息≈GDP 3.2%；9-30 BEA 修订后）</td><td>2026Q2</td><td><a href="https://fred.stlouisfed.org/series/A091RC1Q027SBEA">FRED</a></td><td>2004</td></tr>
+    <tr><td class="dim">F</td><td>联邦债务/GDP</td><td class="num">122.6%</td><td>GFDEGDQ188S</td><td>2026Q1</td><td><a href="https://fred.stlouisfed.org/series/GFDEGDQ188S">FRED</a></td><td>2004</td></tr>
+    <tr><td class="dim">F</td><td>bills 余额</td><td class="num">$7.25T</td><td>财政部 MSPD（QRA bills 份额 22.2%）</td><td>2026-08-31</td><td>Treasury MSPD</td><td>4007/2004</td></tr>
+    <tr><td class="dim">S</td><td>GSCPI</td><td class="num">+1.06σ</td><td>NY Fed 供应链压力（vintage 2026-09）</td><td>2026-08</td><td>NY Fed</td><td>4005/5004</td></tr>
+    <tr><td class="dim">S</td><td>WTI 原油</td><td class="num">96.41</td><td>现货（年内 +68%，4-07 峰 114.58）</td><td>2026-09-22</td><td><a href="https://fred.stlouisfed.org/series/DCOILWTICO">FRED</a></td><td>4005/5003</td></tr>
+    <tr><td class="dim">S</td><td>铜</td><td class="num">13,543 美元/吨</td><td>PCOPPUSDM 月频（历史新高区）</td><td>2026-07</td><td><a href="https://fred.stlouisfed.org/series/PCOPPUSDM">FRED</a></td><td>4005</td></tr>
+    <tr><td class="dim">S</td><td>贸易体制</td><td class="num">关税活跃</td><td>2025 铜关税 50%→豁免；2026 海峡冲击+GSCPI 回升（判别法 4005 课贸易体制节）</td><td>2026-09</td><td>USTR/商务部公告</td><td>4005</td></tr>
+  </tbody>
+</table>
+
+<h3>层四 市场转译：P（Expectation→Pricing→Positioning）</h3>
+<table class="asof-tbl">
+  <thead>
+    <tr><th>维</th><th>读数</th><th>值</th><th>口径</th><th>截至</th><th>源</th><th>出处课号</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="dim">P</td><td>标普 500</td><td class="num">7671</td><td>收盘；YTD +12.1%（基=2025 年末 6845.5）</td><td>2026-09-29</td><td><a href="https://fred.stlouisfed.org/series/SP500">FRED</a></td><td>5003/5004</td></tr>
+    <tr><td class="dim">P</td><td>纳指综合</td><td class="num">26798</td><td>收盘；YTD +15.3%</td><td>2026-09-29</td><td><a href="https://fred.stlouisfed.org/series/NASDAQCOM">FRED</a></td><td>4007</td></tr>
+    <tr><td class="dim">P</td><td>Mag7 占标普权重</td><td class="num">33.9%</td><td>七巨头市值权重（S&P DJI/Bloomberg 汇总口径，季度变动 ±1pp 级）</td><td>2026-09-30</td><td>S&amp;P DJI 官网指数页</td><td>0001/4007</td></tr>
+    <tr><td class="dim">P</td><td>黄金</td><td class="num">4163.4</td><td>LBMA PM 定盘；YTD −4.7%（1-29 峰 5405）</td><td>2026-09-29</td><td>LBMA</td><td>4002/5004</td></tr>
+    <tr><td class="dim">P</td><td>BTC</td><td class="num">83,637</td><td>CBBTCUSD 收盘；YTD −4.6%（全史峰 2025-10-05 的 124,720）</td><td>2026-09-29</td><td><a href="https://fred.stlouisfed.org/series/CBBTCUSD">FRED</a></td><td>4007</td></tr>
+    <tr><td class="dim">P</td><td>BTC×纳指滚动 90 日相关</td><td class="num">月均 +0.35（正）</td><td>日收益月均化（正=流动性代理加权）</td><td>2026-09</td><td>FRED 自算</td><td>4007</td></tr>
+    <tr><td class="dim">P</td><td>稳定币总市值</td><td class="num">$311.2B</td><td>DefiLlama USD 锚定月末（年内仅 +1.5%）</td><td>2026-09 月末</td><td><a href="https://defillama.com/stablecoins">DefiLlama</a></td><td>4007</td></tr>
+    <tr><td class="dim">P</td><td>再加息概率（市场定价）</td><td class="num">≈72%</td><td>第三方 FedWatch 型追踪（官方工具 JS 不可静态引用）</td><td>2026-09-27</td><td>GrowBeanSprout</td><td>5004</td></tr>
+  </tbody>
+</table>
+
+<div class="note">诚实条款：本表是「全站当期读数的聚合视图」——单一时点、单一施工日（2026-09-30）核验，机器断言登记在 reference/data-manifest/0008.json。凡与课内「带日期读数」不一致处，以课内为准并在下次换血时统一（数据修订的常态）。表中「（中）（日）」=中国/日本读数。</div>
+
+<h2><span class="no">§2</span>季度换血：本页怎么更新</h2>
+<p class="lede">活页的生命周期是<strong>季度</strong>，不是「尽量新」——四个规则：</p>
+<ol>
+  <li><strong>每季度整体重写</strong>（1/4/7/10 月首个完整周）：删旧数、拉新数、逐行重核源——不做局部修补，因为活页的全部价值在于「整页属于同一个时点」。历史版本直接覆盖（决策日志与 manifest 断言留档）。</li>
+  <li><strong>机制课不动</strong>：课程里的机制、案例与历史稳定事实和当期无关；各课正文里的「带日期读数」只在数据修订或年度年检触发时改。当期读数一律以本页为集中地——改数只改两处（本页+课内已核值），机制永不为行情改写。</li>
+  <li><strong>写入纪律</strong>：本页每个数字发布前过数据门禁（FRED 机器断言或课内已核值），断言登记 <code>reference/data-manifest/0008.json</code>——断言不了的数字不进表（全站军规）。</li>
+  <li><strong>引用纪律</strong>：抄本页任何数字必须连同「截至」一起抄——没有截至日期的读数在本站视为不存在（0001 仪表盘军规的活页版）。</li>
+</ol>
+
+<h2><span class="no">§3</span>年度时代年检（每年 9 月，七项）</h2>
+<p class="lede">季度换血管「数字变旧」，年度年检管<strong>「世界变样」</strong>——制度、工具、数据源的结构性变化。每年 9 月按这七项跑一遍例行，每项都要问「相比去年，制度变了没有」：变了就回写对应机制课的读数与版本注，而不是只改本页。</p>
+<table class="asof-tbl">
+  <thead>
+    <tr><th>#</th><th>核查项</th><th>怎么查（免费）</th><th>本次结果（2026-09-30）</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="num">1</td><td>政策利率区间与 QT 状态</td><td>Fed 实施说明+H.4.1；PBoC 公告；BOJ 声明</td><td>Fed 3.75–4.00%（09-17 起）、QT 已于 2025-12-01 结束、WALCL 6.75T 回稳；PBoC OMO 1.40% 静默；BOJ 1.25%（31 年高）——2001/2008/2002/4003 课核</td></tr>
+    <tr><td class="num">2</td><td>框架版本</td><td>Fed《长期目标》声明+评估公告；央行货政报告</td><td>Fed 反应函数 v2025.8（对称 2%+就业 deviations）；中国函数 v2026Q2（短端锚 DR001）；BOJ v2026.9（先发制人抗通胀）——版本注在 2008/3006/2002/5003，时间线在 0003</td></tr>
+    <tr><td class="num">3</td><td>10Y 与 JGB</td><td>FRED DGS10+IRLTLT01JPM156N（日频升级：财务省/BOJ 曲线）</td><td>美债 10Y 5.24%（09-28，年内实际利率主导）；JGB 10Y 2.94%（08 月均）→<strong>09 上旬日频已上穿 3%（1996 年来首次）</strong>——日频升级条款当场兑现，5003 carry 触发器到触发态——5003 日债盒</td></tr>
+    <tr><td class="num">4</td><td>人民币与 OMO</td><td>FRED DEXCHUS+央行公告</td><td>CNY 6.71（年内升 4.0%）；7 天 OMO 1.40% 年内未动；隔夜逆回购 2026-06-29 启用（8 月日上限 6000 亿）、2026-09-28 起上限升至 1 万亿——2002 课核</td></tr>
+    <tr><td class="num">5</td><td>稳定币规模与监管</td><td>DefiLlama+联邦公报</td><td>总市值 $311.2B（09 月末，年内仅 +1.5%）；GENIUS 法案（PL 119-27）生效=2027-01-18 或最终规则后 120 天孰早——4007 课核</td></tr>
+    <tr><td class="num">6</td><td>AI capex 数据扰动</td><td>PNFI/GDP+四条交叉验证（订单/耐用品/进口/电力）</td><td>份额 14.2%（2026Q2 历史高位带）；核心资本品订单同比 +14.1%（2026-08，99.8 分位）、公用事业产出 +7.0%——读 G 维前先问「多少是 AI」（3001 盒）</td></tr>
+    <tr><td class="num">7</td><td>数据源存活</td><td>逐源点开+备源切换演练</td><td>FRED/DefiLlama/LBMA/中债估值/中国货币网/NY Fed（ACM·GSCPI）/Treasury QRA 全部存活；备源清单=<a href="0001-macro-dashboard.html">0001「若失效」列</a>（每行一个真实备选）</td></tr>
+  </tbody>
+</table>
+<div class="note">年检与季度换血分工：季度换血改「数值」，年检改「结构」——利率换了区间、框架换了版本、数据源死了、新资产成了制度（稳定币 2025 年就是从盲区变成第 5 项的）。上次年检：2026-09-30（审阅报告 11）。</div>
+
+<h2><span class="no">§4</span>四盲区自检</h2>
+<p class="lede">「盲区」=审阅确认的「课程当年没教的制度变化」。三个已补齐、一个（Mag7）在参考层覆盖而课程层待补——自检的意义在于盲区清单本身也会过期，每年年检时问一遍「今年有没有第五个盲区」：</p>
+<table class="asof-tbl">
+  <thead>
+    <tr><th>盲区</th><th>状态</th><th>落点</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>稳定币</td><td class="num">✓ 已补</td><td><a href="../lessons/4007-crypto-macro.html">4007 加密课</a>（稳定币=新美元潮汐+GENIUS 条款）+ 0001 仪表盘稳定币行</td></tr>
+    <tr><td>Mag7 集中度</td><td class="num">◐ 参考层已补</td><td>0001 等权指数行（RSP，33.9% 集中度注）+ 本页读数总表——数值与读法（劈叉=窄基）在参考层已覆盖；<strong>课程层待补</strong>（候选落点 4001/3005，年检跟踪）</td></tr>
+    <tr><td>AI 数据扭曲</td><td class="num">✓ 已补</td><td><a href="../lessons/3001-cycle-zoo-inventory-capex.html">3001「AI capex 统计扭曲盒」</a>（四条交叉验证）+ 年检第 6 项</td></tr>
+    <tr><td>框架版本</td><td class="num">✓ 已补</td><td>反应函数版本号四处（2008/3006=Fed v2025.8、2002=中国 v2026Q2、5003=BOJ v2026.9）+ 0003 时间线改「移除（2025-08 评估）」</td></tr>
+  </tbody>
+</table>
+
+<div class="stop">本页不做预测、不给方向结论——它只回答「现在读到多少」。方向判断用 3005 课判读卡的格式写进你自己的决策日志；引用本表数字不带「截至」=白抄。</div>
+
+<div class="ask-agent">想让我陪你跑一遍季度换血（拉新数+逐行核源），或者年度年检的七项里哪一项不知道怎么查——回来问我，第一次带着做一遍比读十遍说明有用。</div>
+
+<nav class="lesson-nav">
+  <a href="0007-milestone-map.html">← 参考页 0007 里程碑地图</a>
+  <a href="../index.html">课程首页</a>
+  <a href="0010-reaction-calendar.html">参考页 0010 发布日历与反应树 →</a>
+</nav>
+
+<footer class="course">
+  <p><strong>主资源（本页 grounded on）</strong>：全站 42 课的「带日期读数」聚合（出处课号逐行标注）；FRED（DGS10/DFII10/T10YIE/T10Y2Y/ICSA/INDPRO/CPIAUCSL/CPILFESL/WALCL/FEDFUNDS/SP500/NASDAQCOM/CBBTCUSD/IRLTLT01JPM156N/NEWORDER/IPG2211S/IMPGS/DGORDER，2026-10-01 施工抓取）；DefiLlama stablecoins（2026-10-01）；LBMA 定盘价；NY Fed ACM/GSCPI；官方机构页（Fed/PBoC/BOJ/统计局/财政部）。</p>
+  <p>上次季度换血：2026-09-30 · 上次年检：2026-09-30（审阅报告 11）</p>
+</footer>
+
+</div>
+<script src="../assets/interact.js"></script>
+</body>
+</html>
