@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P2 央行与流动性 · 阶段篇 — 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  body { max-width: 46rem; padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2.5rem) 4rem; margin: 0 auto; }
+  .stage-nav { display: flex; justify-content: space-between; gap: 1rem; margin: 0 0 1.25rem; font-family: var(--sans); font-size: .82rem; }
+  .stage-hero { margin: 0 0 2rem; padding: 1.2rem 1.25rem; border: 1px solid var(--ink); border-top: 5px solid var(--ink); background: var(--card); }
+  .stage-hero .eyebrow { margin: 0; color: var(--muted); font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .12em; }
+  .stage-hero h2 { margin: .35rem 0 .5rem; font-size: 1.45rem; }
+  .stage-hero .lede { margin: 0; color: var(--muted); }
+  .stage-facts { width: 100%; margin: 1.15rem 0; padding-top: 1rem; border-top: 1px solid var(--line); border-collapse: collapse; }
+  .stage-facts th, .stage-facts td { padding: .6rem 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .stage-facts th { width: 5.5rem; padding-right: 1rem; color: var(--muted); font-family: var(--sans); font-size: .74rem; letter-spacing: .06em; }
+  .stage-facts td { font-size: .95rem; }
+  .stage-facts tr:last-child th, .stage-facts tr:last-child td { border-bottom: 0; }
+  .stage-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+  .stage-primary, .stage-secondary { display: inline-block; padding: .55rem .8rem; border: 1px solid var(--ink); font-family: var(--sans); font-size: .84rem; font-weight: 700; }
+  .stage-primary { color: var(--paper) !important; background: var(--ink); }
+  .stage-secondary { color: var(--ink); background: var(--card); }
+  .stage-boundary { margin: 1rem 0 0; padding: .7rem .85rem; border-left: 3px solid var(--ink); background: var(--note-bg); font-family: var(--sans); font-size: .82rem; line-height: 1.65; }
+  .lesson-card { display: block; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0; background: var(--card); text-decoration: none; color: var(--ink); }
+  .lesson-card:hover { border-color: var(--ink); }
+  .lesson-card .day { font-family: var(--sans); font-size: .74rem; color: var(--muted); letter-spacing: .14em; }
+  .lesson-card .t { font-size: 1.18rem; font-weight: 700; margin: .25rem 0; }
+  .lesson-card .d { font-size: .88rem; color: var(--muted); font-family: var(--sans); line-height: 1.6; }
+  .lesson-card .meta { font-family: var(--sans); font-size: .78rem; color: var(--faint); margin-top: .4rem; }
+  @media (max-width: 560px) { .stage-hero { padding: 1rem; } .stage-facts th { width: 5rem; padding-right: .7rem; } }
+  @media print { .stage-nav, .stage-actions { display: none; } .stage-hero { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<nav class="stage-nav" aria-label="阶段导航"><a href="../index.html">← 返回课程路线</a><a href="../reference/0007-milestone-map.html">里程碑地图 →</a></nav>
+
+<section class="stage-hero" aria-labelledby="stage-hero-title">
+  <p class="eyebrow">P2 · 央行与流动性 · 阶段入口</p>
+  <h2 id="stage-hero-title">读懂央行的手</h2>
+  <p class="lede">中美工具箱、五渠道传导与时滞、离岸美元体系与两次美元荒，2008 案例全程解剖，最后从一手文件里提取增量信息。Mehrling 为并行长线课，不是任何课的前置。</p>
+  <table class="stage-facts"><tbody>
+    <tr><th scope="row">阶段目标</th><td>解读央行：工具箱、传导时滞、美元潮汐与一手文件增量信息</td></tr>
+    <tr><th scope="row">核心验收</th><td>第 2008 课（M2.4）：公布前反应树 + 公布后四因子归因，写出快照 #2</td></tr>
+    <tr><th scope="row">结业产物</th><td>条件反应树 + 当期快照 #2</td></tr>
+    <tr><th scope="row">证据边界</th><td>训练场通过不等于里程碑通过；结业以结业工件 + 隔天重练仍达标为准</td></tr>
+  </tbody></table>
+  <div class="stage-actions" aria-label="阶段主要入口">
+    <a class="stage-primary" href="../lessons/2001-fed-toolbox.html">开始第 2001-fed-toolbox 课 →</a>
+    <a class="stage-secondary" href="../reference/0007-milestone-map.html">查看 P2 验收标准</a>
+  </div>
+  <p class="stage-boundary"><b>学习路径：</b>先猜（不计分）→ 读正文找证据 → 训练场先答后看 → 动笔题合上写 → 结业课的当期快照自己写。阶段页只负责导航，不替学习记录授予通过。</p>
+</section>
+
+<h2><span class="no">§</span>阶段任务</h2>
+<a class="lesson-card" href="../lessons/2001-fed-toolbox.html">
+  <div class="day">P2 · 第 2001 课</div>
+  <div class="t">美联储工具箱</div>
+  <div class="d">资产负债表+利率走廊+QE/QT 管道，三大央行反应函数对照，P2 开篇。</div>
+  <div class="meta">85–105 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2002-pboc-toolbox.html">
+  <div class="day">P2 · 第 2002 课</div>
+  <div class="t">中国央行工具箱</div>
+  <div class="d">7 天 OMO 主锚/LPR/结构性工具，中美工具一一对照。</div>
+  <div class="meta">90–110 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2003-transmission-lags.html">
+  <div class="day">P2 · 第 2003 课</div>
+  <div class="t">传导与时滞</div>
+  <div class="d">五渠道传导链+「长期且可变」+NFCI 检验松紧。</div>
+  <div class="meta">75–95 min · 训练场 7 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2004-treasury-fiscal-plumbing.html">
+  <div class="day">P2 · 第 2004 课</div>
+  <div class="t">国债与财政管道</div>
+  <div class="d">QRA/FIM/TGA，财政管道的个人翻译版=季度读一次。</div>
+  <div class="meta">75–95 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2005-offshore-dollar-basis.html">
+  <div class="day">P2 · 第 2005 课</div>
+  <div class="t">离岸美元与掉期基差</div>
+  <div class="d">$13 万亿离岸体系+1997–98 案例节段（阅读层）。</div>
+  <div class="meta">85–105 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2006-dollar-squeeze.html">
+  <div class="day">P2 · 第 2006 课</div>
+  <div class="t">美元荒机制</div>
+  <div class="d">2008/2020 解剖+H.4.1 分项纪律。</div>
+  <div class="meta">90–110 min · 训练场 9 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2007-case-2008.html">
+  <div class="day">P2 · 第 2007 课</div>
+  <div class="t">案例解剖：2008</div>
+  <div class="d">美元荒机制的完整案例闭环：2008 四段解剖（事前信号→传导→结果→教训）。</div>
+  <div class="meta">115–145 min · 训练场 10 题</div>
+</a>
+<a class="lesson-card" href="../lessons/2008-reading-primary-documents.html">
+  <div class="day">P2 · 第 2008 课</div>
+  <div class="t">解读一手文件</div>
+  <div class="d">FOMC 声明+点阵图+记者会的增量信息提取，P2 结业：反应树+四因子归因+快照 #2。</div>
+  <div class="meta">105–130 min · 训练场 13 题 · M2.4 结业 · 快照 #2</div>
+</a>
+
+<footer class="course" style="border-top:1px solid var(--line);padding-top:1rem;margin-top:2rem">
+  <div class="nav"><a href="../index.html">← 返回课程路线</a><span>P2 央行与流动性 · 宏观训练营</span><a href="../reference/0002-glossary.html">术语手册 →</a></div>
+</footer>
+</body>
+</html>

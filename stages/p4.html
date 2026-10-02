@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P4 跨资产传导 · 阶段篇 — 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  body { max-width: 46rem; padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2.5rem) 4rem; margin: 0 auto; }
+  .stage-nav { display: flex; justify-content: space-between; gap: 1rem; margin: 0 0 1.25rem; font-family: var(--sans); font-size: .82rem; }
+  .stage-hero { margin: 0 0 2rem; padding: 1.2rem 1.25rem; border: 1px solid var(--ink); border-top: 5px solid var(--ink); background: var(--card); }
+  .stage-hero .eyebrow { margin: 0; color: var(--muted); font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .12em; }
+  .stage-hero h2 { margin: .35rem 0 .5rem; font-size: 1.45rem; }
+  .stage-hero .lede { margin: 0; color: var(--muted); }
+  .stage-facts { width: 100%; margin: 1.15rem 0; padding-top: 1rem; border-top: 1px solid var(--line); border-collapse: collapse; }
+  .stage-facts th, .stage-facts td { padding: .6rem 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .stage-facts th { width: 5.5rem; padding-right: 1rem; color: var(--muted); font-family: var(--sans); font-size: .74rem; letter-spacing: .06em; }
+  .stage-facts td { font-size: .95rem; }
+  .stage-facts tr:last-child th, .stage-facts tr:last-child td { border-bottom: 0; }
+  .stage-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+  .stage-primary, .stage-secondary { display: inline-block; padding: .55rem .8rem; border: 1px solid var(--ink); font-family: var(--sans); font-size: .84rem; font-weight: 700; }
+  .stage-primary { color: var(--paper) !important; background: var(--ink); }
+  .stage-secondary { color: var(--ink); background: var(--card); }
+  .stage-boundary { margin: 1rem 0 0; padding: .7rem .85rem; border-left: 3px solid var(--ink); background: var(--note-bg); font-family: var(--sans); font-size: .82rem; line-height: 1.65; }
+  .lesson-card { display: block; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0; background: var(--card); text-decoration: none; color: var(--ink); }
+  .lesson-card:hover { border-color: var(--ink); }
+  .lesson-card .day { font-family: var(--sans); font-size: .74rem; color: var(--muted); letter-spacing: .14em; }
+  .lesson-card .t { font-size: 1.18rem; font-weight: 700; margin: .25rem 0; }
+  .lesson-card .d { font-size: .88rem; color: var(--muted); font-family: var(--sans); line-height: 1.6; }
+  .lesson-card .meta { font-family: var(--sans); font-size: .78rem; color: var(--faint); margin-top: .4rem; }
+  @media (max-width: 560px) { .stage-hero { padding: 1rem; } .stage-facts th { width: 5rem; padding-right: .7rem; } }
+  @media print { .stage-nav, .stage-actions { display: none; } .stage-hero { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<nav class="stage-nav" aria-label="阶段导航"><a href="../index.html">← 返回课程路线</a><a href="../reference/0007-milestone-map.html">里程碑地图 →</a></nav>
+
+<section class="stage-hero" aria-labelledby="stage-hero-title">
+  <p class="eyebrow">P4 · 跨资产传导 · 阶段入口</p>
+  <h2 id="stage-hero-title">从宏观到仓位</h2>
+  <p class="lede">贴现率与久期、实际利率、汇率利差、商品通胀链、加密宏观，最后情景三件套与 EV 仓位数学接上你已有的 kbar 仓位系统。</p>
+  <table class="stage-facts"><tbody>
+    <tr><th scope="row">阶段目标</th><td>宏观转译到资产：利率→估值、利差→carry、情景→仓位映射</td></tr>
+    <tr><th scope="row">核心验收</th><td>第 4008 课（M4.4）：八维映射表 + premortem，写出快照 #4</td></tr>
+    <tr><th scope="row">结业产物</th><td>当前环境完整三情景六件套 + 当期快照 #4</td></tr>
+    <tr><th scope="row">证据边界</th><td>训练场通过不等于里程碑通过；结业以结业工件 + 隔天重练仍达标为准</td></tr>
+  </tbody></table>
+  <div class="stage-actions" aria-label="阶段主要入口">
+    <a class="stage-primary" href="../lessons/4001-discount-rate-duration.html">开始第 4001-discount-rate-duration 课 →</a>
+    <a class="stage-secondary" href="../reference/0007-milestone-map.html">查看 P4 验收标准</a>
+  </div>
+  <p class="stage-boundary"><b>学习路径：</b>先猜（不计分）→ 读正文找证据 → 训练场先答后看 → 动笔题合上写 → 结业课的当期快照自己写。阶段页只负责导航，不替学习记录授予通过。</p>
+</section>
+
+<h2><span class="no">§</span>阶段任务</h2>
+<a class="lesson-card" href="../lessons/4001-discount-rate-duration.html">
+  <div class="day">P4 · 第 4001 课</div>
+  <div class="t">贴现率与久期</div>
+  <div class="d">bp×久期换算器+凸性+成长股=长久期资产，P4 开篇。</div>
+  <div class="meta">78–98 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4002-real-rates-risk-assets.html">
+  <div class="day">P4 · 第 4002 课</div>
+  <div class="t">实际利率与风险资产</div>
+  <div class="d">红绿拆解+价格三因子一图流+金价两次失效。</div>
+  <div class="meta">78–98 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4003-parity-carry.html">
+  <div class="day">P4 · 第 4003 课</div>
+  <div class="t">汇率与利差 I：平价与 carry</div>
+  <div class="d">carry 机制与 2024-08 崩盘+平价条件。</div>
+  <div class="meta">105–122 min · 训练场 10 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4004-rmb-hkd.html">
+  <div class="day">P4 · 第 4004 课</div>
+  <div class="t">汇率与利差 II：人民币与港币</div>
+  <div class="d">人民币/港币传导+CNH 与联系汇率。</div>
+  <div class="meta">100–117 min · 训练场 9 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4005-commodities-inflation-chain.html">
+  <div class="day">P4 · 第 4005 课</div>
+  <div class="t">商品与通胀链</div>
+  <div class="d">油铜金角色卡+GSCPI+S 维地缘冲击。</div>
+  <div class="meta">90–110 min · 训练场 9 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4006-scenarios-sixpack.html">
+  <div class="day">P4 · 第 4006 课</div>
+  <div class="t">情景与六件套</div>
+  <div class="d">情景三件套硬化+EV 仓位数学接 kbar。</div>
+  <div class="meta">92–114 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4007-crypto-macro.html">
+  <div class="day">P4 · 第 4007 课</div>
+  <div class="t">加密宏观一体化</div>
+  <div class="d">BTC 三 regime+四象限条件分布+稳定币潮汐+失效哨兵。</div>
+  <div class="meta">85–105 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/4008-scenario-position-mapping.html">
+  <div class="day">P4 · 第 4008 课</div>
+  <div class="t">情景→仓位映射</div>
+  <div class="d">八维映射表（含加密挂载行）+premortem，P4 结业：当期快照 #4。</div>
+  <div class="meta">110–140 min · 训练场 12 题 · M4.4 结业 · 快照 #4</div>
+</a>
+
+<footer class="course" style="border-top:1px solid var(--line);padding-top:1rem;margin-top:2rem">
+  <div class="nav"><a href="../index.html">← 返回课程路线</a><span>P4 跨资产传导 · 宏观训练营</span><a href="../reference/0002-glossary.html">术语手册 →</a></div>
+</footer>
+</body>
+</html>

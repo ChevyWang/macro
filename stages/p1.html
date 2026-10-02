@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>P1 数据流 · 阶段篇 — 宏观训练营</title>
+<link rel="stylesheet" href="../assets/course.css">
+<style>
+  body { max-width: 46rem; padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 2.5rem) 4rem; margin: 0 auto; }
+  .stage-nav { display: flex; justify-content: space-between; gap: 1rem; margin: 0 0 1.25rem; font-family: var(--sans); font-size: .82rem; }
+  .stage-hero { margin: 0 0 2rem; padding: 1.2rem 1.25rem; border: 1px solid var(--ink); border-top: 5px solid var(--ink); background: var(--card); }
+  .stage-hero .eyebrow { margin: 0; color: var(--muted); font-family: var(--sans); font-size: .74rem; font-weight: 700; letter-spacing: .12em; }
+  .stage-hero h2 { margin: .35rem 0 .5rem; font-size: 1.45rem; }
+  .stage-hero .lede { margin: 0; color: var(--muted); }
+  .stage-facts { width: 100%; margin: 1.15rem 0; padding-top: 1rem; border-top: 1px solid var(--line); border-collapse: collapse; }
+  .stage-facts th, .stage-facts td { padding: .6rem 0; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; }
+  .stage-facts th { width: 5.5rem; padding-right: 1rem; color: var(--muted); font-family: var(--sans); font-size: .74rem; letter-spacing: .06em; }
+  .stage-facts td { font-size: .95rem; }
+  .stage-facts tr:last-child th, .stage-facts tr:last-child td { border-bottom: 0; }
+  .stage-actions { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: 1rem; }
+  .stage-primary, .stage-secondary { display: inline-block; padding: .55rem .8rem; border: 1px solid var(--ink); font-family: var(--sans); font-size: .84rem; font-weight: 700; }
+  .stage-primary { color: var(--paper) !important; background: var(--ink); }
+  .stage-secondary { color: var(--ink); background: var(--card); }
+  .stage-boundary { margin: 1rem 0 0; padding: .7rem .85rem; border-left: 3px solid var(--ink); background: var(--note-bg); font-family: var(--sans); font-size: .82rem; line-height: 1.65; }
+  .lesson-card { display: block; border: 1px solid var(--line); border-radius: 12px; padding: 1rem 1.25rem; margin: 1rem 0; background: var(--card); text-decoration: none; color: var(--ink); }
+  .lesson-card:hover { border-color: var(--ink); }
+  .lesson-card .day { font-family: var(--sans); font-size: .74rem; color: var(--muted); letter-spacing: .14em; }
+  .lesson-card .t { font-size: 1.18rem; font-weight: 700; margin: .25rem 0; }
+  .lesson-card .d { font-size: .88rem; color: var(--muted); font-family: var(--sans); line-height: 1.6; }
+  .lesson-card .meta { font-family: var(--sans); font-size: .78rem; color: var(--faint); margin-top: .4rem; }
+  @media (max-width: 560px) { .stage-hero { padding: 1rem; } .stage-facts th { width: 5rem; padding-right: .7rem; } }
+  @media print { .stage-nav, .stage-actions { display: none; } .stage-hero { break-inside: avoid; } }
+</style>
+</head>
+<body>
+<nav class="stage-nav" aria-label="阶段导航"><a href="../index.html">← 返回课程路线</a><a href="../reference/0007-milestone-map.html">里程碑地图 →</a></nav>
+
+<section class="stage-hero" aria-labelledby="stage-hero-title">
+  <p class="eyebrow">P1 · 数据流 · 阶段入口</p>
+  <h2 id="stage-hero-title">把新闻变成数据</h2>
+  <p class="lede">中美两套指标体系的读法、拐点领先包、市场定价里的预期。学完这阶段，你看新闻的眼睛只认数据与方向。</p>
+  <table class="stage-facts"><tbody>
+    <tr><th scope="row">阶段目标</th><td>把新闻转成数据：指标谱系、四值读法、口径红线与 point-in-time 纪律</td></tr>
+    <tr><th scope="row">核心验收</th><td>第 1007 课（M1.4）：写出第一份一页纸快照，启动决策日志</td></tr>
+    <tr><th scope="row">结业产物</th><td>一页纸快照 #1 + 决策日志（3–5 个可证伪预测）</td></tr>
+    <tr><th scope="row">证据边界</th><td>训练场通过不等于里程碑通过；结业以结业工件 + 隔天重练仍达标为准</td></tr>
+  </tbody></table>
+  <div class="stage-actions" aria-label="阶段主要入口">
+    <a class="stage-primary" href="../lessons/1001-indicator-map-calendar.html">开始第 1001-indicator-map-calendar 课 →</a>
+    <a class="stage-secondary" href="../reference/0007-milestone-map.html">查看 P1 验收标准</a>
+  </div>
+  <p class="stage-boundary"><b>学习路径：</b>先猜（不计分）→ 读正文找证据 → 训练场先答后看 → 动笔题合上写 → 结业课的当期快照自己写。阶段页只负责导航，不替学习记录授予通过。</p>
+</section>
+
+<h2><span class="no">§</span>阶段任务</h2>
+<a class="lesson-card" href="../lessons/1001-indicator-map-calendar.html">
+  <div class="day">P1 · 第 1001 课</div>
+  <div class="t">指标谱系与日历（美国）</div>
+  <div class="d">四族指标地图、数据日历墙与敏感度分层、修订文化，P1 开篇。</div>
+  <div class="meta">68–78 min · 训练场 9 题</div>
+</a>
+<a class="lesson-card" href="../lessons/1002-four-values-turning-points.html">
+  <div class="day">P1 · 第 1002 课</div>
+  <div class="t">质变四值与拐点包</div>
+  <div class="d">Level/Momentum/Acceleration/Percentile 四值读法，八个领先读数与免费源。</div>
+  <div class="meta">65–80 min · 训练场 9 题</div>
+</a>
+<a class="lesson-card" href="../lessons/1003-china-data-system.html">
+  <div class="day">P1 · 第 1003 课</div>
+  <div class="t">中国数据体系</div>
+  <div class="d">社融/M1/PMI 判读与口径红线：基期、可比性、挤水分。</div>
+  <div class="meta">75–92 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/1004-expectations-compensation.html">
+  <div class="day">P1 · 第 1004 课</div>
+  <div class="t">曲线与利差读预期 I：恒等式与补偿</div>
+  <div class="d">价格=预测+补偿：预期理论、ACM 拆解与远期。</div>
+  <div class="meta">50–60 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/1005-curve-shapes-spreads.html">
+  <div class="day">P1 · 第 1005 课</div>
+  <div class="t">曲线与利差读预期 II：形态与利差族</div>
+  <div class="d">四词形态学、2s10s/3m10y 利差族与判读。</div>
+  <div class="meta">50–62 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/1006-positioning-probabilities.html">
+  <div class="day">P1 · 第 1006 课</div>
+  <div class="t">持仓与隐含概率</div>
+  <div class="d">FedWatch/COT/SME 三类证据各自的用法与坑。</div>
+  <div class="meta">70–85 min · 训练场 8 题</div>
+</a>
+<a class="lesson-card" href="../lessons/1007-snapshot-point-in-time.html">
+  <div class="day">P1 · 第 1007 课</div>
+  <div class="t">一页纸快照 + Point-in-Time</div>
+  <div class="d">三句话快照格式、vintage/修订/未来函数禁令，P1 结业：快照与决策日志启动。</div>
+  <div class="meta">80–100 min · 训练场 9 题 · M1.4 结业 · 快照 #1</div>
+</a>
+
+<footer class="course" style="border-top:1px solid var(--line);padding-top:1rem;margin-top:2rem">
+  <div class="nav"><a href="../index.html">← 返回课程路线</a><span>P1 数据流 · 宏观训练营</span><a href="../reference/0002-glossary.html">术语手册 →</a></div>
+</footer>
+</body>
+</html>
