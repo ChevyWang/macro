@@ -27,8 +27,8 @@
   <div class="lm-title">本课地图</div>
   <ol>
     <li>开课先猜 <span class="t">≈3 min</span></li>
-    <li>曲线=预测+补偿：ACM 拆解 <span class="t">≈12 min</span></li>
-    <li>盈亏平衡≠预期通胀：Cleveland 四分拆 <span class="t">≈8 min</span></li>
+    <li>曲线=预测+补偿 <span class="t">≈12 min</span></li>
+    <li>盈亏平衡≠预期通胀 <span class="t">≈8 min</span></li>
     <li>边界与反证 <span class="t">≈4 min</span></li>
     <li>训练场 <span class="t">≈17 min</span></li>
     <li>小结与课外作业 <span class="t">≈3 min</span></li>
@@ -66,7 +66,7 @@
 </script>
 </preq-block>
 
-<h2><span class="no">01</span>曲线=预测+补偿：ACM 拆解 <span class="time-chip">≈12 min</span></h2>
+<h2><span class="no">01</span> 曲线=预测+补偿  <span class="time-chip">≈12 min</span></h2>
 <p class="lede">教科书的地基（Mishkin《货币金融学》13e 第 6 章，预期理论）：「<strong>长期债券的利率等于人们预期在其存续期内出现的短期利率的平均值</strong>」——再加上投资者持有长债要求的额外补偿，即<strong>期限溢价</strong>（term premium；Tuckman《Fixed Income Securities》4e 第 8 章专章处理「预期、风险溢价与期限结构形状」）。期限结构理论有三块拼图——预期理论、细分市场理论（segmented markets theory）与流动性升水理论（liquidity premium theory），Mishkin 同章对照展开：本课走「预期+溢价」这条主干，另两块在 03 节边界处回收。写成恒等式：</p>
 <p><strong>名义收益率（N 年） = 未来 N 年短端利率预期的平均 + 期限溢价</strong></p>
 
@@ -91,29 +91,29 @@
 <p>表注：第一行按每 1 元本金计；第二行求的是「要打平时一年后的一年期利率」。这就是「曲线即预测」的最小算例：<strong>上倾的前端=市场给「更高的未来短端」定价</strong>。但记住先猜 1 的警告——这份「预测」里混着期限溢价（ACM 说当前十年期里有约 0.8 个百分点是补偿）；期限与补偿的分离没有观测解，只有模型解，所以 ACM 类读数永远标注 Model Estimate。</p>
 </div>
 
-<div class="note"><strong>中国镜像</strong>：「预期+补偿」拆解的中国现状——公开的 ACM 类期限溢价模型缺位，个人读法退而求其次：用政策利率报价链（7 天逆回购→MLF→LPR）读「明示的预期路径」，用中美 10Y 利差读外部约束（免费源：全国银行间同业拆借中心 LPR 报价页、人民银行官网，均免费）；历史读数：LPR 于 2025-05-20 下调 10bp 至 1 年期 3.0%/5 年期以上 3.5%，此后连续 16 个月未动（至 2026-09）——报价不动本身就是政策路径预期平稳的信息。</div>
+<div class="note"><strong>中国镜像</strong>：「预期+补偿」拆解的中国现状，公开的 ACM 类期限溢价模型缺位，个人读法退而求其次：用政策利率报价链（7 天逆回购→MLF→LPR）读「明示的预期路径」，用中美 10Y 利差读外部约束（免费源：全国银行间同业拆借中心 LPR 报价页、人民银行官网，均免费）；历史读数：LPR 于 2025-05-20 下调 10bp 至 1 年期 3.0%/5 年期以上 3.5%，此后连续 16 个月未动（至 2026-09），报价不动本身就是政策路径预期平稳的信息。</div>
 
-<h2><span class="no">02</span>盈亏平衡≠预期通胀：Cleveland 四分拆 <span class="time-chip">≈8 min</span></h2>
-<p class="lede">把盈亏平衡当「纯通胀预期」是最常见也最贵的误读——完整答案在这里。<a href="https://www.clevelandfed.org/indicators-and-data/inflation-expectations">克利夫兰联储的通胀预期模型</a>把 10Y 名义收益率拆成四块（2026-09-01 观测，官方 chart 数据）：</p>
+<h2><span class="no">02</span> 盈亏平衡≠预期通胀  <span class="time-chip">≈8 min</span></h2>
+<p class="lede">把盈亏平衡当「纯通胀预期」是最常见也最贵的误读，完整答案在这里。<a href="https://www.clevelandfed.org/indicators-and-data/inflation-expectations">克利夫兰联储的通胀预期模型</a>把 10Y 名义收益率拆成四块（2026-09-01 观测，官方 chart 数据）：</p>
 <table>
   <thead>
     <tr><th>成分</th><th>当前值</th><th>含义</th></tr>
   </thead>
   <tbody>
-    <tr><td>预期通胀（10Y）</td><td class="num">2.57%</td><td>模型估计的「纯」预期——锚定国债、通胀互换与调查预测</td></tr>
+    <tr><td>预期通胀（10Y）</td><td class="num">2.57%</td><td>模型估计的「纯」预期，锚定国债、通胀互换与调查预测</td></tr>
     <tr><td>通胀风险溢价</td><td class="num">+0.46%</td><td>承担通胀不确定性的补偿</td></tr>
     <tr><td>实际风险溢价</td><td class="num">+1.34%</td><td>实际利率端的补偿（与期限溢价同族）</td></tr>
     <tr><td>预期实际短端路径</td><td class="num">≈0.4%</td><td>存续期内实际（剔通胀）短端利率的预期均值</td></tr>
   </tbody>
 </table>
-<p>四行加总：2.57 + 0.46 + 1.34 + 0.42 ≈ <strong>4.79%</strong>，恰等于当日 10Y 名义收益率（<a href="https://fred.stlouisfed.org/series/DGS10">FRED DGS10</a>，2026-09-01 为 4.79%）——前两行是通胀端、后两行是实际端，拆解口径自洽。只加前三行会少掉第四块，别用三行去对名义。</p>
-<p>注意那个教学金矿：<strong>市场盈亏平衡（T10YIE）= 2.35%，而模型估的纯预期 = 2.57%</strong>——两者之差正是风险溢价与技术因素的部分。「价格=预测+风险补偿+技术因素」这个原理（M4.1 的主锚，现在第一次完整落地）不止适用于通胀：信用利差=违约预期+风险补偿、期限溢价=实际利率预期外的补偿、股票风险溢价=盈利预期外的补偿——同一个原理，四个市场。你从此有了一个统一问题：「这个价里，多少是看法，多少是保险费？」</p>
-<p>两条读法注脚：盈亏平衡仍是最市场化的通胀读数——要读懂它的成分，不是扔掉它；能源是它短期波动的大头，但十年期读数锚定的是整条通胀路径预期——读哪个期限的盈亏平衡，先问自己在读哪一段预期。再存一个口径预告：市场对通胀的定价不止盈亏平衡一种——<strong>通胀互换（inflation swap）</strong>是另一口径（双方直接互换固定通胀补偿与实际通胀，机构市场的纯预期更纯），M3.3（3005 课）会用到它。</p>
+<p>四行加总：2.57 + 0.46 + 1.34 + 0.42 ≈ <strong>4.79%</strong>，恰等于当日 10Y 名义收益率（<a href="https://fred.stlouisfed.org/series/DGS10">FRED DGS10</a>，2026-09-01 为 4.79%），前两行是通胀端、后两行是实际端，拆解口径自洽。只加前三行会少掉第四块，别用三行去对名义。</p>
+<p>注意那个教学金矿：<strong>市场盈亏平衡（T10YIE）= 2.35%，而模型估的纯预期 = 2.57%</strong>，两者之差正是风险溢价与技术因素的部分。「价格=预测+风险补偿+技术因素」这个原理（M4.1 的主锚，现在第一次完整落地）不止适用于通胀：信用利差=违约预期+风险补偿、期限溢价=实际利率预期外的补偿、股票风险溢价=盈利预期外的补偿，同一个原理，四个市场。你从此有了一个统一问题：「这个价里，多少是看法，多少是保险费？」</p>
+<p>两条读法注脚：盈亏平衡仍是最市场化的通胀读数，要读懂它的成分，不是扔掉它；能源是它短期波动的大头，但十年期读数锚定的是整条通胀路径预期，读哪个期限的盈亏平衡，先问自己在读哪一段预期。再存一个口径预告：市场对通胀的定价不止盈亏平衡一种，<strong>通胀互换（inflation swap）</strong>是另一口径（双方直接互换固定通胀补偿与实际通胀，机构市场的纯预期更纯），M3.3（3005 课）会用到它。</p>
 
 <h2><span class="no">03</span>边界与反证 <span class="time-chip">≈4 min</span></h2>
-<p><strong>模型是估计不是数据</strong>。ACM 的 0.79 与 Cleveland 的 2.57 都来自带假设的模型（SOURCE TYPE=Model Estimate）——换一个模型（KW、DKW、Cleveland 的不同设定）数值就会移动。正确用法：看方向与量级（期限溢价在历史低区还是高区、预期通胀贴不贴目标），不引用到小数点后两位。</p>
-<p><strong>预期理论自身的边界</strong>（Mishkin 第 6 章的诚实注）：细分市场理论与流动性升水理论各解释了预期理论解释不了的部分——没有单一理论统治期限结构；交易中「曲线=预测」的用法是近似，10% 的错位常态存在。</p>
-<p><strong>远期不是预言</strong>。01 节例块的 5.12% 是「无套利隐含值」加「溢价恒定」假设——历史上远期对实际未来短端的预测误差很大（恰是期限溢价波动的证据）。曲线告诉你市场押了什么，不告诉你会发生什么——两者的差才是预期差的土壤。</p>
+<p><strong>模型是估计不是数据</strong>。ACM 的 0.79 与 Cleveland 的 2.57 都来自带假设的模型（SOURCE TYPE=Model Estimate），换一个模型（KW、DKW、Cleveland 的不同设定）数值就会移动。正确用法：看方向与量级（期限溢价在历史低区还是高区、预期通胀贴不贴目标），不引用到小数点后两位。</p>
+<p><strong>预期理论自身的边界</strong>（Mishkin 第 6 章的诚实注）：细分市场理论与流动性升水理论各解释了预期理论解释不了的部分，没有单一理论统治期限结构；交易中「曲线=预测」的用法是近似，10% 的错位常态存在。</p>
+<p><strong>远期不是预言</strong>。01 节例块的 5.12% 是「无套利隐含值」加「溢价恒定」假设，历史上远期对实际未来短端的预测误差很大（恰是期限溢价波动的证据）。曲线告诉你市场押了什么，不告诉你会发生什么，两者的差才是预期差的土壤。</p>
 <table>
   <thead>
     <tr><th>同一问题</th><th>Market Price（市场价）</th><th>Model Estimate（模型估计）</th></tr>
@@ -212,7 +212,7 @@
 </script>
 </quiz-block>
 
-<div class="note">训练场判分（六题对照）：全对——隔天重练仍达标，M1.3 a 的课内证据到手；错 1–2 题——错题回对应节（第 1 题→1002/1003；第 2 题→本课 01 节；第 3 题→02 节教学金矿；第 4 题→01 节机制图；第 5 题→03 节；第 6 题→01 节中国镜像），隔天再练；错 3 题以上——主线重走：主恒等式（名义=预期+溢价）→「价格=预测+补偿」三连问→Model Estimate 纪律。</div>
+<div class="note">训练场判分（六题对照）：全对，隔天重练仍达标，M1.3 a 的课内证据到手；错 1–2 题，错题回对应节（第 1 题→1002/1003；第 2 题→本课 01 节；第 3 题→02 节教学金矿；第 4 题→01 节机制图；第 5 题→03 节；第 6 题→01 节中国镜像），隔天再练；错 3 题以上，主线重走：主恒等式（名义=预期+溢价）→「价格=预测+补偿」三连问→Model Estimate 纪律。</div>
 
 <recall-block>
 <script type="application/json">
@@ -228,19 +228,19 @@
 
 <p><strong>本课带走四样东西：</strong></p>
 <ul class="checklist">
-  <li><strong>主恒等式</strong>——名义收益率=预期短端路径平均+期限溢价；「收益率上行」至少三种含义</li>
-  <li><strong>隐含远期</strong>——曲线自己「预测」未来短端（1y1y 两步算术）；远期不是预言，预测误差正是溢价波动的证据</li>
-  <li><strong>「价格=预测+补偿+技术」三连问</strong>——盈亏平衡/信用利差/期限溢价/ERP 一个原理</li>
-  <li><strong>Model Estimate 纪律</strong>——ACM/Cleveland 看方向与量级，不抠小数点</li>
+  <li><strong>主恒等式</strong>，名义收益率=预期短端路径平均+期限溢价；「收益率上行」至少三种含义</li>
+  <li><strong>隐含远期</strong>，曲线自己「预测」未来短端（1y1y 两步算术）；远期不是预言，预测误差正是溢价波动的证据</li>
+  <li><strong>「价格=预测+补偿+技术」三连问</strong>，盈亏平衡/信用利差/期限溢价/ERP 一个原理</li>
+  <li><strong>Model Estimate 纪律</strong>，ACM/Cleveland 看方向与量级，不抠小数点</li>
 </ul>
 
 <p><strong>课外作业：</strong></p>
-<p>（1）<strong>阅读任务（必做）</strong>：Mishkin《货币金融学》13e 第 6 章「利率的风险与期限结构」——重点预期理论一节与三种理论的对照表；Tuckman《Fixed Income Securities》4e 第 8 章开头的「期限结构形状」综述（词典式选读，读本课概念的正宗源头）。</p>
-<p>（2）<strong>课后探索（可选）</strong>：打开 <a href="https://www.newyorkfed.org/research/data_indicators/term-premia-tabs">NY Fed ACM 页面</a>，把 10Y 期限溢价的曲线拉到最长窗口——找到 2014–2019 的负值区间与 2023 后的回升，感受「补偿」这个变量自己的周期。</p>
-<p>（3）<strong>日常习惯（永久生效）</strong>：每周五读市场层时（0005 周例行）加一问：「这周长端动的是预期还是溢价？」——答案不用精确，纪律是把 5.17% 这类数字读成两块。</p>
-<p><strong>下一课 1005《曲线与利差读预期 II：形态与利差族》</strong>：拆解刀到手，学形态语言——bull/bear × steepener/flattener 四个词、2s10s/3m10y/5s30s 利差族分工，以及「形态→机制」的判读法与看图训练。</p>
+<p>（1）<strong>阅读任务（必做）</strong>：Mishkin《货币金融学》13e 第 6 章「利率的风险与期限结构」，重点预期理论一节与三种理论的对照表；Tuckman《Fixed Income Securities》4e 第 8 章开头的「期限结构形状」综述（词典式选读，读本课概念的正宗源头）。</p>
+<p>（2）<strong>课后探索（可选）</strong>：打开 <a href="https://www.newyorkfed.org/research/data_indicators/term-premia-tabs">NY Fed ACM 页面</a>，把 10Y 期限溢价的曲线拉到最长窗口，找到 2014–2019 的负值区间与 2023 后的回升，感受「补偿」这个变量自己的周期。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每周五读市场层时（0005 周例行）加一问：「这周长端动的是预期还是溢价？」，答案不用精确，纪律是把 5.17% 这类数字读成两块。</p>
+<p><strong>下一课 1005《曲线与利差读预期 II：形态与利差族》</strong>：拆解刀到手，学形态语言，bull/bear × steepener/flattener 四个词、2s10s/3m10y/5s30s 利差族分工，以及「形态→机制」的判读法与看图训练。</p>
 
-<div class="ask-agent">我是你的教练。想把本周曲线的「预期/溢价」拆解发我校对、某个利差读数想讨论、或想让我陪你把 ACM 页面读一遍——直接回来问我，这是课程的一部分，不是打扰。</div>
+<div class="ask-agent">我是你的教练。想把本周曲线的「预期/溢价」拆解发我校对、某个利差读数想讨论、或想让我陪你把 ACM 页面读一遍，直接回来问我，这是课程的一部分，不是打扰。</div>
 
 <footer class="course">
   <div class="nav">
@@ -251,7 +251,7 @@
     <a href="1005-curve-shapes-spreads.html">下一课 1005 →</a>
   </div>
   <p><strong>主资源（本课 grounded on）</strong>：Mishkin《货币金融学》13e 第 6 章（预期理论原文与三理论对照）；Tuckman &amp; Serrat《Fixed Income Securities》4e 第 8 章（预期、风险溢价与期限结构形状）；NY Fed ACM 期限溢价门户与 Cleveland Fed 通胀预期分解（官方模型一手源，Model Estimate 级证据）。</p>
-  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①预期理论原文定义——Mishkin 13e 第 6 章（01 节，0004 课已引、本课接续）；②期限结构与风险溢价综述——Tuckman 4e 第 8 章（01 节）；③Cleveland 模型构成（国债+互换+调查锚定）——Cleveland Fed 官方方法页（02 节）。<strong>数据口径：</strong>隐含远期算例=DGS1 4.50%、DGS2 4.81%（2026-09-25）自算，隐含 1y1y≈5.12%；ACM 期限溢价=0.79pp（ACM 日度，2026-09-28，NY Fed 官方文件）；Cleveland 分解=2026-09-01 观测（预期 2.57/IRP 0.46/RRP 1.34，官方 CSV）。</div>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①预期理论原文定义，Mishkin 13e 第 6 章（01 节，0004 课已引、本课接续）；②期限结构与风险溢价综述，Tuckman 4e 第 8 章（01 节）；③Cleveland 模型构成（国债+互换+调查锚定），Cleveland Fed 官方方法页（02 节）。<strong>数据口径：</strong>隐含远期算例=DGS1 4.50%、DGS2 4.81%（2026-09-25）自算，隐含 1y1y≈5.12%；ACM 期限溢价=0.79pp（ACM 日度，2026-09-28，NY Fed 官方文件）；Cleveland 分解=2026-09-01 观测（预期 2.57/IRP 0.46/RRP 1.34，官方 CSV）。</div>
 </footer>
 
 </div>

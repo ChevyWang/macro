@@ -29,13 +29,13 @@
   <div class="lm-title">本课地图</div>
   <ol>
     <li>开课先猜 <span class="t">≈3 min</span></li>
-    <li>跨资产映射表：八维×资产 <span class="t">≈20 min</span></li>
-    <li>「情景≠预测」30 分钟节 <span class="t">≈15 min</span></li>
-    <li>premortem：把 Invalidation 写成标准作业 <span class="t">≈15 min</span></li>
-    <li>从映射到仓位：漏斗四步 <span class="t">≈15 min</span></li>
-    <li>当期快照 #4（结业件·独立产出级） <span class="t">≈15 min</span></li>
-    <li>训练场（微重现 4007+阶段回望全 P4） <span class="t">≈28 min</span></li>
-    <li>小结与结业标准（P4 收官） <span class="t">≈7 min</span></li>
+    <li>跨资产映射表 <span class="t">≈20 min</span></li>
+    <li>情景≠预测 <span class="t">≈15 min</span></li>
+    <li>premortem <span class="t">≈15 min</span></li>
+    <li>从映射到仓位 <span class="t">≈15 min</span></li>
+    <li>当期快照 #4 <span class="t">≈15 min</span></li>
+    <li>训练场 <span class="t">≈28 min</span></li>
+    <li>小结与结业标准 <span class="t">≈7 min</span></li>
   </ol>
 </div>
 
@@ -70,7 +70,7 @@
 </script>
 </preq-block>
 
-<h2><span class="no">01</span>跨资产映射表：八维×资产 <span class="time-chip">≈20 min</span></h2>
+<h2><span class="no">01</span> 跨资产映射表  <span class="time-chip">≈20 min</span></h2>
 <p class="lede">P0–P3 装的观测网（G/I/C/L/M/F/S/P 八读数）与 P4 装的资产语言（久期/实际利率/汇率/商品）在这里合上最后一环：<strong>每个状态维的方向，对应一栏资产受益/受损清单</strong>（F 财政是慢变量，行内标注它经 M/L 进价格的传导位）。先看当期全景图，再上映射表。</p>
 
 <chart-block>
@@ -107,7 +107,7 @@
 <li>③每行末列是本维的失效条件——<strong>任何一行连续两季与资产表现相反，先怀疑该行的传导假设，而不是加倍相信箭头</strong>（4002 金价两课的教训泛化）。</li>
 </ul></div>
 
-<h2><span class="no">02</span>「情景≠预测」30 分钟节 <span class="time-chip">≈15 min</span></h2>
+<h2><span class="no">02</span> 情景≠预测 <span class="time-chip">≈15 min</span></h2>
 <p class="lede">这是 BUILD-SPEC 指定的必修节——情景分析被新手误用最多的地方，恰恰是它诞生的初衷要防的那件事。</p>
 <p>Shell 情景传统的原典（Pierre Wack，1985 年 HBR 两篇《Scenarios: Uncharted Waters Ahead》/《Scenarios: Shooting the Rapids》）的立意不是预测：<strong>情景是「重新感知」（re-perceiving）的工具</strong>——让你在事件到来之前就活在几个不同的未来里，从而（a）看清自己世界观里「既定要素」与「关键不确定性」的真实边界（Wack 的核心区分）；（b）让意外的到来从「这怎么可能」变成「这是三号路标亮了，按预案走」。Wack 之后，Schwartz《The Art of the Long View》（1991）与 GBN 一脉把「signposts」（路标）标准化为流程的固定件——4006 三件套硬化（触发器）就是这个传统的直系后代。</p>
 <table>
@@ -123,16 +123,16 @@
 <li>①把基准情景当预测卖——55% 的情景被讲成「我们认为会这样」，于是其余 45% 的世界全部变成「意外」；</li>
 <li>②三情景同源化——乐观/中性/悲观三个情景只差一个参数（比如 EPS 增速 3%/5%/7%），那不是三个未来，是一个未来的三种涂装；真正的情景应该在驱动结构上不同（例如 2026 当期：海峡重开/僵持/升级的差别是 S 维的结构，不是油价的刻度）。</li>
 </ul>
-<p>③写完就锁进抽屉——情景是活文件，路标不监控、季度不更新，它退化为一次性作文。<strong>「情景≠预测」的一句话版本：预测要「对」，情景要「有用」——有用的标准是它能改变你今天的仓位结构，而不是它将来被验证的次数</strong>。</p>
+<p>③写完就锁进抽屉——情景是活文件，路标不监控、季度不更新，它退化为一次性作文。<strong>「情景≠预测」的一句话版本：预测要「对」，情景要「有用」，有用的标准是它能改变你今天的仓位结构，而不是它将来被验证的次数</strong>。</p>
 
-<h2><span class="no">03</span>premortem：把 Invalidation 写成标准作业 <span class="time-chip">≈15 min</span></h2>
-<p class="lede">六件套第⑥格（Invalidation）的工业化写法。出处双件套：<em>Klein（2007，HBR《Performing a Project Premortem》）</em>给出操作；<em>Kahneman &amp; Klein（2009，American Psychologist《Conditions for Intuitive Expertise: A Failure to Disagree》）</em>给出理论背书——这篇「对抗性合作」（两位立场相反的学者被安排合作）的结论之一：在低效度环境（宏观与市场正是典型）里直觉不可靠，<strong>结构性去偏工具是少数被两边共同接受的解药，premortem 是其中的旗舰</strong>（Kahneman 在《思考，快与慢》中明确推荐）。</p>
+<h2><span class="no">03</span> premortem  <span class="time-chip">≈15 min</span></h2>
+<p class="lede">六件套第⑥格（Invalidation）的工业化写法。出处双件套：<em>Klein（2007，HBR《Performing a Project Premortem》）</em>给出操作；<em>Kahneman &amp; Klein（2009，American Psychologist《Conditions for Intuitive Expertise: A Failure to Disagree》）</em>给出理论背书，这篇「对抗性合作」（两位立场相反的学者被安排合作）的结论之一：在低效度环境（宏观与市场正是典型）里直觉不可靠，<strong>结构性去偏工具是少数被两边共同接受的解药，premortem 是其中的旗舰</strong>（Kahneman 在《思考，快与慢》中明确推荐）。</p>
 <div class="example">
 <p class="ex-title">标准作业：仓位版 premortem（10 分钟）</p>
-<p>在六件套写完后、下单前，加一步：「<strong>假设一年后回看，这个头寸亏了 15%（或触及风险预算红线）——写下最可能的三条原因</strong>」。写的时候不许用「黑天鹅」一词（它是最省事的智力逃逸）。写完把三条原因翻译成读数条款：每条对应「哪个读数出现时我就知道这条路开始了」——这三条读数条款<strong>就是</strong>⑥Invalidation 栏的最终形态。效果（Klein 引证）：与「列出风险清单」相比，premortem 框架下团队生成的真实风险项显著更多——因为在「已经失败」的叙事里，说坏话不再需要勇气。</p>
+<p>在六件套写完后、下单前，加一步：「<strong>假设一年后回看，这个头寸亏了 15%（或触及风险预算红线），写下最可能的三条原因</strong>」。写的时候不许用「黑天鹅」一词（它是最省事的智力逃逸）。写完把三条原因翻译成读数条款：每条对应「哪个读数出现时我就知道这条路开始了」，这三条读数条款<strong>就是</strong>⑥Invalidation 栏的最终形态。效果（Klein 引证）：与「列出风险清单」相比，premortem 框架下团队生成的真实风险项显著更多，因为在「已经失败」的叙事里，说坏话不再需要勇气。</p>
 </div>
 
-<h2><span class="no">04</span>从映射到仓位：漏斗四步 <span class="time-chip">≈15 min</span></h2>
+<h2><span class="no">04</span> 从映射到仓位  <span class="time-chip">≈15 min</span></h2>
 <p class="lede">把 01 表+02 情景+03 premortem 串成一条可执行的流水线：</p>
 
 <figure>
@@ -167,15 +167,15 @@
 <text x="40" y="212" font-size="10" fill="#1c1c1a">红线贯穿：宏观层终点=④的输入——Entry/执行/止损是 kbar 的领土（「宏观不负责 Entry」铁律的机构版表述：信号生成与执行分离）</text>
 <text x="40" y="232" font-size="9.5" fill="#6e6c64">复盘方向相反：结果→④当时输入→③EV 假设→②概率→①判读——哪一层出的错就在哪一层修（M6.3 打分的分层归因）</text>
 </svg>
-<figcaption><strong>情景→仓位漏斗（教学示意图，自绘）</strong>——正向是决策（每步衰减一种噪声），反向是复盘（每层归因一种错误）。这张图是 P4 全阶段的总结构图。</figcaption>
+<figcaption><strong>情景→仓位漏斗（教学示意图，自绘）</strong>，正向是决策（每步衰减一种噪声），反向是复盘（每层归因一种错误）。这张图是 P4 全阶段的总结构图。</figcaption>
 </figure>
 
-<p><strong>④仓位的交棒行（结业工件的固定件）</strong>：漏斗最后一步的输出是一行标准格式——与 4006 课 04 节「接口规格书」完全同一行，结业动笔题的⑥交棒声明照此写（数字换成你自己的）：<code>1R=8%；腿[R]：重开 −1R / 僵持 +0.63R / 升级 +3.1R；胜率 50–60%；风险预算上限 −1R</code>——1R=最大亏损腿、胜率=基准情景概率区间、风险预算上限=最坏情景组合亏损。引擎收到这一行即可定仓位规模与失效减仓档位；写出这一行，宏观侧的责任才算交付完毕。</p>
+<p><strong>④仓位的交棒行（结业工件的固定件）</strong>：漏斗最后一步的输出是一行标准格式，与 4006 课 04 节「接口规格书」完全同一行，结业动笔题的⑥交棒声明照此写（数字换成你自己的）：<code>1R=8%；腿[R]：重开 −1R / 僵持 +0.63R / 升级 +3.1R；胜率 50–60%；风险预算上限 −1R</code>，1R=最大亏损腿、胜率=基准情景概率区间、风险预算上限=最坏情景组合亏损。引擎收到这一行即可定仓位规模与失效减仓档位；写出这一行，宏观侧的责任才算交付完毕。</p>
 
-<h2><span class="no">05</span>当期快照 #4（结业件·独立产出级） <span class="time-chip">≈15 min</span></h2>
-<div class="note">快照间隔条款：快照 #1–#5 可按课序连拍（随五门结业课推进）；毕业校准层要求 <strong>#1 与 #5 之间跨 ≥1 个结算周期（季度）</strong>——四副透镜要读到不同时间的市场，首尾挤在同一周只是同一副眼镜（课件里 #3/#4 的同日对照是一次性教学特例，你自己的序列按首尾跨季条款走）。</div>
+<h2><span class="no">05</span> 当期快照 #4 <span class="time-chip">≈15 min</span></h2>
+<div class="note">快照间隔条款：快照 #1–#5 可按课序连拍（随五门结业课推进）；毕业校准层要求 <strong>#1 与 #5 之间跨 ≥1 个结算周期（季度）</strong>，四副透镜要读到不同时间的市场，首尾挤在同一周只是同一副眼镜（课件里 #3/#4 的同日对照是一次性教学特例，你自己的序列按首尾跨季条款走）。</div>
 <p class="rubric-link">工件自评：写完对照 <a href="../reference/0006-decision-log.html#rubric">参考页 0006 §5 八工件自评量规</a>（合格/优秀/不合格三档判例）。</p>
-<p class="lede">P4 结业快照。特殊之处：<em>与 3006 的快照 #3 同日（2026-09-30）同数据、不同透镜</em>——周期视角（#3）看的是「我们在周期的哪一段」，跨资产视角（#4）看的是「各资产定价装了什么、差在哪」。数据面板给你（全部免费源可复验，施工核验），判断你写：</p>
+<p class="lede">P4 结业快照。特殊之处：<em>与 3006 的快照 #3 同日（2026-09-30）同数据、不同透镜</em>，周期视角（#3）看的是「我们在周期的哪一段」，跨资产视角（#4）看的是「各资产定价装了什么、差在哪」。数据面板给你（全部免费源可复验，施工核验），判断你写：</p>
 <table>
   <thead><tr><th>读数</th><th>数值（截至期）</th><th>源</th></tr></thead>
   <tbody>
@@ -197,15 +197,15 @@
 <p><strong>题目（写进决策日志，P6 打分；对照参考页 0006 五要素格式）</strong>：</p>
 <ul class="enum">
 <li>①三句话快照（增长/通胀/政策各一句带证据）；</li>
-<li>②八维判读卡（01 节表格的箭头列你自己填——先填再看我的版本）；</li>
+<li>②八维判读卡（01 节表格的箭头列你自己填，先填再看我的版本）；</li>
 <li>③完整三情景六件套（结业工件：海峡线三情景或你自选主线，六件全+三件套硬化+premortem ⑥栏，方法全部来自 4006+本课）；</li>
 <li>④3–5 个可证伪预测（概率区间+到期日+证伪条件）；</li>
-<li>⑤对照题：与快照 #3（3006，同日数据、周期透镜）逐条对照——两副眼镜给出的判断哪里不同？写出至少一处分歧及你如何处理它（分歧处理本身就是跨资产传导能力的直接证据）。</li>
+<li>⑤对照题：与快照 #3（3006，同日数据、周期透镜）逐条对照，两副眼镜给出的判断哪里不同？写出至少一处分歧及你如何处理它（分歧处理本身就是跨资产传导能力的直接证据）。</li>
 </ul>
 
-<div class="note"><strong>中国镜像行</strong>：跨资产映射表的中国行怎么搭——<strong>M 维（政策脉冲）</strong>对应 LPR/MLF/逆回购（1 年期 LPR 3.0%、5 年期以上 3.5%，自 2025-05-20 起至 2026-09 连续 17 个月未动，央行官网免费查——「M 维持平」的判读直接由此来）；<strong>G 维</strong>对应官方制造业 PMI（2026-09 读数 50.1，9-30 发布，国家统计局免费——刚回荣枯线上方的弱扩张）；<strong>外部/汇率腿</strong>对应人民币（2026-09-21 最强 6.6947、年内升值 4.0%，4004 课已核验）。读表纪律中美通用：<strong>A 股的 L 维看 DR007 与中债曲线（1004/1005 课中国镜像），不看 Fed</strong>——把 Fed 点阵直接当 A 股的 M 维，是映射表跨市场滥用的第一案例。</div>
+<div class="note"><strong>中国镜像行</strong>：跨资产映射表的中国行怎么搭，<strong>M 维（政策脉冲）</strong>对应 LPR/MLF/逆回购（1 年期 LPR 3.0%、5 年期以上 3.5%，自 2025-05-20 起至 2026-09 连续 17 个月未动，央行官网免费查，「M 维持平」的判读直接由此来）；<strong>G 维</strong>对应官方制造业 PMI（2026-09 读数 50.1，9-30 发布，国家统计局免费，刚回荣枯线上方的弱扩张）；<strong>外部/汇率腿</strong>对应人民币（2026-09-21 最强 6.6947、年内升值 4.0%，4004 课已核验）。读表纪律中美通用：<strong>A 股的 L 维看 DR007 与中债曲线（1004/1005 课中国镜像），不看 Fed</strong>，把 Fed 点阵直接当 A 股的 M 维，是映射表跨市场滥用的第一案例。</div>
 
-<h2><span class="no">06</span>训练场（微重现 4007+阶段回望全 P4） <span class="time-chip">≈28 min</span></h2>
+<h2><span class="no">06</span> 训练场 <span class="time-chip">≈28 min</span></h2>
 <p class="lede">十道题：第 1 题微重现上一课（4007），第 2–7 题阶段回望（覆盖 4001–4007：4001 久期/4002 实际利率/4003 汇率/4004 人民币/4005 商品/4007 三 regime），第 8 题结业应用，第 9–10 题为中国镜像题。</p>
 
 <quiz-block>
@@ -348,7 +348,7 @@
 </script>
 </quiz-block>
 
-<div class="note">训练场判分（十题对照）：全对——隔天重练仍达标，M4.4 课内证据到手；错 1–2 题——回对应课（第 1/7 题→4007 课 01/04 节；第 2 题→4001 课 06 节；第 3 题→4002 课 05 节；第 4 题→4003 课 03 节；第 5 题→4004 课读数段；第 6 题→4005 课 03 节；第 8 题→本课 04 节；第 9/10 题→本课 05 节中国镜像行+03 节），隔天重练；错 ≥3 题——本课回炉：重画漏斗图+把当期快照八维箭头逐维配一句证据（中国三行：M/G/汇率各一）。
+<div class="note">训练场判分（十题对照）：全对，隔天重练仍达标，M4.4 课内证据到手；错 1–2 题，回对应课（第 1/7 题→4007 课 01/04 节；第 2 题→4001 课 06 节；第 3 题→4002 课 05 节；第 4 题→4003 课 03 节；第 5 题→4004 课读数段；第 6 题→4005 课 03 节；第 8 题→本课 04 节；第 9/10 题→本课 05 节中国镜像行+03 节），隔天重练；错 ≥3 题，本课回炉：重画漏斗图+把当期快照八维箭头逐维配一句证据（中国三行：M/G/汇率各一）。
 
 <recall-block>
 <script type="application/json">
@@ -360,25 +360,25 @@
 </script>
 </recall-block>
 
-<h2><span class="no">07</span>小结与结业标准（P4 收官） <span class="time-chip">≈7 min</span></h2>
+<h2><span class="no">07</span> 小结与结业标准 <span class="time-chip">≈7 min</span></h2>
 
 <p><strong>本课带走四样东西：</strong></p>
 <ul class="checklist">
-  <li><strong>八维跨资产映射表</strong>——箭头→资产清单行的查表器；各行带失效条件（含加密挂载行：BTC/稳定币读数挂 L/P 两行判读之下）；打架时裁决权在情景</li>
-  <li><strong>「情景≠预测」</strong>——Wack 的 re-perceiving 本意+三大误用（基准当预测卖/三情景同源化/写完锁抽屉）</li>
-  <li><strong>premortem 标准作业</strong>——「已经失败」叙事生成⑥栏读数条款；Kahneman &amp; Klein 2009 双背书</li>
-  <li><strong>漏斗四步</strong>——判读→情景→EV→仓位（正向决策衰减噪声，反向复盘分层归因）；④出口=交棒行标准格式（1R/腿[R]/胜率区间/风险预算上限）；快照 #4 与 #3 的同日双透镜对照；映射表中国行（M=LPR、G=PMI、L=DR007/中债——结构照搬、读数本地化）</li>
+  <li><strong>八维跨资产映射表</strong>，箭头→资产清单行的查表器；各行带失效条件（含加密挂载行：BTC/稳定币读数挂 L/P 两行判读之下）；打架时裁决权在情景</li>
+  <li><strong>「情景≠预测」</strong>，Wack 的 re-perceiving 本意+三大误用（基准当预测卖/三情景同源化/写完锁抽屉）</li>
+  <li><strong>premortem 标准作业</strong>，「已经失败」叙事生成⑥栏读数条款；Kahneman &amp; Klein 2009 双背书</li>
+  <li><strong>漏斗四步</strong>，判读→情景→EV→仓位（正向决策衰减噪声，反向复盘分层归因）；④出口=交棒行标准格式（1R/腿[R]/胜率区间/风险预算上限）；快照 #4 与 #3 的同日双透镜对照；映射表中国行（M=LPR、G=PMI、L=DR007/中债，结构照搬、读数本地化）</li>
 </ul>
 
 <div class="stop">M4.4 结业标准（显式）：①产出完整三情景六件套（动笔题，六条自查全过）；②能说清经济预测与交易观点之别并现场算一次 EV 区间；③能复述「情景≠预测」的一句话版本与三大误用；④当期快照 #4 五题完成（含与 #3 的分歧处理）。检测：本课训练场 ≥80% 且隔天重练达标；工件=三情景六件套+快照 #4（归档给教练）。<strong>P4 全阶段收官</strong>：4001–4007 七课+本课训练场合计 ≥80%（M4.1/M4.2/M4.3/M4.4/M4.5 五里程碑）+P4 证据包归档（4001 久期账/4002 实际利率仪表行/4003 汇率仪表行/4004 人民币与港币动笔件/4005 商品读数行/4006 fading 补全与交棒行/4007 BTC 三 regime 判读行/本课三情景六件套与快照 #4），P4 点亮，进入 P5 案例与机构。</div>
 
 <p><strong>课外作业：</strong></p>
-<p>（1）<strong>必做（结业周内）</strong>：完成三情景六件套+快照 #4 五题，连同 P4 各课工件归档给教练——这是 M5.4 完整决策演练与 M6.3 记分卡的直接原料。</p>
-<p>（2）<strong>课后探索（可选）</strong>：把你 2024-08（日元崩盘周）或 2026-03（开战周）的真实持仓反应写成一段「如果当时我有六件套」——P5 案例课的热身。</p>
+<p>（1）<strong>必做（结业周内）</strong>：完成三情景六件套+快照 #4 五题，连同 P4 各课工件归档给教练，这是 M5.4 完整决策演练与 M6.3 记分卡的直接原料。</p>
+<p>（2）<strong>课后探索（可选）</strong>：把你 2024-08（日元崩盘周）或 2026-03（开战周）的真实持仓反应写成一段「如果当时我有六件套」，P5 案例课的热身。</p>
 <p>（3）<strong>日常习惯（永久生效）</strong>：判读卡从五维升到八维（加 S 供给维、F 财政维与 P 定价维行，加密读数挂 L/P 两行）；季度例行加 premortem 一次；决策日志用六件套格式。</p>
-<p><strong>P4 阶段完成</strong>——你的跨资产工具箱：换算器（久期）、拆解刀（实际利率/恒等式/三因子）、燃料表（利差/美元周期）、角色卡（油铜金）、三 regime 判读行（BTC/稳定币）、六件套与漏斗。<strong>下一阶段 P5《案例与机构》</strong>：六个真实案例（2008/2013/2015–16 中国/2020/2022/2024 日本）检验这条流水线，然后是机构实践图谱与完整决策演练。</p>
+<p><strong>P4 阶段完成</strong>，你的跨资产工具箱：换算器（久期）、拆解刀（实际利率/恒等式/三因子）、燃料表（利差/美元周期）、角色卡（油铜金）、三 regime 判读行（BTC/稳定币）、六件套与漏斗。<strong>下一阶段 P5《案例与机构》</strong>：六个真实案例（2008/2013/2015–16 中国/2020/2022/2024 日本）检验这条流水线，然后是机构实践图谱与完整决策演练。</p>
 
-<div class="ask-agent">我是你的教练。P4 证据包交我——六件套的②格（已定价）与⑥栏（premortem 读数条款）是两处重点审区：②格没写实读数的打回补，⑥栏出现「黑天鹅」或不可观察条款的打回重写。快照 #4 与 #3 的分歧处理那题，写得好的话我会放进你的学习档案做样本——那是跨阶段能力的直接证据。P5 见。</div>
+<div class="ask-agent">我是你的教练。P4 证据包交我，六件套的②格（已定价）与⑥栏（premortem 读数条款）是两处重点审区：②格没写实读数的打回补，⑥栏出现「黑天鹅」或不可观察条款的打回重写。快照 #4 与 #3 的分歧处理那题，写得好的话我会放进你的学习档案做样本，那是跨阶段能力的直接证据。P5 见。</div>
 
 <footer class="course">
   <div class="nav">
@@ -389,8 +389,8 @@
     <a href="5001-case-methodology.html">下一课 5001 →</a>
     </div>
   <p><strong>主资源（本课 grounded on）</strong>：FRED 全序列与 LBMA（当期快照面板施工自算，截至 2026-09-22/29）；NY Fed ACM 期限溢价（官方 xls 直查 09-28=0.79%）；Klein（2007，HBR）+Kahneman &amp; Klein（2009，American Psychologist 64(6)）；Wack（1985，HBR 两篇）+Schwartz《The Art of the Long View》（1991）；参考页 0005 情景-资产矩阵卡（随本课上线）。</p>
-  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①Kahneman &amp; Klein「Conditions for Intuitive Expertise: A Failure to Disagree」（2009）——低效度环境直觉不可靠、结构性去偏工具的共同结论（03 节理论背书；premortem 由 Klein 2007 HBR《Performing a Project Premortem》给出操作、Kahneman《思考，快与慢》推荐）；②Wack「Scenarios: Uncharted Waters Ahead」/「Scenarios: Shooting the Rapids」（HBR 1985 9–10/11–12 月号）——re-perceiving 立意、既定要素 vs 关键不确定性（02 节）；signposts 标准化出自 Schwartz/GBN 一脉（1991）；③Dalio《债务危机》Part 1 引言——「研究百年来临的风暴」的预备论（02 节情景传统段，书源承 3004 核验）；Part 1 ch3 萧条情形股跌约 50%（快照三情景的量级参照，承 3006）。
-<strong>数据口径（快照 #4 面板）</strong>：Fed 基金区间与 SEP（2026-09-16 FOMC，12–0 表决；点阵 2026 末 ~4.1%、2027 不动）；剩余会议 10-27/28、12-08/09（Fed 官方日历）；「再加息 ≈72%」=第三方 FedWatch 追踪（GrowBeanSprout 2026-09-27）——官方工具 JS 渲染不可静态引用，课堂使用须现场复核；ACM TP10=0.79%（2026-09-28，NY Fed 官方 ACMTP10 文件直查；9-21=0.58%）；10Y/DFII10/T10YIE/T10Y2Y/HY OAS/SP500/NASDAQCOM/CBBTCUSD/DCOILWTICO/DEXCHUS/DEXHKUS/DEXJPUS/DTWEXBGS/IRLTLT01JPM156N=FRED（截至 2026-09-22–29，YTD 施工自算：标普 +12.1%/纳指 +15.3%/WTI +68.4%（9-29 一度回落至 ~89.5，路透口径）/金 −4.7%（基准 2025-12-30 最后定盘 4367.8）/BTC −4.6%）；金=LBMA PM 定盘（2026-01-29 峰 5405、2026-07-16 低 3993.55、2026-09-29=4163.4）；GSCPI=+1.06σ（2026-08，vintage 2026-09）；CPI/核心（2026-08）、GDP Q2 +1.5%（BEA 二次估）、失业率 4.1%（08）、初请 4wk 202.3k（09-19 当周）；BOJ 1.25%（2026-09-18，7–2）；美伊战争时间线（02-28 开打/03-04 海峡「关闭」/Brent 72→120 峰/9 月再打击海峡未重开/OPEC+ 增产对冲）=2026-09-30 施工联网核验（Guardian/路透/CNBC/Congress.gov 等，档案存施工记录）。映射表当期箭头=教学判读示例，非投资建议——你的八维箭头以你自己判读卡为准。</div>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①Kahneman &amp; Klein「Conditions for Intuitive Expertise: A Failure to Disagree」（2009），低效度环境直觉不可靠、结构性去偏工具的共同结论（03 节理论背书；premortem 由 Klein 2007 HBR《Performing a Project Premortem》给出操作、Kahneman《思考，快与慢》推荐）；②Wack「Scenarios: Uncharted Waters Ahead」/「Scenarios: Shooting the Rapids」（HBR 1985 9–10/11–12 月号），re-perceiving 立意、既定要素 vs 关键不确定性（02 节）；signposts 标准化出自 Schwartz/GBN 一脉（1991）；③Dalio《债务危机》Part 1 引言，「研究百年来临的风暴」的预备论（02 节情景传统段，书源承 3004 核验）；Part 1 ch3 萧条情形股跌约 50%（快照三情景的量级参照，承 3006）。
+<strong>数据口径（快照 #4 面板）</strong>：Fed 基金区间与 SEP（2026-09-16 FOMC，12–0 表决；点阵 2026 末 ~4.1%、2027 不动）；剩余会议 10-27/28、12-08/09（Fed 官方日历）；「再加息 ≈72%」=第三方 FedWatch 追踪（GrowBeanSprout 2026-09-27），官方工具 JS 渲染不可静态引用，课堂使用须现场复核；ACM TP10=0.79%（2026-09-28，NY Fed 官方 ACMTP10 文件直查；9-21=0.58%）；10Y/DFII10/T10YIE/T10Y2Y/HY OAS/SP500/NASDAQCOM/CBBTCUSD/DCOILWTICO/DEXCHUS/DEXHKUS/DEXJPUS/DTWEXBGS/IRLTLT01JPM156N=FRED（截至 2026-09-22–29，YTD 施工自算：标普 +12.1%/纳指 +15.3%/WTI +68.4%（9-29 一度回落至 ~89.5，路透口径）/金 −4.7%（基准 2025-12-30 最后定盘 4367.8）/BTC −4.6%）；金=LBMA PM 定盘（2026-01-29 峰 5405、2026-07-16 低 3993.55、2026-09-29=4163.4）；GSCPI=+1.06σ（2026-08，vintage 2026-09）；CPI/核心（2026-08）、GDP Q2 +1.5%（BEA 二次估）、失业率 4.1%（08）、初请 4wk 202.3k（09-19 当周）；BOJ 1.25%（2026-09-18，7–2）；美伊战争时间线（02-28 开打/03-04 海峡「关闭」/Brent 72→120 峰/9 月再打击海峡未重开/OPEC+ 增产对冲）=2026-09-30 施工联网核验（Guardian/路透/CNBC/Congress.gov 等，档案存施工记录）。映射表当期箭头=教学判读示例，非投资建议，你的八维箭头以你自己判读卡为准。</div>
 </footer>
 
 </div>

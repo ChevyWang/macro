@@ -92,17 +92,17 @@
   <tbody>
     <tr><td>10 年期美债收益率</td><td>实时</td><td><a href="https://fred.stlouisfed.org/series/DGS10">FRED: DGS10</a></td><td>全球定价之锚，股票贴现率与无风险利率的基准</td><td>财政部每日收益率曲线页（自算级源）</td></tr>
     <tr><td>10 年期实际利率（TIPS）</td><td>实时</td><td><a href="https://fred.stlouisfed.org/series/DFII10">FRED: DFII10</a></td><td>剔通胀后的真实资金成本；黄金与高估值资产最敏感的单一变量</td><td>财政部每日实际收益率曲线页</td></tr>
-    <tr><td>2s10s 期限利差</td><td>实时</td><td><a href="https://fred.stlouisfed.org/series/T10Y2Y">FRED: T10Y2Y</a></td><td>倒挂=衰退史上最可靠的领先信号之一（领先 6–24 个月，非择时工具）。样本外更新：2022-07 起倒挂约 26 个月、衰退未兑现——该信号也会失手（<a href="../lessons/3003-recession-signals.html">3003 课</a>）</td><td>财政部曲线页自算（10Y−2Y）</td></tr>
+    <tr><td>2s10s 期限利差</td><td>实时</td><td><a href="https://fred.stlouisfed.org/series/T10Y2Y">FRED: T10Y2Y</a></td><td>倒挂=衰退史上最可靠的领先信号之一（领先 6–24 个月，非择时工具）。样本外更新：2022-07 起倒挂约 26 个月、衰退未兑现，该信号也会失手（<a href="../lessons/3003-recession-signals.html">3003 课</a>）</td><td>财政部曲线页自算（10Y−2Y）</td></tr>
     <tr><td>高收益信用利差</td><td>日度</td><td><a href="https://fred.stlouisfed.org/series/BAMLH0A0HYM2">FRED: BAMLH0A0HYM2</a></td><td>风险偏用的温度计；走阔=信用市场先于股票嗅到麻烦</td><td>ICE BoA 指数官网 / HY OAS 的 ALFRED 档案</td></tr>
-    <tr><td>CME FedWatch 隐含概率</td><td>实时</td><td><a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME</a></td><td>利率期货定价的加息/降息概率——所有「预期差」的参照系</td><td>SEP 点阵+2Y 期货自算（官方口径反而更稳）</td></tr>
+    <tr><td>CME FedWatch 隐含概率</td><td>实时</td><td><a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME</a></td><td>利率期货定价的加息/降息概率，所有「预期差」的参照系</td><td>SEP 点阵+2Y 期货自算（官方口径反而更稳）</td></tr>
     <tr><td>美元指数（DXY）</td><td>实时</td><td>行情软件</td><td>全球流动性的汇率表达；美元走强阶段，新兴市场与加密常承压</td><td>FRED: DTWEXBGS（广义美元指数，日频免费）</td></tr>
-    <tr><td>美元兑日元（USDJPY）</td><td>日度</td><td><a href="https://fred.stlouisfed.org/series/DEXJPUS">FRED: DEXJPUS</a></td><td>日元 carry 温度计——套息交易逆转常先于其他风险资产报警（5003 案例）</td><td>行情软件日频 / BOJ·财务省参考汇率</td></tr>
-    <tr><td>日本 10 年期国债收益率</td><td>月度</td><td><a href="https://fred.stlouisfed.org/series/IRLTLT01JPM156N">FRED: IRLTLT01JPM156N</a></td><td>BOJ 正常化的核心读数；全球长久期资产的「最后一个低利率锚」在撤——3% 关口判读见 5003 课日债盒</td><td>日本财务省/BOJ 日频 JGB 曲线（月频升级日频）</td></tr>
+    <tr><td>美元兑日元（USDJPY）</td><td>日度</td><td><a href="https://fred.stlouisfed.org/series/DEXJPUS">FRED: DEXJPUS</a></td><td>日元 carry 温度计，套息交易逆转常先于其他风险资产报警（5003 案例）</td><td>行情软件日频 / BOJ·财务省参考汇率</td></tr>
+    <tr><td>日本 10 年期国债收益率</td><td>月度</td><td><a href="https://fred.stlouisfed.org/series/IRLTLT01JPM156N">FRED: IRLTLT01JPM156N</a></td><td>BOJ 正常化的核心读数；全球长久期资产的「最后一个低利率锚」在撤，3% 关口判读见 5003 课日债盒</td><td>日本财务省/BOJ 日频 JGB 曲线（月频升级日频）</td></tr>
     <tr><td>港汇（USDHKD）</td><td>日度</td><td><a href="https://fred.stlouisfed.org/series/DEXHKUS">FRED: DEXHKUS</a></td><td>联系汇率 7.75–7.85：贴近弱方+HIBOR 飙升=港股流动性收紧信号（4003 专节）</td><td>HKMA 统计表（港元汇率+HIBOR 同页）</td></tr>
-    <tr><td>CFTC COT 持仓</td><td>每周五发布</td><td><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm">CFTC</a></td><td>杠杆资金仓位拥挤度——极端单边持仓是反转的燃料；极端度判读 1006 课解锁</td><td>免费 COT 可视化站（同源数据重排）</td></tr>
-    <tr><td>BTC（现货）</td><td>日度</td><td><a href="https://fred.stlouisfed.org/series/CBBTCUSD">FRED: CBBTCUSD</a> / 交易所现货</td><td>加密侧风险偏好+离岸流动性代理读数——先判 regime 再读价（<a href="../lessons/4007-crypto-macro.html">4007 课</a>三 regime 对质：流动性代理/独立资产/避险叙事）；失效哨兵=BTC×纳指滚动 90 日相关</td><td>CoinGecko/交易所现货价（口径自标）</td></tr>
+    <tr><td>CFTC COT 持仓</td><td>每周五发布</td><td><a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm">CFTC</a></td><td>杠杆资金仓位拥挤度，极端单边持仓是反转的燃料；极端度判读 1006 课解锁</td><td>免费 COT 可视化站（同源数据重排）</td></tr>
+    <tr><td>BTC（现货）</td><td>日度</td><td><a href="https://fred.stlouisfed.org/series/CBBTCUSD">FRED: CBBTCUSD</a> / 交易所现货</td><td>加密侧风险偏好+离岸流动性代理读数，先判 regime 再读价（<a href="../lessons/4007-crypto-macro.html">4007 课</a>三 regime 对质：流动性代理/独立资产/避险叙事）；失效哨兵=BTC×纳指滚动 90 日相关</td><td>CoinGecko/交易所现货价（口径自标）</td></tr>
     <tr><td>稳定币总市值</td><td>周度</td><td><a href="https://defillama.com/stablecoins">DefiLlama stablecoins</a></td><td>离岸美元潮汐的新管道：增发=T-bill 新需求（主要发行商 T-bill 占资产约 53%），与 2004 财政管道/<a href="../lessons/4007-crypto-macro.html">4007 课</a>互链；GENIUS 法案生效（2027-01）后看合规盘子扩张速度</td><td>CoinGecko 稳定币页（同源聚合）</td></tr>
-    <tr><td>标普等权指数（RSP）</td><td>实时</td><td>行情源（等权 ETF 报价）</td><td><strong>加权指数涨≠市场涨</strong>——Mag7 占标普 500 市值约 33.9%（2026-09，S&P DJI/Bloomberg 汇总口径）的集中度时代，加权与等权两条线都要看：劈叉走阔=窄基行情，等权跟上=广度确认（<a href="../lessons/4007-crypto-macro.html">4007 课</a>互链）</td><td>任意行情源的等权 ETF 报价（RSP 为最常用一只）</td></tr>
+    <tr><td>标普等权指数（RSP）</td><td>实时</td><td>行情源（等权 ETF 报价）</td><td><strong>加权指数涨≠市场涨</strong>，Mag7 占标普 500 市值约 33.9%（2026-09，S&P DJI/Bloomberg 汇总口径）的集中度时代，加权与等权两条线都要看：劈叉走阔=窄基行情，等权跟上=广度确认（<a href="../lessons/4007-crypto-macro.html">4007 课</a>互链）</td><td>任意行情源的等权 ETF 报价（RSP 为最常用一只）</td></tr>
   </tbody>
 </table>
 
@@ -134,16 +134,16 @@
 <ol>
   <li><strong>周一（10 分钟）</strong>：过一遍上周美国初请方向、本周数据日历（哪些发布、市场预期是多少）</li>
   <li><strong>周四（10 分钟）</strong>：中国社融/PMI 等月度数据出没出；出了就用「三变量框架」写一句话：增长↑↓、通胀↑↓、政策↑↓</li>
-  <li><strong>周五（10 分钟）</strong>：读市场层——10Y 实际利率、信用利差、DXY 各自的周变化方向，与你的三变量判断对表</li>
+  <li><strong>周五（10 分钟）</strong>：读市场层，10Y 实际利率、信用利差、DXY 各自的周变化方向，与你的三变量判断对表</li>
   <li><strong>月末（5 分钟）</strong>：CFTC 持仓极端度扫一眼，登记进自己的观察日志</li>
 </ol>
 
-<p><strong>免费子集说明</strong>：这份仪表盘是「业界标配的免费子集」。Wind/iFinD 等收费终端的价值在高频自动化与历史回溯，不改变框架本身——先把免费流程跑成肌肉记忆，日后有终端是升级不是补课。</p>
+<p><strong>免费子集说明</strong>：这份仪表盘是「业界标配的免费子集」。Wind/iFinD 等收费终端的价值在高频自动化与历史回溯，不改变框架本身，先把免费流程跑成肌肉记忆，日后有终端是升级不是补课。</p>
 
-<h2><span class="no">§8</span>升级包——M1 之后启用</h2>
-<p class="lede">上面的仪表盘是入门配置。P1 数据流之后，你的读数方式要完成一次质变：从「看水平值」升级到「看变化」——<strong>Level → Direction → Acceleration</strong>，再配每个指标的分布位置（Percentile）。市场交易的不是 GDP 是 3.0% 还是 3.5%，是它在往哪边动、动得多快。</p>
+<h2><span class="no">§8</span>升级包，M1 之后启用</h2>
+<p class="lede">上面的仪表盘是入门配置。P1 数据流之后，你的读数方式要完成一次质变：从「看水平值」升级到「看变化」，<strong>Level → Direction → Acceleration</strong>，再配每个指标的分布位置（Percentile）。市场交易的不是 GDP 是 3.0% 还是 3.5%，是它在往哪边动、动得多快。</p>
 
-<div class="note">质变四值读法：以 PMI 49.3 为例——Level &lt;50（仍收缩）、Momentum +1.1（快速改善）、Acceleration +、Percentile 68%（历史中上）。「经济仍收缩但正快速改善」恰恰是市场最喜欢的环境之一。任何「PMI&lt;50 → 看空」的单一阈值规则都丢弃。</div>
+<div class="note">质变四值读法：以 PMI 49.3 为例，Level &lt;50（仍收缩）、Momentum +1.1（快速改善）、Acceleration +、Percentile 68%（历史中上）。「经济仍收缩但正快速改善」恰恰是市场最喜欢的环境之一。任何「PMI&lt;50 → 看空」的单一阈值规则都丢弃。</div>
 
 <h3>转折点指标组（Turning Points）</h3>
 <table>
@@ -161,7 +161,7 @@
 </table>
 
 <h3>每周 regime 更新表（固定模板）</h3>
-<p><strong>个人版（默认）</strong>：箭头+证据句，十分钟填完，不手算任何分数——</p>
+<p><strong>个人版（默认）</strong>：箭头+证据句，十分钟填完，不手算任何分数，</p>
 <table>
   <thead>
     <tr><th>维度</th><th>方向</th><th>一句证据（本周看到什么）</th></tr>
@@ -174,7 +174,7 @@
     <tr><td>Risk</td><td>↑ / ↓ / →</td><td>例：VIX 低于 20 且信用利差收窄同向确认</td></tr>
   </tbody>
 </table>
-<p><strong>进阶版（机构形态，仅作认知）</strong>：下表带 composite 读数与广度百分比的形态，是机构做法——个人手算容易变成伪精确，看懂机构在做什么即可，不启用：</p>
+<p><strong>进阶版（机构形态，仅作认知）</strong>：下表带 composite 读数与广度百分比的形态，是机构做法，个人手算容易变成伪精确，看懂机构在做什么即可，不启用：</p>
 <table>
   <thead>
     <tr><th>维度</th><th>读数</th><th>Δ 1M / 3M</th><th>广度</th><th>状态</th></tr>
@@ -190,7 +190,7 @@
 <p>两版的状态结论都 = 方向 × 广度 × 持续性 × 跨资产确认，输出「Growth↑ / Inflation↓ / Liquidity↑ / Credit 健康」这样的描述，而不是「复苏中期」这样的单标签。表内数字为格式示例，非真实读数。</p>
 
 <h3>机构工具的个人翻译表</h3>
-<p class="lede">下表是本页升级包里每个机构级工具的「个人可执行版」。原则：免费、一眼读、有固定频率——做不到的降级为语境认知（知道机构在看它，个人不跟）。</p>
+<p class="lede">下表是本页升级包里每个机构级工具的「个人可执行版」。原则：免费、一眼读、有固定频率，做不到的降级为语境认知（知道机构在看它，个人不跟）。</p>
 <table>
   <thead>
     <tr><th>机构工具</th><th>个人做法</th><th>频率</th><th>在哪看（免费）</th></tr>
@@ -209,18 +209,18 @@
   </tbody>
 </table>
 
-<div class="stop"><p>可执行性门禁：任何指标进入你的仪表盘前先过三问——① 免费源个人拿得到吗？</p>
+<div class="stop"><p>可执行性门禁：任何指标进入你的仪表盘前先过三问，① 免费源个人拿得到吗？</p>
 <ul class="enum">
 <li>② 每周总时间预算（30–60 分钟）装得下吗？</li>
 <li>③ 它的输出会直接改变你的仓位/风控/标的吗？三问过两问才收，只过一问的只作语境认知。仪表盘总量 ≤40 个变量，但个人交易者的甜点区在 20–30 个。</li>
 </ul></div>
 
 <h3>盘前五分钟清单</h3>
-<p>US 2Y、US 10Y、实际利率、DXY、日元、港汇、黄金、油、铜、CNH、中国 10Y、ES、NQ、HSI、VIX、信用利差——P0 精简版=前 6 读数（US 2Y、US 10Y、实际利率、DXY、日元、港汇）即可运转，其余随课程进度逐个点亮——然后四问：什么变了？为什么变？哪个 regime 因子在驱动？市场确认了吗？不是每天重新研究世界经济。P4 起追加两行：<strong>BTC</strong>（日度，4007 课三 regime 判读）与等权指数 RSP（与加权对照——33.9% 集中度时代「加权指数涨≠市场涨」，两条线都要看）；稳定币总市值周更一次即可（DefiLlama，离岸美元潮汐行）。</p>
+<p>US 2Y、US 10Y、实际利率、DXY、日元、港汇、黄金、油、铜、CNH、中国 10Y、ES、NQ、HSI、VIX、信用利差，P0 精简版=前 6 读数（US 2Y、US 10Y、实际利率、DXY、日元、港汇）即可运转，其余随课程进度逐个点亮，然后四问：什么变了？为什么变？哪个 regime 因子在驱动？市场确认了吗？不是每天重新研究世界经济。P4 起追加两行：<strong>BTC</strong>（日度，4007 课三 regime 判读）与等权指数 RSP（与加权对照，33.9% 集中度时代「加权指数涨≠市场涨」，两条线都要看）；稳定币总市值周更一次即可（DefiLlama，离岸美元潮汐行）。</p>
 
-<div class="stop">分工铁律：月/周——宏观 regime 定风险偏好；周/日——行业与相对强弱定标的；日/1H——价格行为定入场。「CPI 降了→今天买半导体」不是宏观交易，是把宏观当信号发生器——本课程不教这个。</div>
+<div class="stop">分工铁律：月/周，宏观 regime 定风险偏好；周/日，行业与相对强弱定标的；日/1H，价格行为定入场。「CPI 降了→今天买半导体」不是宏观交易，是把宏观当信号发生器，本课程不教这个。</div>
 
-<div class="ask-agent">哪个指标不会算 percentile、想看 NFCI 当前读数的解读、或者想让我陪你跑一遍每周 regime 表——回来问我。</div>
+<div class="ask-agent">哪个指标不会算 percentile、想看 NFCI 当前读数的解读、或者想让我陪你跑一遍每周 regime 表，回来问我。</div>
 
 <nav class="lesson-nav">
   <a href="../lessons/0001-economic-machine.html">← 第 0001 课</a>

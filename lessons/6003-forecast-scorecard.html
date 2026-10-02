@@ -27,12 +27,12 @@
   <div class="lm-title">本课地图</div>
   <ol>
     <li>开课先猜 <span class="t">≈3 min</span></li>
-    <li>为什么打分：诚实条款的制度化 <span class="t">≈10 min</span></li>
-    <li>Brier 分：公式、抛物线与结算例 <span class="t">≈15 min</span></li>
-    <li>样例记分卡：五条结算示范 <span class="t">≈12 min</span></li>
-    <li>错误归因复盘：三层定位+偏差清单 <span class="t">≈15 min</span></li>
-    <li>校准训练：CHAMP 一小时 <span class="t">≈15 min</span></li>
-    <li>训练场（微重现 6002+结算应用） <span class="t">≈17 min</span></li>
+    <li>为什么打分 <span class="t">≈10 min</span></li>
+    <li>Brier 分 <span class="t">≈15 min</span></li>
+    <li>样例记分卡 <span class="t">≈12 min</span></li>
+    <li>错误归因复盘 <span class="t">≈15 min</span></li>
+    <li>校准训练 <span class="t">≈15 min</span></li>
+    <li>训练场 <span class="t">≈17 min</span></li>
     <li>小结与课外作业 <span class="t">≈7 min</span></li>
   </ol>
 </div>
@@ -60,7 +60,7 @@
   "q": "先猜 2：「Brier 分主要惩罚预测错误的人。」它真正重罚的是——",
   "options": [
     {"t": "方向判断错的人", "ok": false, "why": "方向错且不自信（51% 给 55%）罚得轻；方向对但过度自信（80% 给成 95%）罚得重——Brier 惩罚的是「确定性错配」，方向只是它的一半。"},
-    {"t": "过度自信：分数是误差的平方——70% 自信而事件不发生罚 0.49，55% 自信而不发生只罚 0.30；越自信、错越贵，贵法是平方级——这就是为什么「概率区间」是全课程的硬格式（区间是对不确定性的诚实，也是对平方惩罚的防御）", "ok": true, "why": "03 节抛物线图。GJP 的核心发现之一也是这个：最准的预报者不是方向感最好的人，是最常把「大概」写成 60–70% 的人（避免两端假自信）。"},
+    {"t": "过度自信：分数是误差的平方——70% 自信而事件不发生罚 0.49，55% 自信而不发生只罚 0.30；越自信、错越贵，贵法是平方级——这即是为什么「概率区间」是全课程的硬格式（区间是对不确定性的诚实，也是对平方惩罚的防御）", "ok": true, "why": "03 节抛物线图。GJP 的核心发现之一也是这个：最准的预报者不是方向感最好的人，是最常把「大概」写成 60–70% 的人（避免两端假自信）。"},
     {"t": "预测太频繁的人", "ok": false, "why": "频率本身不进公式——但「每条都 90%」的高频者会先被平方惩罚教育（Atanasov 2020：最好的预报者频繁小幅更新，而不是频繁放大话）。"},
     {"t": "用区间不用点值的人", "ok": false, "why": "反了——区间（40–55% 取中值 47.5% 结算）正是防过度自信的格式；点值 90% 才是抛物线最贵的座位。"}
   ]
@@ -68,12 +68,12 @@
 </script>
 </preq-block>
 
-<h2><span class="no">01</span>为什么打分：诚实条款的制度化 <span class="t time-chip">≈10 min</span></h2>
+<h2><span class="no">01</span> 为什么打分 </h2>
 <p class="lede">「宏观预测正确率天花板低」是全课程的诚实条款——但口头承诺没有约束力，<strong>制度才有</strong>。决策日志（1007 启动）负责「记录在决策时点」（Mauboussin《Think Twice》的决策日志传统：写下判断、理由与预期，事后对照，把「当时怎么想」与「结果如何」分开记账）；记分卡负责「结算与归因」。两条图先立住打分的必要性——连美联储自己的预测都要被打分：</p>
 
 <chart-block>
 <script type="application/json">{"type":"bar","width":720,"bar":{"orient":"v","yDomain":[0,6],"ticks":[0,1.5,3,4.5,6],"fmt":"pct","legend":[["点阵图中值（预测）","#6e6c64"],["实际落地（年末中点）","#1c1c1a"]],"groups":[{"label":"→2022 年底","sub":"2021-09 / 2021-12 预测 vs 落地","bars":[{"value":0.3,"color":"#6e6c64","display":"0.3"},{"value":0.9,"color":"#6e6c64","display":"0.9"},{"value":4.375,"display":"实际 4.4"}]},{"label":"→2023 年底","sub":"2022-12 预测 vs 落地","bars":[{"value":5.1,"color":"#6e6c64","display":"5.1"},{"value":5.375,"display":"实际 5.4"}]},{"label":"→2024 年底","sub":"2023-12 预测 vs 落地","bars":[{"value":4.6,"color":"#6e6c64","display":"4.6"},{"value":4.375,"display":"实际 4.4"}]},{"label":"→2025 年底","sub":"2024-12 预测 vs 落地","bars":[{"value":3.9,"color":"#6e6c64","display":"3.9"},{"value":3.625,"display":"实际 3.6"}]}]},"note":"第一组：2021 年两次点阵（0.3/0.9）vs 实际 4.4——误差约 410bp；后三组误差只有 25bp 量级","asOf":"2025 年末","source":"federalreserve.gov SEP 原件 + FRED DFEDTARU（中点）","aria":"chart:6003-sep-vs-real","series":[]}</script>
-<figcaption><strong>美联储点阵图中值 vs 实际落地（年末政策利率）</strong>：来源=federalreserve.gov 五份 SEP 原件（2021-09/2021-12/2022-12/2023-12/2024-12，施工日核验）+FRED DFEDTARU（落地区间）。看第一组：2021 年 9 月，FOMC 全体与会者对 2022 年底的利率中值预测是 0.3%——三个月后上调到 0.9%——实际落地 4.4%（中点）：误差约 410bp，专业预测者的世纪级失误。后三组误差只有 25bp。<strong>同一群人、同一套模型、同一份问卷——差别在环境：低效度环境下（通胀冲击前夜）最好的预测者也大幅失准</strong>（Kahneman &amp; Klein 2009 对「直觉何时可信」的回答：高有效性环境+及时反馈才养得出可靠直觉，宏观与市场恰恰不是）。</figcaption>
+<figcaption><strong>美联储点阵图中值 vs 实际落地（年末政策利率）</strong>：来源=federalreserve.gov 五份 SEP 原件（2021-09/2021-12/2022-12/2023-12/2024-12，施工日核验）+FRED DFEDTARU（落地区间）。看第一组：2021 年 9 月，FOMC 全体与会者对 2022 年底的利率中值预测是 0.3%（三个月后上调到 0.9%）实际落地 4.4%（中点）：误差约 410bp，专业预测者的世纪级失误。后三组误差只有 25bp。<strong>同一群人、同一套模型、同一份问卷——差别在环境：低效度环境下（通胀冲击前夜）最好的预测者也大幅失准</strong>（Kahneman &amp; Klein 2009 对「直觉何时可信」的回答：高有效性环境+及时反馈才养得出可靠直觉，宏观与市场恰恰不是）。</figcaption>
 </chart-block>
 
 <chart-block>
@@ -83,7 +83,7 @@
 
 <p><strong>业界证据链</strong>（打分制度为什么值得花一小时）：Good Judgment Project 四年锦标赛，团队比无训练对照组准确度高出 50% 以上（Good Judgment 官方 track record，《Superforecasting》2015 转述）；<strong>不到一小时的 CHAMP 式概率训练，稳定把预报准确度（Brier 分数）改善约 6–11%</strong>（Chang, Chen, Mellers &amp; Tetlock 2016，摘要原句）；分析 40 万+条预测发现成绩最好的预报者做频繁的小幅修正，而不是憋大招式大幅翻仓（Atanasov, Witkowski, Ungar, Mellers &amp; Tetlock 2020，OBHDP）——最后这条直接翻译成你的日常：预测行允许修改，但每次修改留痕（旧值→新值+一句触发理由），修改本身就是训练。</p>
 
-<h2><span class="no">02</span>Brier 分：公式、抛物线与结算例 <span class="t time-chip">≈15 min</span></h2>
+<h2><span class="no">02</span> Brier 分 </h2>
 <p class="lede">Brier 分（Brier 1950，《Monthly Weather Review》——气象学家先想明白了怎么给概率预报打分）是二分类预测的严格评分：<strong>你给出概率 p，事件发生得 (1−p)²，不发生得 p²</strong>。0 分完美，越低越好；本规约下理论最差 1（100% 自信且全错）。<em>规约注</em>：本课用半分制 0–1（单边式）；文献中 0–2 为 Brier 1950 原始双边求和式（p²+(1−p)²，Chang 2016/Atanasov 2020 均按 0–2 报分），数值差一倍——跨文献比较先对规约。区间预测取中值结算（40–55% → 按 47.5% 算）。</p>
 
 <figure>
@@ -129,8 +129,11 @@
     <tr><td>分析师共识</td><td>25%</td><td>发生（=1）</td><td>(1−0.25)²=0.75²</td><td>0.563</td></tr>
   </tbody>
 </table>
-<p>两条都「方向错了」（都没押满），但惩罚差四倍——差在<strong>置信度与信息的匹配</strong>：期货定价吸收了会前通胀数据的信息，分析师还停在叙事惯性上。这就是 Brier 的教学价值：它同时罚「错」与「过度的确信」，同时奖励「对」与「诚实的保留」。</p>
+<p>两条都「方向错了」（都没押满），但惩罚差四倍——差在<strong>置信度与信息的匹配</strong>：期货定价吸收了会前通胀数据的信息，分析师还停在叙事惯性上。Brier 的教学价值正在于此：它同时罚「错」与「过度的确信」，同时奖励「对」与「诚实的保留」。</p>
 </div>
+
+<p>数字看完，记一条口径。</p>
+
 
 <div class="note"><p><strong>三条性质</strong>（记住就能用）：</p>
 <ul class="enum">
@@ -139,13 +142,16 @@
 <li>③「给尾部 20–30%」很便宜（不发生只罚 0.04–0.09）——<strong>诚实地记录小概率担忧几乎免费，假装它不存在才贵</strong>（危机年里 30% 的 Bear 情景行是好记分卡的标配）。</li>
 </ul></div>
 
+<p>口径还剩一条。</p>
+
+
 <div class="note"><p><strong>多分类与区间的计分规约</strong>（本课统一口径，毕业考 E12 考点同源）：</p>
 <ul class="enum">
-<li>①<strong>多分类</strong>（如「加息/不变/降息」三选一）：每一类按单边式分别计一次分——发生的那类收 (1−pᵢ)²，其余各类收 pᵢ²——再<strong>对类数取平均</strong>。例：给「加息 40%/不变 45%/降息 15%」而落地加息，得 [(1−0.40)²+0.45²+0.15²]÷3 =（0.36+0.2025+0.0225）÷3 ≈ <strong>0.195</strong>；除以类数让不同分类数的预测可以横向比较（三分类与二分类同一张记分卡不打架）。注意：主判断对了也要为次类的错配付分——0.45 押「不变」的那 0.2025 跑不掉。</li>
+<li>①<strong>多分类</strong>（如「加息/不变/降息」三选一）：每一类按单边式分别计一次分（发生的那类收 (1−pᵢ)²，其余各类收 pᵢ²）再<strong>对类数取平均</strong>。例：给「加息 40%/不变 45%/降息 15%」而落地加息，得 [(1−0.40)²+0.45²+0.15²]÷3 =（0.36+0.2025+0.0225）÷3 ≈ <strong>0.195</strong>；除以类数让不同分类数的预测可以横向比较（三分类与二分类同一张记分卡不打架）。注意：主判断对了也要为次类的错配付分——0.45 押「不变」的那 0.2025 跑不掉。</li>
 <li>②<strong>区间预测</strong>一律取区间中点计分（40–55% 按 47.5%）。<strong>区间宽度惩罚：区间越宽 Brier 越难看——宽度是价格</strong>：进公式的只有中值，宽区间把中值拉向 50%，对了也只拿平庸分（55–65% 对了收 0.16，40–70% 对了收 0.20）；想拿好分就得收窄区间，而收窄=为你的判断下注，错时按平方付费。躲进宽区间等于买保险——代价是永远拿不到低分，校准曲线也会把你出卖。</li>
 </ul></div>
 
-<h2><span class="no">03</span>样例记分卡：五条结算示范 <span class="t time-chip">≈12 min</span></h2>
+<h2><span class="no">03</span> 样例记分卡 </h2>
 <p class="lede">fading 设计：本节给五条<em>示范行</em>（真实历史事件构造，标注「示范」；你的记分卡必须全部来自你自己的决策日志原文）。表格就是工件格式：</p>
 
 <table>
@@ -166,7 +172,7 @@
     <tr><td>2</td><td>未发生（实际 4.375）</td><td>0.302</td><td>校准层错：把点阵当概率而非「反应函数快照」——降息节奏被就业走弱加速</td></tr>
     <tr><td>3</td><td>未发生（CPI 6.5%）</td><td>0.49</td><td>机制层错：供给冲击的持续性被低估+确认偏误（把正常化当默认）</td></tr>
     <tr><td>4</td><td><strong>未到期</strong></td><td>——</td><td>未到期不结算（到期日即结算日，不提前）</td></tr>
-    <tr><td>5</td><td><strong>未到期</strong></td><td>——</td><td>尾部行：到期若未发生只计 0.0625——便宜的风险显性化</td></tr>
+    <tr><td>5</td><td><strong>未到期</strong></td><td>（</td><td>尾部行：到期若未发生只计 0.0625）便宜的风险显性化</td></tr>
   </tbody>
 </table>
 
@@ -176,78 +182,78 @@
 <li>②区间取中值；</li>
 <li>③结算时引用原文（学习档案里的原始记录，不改一字）；</li>
 <li>④每条必配归因一句（分数不带归因=白打）；</li>
-<li>⑤修改过的行保留全部版本（旧值→新值+触发理由——Atanasov 的「小幅更新」文化）。</li>
+<li>⑤修改过的行保留全部版本（旧值→新值+触发理由，Atanasov 的「小幅更新」文化）。</li>
 </ul>
 
-<div class="note"><strong>中国镜像行</strong>：记分卡的中国原料——中文卖方每年 1 月集中发布的<strong>年度策略与「十大预测」</strong>（券商官网/公众号免费公开）是现成的 consensus 预测池：带日期、可引用、年末可结算，做 Brier 练习与「对照组」零成本。历史读数（公开行情自算）：2023 年初中文卖方年度策略普遍以「复苏交易」为主基调看多 A 股，上证综指 2023 全年 <strong>−3.7%</strong>（2022-12-30 收 3089→2023-12-29 收 2975）——<strong>consensus 也该被打分</strong>，这正是记分卡文化的公开版。用法边界：consensus 行单独立账（对照组），你的记分卡分数只算自己的预测行——对照的意义是量出预期差，不是替你攒分。</div>
+<div class="note"><strong>中国镜像行</strong>：记分卡的中国原料，中文卖方每年 1 月集中发布的<strong>年度策略与「十大预测」</strong>（券商官网/公众号免费公开）是现成的 consensus 预测池：带日期、可引用、年末可结算，做 Brier 练习与「对照组」零成本。历史读数（公开行情自算）：2023 年初中文卖方年度策略普遍以「复苏交易」为主基调看多 A 股，上证综指 2023 全年 <strong>−3.7%</strong>（2022-12-30 收 3089→2023-12-29 收 2975），<strong>consensus 也该被打分</strong>，这正是记分卡文化的公开版。用法边界：consensus 行单独立账（对照组），你的记分卡分数只算自己的预测行，对照的意义是量出预期差，不是替你攒分。</div>
 
-<h2><span class="no">04</span>错误归因复盘：三层定位+偏差清单 <span class="t time-chip">≈15 min</span></h2>
+<h2><span class="no">04</span> 错误归因复盘 </h2>
 <p class="lede">分数是体温计，归因才是诊断书。每条错单（Brier 高于 0.25 的行重点复盘）问一遍：<strong>错在哪一层？</strong></p>
 
 <table>
   <thead><tr><th>层</th><th>症状</th><th>归因句式</th><th>对应回炉</th></tr></thead>
   <tbody>
-    <tr><td>①读数层</td><td>数据都看错了（口径/单位/修订没注意）</td><td>「我把 X 的口径读成了 Y——重写时先过 1003/1001 的口径红线」</td><td>1001–1004</td></tr>
-    <tr><td>②机制层</td><td>数据读对了，传导判断错（方向/时滞/弹性）</td><td>「读数对，但我假设 A→B 传导会立即发生——重写时给传导加时滞与条件（2003/4002）」</td><td>2003/3003/4001–4004</td></tr>
-    <tr><td>③校准层</td><td>机制都对了，概率给太自信/太保守</td><td>「方向对，70% 给成了 90%——同情境的历史基础概率是多少？先查参照类再给区间」</td><td>本课 05 节+4006</td></tr>
+    <tr><td>①读数层</td><td>数据都看错了（口径/单位/修订没注意）</td><td>「我把 X 的口径读成了 Y，重写时先过 1003/1001 的口径红线」</td><td>1001–1004</td></tr>
+    <tr><td>②机制层</td><td>数据读对了，传导判断错（方向/时滞/弹性）</td><td>「读数对，但我假设 A→B 传导会立即发生，重写时给传导加时滞与条件（2003/4002）」</td><td>2003/3003/4001–4004</td></tr>
+    <tr><td>③校准层</td><td>机制都对了，概率给太自信/太保守</td><td>「方向对，70% 给成了 90%，同情境的历史基础概率是多少？先查参照类再给区间」</td><td>本课 05 节+4006</td></tr>
   </tbody>
 </table>
 
 <p><strong>行为偏差清单</strong>（打分时逐条对照，三条都有写作层防御）：</p>
 <ul class="enum">
-<li>①<strong>resulting</strong>（Duke 2018）——以单次结果反推决策质量：防御=只看 Brier 与归因，不看「对错总数」；</li>
-<li>②锚定——初始印象钉死后续更新（第一次给 70% 就不愿降到 55%）：防御=「小幅更新留痕」制度（每次改概率都是一次允许的移动，不丢面子）；</li>
-<li>③确认偏误——只收集支持原判断的证据：防御=周报证据段的「不利证据」栏（6001）+6002 专题的预期反证问——两个写作仪器都是偏差的制度性对冲。</li>
+<li>①<strong>resulting</strong>（Duke 2018），以单次结果反推决策质量：防御=只看 Brier 与归因，不看「对错总数」；</li>
+<li>②锚定，初始印象钉死后续更新（第一次给 70% 就不愿降到 55%）：防御=「小幅更新留痕」制度（每次改概率都是一次允许的移动，不丢面子）；</li>
+<li>③确认偏误，只收集支持原判断的证据：防御=周报证据段的「不利证据」栏（6001）+6002 专题的预期反证问，两个写作仪器都是偏差的制度性对冲。</li>
 </ul>
 
-<h2><span class="no">05</span>校准训练：CHAMP 一小时 <span class="t time-chip">≈15 min</span></h2>
-<p class="lede">校准是可训练的技能，而且便宜——GJP 的新预报员训练口诀 <strong>CHAMP</strong>（Chang et al. 2016；Harford 2014 采访版）：</p>
+<h2><span class="no">05</span> 校准训练 </h2>
+<p class="lede">校准是可训练的技能，而且便宜，GJP 的新预报员训练口诀 <strong>CHAMP</strong>（Chang et al. 2016；Harford 2014 采访版）：</p>
 <table>
   <thead><tr><th>字母</th><th>口诀</th><th>宏观交易版动作</th></tr></thead>
   <tbody>
     <tr><td>C</td><td>Comparisons 对比参照类</td><td>给概率前先问「历史上同情境发生过几次」（外部视角：倒挂后 12 个月衰退的频率，而不是「这次感觉像要衰退」）</td></tr>
     <tr><td>H</td><td>Historical trends 历史趋势</td><td>先看序列的全史分位（3005 的 64 年图就是干这个的）再谈拐点</td></tr>
-    <tr><td>A</td><td>Averaging 多方取平均</td><td>consensus（SPF/SME/点阵）先入场当基准，再谈你的分歧（预期差的参照系——1006）</td></tr>
-    <tr><td>M</td><td>Mathematical models 数学模型</td><td>能用简单算术就不用形容词（EV/倍数/概率树——4006 的仓位数学）</td></tr>
+    <tr><td>A</td><td>Averaging 多方取平均</td><td>consensus（SPF/SME/点阵）先入场当基准，再谈你的分歧（预期差的参照系，1006）</td></tr>
+    <tr><td>M</td><td>Mathematical models 数学模型</td><td>能用简单算术就不用形容词（EV/倍数/概率树，4006 的仓位数学）</td></tr>
     <tr><td>P</td><td>Predictable biases 可预测的偏差</td><td>04 节清单自查：我这次是不是又在锚定/确认/resulting？</td></tr>
   </tbody>
 </table>
-<div class="note"><strong>补记（防外读文献时的误解）</strong>：Chang et al. 2016 后期年份把训练口诀扩展为「CHAMPS <strong>KNOW</strong>」——其中新增的内容训练模块 <strong>KNOW</strong> 四条（论文 Table 3）：<strong>K</strong>=Know the power players and their preferences（认识关键玩家与其偏好）、<strong>N</strong>=Norms and protocols of institutions（制度与规则）、<strong>O</strong>=Other perspectives should inform forecasts（他方视角应进入预测）、<strong>W</strong>=Wildcards, accidents and black swans（意外与 wildcard）。课程未单列 KNOW 不是遗漏：论文 Table 7 的结果显示，<strong>与准确度改善显著关联的是概率训练（CHAMPS）类原则，政治内容（KNOW）类原则未显示显著关联</strong>；且 KNOW 的 O/W 两条已被本课 A（多方取平均）与「给尾部 20–30% 很便宜」（02 节三条性质③）覆盖。外读文献遇到「CHAMPS KNOW」时，按此表对齐。</div>
-<p><strong>训练作业（一小时，结业工件的一部分）</strong>：答十道校准题——五道已解历史题（例：「2020-03 美股熔断次数？」四选一，答完给自己的正确率一个 0–100% 信心）+五道当期开放题（例：「2026-12 FOMC 会否再加息？」「2026 年底标普高于 7671 的概率？」——每题给概率区间，六个月后自动成为记分卡新行）。每题都算信心的 Brier（答对/答错×你的信心），十题平均分入档案。<strong>校准曲线</strong>：等记分卡攒到 20+ 条，把「我说 60–70% 的那些事实际发生了百分之多少」画成曲线——对角线=完美校准；现在先用 05 节十题画第一版雏形（样本小，只有教学意义，但流程从今天开始真实）。</p>
+<div class="note"><strong>补记（防外读文献时的误解）</strong>：Chang et al. 2016 后期年份把训练口诀扩展为「CHAMPS <strong>KNOW</strong>」，其中新增的内容训练模块 <strong>KNOW</strong> 四条（论文 Table 3）：<strong>K</strong>=Know the power players and their preferences（认识关键玩家与其偏好）、<strong>N</strong>=Norms and protocols of institutions（制度与规则）、<strong>O</strong>=Other perspectives should inform forecasts（他方视角应进入预测）、<strong>W</strong>=Wildcards, accidents and black swans（意外与 wildcard）。课程未单列 KNOW 不是遗漏：论文 Table 7 的结果显示，<strong>与准确度改善显著关联的是概率训练（CHAMPS）类原则，政治内容（KNOW）类原则未显示显著关联</strong>；且 KNOW 的 O/W 两条已被本课 A（多方取平均）与「给尾部 20–30% 很便宜」（02 节三条性质③）覆盖。外读文献遇到「CHAMPS KNOW」时，按此表对齐。</div>
+<p><strong>训练作业（一小时，结业工件的一部分）</strong>：答十道校准题，五道已解历史题（例：「2020-03 美股熔断次数？」四选一，答完给自己的正确率一个 0–100% 信心）+五道当期开放题（例：「2026-12 FOMC 会否再加息？」「2026 年底标普高于 7671 的概率？」，每题给概率区间，六个月后自动成为记分卡新行）。每题都算信心的 Brier（答对/答错×你的信心），十题平均分入档案。<strong>校准曲线</strong>：等记分卡攒到 20+ 条，把「我说 60–70% 的那些事实际发生了百分之多少」画成曲线，对角线=完美校准；现在先用 05 节十题画第一版雏形（样本小，只有教学意义，但流程从今天开始真实）。</p>
 
 <div class="note"><p><strong>校准曲线的分桶规约</strong>（怎么画才不作弊）：</p>
 <ul class="enum">
 <li>①桶宽 <strong>10pp</strong>（0–10/10–20/……/90–100 共十桶），桶的标签=你<strong>报出的概率</strong>，不是结果；</li>
-<li>②每桶必须标 <strong>n</strong>（桶内预测条数）——n 不标，观察频率就没有置信度可言；</li>
+<li>②每桶必须标 <strong>n</strong>（桶内预测条数），n 不标，观察频率就没有置信度可言；</li>
 <li>③<strong>n&lt;3 的桶并入相邻桶</strong>（相邻两桶都 &lt;3 就合并成一个大桶再判；合并后仍无桶可并则只标注「样本不足」，不画点）；</li>
-<li>④每个保留的桶画一个点：纵轴=该桶实际发生频率，对角线=完美校准。20 条样本的分桶示例表（<strong>虚构演示</strong>——20 条样本与发生数均为教学构造，非任何真实记录）：</li>
+<li>④每个保留的桶画一个点：纵轴=该桶实际发生频率，对角线=完美校准。20 条样本的分桶示例表（<strong>虚构演示</strong>，20 条样本与发生数均为教学构造，非任何真实记录）：</li>
 </ul></div>
 <table>
   <thead><tr><th>报出概率桶</th><th class="num">n</th><th class="num">实际发生</th><th>分桶处理</th><th>画点（观察频率）</th></tr></thead>
   <tbody>
     <tr><td>0–10%</td><td class="num">3</td><td class="num">0</td><td>独立成桶</td><td>0%（n=3）</td></tr>
-    <tr><td>10–20%</td><td class="num">2</td><td class="num">1</td><td>n&lt;3，并入 0–10</td><td>——</td></tr>
+    <tr><td>10–20%</td><td class="num">2</td><td class="num">1</td><td>n&lt;3，并入 0–10</td><td>，</td></tr>
     <tr><td>合并桶 0–20%</td><td class="num">5</td><td class="num">1</td><td>合并后画点</td><td><strong>20%</strong>（n=5）</td></tr>
     <tr><td>20–30%</td><td class="num">4</td><td class="num">1</td><td>独立成桶</td><td><strong>25%</strong>（n=4）</td></tr>
     <tr><td>30–40%</td><td class="num">3</td><td class="num">1</td><td>独立成桶</td><td><strong>33%</strong>（n=3）</td></tr>
     <tr><td>40–50%</td><td class="num">4</td><td class="num">2</td><td>独立成桶</td><td><strong>50%</strong>（n=4）</td></tr>
-    <tr><td>50–60%</td><td class="num">2</td><td class="num">1</td><td>n&lt;3，与 60–70 合并</td><td>——</td></tr>
-    <tr><td>60–70%</td><td class="num">2</td><td class="num">1</td><td>n&lt;3，与 50–60 合并</td><td>——</td></tr>
+    <tr><td>50–60%</td><td class="num">2</td><td class="num">1</td><td>n&lt;3，与 60–70 合并</td><td>，</td></tr>
+    <tr><td>60–70%</td><td class="num">2</td><td class="num">1</td><td>n&lt;3，与 50–60 合并</td><td>，</td></tr>
     <tr><td>合并桶 50–70%</td><td class="num">4</td><td class="num">2</td><td>合并后画点</td><td><strong>50%</strong>（n=4）</td></tr>
-    <tr><td>70–100%</td><td class="num">0</td><td class="num">——</td><td>无记录</td><td>不画点</td></tr>
+    <tr><td>70–100%</td><td class="num">0</td><td class="num">，</td><td>无记录</td><td>不画点</td></tr>
   </tbody>
 </table>
-<p><strong>示例表的读法</strong>（虚构演示）：合计 20 条、发生 7 条。低桶观察 0%、中段 25%/33% 贴着对角线——这区报得准；合并桶 50–70% 观察 50%&lt;报出区间——报六成的事只发生一半，校准动作是把这一带的报价下调到 50–55%。这就是分桶的全部用途：<strong>曲线不评价你对不对，只告诉你哪一段的报价系统性地偏了</strong>。样本到 50 条前，任何一桶的偏差都可能是运气——先攒 n，再谈校准。</p>
+<p><strong>示例表的读法</strong>（虚构演示）：合计 20 条、发生 7 条。低桶观察 0%、中段 25%/33% 贴着对角线，这区报得准；合并桶 50–70% 观察 50%&lt;报出区间，报六成的事只发生一半，校准动作是把这一带的报价下调到 50–55%。这就是分桶的全部用途：<strong>曲线不评价你对不对，只告诉你哪一段的报价系统性地偏了</strong>。样本到 50 条前，任何一桶的偏差都可能是运气，先攒 n，再谈校准。</p>
 
 <div class="note"><p><strong>记分卡首版工件规格（M6.3）</strong>：</p>
 <ul class="enum">
 <li>①已到期预测<strong>全量</strong>结算（Brier+归因一句）；</li>
 <li>②校准训练十题成绩；</li>
 <li>③未到期行清单（原文+概率+到期日）；</li>
-<li>④修改留痕记录（如有）。滚动目标：毕业时已到期行 ≥20 条——你的快照预测行（每次结业课 3–5 条）+周报首期声明+校准训练题，样本池从今天起自然滚动，不必凑数（凑出来的预测没有归因价值）。</li>
+<li>④修改留痕记录（如有）。滚动目标：毕业时已到期行 ≥20 条，你的快照预测行（每次结业课 3–5 条）+周报首期声明+校准训练题，样本池从今天起自然滚动，不必凑数（凑出来的预测没有归因价值）。</li>
 </ul></div>
 
-<h2><span class="no">06</span>训练场（微重现 6002+结算应用） <span class="t time-chip">≈17 min</span></h2>
+<h2><span class="no">06</span> 训练场 </h2>
 <p class="lede">七道题考「打分与归因的应用」。第 1 题微重现上一课（6002），第 7 题为中国镜像题。隔天重练条款：今日标记错题，明日只重做错题+第 1 题。</p>
 
 <quiz-block>
@@ -348,7 +354,7 @@
 </script>
 </quiz-block>
 
-<div class="note">训练场判分（七题对照）：全对——隔天重练仍达标，进入动笔题（记分卡首版）；错 1–2 题——回对应节（第 1 题→6002 课 03 节；第 2/3 题→本课 02/03 节+例 1；第 4 题→本课 04 节+先猜 1；第 5 题→本课 04 节；第 6 题→本课 05 节；第 7 题→本课 03 节中国镜像行），隔天重练；错 ≥3 题——重读 02–05 节（公式表+样例卡+三层表+CHAMP 表），再回本课。</div>
+<div class="note">训练场判分（七题对照）：全对，隔天重练仍达标，进入动笔题（记分卡首版）；错 1–2 题，回对应节（第 1 题→6002 课 03 节；第 2/3 题→本课 02/03 节+例 1；第 4 题→本课 04 节+先猜 1；第 5 题→本课 04 节；第 6 题→本课 05 节；第 7 题→本课 03 节中国镜像行），隔天重练；错 ≥3 题，重读 02–05 节（公式表+样例卡+三层表+CHAMP 表），再回本课。</div>
 
 <recall-block>
 <script type="application/json">
@@ -364,18 +370,18 @@
 
 <p><strong>本课带走四样东西：</strong></p>
 <ul class="checklist">
-  <li><strong>Brier 结算</strong>——(1−p)²/p² 两条抛物线：越自信、错越贵（平方级）；50%=0.25 的安全下限与零信息</li>
-  <li><strong>三层定位</strong>（记分卡版：读数/机制/校准；与 5003 假设生命周期的判读/概率/执行三分互为姊妹表）——分数是体温计，归因是诊断书，每条错单（和对单）都有层</li>
-  <li><strong>偏差清单与防御</strong>——resulting/锚定/确认偏误，每条配写作层制度对冲（公开结算/小幅更新留痕/不利证据栏）</li>
-  <li><strong>CHAMP 一小时</strong>——C 参照类/H 全史/A 共识/M 算术/P 自查：<1h 训练改善 Brier 6–11% 的流程内核</li>
+  <li><strong>Brier 结算</strong>，(1−p)²/p² 两条抛物线：越自信、错越贵（平方级）；50%=0.25 的安全下限与零信息</li>
+  <li><strong>三层定位</strong>（记分卡版：读数/机制/校准；与 5003 假设生命周期的判读/概率/执行三分互为姊妹表），分数是体温计，归因是诊断书，每条错单（和对单）都有层</li>
+  <li><strong>偏差清单与防御</strong>，resulting/锚定/确认偏误，每条配写作层制度对冲（公开结算/小幅更新留痕/不利证据栏）</li>
+  <li><strong>CHAMP 一小时</strong>，C 参照类/H 全史/A 共识/M 算术/P 自查：<1h 训练改善 Brier 6–11% 的流程内核</li>
 </ul>
 
 <p><strong>课外作业：</strong></p>
-<p>（1）<strong>必做（本周）</strong>：完成记分卡首版（动笔题四件）并提交教练——M6.3 点亮条件。</p>
-<p>（2）<strong>课后探索（可选）</strong>：读 Good Judgment 官网的 Superforecasters Track Record 页（免费），对照它的表述与本课 01 节的证据链——注意机构如何报告自己的准确度（团队 vs 对照组、赛事口径、无 cherry-picking），这本身就是一节「机构怎么读」课（5002 的记分卡版）。</p>
-<p>（3）<strong>日常习惯（永久生效）</strong>：预测行到期即结算（周五例行加五分钟）；概率修改留痕（旧值→新值+触发理由）；每季度重画校准曲线——毕业不是终点，是样本量开始够用的起点。</p>
+<p>（1）<strong>必做（本周）</strong>：完成记分卡首版（动笔题四件）并提交教练，M6.3 点亮条件。</p>
+<p>（2）<strong>课后探索（可选）</strong>：读 Good Judgment 官网的 Superforecasters Track Record 页（免费），对照它的表述与本课 01 节的证据链，注意机构如何报告自己的准确度（团队 vs 对照组、赛事口径、无 cherry-picking），这本身就是一节「机构怎么读」课（5002 的记分卡版）。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：预测行到期即结算（周五例行加五分钟）；概率修改留痕（旧值→新值+触发理由）；每季度重画校准曲线，毕业不是终点，是样本量开始够用的起点。</p>
 
-<div class="ask-agent">我是你的教练。批改记分卡只看四处：有没有挑着结算（对错全结才算数）；归因有没有分层（「运气不好」和「我对了」同罪）；校准训练有没有诚实给信心（全 90% 的卷子退回重答）；新三条预测行有没有区间与到期日。Brier 本身我不评判高低——你的分数只跟你自己比，样本会长大，曲线会说话。下一课 6004：最后一课，费曼教学+跨阶段毕业考——把你学到的东西讲给外行听，讲得懂才是真的懂。</div>
+<div class="ask-agent">我是你的教练。批改记分卡只看四处：有没有挑着结算（对错全结才算数）；归因有没有分层（「运气不好」和「我对了」同罪）；校准训练有没有诚实给信心（全 90% 的卷子退回重答）；新三条预测行有没有区间与到期日。Brier 本身我不评判高低，你的分数只跟你自己比，样本会长大，曲线会说话。下一课 6004：最后一课，费曼教学+跨阶段毕业考，把你学到的东西讲给外行听，讲得懂才是真的懂。</div>
 
 <footer class="course">
   <div class="nav">
@@ -386,8 +392,8 @@
     <a href="6004-feynman-graduation.html">下一课 6004 →</a>
     </div>
   <p><strong>主资源（本课 grounded on）</strong>：Chang, Chen, Mellers &amp; Tetlock (2016)《Developing expert political judgment》<a href="https://www.sas.upenn.edu/~baron/journal/16/16511/jdm16511.html">JDM 11(5)</a>（CHAMP 定义与「&lt;1h 训练改善 Brier 6–11%」的一手出处）；Atanasov, Witkowski, Ungar, Mellers &amp; Tetlock (2020)《Small steps to accuracy》<a href="https://doi.org/10.1016/j.obhdp.2020.02.001">OBHDP 160</a>（小幅更新者更准，40 万+条预测）；Brier (1950)《Verification of forecasts expressed in terms of probability》<a href="https://doi.org/10.1175/1520-0493(1950)078&lt;0001:VOFEIT&gt;2.0.CO;2">Monthly Weather Review 78(1)</a>；Good Judgment <a href="https://goodjudgment.com/resources/the-superforecasters-track-record/">Track Record</a>（团队比对照组准 50%+ 的官方口径）；SEP 五份原件（federalreserve.gov，施工日核验）+FRED DFEDTARU；课内链：1007（决策日志启动）、4006（概率区间）、5004（八件套⑧）、6001/6002（写作仪器）。</p>
-  <div class="citations"><strong>书源登记（本课内化的材料）</strong>：①Annie Duke《Thinking in Bets》(Portfolio, 2018)——resulting 的命名与「决策质量×运气=结果」的分解框架（先猜 1/04 节偏差清单）；②Michael Mauboussin《Think Twice》(Harvard Business Press, 2009)——决策日志传统（决策时点记录判断/理由/预期，事后对照，把「当时怎么想」与「结果如何」分开记账——01 节；其 Credit Suisse 2013 笔记为外部视角框架，非决策日志出处，不予混引——施工核验裁定）；③Kahneman &amp; Klein (2009)《Conditions for Intuitive Expertise: A Failure to Disagree》<a href="https://psycnet.apa.org/doiLanding?doi=10.1037/a0016755">American Psychologist 64(6)</a>——低效度环境直觉不可靠（01 节图 1 的理论注）；④Tetlock &amp; Gardner《Superforecasting》(2015)——GJP 叙事主干与「70–30 先于 90–10」的报价纪律（05 节；GJP 数字均以 Chang et al. 2016 论文为准）。
-<strong>数据口径（01 节两图+例题，2026-09-30 施工核验）</strong>：SEP 点阵中值=2021-09（2022 末 0.3%）、2021-12（0.9%，即 0.875）、2022-12（2023 末 5.1%，即 5.125）、2023-12（2024 末 4.6%，即 4.625）、2024-12（2025 末 3.9%，即 3.875），出处为 federalreserve.gov 五份 SEP 原件（链接随图注）；实际落地（年末目标区间中点）=2022 末 4.375/2023 末 5.375/2024 末 4.375/2025 末 3.625（FRED DFEDTARU 上限 4.50/5.50/4.50/3.75 推算+2025-12-10 FOMC 声明佐证）；2024-09-18 FOMC 案例（期货 63%/共识 25%/落地 50bp）=承 1006 课波次 2 核验档案；密歇根预期与 2021 通胀低估=6002 课 05 节图 2 同源（FRED MICH/CPIAUCNS 错位配对自算）。样例记分卡第 1–3 行为真实历史事件构造的示范行（非学员记录），第 4–5 行为课程示例预测行（未到期）——示范行的归因句为课程方法论模板。中国镜像（上证综指 2022-12-30 收 3089.26→2023-12-29 收 2974.94=−3.7%，公开行情自算；2023 年初卖方年度策略「复苏交易」主基调=当期公开报道复盘口径）与 KNOW 口诀四条及 Table 7 效果分层（Chang et al. 2016 原文，journal.sjdm.org 开放获取）均于 2026-10-01 施工核验。诚实条款：记分卡不评价预测方向的对错，只评价概率的校准——课程不荐仓位，一切前瞻表述用概率区间。</div>
+  <div class="citations"><strong>书源登记（本课内化的材料）</strong>：①Annie Duke《Thinking in Bets》(Portfolio, 2018)，resulting 的命名与「决策质量×运气=结果」的分解框架（先猜 1/04 节偏差清单）；②Michael Mauboussin《Think Twice》(Harvard Business Press, 2009)，决策日志传统（决策时点记录判断/理由/预期，事后对照，把「当时怎么想」与「结果如何」分开记账，01 节；其 Credit Suisse 2013 笔记为外部视角框架，非决策日志出处，不予混引，施工核验裁定）；③Kahneman &amp; Klein (2009)《Conditions for Intuitive Expertise: A Failure to Disagree》<a href="https://psycnet.apa.org/doiLanding?doi=10.1037/a0016755">American Psychologist 64(6)</a>，低效度环境直觉不可靠（01 节图 1 的理论注）；④Tetlock &amp; Gardner《Superforecasting》(2015)，GJP 叙事主干与「70–30 先于 90–10」的报价纪律（05 节；GJP 数字均以 Chang et al. 2016 论文为准）。
+<strong>数据口径（01 节两图+例题，2026-09-30 施工核验）</strong>：SEP 点阵中值=2021-09（2022 末 0.3%）、2021-12（0.9%，即 0.875）、2022-12（2023 末 5.1%，即 5.125）、2023-12（2024 末 4.6%，即 4.625）、2024-12（2025 末 3.9%，即 3.875），出处为 federalreserve.gov 五份 SEP 原件（链接随图注）；实际落地（年末目标区间中点）=2022 末 4.375/2023 末 5.375/2024 末 4.375/2025 末 3.625（FRED DFEDTARU 上限 4.50/5.50/4.50/3.75 推算+2025-12-10 FOMC 声明佐证）；2024-09-18 FOMC 案例（期货 63%/共识 25%/落地 50bp）=承 1006 课波次 2 核验档案；密歇根预期与 2021 通胀低估=6002 课 05 节图 2 同源（FRED MICH/CPIAUCNS 错位配对自算）。样例记分卡第 1–3 行为真实历史事件构造的示范行（非学员记录），第 4–5 行为课程示例预测行（未到期），示范行的归因句为课程方法论模板。中国镜像（上证综指 2022-12-30 收 3089.26→2023-12-29 收 2974.94=−3.7%，公开行情自算；2023 年初卖方年度策略「复苏交易」主基调=当期公开报道复盘口径）与 KNOW 口诀四条及 Table 7 效果分层（Chang et al. 2016 原文，journal.sjdm.org 开放获取）均于 2026-10-01 施工核验。诚实条款：记分卡不评价预测方向的对错，只评价概率的校准，课程不荐仓位，一切前瞻表述用概率区间。</div>
 </footer>
 
 </div>

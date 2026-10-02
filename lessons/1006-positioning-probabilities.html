@@ -28,10 +28,10 @@
   <ol>
     <li>开课先猜 <span class="t">≈3 min</span></li>
     <li>三类证据地图 <span class="t">≈6 min</span></li>
-    <li>FedWatch：隐含概率、期望 bp 与三个坑 <span class="t">≈12 min</span></li>
-    <li>worked example：2024-09-18 的 50bp <span class="t">≈12 min</span></li>
-    <li>COT：时滞、换月与季节性 <span class="t">≈10 min</span></li>
-    <li>SME 与 SOURCE TYPE 总复习 <span class="t">≈7 min</span></li>
+    <li>FedWatch <span class="t">≈12 min</span></li>
+    <li>实例演算 <span class="t">≈12 min</span></li>
+    <li>COT <span class="t">≈10 min</span></li>
+    <li>证据总复习 <span class="t">≈7 min</span></li>
     <li>训练场 <span class="t">≈17 min</span></li>
     <li>小结与课外作业 <span class="t">≈3 min</span></li>
   </ol>
@@ -78,7 +78,7 @@
 <figcaption><strong>三类「市场怎么说」的证据地图（教学示意图）</strong>：Market Price（价格反推，实时，含补偿与技术因素）、Survey（调查主体，低频，是预期不是承诺）、Positioning（真金白银的仓位，周频+三天时滞，是拥挤度不是方向）。三者的<strong>裂缝</strong>（价与共识背离、价与仓位背离）才是增量信息——任何单一类的「市场一致看多」都是不完整句。</figcaption>
 </figure>
 
-<h2><span class="no">02</span>FedWatch：隐含概率、期望 bp 与三个坑 <span class="time-chip">≈12 min</span></h2>
+<h2><span class="no">02</span> FedWatch  <span class="time-chip">≈12 min</span></h2>
 <p class="lede"><a href="https://www.cmegroup.com/markets/interest-rates/cme-fedwatch-tool.html">CME FedWatch</a> 是 P0 以来我们反复引用的工具——现在拆开它。原理：联邦基金期货的价格锁定市场对未来会议后平均政策利率的定价；FedWatch 把价格换算成「各加息/降息幅度的概率分布」。</p>
 <p><strong>正确用法</strong>：</p>
 <ul class="enum">
@@ -98,10 +98,10 @@
 <p>联邦基金期货的报价规则是「100 − 利率」：某月合约价 96.12 ⇒ 隐含当月平均政策利率 = 100 − 96.12 = <strong>3.88%</strong>。与当前有效联邦基金利率 3.63%（2026-08，<a href="https://fred.stlouisfed.org/series/FEDFUNDS">FRED FEDFUNDS</a>）对照：<strong>期望变动 = 3.88 − 3.63 = +25bp</strong>——一句话「市场定价加息 25bp（全概率）」。再换一档：合约价 96.00 ⇒ 隐含 4.00% ⇒ 期望 +37bp ≈ 25bp 全概率 + 再加一次 25bp 的概率约一半（37≈25×1.5）。从业者嘴里的「市场定价 25 个 bp」就是这个换算——<strong>概率不过是期望 bp 除以步长的另一种写法</strong>；会议横跨月底时月内还要按天数加权（此处从简）。先算期望 bp、再看概率分布，你对「市场到底押了多少」的手感会精确一档。</p>
 </div>
 
-<div class="note"><strong>中国镜像</strong>：FedWatch 式「概率读数」在中国缺公开零售工具——政策预期改读「价与量」两个明示信号：LPR 与 7 天逆回购利率报价（价）、公开市场操作净投放/回笼（量）（免费源：人民银行官网每日公告，免费）；历史读数：2024-09-24 国新办发布会宣布降准 0.5 个百分点（释放长期流动性约 1 万亿元）、7 天逆回购利率由 1.7% 降至 1.5%——中国版「政策脉冲」的一次性大读数，量价同框。</div>
+<div class="note"><strong>中国镜像</strong>：FedWatch 式「概率读数」在中国缺公开零售工具，政策预期改读「价与量」两个明示信号：LPR 与 7 天逆回购利率报价（价）、公开市场操作净投放/回笼（量）（免费源：人民银行官网每日公告，免费）；历史读数：2024-09-24 国新办发布会宣布降准 0.5 个百分点（释放长期流动性约 1 万亿元）、7 天逆回购利率由 1.7% 降至 1.5%，中国版「政策脉冲」的一次性大读数，量价同框。</div>
 
-<h2><span class="no">03</span>worked example：2024-09-18 的 50bp <span class="time-chip">≈12 min</span></h2>
-<p class="lede">一次教科书级的三类证据合演——数据全部官方/媒体一手核验：</p>
+<h2><span class="no">03</span> 实例演算 <span class="time-chip">≈12 min</span></h2>
+<p class="lede">一次教科书级的三类证据合演，数据全部官方/媒体一手核验：</p>
 
 <div class="example">
 <p class="ex-title">当市场、共识与联储三方不一致时（2024-09-18 FOMC，全程真实数据）</p>
@@ -115,48 +115,48 @@
 </table>
 <p>逐层读：</p>
 <ul class="enum">
-<li>①<strong>期货与共识本身就裂开</strong>（63% 押 50bp vs 分析师中值 25bp）——这是会前一周 WSJ/FT 报道引发重定价的残留，裂缝=不确定性；</li>
+<li>①<strong>期货与共识本身就裂开</strong>（63% 押 50bp vs 分析师中值 25bp），这是会前一周 WSJ/FT 报道引发重定价的残留，裂缝=不确定性；</li>
 <li>②落地 50bp：对期货是「大概率兑现」（63% 那边），对共识是「鹰派意外」（比中值大）；</li>
-<li>③<strong>股市当日收跌 −0.29%</strong>——降息落地为什么跌？因为定价的焦点不在「这次降多少」而在「接下来降多快」：鲍威尔记者会压「连降 50bp 不可外推」的预期+点阵图仅示年内再 50bp，<strong>前置了的事实被前瞻指引对冲</strong>；</li>
-<li>④次日 +1.70% 创新高——当「不急」被消化，风险偏好回归。一句话总结：<strong>事件的方向由概率分布定，行情的大小由仓位与叙事定，两者不同层。</strong></li>
+<li>③<strong>股市当日收跌 −0.29%</strong>，降息落地为什么跌？因为定价的焦点不在「这次降多少」而在「接下来降多快」：鲍威尔记者会压「连降 50bp 不可外推」的预期+点阵图仅示年内再 50bp，<strong>前置了的事实被前瞻指引对冲</strong>；</li>
+<li>④次日 +1.70% 创新高，当「不急」被消化，风险偏好回归。一句话总结：<strong>事件的方向由概率分布定，行情的大小由仓位与叙事定，两者不同层。</strong></li>
 </ul>
 </div>
 
 <chart-block>
 <script type="application/json">{"type":"line","width":720,"yDomain":[5200,6000],"series":[{"name":"标普 500 收盘","data":[["2024-08-15",5543],["2024-08-16",5554],["2024-08-19",5608],["2024-08-20",5597],["2024-08-21",5621],["2024-08-22",5571],["2024-08-23",5635],["2024-08-26",5617],["2024-08-27",5626],["2024-08-28",5592],["2024-08-29",5592],["2024-08-30",5648],["2024-09-03",5529],["2024-09-04",5520],["2024-09-05",5503],["2024-09-06",5408],["2024-09-09",5471],["2024-09-10",5496],["2024-09-11",5554],["2024-09-12",5596],["2024-09-13",5626],["2024-09-16",5633],["2024-09-17",5635],["2024-09-18",5618],["2024-09-19",5714],["2024-09-20",5703],["2024-09-23",5719],["2024-09-24",5733],["2024-09-25",5722],["2024-09-26",5745],["2024-09-27",5738],["2024-09-30",5762],["2024-10-01",5709],["2024-10-02",5710],["2024-10-03",5700],["2024-10-04",5751],["2024-10-07",5696],["2024-10-08",5751],["2024-10-09",5792],["2024-10-10",5780],["2024-10-11",5815],["2024-10-14",5860],["2024-10-15",5815]]}],"annotations":[{"date":"2024-09-18","v":5618.26,"label":"9-18 降 50bp 落地，标普收跌 −0.29%","color":"#d33a2c"},{"date":"2024-09-19","v":5713.64,"label":"9-19 +1.70% 创新高","color":"#d33a2c"}],"xTicks":[{"date":"2024-08-15","label":"8月中"},{"date":"2024-09-02","label":"9月初"},{"date":"2024-09-18","label":"FOMC"},{"date":"2024-10-01","label":"10月初"}],"asOf":"2024-10-15","source":"FRED SP500","aria":"标普500 2024年8-10月 FOMC 案例窗口"}</script>
-<figcaption><strong>案例窗口：标普 500 日收盘，2024-08-15 至 2024-10-15</strong>：<a href="https://fred.stlouisfed.org/series/SP500">FRED SP500</a>。红点=9-18（降 50bp 落地日，收跌 −0.29%）与 9-19（+1.70% 收盘新高）。会前定价与点阵图细节来源：FOMC <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20240918a.htm">官方声明</a>、<a href="https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20240918.pdf">记者会逐字稿</a>、CNBC 当日报道（FedWatch 63%/37%）。看点：单日方向几乎不可预测，但「落地日不涨反跌」的机制（前置兑现+前瞻指引）完全可解释——本课教的不是猜当日涨跌，是读懂数据结构。</figcaption>
+<figcaption><strong>案例窗口：标普 500 日收盘，2024-08-15 至 2024-10-15</strong>：<a href="https://fred.stlouisfed.org/series/SP500">FRED SP500</a>。红点=9-18（降 50bp 落地日，收跌 −0.29%）与 9-19（+1.70% 收盘新高）。会前定价与点阵图细节来源：FOMC <a href="https://www.federalreserve.gov/newsevents/pressreleases/monetary20240918a.htm">官方声明</a>、<a href="https://www.federalreserve.gov/mediacenter/files/FOMCpresconf20240918.pdf">记者会逐字稿</a>、CNBC 当日报道（FedWatch 63%/37%）。看点：单日方向几乎不可预测，但「落地日不涨反跌」的机制（前置兑现+前瞻指引）完全可解释，本课教的不是猜当日涨跌，是读懂数据结构。</figcaption>
 </chart-block>
 
-<h2><span class="no">04</span>COT：时滞、换月与季节性 <span class="time-chip">≈10 min</span></h2>
+<h2><span class="no">04</span> COT  <span class="time-chip">≈10 min</span></h2>
 <p class="lede">CFTC 的 <a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm">COT 持仓报告</a>是杠杆资金仓位的主读数。先看当下真实的图（10 年期国债期货投机净持仓，官方 API 取数）：</p>
 
 <chart-block>
 <script type="application/json">{"type":"line","width":720,"yDomain":[-120,0],"fmt":"wan","series":[{"name":"10Y 国债期货非商业净持仓（万份）","data":[["2024-09-03",-100.3],["2024-09-10",-102.2],["2024-09-17",-109.4],["2024-09-24",-102.5],["2024-10-01",-114.4],["2024-10-08",-96],["2024-10-15",-86.5],["2024-10-22",-84.8],["2024-10-29",-90.1],["2024-11-05",-81.8],["2024-11-12",-81.6],["2024-11-19",-90.7],["2024-11-26",-92.7],["2024-12-03",-89.2],["2024-12-10",-87.6],["2024-12-17",-73.3],["2024-12-24",-59.1],["2024-12-31",-65.4],["2025-01-07",-67.3],["2025-01-14",-56.8],["2025-01-21",-58],["2025-01-28",-70.1],["2025-02-04",-70.8],["2025-02-11",-75.1],["2025-02-18",-71],["2025-02-25",-70],["2025-03-04",-71.2],["2025-03-11",-73.7],["2025-03-18",-88.1],["2025-03-25",-81],["2025-04-01",-86.3],["2025-04-08",-107.8],["2025-04-15",-93.8],["2025-04-22",-90.6],["2025-04-29",-87.2],["2025-05-06",-95.3],["2025-05-13",-89.1],["2025-05-20",-85.1],["2025-05-27",-77],["2025-06-03",-70.5],["2025-06-10",-72.4],["2025-06-17",-75.3],["2025-06-24",-68],["2025-07-01",-78.4],["2025-07-08",-84.1],["2025-07-15",-77.2],["2025-07-22",-75],["2025-07-29",-89.6],["2025-08-05",-96],["2025-08-12",-94.2],["2025-08-19",-94.6],["2025-08-26",-88.4],["2025-09-02",-86.9],["2025-09-09",-85.8],["2025-09-16",-81.9],["2025-09-23",-84.4],["2025-09-30",-74],["2025-10-07",-78.8],["2025-10-14",-83.1],["2025-10-21",-84.7],["2025-10-28",-91.1],["2025-11-04",-85.9],["2025-11-11",-82.1],["2025-11-18",-75.4],["2025-11-25",-78.2],["2025-12-02",-73.7],["2025-12-09",-68.7],["2025-12-16",-67],["2025-12-23",-74.2],["2025-12-30",-94],["2026-01-06",-91.6],["2026-01-13",-87.1],["2026-01-20",-65.6],["2026-01-27",-72.6],["2026-02-03",-72.9],["2026-02-10",-81.3],["2026-02-17",-87.8],["2026-02-24",-77.4],["2026-03-03",-65.5],["2026-03-10",-53.5],["2026-03-17",-59.8],["2026-03-24",-64.2],["2026-03-31",-78.4],["2026-04-07",-82.4],["2026-04-14",-80.1],["2026-04-21",-79.1],["2026-04-28",-83.9],["2026-05-05",-81.5],["2026-05-12",-78.1],["2026-05-19",-84.8],["2026-05-26",-78.8],["2026-06-02",-83],["2026-06-09",-86.4],["2026-06-16",-91.1],["2026-06-23",-83.5],["2026-06-30",-80.9],["2026-07-07",-81.4],["2026-07-14",-83.2],["2026-07-21",-88],["2026-07-28",-87.6],["2026-08-04",-97.9],["2026-08-11",-91.5],["2026-08-18",-94.7],["2026-08-25",-83.9],["2026-09-01",-91],["2026-09-08",-83.5],["2026-09-15",-82.1],["2026-09-22",-81.2]]}],"annotations":[{"date":"2024-10-01","v":-114.4,"label":"2024-10 最深 −114.4万"},{"date":"2026-03-10","v":-53.5,"label":"2026-03 收窄 −53.5万"},{"date":"2026-09-22","v":-81.2,"label":"现在 −81.2万"}],"asOf":"2026-09-22","source":"CFTC Socrata（原图几何反演核对）","aria":"10年期国债期货非商业净持仓"}</script>
-<figcaption><strong>美国 10 年期国债期货非商业（投机）净持仓，2024-09 至 2026-09-22（周频，千份合约）</strong>：CFTC 官方 Socrata 数据（市场名「UST 10Y NOTE」）自行计算（非商业多单−空单）。看点：两年全程净空，最深 2024-10 的 −114.4 万手，2026-03 收窄到 −53.5 万手，当前 −81.2 万手——<strong>投机资金系统性押注/对冲长端利率上行（或做空债券）</strong>，且空仓再度加码。读法（先猜 2）：这不是「利率必然上行」的信号，是「若利多债券的数据落地，轧空燃料充足」的拥挤度读数——与 1004 的曲线状态（熊陡后）拼在一起，仓位结构是波动率的前置条件。</figcaption>
+<figcaption><strong>美国 10 年期国债期货非商业（投机）净持仓，2024-09 至 2026-09-22（周频，千份合约）</strong>：CFTC 官方 Socrata 数据（市场名「UST 10Y NOTE」）自行计算（非商业多单−空单）。看点：两年全程净空，最深 2024-10 的 −114.4 万手，2026-03 收窄到 −53.5 万手，当前 −81.2 万手，<strong>投机资金系统性押注/对冲长端利率上行（或做空债券）</strong>，且空仓再度加码。读法（先猜 2）：这不是「利率必然上行」的信号，是「若利多债券的数据落地，轧空燃料充足」的拥挤度读数，与 1004 的曲线状态（熊陡后）拼在一起，仓位结构是波动率的前置条件。</figcaption>
 </chart-block>
 
 <p><strong>读 COT 的三道处理工序</strong>（不处理就用的原始数字没有意义）：</p>
 <ul class="enum">
-<li>①时滞——周二采集、周五 15:30 ET 发布（官方原文），你的读数永远滞后市场三天，周内行情已经把变化计价；</li>
-<li>②换月——期货到期移仓时，仓位在合约间腾挪，单合约读数会假跳变，用全合约汇总口径（如本图 all contracts）；</li>
-<li>③季节性——部分品种持仓有固定季节模式（农产品最重），跨年比较先做季节调整。三道工序之后，「percentile/z-score」才有意义（1002 分位纪律的 COT 版：报分位必报窗口与处理方式）。</li>
+<li>①时滞，周二采集、周五 15:30 ET 发布（官方原文），你的读数永远滞后市场三天，周内行情已经把变化计价；</li>
+<li>②换月，期货到期移仓时，仓位在合约间腾挪，单合约读数会假跳变，用全合约汇总口径（如本图 all contracts）；</li>
+<li>③季节性，部分品种持仓有固定季节模式（农产品最重），跨年比较先做季节调整。三道工序之后，「percentile/z-score」才有意义（1002 分位纪律的 COT 版：报分位必报窗口与处理方式）。</li>
 </ul>
 
-<h2><span class="no">05</span>SME 与 SOURCE TYPE 总复习 <span class="time-chip">≈7 min</span></h2>
-<p class="lede">第三类证据是「问出来的共识」。纽约联储 <a href="https://www.newyorkfed.org/markets/market-intelligence/survey-of-market-expectations">Survey of Market Expectations</a>——官方页原文：「Starting in 2025, the two surveys were merged into the Survey of Market Expectations」（前身为 2002–2024 的 Survey of Primary Dealers 与 2014–2024 的 Survey of Market Participants）。它向一级交易商与买方机构问卷（FOMC 会前约两周发卷、纪要发布约三周后公布），产出专业者对政策路径与关键变量的中值与分布。</p>
-<p>用法定位：SME=「离联储最近的专业人群」的预期——2024-09 案例里「分析师共识 25bp」的那一层的机构版。它比 FedWatch 慢一个月，但给出分布与理由（价格给不出理由）。共识的正确用途不是预测（共识的预测准确率平庸是常态），而是：<strong>市场意外的度量衡</strong>——没有共识值，你就无法定义「超预期」。</p>
+<h2><span class="no">05</span> 证据总复习 <span class="time-chip">≈7 min</span></h2>
+<p class="lede">第三类证据是「问出来的共识」。纽约联储 <a href="https://www.newyorkfed.org/markets/market-intelligence/survey-of-market-expectations">Survey of Market Expectations</a>，官方页原文：「Starting in 2025, the two surveys were merged into the Survey of Market Expectations」（前身为 2002–2024 的 Survey of Primary Dealers 与 2014–2024 的 Survey of Market Participants）。它向一级交易商与买方机构问卷（FOMC 会前约两周发卷、纪要发布约三周后公布），产出专业者对政策路径与关键变量的中值与分布。</p>
+<p>用法定位：SME=「离联储最近的专业人群」的预期，2024-09 案例里「分析师共识 25bp」的那一层的机构版。它比 FedWatch 慢一个月，但给出分布与理由（价格给不出理由）。共识的正确用途不是预测（共识的预测准确率平庸是常态），而是：<strong>市场意外的度量衡</strong>，没有共识值，你就无法定义「超预期」。</p>
 
 <table>
   <thead>
     <tr><th>SOURCE TYPE 复习</th><th>本课三证据</th><th>一句话语义</th></tr>
   </thead>
   <tbody>
-    <tr><td>Market Price</td><td>FedWatch、COT 的价格本身</td><td>价格=预测+补偿+技术因素——最实时，成分最杂</td></tr>
-    <tr><td>Survey</td><td>SME/SPF/蓝筹</td><td>主体的预期与理由——慢，但有分布与叙事</td></tr>
-    <tr><td>（对照）Measurement</td><td>1001 的 CPI/NFP</td><td>数据本身——滞后、会修订、是锚不是预期</td></tr>
+    <tr><td>Market Price</td><td>FedWatch、COT 的价格本身</td><td>价格=预测+补偿+技术因素，最实时，成分最杂</td></tr>
+    <tr><td>Survey</td><td>SME/SPF/蓝筹</td><td>主体的预期与理由，慢，但有分布与叙事</td></tr>
+    <tr><td>（对照）Measurement</td><td>1001 的 CPI/NFP</td><td>数据本身，滞后、会修订、是锚不是预期</td></tr>
   </tbody>
 </table>
-<div class="note">铁句复习（参考页 0001 军规的同源版）：<strong>数字 ≠ 数据 ≠ 模型 ≠ 市场预期 ≠ 事实</strong>。本课三类证据分别站在「预期」「主体」「仓位」三个楼层——把三层读数混在一句「市场认为」里，是研报最常见的 sloppy 写法。</div>
+<div class="note">铁句复习（参考页 0001 军规的同源版）：<strong>数字 ≠ 数据 ≠ 模型 ≠ 市场预期 ≠ 事实</strong>。本课三类证据分别站在「预期」「主体」「仓位」三个楼层，把三层读数混在一句「市场认为」里，是研报最常见的 sloppy 写法。</div>
 
 <h2><span class="no">06</span>训练场 <span class="time-chip">≈17 min</span></h2>
 <p class="lede">检索练习：先不看上文凭记忆作答。第 1 题微重现上一课（1005），第 4 题看图。目标：隔天回来再练还能对。</p>
@@ -245,7 +245,7 @@
 </script>
 </quiz-block>
 
-<div class="note">训练场判分（六题对照）：全对——隔天重练仍达标，M1.3 三部曲（恒等式+形态与利差族+仓位概率）课内证据齐了；错 1–2 题——错题回对应节（第 1 题→1005 课 02 节+本课 02 节；第 2 题→02 节三坑与期望 bp 例块；第 3 题→03 节例块；第 4 题→04 节图注；第 5 题→04 节工序；第 6 题→02 节中国镜像+05 节 SOURCE TYPE），隔天再练；错 3 题以上——主线重走：三类证据地图 → FedWatch=价格反推 → 仓位=拥挤度。</div>
+<div class="note">训练场判分（六题对照）：全对，隔天重练仍达标，M1.3 三部曲（恒等式+形态与利差族+仓位概率）课内证据齐了；错 1–2 题，错题回对应节（第 1 题→1005 课 02 节+本课 02 节；第 2 题→02 节三坑与期望 bp 例块；第 3 题→03 节例块；第 4 题→04 节图注；第 5 题→04 节工序；第 6 题→02 节中国镜像+05 节 SOURCE TYPE），隔天再练；错 3 题以上，主线重走：三类证据地图 → FedWatch=价格反推 → 仓位=拥挤度。</div>
 
 <recall-block>
 <script type="application/json">
@@ -261,19 +261,19 @@
 
 <p><strong>本课带走四样东西：</strong></p>
 <ul class="checklist">
-  <li><strong>三类证据地图</strong>——Market Price / Survey / Positioning，裂缝才是信息</li>
-  <li><strong>FedWatch 三坑与期望 bp</strong>——期货价→隐含利率→期望变动 bp 是第一单位；价格反推含溢价、离散格子平滑尾部、快照非预言</li>
-  <li><strong>COT 三工序</strong>——时滞/换月/季节性处理过，分位才有意义；仓位=拥挤度≠方向</li>
-  <li><strong>共识=度量衡</strong>——SME/SPF 不是预测器，是「意外」的定义基准</li>
+  <li><strong>三类证据地图</strong>，Market Price / Survey / Positioning，裂缝才是信息</li>
+  <li><strong>FedWatch 三坑与期望 bp</strong>，期货价→隐含利率→期望变动 bp 是第一单位；价格反推含溢价、离散格子平滑尾部、快照非预言</li>
+  <li><strong>COT 三工序</strong>，时滞/换月/季节性处理过，分位才有意义；仓位=拥挤度≠方向</li>
+  <li><strong>共识=度量衡</strong>，SME/SPF 不是预测器，是「意外」的定义基准</li>
 </ul>
 
 <p><strong>课外作业：</strong></p>
 <p>（1）<strong>阅读任务（必做）</strong>：CFTC <a href="https://www.cftc.gov/MarketReports/CommitmentsofTraders/index.htm">COT 报告说明页</a>（时滞与分类官方表述）；NY Fed <a href="https://www.newyorkfed.org/markets/market-intelligence/survey-of-market-expectations">SME 页面</a>（合并沿革与问卷流程）。</p>
-<p>（2）<strong>课后探索（可选）</strong>：在 CFTC <a href="https://publicreporting.cftc.gov/resource/6dca-aqww.json?$limit=5&$order=report_date_as_yyyy_mm_dd%20DESC&$select=contract_market_name,report_date_as_yyyy_mm_dd,noncomm_positions_long_all,noncomm_positions_short_all&$where=contract_market_name=%27UST%2010Y%20NOTE%27">公开 API</a> 里亲手拉一次最新 10Y 持仓（浏览器直接打开就是 JSON）——复算本课的净持仓数字。</p>
-<p>（3）<strong>日常习惯（永久生效）</strong>：每月 FOMC 前一周把「三合一套问卡」写进观察日志（今天动笔题的格式）——它是决策日志的第二类条目（第一类是 1007 的三句话快照）。</p>
-<p><strong>下一课 1007《一页纸快照+Point-in-Time》</strong>：P1 结业课——把 P1 全部读数技能收拢成一张三句话快照，加上宏观版的「未来函数」禁令（vintage/Point-in-Time），并正式启动你的决策日志（伴随到毕业的仪器）。</p>
+<p>（2）<strong>课后探索（可选）</strong>：在 CFTC <a href="https://publicreporting.cftc.gov/resource/6dca-aqww.json?$limit=5&$order=report_date_as_yyyy_mm_dd%20DESC&$select=contract_market_name,report_date_as_yyyy_mm_dd,noncomm_positions_long_all,noncomm_positions_short_all&$where=contract_market_name=%27UST%2010Y%20NOTE%27">公开 API</a> 里亲手拉一次最新 10Y 持仓（浏览器直接打开就是 JSON），复算本课的净持仓数字。</p>
+<p>（3）<strong>日常习惯（永久生效）</strong>：每月 FOMC 前一周把「三合一套问卡」写进观察日志（今天动笔题的格式），它是决策日志的第二类条目（第一类是 1007 的三句话快照）。</p>
+<p><strong>下一课 1007《一页纸快照+Point-in-Time》</strong>：P1 结业课，把 P1 全部读数技能收拢成一张三句话快照，加上宏观版的「未来函数」禁令（vintage/Point-in-Time），并正式启动你的决策日志（伴随到毕业的仪器）。</p>
 
-<div class="ask-agent">我是你的教练。三合一套问卡写完想让我批一张、COT 某个品种的读数想讨论、或想把 2024-09 案例再走一遍变式——直接回来问我，这是课程的一部分，不是打扰。</div>
+<div class="ask-agent">我是你的教练。三合一套问卡写完想让我批一张、COT 某个品种的读数想讨论、或想把 2024-09 案例再走一遍变式，直接回来问我，这是课程的一部分，不是打扰。</div>
 
 <footer class="course">
   <div class="nav">
@@ -284,7 +284,7 @@
     <a href="1007-snapshot-point-in-time.html">下一课 1007 →</a>
     </div>
   <p><strong>主资源（本课 grounded on）</strong>：CFTC COT 报告官方说明与公开数据（持仓与时滞一手源）；NY Fed SME 官方页（调查设计与沿革一手源）；FOMC 2024-09 声明、记者会逐字稿与 CNBC 当日报道（案例一手材料）；CME FedWatch（工具页，用法与假设以官方说明为准）。</p>
-  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①COT 发布时滞与报告制度——CFTC 官网主页原文（04 节）；②SME 2025 合并沿革与问卷流程——NY Fed 官方页原文（05 节）；③2024-09-18 案例全链——FOMC 声明/逐字稿（federalreserve.gov）、CNBC（FedWatch 63%/37%）、FRED SP500（收盘价复算）。<strong>数据口径：</strong>COT 图=UST 10Y NOTE 非商业净持仓（多头−空头，全合约），CFTC Socrata API（6dca-aqww）自行计算，2024-09 至 2026-09-22，当前 −811,752 手；SPX 案例图=<a href="https://fred.stlouisfed.org/series/SP500">FRED SP500</a> 日收盘（9-17/18/19 = 5634.58/5618.26/5713.64，涨跌幅自算）；FedWatch 概率引用为 2024-09-18 决议前快照（CNBC 报道存档）；期望 bp 例块锚定的当前政策利率=有效联邦基金利率 3.63%（2026-08，<a href="https://fred.stlouisfed.org/series/FEDFUNDS">FRED FEDFUNDS</a>）。</div>
+  <div class="citations"><strong>书源登记（本课内化的材料）：</strong>①COT 发布时滞与报告制度，CFTC 官网主页原文（04 节）；②SME 2025 合并沿革与问卷流程，NY Fed 官方页原文（05 节）；③2024-09-18 案例全链，FOMC 声明/逐字稿（federalreserve.gov）、CNBC（FedWatch 63%/37%）、FRED SP500（收盘价复算）。<strong>数据口径：</strong>COT 图=UST 10Y NOTE 非商业净持仓（多头−空头，全合约），CFTC Socrata API（6dca-aqww）自行计算，2024-09 至 2026-09-22，当前 −811,752 手；SPX 案例图=<a href="https://fred.stlouisfed.org/series/SP500">FRED SP500</a> 日收盘（9-17/18/19 = 5634.58/5618.26/5713.64，涨跌幅自算）；FedWatch 概率引用为 2024-09-18 决议前快照（CNBC 报道存档）；期望 bp 例块锚定的当前政策利率=有效联邦基金利率 3.63%（2026-08，<a href="https://fred.stlouisfed.org/series/FEDFUNDS">FRED FEDFUNDS</a>）。</div>
 </footer>
 
 </div>
